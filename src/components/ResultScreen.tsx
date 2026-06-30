@@ -121,7 +121,7 @@ export const ResultScreen: React.FC<ResultScreenProps> = ({
             Danh sách câu trả lời chưa đúng ({wrongAnswers.length})
           </h3>
 
-          {wrongAnswers.map((record, index) => {
+          {wrongAnswers.map((record) => {
             const { item, lessonTitle, sectionTitle, sectionType } = record;
             const isVocab = sectionType === "vocabulary";
 

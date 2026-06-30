@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import type { Lesson } from '../data/lessons';
-import { BookOpen, CheckSquare, Square, Shuffle, Play, CheckCircle2, AlertCircle, HelpCircle, Layers } from 'lucide-react';
+import { BookOpen, CheckSquare, Square, Shuffle, Play, AlertCircle, HelpCircle, Layers } from 'lucide-react';
 
 interface LessonSelectorProps {
   lessons: Lesson[];

@@ -203,6 +203,7 @@ export const StudySession: React.FC<StudySessionProps> = ({
       <div className="min-h-[400px] flex items-center justify-center py-4">
         {currentQuestion.sectionType === 'vocabulary' ? (
           <VocabularyCard
+            key={`${currentQuestion.item.id}-${currentIndex}`}
             item={currentQuestion.item}
             lessonTitle={currentQuestion.lessonTitle}
             sectionTitle={currentQuestion.sectionTitle}
@@ -210,6 +211,7 @@ export const StudySession: React.FC<StudySessionProps> = ({
           />
         ) : (
           <QuestionCard
+            key={`${currentQuestion.item.id}-${currentIndex}`}
             item={currentQuestion.item}
             lessonTitle={currentQuestion.lessonTitle}
             sectionTitle={currentQuestion.sectionTitle}

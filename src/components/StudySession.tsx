@@ -43,6 +43,17 @@ export const StudySession: React.FC<StudySessionProps> = ({
   const [wrongAnswers, setWrongAnswers] = useState<SessionQuestion[]>([]);
   const [isFinished, setIsFinished] = useState(false);
 
+  const autoNextTimeoutRef = React.useRef<any>(null);
+
+  // Clear timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (autoNextTimeoutRef.current) {
+        clearTimeout(autoNextTimeoutRef.current);
+      }
+    };
+  }, []);
+
   // Initialize session questions based on selected sections
   const initializeSession = () => {
     const aggregated: SessionQuestion[] = [];
@@ -89,9 +100,23 @@ export const StudySession: React.FC<StudySessionProps> = ({
       setIncorrectCount(prev => prev + 1);
       setWrongAnswers(prev => [...prev, currentQ]);
     }
+
+    // Auto-next for vocabulary section
+    if (currentQ.sectionType === 'vocabulary') {
+      if (autoNextTimeoutRef.current) {
+        clearTimeout(autoNextTimeoutRef.current);
+      }
+      autoNextTimeoutRef.current = setTimeout(() => {
+        handleNext();
+      }, 800);
+    }
   };
 
   const handleNext = () => {
+    if (autoNextTimeoutRef.current) {
+      clearTimeout(autoNextTimeoutRef.current);
+      autoNextTimeoutRef.current = null;
+    }
     if (currentIndex < questions.length - 1) {
       setCurrentIndex(prev => prev + 1);
       setIsAnswered(false);

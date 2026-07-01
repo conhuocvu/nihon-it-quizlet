@@ -18,12 +18,14 @@ export const VocabularyCard: React.FC<VocabularyCardProps> = ({
   const [isFlipped, setIsFlipped] = useState(false);
   const [isGraded, setIsGraded] = useState(false);
   const [showHira, setShowHira] = useState(false);
+  const [selectedGrade, setSelectedGrade] = useState<'correct' | 'incorrect' | null>(null);
 
   // Reset when vocabulary item changes
   useEffect(() => {
     setIsFlipped(false);
     setIsGraded(false);
     setShowHira(false);
+    setSelectedGrade(null);
   }, [item]);
 
   const handleFlip = () => {
@@ -162,11 +164,16 @@ export const VocabularyCard: React.FC<VocabularyCardProps> = ({
         ) : (
           <div className="flex gap-4 w-full justify-center">
             <button
-              onClick={() => handleSelfGrade(false)}
+              onClick={() => {
+                setSelectedGrade('incorrect');
+                handleSelfGrade(false);
+              }}
               disabled={isGraded}
               className={`px-5 py-3 rounded-xl font-bold flex items-center gap-2 transition-all flex-1 max-w-[170px] justify-center ${
                 isGraded
-                  ? 'bg-slate-100 text-slate-400 cursor-default border border-slate-200'
+                  ? selectedGrade === 'incorrect'
+                    ? 'bg-rose-600 text-white shadow-md shadow-rose-100'
+                    : 'bg-slate-100 text-slate-400 opacity-50 cursor-default border border-slate-200'
                   : 'bg-rose-50 text-rose-700 border border-rose-200 hover:bg-rose-100 active:scale-95 cursor-pointer'
               }`}
             >
@@ -174,11 +181,16 @@ export const VocabularyCard: React.FC<VocabularyCardProps> = ({
               Chưa thuộc
             </button>
             <button
-              onClick={() => handleSelfGrade(true)}
+              onClick={() => {
+                setSelectedGrade('correct');
+                handleSelfGrade(true);
+              }}
               disabled={isGraded}
               className={`px-5 py-3 rounded-xl font-bold flex items-center gap-2 transition-all flex-1 max-w-[170px] justify-center ${
                 isGraded
-                  ? 'bg-slate-100 text-slate-400 cursor-default border border-slate-200'
+                  ? selectedGrade === 'correct'
+                    ? 'bg-emerald-600 text-white shadow-md shadow-emerald-100'
+                    : 'bg-slate-100 text-slate-400 opacity-50 cursor-default border border-slate-200'
                   : 'bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100 active:scale-95 cursor-pointer'
               }`}
             >

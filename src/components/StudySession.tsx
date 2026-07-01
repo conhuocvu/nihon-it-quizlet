@@ -246,7 +246,7 @@ export const StudySession: React.FC<StudySessionProps> = ({
       </div>
 
       {/* Lower Navigation Footer */}
-      {isAnswered && (
+      {isAnswered && currentQuestion.sectionType !== 'vocabulary' && (
         <div className="mt-8 flex justify-center animate-bounce">
           <button
             onClick={handleNext}

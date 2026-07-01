@@ -1496,8 +1496,8 @@ export const lessons: Lesson[] = [
             id: "l16-v-9",
             term: "ガレージ",
             reading: "Garage",
-            answer: "ga-ra xe / nhà để xe",
-            meaning: "ga-ra ô tô (được dùng để khởi nghiệp như Apple, Google)"
+            answer: "vùng chứa",
+            meaning: "vùng chứa"
           },
           {
             id: "l16-v-10",

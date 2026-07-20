@@ -25,53 +25,3388 @@ export type Lesson = {
 export const lessons: Lesson[] = [
   {
     id: 1,
-    title: "Bài 1",
-    sections: []
+    title: "Bài 1 - Cơ bản về máy tính",
+    sections: [
+      {
+        id: "lesson-1-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          {
+            id: "l1-v-1",
+            term: "EDSAC",
+            reading: "Electronic Delay Storage Automatic Calculator",
+            answer: "bộ tính toán tự động bộ nhớ trì hoãn điện tử",
+            meaning: "bộ tính toán tự động bộ nhớ trì hoãn điện tử"
+          },
+          {
+            id: "l1-v-2",
+            term: "ENIAC (エニアック)",
+            reading: "Electronic Numerical Integrator and Computer",
+            answer: "máy tính ENIAC",
+            meaning: "máy tính ENIAC"
+          },
+          {
+            id: "l1-v-3",
+            term: "USB メモリ",
+            reading: "USB memory",
+            answer: "bộ nhớ USB",
+            meaning: "bộ nhớ USB"
+          },
+          {
+            id: "l1-v-4",
+            term: "アイコン",
+            reading: "icon",
+            answer: "biểu tượng",
+            meaning: "biểu tượng"
+          },
+          {
+            id: "l1-v-5",
+            term: "アナログ",
+            reading: "analog",
+            answer: "analog",
+            meaning: "analog"
+          },
+          {
+            id: "l1-v-6",
+            term: "アバカス",
+            reading: "abacus",
+            answer: "bàn tính",
+            meaning: "bàn tính"
+          },
+          {
+            id: "l1-v-7",
+            term: "アプリケーション",
+            reading: "application",
+            answer: "ứng dụng",
+            meaning: "ứng dụng"
+          },
+          {
+            id: "l1-v-8",
+            term: "エクスプローラ",
+            reading: "explorer",
+            answer: "cửa sổ trình duyệt",
+            meaning: "cửa sổ trình duyệt"
+          },
+          {
+            id: "l1-v-9",
+            term: "カレントパス",
+            reading: "current path",
+            answer: "đường dẫn hiện hành",
+            meaning: "đường dẫn hiện hành"
+          },
+          {
+            id: "l1-v-10",
+            term: "クリックする",
+            reading: "click する",
+            answer: "kích",
+            meaning: "kích"
+          },
+          {
+            id: "l1-v-11",
+            term: "ジョン・エッカート",
+            reading: "John Eckert",
+            answer: "John Eckert",
+            meaning: "John Eckert"
+          },
+          {
+            id: "l1-v-12",
+            term: "ジョン・モークリー",
+            reading: "John Mauchly",
+            answer: "John Mauchly",
+            meaning: "John Mauchly"
+          },
+          {
+            id: "l1-v-13",
+            term: "スーパーコンピュータ",
+            reading: "super computer",
+            answer: "siêu máy tính",
+            meaning: "siêu máy tính"
+          },
+          {
+            id: "l1-v-14",
+            term: "スマートフォン",
+            reading: "smart phone",
+            answer: "điện thoại thông minh",
+            meaning: "điện thoại thông minh"
+          },
+          {
+            id: "l1-v-15",
+            term: "ダブルクリックする",
+            reading: "double click する",
+            answer: "kích đúp",
+            meaning: "kích đúp"
+          },
+          {
+            id: "l1-v-16",
+            term: "ツール",
+            reading: "tool",
+            answer: "công cụ",
+            meaning: "công cụ"
+          },
+          {
+            id: "l1-v-17",
+            term: "ディレクトリ構造",
+            reading: "directory こうぞう",
+            answer: "cấu trúc thư mục",
+            meaning: "cấu trúc thư mục"
+          },
+          {
+            id: "l1-v-18",
+            term: "デジタルコンピュータ",
+            reading: "digital computer",
+            answer: "máy tính kỹ thuật số",
+            meaning: "máy tính kỹ thuật số"
+          },
+          {
+            id: "l1-v-19",
+            term: "ドライブ",
+            reading: "drive",
+            answer: "ổ đĩa",
+            meaning: "ổ đĩa"
+          },
+          {
+            id: "l1-v-20",
+            term: "ドライブ名",
+            reading: "drive めい",
+            answer: "tên ổ đĩa",
+            meaning: "tên ổ đĩa"
+          },
+          {
+            id: "l1-v-21",
+            term: "ネットブック",
+            reading: "netbook",
+            answer: "netbook",
+            meaning: "netbook"
+          },
+          {
+            id: "l1-v-22",
+            term: "ノイマン型コンピュータ",
+            reading: "von Neumann がた computer",
+            answer: "máy tính kiểu Neumann",
+            meaning: "máy tính kiểu Neumann"
+          },
+          {
+            id: "l1-v-23",
+            term: "ハードディスク",
+            reading: "harddisk",
+            answer: "đĩa cứng",
+            meaning: "đĩa cứng"
+          },
+          {
+            id: "l1-v-24",
+            term: "バックアップ",
+            reading: "backup",
+            answer: "sao lưu",
+            meaning: "sao lưu"
+          },
+          {
+            id: "l1-v-25",
+            term: "パス",
+            reading: "path",
+            answer: "đường dẫn",
+            meaning: "đường dẫn"
+          },
+          {
+            id: "l1-v-26",
+            term: "パスカルの計算機",
+            reading: "Pascal のけいさんき",
+            answer: "máy tính Pascal",
+            meaning: "máy tính Pascal"
+          },
+          {
+            id: "l1-v-27",
+            term: "ピリオド",
+            reading: "period",
+            answer: "dấu chấm",
+            meaning: "dấu chấm"
+          },
+          {
+            id: "l1-v-28",
+            term: "ファイル",
+            reading: "file",
+            answer: "tệp dữ liệu",
+            meaning: "tệp dữ liệu"
+          },
+          {
+            id: "l1-v-29",
+            term: "フォルダオプション",
+            reading: "folder option",
+            answer: "chọn thư mục",
+            meaning: "chọn thư mục"
+          },
+          {
+            id: "l1-v-30",
+            term: "フォン・ノイマン",
+            reading: "John von Neumann",
+            answer: "John von Neumann",
+            meaning: "John von Neumann"
+          },
+          {
+            id: "l1-v-31",
+            term: "フロッピーディスク",
+            reading: "floppy disk",
+            answer: "đĩa mềm",
+            meaning: "đĩa mềm"
+          },
+          {
+            id: "l1-v-32",
+            term: "プログラム内蔵方式",
+            reading: "program ないぞうほうしき",
+            answer: "chương trình được lưu trữ",
+            meaning: "chương trình được lưu trữ"
+          },
+          {
+            id: "l1-v-33",
+            term: "ライプニッツの乗算機",
+            reading: "Leibniz のじょうざんき",
+            answer: "máy tính Leibniz",
+            meaning: "máy tính Leibniz"
+          },
+          {
+            id: "l1-v-34",
+            term: "ワークステーション",
+            reading: "workstation",
+            answer: "trạm làm việc",
+            meaning: "trạm làm việc"
+          },
+          {
+            id: "l1-v-35",
+            term: "右ボタンをクリックする",
+            reading: "みぎ button を click する",
+            answer: "kích phải chuột",
+            meaning: "kích phải chuột"
+          },
+          {
+            id: "l1-v-36",
+            term: "閲覧する",
+            reading: "えつらんする",
+            answer: "xem, duyệt",
+            meaning: "xem, duyệt"
+          },
+          {
+            id: "l1-v-37",
+            term: "画像",
+            reading: "がぞう",
+            answer: "hình ảnh",
+            meaning: "hình ảnh"
+          },
+          {
+            id: "l1-v-38",
+            term: "階層構造",
+            reading: "かいそうこうぞう",
+            answer: "cấu trúc hình cây",
+            meaning: "cấu trúc hình cây"
+          },
+          {
+            id: "l1-v-39",
+            term: "外部記憶装置",
+            reading: "がいぶきおくそうち",
+            answer: "thiết bị nhớ ngoài",
+            meaning: "thiết bị nhớ ngoài"
+          },
+          {
+            id: "l1-v-40",
+            term: "拡張子",
+            reading: "かくちょうし",
+            answer: "đuôi file",
+            meaning: "đuôi file"
+          },
+          {
+            id: "l1-v-41",
+            term: "記録媒体",
+            reading: "きろくばいたい",
+            answer: "phương tiện ghi",
+            meaning: "phương tiện ghi"
+          },
+          {
+            id: "l1-v-42",
+            term: "起動",
+            reading: "きどう",
+            answer: "khởi động",
+            meaning: "khởi động"
+          },
+          {
+            id: "l1-v-43",
+            term: "左ボタンをクリックする",
+            reading: "ひだり button を click する",
+            answer: "kích trái chuột",
+            meaning: "kích trái chuột"
+          },
+          {
+            id: "l1-v-44",
+            term: "子供のフォルダ",
+            reading: "こどもの folder",
+            answer: "thư mục con",
+            meaning: "thư mục con"
+          },
+          {
+            id: "l1-v-45",
+            term: "詳細設定",
+            reading: "しょうさいせってい",
+            answer: "cài đặt chi tiết",
+            meaning: "cài đặt chi tiết"
+          },
+          {
+            id: "l1-v-46",
+            term: "親のフォルダ",
+            reading: "おやの folder",
+            answer: "thư mục mẹ",
+            meaning: "thư mục mẹ"
+          },
+          {
+            id: "l1-v-47",
+            term: "専用計算機",
+            reading: "せんようけいさんき",
+            answer: "máy tính chuyên dụng",
+            meaning: "máy tính chuyên dụng"
+          },
+          {
+            id: "l1-v-48",
+            term: "孫のフォルダ",
+            reading: "まごの folder",
+            answer: "thư mục cháu",
+            meaning: "thư mục cháu"
+          },
+          {
+            id: "l1-v-49",
+            term: "大型汎用計算機",
+            reading: "おおがたはんようけいさんき",
+            answer: "máy tính đa dụng cỡ lớn",
+            meaning: "máy tính đa dụng cỡ lớn"
+          },
+          {
+            id: "l1-v-50",
+            term: "電気機械式",
+            reading: "でんききかいしき",
+            answer: "máy tính cơ điện",
+            meaning: "máy tính cơ điện"
+          },
+          {
+            id: "l1-v-51",
+            term: "電子式計算機",
+            reading: "でんししきけいさんき",
+            answer: "máy tính điện tử",
+            meaning: "máy tính điện tử"
+          },
+          {
+            id: "l1-v-52",
+            term: "汎用計算機",
+            reading: "はんようけいさんき",
+            answer: "máy tính đa dụng",
+            meaning: "máy tính đa dụng"
+          },
+          {
+            id: "l1-v-53",
+            term: "表計算",
+            reading: "ひょうけいさん",
+            answer: "tính toán bảng biểu",
+            meaning: "tính toán bảng biểu"
+          },
+          {
+            id: "l1-v-54",
+            term: "表示",
+            reading: "ひょうじ",
+            answer: "biểu thị",
+            meaning: "biểu thị"
+          }
+        ]
+      }
+    ]
   },
   {
     id: 2,
-    title: "Bài 2",
-    sections: []
+    title: "Bài 2 - Sử dụng Internet",
+    sections: [
+      {
+        id: "lesson-2-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          {
+            id: "l2-v-1",
+            term: "8 対 2 の法則",
+            reading: "はちたいにのほうそく",
+            answer: "quy luật 8/2",
+            meaning: "quy luật 8/2"
+          },
+          {
+            id: "l2-v-2",
+            term: "ASP",
+            reading: "Application Service Provider",
+            answer: "nhà cung cấp dịch vụ ứng dụng",
+            meaning: "nhà cung cấp dịch vụ ứng dụng"
+          },
+          {
+            id: "l2-v-3",
+            term: "Ajax",
+            reading: "Asynchronous JavaScript and XML",
+            answer: "JavaScript và XML không đồng bộ",
+            meaning: "JavaScript và XML không đồng bộ"
+          },
+          {
+            id: "l2-v-4",
+            term: "Blog",
+            reading: "web log",
+            answer: "nhật kí cá nhân trên mạng",
+            meaning: "nhật kí cá nhân trên mạng"
+          },
+          {
+            id: "l2-v-5",
+            term: "GPL",
+            reading: "the GNU General Public License",
+            answer: "giấy phép công cộng GNU",
+            meaning: "giấy phép công cộng GNU"
+          },
+          {
+            id: "l2-v-6",
+            term: "RSS",
+            reading: "Really Simple Syndication",
+            answer: "định dạng tập tin",
+            meaning: "định dạng tập tin"
+          },
+          {
+            id: "l2-v-7",
+            term: "SNS",
+            reading: "Social Networking Service",
+            answer: "dịch vụ mạng xã hội",
+            meaning: "dịch vụ mạng xã hội"
+          },
+          {
+            id: "l2-v-8",
+            term: "SaaS",
+            reading: "software as a Service",
+            answer: "phần mềm dịch vụ",
+            meaning: "phần mềm dịch vụ"
+          },
+          {
+            id: "l2-v-9",
+            term: "URL",
+            reading: "Uniform Resource Location",
+            answer: "định vị tài nguyên về mặt địa chỉ",
+            meaning: "định vị tài nguyên về mặt địa chỉ"
+          },
+          {
+            id: "l2-v-10",
+            term: "エリック・シュミット",
+            reading: "Eric Schmidt",
+            answer: "Eric Schmidt",
+            meaning: "Eric Schmidt"
+          },
+          {
+            id: "l2-v-11",
+            term: "キャラクター",
+            reading: "Character",
+            answer: "nhân vật",
+            meaning: "nhân vật"
+          },
+          {
+            id: "l2-v-12",
+            term: "クラウドコンピューティング",
+            reading: "cloud computing",
+            answer: "điện toán đám mây",
+            meaning: "điện toán đám mây"
+          },
+          {
+            id: "l2-v-13",
+            term: "グリッドコンピューティング",
+            reading: "grid computing",
+            answer: "điện toán lưới",
+            meaning: "điện toán lưới"
+          },
+          {
+            id: "l2-v-14",
+            term: "シェアウェア",
+            reading: "Shareware",
+            answer: "phần mềm chia sẻ",
+            meaning: "phần mềm chia sẻ"
+          },
+          {
+            id: "l2-v-15",
+            term: "ソースコード",
+            reading: "source code",
+            answer: "mã nguồn",
+            meaning: "mã nguồn"
+          },
+          {
+            id: "l2-v-16",
+            term: "ティム・オライリー",
+            reading: "Tim O'Reilly",
+            answer: "tim O'Reilly",
+            meaning: "tim O'Reilly"
+          },
+          {
+            id: "l2-v-17",
+            term: "ネチケット",
+            reading: "netiquette",
+            answer: "phép lịch sự xã giao khi sử dụng mạng",
+            meaning: "phép lịch sự xã giao khi sử dụng mạng"
+          },
+          {
+            id: "l2-v-18",
+            term: "フリーウェア",
+            reading: "Freeware",
+            answer: "phần mềm miễn phí",
+            meaning: "phần mềm miễn phí"
+          },
+          {
+            id: "l2-v-19",
+            term: "ブラウザ",
+            reading: "Browser",
+            answer: "trình duyệt",
+            meaning: "trình duyệt"
+          },
+          {
+            id: "l2-v-20",
+            term: "ポータルサイト",
+            reading: "portal site",
+            answer: "cổng thông tin điện tử",
+            meaning: "cổng thông tin điện tử"
+          },
+          {
+            id: "l2-v-21",
+            term: "レンタル権",
+            reading: "Rental けん",
+            answer: "quyền cho thuê",
+            meaning: "quyền cho thuê"
+          },
+          {
+            id: "l2-v-22",
+            term: "意匠権",
+            reading: "いしょうけん",
+            answer: "quyền kiểu dáng công nghiệp",
+            meaning: "quyền kiểu dáng công nghiệp"
+          },
+          {
+            id: "l2-v-23",
+            term: "一見",
+            reading: "いっけん",
+            answer: "nhìn qua",
+            meaning: "nhìn qua"
+          },
+          {
+            id: "l2-v-24",
+            term: "吟味する",
+            reading: "ぎんみする",
+            answer: "tìm hiểu kỹ, xem xét kỹ",
+            meaning: "tìm hiểu kỹ, xem xét kỹ"
+          },
+          {
+            id: "l2-v-25",
+            term: "携わる",
+            reading: "たずさわる",
+            answer: "làm việc trong...",
+            meaning: "làm việc trong..."
+          },
+          {
+            id: "l2-v-26",
+            term: "検索",
+            reading: "けんさく",
+            answer: "tìm kiếm",
+            meaning: "tìm kiếm"
+          },
+          {
+            id: "l2-v-27",
+            term: "個人情報",
+            reading: "こじんじょうほう",
+            answer: "thông tin cá nhân",
+            meaning: "thông tin cá nhân"
+          },
+          {
+            id: "l2-v-28",
+            term: "公衆送信権",
+            reading: "こうしゅうそうしんけん",
+            answer: "quyền truyền tải công cộng",
+            meaning: "quyền truyền tải công cộng"
+          },
+          {
+            id: "l2-v-29",
+            term: "工業所有権",
+            reading: "こうぎょうしょゆうけん",
+            answer: "quyền sở hữu công nghiệp",
+            meaning: "quyền sở hữu công nghiệp"
+          },
+          {
+            id: "l2-v-30",
+            term: "実行ファイル",
+            reading: "じっこう File",
+            answer: "file thực thi",
+            meaning: "file thực thi"
+          },
+          {
+            id: "l2-v-31",
+            term: "実用新案権",
+            reading: "じつようしんあんけん",
+            answer: "quyền giải pháp hữu ích",
+            meaning: "quyền giải pháp hữu ích"
+          },
+          {
+            id: "l2-v-32",
+            term: "商標権",
+            reading: "しょうひょうけん",
+            answer: "quyền thương hiệu",
+            meaning: "quyền thương hiệu"
+          },
+          {
+            id: "l2-v-33",
+            term: "肖像権",
+            reading: "しょうぞうけん",
+            answer: "quyền chân dung",
+            meaning: "quyền chân dung"
+          },
+          {
+            id: "l2-v-34",
+            term: "触れ合う",
+            reading: "ふれあう",
+            answer: "tiếp xúc",
+            meaning: "tiếp xúc"
+          },
+          {
+            id: "l2-v-35",
+            term: "即座",
+            reading: "そくざ",
+            answer: "ngay lập tức",
+            meaning: "ngay lập tức"
+          },
+          {
+            id: "l2-v-36",
+            term: "知的財産",
+            reading: "ちてきざいさん",
+            answer: "tài sản trí tuệ",
+            meaning: "tài sản trí tuệ"
+          },
+          {
+            id: "l2-v-37",
+            term: "知的所有権",
+            reading: "ちてきしょゆうけん",
+            answer: "quyền sở hữu trí tuệ",
+            meaning: "quyền sở hữu trí tuệ"
+          },
+          {
+            id: "l2-v-38",
+            term: "著作権",
+            reading: "ちょさくけん",
+            answer: "bản quyền",
+            meaning: "bản quyền"
+          },
+          {
+            id: "l2-v-39",
+            term: "著作者",
+            reading: "ちょさくしゃ",
+            answer: "tác giả",
+            meaning: "tác giả"
+          },
+          {
+            id: "l2-v-40",
+            term: "著作財産権",
+            reading: "ちょさくしゃざいさん",
+            answer: "quyền tài sản",
+            meaning: "quyền tài sản"
+          },
+          {
+            id: "l2-v-41",
+            term: "著作人格権",
+            reading: "ちょさくじんかくけん",
+            answer: "quyền nhân thân",
+            meaning: "quyền nhân thân"
+          },
+          {
+            id: "l2-v-42",
+            term: "著作物",
+            reading: "ちょさくぶつ",
+            answer: "tác phẩm",
+            meaning: "tác phẩm"
+          },
+          {
+            id: "l2-v-43",
+            term: "著作隣接権",
+            reading: "ちょさくりんせつけん",
+            answer: "quyền liên quan",
+            meaning: "quyền liên quan"
+          },
+          {
+            id: "l2-v-44",
+            term: "特許権",
+            reading: "とっきょけん",
+            answer: "quyền sáng chế",
+            meaning: "quyền sáng chế"
+          },
+          {
+            id: "l2-v-45",
+            term: "伴う",
+            reading: "ともなう",
+            answer: "cùng với",
+            meaning: "cùng với"
+          },
+          {
+            id: "l2-v-46",
+            term: "不公平",
+            reading: "ふこうへい",
+            answer: "không công bằng",
+            meaning: "không công bằng"
+          },
+          {
+            id: "l2-v-47",
+            term: "複製権",
+            reading: "ふくせいけん",
+            answer: "quyền sao chép",
+            meaning: "quyền sao chép"
+          },
+          {
+            id: "l2-v-48",
+            term: "保護する",
+            reading: "ほごする",
+            answer: "bảo hộ",
+            meaning: "bảo hộ"
+          },
+          {
+            id: "l2-v-49",
+            term: "放送権",
+            reading: "ほうそうけん",
+            answer: "quyền phát sóng",
+            meaning: "quyền phát sóng"
+          },
+          {
+            id: "l2-v-50",
+            term: "利用形態",
+            reading: "りようけいたい",
+            answer: "hình thức sử dụng",
+            meaning: "hình thức sử dụng"
+          },
+          {
+            id: "l2-v-51",
+            term: "倫理的",
+            reading: "りんりてき",
+            answer: "mang tính đạo đức",
+            meaning: "mang tính đạo đức"
+          },
+          {
+            id: "l2-v-52",
+            term: "劣化する",
+            reading: "れっかする",
+            answer: "kém đi",
+            meaning: "kém đi"
+          },
+          {
+            id: "l2-v-53",
+            term: "漏洩",
+            reading: "ろうえい",
+            answer: "rò rỉ",
+            meaning: "rò rỉ"
+          }
+        ]
+      }
+    ]
   },
   {
     id: 3,
-    title: "Bài 3",
-    sections: []
+    title: "Bài 3 - Hiện trạng thiết bị IT",
+    sections: [
+      {
+        id: "lesson-3-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          {
+            id: "l3-v-1",
+            term: "CMOS センサ",
+            reading: "Complementary Metal Oxide Semiconductor image sensor",
+            answer: "bộ cảm biến hình ảnh bằng chip",
+            meaning: "bộ cảm biến hình ảnh bằng chip"
+          },
+          {
+            id: "l3-v-2",
+            term: "ICT",
+            reading: "Information and Communication Technology",
+            answer: "công nghệ thông tin và truyền thông",
+            meaning: "công nghệ thông tin và truyền thông"
+          },
+          {
+            id: "l3-v-3",
+            term: "SED",
+            reading: "Surface-conduction Electron-emitter Display",
+            answer: "kỹ thuật phát xạ điện tử dẫn bề mặt",
+            meaning: "kỹ thuật phát xạ điện tử dẫn bề mặt"
+          },
+          {
+            id: "l3-v-4",
+            term: "SIM",
+            reading: "Subscriber Identity Module",
+            answer: "mô đun nhận dạng thuê bao",
+            meaning: "mô đun nhận dạng thuê bao"
+          },
+          {
+            id: "l3-v-5",
+            term: "コンテンツ",
+            reading: "contents",
+            answer: "các chức năng",
+            meaning: "các chức năng"
+          },
+          {
+            id: "l3-v-6",
+            term: "サイマル放送",
+            reading: "simultaneous ほうそう",
+            answer: "phát sóng cùng một lúc",
+            meaning: "phát sóng cùng một lúc"
+          },
+          {
+            id: "l3-v-7",
+            term: "セグメント",
+            reading: "segment",
+            answer: "phân đoạn",
+            meaning: "phân đoạn"
+          },
+          {
+            id: "l3-v-8",
+            term: "ハイビジョン",
+            reading: "Hi-vision",
+            answer: "hình ảnh chất lượng cao",
+            meaning: "hình ảnh chất lượng cao"
+          },
+          {
+            id: "l3-v-9",
+            term: "フィルタ",
+            reading: "filter",
+            answer: "bộ lọc",
+            meaning: "bộ lọc"
+          },
+          {
+            id: "l3-v-10",
+            term: "ブロードバンド",
+            reading: "broadband",
+            answer: "băng rộng",
+            meaning: "băng rộng"
+          },
+          {
+            id: "l3-v-11",
+            term: "ワンセグ放送",
+            reading: "one segment ほうそう",
+            answer: "phát sóng từng đoạn",
+            meaning: "phát sóng từng đoạn"
+          },
+          {
+            id: "l3-v-12",
+            term: "液晶",
+            reading: "えきしょう",
+            answer: "tinh thể lỏng",
+            meaning: "tinh thể lỏng"
+          },
+          {
+            id: "l3-v-13",
+            term: "画素",
+            reading: "がそ",
+            answer: "điểm ảnh",
+            meaning: "điểm ảnh"
+          },
+          {
+            id: "l3-v-14",
+            term: "遮断",
+            reading: "しゃだん",
+            answer: "cản trở",
+            meaning: "cản trở"
+          },
+          {
+            id: "l3-v-15",
+            term: "周波数帯域",
+            reading: "ちゅうはすうたいいき",
+            answer: "dải băng tần",
+            meaning: "dải băng tần"
+          },
+          {
+            id: "l3-v-16",
+            term: "情報端末",
+            reading: "じょうほうたんまつ",
+            answer: "thiết bị cuối",
+            meaning: "thiết bị cuối"
+          },
+          {
+            id: "l3-v-17",
+            term: "静電容量方式",
+            reading: "せいでんようりょうほうしき",
+            answer: "điện dung",
+            meaning: "điện dung"
+          },
+          {
+            id: "l3-v-18",
+            term: "増幅器",
+            reading: "ぞうふくき",
+            answer: "âm li, bộ khuyết đại",
+            meaning: "âm li, bộ khuyết đại"
+          },
+          {
+            id: "l3-v-19",
+            term: "抵抗膜方式",
+            reading: "ていこうまくほうしき",
+            answer: "phương thức màng điện trở",
+            meaning: "phương thức màng điện trở"
+          },
+          {
+            id: "l3-v-20",
+            term: "電荷",
+            reading: "でんか",
+            answer: "điện tích",
+            meaning: "điện tích"
+          },
+          {
+            id: "l3-v-21",
+            term: "盗聴",
+            reading: "とうちょう",
+            answer: "nghe trộm, nghe lén",
+            meaning: "nghe trộm, nghe lén"
+          },
+          {
+            id: "l3-v-22",
+            term: "透過",
+            reading: "とうか",
+            answer: "xuyên qua",
+            meaning: "xuyên qua"
+          },
+          {
+            id: "l3-v-23",
+            term: "発光体",
+            reading: "はっこうたい",
+            answer: "thể phát quang",
+            meaning: "thể phát quang"
+          },
+          {
+            id: "l3-v-24",
+            term: "偏光",
+            reading: "へんこう",
+            answer: "ánh sáng phân cực",
+            meaning: "ánh sáng phân cực"
+          },
+          {
+            id: "l3-v-25",
+            term: "有機 EL ディスプレイ",
+            reading: "ゆうき eelectroluminescence display",
+            answer: "màn hình phát quang hữu cơ",
+            meaning: "màn hình phát quang hữu cơ"
+          }
+        ]
+      }
+    ]
   },
   {
     id: 4,
-    title: "Bài 4",
-    sections: []
+    title: "Bài 4 - Công nghệ truyền thông dữ liệu",
+    sections: [
+      {
+        id: "lesson-4-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          {
+            id: "l4-v-1",
+            term: "ADSL",
+            reading: "Asymmetric Digital Subscriber Line",
+            answer: "đường dây thuê bao số bất đối xứng",
+            meaning: "đường dây thuê bao số bất đối xứng"
+          },
+          {
+            id: "l4-v-2",
+            term: "CATV",
+            reading: "Collective Antenna Television",
+            answer: "truyền hình cáp dây dẫn",
+            meaning: "truyền hình cáp dây dẫn"
+          },
+          {
+            id: "l4-v-3",
+            term: "FTTH",
+            reading: "Fiber To The Home",
+            answer: "cáp quang đến tận nhà",
+            meaning: "cáp quang đến tận nhà"
+          },
+          {
+            id: "l4-v-4",
+            term: "IP 電話",
+            reading: "IP でんわ",
+            answer: "điện thoại IP (điện thoại giao thức internet)",
+            meaning: "điện thoại IP (điện thoại giao thức internet)"
+          },
+          {
+            id: "l4-v-5",
+            term: "IrDA",
+            reading: "Infrared Data Association",
+            answer: "truyền dữ liệu bằng tia hồng ngoại",
+            meaning: "truyền dữ liệu bằng tia hồng ngoại"
+          },
+          {
+            id: "l4-v-6",
+            term: "PLC",
+            reading: "Power Line Communication",
+            answer: "nối mạng qua hệ thống điện nhà",
+            meaning: "nối mạng qua hệ thống điện nhà"
+          },
+          {
+            id: "l4-v-7",
+            term: "PLC アダプタ",
+            reading: "PLC adapter",
+            answer: "bộ chuyển đổi",
+            meaning: "bộ chuyển đổi"
+          },
+          {
+            id: "l4-v-8",
+            term: "POS",
+            reading: "Point of Sale",
+            answer: "máy tính tiền",
+            meaning: "máy tính tiền"
+          },
+          {
+            id: "l4-v-9",
+            term: "RFID",
+            reading: "Radio Frequency Identification",
+            answer: "công nghệ nhận dạng tần số Radio",
+            meaning: "công nghệ nhận dạng tần số Radio"
+          },
+          {
+            id: "l4-v-10",
+            term: "アップロード 上り",
+            reading: "upload のぼり",
+            answer: "tải lên",
+            meaning: "tải lên"
+          },
+          {
+            id: "l4-v-11",
+            term: "アンテナ",
+            reading: "antenna",
+            answer: "ăng ten",
+            meaning: "ăng ten"
+          },
+          {
+            id: "l4-v-12",
+            term: "ケーブルテレビ",
+            reading: "cable TV",
+            answer: "truyền hình cáp",
+            meaning: "truyền hình cáp"
+          },
+          {
+            id: "l4-v-13",
+            term: "ゲートウェイ",
+            reading: "gateway",
+            answer: "cổng nối",
+            meaning: "cổng nối"
+          },
+          {
+            id: "l4-v-14",
+            term: "コスト削減",
+            reading: "cost さくげん",
+            answer: "cắt giảm chi phí",
+            meaning: "cắt giảm chi phí"
+          },
+          {
+            id: "l4-v-15",
+            term: "コンセント",
+            reading: "outlet",
+            answer: "ổ cắm",
+            meaning: "ổ cắm"
+          },
+          {
+            id: "l4-v-16",
+            term: "ダウンロード 下り",
+            reading: "download くだり",
+            answer: "tải xuống",
+            meaning: "tải xuống"
+          },
+          {
+            id: "l4-v-17",
+            term: "ネットワークケーブル敷設",
+            reading: "Network cable ふせつ",
+            answer: "lắp đặt cáp mạng",
+            meaning: "lắp đặt cáp mạng"
+          },
+          {
+            id: "l4-v-18",
+            term: "ノイズ",
+            reading: "noise",
+            answer: "tạp nhiễu",
+            meaning: "tạp nhiễu"
+          },
+          {
+            id: "l4-v-19",
+            term: "ハンズフリー",
+            reading: "hands-free",
+            answer: "chế độ rảnh tay",
+            meaning: "chế độ rảnh tay"
+          },
+          {
+            id: "l4-v-20",
+            term: "パケット",
+            reading: "packet",
+            answer: "gói tin",
+            meaning: "gói tin"
+          },
+          {
+            id: "l4-v-21",
+            term: "ホットスポット",
+            reading: "hotspot",
+            answer: "điểm truy cập công cộng",
+            meaning: "điểm truy cập công cộng"
+          },
+          {
+            id: "l4-v-22",
+            term: "ユビキタス",
+            reading: "ubiquitous",
+            answer: "có ở mọi nơi",
+            meaning: "có ở mọi nơi"
+          },
+          {
+            id: "l4-v-23",
+            term: "ラストワンマイル問題",
+            reading: "last one mile もんだい",
+            answer: "vấn đề dặm cuối cùng",
+            meaning: "vấn đề dặm cuối cùng"
+          },
+          {
+            id: "l4-v-24",
+            term: "ルータ",
+            reading: "router",
+            answer: "bộ định tuyến",
+            meaning: "bộ định tuyến"
+          },
+          {
+            id: "l4-v-25",
+            term: "圧縮方法",
+            reading: "あっしゅくほうほう",
+            answer: "phương pháp nén",
+            meaning: "phương pháp nén"
+          },
+          {
+            id: "l4-v-26",
+            term: "音声パケット",
+            reading: "おんせい packet",
+            answer: "gói âm thanh",
+            meaning: "gói âm thanh"
+          },
+          {
+            id: "l4-v-27",
+            term: "回線",
+            reading: "かいせん",
+            answer: "đường dây",
+            meaning: "đường dây"
+          },
+          {
+            id: "l4-v-28",
+            term: "基幹回線",
+            reading: "きかんかいせん",
+            answer: "đường truyền chính",
+            meaning: "đường truyền chính"
+          },
+          {
+            id: "l4-v-29",
+            term: "享受する",
+            reading: "きょうじゅする",
+            answer: "hưởng",
+            meaning: "hưởng"
+          },
+          {
+            id: "l4-v-30",
+            term: "金属線",
+            reading: "きんぞくせん",
+            answer: "cáp kim loại",
+            meaning: "cáp kim loại"
+          },
+          {
+            id: "l4-v-31",
+            term: "互換性",
+            reading: "ごかんせい",
+            answer: "tính tương tác",
+            meaning: "tính tương tác"
+          },
+          {
+            id: "l4-v-32",
+            term: "光ファイバ",
+            reading: "ひかり fiber",
+            answer: "cáp quang",
+            meaning: "cáp quang"
+          },
+          {
+            id: "l4-v-33",
+            term: "更新",
+            reading: "こうしん",
+            answer: "cập nhật",
+            meaning: "cập nhật"
+          },
+          {
+            id: "l4-v-34",
+            term: "高速通信",
+            reading: "こうそくつうしん",
+            answer: "truyền tốc độ cao",
+            meaning: "truyền tốc độ cao"
+          },
+          {
+            id: "l4-v-35",
+            term: "高速路",
+            reading: "こうそくろ",
+            answer: "đường truyền tốc độ cao",
+            meaning: "đường truyền tốc độ cao"
+          },
+          {
+            id: "l4-v-36",
+            term: "実時間",
+            reading: "じつじかん",
+            answer: "thời gian thực, cùng lúc",
+            meaning: "thời gian thực, cùng lúc"
+          },
+          {
+            id: "l4-v-37",
+            term: "遮蔽物",
+            reading: "しゃへいぶつ",
+            answer: "vật chắn, vật cản",
+            meaning: "vật chắn, vật cản"
+          },
+          {
+            id: "l4-v-38",
+            term: "手軽に",
+            reading: "てがるに",
+            answer: "một cách dễ dàng, đơn giản",
+            meaning: "một cách dễ dàng, đơn giản"
+          },
+          {
+            id: "l4-v-39",
+            term: "受信機",
+            reading: "じゅしんき",
+            answer: "thiết bị thu",
+            meaning: "thiết bị thu"
+          },
+          {
+            id: "l4-v-40",
+            term: "赤外線",
+            reading: "せきがいせん",
+            answer: "tia hồng ngoại",
+            meaning: "tia hồng ngoại"
+          },
+          {
+            id: "l4-v-41",
+            term: "属する",
+            reading: "ぞくする",
+            answer: "thuộc vào",
+            meaning: "thuộc vào"
+          },
+          {
+            id: "l4-v-42",
+            term: "長距離電話",
+            reading: "ちょうきょりでんわ",
+            answer: "điện thoại đường dài",
+            meaning: "điện thoại đường dài"
+          },
+          {
+            id: "l4-v-43",
+            term: "通信衛星",
+            reading: "つうしんえいせい",
+            answer: "vệ tinh truyền thông",
+            meaning: "vệ tinh truyền thông"
+          },
+          {
+            id: "l4-v-44",
+            term: "通信速度",
+            reading: "つうしんそくど",
+            answer: "tốc độ đường truyền",
+            meaning: "tốc độ đường truyền"
+          },
+          {
+            id: "l4-v-45",
+            term: "低速通信",
+            reading: "ていそくつうしん",
+            answer: "truyền tốc độ thấp",
+            meaning: "truyền tốc độ thấp"
+          },
+          {
+            id: "l4-v-46",
+            term: "電灯線通信",
+            reading: "でんとうせんつうしん",
+            answer: "hệ thống tải ba",
+            meaning: "hệ thống tải ba"
+          },
+          {
+            id: "l4-v-47",
+            term: "電波干渉",
+            reading: "でんぱかんしょう",
+            answer: "nhiễu sóng",
+            meaning: "nhiễu sóng"
+          },
+          {
+            id: "l4-v-48",
+            term: "電話局",
+            reading: "でんわきょく",
+            answer: "trạm điện thoại",
+            meaning: "trạm điện thoại"
+          },
+          {
+            id: "l4-v-49",
+            term: "内蔵",
+            reading: "ないぞう",
+            answer: "gắn sẵn bên trong",
+            meaning: "gắn sẵn bên trong"
+          },
+          {
+            id: "l4-v-50",
+            term: "発信機",
+            reading: "はっしんき",
+            answer: "thiết bị phát",
+            meaning: "thiết bị phát"
+          },
+          {
+            id: "l4-v-51",
+            term: "非接触型 IC カード",
+            reading: "ひ せっしょくがた IC card",
+            answer: "thẻ vi mạch không tiếp xúc",
+            meaning: "thẻ vi mạch không tiếp xúc"
+          },
+          {
+            id: "l4-v-52",
+            term: "非対称",
+            reading: "ひたいしょう",
+            answer: "không đối xứng",
+            meaning: "không đối xứng"
+          },
+          {
+            id: "l4-v-53",
+            term: "放送衛星",
+            reading: "ほうそうえいせい",
+            answer: "vệ tinh phát sóng",
+            meaning: "vệ tinh phát sóng"
+          },
+          {
+            id: "l4-v-54",
+            term: "無線通信",
+            reading: "むせんつうしん",
+            answer: "truyền dữ liệu không dây",
+            meaning: "truyền dữ liệu không dây"
+          },
+          {
+            id: "l4-v-55",
+            term: "有線通信",
+            reading: "ゆうせんつうしん",
+            answer: "truyền dữ liệu có dây",
+            meaning: "truyền dữ liệu có dây"
+          },
+          {
+            id: "l4-v-56",
+            term: "余裕",
+            reading: "よゆう",
+            answer: "dư thừa",
+            meaning: "dư thừa"
+          }
+        ]
+      }
+    ]
   },
   {
     id: 5,
-    title: "Bài 5",
-    sections: []
+    title: "Bài 5 - Mạng máy tính",
+    sections: [
+      {
+        id: "lesson-5-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          {
+            id: "l5-v-1",
+            term: "DMZ / 緩衝地帯 / 非武装地帯",
+            reading: "DeMilitarized Zone / かんしょうちたい / ひぶそうちたい",
+            answer: "vùng phi quân sự",
+            meaning: "vùng phi quân sự"
+          },
+          {
+            id: "l5-v-2",
+            term: "LAN",
+            reading: "Local Area Network",
+            answer: "mạng máy tính cục bộ",
+            meaning: "mạng máy tính cục bộ"
+          },
+          {
+            id: "l5-v-3",
+            term: "WAN",
+            reading: "Wide Area Network",
+            answer: "mạng diện rộng",
+            meaning: "mạng diện rộng"
+          },
+          {
+            id: "l5-v-4",
+            term: "WWW",
+            reading: "World Wide Web",
+            answer: "mạng toàn cầu",
+            meaning: "mạng toàn cầu"
+          },
+          {
+            id: "l5-v-5",
+            term: "カスケード状",
+            reading: "Cascade じょう",
+            answer: "sắp xếp theo tầng",
+            meaning: "sắp xếp theo tầng"
+          },
+          {
+            id: "l5-v-6",
+            term: "クライアントサーバ",
+            reading: "client server",
+            answer: "server khách",
+            meaning: "server khách"
+          },
+          {
+            id: "l5-v-7",
+            term: "スター型",
+            reading: "star がた",
+            answer: "cấu hình sao",
+            meaning: "cấu hình sao"
+          },
+          {
+            id: "l5-v-8",
+            term: "セキュリティ",
+            reading: "Security",
+            answer: "bảo mật",
+            meaning: "bảo mật"
+          },
+          {
+            id: "l5-v-9",
+            term: "ネームサーバ",
+            reading: "name server",
+            answer: "máy chủ tên miền",
+            meaning: "máy chủ tên miền"
+          },
+          {
+            id: "l5-v-10",
+            term: "バス型",
+            reading: "bus がた",
+            answer: "cấu hình kênh",
+            meaning: "cấu hình kênh"
+          },
+          {
+            id: "l5-v-11",
+            term: "ピアツーピア",
+            reading: "peer to peer",
+            answer: "mạng đồng đẳng",
+            meaning: "mạng đồng đẳng"
+          },
+          {
+            id: "l5-v-12",
+            term: "ファイアウォール / 防火壁",
+            reading: "firewall / ぼうかへき",
+            answer: "bức tường lửa",
+            meaning: "bức tường lửa"
+          },
+          {
+            id: "l5-v-13",
+            term: "ファイルサーバ",
+            reading: "file server",
+            answer: "máy chủ tập tin",
+            meaning: "máy chủ tập tin"
+          },
+          {
+            id: "l5-v-14",
+            term: "ホストコンピュータ",
+            reading: "host computer",
+            answer: "máy tính chủ",
+            meaning: "máy tính chủ"
+          },
+          {
+            id: "l5-v-15",
+            term: "ポータブルオーディオ",
+            reading: "portable audio",
+            answer: "thiết bị nghe nhìn di động",
+            meaning: "thiết bị nghe nhìn di động"
+          },
+          {
+            id: "l5-v-16",
+            term: "ユーザ端末",
+            reading: "user たんまつ",
+            answer: "người dùng cuối cùng",
+            meaning: "người dùng cuối cùng"
+          },
+          {
+            id: "l5-v-17",
+            term: "リング型",
+            reading: "ring がた",
+            answer: "cấu hình vòng",
+            meaning: "cấu hình vòng"
+          },
+          {
+            id: "l5-v-18",
+            term: "遠隔操作",
+            reading: "えんかくそうさ",
+            answer: "điều khiển từ xa",
+            meaning: "điều khiển từ xa"
+          },
+          {
+            id: "l5-v-19",
+            term: "緩衝地帯",
+            reading: "かんしょうちたい",
+            answer: "vùng đệm",
+            meaning: "vùng đệm"
+          },
+          {
+            id: "l5-v-20",
+            term: "局所的",
+            reading: "きょくしょてき",
+            answer: "tính cục bộ",
+            meaning: "tính cục bộ"
+          },
+          {
+            id: "l5-v-21",
+            term: "攻撃",
+            reading: "こうげき",
+            answer: "tấn công",
+            meaning: "tấn công"
+          },
+          {
+            id: "l5-v-22",
+            term: "集線装置",
+            reading: "しゅうせんそうち",
+            answer: "thiết bị tập trung đường truyền",
+            meaning: "thiết bị tập trung đường truyền"
+          },
+          {
+            id: "l5-v-23",
+            term: "集中処理システム",
+            reading: "しゅうちゅうしょり system",
+            answer: "hệ thống xử lý tập trung",
+            meaning: "hệ thống xử lý tập trung"
+          },
+          {
+            id: "l5-v-24",
+            term: "衝突",
+            reading: "しょうとつ",
+            answer: "xung đột",
+            meaning: "xung đột"
+          },
+          {
+            id: "l5-v-25",
+            term: "接続形態",
+            reading: "せつぞくけいたい",
+            answer: "dạng kết nối",
+            meaning: "dạng kết nối"
+          },
+          {
+            id: "l5-v-26",
+            term: "対等",
+            reading: "たいとう",
+            answer: "đồng đẳng",
+            meaning: "đồng đẳng"
+          },
+          {
+            id: "l5-v-27",
+            term: "大域的",
+            reading: "たいいきてき",
+            answer: "toàn cục",
+            meaning: "toàn cục"
+          },
+          {
+            id: "l5-v-28",
+            term: "中核",
+            reading: "ちゅうかく",
+            answer: "cốt lõi, trung tâm",
+            meaning: "cốt lõi, trung tâm"
+          },
+          {
+            id: "l5-v-29",
+            term: "犯罪的行為",
+            reading: "はんざいてきこうい",
+            answer: "hành vi phạm tội",
+            meaning: "hành vi phạm tội"
+          },
+          {
+            id: "l5-v-30",
+            term: "負荷",
+            reading: "ふか",
+            answer: "phụ tải, nạp vào",
+            meaning: "phụ tải, nạp vào"
+          },
+          {
+            id: "l5-v-31",
+            term: "分散処理システム",
+            reading: "ぶんさんしょり system",
+            answer: "hệ thống xử lý phân tán",
+            meaning: "hệ thống xử lý phân tán"
+          },
+          {
+            id: "l5-v-32",
+            term: "網目状",
+            reading: "あみめじょう",
+            answer: "mạng kiểu lưới",
+            meaning: "mạng kiểu lưới"
+          }
+        ]
+      }
+    ]
   },
   {
     id: 6,
-    title: "Bài 6",
-    sections: []
+    title: "Bài 6 - Công nghệ Internet",
+    sections: [
+      {
+        id: "lesson-6-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          {
+            id: "l6-v-1",
+            term: "2 進数",
+            reading: "にしんすう",
+            answer: "hệ nhị phân",
+            meaning: "hệ nhị phân"
+          },
+          {
+            id: "l6-v-2",
+            term: "CGI",
+            reading: "Common Gateway Interface",
+            answer: "giao tiếp cổng chung",
+            meaning: "giao tiếp cổng chung"
+          },
+          {
+            id: "l6-v-3",
+            term: "DNS",
+            reading: "Domain Name System",
+            answer: "hệ thống tên miền",
+            meaning: "hệ thống tên miền"
+          },
+          {
+            id: "l6-v-4",
+            term: "HTML",
+            reading: "Hyper Text Markup Language",
+            answer: "ngôn ngữ đánh dấu siêu văn bản",
+            meaning: "ngôn ngữ đánh dấu siêu văn bản"
+          },
+          {
+            id: "l6-v-5",
+            term: "HTTP",
+            reading: "Hyper Text Transfer Protocol",
+            answer: "giao thức truyền tải siêu văn bản",
+            meaning: "giao thức truyền tải siêu văn bản"
+          },
+          {
+            id: "l6-v-6",
+            term: "IP",
+            reading: "Internet Protocol",
+            answer: "giao thức mạng",
+            meaning: "giao thức mạng"
+          },
+          {
+            id: "l6-v-7",
+            term: "IP アドレス",
+            reading: "IP address",
+            answer: "địa chỉ IP",
+            meaning: "địa chỉ IP"
+          },
+          {
+            id: "l6-v-8",
+            term: "ISP",
+            reading: "Internet Service Provider",
+            answer: "nhà cung cấp dịch vụ Internet",
+            meaning: "nhà cung cấp dịch vụ Internet"
+          },
+          {
+            id: "l6-v-9",
+            term: "OSI",
+            reading: "Open System Interconnection",
+            answer: "mô hình kết nối hệ thống mở",
+            meaning: "mô hình kết nối hệ thống mở"
+          },
+          {
+            id: "l6-v-10",
+            term: "SEM",
+            reading: "Search Engine Marketing",
+            answer: "tiếp thị bằng công cụ tìm kiếm",
+            meaning: "tiếp thị bằng công cụ tìm kiếm"
+          },
+          {
+            id: "l6-v-11",
+            term: "SEO",
+            reading: "Search Engine Optimization",
+            answer: "tối ưu hóa công cụ tìm kiếm",
+            meaning: "tối ưu hóa công cụ tìm kiếm"
+          },
+          {
+            id: "l6-v-12",
+            term: "TCP",
+            reading: "Transmission Control Protocol",
+            answer: "giao thức điều khiển truyền vận",
+            meaning: "giao thức điều khiển truyền vận"
+          },
+          {
+            id: "l6-v-13",
+            term: "アクセスポイント",
+            reading: "access point",
+            answer: "điểm truy cập",
+            meaning: "điểm truy cập"
+          },
+          {
+            id: "l6-v-14",
+            term: "アプリケーションソフト",
+            reading: "application software",
+            answer: "phần mềm ứng dụng",
+            meaning: "phần mềm ứng dụng"
+          },
+          {
+            id: "l6-v-15",
+            term: "アプリケーション層",
+            reading: "application そう",
+            answer: "lớp ứng dụng",
+            meaning: "lớp ứng dụng"
+          },
+          {
+            id: "l6-v-16",
+            term: "グラフィック",
+            reading: "graphic",
+            answer: "đồ họa",
+            meaning: "đồ họa"
+          },
+          {
+            id: "l6-v-17",
+            term: "コネクタ",
+            reading: "connector",
+            answer: "bộ kết nối",
+            meaning: "bộ kết nối"
+          },
+          {
+            id: "l6-v-18",
+            term: "サブネットマスク",
+            reading: "subnet mask",
+            answer: "mặt nạ mạng con",
+            meaning: "mặt nạ mạng con"
+          },
+          {
+            id: "l6-v-19",
+            term: "スタイルシート",
+            reading: "style sheet",
+            answer: "bảng mẫu",
+            meaning: "bảng mẫu"
+          },
+          {
+            id: "l6-v-20",
+            term: "セッション層",
+            reading: "session そう",
+            answer: "lớp phiên",
+            meaning: "lớp phiên"
+          },
+          {
+            id: "l6-v-21",
+            term: "タグ",
+            reading: "tag",
+            answer: "thẻ, từ khóa",
+            meaning: "thẻ, từ khóa"
+          },
+          {
+            id: "l6-v-22",
+            term: "データリンク層",
+            reading: "data link そう",
+            answer: "lớp liên kết dữ liệu",
+            meaning: "lớp liên kết dữ liệu"
+          },
+          {
+            id: "l6-v-23",
+            term: "トランスポート層",
+            reading: "transport そう",
+            answer: "lớp giao vận",
+            meaning: "lớp giao vận"
+          },
+          {
+            id: "l6-v-24",
+            term: "ドメイン名",
+            reading: "domain めい",
+            answer: "tên miền",
+            meaning: "tên miền"
+          },
+          {
+            id: "l6-v-25",
+            term: "ドメイン名紛争",
+            reading: "domain めいふんそう",
+            answer: "tranh chấp tên miền",
+            meaning: "tranh chấp tên miền"
+          },
+          {
+            id: "l6-v-26",
+            term: "ネットワーク層",
+            reading: "network そう",
+            answer: "lớp mạng",
+            meaning: "lớp mạng"
+          },
+          {
+            id: "l6-v-27",
+            term: "バケツリレー",
+            reading: "bucket relay",
+            answer: "truyền theo chặng",
+            meaning: "truyền theo chặng"
+          },
+          {
+            id: "l6-v-28",
+            term: "ピリオド",
+            reading: "period",
+            answer: "dấu chấm",
+            meaning: "dấu chấm"
+          },
+          {
+            id: "l6-v-29",
+            term: "プレゼンテーション層",
+            reading: "presentation そう",
+            answer: "lớp trình diễn",
+            meaning: "lớp trình diễn"
+          },
+          {
+            id: "l6-v-30",
+            term: "プロキシサーバ",
+            reading: "proxy server",
+            answer: "máy chủ trung gian",
+            meaning: "máy chủ trung gian"
+          },
+          {
+            id: "l6-v-31",
+            term: "プロトコル",
+            reading: "protocol",
+            answer: "giao thức",
+            meaning: "giao thức"
+          },
+          {
+            id: "l6-v-32",
+            term: "プロバイダ",
+            reading: "provider",
+            answer: "nhà cung cấp dịch vụ",
+            meaning: "nhà cung cấp dịch vụ"
+          },
+          {
+            id: "l6-v-33",
+            term: "暗号化する",
+            reading: "あんごうかする",
+            answer: "mã hóa",
+            meaning: "mã hóa"
+          },
+          {
+            id: "l6-v-34",
+            term: "一覧表",
+            reading: "いちらんひょう",
+            answer: "bảng kê",
+            meaning: "bảng kê"
+          },
+          {
+            id: "l6-v-35",
+            term: "割り当てる",
+            reading: "わりあてる",
+            answer: "chia đều",
+            meaning: "chia đều"
+          },
+          {
+            id: "l6-v-36",
+            term: "記述言語",
+            reading: "きじゅつげんご",
+            answer: "ngôn ngữ đánh dấu",
+            meaning: "ngôn ngữ đánh dấu"
+          },
+          {
+            id: "l6-v-37",
+            term: "区切る",
+            reading: "くぎる",
+            answer: "chia, ngắt",
+            meaning: "chia, ngắt"
+          },
+          {
+            id: "l6-v-38",
+            term: "経路制御機器",
+            reading: "けいろせいぎょきき",
+            answer: "thiết bị kiểm soát đường truyền",
+            meaning: "thiết bị kiểm soát đường truyền"
+          },
+          {
+            id: "l6-v-39",
+            term: "検索エンジン",
+            reading: "けんさく engine",
+            answer: "động cơ tìm kiếm",
+            meaning: "động cơ tìm kiếm"
+          },
+          {
+            id: "l6-v-40",
+            term: "見出し",
+            reading: "みだし",
+            answer: "tiêu đề",
+            meaning: "tiêu đề"
+          },
+          {
+            id: "l6-v-41",
+            term: "斜体 (イタリック)",
+            reading: "しゃたい",
+            answer: "chữ nghiêng",
+            meaning: "chữ nghiêng"
+          },
+          {
+            id: "l6-v-42",
+            term: "周辺機器",
+            reading: "しゅうへんきき",
+            answer: "thiết bị ngoại vi",
+            meaning: "thiết bị ngoại vi"
+          },
+          {
+            id: "l6-v-43",
+            term: "出力結果",
+            reading: "しゅつりょくけっか",
+            answer: "kết quả xuất ra",
+            meaning: "kết quả xuất ra"
+          },
+          {
+            id: "l6-v-44",
+            term: "処理言語",
+            reading: "しょりげんご",
+            answer: "ngôn ngữ xử lý",
+            meaning: "ngôn ngữ xử lý"
+          },
+          {
+            id: "l6-v-45",
+            term: "人工言語",
+            reading: "じんこうげんご",
+            answer: "ngôn ngữ nhân tạo",
+            meaning: "ngôn ngữ nhân tạo"
+          },
+          {
+            id: "l6-v-46",
+            term: "数字の並び",
+            reading: "すうじのならび",
+            answer: "bộ số",
+            meaning: "bộ số"
+          },
+          {
+            id: "l6-v-47",
+            term: "整合性",
+            reading: "せいごうせい",
+            answer: "tính nhất quán",
+            meaning: "tính nhất quán"
+          },
+          {
+            id: "l6-v-48",
+            term: "組み合わせる",
+            reading: "くみあわせる",
+            answer: "ghép",
+            meaning: "ghép"
+          },
+          {
+            id: "l6-v-49",
+            term: "損なう",
+            reading: "そこなう",
+            answer: "làm tổn hại",
+            meaning: "làm tổn hại"
+          },
+          {
+            id: "l6-v-50",
+            term: "太字 (ボールド)",
+            reading: "ふとじ",
+            answer: "chữ đậm",
+            meaning: "chữ đậm"
+          },
+          {
+            id: "l6-v-51",
+            term: "大幅に",
+            reading: "おおはばに",
+            answer: "lớn",
+            meaning: "lớn"
+          },
+          {
+            id: "l6-v-52",
+            term: "抽出する",
+            reading: "ちゅうしゅつする",
+            answer: "truy xuất",
+            meaning: "truy xuất"
+          },
+          {
+            id: "l6-v-53",
+            term: "定める",
+            reading: "さだめる",
+            answer: "quy định",
+            meaning: "quy định"
+          },
+          {
+            id: "l6-v-54",
+            term: "適当な",
+            reading: "てきとうな",
+            answer: "phù hợp",
+            meaning: "phù hợp"
+          },
+          {
+            id: "l6-v-55",
+            term: "転送",
+            reading: "てんそう",
+            answer: "chuyển tiếp",
+            meaning: "chuyển tiếp"
+          },
+          {
+            id: "l6-v-56",
+            term: "動画",
+            reading: "どうが",
+            answer: "ảnh động",
+            meaning: "ảnh động"
+          },
+          {
+            id: "l6-v-57",
+            term: "不足",
+            reading: "ふそく",
+            answer: "thiếu",
+            meaning: "thiếu"
+          },
+          {
+            id: "l6-v-58",
+            term: "物理層",
+            reading: "ぶつりそう",
+            answer: "lớp vật lý",
+            meaning: "lớp vật lý"
+          },
+          {
+            id: "l6-v-59",
+            term: "文字列",
+            reading: "もじれつ",
+            answer: "chuỗi ký tự",
+            meaning: "chuỗi ký tự"
+          },
+          {
+            id: "l6-v-60",
+            term: "有利な",
+            reading: "ゆうりな",
+            answer: "có lợi",
+            meaning: "có lợi"
+          },
+          {
+            id: "l6-v-61",
+            term: "隣接装置",
+            reading: "りんせつそうち",
+            answer: "thiết bị lân cận",
+            meaning: "thiết bị lân cận"
+          }
+        ]
+      }
+    ]
   },
   {
     id: 7,
-    title: "Bài 7",
-    sections: []
+    title: "Bài 7 - Sử dụng Internet trong kinh doanh",
+    sections: [
+      {
+        id: "lesson-7-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          {
+            id: "l7-v-1",
+            term: "BtoB / 企業間",
+            reading: "Business to Business / きぎょうかん",
+            answer: "giao dịch giữa doanh nghiệp với doanh nghiệp",
+            meaning: "giao dịch giữa doanh nghiệp với doanh nghiệp"
+          },
+          {
+            id: "l7-v-2",
+            term: "BtoC / 企業対消費者",
+            reading: "Business to Consumer / きぎょうたいしょうひしゃ",
+            answer: "doanh nghiệp với người tiêu dùng",
+            meaning: "doanh nghiệp với người tiêu dùng"
+          },
+          {
+            id: "l7-v-3",
+            term: "CALS",
+            reading: "Commerce At Light Speed",
+            answer: "thương mại tốc độ ánh sáng",
+            meaning: "thương mại tốc độ ánh sáng"
+          },
+          {
+            id: "l7-v-4",
+            term: "CRM",
+            reading: "Customer Relationship Management",
+            answer: "quản trị quan hệ khách hàng",
+            meaning: "quản trị quan hệ khách hàng"
+          },
+          {
+            id: "l7-v-5",
+            term: "CtoC / 消費者間",
+            reading: "Consumer to Consumer / しょうひしゃかん",
+            answer: "người tiêu dùng với người tiêu dùng",
+            meaning: "người tiêu dùng với người tiêu dùng"
+          },
+          {
+            id: "l7-v-6",
+            term: "EDI",
+            reading: "Electronic Data Interchange",
+            answer: "trao đổi dữ liệu điện tử",
+            meaning: "trao đổi dữ liệu điện tử"
+          },
+          {
+            id: "l7-v-7",
+            term: "EOS",
+            reading: "Electronic Ordering System",
+            answer: "hệ thống đặt hàng điện tử",
+            meaning: "hệ thống đặt hàng điện tử"
+          },
+          {
+            id: "l7-v-8",
+            term: "e コマース",
+            reading: "e-commerce",
+            answer: "thương mại điện tử",
+            meaning: "thương mại điện tử"
+          },
+          {
+            id: "l7-v-9",
+            term: "を介する",
+            reading: "をかいする",
+            answer: "thông qua",
+            meaning: "thông qua"
+          },
+          {
+            id: "l7-v-10",
+            term: "オープンループ型",
+            reading: "open loop がた",
+            answer: "kiểu mở",
+            meaning: "kiểu mở"
+          },
+          {
+            id: "l7-v-11",
+            term: "オリジネータ",
+            reading: "originator",
+            answer: "người khởi đầu, người sáng tạo",
+            meaning: "người khởi đầu, người sáng tạo"
+          },
+          {
+            id: "l7-v-12",
+            term: "オンラインショッピング",
+            reading: "online shopping",
+            answer: "mua hàng trực tuyến",
+            meaning: "mua hàng trực tuyến"
+          },
+          {
+            id: "l7-v-13",
+            term: "クローズドループ型",
+            reading: "closed loop がた",
+            answer: "kiểu khép kín",
+            meaning: "kiểu khép kín"
+          },
+          {
+            id: "l7-v-14",
+            term: "チャージする",
+            reading: "charge する",
+            answer: "nạp tiền",
+            meaning: "nạp tiền"
+          },
+          {
+            id: "l7-v-15",
+            term: "データマイニング",
+            reading: "data mining",
+            answer: "khai thác dữ liệu",
+            meaning: "khai thác dữ liệu"
+          },
+          {
+            id: "l7-v-16",
+            term: "ネットオークション",
+            reading: "net auction",
+            answer: "đấu giá qua mạng",
+            meaning: "đấu giá qua mạng"
+          },
+          {
+            id: "l7-v-17",
+            term: "バリュー",
+            reading: "value",
+            answer: "giá trị",
+            meaning: "giá trị"
+          },
+          {
+            id: "l7-v-18",
+            term: "遠方",
+            reading: "えんぽう",
+            answer: "xa",
+            meaning: "xa"
+          },
+          {
+            id: "l7-v-19",
+            term: "受注",
+            reading: "じゅちゅう",
+            answer: "nhận đơn hàng",
+            meaning: "nhận đơn hàng"
+          },
+          {
+            id: "l7-v-20",
+            term: "商品開発",
+            reading: "しょうひんかいはつ",
+            answer: "nghiên cứu sản phẩm",
+            meaning: "nghiên cứu sản phẩm"
+          },
+          {
+            id: "l7-v-21",
+            term: "中間マージン",
+            reading: "ちゅうかん margin",
+            answer: "hoa hồng",
+            meaning: "hoa hồng"
+          },
+          {
+            id: "l7-v-22",
+            term: "電子マネー",
+            reading: "でんし money",
+            answer: "tiền điện tử",
+            meaning: "tiền điện tử"
+          },
+          {
+            id: "l7-v-23",
+            term: "電子商取引",
+            reading: "でんししょうとりひき",
+            answer: "giao dịch thương mại điện tử",
+            meaning: "giao dịch thương mại điện tử"
+          },
+          {
+            id: "l7-v-24",
+            term: "匿名",
+            reading: "とくめい",
+            answer: "nặc danh",
+            meaning: "nặc danh"
+          },
+          {
+            id: "l7-v-25",
+            term: "発注",
+            reading: "はっちゅう",
+            answer: "đặt hàng",
+            meaning: "đặt hàng"
+          },
+          {
+            id: "l7-v-26",
+            term: "抜き出す",
+            reading: "ぬきだす",
+            answer: "nhổ ra, ngắt",
+            meaning: "nhổ ra, ngắt"
+          },
+          {
+            id: "l7-v-27",
+            term: "流通過程",
+            reading: "りゅうつうかてい",
+            answer: "quá trình lưu thông",
+            meaning: "quá trình lưu thông"
+          }
+        ]
+      }
+    ]
   },
   {
     id: 8,
-    title: "Bài 8",
-    sections: []
+    title: "Bài 8 - Mã hóa",
+    sections: [
+      {
+        id: "lesson-8-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          {
+            id: "l8-v-1",
+            term: "DES",
+            reading: "Data Encryption Standard",
+            answer: "tiêu chuẩn mã hóa dữ liệu",
+            meaning: "tiêu chuẩn mã hóa dữ liệu"
+          },
+          {
+            id: "l8-v-2",
+            term: "RSA",
+            reading: "Rivest, Shamir, Adleman",
+            answer: "hệ thống mật mã khóa công khai RSA",
+            meaning: "hệ thống mật mã khóa công khai RSA"
+          },
+          {
+            id: "l8-v-3",
+            term: "ずらす",
+            reading: "",
+            answer: "xê dịch",
+            meaning: "xê dịch"
+          },
+          {
+            id: "l8-v-4",
+            term: "なりすまし",
+            reading: "",
+            answer: "giả mạo, đánh lừa",
+            meaning: "giả mạo, đánh lừa"
+          },
+          {
+            id: "l8-v-5",
+            term: "シーザー暗号",
+            reading: "Caesar あんごう",
+            answer: "mã hóa thay thế",
+            meaning: "mã hóa thay thế"
+          },
+          {
+            id: "l8-v-6",
+            term: "スキュタレー暗号",
+            reading: "Scytale あんごう",
+            answer: "mã hóa hoán vị",
+            meaning: "mã hóa hoán vị"
+          },
+          {
+            id: "l8-v-7",
+            term: "デジタル証明書",
+            reading: "digital しょうめいしょ",
+            answer: "chứng nhận kỹ thuật số",
+            meaning: "chứng nhận kỹ thuật số"
+          },
+          {
+            id: "l8-v-8",
+            term: "ペア",
+            reading: "pair",
+            answer: "một cặp",
+            meaning: "một cặp"
+          },
+          {
+            id: "l8-v-9",
+            term: "暗号化",
+            reading: "あんごうか",
+            answer: "mã hóa",
+            meaning: "mã hóa"
+          },
+          {
+            id: "l8-v-10",
+            term: "円筒",
+            reading: "えんとう",
+            answer: "hình trụ",
+            meaning: "hình trụ"
+          },
+          {
+            id: "l8-v-11",
+            term: "換字式暗号",
+            reading: "かんじしきあんごう",
+            answer: "mã thay thế",
+            meaning: "mã thay thế"
+          },
+          {
+            id: "l8-v-12",
+            term: "肝心",
+            reading: "かんじん",
+            answer: "điểm quan trọng",
+            meaning: "điểm quan trọng"
+          },
+          {
+            id: "l8-v-13",
+            term: "関数",
+            reading: "かんすう",
+            answer: "hàm số",
+            meaning: "hàm số"
+          },
+          {
+            id: "l8-v-14",
+            term: "紀元前",
+            reading: "きげんぜん",
+            answer: "trước công nguyên",
+            meaning: "trước công nguyên"
+          },
+          {
+            id: "l8-v-15",
+            term: "偽る",
+            reading: "いつわる",
+            answer: "giả mạo",
+            meaning: "giả mạo"
+          },
+          {
+            id: "l8-v-16",
+            term: "共通鍵",
+            reading: "きょうつうかぎ",
+            answer: "mã khóa chung",
+            meaning: "mã khóa chung"
+          },
+          {
+            id: "l8-v-17",
+            term: "共通鍵方式",
+            reading: "きょうつうかぎ ほうしき",
+            answer: "phương thức khóa chung",
+            meaning: "phương thức khóa chung"
+          },
+          {
+            id: "l8-v-18",
+            term: "古典的",
+            reading: "こてんてき",
+            answer: "mang tính cổ điển",
+            meaning: "mang tính cổ điển"
+          },
+          {
+            id: "l8-v-19",
+            term: "公開鍵",
+            reading: "こうかいかぎ",
+            answer: "mã khóa công khai",
+            meaning: "mã khóa công khai"
+          },
+          {
+            id: "l8-v-20",
+            term: "公開鍵方式",
+            reading: "こうかいかぎほうしき",
+            answer: "phương thức khóa công khai",
+            meaning: "phương thức khóa công khai"
+          },
+          {
+            id: "l8-v-21",
+            term: "錠",
+            reading: "じょう",
+            answer: "khóa",
+            meaning: "khóa"
+          },
+          {
+            id: "l8-v-22",
+            term: "整える",
+            reading: "ととのえる",
+            answer: "hoàn thiện",
+            meaning: "hoàn thiện"
+          },
+          {
+            id: "l8-v-23",
+            term: "生成する",
+            reading: "せいせいする",
+            answer: "hình thành, tạo thành",
+            meaning: "hình thành, tạo thành"
+          },
+          {
+            id: "l8-v-24",
+            term: "素因数",
+            reading: "そいんすう",
+            answer: "thừa số nguyên tố",
+            meaning: "thừa số nguyên tố"
+          },
+          {
+            id: "l8-v-25",
+            term: "直径",
+            reading: "ちょっけい",
+            answer: "đường kính",
+            meaning: "đường kính"
+          },
+          {
+            id: "l8-v-26",
+            term: "転置式",
+            reading: "てんちしき",
+            answer: "kiểu hoán vị",
+            meaning: "kiểu hoán vị"
+          },
+          {
+            id: "l8-v-27",
+            term: "当人",
+            reading: "とうにん",
+            answer: "bản thân người đó",
+            meaning: "bản thân người đó"
+          },
+          {
+            id: "l8-v-28",
+            term: "認証",
+            reading: "にんしょう",
+            answer: "xác thực, chứng nhận",
+            meaning: "xác thực, chứng nhận"
+          },
+          {
+            id: "l8-v-29",
+            term: "認証局",
+            reading: "にんしょうきょく",
+            answer: "cục chứng nhận",
+            meaning: "cục chứng nhận"
+          },
+          {
+            id: "l8-v-30",
+            term: "秘密鍵",
+            reading: "ひみつかぎ",
+            answer: "mã khóa bí mật",
+            meaning: "mã khóa bí mật"
+          },
+          {
+            id: "l8-v-31",
+            term: "秘密鍵方式",
+            reading: "ひみつかぎほうしき",
+            answer: "phương thức khóa bí mật",
+            meaning: "phương thức khóa bí mật"
+          },
+          {
+            id: "l8-v-32",
+            term: "復元する",
+            reading: "ふくげんする",
+            answer: "phục hồi",
+            meaning: "phục hồi"
+          },
+          {
+            id: "l8-v-33",
+            term: "復号化",
+            reading: "ふくごうか",
+            answer: "giải mã",
+            meaning: "giải mã"
+          },
+          {
+            id: "l8-v-34",
+            term: "乱数表",
+            reading: "らんすうひょう",
+            answer: "bảng số ngẫu nhiên",
+            meaning: "bảng số ngẫu nhiên"
+          }
+        ]
+      }
+    ]
   },
   {
     id: 9,
-    title: "Bài 9",
-    sections: []
+    title: "Bài 9 - An toàn thông tin",
+    sections: [
+      {
+        id: "lesson-9-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          {
+            id: "l9-v-1",
+            term: "DoS",
+            reading: "Denial of Services",
+            answer: "tấn công từ chối dịch vụ",
+            meaning: "tấn công từ chối dịch vụ"
+          },
+          {
+            id: "l9-v-2",
+            term: "RAID",
+            reading: "Random Array of Inexpensive Disks",
+            answer: "các dãy đĩa cứng dư thừa độc lập",
+            meaning: "các dãy đĩa cứng dư thừa độc lập"
+          },
+          {
+            id: "l9-v-3",
+            term: "ウィルス",
+            reading: "virus",
+            answer: "vi rút",
+            meaning: "vi rút"
+          },
+          {
+            id: "l9-v-4",
+            term: "コンパクトフラッシュ",
+            reading: "compact flash",
+            answer: "một loại thẻ nhớ nhỏ",
+            meaning: "một loại thẻ nhớ nhỏ"
+          },
+          {
+            id: "l9-v-5",
+            term: "スカベンジング",
+            reading: "scavenging",
+            answer: "thủ thuật scaveging",
+            meaning: "thủ thuật scaveging"
+          },
+          {
+            id: "l9-v-6",
+            term: "スパムメール",
+            reading: "spam mail",
+            answer: "thư rác",
+            meaning: "thư rác"
+          },
+          {
+            id: "l9-v-7",
+            term: "デバイスドライバ",
+            reading: "device driver",
+            answer: "driver thiết bị",
+            meaning: "driver thiết bị"
+          },
+          {
+            id: "l9-v-8",
+            term: "トロイの木馬",
+            reading: "trojan のもくば",
+            answer: "ngựa thành Troa (chương trình độc hại giấu mình dưới dạng chương trình hữu ích)",
+            meaning: "ngựa thành Troa (chương trình độc hại giấu mình dưới dạng chương trình hữu ích)"
+          },
+          {
+            id: "l9-v-9",
+            term: "バスタブ曲線",
+            reading: "bath tub きょくせん",
+            answer: "đường cong hình bồn tắm",
+            meaning: "đường cong hình bồn tắm"
+          },
+          {
+            id: "l9-v-10",
+            term: "バックアップ",
+            reading: "back up",
+            answer: "sao lưu",
+            meaning: "sao lưu"
+          },
+          {
+            id: "l9-v-11",
+            term: "パターンファイル",
+            reading: "pattern file",
+            answer: "một phần mềm đặc biệt của Trend Micro giúp bảo vệ máy tính",
+            meaning: "một phần mềm đặc biệt của Trend Micro giúp bảo vệ máy tính"
+          },
+          {
+            id: "l9-v-12",
+            term: "フィッシング",
+            reading: "phishing",
+            answer: "trò lừa phishing",
+            meaning: "trò lừa phishing"
+          },
+          {
+            id: "l9-v-13",
+            term: "ブラウザ",
+            reading: "browser",
+            answer: "trình duyệt",
+            meaning: "trình duyệt"
+          },
+          {
+            id: "l9-v-14",
+            term: "プログラムミス / バグ",
+            reading: "program miss / bug",
+            answer: "lỗi chương trình",
+            meaning: "lỗi chương trình"
+          },
+          {
+            id: "l9-v-15",
+            term: "ワーム",
+            reading: "worm",
+            answer: "sâu (vi rút máy tính)",
+            meaning: "sâu (vi rút máy tính)"
+          },
+          {
+            id: "l9-v-16",
+            term: "ワクチン",
+            reading: "vaccine",
+            answer: "vắc xin",
+            meaning: "vắc xin"
+          },
+          {
+            id: "l9-v-17",
+            term: "悪用する",
+            reading: "あくようする",
+            answer: "dùng với mục đích xấu",
+            meaning: "dùng với mục đích xấu"
+          },
+          {
+            id: "l9-v-18",
+            term: "宛先",
+            reading: "あてさき",
+            answer: "người nhận",
+            meaning: "người nhận"
+          },
+          {
+            id: "l9-v-19",
+            term: "可動部分",
+            reading: "かどうぶぶん",
+            answer: "phần có thể tháo rời",
+            meaning: "phần có thể tháo rời"
+          },
+          {
+            id: "l9-v-20",
+            term: "稼働率",
+            reading: "かどうりつ",
+            answer: "tỷ lệ hoạt động",
+            meaning: "tỷ lệ hoạt động"
+          },
+          {
+            id: "l9-v-21",
+            term: "改ざんする",
+            reading: "かいざんする",
+            answer: "sửa đổi",
+            meaning: "sửa đổi"
+          },
+          {
+            id: "l9-v-22",
+            term: "感染経路",
+            reading: "かんせんけいろ",
+            answer: "con đường lây nhiễm",
+            meaning: "con đường lây nhiễm"
+          },
+          {
+            id: "l9-v-23",
+            term: "起動不能",
+            reading: "きどうふのう",
+            answer: "không thể khởi động",
+            meaning: "không thể khởi động"
+          },
+          {
+            id: "l9-v-24",
+            term: "挙動",
+            reading: "きょどう",
+            answer: "cử động",
+            meaning: "cử động"
+          },
+          {
+            id: "l9-v-25",
+            term: "攻撃対象",
+            reading: "こうげきたいしょう",
+            answer: "đối tượng tấn công",
+            meaning: "đối tượng tấn công"
+          },
+          {
+            id: "l9-v-26",
+            term: "詐欺紛い",
+            reading: "さぎまがい",
+            answer: "lừa đảo",
+            meaning: "lừa đảo"
+          },
+          {
+            id: "l9-v-27",
+            term: "最新版",
+            reading: "さいしんばん",
+            answer: "phiên bản mới nhất",
+            meaning: "phiên bản mới nhất"
+          },
+          {
+            id: "l9-v-28",
+            term: "指紋",
+            reading: "しもん",
+            answer: "vân tay",
+            meaning: "vân tay"
+          },
+          {
+            id: "l9-v-29",
+            term: "磁性体",
+            reading: "じせいたい",
+            answer: "từ tính",
+            meaning: "từ tính"
+          },
+          {
+            id: "l9-v-30",
+            term: "手口",
+            reading: "てぐち",
+            answer: "thủ đoạn",
+            meaning: "thủ đoạn"
+          },
+          {
+            id: "l9-v-31",
+            term: "商用アプリケーション",
+            reading: "しょうよう application",
+            answer: "phần mềm ứng dụng dùng trong thương mại",
+            meaning: "phần mềm ứng dụng dùng trong thương mại"
+          },
+          {
+            id: "l9-v-32",
+            term: "消耗する",
+            reading: "しょうもうする",
+            answer: "tiêu hao",
+            meaning: "tiêu hao"
+          },
+          {
+            id: "l9-v-33",
+            term: "衝撃",
+            reading: "しょうげき",
+            answer: "va chạm",
+            meaning: "va chạm"
+          },
+          {
+            id: "l9-v-34",
+            term: "常時",
+            reading: "じょうじ",
+            answer: "thông thường",
+            meaning: "thông thường"
+          },
+          {
+            id: "l9-v-35",
+            term: "信頼度成長曲線",
+            reading: "しんらいどせいちょうきょくせん",
+            answer: "đường cong độ tin cậy",
+            meaning: "đường cong độ tin cậy"
+          },
+          {
+            id: "l9-v-36",
+            term: "新種",
+            reading: "しんしゅ",
+            answer: "kiểu mới, loại mới",
+            meaning: "kiểu mới, loại mới"
+          },
+          {
+            id: "l9-v-37",
+            term: "人為的",
+            reading: "じんいてき",
+            answer: "mang tính nhân tạo",
+            meaning: "mang tính nhân tạo"
+          },
+          {
+            id: "l9-v-38",
+            term: "生体認証 / バイオメトリクス",
+            reading: "せいたいにんしょう / biometrics",
+            answer: "nhận dạng sinh trắc học",
+            meaning: "nhận dạng sinh trắc học"
+          },
+          {
+            id: "l9-v-39",
+            term: "静脈",
+            reading: "じょうみゃく",
+            answer: "tĩnh mạch",
+            meaning: "tĩnh mạch"
+          },
+          {
+            id: "l9-v-40",
+            term: "窃盗",
+            reading: "せっとう",
+            answer: "trộm cắp",
+            meaning: "trộm cắp"
+          },
+          {
+            id: "l9-v-41",
+            term: "潜伏期間",
+            reading: "せんぷくきかん",
+            answer: "thời gian ủ bệnh",
+            meaning: "thời gian ủ bệnh"
+          },
+          {
+            id: "l9-v-42",
+            term: "狙う",
+            reading: "ねらう",
+            answer: "nhắm tới, nhằm vào",
+            meaning: "nhắm tới, nhằm vào"
+          },
+          {
+            id: "l9-v-43",
+            term: "装う",
+            reading: "よそおう",
+            answer: "ngụy trang",
+            meaning: "ngụy trang"
+          },
+          {
+            id: "l9-v-44",
+            term: "増殖する",
+            reading: "ぞうしょくする",
+            answer: "nhân bản",
+            meaning: "nhân bản"
+          },
+          {
+            id: "l9-v-45",
+            term: "即座に",
+            reading: "そくざに",
+            answer: "ngay tức thời",
+            meaning: "ngay tức thời"
+          },
+          {
+            id: "l9-v-46",
+            term: "注意深い",
+            reading: "ちゅういぶかい",
+            answer: "đặc biệt chú ý",
+            meaning: "đặc biệt chú ý"
+          },
+          {
+            id: "l9-v-47",
+            term: "直列システム",
+            reading: "ちょくれつ system",
+            answer: "hệ thống nối tiếp",
+            meaning: "hệ thống nối tiếp"
+          },
+          {
+            id: "l9-v-48",
+            term: "伝染",
+            reading: "でんせん",
+            answer: "truyền nhiễm",
+            meaning: "truyền nhiễm"
+          },
+          {
+            id: "l9-v-49",
+            term: "盗み取る",
+            reading: "ぬすみとる",
+            answer: "lấy cắp",
+            meaning: "lấy cắp"
+          },
+          {
+            id: "l9-v-50",
+            term: "踏み台",
+            reading: "ふみだい",
+            answer: "bệ đỡ, giá đỡ, bước đệm",
+            meaning: "bệ đỡ, giá đỡ, bước đệm"
+          },
+          {
+            id: "l9-v-51",
+            term: "入力画面",
+            reading: "にゅうりょくがめん",
+            answer: "màn hình nhập",
+            meaning: "màn hình nhập"
+          },
+          {
+            id: "l9-v-52",
+            term: "不正侵入",
+            reading: "ふせいしんにゅう",
+            answer: "xâm nhập bất hợp pháp",
+            meaning: "xâm nhập bất hợp pháp"
+          },
+          {
+            id: "l9-v-53",
+            term: "復活",
+            reading: "ふっかつ",
+            answer: "khôi phục",
+            meaning: "khôi phục"
+          },
+          {
+            id: "l9-v-54",
+            term: "平均故障間隔 / MTBF",
+            reading: "へいきんこしょうかんかく / Mean Time Between Failures",
+            answer: "thời gian trung bình giữa những lần hỏng",
+            meaning: "thời gian trung bình giữa những lần hỏng"
+          },
+          {
+            id: "l9-v-55",
+            term: "平均修理時間 / MTTR",
+            reading: "へいきんしゅうりじかん / Mean Time To Repair",
+            answer: "thời gian trung bình để sửa chữa",
+            meaning: "thời gian trung bình để sửa chữa"
+          },
+          {
+            id: "l9-v-56",
+            term: "並列システム",
+            reading: "へいれつ system",
+            answer: "hệ thống song song",
+            meaning: "hệ thống song song"
+          },
+          {
+            id: "l9-v-57",
+            term: "放置する",
+            reading: "ほうちする",
+            answer: "bỏ mặc",
+            meaning: "bỏ mặc"
+          },
+          {
+            id: "l9-v-58",
+            term: "未承諾",
+            reading: "みしょうだく",
+            answer: "chưa được cho phép",
+            meaning: "chưa được cho phép"
+          },
+          {
+            id: "l9-v-59",
+            term: "予備",
+            reading: "よび",
+            answer: "dự phòng",
+            meaning: "dự phòng"
+          },
+          {
+            id: "l9-v-60",
+            term: "予防法",
+            reading: "よぼうほう",
+            answer: "phương pháp phòng chống",
+            meaning: "phương pháp phòng chống"
+          },
+          {
+            id: "l9-v-61",
+            term: "落雷",
+            reading: "らくらい",
+            answer: "sét",
+            meaning: "sét"
+          },
+          {
+            id: "l9-v-62",
+            term: "埃",
+            reading: "ほこり",
+            answer: "bụi",
+            meaning: "bụi"
+          }
+        ]
+      }
+    ]
   },
   {
     id: 10,
-    title: "Bài 10",
-    sections: []
+    title: "Bài 10 - Cấu trúc máy tính",
+    sections: [
+      {
+        id: "lesson-10-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          {
+            id: "l10-v-1",
+            term: "3 次元ゲーム",
+            reading: "さんじげん game",
+            answer: "game 3 chiều (3D)",
+            meaning: "game 3 chiều (3D)"
+          },
+          {
+            id: "l10-v-2",
+            term: "(～に)直交する",
+            reading: "(～に)ちょっこうする",
+            answer: "vuông góc với ~",
+            meaning: "vuông góc với ~"
+          },
+          {
+            id: "l10-v-3",
+            term: "DRAM",
+            reading: "dynamic RAM",
+            answer: "ram động",
+            meaning: "ram động"
+          },
+          {
+            id: "l10-v-4",
+            term: "FLOPS",
+            reading: "FLoating point number Operations Per Second",
+            answer: "số lần tính số thực trong 1 giây",
+            meaning: "số lần tính số thực trong 1 giây"
+          },
+          {
+            id: "l10-v-5",
+            term: "MIPS",
+            reading: "Million Instructions Per Second",
+            answer: "triệu lệnh trên giây",
+            meaning: "triệu lệnh trên giây"
+          },
+          {
+            id: "l10-v-6",
+            term: "MPU",
+            reading: "Micro Processing Unit",
+            answer: "bộ vi xử lý",
+            meaning: "bộ vi xử lý"
+          },
+          {
+            id: "l10-v-7",
+            term: "RAM",
+            reading: "Random Access Memory",
+            answer: "bộ nhớ truy xuất ngẫu nhiên",
+            meaning: "bộ nhớ truy xuất ngẫu nhiên"
+          },
+          {
+            id: "l10-v-8",
+            term: "ROM",
+            reading: "Read Only Memory",
+            answer: "bộ nhớ chỉ đọc",
+            meaning: "bộ nhớ chỉ đọc"
+          },
+          {
+            id: "l10-v-9",
+            term: "SRAM",
+            reading: "Static RAM",
+            answer: "ram tĩnh",
+            meaning: "ram tĩnh"
+          },
+          {
+            id: "l10-v-10",
+            term: "USB",
+            reading: "Universal System Bus",
+            answer: "USB (Bus hệ thống vạn năng)",
+            meaning: "USB (Bus hệ thống vạn năng)"
+          },
+          {
+            id: "l10-v-11",
+            term: "VRAM",
+            reading: "Video RAM",
+            answer: "Bộ nhớ của Card tăng tốc đồ họa hay Card màn hình máy tính",
+            meaning: "Bộ nhớ của Card tăng tốc đồ họa hay Card màn hình máy tính"
+          },
+          {
+            id: "l10-v-12",
+            term: "アーム",
+            reading: "arm",
+            answer: "cần",
+            meaning: "cần"
+          },
+          {
+            id: "l10-v-13",
+            term: "アドレスジャンプ",
+            reading: "address jump",
+            answer: "chuyển địa chỉ",
+            meaning: "chuyển địa chỉ"
+          },
+          {
+            id: "l10-v-14",
+            term: "キャッシュ",
+            reading: "cache",
+            answer: "vùng nhớ đệm, cạc nhớ",
+            meaning: "vùng nhớ đệm, cạc nhớ"
+          },
+          {
+            id: "l10-v-15",
+            term: "グラフィックプロセッサ",
+            reading: "graphic processor",
+            answer: "đơn vị xử lý đồ họa",
+            meaning: "đơn vị xử lý đồ họa"
+          },
+          {
+            id: "l10-v-16",
+            term: "グラフィック描画",
+            reading: "graphic びょうが",
+            answer: "đồ họa",
+            meaning: "đồ họa"
+          },
+          {
+            id: "l10-v-17",
+            term: "クロック",
+            reading: "clock",
+            answer: "xung nhịp",
+            meaning: "xung nhịp"
+          },
+          {
+            id: "l10-v-18",
+            term: "セクタ",
+            reading: "sector",
+            answer: "cung từ",
+            meaning: "cung từ"
+          },
+          {
+            id: "l10-v-19",
+            term: "チップセット",
+            reading: "chip set",
+            answer: "bộ chip",
+            meaning: "bộ chip"
+          },
+          {
+            id: "l10-v-20",
+            term: "デフラグメンテーション",
+            reading: "defragmentation",
+            answer: "chống phân mảnh",
+            meaning: "chống phân mảnh"
+          },
+          {
+            id: "l10-v-21",
+            term: "トラック",
+            reading: "track",
+            answer: "rãnh ghi",
+            meaning: "rãnh ghi"
+          },
+          {
+            id: "l10-v-22",
+            term: "バーコードリーダー",
+            reading: "barcode reader",
+            answer: "đầu đọc mã vạch",
+            meaning: "đầu đọc mã vạch"
+          },
+          {
+            id: "l10-v-23",
+            term: "バス",
+            reading: "bus",
+            answer: "kênh",
+            meaning: "kênh"
+          },
+          {
+            id: "l10-v-24",
+            term: "プロジェクタ",
+            reading: "projector",
+            answer: "máy chiếu",
+            meaning: "máy chiếu"
+          },
+          {
+            id: "l10-v-25",
+            term: "ヘッド",
+            reading: "dead",
+            answer: "đầu đọc",
+            meaning: "đầu đọc"
+          },
+          {
+            id: "l10-v-26",
+            term: "ベンチマークテスト",
+            reading: "benchmark test",
+            answer: "kiểm chuẩn",
+            meaning: "kiểm chuẩn"
+          },
+          {
+            id: "l10-v-27",
+            term: "マイクロプロセッサ",
+            reading: "microprocessor",
+            answer: "bộ vi xử lý",
+            meaning: "bộ vi xử lý"
+          },
+          {
+            id: "l10-v-28",
+            term: "マザーボード",
+            reading: "motherboard",
+            answer: "bo mạch chủ",
+            meaning: "bo mạch chủ"
+          },
+          {
+            id: "l10-v-29",
+            term: "メモリ空間",
+            reading: "memory くうかん",
+            answer: "không gian ghi nhớ",
+            meaning: "không gian ghi nhớ"
+          },
+          {
+            id: "l10-v-30",
+            term: "中央演算処理装置",
+            reading: "ちゅうおうえんざんしょりそうち",
+            answer: "thiết bị xử lý tính toán trung tâm",
+            meaning: "thiết bị xử lý tính toán trung tâm"
+          },
+          {
+            id: "l10-v-31",
+            term: "主記憶装置",
+            reading: "しゅきおくそうち",
+            answer: "thiết bị nhớ chính",
+            meaning: "thiết bị nhớ chính"
+          },
+          {
+            id: "l10-v-32",
+            term: "先端",
+            reading: "せんたん",
+            answer: "đầu",
+            meaning: "đầu"
+          },
+          {
+            id: "l10-v-33",
+            term: "入力装置",
+            reading: "にゅうりょくそうち",
+            answer: "thiết bị vào",
+            meaning: "thiết bị vào"
+          },
+          {
+            id: "l10-v-34",
+            term: "内部バス",
+            reading: "ないぶ bus",
+            answer: "bus trong CPU",
+            meaning: "bus trong CPU"
+          },
+          {
+            id: "l10-v-35",
+            term: "円板",
+            reading: "えんばん",
+            answer: "đĩa",
+            meaning: "đĩa"
+          },
+          {
+            id: "l10-v-36",
+            term: "出力装置",
+            reading: "しゅつりょくそうち",
+            answer: "thiết bị ra",
+            meaning: "thiết bị ra"
+          },
+          {
+            id: "l10-v-37",
+            term: "制御装置",
+            reading: "せいぎょそうち",
+            answer: "thiết bị điều khiển",
+            meaning: "thiết bị điều khiển"
+          },
+          {
+            id: "l10-v-38",
+            term: "反比例",
+            reading: "はんぴれい",
+            answer: "tỷ lệ nghịch",
+            meaning: "tỷ lệ nghịch"
+          },
+          {
+            id: "l10-v-39",
+            term: "命令セット",
+            reading: "めいれい set",
+            answer: "tập lệnh",
+            meaning: "tập lệnh"
+          },
+          {
+            id: "l10-v-40",
+            term: "基板",
+            reading: "きばん",
+            answer: "bảng mạch",
+            meaning: "bảng mạch"
+          },
+          {
+            id: "l10-v-41",
+            term: "外部インタフェース",
+            reading: "がいぶ interface",
+            answer: "Cổng giao tiếp bên ngoài",
+            meaning: "Cổng giao tiếp bên ngoài"
+          },
+          {
+            id: "l10-v-42",
+            term: "実数",
+            reading: "じっすう",
+            answer: "Số thực",
+            meaning: "Số thực"
+          },
+          {
+            id: "l10-v-43",
+            term: "密閉する",
+            reading: "みっぺいする",
+            answer: "Đóng kín",
+            meaning: "Đóng kín"
+          },
+          {
+            id: "l10-v-44",
+            term: "寿命",
+            reading: "じゅみょう",
+            answer: "Tập lệnh",
+            meaning: "Tập lệnh"
+          },
+          {
+            id: "l10-v-45",
+            term: "帯電",
+            reading: "たいでん",
+            answer: "Nhiễm điện",
+            meaning: "Nhiễm điện"
+          },
+          {
+            id: "l10-v-46",
+            term: "感電",
+            reading: "かでん",
+            answer: "Số điện",
+            meaning: "Số điện"
+          },
+          {
+            id: "l10-v-47",
+            term: "放熱板",
+            reading: "ほうねつばん",
+            answer: "Tấm tản nhiệt",
+            meaning: "Tấm tản nhiệt"
+          },
+          {
+            id: "l10-v-48",
+            term: "整数",
+            reading: "せいすう",
+            answer: "Số nguyên",
+            meaning: "Số nguyên"
+          },
+          {
+            id: "l10-v-49",
+            term: "書き換える",
+            reading: "かきかえる",
+            answer: "Ghi đè",
+            meaning: "Ghi đè"
+          },
+          {
+            id: "l10-v-50",
+            term: "消去する",
+            reading: "しょうきょする",
+            answer: "Xóa bỏ",
+            meaning: "Xóa bỏ"
+          },
+          {
+            id: "l10-v-51",
+            term: "演算装置",
+            reading: "えんざんそうち",
+            answer: "Thiết bị tính toán",
+            meaning: "Thiết bị tính toán"
+          },
+          {
+            id: "l10-v-52",
+            term: "等分割",
+            reading: "とうぶんかつ",
+            answer: "Chia đều",
+            meaning: "Chia đều"
+          },
+          {
+            id: "l10-v-53",
+            term: "色数",
+            reading: "いろかず",
+            answer: "Số màu",
+            meaning: "Số màu"
+          },
+          {
+            id: "l10-v-54",
+            term: "蓋",
+            reading: "ふた",
+            answer: "Nắp",
+            meaning: "Nắp"
+          },
+          {
+            id: "l10-v-55",
+            term: "補助記憶装置",
+            reading: "ほじょきおくそうち",
+            answer: "Thiết bị ghi nhớ bổ trợ",
+            meaning: "Thiết bị ghi nhớ bổ trợ"
+          },
+          {
+            id: "l10-v-56",
+            term: "解像度",
+            reading: "かいぞうど",
+            answer: "Độ phân giải",
+            meaning: "Độ phân giải"
+          },
+          {
+            id: "l10-v-57",
+            term: "記憶アドレス",
+            reading: "きおく address",
+            answer: "Địa chỉ bộ nhớ",
+            meaning: "Địa chỉ bộ nhớ"
+          },
+          {
+            id: "l10-v-58",
+            term: "記憶容量",
+            reading: "きおくようりょう",
+            answer: "Dung lượng ghi",
+            meaning: "Dung lượng ghi"
+          },
+          {
+            id: "l10-v-59",
+            term: "論理回路",
+            reading: "ろんりかいろ",
+            answer: "Mạch lô gic",
+            meaning: "Mạch lô gic"
+          },
+          {
+            id: "l10-v-60",
+            term: "足し算",
+            reading: "たしざん",
+            answer: "Tính cộng",
+            meaning: "Tính cộng"
+          },
+          {
+            id: "l10-v-61",
+            term: "軌跡",
+            reading: "きせき",
+            answer: "Quỹ tích",
+            meaning: "Quỹ tích"
+          }
+        ]
+      }
+    ]
   },
   {
     id: 11,
@@ -480,8 +3815,317 @@ export const lessons: Lesson[] = [
   },
   {
     id: 12,
-    title: "Bài 12",
-    sections: []
+    title: "Bài 12 - Xử lý tính toán",
+    sections: [
+      {
+        id: "lesson-12-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          {
+            id: "l12-v-1",
+            term: "10 進数",
+            reading: "じっしんすう",
+            answer: "hệ thập phân",
+            meaning: "hệ thập phân"
+          },
+          {
+            id: "l12-v-2",
+            term: "16 進数",
+            reading: "じゅうろくしんすう",
+            answer: "hệ cơ số 16",
+            meaning: "hệ cơ số 16"
+          },
+          {
+            id: "l12-v-3",
+            term: "8 進数",
+            reading: "はっしんすう",
+            answer: "hệ cơ số 8",
+            meaning: "hệ cơ số 8"
+          },
+          {
+            id: "l12-v-4",
+            term: "べき乗",
+            reading: "べきじょう",
+            answer: "lũy thừa",
+            meaning: "lũy thừa"
+          },
+          {
+            id: "l12-v-5",
+            term: "テイラー展開",
+            reading: "Taylor てんかい",
+            answer: "công thức Taylor",
+            meaning: "công thức Taylor"
+          },
+          {
+            id: "l12-v-6",
+            term: "ビットシフト",
+            reading: "bit shift",
+            answer: "dịch chuyển bít",
+            meaning: "dịch chuyển bít"
+          },
+          {
+            id: "l12-v-7",
+            term: "囲む",
+            reading: "かこむ",
+            answer: "bao quanh",
+            meaning: "bao quanh"
+          },
+          {
+            id: "l12-v-8",
+            term: "右辺",
+            reading: "うへん",
+            answer: "vế phải",
+            meaning: "vế phải"
+          },
+          {
+            id: "l12-v-9",
+            term: "演算処理",
+            reading: "えんざんしょり",
+            answer: "xử lý tính toán",
+            meaning: "xử lý tính toán"
+          },
+          {
+            id: "l12-v-10",
+            term: "加減乗除",
+            reading: "かげんじょうじょ",
+            answer: "cộng trừ nhân chia",
+            meaning: "cộng trừ nhân chia"
+          },
+          {
+            id: "l12-v-11",
+            term: "階乗",
+            reading: "かいじょう",
+            answer: "giai thừa",
+            meaning: "giai thừa"
+          },
+          {
+            id: "l12-v-12",
+            term: "割り切れる",
+            reading: "わりきれる",
+            answer: "chia hết",
+            meaning: "chia hết"
+          },
+          {
+            id: "l12-v-13",
+            term: "丸め誤差",
+            reading: "まるめごさ",
+            answer: "sai số do làm tròn",
+            meaning: "sai số do làm tròn"
+          },
+          {
+            id: "l12-v-14",
+            term: "基数",
+            reading: "きすう",
+            answer: "cơ số",
+            meaning: "cơ số"
+          },
+          {
+            id: "l12-v-15",
+            term: "記号",
+            reading: "きごう",
+            answer: "ký hiệu",
+            meaning: "ký hiệu"
+          },
+          {
+            id: "l12-v-16",
+            term: "近似する",
+            reading: "きんじする",
+            answer: "xấp xỉ",
+            meaning: "xấp xỉ"
+          },
+          {
+            id: "l12-v-17",
+            term: "誤差",
+            reading: "ごさ",
+            answer: "sai số",
+            meaning: "sai số"
+          },
+          {
+            id: "l12-v-18",
+            term: "合計する",
+            reading: "ごうけいする",
+            answer: "tổng cộng",
+            meaning: "tổng cộng"
+          },
+          {
+            id: "l12-v-19",
+            term: "左辺",
+            reading: "さへん",
+            answer: "vế trái",
+            meaning: "vế trái"
+          },
+          {
+            id: "l12-v-20",
+            term: "三角関数",
+            reading: "さんかくかんすう",
+            answer: "hàm số lượng giác",
+            meaning: "hàm số lượng giác"
+          },
+          {
+            id: "l12-v-21",
+            term: "指数関数",
+            reading: "しすうかんすう",
+            answer: "hàm số mũ",
+            meaning: "hàm số mũ"
+          },
+          {
+            id: "l12-v-22",
+            term: "書き並べる",
+            reading: "かきならべる",
+            answer: "viết lần lượt",
+            meaning: "viết lần lượt"
+          },
+          {
+            id: "l12-v-23",
+            term: "商",
+            reading: "しょう",
+            answer: "thương",
+            meaning: "thương"
+          },
+          {
+            id: "l12-v-24",
+            term: "小数",
+            reading: "しょうすう",
+            answer: "phân số thập phân",
+            meaning: "phân số thập phân"
+          },
+          {
+            id: "l12-v-25",
+            term: "数学関数",
+            reading: "すうがくかんすう",
+            answer: "hàm số toán học",
+            meaning: "hàm số toán học"
+          },
+          {
+            id: "l12-v-26",
+            term: "精度",
+            reading: "せいど",
+            answer: "độ chính xác",
+            meaning: "độ chính xác"
+          },
+          {
+            id: "l12-v-27",
+            term: "多項式",
+            reading: "たこうしき",
+            answer: "đa thức",
+            meaning: "đa thức"
+          },
+          {
+            id: "l12-v-28",
+            term: "対応表",
+            reading: "たいおうひょう",
+            answer: "bảng đối ứng",
+            meaning: "bảng đối ứng"
+          },
+          {
+            id: "l12-v-29",
+            term: "対数関数",
+            reading: "たいすうかんすう",
+            answer: "phương trình lôgarit",
+            meaning: "phương trình lôgarit"
+          },
+          {
+            id: "l12-v-30",
+            term: "置き換える",
+            reading: "おきかえる",
+            answer: "thay thế",
+            meaning: "thay thế"
+          },
+          {
+            id: "l12-v-31",
+            term: "電子",
+            reading: "でんし",
+            answer: "điện tử",
+            meaning: "điện tử"
+          },
+          {
+            id: "l12-v-32",
+            term: "電卓",
+            reading: "でんたく",
+            answer: "máy tính",
+            meaning: "máy tính"
+          },
+          {
+            id: "l12-v-33",
+            term: "途中",
+            reading: "とちゅう",
+            answer: "giữa chừng",
+            meaning: "giữa chừng"
+          },
+          {
+            id: "l12-v-34",
+            term: "任意",
+            reading: "にんい",
+            answer: "tùy ý",
+            meaning: "tùy ý"
+          },
+          {
+            id: "l12-v-35",
+            term: "筆算",
+            reading: "ひっさん",
+            answer: "tính toán bằng cách viết ra giấy",
+            meaning: "tính toán bằng cách viết ra giấy"
+          },
+          {
+            id: "l12-v-36",
+            term: "符号ビット",
+            reading: "ふごう bit",
+            answer: "bít dấu",
+            meaning: "bít dấu"
+          },
+          {
+            id: "l12-v-37",
+            term: "負",
+            reading: "ふ",
+            answer: "số âm",
+            meaning: "số âm"
+          },
+          {
+            id: "l12-v-38",
+            term: "変換する",
+            reading: "へんかんする",
+            answer: "biến đổi",
+            meaning: "biến đổi"
+          },
+          {
+            id: "l12-v-39",
+            term: "補数",
+            reading: "ほすう",
+            answer: "phần bù",
+            meaning: "phần bù"
+          },
+          {
+            id: "l12-v-40",
+            term: "無限",
+            reading: "むげん",
+            answer: "vô hạn, vô tận",
+            meaning: "vô hạn, vô tận"
+          },
+          {
+            id: "l12-v-41",
+            term: "余り",
+            reading: "あまり",
+            answer: "phần dư",
+            meaning: "phần dư"
+          },
+          {
+            id: "l12-v-42",
+            term: "類推",
+            reading: "るいすい",
+            answer: "suy ra",
+            meaning: "suy ra"
+          },
+          {
+            id: "l12-v-43",
+            term: "枠",
+            reading: "わく",
+            answer: "khung",
+            meaning: "khung"
+          }
+        ]
+      }
+    ]
   },
   {
     id: 13,
@@ -1833,22 +5477,1209 @@ export const lessons: Lesson[] = [
   },
   {
     id: 17,
-    title: "Bài 17",
-    sections: []
+    title: "Bài 17 - Lý thuyết cơ sở dữ liệu",
+    sections: [
+      {
+        id: "lesson-17-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          {
+            id: "l17-v-1",
+            term: "たどる",
+            reading: "たどる",
+            answer: "đến nơi",
+            meaning: "đến nơi"
+          },
+          {
+            id: "l17-v-2",
+            term: "エドガー・フランク・コッド",
+            reading: "Edgar Frank Codd",
+            answer: "nhà khoa học máy tính người Anh, trong khi làm việc cho IBM, phát minh ra mô hình quản lý cơ sở dữ liệu quan hệ, cơ sở lý thuyết cho cơ sở dữ liệu quan hệ.",
+            meaning: "nhà khoa học máy tính người Anh, trong khi làm việc cho IBM, phát minh ra mô hình quản lý cơ sở dữ liệu quan hệ, cơ sở lý thuyết cho cơ sở dữ liệu quan hệ."
+          },
+          {
+            id: "l17-v-3",
+            term: "ツリー構造",
+            reading: "tree こうぞう",
+            answer: "loại phân cấp",
+            meaning: "loại phân cấp"
+          },
+          {
+            id: "l17-v-4",
+            term: "フィールド名",
+            reading: "field めい",
+            answer: "tên trường dữ liệu",
+            meaning: "tên trường dữ liệu"
+          },
+          {
+            id: "l17-v-5",
+            term: "リレーショナル表現",
+            reading: "relational ひょうげん",
+            answer: "loại quan hệ",
+            meaning: "loại quan hệ"
+          },
+          {
+            id: "l17-v-6",
+            term: "レコード",
+            reading: "record",
+            answer: "đĩa/ bản ghi",
+            meaning: "đĩa/ bản ghi"
+          },
+          {
+            id: "l17-v-7",
+            term: "一貫性",
+            reading: "いっかんせい",
+            answer: "tính thống nhất",
+            meaning: "tính thống nhất"
+          },
+          {
+            id: "l17-v-8",
+            term: "階層的表現",
+            reading: "かいそうてきひょうげん",
+            answer: "phân cấp dạng cây",
+            meaning: "phân cấp dạng cây"
+          },
+          {
+            id: "l17-v-9",
+            term: "学籍簿",
+            reading: "がくせきぼ",
+            answer: "danh sách sinh viên",
+            meaning: "danh sách sinh viên"
+          },
+          {
+            id: "l17-v-10",
+            term: "完備性",
+            reading: "かんびせい",
+            answer: "tính toàn vẹn",
+            meaning: "tính toàn vẹn"
+          },
+          {
+            id: "l17-v-11",
+            term: "関係的表現",
+            reading: "かんけいてきひょうげん",
+            answer: "loại quan hệ",
+            meaning: "loại quan hệ"
+          },
+          {
+            id: "l17-v-12",
+            term: "急激",
+            reading: "きゅうげき",
+            answer: "mạnh mẽ, gấp gáp",
+            meaning: "mạnh mẽ, gấp gáp"
+          },
+          {
+            id: "l17-v-13",
+            term: "共通部分",
+            reading: "きょうつうぶぶん",
+            answer: "phép giao",
+            meaning: "phép giao"
+          },
+          {
+            id: "l17-v-14",
+            term: "結合",
+            reading: "けつごう",
+            answer: "kết hợp",
+            meaning: "kết hợp"
+          },
+          {
+            id: "l17-v-15",
+            term: "戸籍",
+            reading: "こせき",
+            answer: "sổ hộ khẩu",
+            meaning: "sổ hộ khẩu"
+          },
+          {
+            id: "l17-v-16",
+            term: "合併",
+            reading: "がっぺい",
+            answer: "phép hợp",
+            meaning: "phép hợp"
+          },
+          {
+            id: "l17-v-17",
+            term: "根/ルート",
+            reading: "ね/root",
+            answer: "rễ, gốc",
+            meaning: "rễ, gốc"
+          },
+          {
+            id: "l17-v-18",
+            term: "差",
+            reading: "さ",
+            answer: "phép trừ",
+            meaning: "phép trừ"
+          },
+          {
+            id: "l17-v-19",
+            term: "索引",
+            reading: "さくいん",
+            answer: "chỉ mục",
+            meaning: "chỉ mục"
+          },
+          {
+            id: "l17-v-20",
+            term: "指定券",
+            reading: "していけん",
+            answer: "vé chỉ định",
+            meaning: "vé chỉ định"
+          },
+          {
+            id: "l17-v-21",
+            term: "自然な結合",
+            reading: "しぜんなけつごう",
+            answer: "nối tự nhiên",
+            meaning: "nối tự nhiên"
+          },
+          {
+            id: "l17-v-22",
+            term: "実用性",
+            reading: "じつようせい",
+            answer: "tính ứng dụng",
+            meaning: "tính ứng dụng"
+          },
+          {
+            id: "l17-v-23",
+            term: "射影",
+            reading: "しゃえい",
+            answer: "phép chiếu",
+            meaning: "phép chiếu"
+          },
+          {
+            id: "l17-v-24",
+            term: "集合演算",
+            reading: "しゅうごうえんざん",
+            answer: "phép tính tập hợp",
+            meaning: "phép tính tập hợp"
+          },
+          {
+            id: "l17-v-25",
+            term: "住所録",
+            reading: "じゅうしょろく",
+            answer: "sổ địa chỉ, danh bạ",
+            meaning: "sổ địa chỉ, danh bạ"
+          },
+          {
+            id: "l17-v-26",
+            term: "場当たり的",
+            reading: "ばあたりてき",
+            answer: "lung tung, không rõ rang",
+            meaning: "lung tung, không rõ rang"
+          },
+          {
+            id: "l17-v-27",
+            term: "親子構造",
+            reading: "おやここうぞう",
+            answer: "cấu trúc mẹ con",
+            meaning: "cấu trúc mẹ con"
+          },
+          {
+            id: "l17-v-28",
+            term: "節/ノード",
+            reading: "せつ/node",
+            answer: "nhánh",
+            meaning: "nhánh"
+          },
+          {
+            id: "l17-v-29",
+            term: "直観的",
+            reading: "ちょっかんてき",
+            answer: "tính trực quan",
+            meaning: "tính trực quan"
+          },
+          {
+            id: "l17-v-30",
+            term: "直積",
+            reading: "ちょくせき",
+            answer: "tích đề các",
+            meaning: "tích đề các"
+          },
+          {
+            id: "l17-v-31",
+            term: "当てはまる",
+            reading: "あてはまる",
+            answer: "áp dụng vào",
+            meaning: "áp dụng vào"
+          },
+          {
+            id: "l17-v-32",
+            term: "二重登録",
+            reading: "にじゅうとうろく",
+            answer: "đăng ký trùng",
+            meaning: "đăng ký trùng"
+          },
+          {
+            id: "l17-v-33",
+            term: "保つ",
+            reading: "たもつ",
+            answer: "bảo đảm",
+            meaning: "bảo đảm"
+          },
+          {
+            id: "l17-v-34",
+            term: "網的表現",
+            reading: "あみてきひょうげん",
+            answer: "loại dạng lưới",
+            meaning: "loại dạng lưới"
+          },
+          {
+            id: "l17-v-35",
+            term: "木構造",
+            reading: "きこうぞう",
+            answer: "cấu trúc cây",
+            meaning: "cấu trúc cây"
+          },
+          {
+            id: "l17-v-36",
+            term: "履修する",
+            reading: "りしゅうする",
+            answer: "đăng ký học",
+            meaning: "đăng ký học"
+          }
+        ]
+      },
+      {
+        id: "lesson-17-multiple-choice",
+        title: "Trắc nghiệm",
+        type: "multiple_choice",
+        items: [
+          {
+            id: "l17-mc-1",
+            question: "データベースとは大量のデータを（　）、管理でき、データの検索、書き換えが容易に行えるものです。",
+            choices: ["保存", "報告", "整理", "保留"],
+            answer: "保存"
+          },
+          {
+            id: "l17-mc-2",
+            question: "完備性とは，変更や削除などのデータ操作を行ってもデータの（　）が保たれることを意味します。",
+            choices: ["整理性", "整合性", "正解性", "合理性"],
+            answer: "整合性"
+          },
+          {
+            id: "l17-mc-3",
+            question: "大量のデータを扱うために，検索時の速度が重要です。",
+            choices: ["Đúng", "Sai"],
+            answer: "Đúng"
+          },
+          {
+            id: "l17-mc-4",
+            question: "データベースのデータを表す単位は何ですか。",
+            choices: ["ルート", "ノード", "レコード", "フィールド"],
+            answer: "レコード"
+          },
+          {
+            id: "l17-mc-5",
+            question: "階層的表現とは，データを（　）のような階層構造に並べます。",
+            choices: ["親，子", "子，孫", "親，孫", "親，子，孫"],
+            answer: "親，子，孫"
+          },
+          {
+            id: "l17-mc-6",
+            question: "関係的表現について正しいものをえらんでください",
+            choices: [
+              "複数の関係を表す表を元にデータを記述します",
+              "表をたどって必要な情報を処理します",
+              "個別の関係を表す表を元にデータを記述します",
+              "図をたどって必要な情報を集めます"
+            ],
+            answer: "個別の関係を表す表を元にデータを記述します"
+          },
+          {
+            id: "l17-mc-7",
+            question: "網的表現について正しいものを選びなさい。",
+            choices: [
+              "データを親，子，孫のような階層構造に並べ，最上位の親からたどることによって検索する表現法",
+              "直観的に分かりやすい",
+              "完備性に問題がある",
+              "データを親子構造に並べ，この構造を順次たどることによって検索する表現法"
+            ],
+            answer: "データを親子構造に並べ，この構造を順次たどることによって検索する表現法"
+          },
+          {
+            id: "l17-mc-8",
+            question: "階層構造は直観的に分かりやすい",
+            choices: ["Đúng", "Sai"],
+            answer: "Đúng"
+          },
+          {
+            id: "l17-mc-9",
+            question: "階層構造は直観的に分かりやすいのですが、検索時間がかかるという欠点があります。",
+            choices: ["Đúng", "Sai"],
+            answer: "Đúng"
+          },
+          {
+            id: "l17-mc-10",
+            question: "集合演算と呼ばれるデータ操作には３つの操作があります。",
+            choices: ["Đúng", "Sai"],
+            answer: "Sai"
+          }
+        ]
+      }
+    ]
   },
   {
     id: 18,
-    title: "Bài 18",
-    sections: []
+    title: "Bài 18 - Ngôn ngữ SQL",
+    sections: [
+      {
+        id: "lesson-18-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          {
+            id: "l18-v-1",
+            term: "SQL",
+            reading: "Structured Query Language",
+            answer: "ngôn ngữ SQL (ngôn ngữ hỏi đáp có cấu trúc/ ngôn ngữ truy vấn có cấu trúc)",
+            meaning: "ngôn ngữ SQL (ngôn ngữ hỏi đáp có cấu trúc/ ngôn ngữ truy vấn có cấu trúc)"
+          },
+          {
+            id: "l18-v-2",
+            term: "データ制御",
+            reading: "data せいぎょ",
+            answer: "điều khiển dữ liệu",
+            meaning: "điều khiển dữ liệu"
+          },
+          {
+            id: "l18-v-3",
+            term: "ワイルドカード",
+            reading: "wildcard",
+            answer: "ký tự đại diện",
+            meaning: "ký tự đại diện"
+          },
+          {
+            id: "l18-v-4",
+            term: "更新",
+            reading: "こうしん",
+            answer: "cập nhật",
+            meaning: "cập nhật"
+          },
+          {
+            id: "l18-v-5",
+            term: "構文",
+            reading: "こうぶん",
+            answer: "cú pháp",
+            meaning: "cú pháp"
+          },
+          {
+            id: "l18-v-6",
+            term: "降順",
+            reading: "こうじゅん",
+            answer: "thứ tự giảm dần",
+            meaning: "thứ tự giảm dần"
+          },
+          {
+            id: "l18-v-7",
+            term: "削除",
+            reading: "さくじょ",
+            answer: "xóa",
+            meaning: "xóa"
+          },
+          {
+            id: "l18-v-8",
+            term: "昇順",
+            reading: "しょうじゅん",
+            answer: "thứ tự tăng dần",
+            meaning: "thứ tự tăng dần"
+          },
+          {
+            id: "l18-v-9",
+            term: "照会",
+            reading: "しょうかい",
+            answer: "truy vấn",
+            meaning: "truy vấn"
+          },
+          {
+            id: "l18-v-10",
+            term: "挿入",
+            reading: "そうにゅう",
+            answer: "chèn vào",
+            meaning: "chèn vào"
+          },
+          {
+            id: "l18-v-11",
+            term: "直訳する",
+            reading: "ちょくやくする",
+            answer: "trực dịch",
+            meaning: "trực dịch"
+          },
+          {
+            id: "l18-v-12",
+            term: "頭文字",
+            reading: "かしらもじ",
+            answer: "chữ cái đầu",
+            meaning: "chữ cái đầu"
+          },
+          {
+            id: "l18-v-13",
+            term: "抜き出す",
+            reading: "ぬきだす",
+            answer: "truy xuất",
+            meaning: "truy xuất"
+          },
+          {
+            id: "l18-v-14",
+            term: "文字列",
+            reading: "もじれつ",
+            answer: "chuỗi ký tự",
+            meaning: "chuỗi ký tự"
+          },
+          {
+            id: "l18-v-15",
+            term: "並べ替える",
+            reading: "ならべかえる",
+            answer: "sắp xếp, phân loại",
+            meaning: "sắp xếp, phân loại"
+          },
+          {
+            id: "l18-v-16",
+            term: "要素名",
+            reading: "ようそめい",
+            answer: "tên phần tử/ yếu tố",
+            meaning: "tên phần tử/ yếu tố"
+          }
+        ]
+      },
+      {
+        id: "lesson-18-multiple-choice",
+        title: "Trắc nghiệm",
+        type: "multiple_choice",
+        items: [
+          {
+            id: "l18-mc-1",
+            question: "SQLは人工的な言語であり、何が定義されますか。",
+            choices: ["構文、単語など", "構成、単語など", "構文、単位など", "構成、単位など"],
+            answer: "構文、単語など"
+          },
+          {
+            id: "l18-mc-2",
+            question: "SQLはデータベースを操作するための命令の集まりであり，（　）データベースを基本としています。",
+            choices: ["完成", "合成", "関係", "整合"],
+            answer: "関係"
+          },
+          {
+            id: "l18-mc-3",
+            question: "SQLについて正しくないものをえらんでください。",
+            choices: ["人工的な言語", "データベースを操作するための命令の集まり", "構文や単語が定義されている", "機械的な言語"],
+            answer: "機械的な言語"
+          },
+          {
+            id: "l18-mc-4",
+            question: "射影の結果を並べ替えるには何を使いますか。",
+            choices: ["ORDER BYという単語", "SELECTという単語", "WHEREという単語", "FROMという単語"],
+            answer: "ORDER BYという単語"
+          },
+          {
+            id: "l18-mc-5",
+            question: "SQLとは構造化された問い合わせ用の（　）ということになります。",
+            choices: ["プログラム", "言語", "システム", "ソフト"],
+            answer: "言語"
+          },
+          {
+            id: "l18-mc-6",
+            question: "結合の操作はいくつかの表を使いますか。",
+            choices: ["1つ以上の表", "3つ以上の表", "2つ以上の表", "4つ以上の表"],
+            answer: "2つ以上の表"
+          },
+          {
+            id: "l18-mc-7",
+            question: "表の削除はデータ定義という操作に属する。",
+            choices: ["Đúng", "Sai"],
+            answer: "Đúng"
+          },
+          {
+            id: "l18-mc-8",
+            question: "データ制御に照会、挿入、更新、消去が含まれる。",
+            choices: ["Đúng", "Sai"],
+            answer: "Đúng"
+          },
+          {
+            id: "l18-mc-9",
+            question: "条件の部分にはANDやORやBETWEEN ANDで簡単な条件を書くことができます",
+            choices: ["Đúng", "Sai"],
+            answer: "Sai"
+          },
+          {
+            id: "l18-mc-10",
+            question: "ASCは下るという意味です。",
+            choices: ["Đúng", "Sai"],
+            answer: "Sai"
+          }
+        ]
+      }
+    ]
   },
   {
     id: 19,
-    title: "Bài 19",
-    sections: []
+    title: "Bài 19 - Cơ bản về lập trình",
+    sections: [
+      {
+        id: "lesson-19-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          {
+            id: "l19-v-1",
+            term: "C++言語",
+            reading: "C++げんご",
+            answer: "ngôn ngữ C++",
+            meaning: "ngôn ngữ C++"
+          },
+          {
+            id: "l19-v-2",
+            term: "HTML 言語",
+            reading: "HTML げんご",
+            answer: "ngôn ngữ HTML",
+            meaning: "ngôn ngữ HTML"
+          },
+          {
+            id: "l19-v-3",
+            term: "JavaScript 言語",
+            reading: "JavaScript げんご",
+            answer: "ngôn ngữ Javascript",
+            meaning: "ngôn ngữ Javascript"
+          },
+          {
+            id: "l19-v-4",
+            term: "Java 言語",
+            reading: "Java げんご",
+            answer: "ngôn ngữ Java",
+            meaning: "ngôn ngữ Java"
+          },
+          {
+            id: "l19-v-5",
+            term: "XML 言語",
+            reading: "XML げんご",
+            answer: "ngôn ngữ XML",
+            meaning: "ngôn ngữ XML"
+          },
+          {
+            id: "l19-v-6",
+            term: "インスタンス",
+            reading: "instance",
+            answer: "đối tượng",
+            meaning: "đối tượng"
+          },
+          {
+            id: "l19-v-7",
+            term: "オブジェクト指向",
+            reading: "object しこう",
+            answer: "hướng đối tượng",
+            meaning: "hướng đối tượng"
+          },
+          {
+            id: "l19-v-8",
+            term: "カプセル化",
+            reading: "capsule か",
+            answer: "sự đóng gói",
+            meaning: "sự đóng gói"
+          },
+          {
+            id: "l19-v-9",
+            term: "クラス",
+            reading: "class",
+            answer: "lớp",
+            meaning: "lớp"
+          },
+          {
+            id: "l19-v-10",
+            term: "コンパイラ",
+            reading: "compiler",
+            answer: "trình biên dịch",
+            meaning: "trình biên dịch"
+          },
+          {
+            id: "l19-v-11",
+            term: "プログラムの生成",
+            reading: "program の生成",
+            answer: "tạo ra chương trình",
+            meaning: "tạo ra chương trình"
+          },
+          {
+            id: "l19-v-12",
+            term: "メソッド",
+            reading: "method",
+            answer: "phương thức",
+            meaning: "phương thức"
+          },
+          {
+            id: "l19-v-13",
+            term: "演算子",
+            reading: "えんざんし",
+            answer: "toán tử",
+            meaning: "toán tử"
+          },
+          {
+            id: "l19-v-14",
+            term: "下位",
+            reading: "かい",
+            answer: "vị trí bên dưới",
+            meaning: "vị trí bên dưới"
+          },
+          {
+            id: "l19-v-15",
+            term: "科学技術計算",
+            reading: "かがくぎじゅつけいさん",
+            answer: "tính toán khoa học kỹ thuật",
+            meaning: "tính toán khoa học kỹ thuật"
+          },
+          {
+            id: "l19-v-16",
+            term: "基本処理",
+            reading: "きほんしょり",
+            answer: "xử lý cơ bản",
+            meaning: "xử lý cơ bản"
+          },
+          {
+            id: "l19-v-17",
+            term: "機械語",
+            reading: "きかいご",
+            answer: "ngôn ngữ máy tính",
+            meaning: "ngôn ngữ máy tính"
+          },
+          {
+            id: "l19-v-18",
+            term: "継承する",
+            reading: "けいしょうする",
+            answer: "kế thừa",
+            meaning: "kế thừa"
+          },
+          {
+            id: "l19-v-19",
+            term: "固有",
+            reading: "こゆう",
+            answer: "vốn có, sẵn có",
+            meaning: "vốn có, sẵn có"
+          },
+          {
+            id: "l19-v-20",
+            term: "考案する",
+            reading: "こうあんする",
+            answer: "đưa ra phương án",
+            meaning: "đưa ra phương án"
+          },
+          {
+            id: "l19-v-21",
+            term: "高級言語",
+            reading: "こうきゅうげんご",
+            answer: "ngôn ngữ bậc cao",
+            meaning: "ngôn ngữ bậc cao"
+          },
+          {
+            id: "l19-v-22",
+            term: "四則演算",
+            reading: "しそくえんざん",
+            answer: "bốn phép toán số học cơ bản (cộng, trừ, nhân, chia)",
+            meaning: "bốn phép toán số học cơ bản (cộng, trừ, nhân, chia)"
+          },
+          {
+            id: "l19-v-23",
+            term: "事務処理",
+            reading: "じむしょり",
+            answer: "xử lý văn phòng",
+            meaning: "xử lý văn phòng"
+          },
+          {
+            id: "l19-v-24",
+            term: "実体",
+            reading: "じったい",
+            answer: "phiên bản",
+            meaning: "phiên bản"
+          },
+          {
+            id: "l19-v-25",
+            term: "手続型言語",
+            reading: "てつづきがたげんご",
+            answer: "ngôn ngữ thủ tục",
+            meaning: "ngôn ngữ thủ tục"
+          },
+          {
+            id: "l19-v-26",
+            term: "人工知能",
+            reading: "じんこうちのう",
+            answer: "trí tuệ nhân tạo",
+            meaning: "trí tuệ nhân tạo"
+          },
+          {
+            id: "l19-v-27",
+            term: "属する",
+            reading: "ぞくする",
+            answer: "thuộc vào loại, thuộc vào nhóm",
+            meaning: "thuộc vào loại, thuộc vào nhóm"
+          },
+          {
+            id: "l19-v-28",
+            term: "代入",
+            reading: "だいにゅう",
+            answer: "gán",
+            meaning: "gán"
+          },
+          {
+            id: "l19-v-29",
+            term: "蓄える",
+            reading: "たくわえる",
+            answer: "tích trữ",
+            meaning: "tích trữ"
+          },
+          {
+            id: "l19-v-30",
+            term: "逐次的に",
+            reading: "ちくじてきに",
+            answer: "một cách tuần tự",
+            meaning: "một cách tuần tự"
+          },
+          {
+            id: "l19-v-31",
+            term: "低級言語",
+            reading: "ていきゅうげんご",
+            answer: "ngôn ngữ bậc thấp",
+            meaning: "ngôn ngữ bậc thấp"
+          },
+          {
+            id: "l19-v-32",
+            term: "定型的な",
+            reading: "ていけいてき",
+            answer: "dạng cố định",
+            meaning: "dạng cố định"
+          },
+          {
+            id: "l19-v-33",
+            term: "添え字",
+            reading: "そえじ",
+            answer: "chỉ số dưới",
+            meaning: "chỉ số dưới"
+          },
+          {
+            id: "l19-v-34",
+            term: "動作",
+            reading: "どうさ",
+            answer: "hoạt động, động tác",
+            meaning: "hoạt động, động tác"
+          },
+          {
+            id: "l19-v-35",
+            term: "読み込む",
+            reading: "よみこむ",
+            answer: "đọc vào",
+            meaning: "đọc vào"
+          },
+          {
+            id: "l19-v-36",
+            term: "内部動作",
+            reading: "ないぶどうさ",
+            answer: "hoạt động bên trong",
+            meaning: "hoạt động bên trong"
+          },
+          {
+            id: "l19-v-37",
+            term: "配列",
+            reading: "はいれつ",
+            answer: "mảng (trong ngôn ngữ lập trình)",
+            meaning: "mảng (trong ngôn ngữ lập trình)"
+          },
+          {
+            id: "l19-v-38",
+            term: "汎用性",
+            reading: "はんようせい",
+            answer: "đa dụng, đa năng",
+            meaning: "đa dụng, đa năng"
+          },
+          {
+            id: "l19-v-39",
+            term: "非手続型言語",
+            reading: "ひてつづきがたげんご",
+            answer: "ngôn ngữ phi thủ tục",
+            meaning: "ngôn ngữ phi thủ tục"
+          },
+          {
+            id: "l19-v-40",
+            term: "変数",
+            reading: "へんすう",
+            answer: "biến số",
+            meaning: "biến số"
+          },
+          {
+            id: "l19-v-41",
+            term: "哺乳類",
+            reading: "ほにゅうるい",
+            answer: "động vật có vú",
+            meaning: "động vật có vú"
+          }
+        ]
+      },
+      {
+        id: "lesson-19-multiple-choice",
+        title: "Trắc nghiệm",
+        type: "multiple_choice",
+        items: [
+          {
+            id: "l19-mc-1",
+            question: "プログラミング言語はどのような規則を持ちますか。",
+            choices: ["コンピューターの文法規則", "人工的な文法規則", "機械的な文法規則", "3つの選択肢全て"],
+            answer: "人工的な文法規則"
+          },
+          {
+            id: "l19-mc-2",
+            question: "プログラミング言語とは何ですか。",
+            choices: [
+              "コンピュータに対する命令記述の集まりである",
+              "ソフトに対する命令記述の集まりである",
+              "ハードウェアに対する命令記述の集まりである",
+              "コンピュータに対する内容記述の集まりである"
+            ],
+            answer: "コンピュータに対する命令記述の集まりである"
+          },
+          {
+            id: "l19-mc-3",
+            question: "オブジェクト指向について正しいものをえらんでください。",
+            choices: ["「もの」を中心にする", "「こと」を中心にする", "一度作成したプログラムの再利用は難しい"],
+            answer: "「もの」を中心にする"
+          },
+          {
+            id: "l19-mc-4",
+            question: "メモリに蓄えられているプログラムは，CPUの種類に依存した機械語と呼ばれる（　）です。",
+            choices: ["高級言語", "コンパイラ言語", "低級言語", "プログラミング言語"],
+            answer: "低級言語"
+          },
+          {
+            id: "l19-mc-5",
+            question: "プログラミング言語の文法の基礎は代入，・配列，四則演算，条件判断，繰り返しがあります。",
+            choices: ["Đúng", "Sai"],
+            answer: "Đúng"
+          },
+          {
+            id: "l19-mc-6",
+            question: "低級言語は，汎用性や読みやすさに問題がない。",
+            choices: ["Đúng", "Sai"],
+            answer: "Sai"
+          },
+          {
+            id: "l19-mc-7",
+            question: "プログラムの作成には何が用いられますか。",
+            choices: ["低級言語", "高級言語"],
+            answer: "高級言語"
+          },
+          {
+            id: "l19-mc-8",
+            question: "JavaやC++は高級言語です。",
+            choices: ["Đúng", "Sai"],
+            answer: "Đúng"
+          },
+          {
+            id: "l19-mc-9",
+            question: "CPUは何をしますか。",
+            choices: [
+              "CPUはメモリ上のデータを読み込み，逐次的に処理を継続します",
+              "CPUはメモリ上のデータをアドレスに従って1つずつ読み込みますが、逐次的に処理を継続しません。",
+              "CPUはメモリ上のデータをアドレスに従って1つずつ読み込むだけです。",
+              "CPUはメモリ上のデータの処理を継続するだけです。"
+            ],
+            answer: "CPUはメモリ上のデータを読み込み，逐次的に処理を継続します"
+          },
+          {
+            id: "l19-mc-10",
+            question: "非手続型言語は，（　）かを記述することで解を得る言語です。",
+            choices: ["何をどうする", "何をしたい", "どうしてする", "何でする"],
+            answer: "何をしたい"
+          },
+          {
+            id: "l19-mc-11",
+            question: "高級言語について正しいものをえらんでください",
+            choices: [
+              "メモリに蓄えられているプログラム",
+              "JavaやC++",
+              "CPUの種類に依存した機械語",
+              "汎用性や読みやすさに問題があります"
+            ],
+            answer: "JavaやC++"
+          },
+          {
+            id: "l19-mc-12",
+            question: "手続型言語は，処理の手順を与えて，何をどうするか(How)を詳細に記述する言語である。",
+            choices: ["Đúng", "Sai"],
+            answer: "Đúng"
+          },
+          {
+            id: "l19-mc-13",
+            question: "Java言語はコンピュータの機種やOSに依存するソフトウェアが開発できる，オブジェクト指向型の言語である．",
+            choices: ["Đúng", "Sai"],
+            answer: "Sai"
+          }
+        ]
+      }
+    ]
   },
   {
     id: 20,
-    title: "Bài 20",
-    sections: []
+    title: "Bài 20 - Thuật toán",
+    sections: [
+      {
+        id: "lesson-20-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          {
+            id: "l20-v-1",
+            term: "エラー対策",
+            reading: "error たいさく",
+            answer: "biện pháp xử lý lỗi",
+            meaning: "biện pháp xử lý lỗi"
+          },
+          {
+            id: "l20-v-2",
+            term: "カスタマイズ",
+            reading: "customize",
+            answer: "tùy chỉnh",
+            meaning: "tùy chỉnh"
+          },
+          {
+            id: "l20-v-3",
+            term: "クイックソート",
+            reading: "quick sort",
+            answer: "sắp xếp nhanh",
+            meaning: "sắp xếp nhanh"
+          },
+          {
+            id: "l20-v-4",
+            term: "シェルソート",
+            reading: "shell sort",
+            answer: "sắp xếp chèn cải tiến",
+            meaning: "sắp xếp chèn cải tiến"
+          },
+          {
+            id: "l20-v-5",
+            term: "ショートカット",
+            reading: "shortcut",
+            answer: "biểu tượng tắt",
+            meaning: "biểu tượng tắt"
+          },
+          {
+            id: "l20-v-6",
+            term: "ソーティング",
+            reading: "sorting",
+            answer: "phân loại, sắp xếp",
+            meaning: "phân loại, sắp xếp"
+          },
+          {
+            id: "l20-v-7",
+            term: "バブルソート",
+            reading: "bubble sort",
+            answer: "sắp xếp nổi bọt",
+            meaning: "sắp xếp nổi bọt"
+          },
+          {
+            id: "l20-v-8",
+            term: "ヒューマン インタフェース",
+            reading: "human interface",
+            answer: "giao diện người máy",
+            meaning: "giao diện người máy"
+          },
+          {
+            id: "l20-v-9",
+            term: "フローチャート",
+            reading: "flowchart",
+            answer: "lưu đồ, sơ đồ chu trình",
+            meaning: "lưu đồ, sơ đồ chu trình"
+          },
+          {
+            id: "l20-v-10",
+            term: "プロトタイピング",
+            reading: "prototyping",
+            answer: "sự tạo nguyên mẫu",
+            meaning: "sự tạo nguyên mẫu"
+          },
+          {
+            id: "l20-v-11",
+            term: "ベン・シュナイダーマン",
+            reading: "Ben Shneiderman",
+            answer: "Ben Shneiderman",
+            meaning: "Ben Shneiderman"
+          },
+          {
+            id: "l20-v-12",
+            term: "マージソート",
+            reading: "merge sort",
+            answer: "sắp xếp trộn",
+            meaning: "sắp xếp trộn"
+          },
+          {
+            id: "l20-v-13",
+            term: "マルチ画面",
+            reading: "multi がめん",
+            answer: "đa màn hình",
+            meaning: "đa màn hình"
+          },
+          {
+            id: "l20-v-14",
+            term: "ループ",
+            reading: "loop",
+            answer: "vòng lặp",
+            meaning: "vòng lặp"
+          },
+          {
+            id: "l20-v-15",
+            term: "金銭",
+            reading: "きんせん",
+            answer: "tiền bạc",
+            meaning: "tiền bạc"
+          },
+          {
+            id: "l20-v-16",
+            term: "試行錯誤",
+            reading: "しこうさくご",
+            answer: "lỗi phát hiện khi thử",
+            meaning: "lỗi phát hiện khi thử"
+          },
+          {
+            id: "l20-v-17",
+            term: "書き下す",
+            reading: "かきくだす",
+            answer: "viết từ trên xuống",
+            meaning: "viết từ trên xuống"
+          },
+          {
+            id: "l20-v-18",
+            term: "触覚装置",
+            reading: "しょっかくそうち",
+            answer: "thiết bị cảm ứng xúc giác",
+            meaning: "thiết bị cảm ứng xúc giác"
+          },
+          {
+            id: "l20-v-19",
+            term: "身振り",
+            reading: "みぶり",
+            answer: "điệu bộ, cử chỉ",
+            meaning: "điệu bộ, cử chỉ"
+          },
+          {
+            id: "l20-v-20",
+            term: "挿入ソート",
+            reading: "そうにゅう sort",
+            answer: "sắp xếp kiểu chèn",
+            meaning: "sắp xếp kiểu chèn"
+          },
+          {
+            id: "l20-v-21",
+            term: "逐一",
+            reading: "ちくいち",
+            answer: "cụ thể/chi tiết",
+            meaning: "cụ thể/chi tiết"
+          },
+          {
+            id: "l20-v-22",
+            term: "投入",
+            reading: "とうにゅう",
+            answer: "đầu tư",
+            meaning: "đầu tư"
+          },
+          {
+            id: "l20-v-23",
+            term: "頻繁",
+            reading: "ひんぱん",
+            answer: "thường xuyên, tấp nập",
+            meaning: "thường xuyên, tấp nập"
+          },
+          {
+            id: "l20-v-24",
+            term: "没入型表示装置",
+            reading: "ぼつにゅうがた ひょうじそうち",
+            answer: "màn hình sử dụng trong không gian ảo",
+            meaning: "màn hình sử dụng trong không gian ảo"
+          },
+          {
+            id: "l20-v-25",
+            term: "嗅覚装置",
+            reading: "きゅうかくそうち",
+            answer: "thiết bị cảm ứng khứu giác",
+            meaning: "thiết bị cảm ứng khứu giác"
+          }
+        ]
+      },
+      {
+        id: "lesson-20-multiple-choice",
+        title: "Trắc nghiệm",
+        type: "multiple_choice",
+        items: [
+          {
+            id: "l20-mc-1",
+            question: "プログラムの基本的な処理の（　）をアルゴリズムと言います",
+            choices: ["方法", "手順", "プロセス", "管理法"],
+            answer: "手順"
+          },
+          {
+            id: "l20-mc-2",
+            question: "アルゴリズムを図形と矢印で表現したものを何と言いますか。",
+            choices: ["フローチャート", "ソーティング", "マルチモーダル", "プロトタイピング"],
+            answer: "フローチャート"
+          },
+          {
+            id: "l20-mc-3",
+            question: "アルゴリズムの目的は何を明確にすることですか。",
+            choices: ["出力、処理手順", "入力、処理手順", "入力、出力、処理手順", "入力、出力、管理手順"],
+            answer: "入力、出力、処理手順"
+          },
+          {
+            id: "l20-mc-4",
+            question: "小さいものから順に，または逆に大きいものから順にデータを並べ替えることは何ですか。",
+            choices: ["アルゴリズム", "マルチモーダル", "プロトタイピング", "ソーティング"],
+            answer: "ソーティング"
+          },
+          {
+            id: "l20-mc-5",
+            question: "新たなプログラムを作成するときに，効率的な内部処理とともに考慮しなければならない重要な要素は何ですか。",
+            choices: ["ボディーインタフェース", "インタフェース", "ヒューマンインタフェース", "ヒューマンリソース"],
+            answer: "ヒューマンインタフェース"
+          },
+          {
+            id: "l20-mc-6",
+            question: "ユーザからの入力は何から行えますか。正しいものをえらんでください。",
+            choices: ["キーボードやマウス", "プリンター", "ディスプレイ", "画面"],
+            answer: "キーボードやマウス"
+          },
+          {
+            id: "l20-mc-7",
+            question: "選択法はソーティングアルゴリズムに属する。",
+            choices: ["Đúng", "Sai"],
+            answer: "Đúng"
+          },
+          {
+            id: "l20-mc-8",
+            question: "フローチャートは直観的な理解のために使われます。",
+            choices: ["Đúng", "Sai"],
+            answer: "Đúng"
+          },
+          {
+            id: "l20-mc-9",
+            question: "アルゴリズムに基づき，代入，条件判断，繰り返しなどの基本的な（　）を組み合わせて実際のプログラムを実現します．",
+            choices: ["性質", "要素", "機能", "特徴"],
+            answer: "要素"
+          },
+          {
+            id: "l20-mc-10",
+            question: "フローチャートはプログラムよりも詳細な流れを把握するのに使われます。",
+            choices: ["Đúng", "Sai"],
+            answer: "Sai"
+          },
+          {
+            id: "l20-mc-11",
+            question: "ユーザインタフェースとは，ユーザに対するコンピュータなどの機械の使い勝手のことを言います。",
+            choices: ["Đúng", "Sai"],
+            answer: "Đúng"
+          },
+          {
+            id: "l20-mc-12",
+            question: "カメラによってユーザの身振りや表情を入力できるようになった。",
+            choices: ["Đúng", "Sai"],
+            answer: "Đúng"
+          },
+          {
+            id: "l20-mc-13",
+            question: "出力は音声，触覚装置という方法が提案されます。",
+            choices: ["Đúng", "Sai"],
+            answer: "Đúng"
+          }
+        ]
+      }
+    ]
   }
 ];

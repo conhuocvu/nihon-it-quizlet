@@ -5075,6 +5075,7 @@ export const lessons: Lesson[] = [
   {
     id: 16,
     title: "Bài 16 - Lịch sử Hệ điều hành & Phần mềm",
+    hasTheory: true,
     sections: [
       {
         id: "lesson-16-vocabulary",
@@ -5822,6 +5823,7 @@ export const lessons: Lesson[] = [
   {
     id: 18,
     title: "Bài 18 - Ngôn ngữ SQL",
+    hasTheory: true,
     sections: [
       {
         id: "lesson-18-vocabulary",
@@ -6014,6 +6016,7 @@ export const lessons: Lesson[] = [
   {
     id: 19,
     title: "Bài 19 - Cơ bản về lập trình",
+    hasTheory: true,
     sections: [
       {
         id: "lesson-19-vocabulary",
@@ -6414,6 +6417,7 @@ export const lessons: Lesson[] = [
   {
     id: 20,
     title: "Bài 20 - Thuật toán",
+    hasTheory: true,
     sections: [
       {
         id: "lesson-20-vocabulary",

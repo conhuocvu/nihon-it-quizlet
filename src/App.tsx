@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { lessons } from './data/lessons';
 import { LessonSelector } from './components/LessonSelector';
 import { StudySession } from './components/StudySession';
 import { TheoryViewer } from './components/TheoryViewer';
-import { GraduationCap, Github } from 'lucide-react';
+import { GraduationCap, Github, ChevronRight } from 'lucide-react';
 
 function App() {
   // Default to selecting all sections of Lesson 11
@@ -11,9 +11,12 @@ function App() {
     'lesson-11-vocabulary',
     'lesson-11-multiple-choice',
   ]);
-  const [shuffleQuestions, setShuffleQuestions] = useState<boolean>(false);
   const [isSessionActive, setIsSessionActive] = useState<boolean>(false);
   const [activeTheoryLessonId, setActiveTheoryLessonId] = useState<number | null>(null);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [activeTheoryLessonId, isSessionActive]);
 
   const handleStartSession = () => {
     setIsSessionActive(true);
@@ -29,13 +32,30 @@ function App() {
       {/* Premium Navbar */}
       <header className="bg-white/80 backdrop-blur-md border-b border-slate-200/60 sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2.5 cursor-pointer" onClick={handleBackToSelector}>
+          <div className="flex items-center gap-2 cursor-pointer" onClick={handleBackToSelector}>
             <span className="p-2 rounded-xl bg-gradient-to-tr from-indigo-500 to-purple-500 text-white shadow-md shadow-indigo-100">
               <GraduationCap size={20} />
             </span>
             <span className="font-extrabold text-lg tracking-tight bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
               NihonIT
             </span>
+
+            {/* Breadcrumb Navigation Indicator */}
+            {activeTheoryLessonId !== null ? (
+              <div className="flex items-center gap-1.5 ml-2 text-xs font-bold text-slate-500">
+                <ChevronRight size={14} className="text-slate-400" />
+                <span className="bg-indigo-50 text-indigo-700 px-2.5 py-1 rounded-lg border border-indigo-100">
+                  Lý thuyết Bài {activeTheoryLessonId}
+                </span>
+              </div>
+            ) : isSessionActive ? (
+              <div className="flex items-center gap-1.5 ml-2 text-xs font-bold text-slate-500">
+                <ChevronRight size={14} className="text-slate-400" />
+                <span className="bg-purple-50 text-purple-700 px-2.5 py-1 rounded-lg border border-purple-100">
+                  Luyện tập
+                </span>
+              </div>
+            ) : null}
           </div>
 
           <div className="flex items-center gap-4 text-sm font-semibold text-slate-500">
@@ -66,7 +86,6 @@ function App() {
           <StudySession
             selectedSectionIds={selectedSectionIds}
             lessons={lessons}
-            shuffleQuestions={shuffleQuestions}
             onBackToSelector={handleBackToSelector}
           />
         ) : (
@@ -74,8 +93,6 @@ function App() {
             lessons={lessons}
             selectedSectionIds={selectedSectionIds}
             setSelectedSectionIds={setSelectedSectionIds}
-            shuffleQuestions={shuffleQuestions}
-            setShuffleQuestions={setShuffleQuestions}
             onStartSession={handleStartSession}
             onViewTheory={(lessonId) => setActiveTheoryLessonId(lessonId)}
           />

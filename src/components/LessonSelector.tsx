@@ -1,13 +1,11 @@
 import React, { useMemo } from 'react';
 import type { Lesson } from '../data/lessons';
-import { BookOpen, CheckSquare, Square, Shuffle, Play, AlertCircle, HelpCircle, Layers, Book } from 'lucide-react';
+import { BookOpen, CheckSquare, Square, Play, AlertCircle, HelpCircle, Layers, Book } from 'lucide-react';
 
 interface LessonSelectorProps {
   lessons: Lesson[];
   selectedSectionIds: string[];
   setSelectedSectionIds: React.Dispatch<React.SetStateAction<string[]>>;
-  shuffleQuestions: boolean;
-  setShuffleQuestions: (shuffle: boolean) => void;
   onStartSession: () => void;
   onViewTheory?: (lessonId: number) => void;
 }
@@ -16,8 +14,6 @@ export const LessonSelector: React.FC<LessonSelectorProps> = ({
   lessons,
   selectedSectionIds,
   setSelectedSectionIds,
-  shuffleQuestions,
-  setShuffleQuestions,
   onStartSession,
   onViewTheory,
 }) => {
@@ -162,46 +158,26 @@ export const LessonSelector: React.FC<LessonSelectorProps> = ({
           </button>
         </div>
 
-        {/* Shuffle and start action */}
-        <div className="flex flex-col sm:flex-row items-center gap-5 w-full xl:w-auto">
-          {/* Shuffle Toggle */}
-          <label className="flex items-center gap-3 cursor-pointer select-none">
-            <div className="relative">
-              <input
-                type="checkbox"
-                checked={shuffleQuestions}
-                onChange={(e) => setShuffleQuestions(e.target.checked)}
-                className="sr-only peer"
-              />
-              <div className="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
-            </div>
-            <span className="text-sm font-medium text-slate-700 flex items-center gap-1.5">
-              <Shuffle size={16} className={shuffleQuestions ? 'text-indigo-600 animate-pulse' : 'text-slate-400'} />
-              Trộn câu hỏi
-            </span>
-          </label>
-
-          {/* Question Summary & Start Button */}
-          <div className="flex items-center gap-4 w-full sm:w-auto justify-end">
-            <div className="text-right sm:text-left">
-              <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider">Tổng số câu chọn</p>
-              <p className="text-lg font-bold text-slate-800">
-                {totalItemsToStudy} <span className="text-sm font-normal text-slate-500">câu</span>
-              </p>
-            </div>
-            <button
-              onClick={onStartSession}
-              disabled={!hasSelectedAnyQuestion}
-              className={`px-6 py-3.5 rounded-xl font-bold text-white shadow-lg flex items-center gap-2 transition-all duration-300 ${
-                hasSelectedAnyQuestion
-                  ? 'bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 shadow-indigo-200 active:scale-98 cursor-pointer'
-                  : 'bg-slate-300 shadow-none cursor-not-allowed opacity-60'
-              }`}
-            >
-              <Play size={18} fill="currentColor" />
-              Bắt đầu học
-            </button>
+        {/* Start action & Question Summary */}
+        <div className="flex items-center gap-4 w-full xl:w-auto justify-end">
+          <div className="text-right sm:text-left">
+            <p className="text-xs text-slate-500 font-semibold uppercase tracking-wider">Tổng số câu chọn</p>
+            <p className="text-lg font-bold text-slate-800">
+              {totalItemsToStudy} <span className="text-sm font-normal text-slate-500">câu</span>
+            </p>
           </div>
+          <button
+            onClick={onStartSession}
+            disabled={!hasSelectedAnyQuestion}
+            className={`px-6 py-3.5 rounded-xl font-bold text-white shadow-lg flex items-center gap-2 transition-all duration-300 ${
+              hasSelectedAnyQuestion
+                ? 'bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 shadow-indigo-200 active:scale-98 cursor-pointer'
+                : 'bg-slate-300 shadow-none cursor-not-allowed opacity-60'
+            }`}
+          >
+            <Play size={18} fill="currentColor" />
+            Bắt đầu học
+          </button>
         </div>
       </div>
 
@@ -274,30 +250,28 @@ export const LessonSelector: React.FC<LessonSelectorProps> = ({
               {/* Sections list inside the card */}
               {hasSections ? (
                 <div className="mt-4 flex flex-col gap-2.5">
-                  {lesson.hasTheory && (
-                    <div
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onViewTheory?.(lesson.id);
-                      }}
-                      className="group/item flex items-center justify-between p-3 rounded-xl border border-indigo-100 bg-gradient-to-r from-indigo-50/30 to-purple-50/30 text-indigo-900 shadow-sm hover:from-indigo-50 hover:to-purple-50 hover:border-indigo-300 transition-all duration-200 cursor-pointer"
-                    >
-                      <div className="flex items-center gap-3">
-                        <span className="p-1.5 rounded-lg border bg-white border-indigo-200">
-                          <Book size={14} className="text-indigo-600" />
-                        </span>
-                        <div>
-                          <span className="text-xs font-bold block">Lý thuyết bài học</span>
-                          <span className="text-[10px] text-indigo-400 font-semibold">Tóm tắt & Trực quan</span>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-indigo-100 text-indigo-700 transition-all group-hover/item:bg-indigo-600 group-hover/item:text-white">
-                          Đọc ngay
-                        </span>
+                  <div
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onViewTheory?.(lesson.id);
+                    }}
+                    className="group/item flex items-center justify-between p-3 rounded-xl border border-indigo-100 bg-gradient-to-r from-indigo-50/30 to-purple-50/30 text-indigo-900 shadow-sm hover:from-indigo-50 hover:to-purple-50 hover:border-indigo-300 transition-all duration-200 cursor-pointer"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="p-1.5 rounded-lg border bg-white border-indigo-200">
+                        <Book size={14} className="text-indigo-600" />
+                      </span>
+                      <div>
+                        <span className="text-xs font-bold block">Lý thuyết bài học</span>
+                        <span className="text-[10px] text-indigo-400 font-semibold">Tóm tắt & Trực quan</span>
                       </div>
                     </div>
-                  )}
+                    <div className="flex items-center gap-3">
+                      <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-indigo-100 text-indigo-700 transition-all group-hover/item:bg-indigo-600 group-hover/item:text-white">
+                        Đọc ngay
+                      </span>
+                    </div>
+                  </div>
                   {lesson.sections.map((section) => {
                     const isSelected = selectedSectionIds.includes(section.id);
                     const sectionIcon = section.type === 'vocabulary' ? (

@@ -3,7 +3,7 @@ import type { Lesson, StudyItem } from '../data/lessons';
 import { QuestionCard } from './QuestionCard';
 import { VocabularyCard } from './VocabularyCard';
 import { ResultScreen } from './ResultScreen';
-import { ArrowLeft, ArrowRight, Check, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, X, Shuffle, Sparkles } from 'lucide-react';
 
 interface SessionQuestion {
   item: StudyItem;
@@ -15,7 +15,6 @@ interface SessionQuestion {
 interface StudySessionProps {
   selectedSectionIds: string[];
   lessons: Lesson[];
-  shuffleQuestions: boolean;
   onBackToSelector: () => void;
 }
 
@@ -32,7 +31,6 @@ const shuffleArray = <T,>(array: T[]): T[] => {
 export const StudySession: React.FC<StudySessionProps> = ({
   selectedSectionIds,
   lessons,
-  shuffleQuestions,
   onBackToSelector,
 }) => {
   const [questions, setQuestions] = useState<SessionQuestion[]>([]);
@@ -42,6 +40,7 @@ export const StudySession: React.FC<StudySessionProps> = ({
   const [incorrectCount, setIncorrectCount] = useState(0);
   const [wrongAnswers, setWrongAnswers] = useState<SessionQuestion[]>([]);
   const [isFinished, setIsFinished] = useState(false);
+  const [showShuffleToast, setShowShuffleToast] = useState(false);
 
   const autoNextTimeoutRef = React.useRef<any>(null);
 
@@ -73,9 +72,7 @@ export const StudySession: React.FC<StudySessionProps> = ({
       });
     });
 
-    const finalQuestions = shuffleQuestions ? shuffleArray(aggregated) : aggregated;
-    
-    setQuestions(finalQuestions);
+    setQuestions(aggregated);
     setCurrentIndex(0);
     setIsAnswered(false);
     setCorrectCount(0);
@@ -84,10 +81,21 @@ export const StudySession: React.FC<StudySessionProps> = ({
     setIsFinished(false);
   };
 
-  // Run initialization on mount or when selected sections/shuffle settings change
+  // Run initialization on mount
   useEffect(() => {
     initializeSession();
-  }, [selectedSectionIds, lessons, shuffleQuestions]);
+  }, [selectedSectionIds, lessons]);
+
+  // Handle shuffling questions inside active session
+  const handleShuffleInSession = () => {
+    if (questions.length === 0) return;
+    const shuffled = shuffleArray(questions);
+    setQuestions(shuffled);
+    setCurrentIndex(0);
+    setIsAnswered(false);
+    setShowShuffleToast(true);
+    setTimeout(() => setShowShuffleToast(false), 2000);
+  };
 
   const handleAnswerGraded = (isCorrect: boolean) => {
     setIsAnswered(true);
@@ -127,8 +135,7 @@ export const StudySession: React.FC<StudySessionProps> = ({
 
   // Re-run the same session with all current questions
   const handleRetryAll = () => {
-    const resetQuestions = shuffleQuestions ? shuffleArray(questions) : [...questions];
-    setQuestions(resetQuestions);
+    setQuestions([...questions]);
     setCurrentIndex(0);
     setIsAnswered(false);
     setCorrectCount(0);
@@ -139,8 +146,7 @@ export const StudySession: React.FC<StudySessionProps> = ({
 
   // Run a review session containing ONLY the incorrect answers
   const handleRetryWrongOnly = () => {
-    const resetQuestions = shuffleQuestions ? shuffleArray(wrongAnswers) : [...wrongAnswers];
-    setQuestions(resetQuestions);
+    setQuestions([...wrongAnswers]);
     setCurrentIndex(0);
     setIsAnswered(false);
     setCorrectCount(0);
@@ -211,18 +217,34 @@ export const StudySession: React.FC<StudySessionProps> = ({
           </div>
         </div>
 
-        {/* Counter Stats Badge */}
-        <div className="flex items-center gap-2 text-xs font-bold shrink-0">
-          <span className="flex items-center gap-1 bg-emerald-50 text-emerald-700 py-1 px-2.5 rounded-lg border border-emerald-100">
+        {/* Header Right Actions & Counter Stats Badge */}
+        <div className="flex items-center gap-2.5 shrink-0">
+          <button
+            onClick={handleShuffleInSession}
+            className="flex items-center gap-1.5 py-1.5 px-3 text-xs font-bold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 rounded-xl active:scale-95 transition-all cursor-pointer shadow-sm"
+            title="Trộn ngẫu nhiên câu hỏi trong phần học"
+          >
+            <Shuffle size={14} className="text-indigo-600" />
+            <span className="hidden sm:inline">Trộn câu hỏi</span>
+          </button>
+
+          <span className="flex items-center gap-1 bg-emerald-50 text-emerald-700 py-1 px-2.5 rounded-lg border border-emerald-100 text-xs font-bold">
             <Check size={14} className="stroke-[3px]" />
             {correctCount}
           </span>
-          <span className="flex items-center gap-1 bg-rose-50 text-rose-700 py-1 px-2.5 rounded-lg border border-rose-100">
+          <span className="flex items-center gap-1 bg-rose-50 text-rose-700 py-1 px-2.5 rounded-lg border border-rose-100 text-xs font-bold">
             <X size={14} className="stroke-[3px]" />
             {incorrectCount}
           </span>
         </div>
       </div>
+
+      {showShuffleToast && (
+        <div className="mb-4 p-3 bg-indigo-600 text-white font-bold text-xs rounded-xl shadow-lg flex items-center justify-center gap-2 animate-fadeIn">
+          <Sparkles size={16} />
+          <span>Đã trộn ngẫu nhiên tất cả các câu hỏi trong phiên học!</span>
+        </div>
+      )}
 
       {/* Question Card / Vocabulary Card area */}
       <div className="min-h-[400px] flex items-center justify-center py-4">

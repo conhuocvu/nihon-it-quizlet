@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { lessons } from './data/lessons';
 import { LessonSelector } from './components/LessonSelector';
 import { StudySession } from './components/StudySession';
+import { TheoryViewer } from './components/TheoryViewer';
 import { GraduationCap, Github } from 'lucide-react';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
   ]);
   const [shuffleQuestions, setShuffleQuestions] = useState<boolean>(false);
   const [isSessionActive, setIsSessionActive] = useState<boolean>(false);
+  const [activeTheoryLessonId, setActiveTheoryLessonId] = useState<number | null>(null);
 
   const handleStartSession = () => {
     setIsSessionActive(true);
@@ -19,6 +21,7 @@ function App() {
 
   const handleBackToSelector = () => {
     setIsSessionActive(false);
+    setActiveTheoryLessonId(null);
   };
 
   return (
@@ -54,7 +57,12 @@ function App() {
 
       {/* Main Content Area */}
       <main className="flex-grow py-6 flex items-start justify-center">
-        {isSessionActive ? (
+        {activeTheoryLessonId !== null ? (
+          <TheoryViewer
+            lessonId={activeTheoryLessonId}
+            onClose={() => setActiveTheoryLessonId(null)}
+          />
+        ) : isSessionActive ? (
           <StudySession
             selectedSectionIds={selectedSectionIds}
             lessons={lessons}
@@ -69,6 +77,7 @@ function App() {
             shuffleQuestions={shuffleQuestions}
             setShuffleQuestions={setShuffleQuestions}
             onStartSession={handleStartSession}
+            onViewTheory={(lessonId) => setActiveTheoryLessonId(lessonId)}
           />
         )}
       </main>

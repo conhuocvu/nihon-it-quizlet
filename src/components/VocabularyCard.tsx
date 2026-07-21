@@ -38,6 +38,43 @@ export const VocabularyCard: React.FC<VocabularyCardProps> = ({
     onAnswerGraded(isCorrect);
   };
 
+  // Keyboard shortcuts listener
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) {
+        return;
+      }
+
+      if (e.code === 'Space') {
+        e.preventDefault();
+        if (!isGraded) {
+          setIsFlipped(prev => !prev);
+        }
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        if (!isGraded) {
+          setSelectedGrade('incorrect');
+          setIsFlipped(true);
+          setIsGraded(true);
+          onAnswerGraded(false);
+        }
+      } else if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        if (!isGraded) {
+          setSelectedGrade('correct');
+          setIsFlipped(true);
+          setIsGraded(true);
+          onAnswerGraded(true);
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isGraded, onAnswerGraded]);
+
   return (
     <div className="w-full max-w-xl mx-auto">
       {/* Lesson Details Header */}
@@ -199,6 +236,22 @@ export const VocabularyCard: React.FC<VocabularyCardProps> = ({
             </button>
           </div>
         )}
+      </div>
+
+      {/* Keyboard Shortcuts Hint */}
+      <div className="mt-8 flex justify-center gap-6 text-[10px] text-slate-400 font-bold uppercase tracking-wider bg-slate-150/40 py-2 px-4 rounded-xl border border-slate-200/40 w-fit mx-auto select-none">
+        <span className="flex items-center gap-1.5">
+          <kbd className="px-1.5 py-0.5 bg-white border border-slate-300 rounded shadow-sm font-mono text-[9px] text-slate-500">Space</kbd>
+          Lật thẻ
+        </span>
+        <span className="flex items-center gap-1.5">
+          <kbd className="px-1.5 py-0.5 bg-white border border-slate-300 rounded shadow-sm font-mono text-[9px] text-slate-500">←</kbd>
+          Chưa thuộc
+        </span>
+        <span className="flex items-center gap-1.5">
+          <kbd className="px-1.5 py-0.5 bg-white border border-slate-300 rounded shadow-sm font-mono text-[9px] text-slate-500">→</kbd>
+          Đã thuộc
+        </span>
       </div>
     </div>
   );

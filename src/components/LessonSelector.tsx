@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import type { Lesson } from '../data/lessons';
-import { BookOpen, CheckSquare, Square, Shuffle, Play, AlertCircle, HelpCircle, Layers } from 'lucide-react';
+import { BookOpen, CheckSquare, Square, Shuffle, Play, AlertCircle, HelpCircle, Layers, Book } from 'lucide-react';
 
 interface LessonSelectorProps {
   lessons: Lesson[];
@@ -9,6 +9,7 @@ interface LessonSelectorProps {
   shuffleQuestions: boolean;
   setShuffleQuestions: (shuffle: boolean) => void;
   onStartSession: () => void;
+  onViewTheory?: (lessonId: number) => void;
 }
 
 export const LessonSelector: React.FC<LessonSelectorProps> = ({
@@ -18,6 +19,7 @@ export const LessonSelector: React.FC<LessonSelectorProps> = ({
   shuffleQuestions,
   setShuffleQuestions,
   onStartSession,
+  onViewTheory,
 }) => {
   // Aggregate all available sections that have content
   const allContentSections = useMemo(() => {
@@ -272,6 +274,30 @@ export const LessonSelector: React.FC<LessonSelectorProps> = ({
               {/* Sections list inside the card */}
               {hasSections ? (
                 <div className="mt-4 flex flex-col gap-2.5">
+                  {lesson.hasTheory && (
+                    <div
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onViewTheory?.(lesson.id);
+                      }}
+                      className="group/item flex items-center justify-between p-3 rounded-xl border border-indigo-100 bg-gradient-to-r from-indigo-50/30 to-purple-50/30 text-indigo-900 shadow-sm hover:from-indigo-50 hover:to-purple-50 hover:border-indigo-300 transition-all duration-200 cursor-pointer"
+                    >
+                      <div className="flex items-center gap-3">
+                        <span className="p-1.5 rounded-lg border bg-white border-indigo-200">
+                          <Book size={14} className="text-indigo-600" />
+                        </span>
+                        <div>
+                          <span className="text-xs font-bold block">Lý thuyết bài học</span>
+                          <span className="text-[10px] text-indigo-400 font-semibold">Tóm tắt & Trực quan</span>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-indigo-100 text-indigo-700 transition-all group-hover/item:bg-indigo-600 group-hover/item:text-white">
+                          Đọc ngay
+                        </span>
+                      </div>
+                    </div>
+                  )}
                   {lesson.sections.map((section) => {
                     const isSelected = selectedSectionIds.includes(section.id);
                     const sectionIcon = section.type === 'vocabulary' ? (

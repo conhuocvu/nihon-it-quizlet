@@ -20,6 +20,7 @@ export type Lesson = {
   id: number;
   title: string;
   sections: Section[];
+  hasTheory?: boolean;
 };
 
 export const lessons: Lesson[] = [
@@ -5478,6 +5479,7 @@ export const lessons: Lesson[] = [
   {
     id: 17,
     title: "Bài 17 - Lý thuyết cơ sở dữ liệu",
+    hasTheory: true,
     sections: [
       {
         id: "lesson-17-vocabulary",

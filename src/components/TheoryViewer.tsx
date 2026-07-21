@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { 
   ArrowLeft, BookOpen, Layers, GitFork, Network, Database, 
-  Cpu, List, Table, Languages, Info, ChevronRight, Check, Play, RefreshCw, Eye
+  Cpu, List, Table, Languages, Info, ChevronRight, Check, Play, RefreshCw, Eye, EyeOff
 } from 'lucide-react';
 
 interface TheoryViewerProps {
@@ -160,6 +160,13 @@ export const TheoryViewer: React.FC<TheoryViewerProps> = ({ lessonId, onClose })
 
   const [minitestAnswers, setMinitestAnswers] = useState<{[key: number]: {reading: string, meaning: string}}>({});
   const [showMinitestVocabAnswers, setShowMinitestVocabAnswers] = useState(false);
+  const [revealedVocabIndices, setRevealedVocabIndices] = useState<number[]>([]);
+
+  const toggleRevealVocab = (idx: number) => {
+    setRevealedVocabIndices(prev =>
+      prev.includes(idx) ? prev.filter(i => i !== idx) : [...prev, idx]
+    );
+  };
   const [minitestTranslation1, setMinitestTranslation1] = useState('');
   const [showTranslation1Answer, setShowTranslation1Answer] = useState(false);
   const [minitestTranslation2, setMinitestTranslation2] = useState('');
@@ -1198,7 +1205,20 @@ export const TheoryViewer: React.FC<TheoryViewerProps> = ({ lessonId, onClose })
                     <div key={idx} className="border border-slate-200 rounded-xl p-3.5 bg-white shadow-sm flex flex-col gap-2">
                       <div className="flex justify-between items-center">
                         <span className="text-xs font-black text-slate-800">{idx + 1}. {item.term}</span>
-                        <span className="text-[10px] text-slate-400 font-bold">Từ vựng CSDL</span>
+                        <div className="flex items-center gap-2">
+                          <button
+                            onClick={() => toggleRevealVocab(idx)}
+                            className="p-1 rounded-md text-slate-400 hover:text-indigo-650 hover:bg-slate-50 transition-colors cursor-pointer"
+                            title="Xem đáp án riêng"
+                          >
+                            {revealedVocabIndices.includes(idx) || showMinitestVocabAnswers ? (
+                              <EyeOff size={14} className="text-indigo-500" />
+                            ) : (
+                              <Eye size={14} />
+                            )}
+                          </button>
+                          <span className="text-[10px] text-slate-400 font-bold hidden sm:inline">Từ vựng CSDL</span>
+                        </div>
                       </div>
                       
                       <div className="grid grid-cols-2 gap-2 mt-1">
@@ -1215,7 +1235,7 @@ export const TheoryViewer: React.FC<TheoryViewerProps> = ({ lessonId, onClose })
                                 [idx]: { ...(prev[idx] || { meaning: '' }), reading: text }
                               }));
                             }}
-                            disabled={showMinitestVocabAnswers}
+                            disabled={showMinitestVocabAnswers || revealedVocabIndices.includes(idx)}
                             className="w-full text-xs p-1.5 border border-slate-200 rounded-md focus:border-indigo-400 focus:outline-none"
                           />
                         </div>
@@ -1232,13 +1252,13 @@ export const TheoryViewer: React.FC<TheoryViewerProps> = ({ lessonId, onClose })
                                 [idx]: { ...(prev[idx] || { reading: '' }), meaning: text }
                               }));
                             }}
-                            disabled={showMinitestVocabAnswers}
+                            disabled={showMinitestVocabAnswers || revealedVocabIndices.includes(idx)}
                             className="w-full text-xs p-1.5 border border-slate-200 rounded-md focus:border-indigo-400 focus:outline-none"
                           />
                         </div>
                       </div>
 
-                      {showMinitestVocabAnswers && (
+                      {(showMinitestVocabAnswers || revealedVocabIndices.includes(idx)) && (
                         <div className="mt-2 p-2 bg-indigo-50 rounded-lg text-[10px] border border-indigo-100 text-indigo-900 animate-fadeIn flex flex-col gap-0.5">
                           <div><strong>Cách đọc:</strong> {item.reading}</div>
                           <div><strong>Nghĩa đúng:</strong> {item.meaning}</div>

@@ -66,6 +66,11 @@ export const VocabularyCard: React.FC<VocabularyCardProps> = ({
           setIsGraded(true);
           onAnswerGraded(true);
         }
+      } else if (e.key.toLowerCase() === 'h') {
+        e.preventDefault();
+        if (!isGraded) {
+          setShowHira(prev => !prev);
+        }
       }
     };
 
@@ -239,17 +244,21 @@ export const VocabularyCard: React.FC<VocabularyCardProps> = ({
       </div>
 
       {/* Keyboard Shortcuts Hint */}
-      <div className="mt-8 flex justify-center gap-6 text-[10px] text-slate-400 font-bold uppercase tracking-wider bg-slate-150/40 py-2 px-4 rounded-xl border border-slate-200/40 w-fit mx-auto select-none">
+      <div className="mt-8 flex justify-center gap-6 text-[10px] text-slate-400 font-bold uppercase tracking-wider bg-slate-100/50 py-2 px-4 rounded-xl border border-slate-200/40 w-fit mx-auto select-none">
         <span className="flex items-center gap-1.5">
-          <kbd className="px-1.5 py-0.5 bg-white border border-slate-300 rounded shadow-sm font-mono text-[9px] text-slate-500">Space</kbd>
+          <kbd className="px-1.5 py-0.5 bg-white border border-slate-350 rounded shadow-sm font-mono text-[9px] text-slate-500">Space</kbd>
           Lật thẻ
         </span>
         <span className="flex items-center gap-1.5">
-          <kbd className="px-1.5 py-0.5 bg-white border border-slate-300 rounded shadow-sm font-mono text-[9px] text-slate-500">←</kbd>
+          <kbd className="px-1.5 py-0.5 bg-white border border-slate-350 rounded shadow-sm font-mono text-[9px] text-slate-500">H</kbd>
+          Hiện đọc
+        </span>
+        <span className="flex items-center gap-1.5">
+          <kbd className="px-1.5 py-0.5 bg-white border border-slate-350 rounded shadow-sm font-mono text-[9px] text-slate-500">←</kbd>
           Chưa thuộc
         </span>
         <span className="flex items-center gap-1.5">
-          <kbd className="px-1.5 py-0.5 bg-white border border-slate-300 rounded shadow-sm font-mono text-[9px] text-slate-500">→</kbd>
+          <kbd className="px-1.5 py-0.5 bg-white border border-slate-350 rounded shadow-sm font-mono text-[9px] text-slate-500">→</kbd>
           Đã thuộc
         </span>
       </div>

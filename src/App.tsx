@@ -3,7 +3,8 @@ import { lessons } from './data/lessons';
 import { LessonSelector } from './components/LessonSelector';
 import { StudySession } from './components/StudySession';
 import { TheoryViewer } from './components/TheoryViewer';
-import { GraduationCap, Github, ChevronRight } from 'lucide-react';
+import { FakePaywallModal } from './components/FakePaywallModal';
+import { GraduationCap, Github, ChevronRight, Crown } from 'lucide-react';
 
 function App() {
   // Default to selecting all sections of Lesson 11
@@ -14,11 +15,32 @@ function App() {
   const [isSessionActive, setIsSessionActive] = useState<boolean>(false);
   const [activeTheoryLessonId, setActiveTheoryLessonId] = useState<number | null>(null);
 
+  // Troll Paywall state
+  const [isPaywallOpen, setIsPaywallOpen] = useState<boolean>(false);
+  const [isVipUnlocked, setIsVipUnlocked] = useState<boolean>(false);
+
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [activeTheoryLessonId, isSessionActive]);
 
   const handleStartSession = () => {
+    if (!isVipUnlocked) {
+      // Trigger the troll paywall when user starts studying!
+      setIsPaywallOpen(true);
+    } else {
+      setIsSessionActive(true);
+    }
+  };
+
+  const handlePaywallSuccess = () => {
+    setIsVipUnlocked(true);
+    setIsPaywallOpen(false);
+    setIsSessionActive(true);
+  };
+
+  const handlePaywallClose = () => {
+    setIsPaywallOpen(false);
+    // Allow studying after closing (or closing after dodging 5 times)
     setIsSessionActive(true);
   };
 
@@ -58,7 +80,20 @@ function App() {
             ) : null}
           </div>
 
-          <div className="flex items-center gap-4 text-sm font-semibold text-slate-500">
+          <div className="flex items-center gap-3 text-sm font-semibold text-slate-500">
+            {/* VIP Status Button / Badge */}
+            <button
+              onClick={() => setIsPaywallOpen(true)}
+              className={`py-1.5 px-3 rounded-full text-xs font-black flex items-center gap-1.5 transition-all cursor-pointer shadow-sm ${
+                isVipUnlocked
+                  ? 'bg-gradient-to-r from-amber-400 to-orange-400 text-amber-950 shadow-amber-200 ring-2 ring-amber-300'
+                  : 'bg-amber-100 text-amber-800 hover:bg-amber-200 border border-amber-300 animate-pulse'
+              }`}
+            >
+              <Crown size={14} className={isVipUnlocked ? "fill-amber-950" : "text-amber-700"} />
+              <span>{isVipUnlocked ? 'VIP Pro Ultra Max' : 'Nâng cấp VIP (5k)'}</span>
+            </button>
+
             <span className="hidden sm:inline bg-indigo-50 text-indigo-700 py-1 px-3 rounded-full text-xs font-bold">
               Phiên bản Local
             </span>
@@ -99,6 +134,13 @@ function App() {
         )}
       </main>
 
+      {/* Troll Paywall Modal */}
+      <FakePaywallModal
+        isOpen={isPaywallOpen}
+        onClose={handlePaywallClose}
+        onSuccess={handlePaywallSuccess}
+      />
+
       {/* Modern Footer */}
       <footer className="bg-white border-t border-slate-200/60 py-6 text-center text-xs text-slate-400 font-medium">
         <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -115,3 +157,4 @@ function App() {
 }
 
 export default App;
+

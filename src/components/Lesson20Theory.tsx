@@ -1,7 +1,7 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useRef, useEffect } from 'react';
 import { 
   ArrowLeft, BookOpen, ChevronRight,
-  Sparkles, CheckCircle2, Play, Languages, RefreshCw, Layers, Layout, ArrowUpDown
+  Sparkles, CheckCircle2, Play, Languages, RefreshCw, Layers, Layout, ArrowUpDown, Info
 } from 'lucide-react';
 
 interface Lesson20TheoryProps {
@@ -15,59 +15,172 @@ export const Lesson20Theory: React.FC<Lesson20TheoryProps> = ({ onClose }) => {
   const [vendingMoney, setVendingMoney] = useState<number>(0);
   const [vendingMessage, setVendingMessage] = useState<string>('Vui lòng nạp tiền (giá nước 120円)...');
 
-  // Bubble Sort Visualizer State (20.3)
-  const [bubbleArray, setBubbleArray] = useState<number[]>([40, 20, 30, 10]);
-  const [bubbleStepLogs, setBubbleStepLogs] = useState<string[]>([]);
+  // Multi-Algorithm Sorting Visualizer State (20.3)
+  const [selectedAlgo, setSelectedAlgo] = useState<'bubble' | 'selection' | 'insertion'>('bubble');
+  const [sortArray, setSortArray] = useState<number[]>([40, 20, 30, 10]);
+  const [sortLogs, setSortLogs] = useState<string[]>([]);
   const [isSorting, setIsSorting] = useState<boolean>(false);
   const [activeI, setActiveI] = useState<number | null>(null);
   const [activeJ, setActiveJ] = useState<number | null>(null);
+  const [activeMin, setActiveMin] = useState<number | null>(null);
 
-  const resetBubbleSort = () => {
-    setBubbleArray([40, 20, 30, 10]);
-    setBubbleStepLogs([]);
-    setIsSorting(false);
-    setActiveI(null);
-    setActiveJ(null);
+  const abortSortRef = useRef<boolean>(false);
+
+  // Stop sorting loop on unmount or tab change
+  useEffect(() => {
+    return () => {
+      abortSortRef.current = true;
+    };
+  }, []);
+
+  const resetSortVisualizer = () => {
+    abortSortRef.current = true;
+    setTimeout(() => {
+      abortSortRef.current = false;
+      setSortArray([40, 20, 30, 10]);
+      setSortLogs([]);
+      setIsSorting(false);
+      setActiveI(null);
+      setActiveJ(null);
+      setActiveMin(null);
+    }, 60);
   };
 
-  const runBubbleSortStepByStep = async () => {
+  const delay = (ms: number) => {
+    return new Promise<void>((resolve) => {
+      const start = Date.now();
+      const timer = setInterval(() => {
+        if (abortSortRef.current || Date.now() - start >= ms) {
+          clearInterval(timer);
+          resolve();
+        }
+      }, 30);
+    });
+  };
+
+  const runSortingAlgorithm = async () => {
+    if (isSorting) return;
+    abortSortRef.current = false;
     setIsSorting(true);
+
     let arr = [40, 20, 30, 10];
     let logs: string[] = [];
-    let n = 4;
+    const n = arr.length;
 
-    logs.push("Khởi tạo mảng ban đầu: a = [40, 20, 30, 10]");
-    setBubbleStepLogs([...logs]);
+    setSortArray([...arr]);
+    setSortLogs([]);
 
-    for (let i = 0; i <= n - 2; i++) {
-      setActiveI(i);
-      logs.push(`--- Vòng lặp ngoài i = ${i} (Duyệt tìm phần tử nhỏ nhất xếp vào a[${i}]) ---`);
-      setBubbleStepLogs([...logs]);
+    if (selectedAlgo === 'bubble') {
+      logs.push("🔥 Bắt đầu Bubble Sort (Nổi bọt): [40, 20, 30, 10]");
+      setSortLogs([...logs]);
 
-      for (let j = n - 1; j >= i + 1; j--) {
-        setActiveJ(j);
-        logs.push(`So sánh a[${j}] (${arr[j]}) và a[${j - 1}] (${arr[j - 1]})...`);
-        setBubbleStepLogs([...logs]);
-        await new Promise(r => setTimeout(r, 600));
+      for (let i = 0; i <= n - 2; i++) {
+        if (abortSortRef.current) break;
+        setActiveI(i);
+        logs.push(`--- Vòng i = ${i}: Tìm phần tử nhỏ nhất xếp vào a[${i}] ---`);
+        setSortLogs([...logs]);
 
-        if (arr[j] < arr[j - 1]) {
-          logs.push(`👉 Do ${arr[j]} < ${arr[j - 1]} nên đổi chỗ a[${j}] và a[${j - 1}]!`);
-          let temp = arr[j];
-          arr[j] = arr[j - 1];
-          arr[j - 1] = temp;
-          setBubbleArray([...arr]);
-          setBubbleStepLogs([...logs]);
-          await new Promise(r => setTimeout(r, 600));
-        } else {
-          logs.push(`✔️ ${arr[j]} >= ${arr[j - 1]} giữ nguyên vị trí.`);
-          setBubbleStepLogs([...logs]);
+        for (let j = n - 1; j >= i + 1; j--) {
+          if (abortSortRef.current) break;
+          setActiveJ(j);
+          logs.push(`So sánh a[${j}] (${arr[j]}) và a[${j - 1}] (${arr[j - 1]})...`);
+          setSortLogs([...logs]);
+          await delay(600);
+          if (abortSortRef.current) break;
+
+          if (arr[j] < arr[j - 1]) {
+            logs.push(`👉 Đổi chỗ a[${j}] (${arr[j]}) ↔️ a[${j - 1}] (${arr[j - 1]})`);
+            const temp = arr[j];
+            arr[j] = arr[j - 1];
+            arr[j - 1] = temp;
+            setSortArray([...arr]);
+            setSortLogs([...logs]);
+            await delay(600);
+          } else {
+            logs.push(`✔️ Giữ nguyên (${arr[j]} >= ${arr[j - 1]})`);
+            setSortLogs([...logs]);
+          }
+        }
+      }
+    } else if (selectedAlgo === 'selection') {
+      logs.push("🔥 Bắt đầu Selection Sort (Sắp xếp chọn): [40, 20, 30, 10]");
+      setSortLogs([...logs]);
+
+      for (let i = 0; i < n - 1; i++) {
+        if (abortSortRef.current) break;
+        setActiveI(i);
+        let minIdx = i;
+        setActiveMin(minIdx);
+        logs.push(`--- Vòng i = ${i}: Giả định nhỏ nhất là a[${i}] = ${arr[i]} ---`);
+        setSortLogs([...logs]);
+
+        for (let j = i + 1; j < n; j++) {
+          if (abortSortRef.current) break;
+          setActiveJ(j);
+          logs.push(`So sánh a[${j}] (${arr[j]}) với min hiện tại (${arr[minIdx]})...`);
+          setSortLogs([...logs]);
+          await delay(500);
+          if (abortSortRef.current) break;
+
+          if (arr[j] < arr[minIdx]) {
+            minIdx = j;
+            setActiveMin(minIdx);
+            logs.push(`👉 Tìm thấy nhỏ hơn mới: a[${j}] = ${arr[j]}`);
+            setSortLogs([...logs]);
+          }
+        }
+
+        if (minIdx !== i && !abortSortRef.current) {
+          logs.push(`🔄 Đổi chỗ a[${i}] (${arr[i]}) ↔️ a[${minIdx}] (${arr[minIdx]})`);
+          const temp = arr[i];
+          arr[i] = arr[minIdx];
+          arr[minIdx] = temp;
+          setSortArray([...arr]);
+          setSortLogs([...logs]);
+          await delay(600);
+        }
+      }
+    } else if (selectedAlgo === 'insertion') {
+      logs.push("🔥 Bắt đầu Insertion Sort (Sắp xếp chèn): [40, 20, 30, 10]");
+      setSortLogs([...logs]);
+
+      for (let i = 1; i < n; i++) {
+        if (abortSortRef.current) break;
+        setActiveI(i);
+        const key = arr[i];
+        let j = i - 1;
+        logs.push(`--- Vòng i = ${i}: Lấy phần tử key = ${key} để chèn vào dãy đã chọn ---`);
+        setSortLogs([...logs]);
+        await delay(500);
+
+        while (j >= 0 && arr[j] > key) {
+          if (abortSortRef.current) break;
+          setActiveJ(j);
+          logs.push(`Do a[${j}] (${arr[j]}) > ${key} → dịch a[${j}] sang a[${j + 1}]`);
+          arr[j + 1] = arr[j];
+          setSortArray([...arr]);
+          setSortLogs([...logs]);
+          j--;
+          await delay(500);
+        }
+
+        if (!abortSortRef.current) {
+          arr[j + 1] = key;
+          setSortArray([...arr]);
+          logs.push(`👉 Chèn key = ${key} vào vị trí a[${j + 1}]`);
+          setSortLogs([...logs]);
+          await delay(500);
         }
       }
     }
-    setActiveI(null);
-    setActiveJ(null);
-    logs.push("🎉 Hoàn thành sắp xếp tăng dần: a = [" + arr.join(", ") + "]");
-    setBubbleStepLogs([...logs]);
+
+    if (!abortSortRef.current) {
+      setActiveI(null);
+      setActiveJ(null);
+      setActiveMin(null);
+      logs.push("🎉 Hoàn tất sắp xếp tăng dần: a = [" + arr.join(", ") + "]");
+      setSortLogs([...logs]);
+    }
     setIsSorting(false);
   };
 
@@ -382,6 +495,7 @@ export const Lesson20Theory: React.FC<Lesson20TheoryProps> = ({ onClose }) => {
         {/* ================= TAB 20.3 ================= */}
         {activeTab20 === '20.3' && (
           <div className="flex flex-col gap-6 animate-fadeIn">
+            {/* Header intro */}
             <div className="border-l-4 border-indigo-500 pl-4 bg-indigo-50/40 p-4 rounded-r-xl">
               <span className="text-[10px] font-extrabold uppercase text-indigo-600 tracking-wider">SGK 20.3</span>
               <h3 className="text-lg font-bold text-slate-800 mt-1">20.3 ソーティング (Thuật toán Sắp xếp - Sorting)</h3>
@@ -389,86 +503,219 @@ export const Lesson20Theory: React.FC<Lesson20TheoryProps> = ({ onClose }) => {
                 「ソーティングとは小さいものから順に，または逆に大きいものから順にデータを並べ替えることです．」
               </p>
               <div className="mt-3 text-xs text-slate-600 bg-white/80 p-3 rounded-xl border border-slate-200 leading-relaxed">
-                <span className="font-bold text-indigo-600">Dịch nghĩa:</span> Sắp xếp (Sorting) là việc hoán đổi thứ tự dữ liệu theo chiều tăng dần từ nhỏ đến lớn (昇順) hoặc ngược lại giảm dần từ lớn đến nhỏ (降順). Con người có thể nhìn toàn cục 1 lúc, nhưng máy tính **chỉ có thể so sánh 2 dữ liệu tại một thời điểm**!
+                <span className="font-bold text-indigo-600">Dịch nghĩa:</span> Sắp xếp (Sorting) là việc hoán đổi thứ tự dữ liệu theo chiều tăng dần từ nhỏ đến lớn (昇順) hoặc giảm dần từ lớn đến nhỏ (降順). Con người có thể nhìn toàn cục cùng lúc, nhưng máy tính **chỉ có thể so sánh 2 dữ liệu tại một thời điểm**!
               </div>
             </div>
 
-            {/* List of Efficient Sorting Algorithms */}
-            <div>
-              <h4 className="text-sm font-extrabold text-slate-800 mb-3 flex items-center gap-2">
+            {/* SECTION 1: SUMMARY OF 6 SORTING ALGORITHMS */}
+            <div className="space-y-4">
+              <h4 className="text-sm font-extrabold text-slate-800 flex items-center gap-2">
                 <Sparkles size={16} className="text-indigo-600" />
-                Các Thuật toán Sắp xếp Hiệu quả trong SGK
+                1. Tóm tắt & So sánh 6 Thuật toán Sắp xếp trong SGK
               </h4>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 text-center">
-                <div className="p-3 bg-slate-50 border rounded-xl font-bold text-xs text-slate-800">選択法 (Selection)</div>
-                <div className="p-3 bg-indigo-50 border border-indigo-200 rounded-xl font-bold text-xs text-indigo-900">バブルソート (Bubble)</div>
-                <div className="p-3 bg-slate-50 border rounded-xl font-bold text-xs text-slate-800">クイックソート (Quick)</div>
-                <div className="p-3 bg-slate-50 border rounded-xl font-bold text-xs text-slate-800">挿入ソート (Insertion)</div>
-                <div className="p-3 bg-slate-50 border rounded-xl font-bold text-xs text-slate-800">シェルソート (Shell)</div>
-                <div className="p-3 bg-slate-50 border rounded-xl font-bold text-xs text-slate-800">マージソート (Merge)</div>
+
+              {/* Comparison Summary Table */}
+              <div className="overflow-x-auto border border-slate-200 rounded-2xl shadow-sm">
+                <table className="w-full text-xs text-left text-slate-700">
+                  <thead className="bg-slate-100 text-slate-800 font-extrabold uppercase text-[10px] border-b border-slate-200">
+                    <tr>
+                      <th className="px-4 py-3">Tên tiếng Nhật / Anh</th>
+                      <th className="px-4 py-3">Tên tiếng Việt</th>
+                      <th className="px-4 py-3">Nguyên lý hoạt động chính</th>
+                      <th className="px-4 py-3 text-center">Độ phức tạp (TB)</th>
+                      <th className="px-4 py-3 text-center">Độ ổn định</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100 bg-white font-medium">
+                    <tr className="hover:bg-slate-50/80">
+                      <td className="px-4 py-3 font-bold text-indigo-900">バブルソート (Bubble)</td>
+                      <td className="px-4 py-3 text-indigo-700 font-bold">Nổi bọt</td>
+                      <td className="px-4 py-3">So sánh từng cặp phần tử liền kề, đổi chỗ để đưa phần tử nhỏ/lớn nổi dần về đầu/cuối.</td>
+                      <td className="px-4 py-3 text-center font-mono font-bold text-rose-600">O(n²)</td>
+                      <td className="px-4 py-3 text-center font-bold text-emerald-600">Ổn định (Stable)</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50/80">
+                      <td className="px-4 py-3 font-bold text-indigo-900">選択法 (Selection)</td>
+                      <td className="px-4 py-3 text-indigo-700 font-bold">Chọn trực tiếp</td>
+                      <td className="px-4 py-3">Duyệt tìm phần tử nhỏ nhất trong phần chưa sắp xếp rồi đổi chỗ về vị trí đầu.</td>
+                      <td className="px-4 py-3 text-center font-mono font-bold text-rose-600">O(n²)</td>
+                      <td className="px-4 py-3 text-center font-bold text-slate-400">Không ổn định</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50/80">
+                      <td className="px-4 py-3 font-bold text-indigo-900">挿入ソート (Insertion)</td>
+                      <td className="px-4 py-3 text-indigo-700 font-bold">Chèn trực tiếp</td>
+                      <td className="px-4 py-3">Rút từng phần tử chưa sắp xếp chèn vào đúng vị trí thích hợp trong dãy đã sắp xếp trước đó.</td>
+                      <td className="px-4 py-3 text-center font-mono font-bold text-rose-600">O(n²)</td>
+                      <td className="px-4 py-3 text-center font-bold text-emerald-600">Ổn định (Stable)</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50/80 bg-amber-50/30">
+                      <td className="px-4 py-3 font-bold text-amber-900">クイックソート (Quick)</td>
+                      <td className="px-4 py-3 text-amber-700 font-bold">Sắp xếp nhanh</td>
+                      <td className="px-4 py-3">Chọn giá trị chốt (pivot), phân chia dãy thành 2 nhóm nhỏ hơn & lớn hơn pivot, sắp xếp đệ quy. Nhanh nhất thực tế!</td>
+                      <td className="px-4 py-3 text-center font-mono font-bold text-emerald-700">O(n log n)</td>
+                      <td className="px-4 py-3 text-center font-bold text-slate-400">Không ổn định</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50/80">
+                      <td className="px-4 py-3 font-bold text-indigo-900">シェルソート (Shell)</td>
+                      <td className="px-4 py-3 text-indigo-700 font-bold">Sắp xếp Shell</td>
+                      <td className="px-4 py-3">Cải tiến của Insertion sort bằng cách chia dãy thành các nhóm theo khoảng cách gap h để chèn trước.</td>
+                      <td className="px-4 py-3 text-center font-mono font-bold text-amber-600">O(n<sup>1.3</sup>)</td>
+                      <td className="px-4 py-3 text-center font-bold text-slate-400">Không ổn định</td>
+                    </tr>
+                    <tr className="hover:bg-slate-50/80">
+                      <td className="px-4 py-3 font-bold text-indigo-900">マージソート (Merge)</td>
+                      <td className="px-4 py-3 text-indigo-700 font-bold">Sắp xếp trộn</td>
+                      <td className="px-4 py-3">Chia đôi dãy thành các nửa nhỏ (Chia để trị), sắp xếp đệ quy từng nửa rồi trộn (merge) lại thành dãy hoàn chỉnh.</td>
+                      <td className="px-4 py-3 text-center font-mono font-bold text-emerald-700">O(n log n)</td>
+                      <td className="px-4 py-3 text-center font-bold text-emerald-600">Ổn định (Stable)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              {/* Detailed Breakdown Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+                <div className="p-4 rounded-xl border border-indigo-100 bg-indigo-50/30">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-indigo-100 text-indigo-700">1. バブルソート</span>
+                  <h5 className="font-bold text-xs text-slate-800 mt-2">Bubble Sort (Nổi bọt)</h5>
+                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                    So sánh từng cặp kề nhau từ phải qua trái. Nếu sai thứ tự thì đổi chỗ. Phần tử nhỏ nhất sẽ "nổi" dần lên vị trí đầu tiên.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl border border-blue-100 bg-blue-50/30">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-700">2. 選択法</span>
+                  <h5 className="font-bold text-xs text-slate-800 mt-2">Selection Sort (Chọn)</h5>
+                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                    Duyệt toàn bộ mảng tìm phần tử nhỏ nhất, sau đó đổi chỗ nó với phần tử đầu tiên của dãy chưa sắp xếp. Lặp lại cho đến hết.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl border border-purple-100 bg-purple-50/30">
+                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-100 text-purple-700">3. 挿入ソート</span>
+                  <h5 className="font-bold text-xs text-slate-800 mt-2">Insertion Sort (Chèn)</h5>
+                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                    Coi phần tử đầu đã sắp xếp. Lấy phần tử kế tiếp chèn vào đúng vị trí thích hợp trong đoạn đã sắp xếp (như xếp bài trên tay).
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* BUBBLE SORT VISUALIZER (図114, 図115) */}
-            <div className="border border-slate-200 rounded-2xl p-5 bg-gradient-to-br from-indigo-50/30 via-white to-purple-50/30">
-              <div className="flex items-center justify-between mb-4">
+            {/* SECTION 2: INTERACTIVE DEMO VISUALIZER */}
+            <div className="border border-slate-200 rounded-2xl p-5 bg-gradient-to-br from-indigo-50/30 via-white to-purple-50/30 mt-2">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-4 pb-3 border-b border-slate-200/80">
                 <div>
                   <h4 className="text-sm font-extrabold text-slate-800 flex items-center gap-2">
                     <Play size={16} className="text-indigo-600" fill="currentColor" />
-                    Trực quan hóa Thuật toán Bubble Sort SGK: a = [40, 20, 30, 10]
+                    2. Mô phỏng Trực quan thuật toán sắp xếp (Mảng ban đầu: [40, 20, 30, 10])
                   </h4>
-                  <p className="text-xs text-slate-500">So sánh cặp kề nhau từ phải sang trái và đổi chỗ nếu sai thứ tự.</p>
+                  <p className="text-xs text-slate-500 mt-0.5">Chọn thuật toán muốn xem và bấm nút bắt đầu để theo dõi diễn biến từng bước.</p>
                 </div>
-                <div className="flex gap-2">
-                  <button
-                    onClick={runBubbleSortStepByStep}
-                    disabled={isSorting}
-                    className="px-3 py-2 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs rounded-xl shadow cursor-pointer transition-all disabled:opacity-50"
-                  >
-                    ▶️ Chạy từng bước
-                  </button>
-                  <button
-                    onClick={resetBubbleSort}
-                    disabled={isSorting}
-                    className="px-3 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl border transition-all cursor-pointer disabled:opacity-50"
-                  >
-                    Reset
-                  </button>
+
+                {/* Algorithm Selector Buttons */}
+                <div className="flex flex-wrap gap-2 items-center">
+                  <div className="flex bg-slate-100 p-1 rounded-xl border border-slate-200 text-xs font-bold">
+                    <button
+                      onClick={() => {
+                        setSelectedAlgo('bubble');
+                        resetSortVisualizer();
+                      }}
+                      disabled={isSorting}
+                      className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
+                        selectedAlgo === 'bubble' ? 'bg-indigo-600 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'
+                      }`}
+                    >
+                      Bubble Sort
+                    </button>
+                    <button
+                      onClick={() => {
+                        setSelectedAlgo('selection');
+                        resetSortVisualizer();
+                      }}
+                      disabled={isSorting}
+                      className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
+                        selectedAlgo === 'selection' ? 'bg-indigo-600 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'
+                      }`}
+                    >
+                      Selection Sort
+                    </button>
+                    <button
+                      onClick={() => {
+                        setSelectedAlgo('insertion');
+                        resetSortVisualizer();
+                      }}
+                      disabled={isSorting}
+                      className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
+                        selectedAlgo === 'insertion' ? 'bg-indigo-600 text-white shadow-sm' : 'text-slate-600 hover:text-slate-900'
+                      }`}
+                    >
+                      Insertion Sort
+                    </button>
+                  </div>
+
+                  <div className="flex gap-1.5">
+                    <button
+                      onClick={runSortingAlgorithm}
+                      disabled={isSorting}
+                      className="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow cursor-pointer transition-all disabled:opacity-50 flex items-center gap-1"
+                    >
+                      <Play size={14} fill="currentColor" />
+                      <span>{isSorting ? 'Đang chạy...' : '▶️ Bắt đầu'}</span>
+                    </button>
+                    <button
+                      onClick={resetSortVisualizer}
+                      className="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl border border-slate-300 transition-all cursor-pointer flex items-center gap-1"
+                    >
+                      <RefreshCw size={14} />
+                      <span>Reset</span>
+                    </button>
+                  </div>
                 </div>
               </div>
 
               {/* Interactive Array Cards */}
               <div className="grid grid-cols-4 gap-3 mb-4">
-                {bubbleArray.map((val, idx) => {
-                  const isCurrentI = activeI === idx;
-                  const isCurrentJ = activeJ === idx;
+                {sortArray.map((val, idx) => {
+                  const isI = activeI === idx;
+                  const isJ = activeJ === idx;
+                  const isMin = activeMin === idx;
 
                   return (
                     <div
                       key={idx}
                       className={`p-4 rounded-xl border text-center transition-all duration-300 shadow-sm ${
-                        isCurrentJ 
-                          ? 'bg-amber-100 border-amber-400 scale-105 shadow-md'
-                          : isCurrentI
+                        isMin
+                          ? 'bg-emerald-100 border-emerald-400 scale-105 shadow-md ring-2 ring-emerald-300'
+                          : isJ
+                          ? 'bg-amber-100 border-amber-400 scale-105 shadow-md ring-2 ring-amber-300'
+                          : isI
                           ? 'bg-indigo-100 border-indigo-400'
                           : 'bg-white border-slate-200'
                       }`}
                     >
                       <span className="text-[10px] font-extrabold text-slate-400 block font-mono">a[{idx}]</span>
-                      <span className="text-xl font-black text-slate-800">{val}</span>
-                      {isCurrentJ && <span className="text-[9px] font-bold text-amber-700 block mt-1">Đang so sánh (j)</span>}
+                      <span className="text-2xl font-black text-slate-800 mt-1 block">{val}</span>
+                      
+                      <div className="min-h-[18px] mt-1 flex flex-col items-center justify-center gap-0.5">
+                        {isMin && <span className="text-[9px] font-extrabold text-emerald-700 bg-emerald-200/80 px-1.5 py-0.5 rounded">Min mới</span>}
+                        {isJ && !isMin && <span className="text-[9px] font-extrabold text-amber-700 bg-amber-200/80 px-1.5 py-0.5 rounded">Đang so (j)</span>}
+                        {isI && !isJ && !isMin && <span className="text-[9px] font-extrabold text-indigo-700 bg-indigo-200/80 px-1.5 py-0.5 rounded">Vị trí (i)</span>}
+                      </div>
                     </div>
                   );
                 })}
               </div>
 
-              {/* Logs */}
-              <div className="p-4 bg-slate-900 text-slate-300 font-mono text-xs rounded-xl max-h-[180px] overflow-y-auto space-y-1">
-                {bubbleStepLogs.length === 0 ? (
-                  <span className="text-slate-500 italic">Bấm "Chạy từng bước" để xem diễn biến thuật toán Bubble Sort...</span>
+              {/* Step Logs Terminal Box */}
+              <div className="p-4 bg-slate-900 text-slate-300 font-mono text-xs rounded-xl max-h-[200px] overflow-y-auto space-y-1 shadow-inner">
+                {sortLogs.length === 0 ? (
+                  <div className="text-slate-500 italic flex items-center gap-2">
+                    <Info size={14} />
+                    <span>Bấm "▶️ Bắt đầu" để chạy mô phỏng từng bước cho thuật toán {selectedAlgo.toUpperCase()}...</span>
+                  </div>
                 ) : (
-                  bubbleStepLogs.map((log, index) => (
-                    <div key={index} className="border-l-2 border-indigo-500 pl-2">
+                  sortLogs.map((log, index) => (
+                    <div key={index} className="border-l-2 border-indigo-500 pl-2 leading-relaxed">
                       {log}
                     </div>
                   ))

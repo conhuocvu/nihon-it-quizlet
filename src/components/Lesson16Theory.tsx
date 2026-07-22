@@ -242,44 +242,107 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
             <div>
               <span className="text-[10px] font-extrabold text-indigo-600 bg-indigo-50 border border-indigo-100 px-3 py-1 rounded-full uppercase">Mục 16.2</span>
               <h3 className="text-lg font-extrabold text-slate-800 mt-1">16.2 OS の機能 (5 Chức năng quan trọng của OS)</h3>
+              <p className="text-xs text-slate-600 mt-1">Chi tiết 5 chức năng cốt lõi của OS kèm theo các đoạn trích & câu tiếng Nhật trọng tâm cho kỳ thi IT.</p>
             </div>
 
-            {/* 5 Functions Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            {/* 5 Detailed Function Sections with Japanese Sentences */}
+            <div className="flex flex-col gap-5">
               {/* Function 1 */}
-              <div className="p-4 border border-slate-200 rounded-xl bg-white shadow-sm">
-                <span className="text-[10px] font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded border border-blue-100 uppercase">Chức năng 1</span>
-                <h4 className="font-extrabold text-sm text-slate-800 mt-2">1. ユーザインタフェース (UI & GUI)</h4>
-                <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                  Quyết định giao diện & tính dễ sử dụng (Graphical User Interface - GUI). Thao tác cửa sổ, chuột, bàn phím (Mac 1 nút chuột, Windows 2 nút, Unix 3 nút).
-                </p>
+              <div className="p-5 border border-slate-200 rounded-2xl bg-white shadow-sm hover:border-blue-200 transition-all">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-[10px] font-extrabold text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-100 uppercase">Chức năng (1)</span>
+                  <h4 className="font-extrabold text-base text-slate-800">1. ユーザインタフェース (Giao diện người dùng - UI & GUI)</h4>
+                </div>
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs text-slate-700 font-serif italic mb-3 select-text">
+                  <p className="font-bold text-slate-800">「(1) ユーザインタフェース」</p>
+                  <p className="mt-1">「OS の機能の第 1 は，操作性を決めることです．...この操作性のことをユーザインタフェースと言います．特に見え方に関することを GUI(Graphical User Interface)と言います．」</p>
+                </div>
+                <div className="text-xs text-slate-600 leading-relaxed space-y-2">
+                  <p>• <strong>操作性 (Tính thao tác):</strong> OS quy định cách dùng chuột, bàn phím, giao diện cửa sổ (Window).</p>
+                  <p>• <strong>GUI (Graphical User Interface):</strong> Nhấn mạnh vào yếu tố thị giác (<strong>見え方</strong>), giao diện đồ họa trực quan.</p>
+                  <p>• <strong>Khác biệt hệ thống:</strong> Mac dùng chuột 1 nút, Windows 2 nút, Unix 3 nút; mỗi hệ điều hành có phím tắt và bàn phím đặc thù riêng.</p>
+                </div>
+                <div className="mt-3 p-2.5 bg-blue-50/70 border border-blue-100 rounded-lg text-[11px] text-blue-900">
+                  <span className="font-bold">🔑 Câu tiếng Nhật trọng tâm:</span> 「操作性のことをユーザインタフェースと言います。」 / 「特に見え方に関することを GUIと言います。」
+                </div>
               </div>
 
               {/* Function 2 */}
-              <div className="p-4 border border-slate-200 rounded-xl bg-white shadow-sm">
-                <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100 uppercase">Chức năng 2</span>
-                <h4 className="font-extrabold text-sm text-slate-800 mt-2">2. ソフトとハードの仲介 (Trung gian Phần mềm & Phần cứng)</h4>
-                <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                  Triệt tiêu sự khác biệt nhà sản xuất phần cứng (ハードウェアの相違を吸収する). Giúp phần mềm chạy trên nhiều dòng máy khác nhau miễn đáp ứng chuẩn OS.
-                </p>
+              <div className="p-5 border border-slate-200 rounded-2xl bg-white shadow-sm hover:border-emerald-200 transition-all">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-[10px] font-extrabold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-100 uppercase">Chức năng (2)</span>
+                  <h4 className="font-extrabold text-base text-slate-800">2. ソフトとハードの仲介 (Trung gian Phần mềm & Phần cứng - 図95)</h4>
+                </div>
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs text-slate-700 font-serif italic mb-3 select-text">
+                  <p className="font-bold text-slate-800">「(2) ソフトとハードの仲介」</p>
+                  <p className="mt-1">「OS の機能の第 2 は，図 95 に示すように，ハードウェアの相違を吸収することです．...OS が定めた基準を満たしている限り，どのメーカのソフト，ハードでも問題なく使うことができるようになります．」</p>
+                </div>
+                <div className="text-xs text-slate-600 leading-relaxed space-y-2">
+                  <p>• <strong>吸収する (Triệt tiêu/Trung hòa):</strong> Che giấu sự khác biệt phần cứng của các nhà sản xuất khác nhau (<strong>ハードウェアの相違を吸収する</strong>).</p>
+                  <p>• <strong>Cải thiện hiệu quả phát triển (開発効率):</strong> Trước khi có OS, phần mềm phải viết riêng cho từng phần cứng của từng hãng. Nhờ OS chuẩn hóa, nhà phát triển chỉ cần tuân thủ tiêu chuẩn của OS.</p>
+                </div>
+                <div className="mt-3 p-2.5 bg-emerald-50/70 border border-emerald-100 rounded-lg text-[11px] text-emerald-900">
+                  <span className="font-bold">🔑 Câu tiếng Nhật trọng tâm:</span> 「ハードウェアの相違を吸収することです。」 / 「OSが定めた基準を満たしている限り、どのメーカのソフト、ハードでも問題なく使うことができるようになります。」
+                </div>
               </div>
 
               {/* Function 3 */}
-              <div className="p-4 border border-slate-200 rounded-xl bg-white shadow-sm">
-                <span className="text-[10px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded border border-amber-100 uppercase">Chức năng 3</span>
-                <h4 className="font-extrabold text-sm text-slate-800 mt-2">3. 記憶管理 (Quản lý Bộ nhớ & Bộ nhớ ảo)</h4>
-                <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                  Di chuyển dữ liệu giữa Cache, Memory (RAM) và HDD. Dùng ổ cứng làm **Bộ nhớ ảo (仮想記憶)** và thực hiện **Tráo đổi bộ nhớ (スワッピング - Swapping)** khi RAM đầy.
-                </p>
+              <div className="p-5 border border-slate-200 rounded-2xl bg-white shadow-sm hover:border-amber-200 transition-all">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-[10px] font-extrabold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-100 uppercase">Chức năng (3)</span>
+                  <h4 className="font-extrabold text-base text-slate-800">3. 記憶管理 (Quản lý bộ nhớ, 仮想記憶 & スワッピング - 図96)</h4>
+                </div>
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs text-slate-700 font-serif italic mb-3 select-text">
+                  <p className="font-bold text-slate-800">「(3) 記憶管理」</p>
+                  <p className="mt-1">「見かけ上の記憶容量を実際のメモリ容量よりも大きくし，足りない部分はハードディスクを利用することで，大きなメモリ空間を確保することを仮想記憶と言い，メモリとハードディスクのデータの交換をスワッピングと言います．」</p>
+                </div>
+                <div className="text-xs text-slate-600 leading-relaxed space-y-2">
+                  <p>• <strong>Tối ưu hóa thứ cấp bộ nhớ:</strong> Luân chuyển dữ liệu giữa <strong>キャッシュ (Cache) ↔ メモリ (RAM) ↔ ハードディスク (HDD/SSD)</strong> dựa theo tốc độ truy xuất và dung lượng.</p>
+                  <p>• <strong>仮想記憶 (Virtual Memory):</strong> Mượn bộ nhớ đĩa cứng làm RAM ảo, giúp tăng không gian bộ nhớ hiển thị trên bề mặt (<strong>見かけ上の記憶容量</strong>).</p>
+                  <p>• <strong>スワッピング (Swapping):</strong> Đổi dữ liệu liên tục giữa RAM và Ổ cứng khi RAM bị đầy.</p>
+                </div>
+                <div className="mt-3 p-2.5 bg-amber-50/70 border border-amber-100 rounded-lg text-[11px] text-amber-900">
+                  <span className="font-bold">🔑 Câu tiếng Nhật trọng tâm:</span> 「大きなメモリ空間を確保することを仮想記憶と言い、メモリとハードディスクのデータの交換をスワッピングと言います。」
+                </div>
               </div>
 
               {/* Function 4 */}
-              <div className="p-4 border border-slate-200 rounded-xl bg-white shadow-sm">
-                <span className="text-[10px] font-bold text-purple-600 bg-purple-50 px-2 py-0.5 rounded border border-purple-100 uppercase">Chức năng 4 & 5</span>
-                <h4 className="font-extrabold text-sm text-slate-800 mt-2">4. プロセス管理 & 5. ユーザ管理</h4>
-                <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                  Lập lịch (スケジューリング) CPU để thực hiện **Đa nhiệm (マルチタスク)** và phân quyền nhiều người dùng **Đa người dùng (マルチユーザ)** an toàn, bảo mật.
-                </p>
+              <div className="p-5 border border-slate-200 rounded-2xl bg-white shadow-sm hover:border-purple-200 transition-all">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-[10px] font-extrabold text-purple-700 bg-purple-50 px-2.5 py-0.5 rounded-full border border-purple-100 uppercase">Chức năng (4)</span>
+                  <h4 className="font-extrabold text-base text-slate-800">4. プロセス管理 (Quản lý tiến trình & マルチタスク - 図97)</h4>
+                </div>
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs text-slate-700 font-serif italic mb-3 select-text">
+                  <p className="font-bold text-slate-800">「(4) プロセス管理」</p>
+                  <p className="mt-1">「プロセスとはソフトウェアの処理のことです．...OS はアプリケーションソフトのプロセスを細かい単位に分け，それぞれの負荷に応じて最適なスケジューリングを行うことで，複数のソフトが同時に動いているように見せています．複数のプログラムが同時に動くように管理することをマルチタスクと呼んでいます．」</p>
+                </div>
+                <div className="text-xs text-slate-600 leading-relaxed space-y-2">
+                  <p>• <strong>プロセス (Process):</strong> Tiến trình xử lý phần mềm. 1 nhân CPU chỉ tính toán 1 tiến trình tại một thời điểm.</p>
+                  <p>• <strong>スケジューリング (Scheduling):</strong> OS phân chia tiến trình và lập lịch tối ưu tùy theo tải (<strong>負荷</strong>), tạo ra xử lý đồng thời giả lập (<strong>見かけ上の同時処理</strong>).</p>
+                  <p>• <strong>マルチタスク (Multitasking):</strong> Quản lý để nhiều phần mềm chạy cùng lúc.</p>
+                </div>
+                <div className="mt-3 p-2.5 bg-purple-50/70 border border-purple-100 rounded-lg text-[11px] text-purple-900">
+                  <span className="font-bold">🔑 Câu tiếng Nhật trọng tâm:</span> 「プロセスとはソフトウェアの処理のことです。」 / 「複数のプログラムが同時に動くように管理することをマルチタスクと呼んでいます。」
+                </div>
+              </div>
+
+              {/* Function 5 */}
+              <div className="p-5 border border-slate-200 rounded-2xl bg-white shadow-sm hover:border-rose-200 transition-all">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-[10px] font-extrabold text-rose-700 bg-rose-50 px-2.5 py-0.5 rounded-full border border-rose-100 uppercase">Chức năng (5)</span>
+                  <h4 className="font-extrabold text-base text-slate-800">5. ユーザ管理 (Quản lý người dùng & マルチユーザ)</h4>
+                </div>
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs text-slate-700 font-serif italic mb-3 select-text">
+                  <p className="font-bold text-slate-800">「(5) ユーザ管理」</p>
+                  <p className="mt-1">「複数ユーザが利用するときには，ユーザ毎に利用環境を保存し，他人のファイルや情報へのアクセスを制限するユーザ管理機能が必要です．複数のユーザが利用することをマルチユーザと言います．...他人のファイルや作業を侵害しない安全性、安定性を持つ必要があります．」</p>
+                </div>
+                <div className="text-xs text-slate-600 leading-relaxed space-y-2">
+                  <p>• <strong>Bảo mật & Phân quyền:</strong> Lưu môi trường sử dụng của từng cá nhân, hạn chế truy cập file của người khác.</p>
+                  <p>• <strong>マルチユーザ (Multi-user):</strong> Nhiều người cùng truy cập máy qua mạng đồng thời mà vẫn đảm bảo độ an toàn (<strong>安全性</strong>) và độ ổn định (<strong>安定性</strong>).</p>
+                </div>
+                <div className="mt-3 p-2.5 bg-rose-50/70 border border-rose-100 rounded-lg text-[11px] text-rose-900">
+                  <span className="font-bold">🔑 Câu tiếng Nhật trọng tâm:</span> 「ユーザ毎に利用環境を保存し、他人のファイルや情報へのアクセスを制限する...」 / 「複数のユーザが利用することをマルチユーザと言います。」
+                </div>
               </div>
             </div>
 

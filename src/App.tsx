@@ -5,6 +5,7 @@ import { useHashRoute } from './hooks/useHashRoute';
 import { Homepage } from './components/Homepage';
 import { LessonSelector } from './components/LessonSelector';
 import { MimiN3Selector } from './components/MimiN3Selector';
+import { JFE301Selector } from './components/JFE301Selector';
 import { StudySession } from './components/StudySession';
 import { TheoryViewer } from './components/TheoryViewer';
 import { FakePaywallModal } from './components/FakePaywallModal';
@@ -48,6 +49,16 @@ function App() {
     const queryStr = selectedSectionIds.length > 0 ? `?sections=${selectedSectionIds.join(',')}` : '';
     navigate(`/subject/${currentSubject.id}/study${queryStr}`);
   };
+
+  // Parse examFilter from URL search params (?exam=de1)
+  const examFilter = (() => {
+    if (route.page !== 'study') return undefined;
+    const hash = window.location.hash;
+    const qIndex = hash.indexOf('?');
+    if (qIndex === -1) return undefined;
+    const params = new URLSearchParams(hash.slice(qIndex + 1));
+    return params.get('exam') || undefined;
+  })();
 
   const handlePaywallSuccess = () => {
     setIsVipUnlocked(true);
@@ -197,7 +208,20 @@ function App() {
           />
         )}
 
-        {route.page === 'subject' && currentSubject.id !== 'mimi-n3-goi' && (
+        {route.page === 'subject' && currentSubject.id === 'jfe301' && (
+          <JFE301Selector
+            lessons={currentSubject.lessons}
+            onStartByChapter={(sectionIds) =>
+              navigate(`/subject/jfe301/study?sections=${sectionIds.join(',')}`)
+            }
+            onStartByExam={(examTag) =>
+              navigate(`/subject/jfe301/study?exam=${examTag}`)
+            }
+            onBackToHome={() => navigate('/')}
+          />
+        )}
+
+        {route.page === 'subject' && currentSubject.id !== 'mimi-n3-goi' && currentSubject.id !== 'jfe301' && (
           <LessonSelector
             lessons={currentSubject.lessons}
             selectedSectionIds={selectedSectionIds}
@@ -223,6 +247,7 @@ function App() {
           <StudySession
             selectedSectionIds={route.sections && route.sections.length > 0 ? route.sections : selectedSectionIds}
             range={route.range}
+            examFilter={examFilter}
             lessons={currentSubject.lessons}
             onBackToSelector={() => goBack()}
           />

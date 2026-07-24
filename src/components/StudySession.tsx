@@ -17,6 +17,7 @@ interface StudySessionProps {
   range?: [number, number];
   lessons: Lesson[];
   onBackToSelector: () => void;
+  examFilter?: string; // e.g. "de1" — lọc câu theo đề thi
 }
 
 // Fisher-Yates shuffle algorithm
@@ -34,6 +35,7 @@ export const StudySession: React.FC<StudySessionProps> = ({
   range,
   lessons,
   onBackToSelector,
+  examFilter,
 }) => {
   const [questions, setQuestions] = useState<SessionQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -77,6 +79,27 @@ export const StudySession: React.FC<StudySessionProps> = ({
 
       const sliced = allFlat.slice(Math.max(0, fromNum - 1), Math.min(allFlat.length, toNum));
       setQuestions(sliced);
+    } else if (examFilter) {
+      // Filter all items by exam tag
+      lessons.forEach((lesson) => {
+        lesson.sections.forEach((section) => {
+          section.items.forEach((item) => {
+            if (item.exam === examFilter) {
+              aggregated.push({
+                item,
+                lessonTitle: lesson.title,
+                sectionTitle: section.title,
+                sectionType: section.type,
+              });
+            }
+          });
+        });
+      });
+      // Sort by examOrder so questions appear in correct exam sequence
+      aggregated.sort((a, b) =>
+        (a.item.examOrder ?? 999) - (b.item.examOrder ?? 999)
+      );
+      setQuestions(aggregated);
     } else {
       lessons.forEach((lesson) => {
         lesson.sections.forEach((section) => {

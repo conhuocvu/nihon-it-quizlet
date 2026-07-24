@@ -8,6 +8,9 @@ export type StudyItem = {
   reading?: string;
   explanation?: string;
   example?: string;
+  image?: string;
+  exam?: string;          // e.g. "de1", "de2" — tag theo đề thi
+  examOrder?: number;     // thứ tự câu trong đề (1, 2, 3...)
 };
 
 export type Section = {

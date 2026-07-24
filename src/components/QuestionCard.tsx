@@ -58,10 +58,24 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
       {/* Main Question Card */}
       <div className="bg-white rounded-2xl border border-slate-200 shadow-xl shadow-slate-100/40 p-6 md:p-8 transition-all duration-300">
         <div className="mb-6">
-          <span className="inline-block text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-2">Câu hỏi tiếng Nhật</span>
-          <h2 className="text-xl md:text-2xl font-bold text-slate-800 leading-relaxed font-sans">
-            {item.question}
-          </h2>
+          {item.image ? (
+            /* Image-based question: show image only */
+            <div className="rounded-xl overflow-hidden border border-slate-200 bg-slate-50">
+              <img
+                src={item.image}
+                alt="Question"
+                className="w-full max-h-80 object-contain"
+              />
+            </div>
+          ) : (
+            /* Text-based question */
+            <>
+              <span className="inline-block text-[11px] font-bold text-slate-400 uppercase tracking-widest mb-2">Câu hỏi</span>
+              <h2 className="text-xl md:text-2xl font-bold text-slate-800 leading-relaxed font-sans whitespace-pre-line">
+                {item.question}
+              </h2>
+            </>
+          )}
         </div>
 
         {/* Choice List */}

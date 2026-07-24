@@ -14,6 +14,7 @@ interface SessionQuestion {
 
 interface StudySessionProps {
   selectedSectionIds: string[];
+  range?: [number, number];
   lessons: Lesson[];
   onBackToSelector: () => void;
 }
@@ -30,6 +31,7 @@ const shuffleArray = <T,>(array: T[]): T[] => {
 
 export const StudySession: React.FC<StudySessionProps> = ({
   selectedSectionIds,
+  range,
   lessons,
   onBackToSelector,
 }) => {
@@ -53,26 +55,46 @@ export const StudySession: React.FC<StudySessionProps> = ({
     };
   }, []);
 
-  // Initialize session questions based on selected sections
+  // Initialize session questions based on selected sections or range
   const initializeSession = () => {
     const aggregated: SessionQuestion[] = [];
 
-    lessons.forEach(lesson => {
-      lesson.sections.forEach(section => {
-        if (selectedSectionIds.includes(section.id)) {
-          section.items.forEach(item => {
-            aggregated.push({
+    if (range) {
+      const [fromNum, toNum] = range;
+      const allFlat: SessionQuestion[] = [];
+      lessons.forEach((lesson) => {
+        lesson.sections.forEach((section) => {
+          section.items.forEach((item) => {
+            allFlat.push({
               item,
               lessonTitle: lesson.title,
               sectionTitle: section.title,
               sectionType: section.type,
             });
           });
-        }
+        });
       });
-    });
 
-    setQuestions(aggregated);
+      const sliced = allFlat.slice(Math.max(0, fromNum - 1), Math.min(allFlat.length, toNum));
+      setQuestions(sliced);
+    } else {
+      lessons.forEach((lesson) => {
+        lesson.sections.forEach((section) => {
+          if (selectedSectionIds.includes(section.id)) {
+            section.items.forEach((item) => {
+              aggregated.push({
+                item,
+                lessonTitle: lesson.title,
+                sectionTitle: section.title,
+                sectionType: section.type,
+              });
+            });
+          }
+        });
+      });
+      setQuestions(aggregated);
+    }
+
     setCurrentIndex(0);
     setIsAnswered(false);
     setCorrectCount(0);
@@ -84,7 +106,7 @@ export const StudySession: React.FC<StudySessionProps> = ({
   // Run initialization on mount
   useEffect(() => {
     initializeSession();
-  }, [selectedSectionIds, lessons]);
+  }, [selectedSectionIds, range, lessons]);
 
   // Handle shuffling questions inside active session
   const handleShuffleInSession = () => {

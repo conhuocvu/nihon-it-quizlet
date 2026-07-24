@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import type { Lesson } from '../data/lessons';
-import { BookOpen, CheckSquare, Square, Play, AlertCircle, HelpCircle, Layers, Book } from 'lucide-react';
+import { BookOpen, CheckSquare, Square, Play, AlertCircle, HelpCircle, Layers, Book, ArrowLeft } from 'lucide-react';
 
 interface LessonSelectorProps {
   lessons: Lesson[];
@@ -8,6 +8,9 @@ interface LessonSelectorProps {
   setSelectedSectionIds: React.Dispatch<React.SetStateAction<string[]>>;
   onStartSession: () => void;
   onViewTheory?: (lessonId: number) => void;
+  subjectTitle?: string;
+  subjectJapaneseTitle?: string;
+  onBackToHome?: () => void;
 }
 
 export const LessonSelector: React.FC<LessonSelectorProps> = ({
@@ -16,6 +19,9 @@ export const LessonSelector: React.FC<LessonSelectorProps> = ({
   setSelectedSectionIds,
   onStartSession,
   onViewTheory,
+  subjectTitle = 'NihonIT Quizlet',
+  subjectJapaneseTitle = 'IT日本語 & 専門用語',
+  onBackToHome,
 }) => {
   // Aggregate all available sections that have content
   const allContentSections = useMemo(() => {
@@ -116,13 +122,24 @@ export const LessonSelector: React.FC<LessonSelectorProps> = ({
   return (
     <div className="w-full max-w-6xl mx-auto px-4 py-8">
       {/* Header section with styling */}
-      <div className="text-center mb-10">
-        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-800 bg-clip-text text-transparent">
-          NihonIT Quizlet
+      <div className="relative text-center mb-10">
+        {onBackToHome && (
+          <button
+            onClick={onBackToHome}
+            className="sm:absolute left-0 top-1/2 sm:-translate-y-1/2 mb-4 sm:mb-0 inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-slate-600 hover:text-indigo-600 hover:border-indigo-200 text-xs font-extrabold shadow-sm transition-all cursor-pointer"
+          >
+            <ArrowLeft size={16} />
+            <span>Tất cả môn học</span>
+          </button>
+        )}
+        <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-800 bg-clip-text text-transparent">
+          {subjectTitle}
         </h1>
-        <p className="mt-3 text-lg text-slate-600 max-w-xl mx-auto">
-          Học tiếng Nhật & ôn luyện kiến thức Công nghệ thông tin theo từng phần riêng biệt.
-        </p>
+        {subjectJapaneseTitle && (
+          <p className="mt-2 text-sm md:text-base font-semibold text-slate-500 max-w-xl mx-auto">
+            {subjectJapaneseTitle}
+          </p>
+        )}
       </div>
 
       {/* Control panel & summary */}

@@ -18,6 +18,7 @@ export const VocabularyCard: React.FC<VocabularyCardProps> = ({
   const [isFlipped, setIsFlipped] = useState(false);
   const [isGraded, setIsGraded] = useState(false);
   const [showHira, setShowHira] = useState(false);
+  const [showExample, setShowExample] = useState(false);
   const [selectedGrade, setSelectedGrade] = useState<'correct' | 'incorrect' | null>(null);
 
   // Reset when vocabulary item changes
@@ -25,6 +26,7 @@ export const VocabularyCard: React.FC<VocabularyCardProps> = ({
     setIsFlipped(false);
     setIsGraded(false);
     setShowHira(false);
+    setShowExample(false);
     setSelectedGrade(null);
   }, [item]);
 
@@ -140,7 +142,7 @@ export const VocabularyCard: React.FC<VocabularyCardProps> = ({
                       className="text-xs font-bold text-indigo-600 hover:text-indigo-700 bg-indigo-50 hover:bg-indigo-100/80 px-3 py-2 rounded-lg border border-indigo-100 flex items-center gap-1.5 active:scale-95 transition-all cursor-pointer shadow-sm"
                     >
                       <Eye size={12} />
-                      Hiện cách đọc (Hiragana)
+                      Hiện cách đọc / Từ gốc
                     </button>
                   )}
                 </div>
@@ -173,14 +175,52 @@ export const VocabularyCard: React.FC<VocabularyCardProps> = ({
             </div>
 
             {/* Meaning details */}
-            <div className="text-center my-auto flex flex-col items-center justify-center overflow-y-auto max-h-[160px] py-2 px-1">
+            <div className="text-center my-auto flex flex-col items-center justify-center overflow-y-auto max-h-[190px] py-2 px-1 w-full">
               <h3 className="text-2xl md:text-3xl font-extrabold text-slate-800 leading-tight select-text">
                 {item.meaning || item.answer}
               </h3>
               {item.explanation && (
-                <div className="mt-4 p-3 bg-slate-50 rounded-xl border border-slate-100 text-left text-xs md:text-sm text-slate-500 max-w-md w-full select-text">
+                <div className="mt-3 p-3 bg-slate-50 rounded-xl border border-slate-100 text-left text-xs md:text-sm text-slate-500 max-w-md w-full select-text">
                   <span className="font-bold text-slate-700 block mb-0.5">Giải thích:</span>
                   {item.explanation}
+                </div>
+              )}
+
+              {/* Example sentence toggle */}
+              {item.example && (
+                <div className="mt-3 w-full flex flex-col items-center">
+                  {!showExample ? (
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setShowExample(true);
+                      }}
+                      className="text-xs font-bold text-indigo-600 hover:text-indigo-700 bg-indigo-50 hover:bg-indigo-100 px-3 py-1.5 rounded-lg border border-indigo-100 flex items-center gap-1.5 transition-all cursor-pointer shadow-sm active:scale-95"
+                    >
+                      <Eye size={12} />
+                      <span>Xem câu ví dụ (例文)</span>
+                    </button>
+                  ) : (
+                    <div className="p-3 bg-indigo-50/90 rounded-xl border border-indigo-200/80 text-left text-xs md:text-sm text-indigo-950 max-w-md w-full select-text animate-fadeIn">
+                      <div className="flex items-center justify-between mb-1.5">
+                        <span className="font-extrabold text-indigo-700 flex items-center gap-1 text-[11px] uppercase tracking-wider">
+                          💡 Ví dụ (例文):
+                        </span>
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setShowExample(false);
+                          }}
+                          className="text-[10px] font-bold text-slate-500 hover:text-indigo-700 bg-white/90 px-2 py-0.5 rounded border border-indigo-100 cursor-pointer"
+                        >
+                          Ẩn ví dụ
+                        </button>
+                      </div>
+                      <p className="font-medium whitespace-pre-line leading-relaxed text-slate-800">
+                        {item.example}
+                      </p>
+                    </div>
+                  )}
                 </div>
               )}
             </div>

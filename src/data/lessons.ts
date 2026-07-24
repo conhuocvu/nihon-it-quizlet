@@ -7,6 +7,7 @@ export type StudyItem = {
   meaning?: string;
   reading?: string;
   explanation?: string;
+  example?: string;
 };
 
 export type Section = {

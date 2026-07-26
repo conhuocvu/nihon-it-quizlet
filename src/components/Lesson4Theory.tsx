@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react';
 import { 
   ArrowLeft, BookOpen, Cpu, HardDrive, Monitor, 
   CheckCircle2, Languages, RefreshCw, Smartphone, Laptop,
-  Folder, FileText, Activity, HelpCircle, Shield, Radio, Layers, Zap, Play, ToggleLeft, ToggleRight, Wifi
+  Folder, FileText, Activity, HelpCircle, Shield, Radio, Layers, Zap, Play, ToggleLeft, ToggleRight, Wifi, AlertTriangle
 } from 'lucide-react';
 
 interface Lesson4TheoryProps {

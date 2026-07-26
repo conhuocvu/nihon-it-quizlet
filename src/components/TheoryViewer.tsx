@@ -1,4 +1,9 @@
 import React, { useEffect } from 'react';
+import { Lesson1Theory } from './Lesson1Theory';
+import { Lesson2Theory } from './Lesson2Theory';
+import { Lesson3Theory } from './Lesson3Theory';
+import { Lesson4Theory } from './Lesson4Theory';
+import { Lesson5Theory } from './Lesson5Theory';
 import { Lesson16Theory } from './Lesson16Theory';
 import { Lesson17Theory } from './Lesson17Theory';
 import { Lesson18Theory } from './Lesson18Theory';
@@ -14,6 +19,27 @@ export const TheoryViewer: React.FC<TheoryViewerProps> = ({ lessonId, onClose })
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [lessonId]);
+
+  if (lessonId === 1) {
+    return <Lesson1Theory onClose={onClose} />;
+  }
+
+  if (lessonId === 2) {
+    return <Lesson2Theory onClose={onClose} />;
+  }
+
+  if (lessonId === 3) {
+    return <Lesson3Theory onClose={onClose} />;
+  }
+
+  if (lessonId === 4) {
+    return <Lesson4Theory onClose={onClose} />;
+  }
+
+  if (lessonId === 5) {
+    return <Lesson5Theory onClose={onClose} />;
+  }
+
   if (lessonId === 16) {
     return <Lesson16Theory onClose={onClose} />;
   }

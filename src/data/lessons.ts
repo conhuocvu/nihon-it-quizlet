@@ -31,6 +31,7 @@ export const lessons: Lesson[] = [
   {
     id: 1,
     title: "Bài 1 - Cơ bản về máy tính",
+    hasTheory: true,
     sections: [
       {
         id: "lesson-1-vocabulary",
@@ -419,7 +420,7 @@ export const lessons: Lesson[] = [
       },
       {
         id: "lesson-1-multiple-choice",
-        title: "Trắc nghiệm - Cơ bản về máy tính",
+        title: "Trắc nghiệm",
         type: "multiple_choice",
         items: [
           {
@@ -527,6 +528,33 @@ export const lessons: Lesson[] = [
               "Sai"
             ],
             answer: "Đúng"
+          },
+          {
+            id: "l1-mc-11",
+            question: "スマートフォンはコンピューターの種類の一つです。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Đúng"
+          },
+          {
+            id: "l1-mc-12",
+            question: "ドライブとは，ファイルを整理するための入れ物のことです。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Sai"
+          },
+          {
+            id: "l1-mc-13",
+            question: "フォルダを閲覧するためにはフォルダを順次クリックして開いていく。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Đúng"
           }
         ]
       }
@@ -535,6 +563,7 @@ export const lessons: Lesson[] = [
   {
     id: 2,
     title: "Bài 2 - Sử dụng Internet",
+    hasTheory: true,
     sections: [
       {
         id: "lesson-2-vocabulary",
@@ -913,12 +942,157 @@ export const lessons: Lesson[] = [
             meaning: "rò rỉ"
           }
         ]
+      },
+      {
+        id: "lesson-2-multiple-choice",
+        title: "Trắc nghiệm",
+        type: "multiple_choice",
+        items: [
+          {
+            id: "l2-mc-1",
+            question: "ホームページを見る場合には何を利用しますか。",
+            choices: [
+              "ブラウザ",
+              "フリーウェア",
+              "シェアウェア",
+              "ウェブサイト"
+            ],
+            answer: "ブラウザ"
+          },
+          {
+            id: "l2-mc-2",
+            question: "URLとは何ですか",
+            choices: [
+              "入り口となるサイト",
+              "ホームページのアドレス",
+              "出口となるサイト",
+              "コンピューターのアドレス"
+            ],
+            answer: "ホームページのアドレス"
+          },
+          {
+            id: "l2-mc-3",
+            question: "Web2.0とは何ですか",
+            choices: [
+              "一方向的なホームページ",
+              "一方向的なアドレス",
+              "双方向型のホームページ",
+              "双方向型のアドレス"
+            ],
+            answer: "双方向型のホームページ"
+          },
+          {
+            id: "l2-mc-4",
+            question: "クラウドコンピューティングの概念はいつ提唱されましたか。",
+            choices: [
+              "2004",
+              "2006",
+              "2005",
+              "2007"
+            ],
+            answer: "2006"
+          },
+          {
+            id: "l2-mc-5",
+            question: "著作権は何の権に属しますか。",
+            choices: [
+              "工業所有権",
+              "著作者財産権",
+              "著作人格権",
+              "知的所有権"
+            ],
+            answer: "知的所有権"
+          },
+          {
+            id: "l2-mc-6",
+            question: "工業所有権はどんな権ですか。",
+            choices: [
+              "工業の進歩を保護する権利",
+              "技術の進歩を保護する権利",
+              "新規の技術についての権利を保護する権利",
+              "製品のデザインについての権利"
+            ],
+            answer: "技術の進歩を保護する権利"
+          },
+          {
+            id: "l2-mc-7",
+            question: "インターネット利用形態の主なものに何がありますか。",
+            choices: [
+              "ホームページ閲覧とメール送受信",
+              "ホームページ閲覧",
+              "メール送受信",
+              "ホームページ設定とメール閲覧"
+            ],
+            answer: "ホームページ閲覧とメール送受信"
+          },
+          {
+            id: "l2-mc-8",
+            question: "ポータルサイトは何でしょう。",
+            choices: [
+              "ホームページのアドレスのこと",
+              "入り口となるサイトのこと",
+              "簡単なアドレス",
+              "複雑なアドレス"
+            ],
+            answer: "入り口となるサイトのこと"
+          },
+          {
+            id: "l2-mc-9",
+            question: "特許権はどの権に属しますか。",
+            choices: [
+              "著作権",
+              "実用新案権",
+              "工業所有権",
+              "意匠権"
+            ],
+            answer: "工業所有権"
+          },
+          {
+            id: "l2-mc-10",
+            question: "インターネットについて正しくないものを一つ選びなさい",
+            choices: [
+              "インターネット利用形態の主なものにホームページ閲覧とメール送受信がある。",
+              "インターネットは世界中の人たちと直接ふれあうことができる",
+              "インターネットのおかげで、何でもできるようになった",
+              "インターネットはコミュニケーションの道具である"
+            ],
+            answer: "インターネットのおかげで、何でもできるようになった"
+          },
+          {
+            id: "l2-mc-11",
+            question: "フリーウェアは有料です。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Sai"
+          },
+          {
+            id: "l2-mc-12",
+            question: "メールを送るとき、急な返事を求める。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Sai"
+          },
+          {
+            id: "l2-mc-13",
+            question: "著作権は文化的な生産物や表現を保護する権利です。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Đúng"
+          }
+        ]
       }
     ]
   },
   {
     id: 3,
     title: "Bài 3 - Hiện trạng thiết bị IT",
+    hasTheory: true,
     sections: [
       {
         id: "lesson-3-vocabulary",
@@ -1101,12 +1275,157 @@ export const lessons: Lesson[] = [
             meaning: "màn hình phát quang hữu cơ"
           }
         ]
+      },
+      {
+        id: "lesson-3-multiple-choice",
+        title: "Trắc nghiệm",
+        type: "multiple_choice",
+        items: [
+          {
+            id: "l3-mc-1",
+            question: "ITは日本語で何ですか。",
+            choices: [
+              "情報交換技術",
+              "情報管理技術",
+              "情報連絡技術",
+              "情報通信技術"
+            ],
+            answer: "情報通信技術"
+          },
+          {
+            id: "l3-mc-2",
+            question: "放送に必要な電波について正しくないものを一つ選びなさい。",
+            choices: [
+              "限られた資源である",
+              "無限資源である",
+              "テレビ放送に使われる",
+              "衛星通信に使われる"
+            ],
+            answer: "無限資源である"
+          },
+          {
+            id: "l3-mc-3",
+            question: "有機ELディスプレイについて正しくないものを一つ選びなさい。",
+            choices: [
+              "有機物の発光体によりカラー表示を行うもの",
+              "液晶のバックライトなども同様の仕組み",
+              "液晶よりさらに消費電力が多い",
+              "液晶より明るい"
+            ],
+            answer: "液晶よりさらに消費電力が多い"
+          },
+          {
+            id: "l3-mc-4",
+            question: "出力用ハードウェアは何がありますか。",
+            choices: [
+              "プリンター",
+              "タッチパネルセンサ",
+              "カメラ",
+              "キーボード"
+            ],
+            answer: "プリンター"
+          },
+          {
+            id: "l3-mc-5",
+            question: "電気を用いた通信は何に分類しますか。",
+            choices: [
+              "販売通信",
+              "物理的な通信",
+              "無線通信と有線通信",
+              "WIFI"
+            ],
+            answer: "無線通信と有線通信"
+          },
+          {
+            id: "l3-mc-6",
+            question: "携帯電話の機能について正しくないものをえらんでください。",
+            choices: [
+              "電話",
+              "ワンセグテレビ",
+              "通信",
+              "セグメント"
+            ],
+            answer: "セグメント"
+          },
+          {
+            id: "l3-mc-7",
+            question: "自発光型で，発光ダイオードの一種に分類される表示装置はどれか。",
+            choices: [
+              "CRTディスプレイ",
+              "液晶ディスプレイ",
+              "プラズマディスプレイ",
+              "有機ELディスプレイ"
+            ],
+            answer: "有機ELディスプレイ"
+          },
+          {
+            id: "l3-mc-8",
+            question: "国際標準の携帯電話で利用できるアプリケーションを決定するのが(  )と呼ばれるソフトウェアです。",
+            choices: [
+              "オペレーティングシステム",
+              "ios",
+              "プログラム",
+              "アプリケーション"
+            ],
+            answer: "オペレーティングシステム"
+          },
+          {
+            id: "l3-mc-9",
+            question: "オペレーティングシステムの代表的なものは何ですか。",
+            choices: [
+              "Symbian",
+              "ワンセグテレビ",
+              "電子マネー",
+              "アプリケーション"
+            ],
+            answer: "Symbian"
+          },
+          {
+            id: "l3-mc-10",
+            question: "入力用ハードウェアとして，スマートフォンなどでは，何が使われていますか。",
+            choices: [
+              "タッチパネルのセンサ",
+              "液晶のバックライト",
+              "デジタルカメラ画面",
+              "CMOSセンサ"
+            ],
+            answer: "タッチパネルのセンサ"
+          },
+          {
+            id: "l3-mc-11",
+            question: "ハイビジョン放送は従来のアナログ放送ほどたくさんの情報が必要ではない。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Đúng"
+          },
+          {
+            id: "l3-mc-12",
+            question: "音声の波をそのまま電波の波に置き換えて送受信するアナログ通信を特徴としているのは第2世代の携帯電話ですか。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Sai"
+          },
+          {
+            id: "l3-mc-13",
+            question: "放送に必要な電波はテレビ放送の目的で使われる。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Đúng"
+          }
+        ]
       }
     ]
   },
   {
     id: 4,
     title: "Bài 4 - Công nghệ truyền thông dữ liệu",
+    hasTheory: true,
     sections: [
       {
         id: "lesson-4-vocabulary",
@@ -1506,12 +1825,175 @@ export const lessons: Lesson[] = [
             meaning: "dư thừa"
           }
         ]
+      },
+      {
+        id: "lesson-4-multiple-choice",
+        title: "Trắc nghiệm",
+        type: "multiple_choice",
+        items: [
+          {
+            id: "l4-mc-1",
+            question: "IrDAとは，Infrared Data Associationという赤外線通信の規格で，家電製品用のリモコンや携帯電話の個人（　）などで利用されています",
+            choices: [
+              "データ交換",
+              "データ変更",
+              "データ削除",
+              "データ制御"
+            ],
+            answer: "データ交換"
+          },
+          {
+            id: "l4-mc-2",
+            question: "金属線や光ファイバなどのケーブルで接続できる通信手段について正しくないものを選びなさい。",
+            choices: [
+              "CATV",
+              "FTTH",
+              "ADSL",
+              "IrDA"
+            ],
+            answer: "IrDA"
+          },
+          {
+            id: "l4-mc-3",
+            question: "無線通信手段は何ですか。",
+            choices: [
+              "CATV",
+              "FTTH",
+              "ADSL",
+              "IrDA"
+            ],
+            answer: "IrDA"
+          },
+          {
+            id: "l4-mc-4",
+            question: "FTTHはADSLとどう違いますか。",
+            choices: [
+              "ノイズの影響を受けやすい",
+              "ADSLの方が安定である",
+              "よりおそく通信を行う",
+              "専用の光ファイバーを使"
+            ],
+            answer: "専用の光ファイバーを使"
+          },
+          {
+            id: "l4-mc-5",
+            question: "一般 of 電話線を利用するのは何ですか。", // Wait, let's keep the exact original first: "一般の電話線を利用するのは何ですか。"
+            choices: [
+              "IrDA",
+              "FTTH",
+              "ADSL",
+              "Bluetooth"
+            ],
+            answer: "ADSL"
+          },
+          {
+            id: "l4-mc-6",
+            question: "専用線を使うのは何ですか。",
+            choices: [
+              "IrDA",
+              "ADSL",
+              "FTTH",
+              "Bluetooth"
+            ],
+            answer: "FTTH"
+          },
+          {
+            id: "l4-mc-7",
+            question: "JRのSuicaなどで使われているのは何ですか。",
+            choices: [
+              "IrDA",
+              "非接触型ICカード",
+              "FTTH",
+              "Bluetoot"
+            ],
+            answer: "非接触型ICカード"
+          },
+          {
+            id: "l4-mc-8",
+            question: "携帯電話，パソコン，カーナビ，マウス，キーボード，ヘッドホンなどに搭載されている通信規格は何ですか。",
+            choices: [
+              "IrDA",
+              "非接触型ICカード",
+              "FTTH",
+              "Bluetooth"
+            ],
+            answer: "Bluetooth"
+          },
+          {
+            id: "l4-mc-9",
+            question: "IrDAについて正しいものをえらんでください。",
+            choices: [
+              "外部線通信の規格",
+              "赤外線通信の規格",
+              "短い距離での通信に利用できな",
+              "カーナビ搭載されている通信規格"
+            ],
+            answer: "赤外線通信の規格"
+          },
+          {
+            id: "l4-mc-10",
+            question: "下がりのことについては正しくないものをえらんでください。",
+            choices: [
+              "上流から下流の方向",
+              "下流から上流の方向",
+              "ファイルを取ってくる",
+              "ホームページを見る"
+            ],
+            answer: "下流から上流の方向"
+          },
+          {
+            id: "l4-mc-11",
+            question: "ADSLは非対称デジタル加入者線と訳されますか。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Đúng"
+          },
+          {
+            id: "l4-mc-12",
+            question: "ホームページを見るのは上りです。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Sai"
+          },
+          {
+            id: "l4-mc-13",
+            question: "ファイルを取ってくるのは下りです。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Đúng"
+          },
+          {
+            id: "l4-mc-14",
+            question: "LANは無線通信手段です。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Sai"
+          },
+          {
+            id: "l4-mc-15",
+            question: "IrDAは有線接続です。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Sai"
+          }
+        ]
       }
     ]
   },
   {
     id: 5,
     title: "Bài 5 - Mạng máy tính",
+    hasTheory: true,
     sections: [
       {
         id: "lesson-5-vocabulary",
@@ -1741,6 +2223,168 @@ export const lessons: Lesson[] = [
             reading: "あみめじょう",
             answer: "mạng kiểu lưới",
             meaning: "mạng kiểu lưới"
+          }
+        ]
+      },
+      {
+        id: "lesson-5-multiple-choice",
+        title: "Trắc nghiệm",
+        type: "multiple_choice",
+        items: [
+          {
+            id: "l5-mc-1",
+            question: "国と国との間のように，もっと広い範囲でのネットワークとして一般的に使われているのが（　）です。",
+            choices: [
+              "ホームページ",
+              "ネット",
+              "WAN",
+              "インターネット"
+            ],
+            answer: "インターネット"
+          },
+          {
+            id: "l5-mc-2",
+            question: "ハブと呼ばれる集線装置を中心に複数台のコンピュータが接続されたものは何ですか。",
+            choices: [
+              "スター型",
+              "バス型",
+              "リング型",
+              "ネット型"
+            ],
+            answer: "スター型"
+          },
+          {
+            id: "l5-mc-3",
+            question: "サーバとなっているコンピュータにはどんな情報が記録されますか。",
+            choices: [
+              "普通の情報",
+              "重要な情報",
+              "誰でも見える情報",
+              "3つの選択肢の全て"
+            ],
+            answer: "重要な情報"
+          },
+          {
+            id: "l5-mc-4",
+            question: "ファイアウォールは，誰が何のサービスを受けるかを（　）する機器です。",
+            choices: [
+              "制限",
+              "制御",
+              "回避",
+              "検査"
+            ],
+            answer: "制御"
+          },
+          {
+            id: "l5-mc-5",
+            question: "ネットワークの形態については何がもっともよく使われますか。",
+            choices: [
+              "バス型",
+              "スター型",
+              "リング型",
+              "ネット型"
+            ],
+            answer: "スター型"
+          },
+          {
+            id: "l5-mc-6",
+            question: "集中処理システムについて正しくないものをえらんでください。",
+            choices: [
+              "管理し，ユーザ端末は入出力のみを行うような構成である",
+              "集中処理システムではプログラムやデータを一元管理できる",
+              "保守性が向上する",
+              "集中処理システムでは，それぞれのコンピュータの負荷が分散される"
+            ],
+            answer: "集中処理システムでは，それぞれのコンピュータの負荷が分散される"
+          },
+          {
+            id: "l5-mc-7",
+            question: "WANについて正しいものをえらんでください",
+            choices: [
+              "歩いて機器の状態をチェックできない程度の範囲",
+              "局所的につながるネットワークのこと",
+              "大域的につながるネットワークのこと",
+              "ネットワークを結んだネットワークのこと"
+            ],
+            answer: "大域的につながるネットワークのこと"
+          },
+          {
+            id: "l5-mc-8",
+            question: "ネットワークにおいて，外部からの不正アクセスを防ぐために内部ネットワークと外部ネットワークの間に置かれるものはどれか。",
+            choices: [
+              "DNSサーバ",
+              "サーチエンジン",
+              "スイッチングハブ",
+              "ファイアウォール"
+            ],
+            answer: "ファイアウォール"
+          },
+          {
+            id: "l5-mc-9",
+            question: "集中処理システムとは，(　) となるコンピュータが中核となる処理すべてを管理し，ユーザ端末は入出力のみを行うような構成です。",
+            choices: [
+              "中心",
+              "中間",
+              "集中",
+              "仲間"
+            ],
+            answer: "中心"
+          },
+          {
+            id: "l5-mc-10",
+            question: "コンピュータネットワークとは，電子機器同士が電気的にデータの（　）をできるようにしたものです。",
+            choices: [
+              "送信",
+              "送受信",
+              "受信",
+              "自信"
+            ],
+            answer: "送受信"
+          },
+          {
+            id: "l5-mc-11",
+            question: "サーバはサービスを提供するコンピュータのことです。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Đúng"
+          },
+          {
+            id: "l5-mc-12",
+            question: "クライantはユーザに対して，サービスを受けるコンピュータのことです。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Sai"
+          },
+          {
+            id: "l5-mc-13",
+            question: "バス型は，1本の通信ケーブルに複数台のコンピュータが接続されたものです。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Đúng"
+          },
+          {
+            id: "l5-mc-14",
+            question: "リング型は，開いたケーブルに複数台のコンピュータが接続されたものです。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Sai"
+          },
+          {
+            id: "l5-mc-15",
+            question: "分散処理システムは，処理を複数のコンピュータで分散して管理する構成です。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Đúng"
           }
         ]
       }

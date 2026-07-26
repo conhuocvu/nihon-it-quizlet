@@ -22,7 +22,7 @@ export interface Subject {
 export const subjects: Subject[] = [
   {
     id: 'nihon-it',
-    title: 'Tiếng Nhật Chuyên Ngành CNTT',
+    title: 'JIT401 - Tiếng Nhật Chuyên Ngành CNTT',
     japaneseTitle: 'IT日本語 & 専門用語',
     description: 'Tổng hợp 20 bài học từ vựng, ngữ pháp, trắc nghiệm và bài giảng lý thuyết chuyên sâu về Công nghệ thông tin tiếng Nhật.',
     category: 'Tiếng Nhật & IT',

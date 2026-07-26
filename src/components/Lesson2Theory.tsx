@@ -1,8 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { 
-  ArrowLeft, BookOpen, Cpu, HardDrive, Monitor, 
-  CheckCircle2, Languages, RefreshCw, Smartphone, Laptop,
-  Folder, FileText, Activity, HelpCircle, Mail, AlertTriangle, Scale
+  ArrowLeft, BookOpen, Cpu, 
+  Languages, HelpCircle, Mail, AlertTriangle, Scale
 } from 'lucide-react';
 
 interface Lesson2TheoryProps {
@@ -112,10 +111,6 @@ export const Lesson2Theory: React.FC<Lesson2TheoryProps> = ({ onClose }) => {
     { term: '不愉快', reading: 'ふゆかい', meaning: 'khó chịu, không thoải mái' }
   ], []);
   const [mini2Revealed, setMini2Revealed] = useState<number[]>([]);
-  const [mini2Trans1, setMini2Trans1] = useState('');
-  const [mini2ShowAnswer1, setMini2ShowAnswer1] = useState(false);
-  const [mini2Trans2, setMini2Trans2] = useState('');
-  const [mini2ShowAnswer2, setMini2ShowAnswer2] = useState(false);
 
   return (
     <div className="w-full max-w-6xl mx-auto px-4 py-4 md:py-8 flex flex-col gap-6">

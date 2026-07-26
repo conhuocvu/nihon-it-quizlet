@@ -1,8 +1,8 @@
 import React, { useState, useMemo } from 'react';
 import { 
-  ArrowLeft, BookOpen, Cpu, HardDrive, Monitor, 
+  ArrowLeft, BookOpen, Cpu, HardDrive, 
   CheckCircle2, Languages, RefreshCw, Smartphone, Laptop,
-  Folder, FileText, Activity, HelpCircle, History, ArrowRight
+  Folder, Activity, HelpCircle
 } from 'lucide-react';
 
 interface Lesson1TheoryProps {
@@ -27,7 +27,7 @@ export const Lesson1Theory: React.FC<Lesson1TheoryProps> = ({ onClose }) => {
   ];
 
   // Simulator 3: Path Explorer
-  const [currentPath, setCurrentPath] = useState<string>('C:\\ユーザー\\Admin\\マイピクチャ');
+  const [currentPath] = useState<string>('C:\\ユーザー\\Admin\\マイピクチャ');
   const targetPaths = {
     'C:\\ユーザー\\Admin\\マイ ドキュメント\\文書ファイル.doc': '..\\マイ ドキュメント\\文書ファイル.doc',
     'C:\\ユーザー\\Admin\\マイピクチャ\\写真.jpg': '写真.jpg',
@@ -45,7 +45,7 @@ export const Lesson1Theory: React.FC<Lesson1TheoryProps> = ({ onClose }) => {
     { term: '日常的', reading: 'にちじょうてき', meaning: 'hàng ngày, thường nhật' },
     { term: '身の回り', reading: 'みのまわり', meaning: 'quanh mình, cá nhân' },
     { term: '扱う', reading: 'あつかう', meaning: 'xử lý, đối xử' },
-    { term: '連続的', reading: 'れんぞくてき', meaning: 'liên tục' },
+    { term: '連続적', reading: 'れんぞくてき', meaning: 'liên tục' },
     { term: '起源', reading: 'きげん', meaning: 'nguồn gốc, khởi đầu' },
     { term: '機械式', reading: 'きかいしき', meaning: 'kiểu cơ học' },
     { term: '歯車', reading: 'はぐるま', meaning: 'bánh răng' },
@@ -74,10 +74,6 @@ export const Lesson1Theory: React.FC<Lesson1TheoryProps> = ({ onClose }) => {
   ], []);
 
   const [mini2Revealed, setMini2Revealed] = useState<number[]>([]);
-  const [mini2Trans1, setMini2Trans1] = useState('');
-  const [mini2ShowAnswer1, setMini2ShowAnswer1] = useState(false);
-  const [mini2Trans2, setMini2Trans2] = useState('');
-  const [mini2ShowAnswer2, setMini2ShowAnswer2] = useState(false);
 
   // Match test state
   const [matchAnswers, setMatchAnswers] = useState<Record<number, string>>({});

@@ -1,8 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { 
-  ArrowLeft, BookOpen, Cpu, HardDrive, Monitor, 
-  CheckCircle2, Languages, RefreshCw, Smartphone, Laptop,
-  Folder, FileText, Activity, HelpCircle, Shield, Radio, Layers, Zap
+  ArrowLeft, CheckCircle2, Languages, Smartphone, HelpCircle, Radio, Layers
 } from 'lucide-react';
 
 interface Lesson3TheoryProps {
@@ -66,7 +64,6 @@ export const Lesson3Theory: React.FC<Lesson3TheoryProps> = ({ onClose }) => {
   const [liquidCrystalAngle, setLiquidCrystalAngle] = useState<number>(90); // angle of LC rotation
 
   // Simulator 3: Touch Panel Sandbox
-  const [touchTech, setTouchTech] = useState<'capacitive' | 'capacitive'>('capacitive');
   const [touchTypeMode, setTouchTypeMode] = useState<'resistive' | 'capacitive'>('capacitive');
   const [touchLogs, setTouchLogs] = useState<string[]>([]);
   const handleTouchZone = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -109,10 +106,6 @@ export const Lesson3Theory: React.FC<Lesson3TheoryProps> = ({ onClose }) => {
     { term: 'ハイビジョン', reading: 'Hi-Vision', meaning: 'phát sóng truyền hình độ phân giải cao' }
   ], []);
   const [mini2Revealed, setMini2Revealed] = useState<number[]>([]);
-  const [mini2Trans1, setMini2Trans1] = useState('');
-  const [mini2ShowAnswer1, setMini2ShowAnswer1] = useState(false);
-  const [mini2Trans2, setMini2Trans2] = useState('');
-  const [mini2ShowAnswer2, setMini2ShowAnswer2] = useState(false);
 
   return (
     <div className="w-full max-w-6xl mx-auto px-4 py-4 md:py-8 flex flex-col gap-6">

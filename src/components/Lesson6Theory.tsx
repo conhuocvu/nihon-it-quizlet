@@ -1,8 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { 
-  ArrowLeft, BookOpen, Cpu, HardDrive, Monitor, 
-  CheckCircle2, Languages, RefreshCw, Smartphone, Laptop,
-  HelpCircle, Shield, Radio, Layers, Zap, Play, ToggleLeft, ToggleRight, Wifi, AlertTriangle, Eye
+  ArrowLeft, Languages, HelpCircle, Layers, Wifi, Monitor
 } from 'lucide-react';
 
 interface Lesson6TheoryProps {
@@ -56,14 +54,6 @@ export const Lesson6Theory: React.FC<Lesson6TheoryProps> = ({ onClose }) => {
     `普通の文字\\n<font size="6">大きい文字</font>\\n<center>中心に配置</center>\\n<b>太文字</b> <i>斜体字</i>`
   );
   
-  const renderedHtml = useMemo(() => {
-    // Basic parser for display purposes
-    let clean = htmlCode
-      .replace(/\\n/g, '<br />')
-      .replace(/&lt;/g, '<')
-      .replace(/&gt;/g, '>');
-    return clean;
-  }, [htmlCode]);
 
   // IT Passport Question
   const [selectedItOption, setSelectedItOption] = useState<string | null>(null);
@@ -101,11 +91,6 @@ export const Lesson6Theory: React.FC<Lesson6TheoryProps> = ({ onClose }) => {
   const [mini1ShowAnswer1, setMini1ShowAnswer1] = useState(false);
   const [mini1Trans2, setMini1Trans2] = useState('');
   const [mini1ShowAnswer2, setMini1ShowAnswer2] = useState(false);
-
-  const [mini2Trans1, setMini2Trans1] = useState('');
-  const [mini2ShowAnswer1, setMini2ShowAnswer1] = useState(false);
-  const [mini2Trans2, setMini2Trans2] = useState('');
-  const [mini2ShowAnswer2, setMini2ShowAnswer2] = useState(false);
 
   return (
     <div className="w-full max-w-6xl mx-auto px-4 py-4 md:py-8 flex flex-col gap-6">

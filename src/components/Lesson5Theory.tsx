@@ -1,8 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { 
-  ArrowLeft, BookOpen, Cpu, HardDrive, Monitor, 
-  CheckCircle2, Languages, RefreshCw, Smartphone, Laptop,
-  HelpCircle, Shield, Radio, Layers, Zap, Play, ToggleLeft, ToggleRight, Wifi, AlertTriangle
+  ArrowLeft, Languages, Laptop, HelpCircle, Shield, Layers
 } from 'lucide-react';
 
 interface Lesson5TheoryProps {
@@ -52,11 +50,6 @@ export const Lesson5Theory: React.FC<Lesson5TheoryProps> = ({ onClose }) => {
     updated[index] = !updated[index];
     setNodeState(updated);
   };
-
-  // Simulator 2: Centralized vs Distributed
-  const [systemType, setSystemType] = useState<'central' | 'dist'>('central');
-  const [hostActive, setHostActive] = useState<boolean>(true);
-  const [distNodes, setDistNodes] = useState<boolean[]>([true, true, true, true]);
 
   // Simulator 3: Firewall & DMZ Guard
   const [fwRules, setFwRules] = useState<{ publicAllowed: boolean; internalAllowed: boolean }>({
@@ -129,11 +122,6 @@ export const Lesson5Theory: React.FC<Lesson5TheoryProps> = ({ onClose }) => {
   const [mini1ShowAnswer1, setMini1ShowAnswer1] = useState(false);
   const [mini1Trans2, setMini1Trans2] = useState('');
   const [mini1ShowAnswer2, setMini1ShowAnswer2] = useState(false);
-
-  const [mini2Trans1, setMini2Trans1] = useState('');
-  const [mini2ShowAnswer1, setMini2ShowAnswer1] = useState(false);
-  const [mini2Trans2, setMini2Trans2] = useState('');
-  const [mini2ShowAnswer2, setMini2ShowAnswer2] = useState(false);
 
   return (
     <div className="w-full max-w-6xl mx-auto px-4 py-4 md:py-8 flex flex-col gap-6">

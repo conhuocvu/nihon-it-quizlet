@@ -3310,6 +3310,7 @@ export const lessons: Lesson[] = [
   {
     id: 8,
     title: "Bài 8 - Mã hóa",
+    hasTheory: true,
     sections: [
       {
         id: "lesson-8-vocabulary",
@@ -3555,12 +3556,182 @@ export const lessons: Lesson[] = [
             meaning: "bảng số ngẫu nhiên"
           }
         ]
+      },
+      {
+        id: "lesson-8-multiple-choice",
+        title: "Trắc nghiệm",
+        type: "multiple_choice",
+        items: [
+          {
+            id: "l8-mc-1",
+            question: "暗号化について正しいものを選びなさい。",
+            choices: [
+              "与えられた原文が推測できないように変換すること",
+              "与えられた原文が推測できるように変換すること",
+              "与えられた原文に戻すこと",
+              "機械だけで原文に戻すこと"
+            ],
+            answer: "与えられた原文が推測できないように変換すること",
+            explanation: "Mã hóa (暗号化) là việc biến đổi bản rõ ban đầu (原文) thành bản mã sao cho không thể suy đoán hay đọc hiểu được nội dung nếu không có khóa giải mã."
+          },
+          {
+            id: "l8-mc-2",
+            question: "（　）とは，送られてきた文書が確かに本人のものであるかどうかを確かめることです。",
+            choices: [
+              "確認",
+              "認証",
+              "認識",
+              "正確"
+            ],
+            answer: "認証",
+            explanation: "Xác thực (認証 - Authentication) là việc xác nhận xem tài liệu gửi đến có thực sự là của chính người đó gửi hay không."
+          },
+          {
+            id: "l8-mc-3",
+            question: "換字式の暗号方式について正しいものをえらんでください",
+            choices: [
+              "機械を使って暗号化する",
+              "受け取る側では何文字ずらしたかを知らなくても復号化ができる",
+              "文字を何文字かずらすことで暗号化する",
+              "最近の暗号方式である"
+            ],
+            answer: "文字を何文字かずらすことで暗号化する",
+            explanation: "Mật mã thay thế (換字式暗号), ví dụ điển hình là mật mã Caesar, hoạt động bằng cách dịch chuyển các chữ cái đi một số vị trí cố định trong bảng chữ cái."
+          },
+          {
+            id: "l8-mc-4",
+            question: "錠のアイコンは，入力された情報が何によって暗号化されている状態であることを表しますか。",
+            choices: [
+              "HTTPS",
+              "DES",
+              "RSA",
+              "SSL"
+            ],
+            answer: "SSL",
+            explanation: "Biểu tượng ổ khóa (錠のアイコン) trên trình duyệt biểu thị rằng thông tin nhập vào đang được truyền tải an toàn bằng cách mã hóa qua giao thức SSL (hoặc TLS)."
+          },
+          {
+            id: "l8-mc-5",
+            question: "鍵を第三者にも知らせてしまう暗号化方式を何と呼びますか。",
+            choices: [
+              "秘密鍵方式",
+              "公開鍵方式",
+              "共通鍵方式",
+              "展開鍵方式"
+            ],
+            answer: "公開鍵方式",
+            explanation: "Phương thức mã hóa khóa công khai (公開鍵方式 - Public Key Cryptography) là phương thức mà trong đó khóa mã hóa (khóa công khai) được công khai rộng rãi cho bất kỳ ai (kể cả bên thứ ba) biết."
+          },
+          {
+            id: "l8-mc-6",
+            question: "暗号化して送る側と，受け取って復号化する側は，共通の鍵を持ち，他人に知られないようにして通信している暗号化方式は何ですか。",
+            choices: [
+              "秘密鍵方式",
+              "公開鍵方式",
+              "機密鍵方式",
+              "展開鍵方式"
+            ],
+            answer: "秘密鍵方式",
+            explanation: "Phương thức mã hóa khóa bí mật (秘密鍵方式 / 共通鍵方式) sử dụng cùng một khóa chung bí mật để cả người gửi tiến hành mã hóa và người nhận thực hiện giải mã."
+          },
+          {
+            id: "l8-mc-7",
+            question: "機械を使う（　）の暗号化の1つであるスキュタレー暗号では，円筒にリボンを巻き付けて，リボンに文字を横に書いて送ります。",
+            choices: [
+              "換字式",
+              "転置式",
+              "暗号式",
+              "復号式"
+            ],
+            answer: "転置式",
+            explanation: "Mật mã Scytale (スキュタレー暗号) hoạt động bằng cách quấn ruy-băng quanh ống trụ tròn, viết văn bản dọc theo ống rồi tháo ruy-băng ra làm thay đổi vị trí (thứ tự) các chữ cái, nên đây là loại mã hóa hoán vị (転置式)."
+          },
+          {
+            id: "l8-mc-8",
+            question: "換字式の暗号方式について正しくないものをえらんでください。",
+            choices: [
+              "文字を何文字かずらすことで暗号化する",
+              "規則的にずらすのではない",
+              "通信者同士が共通に持つ乱数表などを使う",
+              "受け取る側では何文字ずらしたかを知らなくても復号化ができる"
+            ],
+            answer: "受け取る側では何文字ずらしたかを知らなくても復号化ができる",
+            explanation: "Phát biểu sai: Người nhận bắt buộc phải biết quy tắc xê dịch bao nhiêu ký tự (khóa giải mã) mới có thể giải mã thành công bản rõ."
+          },
+          {
+            id: "l8-mc-9",
+            question: "最近の暗号では，何を使って暗号化，復号化を行いますか。",
+            choices: [
+              "機械",
+              "電子",
+              "ネットワーク",
+              "コンピューター"
+            ],
+            answer: "コンピューター",
+            explanation: "Trong mật mã hiện đại ngày nay, việc mã hóa và giải mã được thực hiện bằng sức mạnh tính toán của máy tính (コンピューター)."
+          },
+          {
+            id: "l8-mc-10",
+            question: "公開鍵方式について正しくないものをえらんでください。",
+            choices: [
+              "鍵を第三者にも公開してしまう暗号化方式",
+              "今の暗号化の主流となっている",
+              "公開するのは暗号化の鍵だけである",
+              "鍵を第三者に公開しない暗号化方式"
+            ],
+            answer: "鍵を第三者に公開しない暗号化方式",
+            explanation: "Phát biểu sai: Phương thức khóa công khai (公開鍵方式) bắt buộc phải công khai khóa mã hóa (khóa công khai) cho tất cả mọi người (kể cả bên thứ ba), chỉ giữ bí mật duy nhất khóa giải mã (khóa bí mật)."
+          },
+          {
+            id: "l8-mc-11",
+            question: "共通鍵方式はハガキ程度の安全性しかない",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Sai",
+            explanation: "Phát biểu sai: Phương thức khóa chung (共通鍵方式) cực kỳ an toàn nếu giữ bí mật được khóa. Trái lại, việc gửi dữ liệu không mã hóa mới được ví như viết trên bưu thiếp (ハガキ) ai cũng đọc được."
+          },
+          {
+            id: "l8-mc-12",
+            question: "原文に戻すことを復号化と言います",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Đúng",
+            explanation: "Phát biểu đúng: Quá trình chuyển đổi từ bản mã trở lại bản rõ ban đầu (原文) được gọi là giải mã (復号化)."
+          },
+          {
+            id: "l8-mc-13",
+            question: "HTTPSは公開鍵方式と秘密鍵方式により暗号化した状態で情報通信を行うことを示します．",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Sai",
+            explanation: "Phát biểu sai: HTTPS thực hiện truyền thông tin được mã hóa bằng SSL/TLS, sử dụng kết hợp phương thức khóa công khai (公開鍵方式) và phương thức khóa chung (共通鍵/秘密鍵方式) chứ không phải phương thức khóa bí mật (秘密鍵方式 - vốn chỉ dùng trong mật mã đối xứng độc lập)."
+          },
+          {
+            id: "l8-mc-14",
+            question: "X さんは，Y さんにインターネットを使って電子メールを送ろうとしている．電子メールの内容を秘密にする必要があるので，公開鍵暗号方式を用いて暗号化して送信したい．電子メールの内容を暗号化するのに使用する鍵はどれか．",
+            choices: [
+              "(ア) Xさんの公開鍵",
+              "(イ) Xさんの秘密鍵",
+              "(ウ) Yさんの公開鍵",
+              "(エ) Yさんの秘密鍵"
+            ],
+            answer: "(ウ) Yさんの公開鍵",
+            explanation: "Để gửi thư bảo mật cho Y bằng phương thức khóa công khai, X cần dùng Khóa công khai của người nhận Y (Yさんの公開鍵). Chỉ có Y mới sở hữu khóa bí mật tương ứng (Yさんの秘密鍵) để giải mã bức thư này."
+          }
+        ]
       }
     ]
   },
   {
     id: 9,
     title: "Bài 9 - An toàn thông tin",
+    hasTheory: true,
     sections: [
       {
         id: "lesson-9-vocabulary",
@@ -4002,12 +4173,166 @@ export const lessons: Lesson[] = [
             meaning: "bụi"
           }
         ]
+      },
+      {
+        id: "lesson-9-multiple-choice",
+        title: "Trắc nghiệm",
+        type: "multiple_choice",
+        items: [
+          {
+            id: "l9-mc-1",
+            question: "（　）に入る言葉は何ですか。（　）は複数箇所にデータのコピーを残すことです。",
+            choices: [
+              "ウィルスワクチン",
+              "スカベンジング",
+              "バッグアップ",
+              "フィッシング"
+            ],
+            answer: "バッグアップ",
+            explanation: "Sự sao lưu (バックアップ / バッグアップ) là việc tạo ra và lưu trữ các bản sao của dữ liệu ở nhiều vị trí khác nhau để phòng ngừa sự cố mất mát."
+          },
+          {
+            id: "l9-mc-2",
+            question: "コンピューターのウィルスについて正しいものを選びなさい。",
+            choices: [
+              "個人のパソコンをねらった犯罪である",
+              "機械的に作成されたプログラムである",
+              "感染経路はいろいろない",
+              "人に感染する可能性がある"
+            ],
+            answer: "個人のパソコンをねらった犯罪である",
+            explanation: "Phát biểu đúng: Virus máy tính là các chương trình độc hại do con người viết ra nhằm mục đích phá hoại hoặc thực hiện hành vi tội phạm nhắm vào máy tính của cá nhân/tổ chức."
+          },
+          {
+            id: "l9-mc-3",
+            question: "未承諾の広告，詐欺紛いの内容などの迷惑メールのことを何と言いますか。",
+            choices: [
+              "スパムメール",
+              "フリーメール",
+              "プロバイダメール",
+              "ウェブメール"
+            ],
+            answer: "スパムメール",
+            explanation: "Thư rác (スパムメール - Spam Mail) là các email quảng cáo chưa được sự đồng ý của người nhận, hoặc chứa nội dung lừa đảo gây phiền toái."
+          },
+          {
+            id: "l9-mc-4",
+            question: "コンピューターがあえる事故は何ですか。",
+            choices: [
+              "故障とバグ",
+              "ウィルス",
+              "攻撃",
+              "パスワード窃盗"
+            ],
+            answer: "故障とバグ",
+            explanation: "Tai nạn/sự cố khách quan mà hệ thống máy tính tự thân gặp phải (không do tấn công bên ngoài) chính là hỏng hóc phần cứng (故障) và lỗi phần mềm (バグ)."
+          },
+          {
+            id: "l9-mc-5",
+            question: "最近のパスワード窃盗方法は何ですか。",
+            choices: [
+              "トロイの木馬",
+              "スカベンジング",
+              "データマイニング",
+              "スパムメール"
+            ],
+            answer: "スカベンジング",
+            explanation: "Phương pháp đánh cắp mật mã thời gian gần đây là Scavenging (Lục lọi thông tin thừa trong đĩa cứng hoặc bộ nhớ của hệ thống đã chia sẻ để khôi phục mật khẩu)."
+          },
+          {
+            id: "l9-mc-6",
+            question: "スカベンジングといって，残された個人情報を（　）する犯罪もあります。",
+            choices: [
+              "収集",
+              "管理",
+              "削除",
+              "整理"
+            ],
+            answer: "収集",
+            explanation: "Scavenging là hành vi tội phạm nhằm thu thập (収集) các thông tin cá nhân còn sót lại trong hệ thống máy tính."
+          },
+          {
+            id: "l9-mc-7",
+            question: "データーを守る方法について正しくないものを選びなさい。",
+            choices: [
+              "バックアップ",
+              "ワクチン(ウィルス対策)ソフトを購入すること",
+              "スパムメールを送ること",
+              "予備のハードディスクなどを利用すること"
+            ],
+            answer: "スパムメールを送ること",
+            explanation: "Phát biểu sai: Gửi thư rác (スパムメールを送ること) không phải là biện pháp bảo vệ dữ liệu mà là hành vi phát tán tin nhắn rác."
+          },
+          {
+            id: "l9-mc-8",
+            question: "スカベンジングで情報を窃盗する方法について正しいものを選びなさい。",
+            choices: [
+              "共用で使っているコンピュータで削除したファイルをディスクから復活する",
+              "キーボードの入力履歴を管理する",
+              "メモリ内に残った内容を管理する",
+              "共用で使っているコンピュータで削除したファイルをディスクから管理する"
+            ],
+            answer: "共用で使っているコンピュータで削除したファイルをディスクから復活する",
+            explanation: "Phương pháp đánh cắp thông tin bằng Scavenging là việc khôi phục (復活) các tệp tin đã bị xóa khỏi đĩa từ của các máy tính dùng chung."
+          },
+          {
+            id: "l9-mc-9",
+            question: "特に，exe，vbs，scr，pifなどの拡張子を持つ添付ファイルがある場合には即座に開いてください．",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Sai",
+            explanation: "Phát biểu sai: Các tệp đính kèm có đuôi thực thi như .exe, .vbs, .scr, .pif có nguy cơ chứa virus/mã độc cực cao, tuyệt đối KHÔNG được mở ngay lập tức."
+          },
+          {
+            id: "l9-mc-10",
+            question: "銀行などの重要なサイトを装ってクレジットカード番号や暗証番号を盗み取るフィッシング(Phishing)という詐欺もあります．",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Đúng",
+            explanation: "Phát biểu đúng: Phishing là thủ đoạn giả mạo trang web của các ngân hàng hoặc tổ chức lớn để dụ người dùng nhập số thẻ tín dụng và mật khẩu rồi đánh cắp."
+          },
+          {
+            id: "l9-mc-11",
+            question: "会社などの組織で最も重要な情報を持っているサーバは攻撃対象となりやすいです。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Đúng",
+            explanation: "Phát biểu đúng: Các máy chủ lưu trữ thông tin quan trọng nhất của doanh nghiệp luôn là mục tiêu hàng đầu của các cuộc tấn công mạng."
+          },
+          {
+            id: "l9-mc-12",
+            question: "プログラムミスはバグです。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Đúng",
+            explanation: "Phát biểu đúng: Lỗi lập trình (Program miss) chính là lỗi chương trình, thường được gọi là Bug (バグ)."
+          },
+          {
+            id: "l9-mc-13",
+            question: "ロイの木馬は現代的なパスワード窃盗方法です。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Sai",
+            explanation: "Phát biểu sai: Trojan Horse (ロイの木馬 / トロイの木馬) là phương thức phát tán phần mềm độc hại (malware) chứ không phải là phương pháp đánh cắp mật khẩu trực tiếp."
+          }
+        ]
       }
     ]
   },
   {
     id: 10,
     title: "Bài 10 - Cấu trúc máy tính",
+    hasTheory: true,
     sections: [
       {
         id: "lesson-10-vocabulary",
@@ -4442,12 +4767,170 @@ export const lessons: Lesson[] = [
             meaning: "Quỹ tích"
           }
         ]
+      },
+      {
+        id: "lesson-10-multiple-choice",
+        title: "Trắc nghiệm",
+        type: "multiple_choice",
+        items: [
+          {
+            id: "l10-mc-1",
+            question: "コンピュータは，演算装置，（　），御装置, 入力装置，出力装置 of 5要素からなります。",
+            choices: [
+              "記憶装置制",
+              "管理装置",
+              "援助装置",
+              "制限装置"
+            ],
+            answer: "記憶装置制",
+            explanation: "Năm yếu tố cơ bản của máy tính gồm: Thiết bị điều khiển (制御装置 - trong câu hỏi ghi nhầm thành 御装置), Thiết bị tính toán (演算装置), Thiết bị bộ nhớ (記憶装置 - tùy chọn ghi là 記憶装置制), Thiết bị nhập (入力装置) và Thiết bị xuất (出力装置)."
+          },
+          {
+            id: "l10-mc-2",
+            question: "マザーボード上でのCPU，メモリ間などの電気の通り道のこと何と言いますか。",
+            choices: [
+              "チップセット",
+              "バス",
+              "CPU",
+              "GPU"
+            ],
+            answer: "バス",
+            explanation: "Đường truyền dữ liệu vật lý (đường dẫn tín hiệu điện) giữa CPU, bộ nhớ và các thiết bị khác trên bo mạch chủ được gọi là Bus (バス)."
+          },
+          {
+            id: "l10-mc-3",
+            question: "キャッシュについて正しくない内容を選びなさい。",
+            choices: [
+              "記憶装置である",
+              "データのアクセス速度が最も高速である",
+              "記憶容量が非常に大きい",
+              "記憶容量がちいさい"
+            ],
+            answer: "記憶容量が非常に大きい",
+            explanation: "Phát biểu sai: Bộ nhớ đệm (キャッシュメモリ - Cache Memory) có đặc điểm là tốc độ cực nhanh nhưng dung lượng lưu trữ rất nhỏ (chứ không phải cực kỳ lớn)."
+          },
+          {
+            id: "l10-mc-4",
+            question: "ハードディスクについて正しくない内容を選びなさい。",
+            choices: [
+              "記憶装置の一つである",
+              "大容量の記憶が可能である",
+              "記憶容量が非常に大きい",
+              "記憶容量が小さい"
+            ],
+            answer: "記憶容量が小さい",
+            explanation: "Phát biểu sai: Ổ đĩa cứng (HDD) là thiết bị lưu trữ thứ cấp có đặc điểm là dung lượng lớn (大容量) chứ không phải dung lượng nhỏ."
+          },
+          {
+            id: "l10-mc-5",
+            question: "CPUには何と呼ばれる単純な演算処理，制御処理が実行できますか。",
+            choices: [
+              "命令セット",
+              "マイクロプロセッサ",
+              "クロック周波数",
+              "ベンチマークテスト"
+            ],
+            answer: "命令セット",
+            explanation: "Tập hợp các chỉ thị lệnh cơ bản mà CPU có thể thực thi trực tiếp được gọi là Tập lệnh (命令セット - Instruction Set)."
+          },
+          {
+            id: "l10-mc-6",
+            question: "パソコン内で大きな面積を占めるメインとなる基板は何ですか。",
+            choices: [
+              "CPU",
+              "マザーボード",
+              "IC",
+              "ハードディスク"
+            ],
+            answer: "マザーボード",
+            explanation: "Bo mạch chính chiếm diện tích lớn nhất bên trong máy tính, là nơi kết nối tất cả linh kiện được gọi là Bo mạch chủ (マザーボード - Motherboard)."
+          },
+          {
+            id: "l10-mc-7",
+            question: "出力装置は何がありますか。",
+            choices: [
+              "キーボードやマウス",
+              "CPU",
+              "ディスプレイやプリンタ",
+              "メモリやハードディスク"
+            ],
+            answer: "ディスプレイやプリンタ",
+            explanation: "Thiết bị xuất (出力装置) gồm màn hình hiển thị (ディスプレイ) và máy in (プリンタ). Phím và chuột là thiết bị nhập. RAM/HDD là thiết bị bộ nhớ."
+          },
+          {
+            id: "l10-mc-8",
+            question: "RAMについて正しくないものをえらんでください。",
+            choices: [
+              "電源が切れるとデータも消えてしまう",
+              "短期的な記憶に使う",
+              "電源が切れるとデータが残る",
+              "読み書き専用の半導体メモリ"
+            ],
+            answer: "電源が切れるとデータが残る",
+            explanation: "Phát biểu sai: RAM là bộ nhớ bốc hơi (揮発性メモリ), khi mất điện thì dữ liệu sẽ bị xóa hoàn toàn (chứ không giữ lại)."
+          },
+          {
+            id: "l10-mc-9",
+            question: "最も高いデータのアクセス速度があるのは何でしょう。",
+            choices: [
+              "ハードディスク",
+              "メモリ",
+              "RAM",
+              "キャッシュ"
+            ],
+            answer: "キャッシュ",
+            explanation: "Trong số các thiết bị lưu trữ, bộ nhớ đệm (キャッシュ) nằm gần nhân CPU nhất nên có tốc độ truy xuất nhanh nhất."
+          },
+          {
+            id: "l10-mc-10",
+            question: "CPUについて正しいものを選びなさい。",
+            choices: [
+              "処理の中心となる部品である",
+              "パソコン内で大きな面積を占めるメインとなる基板のこと",
+              "CPUの中には演算装置機能だけが組み込まれている",
+              "バスを流れるデータや外部機器とのデータを制御する"
+            ],
+            answer: "処理の中心となる部品である",
+            explanation: "Phát biểu đúng: CPU (Central Processing Unit) là bộ vi xử lý trung tâm, đóng vai trò là não bộ và bộ phận điều hành trung tâm của toàn bộ máy tính."
+          },
+          {
+            id: "l10-mc-11",
+            question: "マザーボードとケーブルで接続された箱CPUです。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Sai",
+            explanation: "Phát biểu sai: CPU là con chip xử lý được lắp trực tiếp lên socket trên bo mạch chủ (Motherboard) chứ không phải là cái thùng máy kết nối qua dây cáp."
+          },
+          {
+            id: "l10-mc-12",
+            question: "CPUは処理の中心となる部品です。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Đúng",
+            explanation: "Phát biểu đúng: CPU thực hiện chức năng giải mã và thi hành các lệnh chương trình, đóng vai trò là cơ quan đầu não xử lý của toàn bộ hệ thống máy tính."
+          },
+          {
+            id: "l10-mc-13",
+            question: "記憶装置はメモリやハードディスクが該当します。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Đúng",
+            explanation: "Phát biểu đúng: Thiết bị lưu trữ/bộ nhớ (記憶装置) của máy tính bao gồm cả bộ nhớ chính (RAM) và bộ nhớ phụ (HDD, SSD)."
+          }
+        ]
       }
     ]
   },
   {
     id: 11,
     title: "Bài 11 - Máy Turing, mạch logic, IC",
+    hasTheory: true,
     sections: [
       {
         id: "lesson-11-vocabulary",
@@ -4853,6 +5336,7 @@ export const lessons: Lesson[] = [
   {
     id: 12,
     title: "Bài 12 - Xử lý tính toán",
+    hasTheory: true,
     sections: [
       {
         id: "lesson-12-vocabulary",
@@ -5161,12 +5645,92 @@ export const lessons: Lesson[] = [
             meaning: "khung"
           }
         ]
+      },
+      {
+        id: "lesson-12-multiple-choice",
+        title: "Trắc nghiệm",
+        type: "multiple_choice",
+        items: [
+          {
+            id: "l12-mc-1",
+            question: "10進数の12は，2進数，8進数，16進数で表現するとどうなりますか。",
+            choices: [
+              "2進数: 1100, 8進数: 14, 16進数: c",
+              "2進数: 1010, 8進数: 12, 16進数: a",
+              "2進数: 1111, 8進数: 16, 16進数: f",
+              "2進数: 1100, 8進数: 15, 16進数: d"
+            ],
+            answer: "2進数: 1100, 8進数: 14, 16進数: c",
+            explanation: "10 tiến trình số 12 chia cho cơ số: Hệ nhị phân là 1100, Hệ bát phân là 14, Hệ thập lục phân là c."
+          },
+          {
+            id: "l12-mc-2",
+            question: "2進数の11010001を10進数に変換するとどうなりますか。",
+            choices: [
+              "193",
+              "209",
+              "225",
+              "241"
+            ],
+            answer: "209",
+            explanation: "2^7 + 2^6 + 2^4 + 2^0 = 128 + 64 + 16 + 1 = 209."
+          },
+          {
+            id: "l12-mc-3",
+            question: "コンピュータで小数を扱う際に生じる、実際の数値とのわずかな差を何と呼びますか。",
+            choices: [
+              "丸め誤差",
+              "桁落ち誤差",
+              "情報落ち誤差",
+              "オーバーフロー"
+            ],
+            answer: "丸め誤差",
+            explanation: "Sai số do làm tròn (丸め誤差 - Roundoff error) là sự chênh lệch xuất hiện khi biểu diễn một số thực vô hạn dưới dạng số nhị phân có giới hạn số chữ số hiệu dụng."
+          },
+          {
+            id: "l12-mc-4",
+            question: "コンピュータで負の数を表現する際、一般的に用いられる表現法は何ですか。",
+            choices: [
+              "1の補数",
+              "2の補数",
+              "符号絶対値",
+              "バイアス表現"
+            ],
+            answer: "2の補数",
+            explanation: "Hệ thống máy tính hiện đại sử dụng mã bù 2 (2の補数 - Two's complement) để biểu diễn số âm, tránh việc tồn tại hai giá trị +0 và -0 như ở mã bù 1."
+          },
+          {
+            id: "l12-mc-5",
+            question: "データを左または右に dịch chuyển (dịch bit) tương ứng với phép nhân hoặc chia cho 2^n được gọi là gì?",
+            choices: [
+              "ビットシフト",
+              "論理積",
+              "丸め",
+              "テイラー展開"
+            ],
+            answer: "ビットシフト",
+            explanation: "Phép dịch chuyển bit (ビットシフト - Bit Shift) dịch các bit sang trái (nhân với 2^n) hoặc sang phải (chia cho 2^n) cực kỳ nhanh ở tầng CPU."
+          },
+          {
+            id: "l12-mc-6",
+            question: "2進数1.101を10進数で表現したものはどれか。",
+            choices: [
+              "(ア) 1.2",
+              "(イ) 1.5",
+              "(ウ) 1.505",
+              "(エ) 1.625"
+            ],
+            answer: "(エ) 1.625",
+            explanation: "1 + 1*2^-1 + 0*2^-2 + 1*2^-3 = 1 + 0.5 + 0 + 0.125 = 1.625."
+          }
+        ]
       }
     ]
   },
   {
     id: 13,
     title: "Bài 13 - Mã chữ, Hệ điều hành & Đơn vị đo",
+    hasTheory: true,
     sections: [
       {
         id: "lesson-13-vocabulary",
@@ -5470,6 +6034,18 @@ export const lessons: Lesson[] = [
             question: "9.日本語1文字を表す情報量はどうなりますか。",
             choices: ["2バイト", "1バイト", "24ビット", "8ビット"],
             answer: "2バイト"
+          },
+          {
+            id: "l13-mc-11",
+            question: "片面1層記録のDVD-Rは約4.7Gバイトの記憶容量をもつ．1ページ当たり日本語700文字が印刷されている本の場合，約何万ページ分をこの DVD-R に保存できるか．ここで，日本語 1文字を表現するのに 2 バイトが必要であるとし，1Gバイトは10億バイトとする。",
+            choices: [
+              "(ア) 42",
+              "(イ) 71",
+              "(ウ) 336",
+              "(エ) 671"
+            ],
+            answer: "(ウ) 336",
+            explanation: "Một trang sách chứa 700 ký tự tiếng Nhật. Mỗi ký tự cần 2 byte, vậy 1 trang = 1400 byte. Dung lượng đĩa DVD-R = 4.7 GB = 4.7 tỷ byte. Số trang sách có thể lưu trữ được là: 4,700,000,000 / 1400 = 3,357,142 trang ≈ 336 vạn trang (336万ページ)."
           }
         ]
       }
@@ -5478,6 +6054,7 @@ export const lessons: Lesson[] = [
   {
     id: 14,
     title: "Bài 14 - Biểu diễn Âm thanh & Hình ảnh",
+    hasTheory: true,
     sections: [
       {
         id: "lesson-14-vocabulary",
@@ -5760,6 +6337,18 @@ export const lessons: Lesson[] = [
             question: "画素は画像を構成する点です。",
             choices: ["Đúng", "Sai"],
             answer: "Đúng"
+          },
+          {
+            id: "l14-mc-16",
+            question: "PCの画面表示の設定で，解像度を1,280×960ピクセルの全画面表示から1,024×768ピクセルの全画面表示に変更したとき，ディスプレイの表示状態はどのように変化するか。",
+            choices: [
+              "(ア) MPEG動画の再生速度が速くなる。",
+              "(イ) 画面に表示される文字が大きくなる。",
+              "(ウ) 縮小しないと表示できなかったJPEG画像が縮小なしで表示できるようになる。",
+              "(エ) ディスプレイの表示色数が少なくなる。"
+            ],
+            answer: "(イ) 画面に表示される文字が大きくなる。",
+            explanation: "Khi giảm độ phân giải màn hình từ cao (1,280×960) xuống thấp hơn (1,024×768) trên cùng một màn hình vật lý, số lượng pixel giảm đi khiến cho kích thước vật lý của mỗi pixel tăng lên. Do các ký tự văn bản chiếm một số lượng pixel cố định, chúng sẽ hiển thị với kích thước thực tế to hơn trên màn hình (Tương ứng đáp án **イ**)."
           }
         ]
       }

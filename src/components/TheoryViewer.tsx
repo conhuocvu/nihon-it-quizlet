@@ -6,6 +6,13 @@ import { Lesson4Theory } from './Lesson4Theory';
 import { Lesson5Theory } from './Lesson5Theory';
 import { Lesson6Theory } from './Lesson6Theory';
 import { Lesson7Theory } from './Lesson7Theory';
+import { Lesson8Theory } from './Lesson8Theory';
+import { Lesson9Theory } from './Lesson9Theory';
+import { Lesson10Theory } from './Lesson10Theory';
+import { Lesson11Theory } from './Lesson11Theory';
+import { Lesson12Theory } from './Lesson12Theory';
+import { Lesson13Theory } from './Lesson13Theory';
+import { Lesson14Theory } from './Lesson14Theory';
 import { Lesson16Theory } from './Lesson16Theory';
 import { Lesson17Theory } from './Lesson17Theory';
 import { Lesson18Theory } from './Lesson18Theory';
@@ -48,6 +55,34 @@ export const TheoryViewer: React.FC<TheoryViewerProps> = ({ lessonId, onClose })
 
   if (lessonId === 7) {
     return <Lesson7Theory onClose={onClose} />;
+  }
+
+  if (lessonId === 8) {
+    return <Lesson8Theory onClose={onClose} />;
+  }
+
+  if (lessonId === 9) {
+    return <Lesson9Theory onClose={onClose} />;
+  }
+
+  if (lessonId === 10) {
+    return <Lesson10Theory onClose={onClose} />;
+  }
+
+  if (lessonId === 11) {
+    return <Lesson11Theory onClose={onClose} />;
+  }
+
+  if (lessonId === 12) {
+    return <Lesson12Theory onClose={onClose} />;
+  }
+
+  if (lessonId === 13) {
+    return <Lesson13Theory onClose={onClose} />;
+  }
+
+  if (lessonId === 14) {
+    return <Lesson14Theory onClose={onClose} />;
   }
 
   if (lessonId === 16) {

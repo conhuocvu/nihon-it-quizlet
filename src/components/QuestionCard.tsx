@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import type { StudyItem } from '../data/lessons';
-import { CheckCircle2, XCircle, Info, HelpCircle } from 'lucide-react';
+import { CheckCircle2, XCircle, Info, HelpCircle, X } from 'lucide-react';
 
 interface QuestionCardProps {
   item: StudyItem;
@@ -17,11 +17,13 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
 }) => {
   const [selectedChoice, setSelectedChoice] = useState<string | null>(null);
   const [isGraded, setIsGraded] = useState(false);
+  const [isImageOpen, setIsImageOpen] = useState(false);
 
   // Reset selected state when item changes
   useEffect(() => {
     setSelectedChoice(null);
     setIsGraded(false);
+    setIsImageOpen(false);
   }, [item]);
 
   const choices = item.choices || [];
@@ -60,11 +62,14 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
         <div className="mb-6">
           {item.image ? (
             /* Image-based question: show image only */
-            <div className="rounded-xl overflow-hidden border border-slate-200 bg-slate-50">
+            <div 
+              className="rounded-xl overflow-hidden border border-slate-200 bg-slate-50 cursor-zoom-in transition-all duration-200 hover:border-indigo-300 hover:shadow-md"
+              onClick={() => setIsImageOpen(true)}
+            >
               <img
                 src={item.image}
                 alt="Question"
-                className="w-full max-h-80 object-contain"
+                className="w-full max-h-80 object-contain transition-transform duration-200 hover:scale-[1.01]"
               />
             </div>
           ) : (
@@ -204,6 +209,33 @@ export const QuestionCard: React.FC<QuestionCardProps> = ({
           </div>
         )}
       </div>
+
+      {/* Fullscreen Image Modal */}
+      {isImageOpen && item.image && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out"
+          onClick={() => setIsImageOpen(false)}
+        >
+          <button 
+            className="absolute top-4 right-4 text-white hover:text-slate-200 bg-black/40 hover:bg-black/60 p-3 rounded-full transition-colors duration-200"
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsImageOpen(false);
+            }}
+            aria-label="Close fullscreen"
+          >
+            <X size={24} />
+          </button>
+          <div className="relative max-w-[95vw] max-h-[95vh] flex items-center justify-center">
+            <img
+              src={item.image}
+              alt="Question Fullscreen"
+              className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

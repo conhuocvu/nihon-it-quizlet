@@ -1,8 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { 
-  ArrowLeft, BookOpen, ShoppingBag, CreditCard, Users, 
-  HelpCircle, Shuffle, ShieldAlert, BarChart3, Database,
-  ArrowRight, Key, Shield, FileText, CheckCircle2, UserCheck, RefreshCw, Moon, Sun, Languages
+  ArrowLeft, ShoppingBag, CreditCard, Users, 
+  HelpCircle, Database, Languages
 } from 'lucide-react';
 
 interface Lesson7TheoryProps {
@@ -16,7 +15,7 @@ export const Lesson7Theory: React.FC<Lesson7TheoryProps> = ({ onClose }) => {
   const [activeFlow, setActiveFlow] = useState<'B2B' | 'B2C' | 'C2C'>('B2C');
 
   // Simulator 2: POS Simulator
-  const [cart, setCart] = useState<{ id: string; name: string; price: number; qty: number }[]>([
+  const [cart] = useState<{ id: string; name: string; price: number; qty: number }[]>([
     { id: '1', name: 'Trà xanh Ôlong', price: 150, qty: 2 },
     { id: '2', name: 'Cơm nắm cá hồi', price: 220, qty: 1 }
   ]);
@@ -54,7 +53,6 @@ export const Lesson7Theory: React.FC<Lesson7TheoryProps> = ({ onClose }) => {
   const [visitorName, setVisitorName] = useState<string>('');
   const [visitorPref, setVisitorPref] = useState<string>('Điện thoại & Gadget');
   const [cookieStored, setCookieStored] = useState<{ id: string; name: string; pref: string } | null>(null);
-  const [hasVisited, setHasVisited] = useState<boolean>(false);
 
   const handleRegisterCookie = () => {
     if (!visitorName) return;
@@ -64,13 +62,11 @@ export const Lesson7Theory: React.FC<Lesson7TheoryProps> = ({ onClose }) => {
       pref: visitorPref
     };
     setCookieStored(mockCookie);
-    setHasVisited(true);
   };
 
   const handleClearCookie = () => {
     setCookieStored(null);
     setVisitorName('');
-    setHasVisited(false);
   };
 
   // IT Passport Cookie Question
@@ -111,11 +107,6 @@ export const Lesson7Theory: React.FC<Lesson7TheoryProps> = ({ onClose }) => {
   const [mini1ShowAnswer1, setMini1ShowAnswer1] = useState(false);
   const [mini1Trans2, setMini1Trans2] = useState('');
   const [mini1ShowAnswer2, setMini1ShowAnswer2] = useState(false);
-
-  const [mini2Trans1, setMini2Trans1] = useState('');
-  const [mini2ShowAnswer1, setMini2ShowAnswer1] = useState(false);
-  const [mini2Trans2, setMini2Trans2] = useState('');
-  const [mini2ShowAnswer2, setMini2ShowAnswer2] = useState(false);
 
   return (
     <div className="w-full max-w-6xl mx-auto px-4 py-4 md:py-8 flex flex-col gap-6">

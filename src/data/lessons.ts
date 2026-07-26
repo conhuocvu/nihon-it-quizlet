@@ -416,6 +416,68 @@ export const lessons: Lesson[] = [
             meaning: "biểu thị"
           }
         ]
+      },
+      {
+        id: "lesson-1-multiple-choice",
+        title: "Trắc nghiệm - Cơ bản về máy tính",
+        type: "multiple_choice",
+        items: [
+          {
+            id: "l1-mc-1",
+            question: "デジタルとは何ですか。",
+            choices: [
+              "数値化された量のこと",
+              "連続的な量のこと",
+              "数値化されたこと",
+              "連続的なこと"
+            ],
+            answer: "数値化された量のこと"
+          },
+          {
+            id: "l1-mc-2",
+            question: "長さ，重さ，時間など身の回りの多くの物理量は何ですか。",
+            choices: [
+              "アナログ量",
+              "デジタル時計",
+              "デジタル量",
+              "アナログ時計"
+            ],
+            answer: "アナログ量"
+          },
+          {
+            id: "l1-mc-3",
+            question: "電気機械式の計算機はいつ開発されましたか。",
+            choices: [
+              "紀元前",
+              "1930年代",
+              "7世紀",
+              "1946年"
+            ],
+            answer: "1930年代"
+          },
+          {
+            id: "l1-mc-4",
+            question: "電子式計算機はいつ開発されましたか。",
+            choices: [
+              "紀元前",
+              "1930年代",
+              "17世紀",
+              "1946年"
+            ],
+            answer: "1946年"
+          },
+          {
+            id: "l1-mc-5",
+            question: "コンピューターの機能は何ですか。",
+            choices: [
+              "記録と処理",
+              "記憶と修理",
+              "記憶と処理",
+              "記録と修理"
+            ],
+            answer: "記憶と処理"
+          }
+        ]
       }
     ]
   },

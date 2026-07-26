@@ -9,7 +9,7 @@ interface Lesson18TheoryProps {
 }
 
 export const Lesson18Theory: React.FC<Lesson18TheoryProps> = ({ onClose }) => {
-  const [activeTab18, setActiveTab18] = useState<'18.1' | '18.2' | '18.3' | '18.4' | 'minitest'>('18.1');
+  const [activeTab, setActiveTab] = useState<'18.1' | '18.2' | '18.3' | '18.4' | 'minitest'>('18.1');
 
   // Data for Lesson 18 Tables
   const gakuseiboData = useMemo(() => [
@@ -245,45 +245,45 @@ export const Lesson18Theory: React.FC<Lesson18TheoryProps> = ({ onClose }) => {
       {/* Tabs Navigation for Lesson 18 */}
       <div className="flex flex-wrap gap-2 p-1.5 bg-slate-100 rounded-2xl border border-slate-200">
         <button
-          onClick={() => setActiveTab18('18.1')}
+          onClick={() => setActiveTab('18.1')}
           className={`flex-1 min-w-[120px] py-3 text-xs md:text-sm font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 ${
-            activeTab18 === '18.1' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
+            activeTab === '18.1' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
           }`}
         >
           <BookOpen size={16} />
           18.1 SQL là gì & Phân loại
         </button>
         <button
-          onClick={() => setActiveTab18('18.2')}
+          onClick={() => setActiveTab('18.2')}
           className={`flex-1 min-w-[120px] py-3 text-xs md:text-sm font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 ${
-            activeTab18 === '18.2' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
+            activeTab === '18.2' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
           }`}
         >
           <Code size={16} />
           18.2 Cú pháp & 射影・選択
         </button>
         <button
-          onClick={() => setActiveTab18('18.3')}
+          onClick={() => setActiveTab('18.3')}
           className={`flex-1 min-w-[120px] py-3 text-xs md:text-sm font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 ${
-            activeTab18 === '18.3' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
+            activeTab === '18.3' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
           }`}
         >
           <Filter size={16} />
           18.3 Tìm kiếm điều kiện
         </button>
         <button
-          onClick={() => setActiveTab18('18.4')}
+          onClick={() => setActiveTab('18.4')}
           className={`flex-1 min-w-[120px] py-3 text-xs md:text-sm font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 ${
-            activeTab18 === '18.4' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
+            activeTab === '18.4' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
           }`}
         >
           <ArrowUpDown size={16} />
           18.4 Sắp xếp & 18.5 結合
         </button>
         <button
-          onClick={() => setActiveTab18('minitest')}
+          onClick={() => setActiveTab('minitest')}
           className={`flex-1 min-w-[120px] py-3 text-xs md:text-sm font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 ${
-            activeTab18 === 'minitest' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
+            activeTab === 'minitest' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
           }`}
         >
           <Languages size={16} />
@@ -292,25 +292,25 @@ export const Lesson18Theory: React.FC<Lesson18TheoryProps> = ({ onClose }) => {
       </div>
 
       {/* Main Tab Content Container */}
-      <div className="bg-white border border-slate-200/80 rounded-2xl p-4 md:p-8 shadow-xl shadow-slate-100/40 min-h-[500px]">
+      <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm animate-fadeIn">
 
-        {activeTab18 === '18.1' && (
+        {activeTab === '18.1' && (
           <div className="flex flex-col gap-6 animate-fadeIn">
             {/* Textbook Intro Section */}
             <div className="border-l-4 border-indigo-500 pl-4 bg-indigo-50/40 p-4 rounded-r-xl">
               <span className="text-[10px] font-extrabold uppercase text-indigo-600 tracking-wider">Khái niệm SGK (18.1)</span>
-              <h3 className="text-lg font-bold text-slate-800 mt-1">18.1 SQLとは (SQL là gì?)</h3>
+              <h3 className="text-xl md:text-2xl font-black text-slate-800 mt-1">18.1 SQLとは (SQL là gì?)</h3>
               <p className="text-slate-700 text-sm leading-relaxed mt-2 select-text font-serif italic">
                 「SQLとは，Structured Query Languageの頭文字をとったもので，直訳すると構造化された問い合わせ用の言語ということになります．データベースを操作するための命令の集まりであり，関係データベースを基本としています．したがって，関係データベースで学習した操作を実現できます．」
               </p>
-              <div className="mt-3 text-xs text-slate-600 bg-white/80 p-3 rounded-xl border border-slate-200 leading-relaxed">
+              <div className="mt-3 text-slate-600 leading-relaxed text-sm md:text-base bg-white/80 p-3 rounded-xl border border-slate-200 leading-relaxed">
                 <span className="font-bold text-indigo-600">Dịch nghĩa:</span> SQL là chữ viết tắt của <strong>Structured Query Language</strong> (Ngôn ngữ truy vấn có cấu trúc). Đây là tập hợp các câu lệnh để thao tác với cơ sở dữ liệu và dựa trên nền tảng cơ sở dữ liệu quan hệ (RDBMS). Do đó, nó thực hiện được tất cả các thao tác đã học trong phần CSDL quan hệ.
               </div>
             </div>
 
             {/* 3 Categories of SQL Operations */}
             <div>
-              <h4 className="text-base font-bold text-slate-800 mb-3 flex items-center gap-2">
+              <h4 className="text-lg md:text-xl font-bold text-slate-800 mb-3 flex items-center gap-2">
                 <Layers size={18} className="text-indigo-600" />
                 3 nhóm thao tác SQL trong giáo trình
               </h4>
@@ -323,8 +323,8 @@ export const Lesson18Theory: React.FC<Lesson18TheoryProps> = ({ onClose }) => {
                       <span className="text-[10px] font-extrabold text-blue-700 bg-blue-100 px-2.5 py-0.5 rounded-full uppercase">1. データ定義</span>
                       <span className="text-xs font-bold text-slate-400">DDL</span>
                     </div>
-                    <h5 className="font-extrabold text-base text-slate-800">Định nghĩa dữ liệu</h5>
-                    <ul className="mt-3 space-y-1.5 text-xs text-slate-600">
+                    <h5 className="font-bold text-lg md:text-xl text-slate-800">Định nghĩa dữ liệu</h5>
+                    <ul className="mt-3 space-y-1.5 text-slate-600 leading-relaxed text-sm md:text-base">
                       <li className="flex items-center gap-1.5 font-medium"><Check size={14} className="text-blue-500" /> 表の定義 (Tạo/định nghĩa bảng)</li>
                       <li className="flex items-center gap-1.5 font-medium"><Check size={14} className="text-blue-500" /> 表の削除 (Xóa bảng)</li>
                     </ul>
@@ -338,8 +338,8 @@ export const Lesson18Theory: React.FC<Lesson18TheoryProps> = ({ onClose }) => {
                       <span className="text-[10px] font-extrabold text-amber-700 bg-amber-100 px-2.5 py-0.5 rounded-full uppercase">2. データ操作</span>
                       <span className="text-xs font-bold text-slate-400">DML</span>
                     </div>
-                    <h5 className="font-extrabold text-base text-slate-800">Thao tác dữ liệu</h5>
-                    <ul className="mt-3 space-y-1.5 text-xs text-slate-600">
+                    <h5 className="font-bold text-lg md:text-xl text-slate-800">Thao tác dữ liệu</h5>
+                    <ul className="mt-3 space-y-1.5 text-slate-600 leading-relaxed text-sm md:text-base">
                       <li className="flex items-center gap-1.5 font-medium"><Check size={14} className="text-amber-500" /> 読み書きの制限 (Hạn chế quyền đọc/ghi)</li>
                     </ul>
                   </div>
@@ -352,8 +352,8 @@ export const Lesson18Theory: React.FC<Lesson18TheoryProps> = ({ onClose }) => {
                       <span className="text-[10px] font-extrabold text-emerald-700 bg-emerald-100 px-2.5 py-0.5 rounded-full uppercase">3. データ制御</span>
                       <span className="text-xs font-bold text-slate-400">DCL</span>
                     </div>
-                    <h5 className="font-extrabold text-base text-slate-800">Điều khiển dữ liệu</h5>
-                    <ul className="mt-3 space-y-1.5 text-xs text-slate-600">
+                    <h5 className="font-bold text-lg md:text-xl text-slate-800">Điều khiển dữ liệu</h5>
+                    <ul className="mt-3 space-y-1.5 text-slate-600 leading-relaxed text-sm md:text-base">
                       <li className="flex items-center gap-1.5 font-medium"><Check size={14} className="text-emerald-500" /> 照会 (Truy vấn - SELECT)</li>
                       <li className="flex items-center gap-1.5 font-medium"><Check size={14} className="text-emerald-500" /> 挿入 (Chèn - INSERT)</li>
                       <li className="flex items-center gap-1.5 font-medium"><Check size={14} className="text-emerald-500" /> 更新 (Cập nhật - UPDATE)</li>
@@ -385,7 +385,7 @@ export const Lesson18Theory: React.FC<Lesson18TheoryProps> = ({ onClose }) => {
                     <Sparkles size={16} className="text-indigo-600" />
                     Thử thách: Phân loại câu lệnh SQL theo SGK
                   </h4>
-                  <p className="text-xs text-slate-500">Hãy chọn đúng nhóm thao tác cho từng câu lệnh dưới đây.</p>
+                  <p className="text-sm text-slate-500">Hãy chọn đúng nhóm thao tác cho từng câu lệnh dưới đây.</p>
                 </div>
               </div>
 
@@ -428,7 +428,7 @@ export const Lesson18Theory: React.FC<Lesson18TheoryProps> = ({ onClose }) => {
           </div>
         )}
 
-        {activeTab18 === '18.2' && (
+        {activeTab === '18.2' && (
           <div className="flex flex-col gap-6 animate-fadeIn">
             {/* Syntax Explanation */}
             <div className="border border-slate-200 rounded-2xl p-5 bg-gradient-to-r from-slate-900 to-indigo-950 text-white shadow-md">
@@ -504,7 +504,7 @@ export const Lesson18Theory: React.FC<Lesson18TheoryProps> = ({ onClose }) => {
               <div className="p-4 border border-indigo-100 bg-indigo-50/30 rounded-xl">
                 <span className="text-[10px] font-extrabold text-indigo-600 uppercase bg-white border border-indigo-200 px-2 py-0.5 rounded-full">Phép chiếu</span>
                 <h4 className="font-bold text-sm text-slate-800 mt-2">射影 (Projection)</h4>
-                <p className="text-xs text-slate-600 mt-1 leading-relaxed">Rút trích các cột/trường cụ thể từ bảng.</p>
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1 leading-relaxed">Rút trích các cột/trường cụ thể từ bảng.</p>
                 <code className="text-[11px] block mt-2 p-2 bg-white rounded border border-indigo-100 font-mono text-indigo-900 font-bold">
                   SELECT 出身地 FROM 学籍簿
                 </code>
@@ -513,7 +513,7 @@ export const Lesson18Theory: React.FC<Lesson18TheoryProps> = ({ onClose }) => {
               <div className="p-4 border border-indigo-100 bg-indigo-50/30 rounded-xl">
                 <span className="text-[10px] font-extrabold text-indigo-600 uppercase bg-white border border-indigo-200 px-2 py-0.5 rounded-full">Phép chọn</span>
                 <h4 className="font-bold text-sm text-slate-800 mt-2">選択 (Selection)</h4>
-                <p className="text-xs text-slate-600 mt-1 leading-relaxed">Dùng '*' lấy tất cả trường. Chuỗi '東京都' bọc trong nháy đơn (').</p>
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1 leading-relaxed">Dùng '*' lấy tất cả trường. Chuỗi '東京都' bọc trong nháy đơn (').</p>
                 <code className="text-[11px] block mt-2 p-2 bg-white rounded border border-indigo-100 font-mono text-indigo-900 font-bold">
                   SELECT * FROM 学籍簿 WHERE 出身地 = '東京都'
                 </code>
@@ -522,7 +522,7 @@ export const Lesson18Theory: React.FC<Lesson18TheoryProps> = ({ onClose }) => {
               <div className="p-4 border border-indigo-100 bg-indigo-50/30 rounded-xl">
                 <span className="text-[10px] font-extrabold text-indigo-600 uppercase bg-white border border-indigo-200 px-2 py-0.5 rounded-full">Biểu thức</span>
                 <h4 className="font-bold text-sm text-slate-800 mt-2">式 (Expression)</h4>
-                <p className="text-xs text-slate-600 mt-1 leading-relaxed">Có thể thực hiện tính toán giữa các trường trong SELECT.</p>
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1 leading-relaxed">Có thể thực hiện tính toán giữa các trường trong SELECT.</p>
                 <code className="text-[11px] block mt-2 p-2 bg-white rounded border border-indigo-100 font-mono text-indigo-900 font-bold">
                   SELECT 氏名, 英語＋数学 FROM 成績表
                 </code>
@@ -599,12 +599,12 @@ export const Lesson18Theory: React.FC<Lesson18TheoryProps> = ({ onClose }) => {
           </div>
         )}
 
-        {activeTab18 === '18.3' && (
+        {activeTab === '18.3' && (
           <div className="flex flex-col gap-6 animate-fadeIn">
             {/* Header Title */}
             <div>
               <span className="text-[10px] font-extrabold text-indigo-600 bg-indigo-50 border border-indigo-100 px-3 py-1 rounded-full uppercase">Mục 18.3</span>
-              <h3 className="text-lg font-extrabold text-slate-800 mt-1">18.3 条件検索 (Tìm kiếm có điều kiện)</h3>
+              <h3 className="text-xl md:text-2xl font-black text-slate-800 mt-1">18.3 条件検索 (Tìm kiếm có điều kiện)</h3>
             </div>
 
             {/* Condition Rules Cards */}
@@ -614,7 +614,7 @@ export const Lesson18Theory: React.FC<Lesson18TheoryProps> = ({ onClose }) => {
               <div className="p-4 border border-slate-200 rounded-xl bg-white hover:border-indigo-300 transition-all">
                 <span className="text-[10px] font-bold text-purple-600 bg-purple-50 px-2 py-0.5 rounded-full border border-purple-100">Wildcard %</span>
                 <h4 className="font-extrabold text-sm text-slate-800 mt-2">LIKE '%香'</h4>
-                <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1 leading-relaxed">
                   Dấu <code className="text-purple-600 font-bold">%</code> đóng vai trò lá bài Joker đại diện cho mọi ký tự. Dùng từ khóa <code className="text-indigo-600 font-bold">LIKE</code> thay vì '='.
                 </p>
               </div>
@@ -623,7 +623,7 @@ export const Lesson18Theory: React.FC<Lesson18TheoryProps> = ({ onClose }) => {
               <div className="p-4 border border-slate-200 rounded-xl bg-white hover:border-indigo-300 transition-all">
                 <span className="text-[10px] font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full border border-blue-100">AND / OR</span>
                 <h4 className="font-extrabold text-sm text-slate-800 mt-2">AND / OR</h4>
-                <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1 leading-relaxed">
                   Ghép điều kiện. Chú ý biểu diễn 'hoặc bằng' bằng <code className="text-blue-600 font-bold font-mono text-[11px] font-extrabold flex-inline">&gt;=</code> (không dùng ≧ hoặc =&gt;).
                 </p>
               </div>
@@ -632,7 +632,7 @@ export const Lesson18Theory: React.FC<Lesson18TheoryProps> = ({ onClose }) => {
               <div className="p-4 border border-slate-200 rounded-xl bg-white hover:border-indigo-300 transition-all">
                 <span className="text-[10px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-100">BETWEEN AND</span>
                 <h4 className="font-extrabold text-sm text-slate-800 mt-2">BETWEEN A AND B</h4>
-                <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1 leading-relaxed">
                   Trích xuất trong khoảng từ A đến B. Tương đương ghép <code className="text-amber-700 font-bold">&gt;= A AND &lt;= B</code>.
                 </p>
               </div>
@@ -641,7 +641,7 @@ export const Lesson18Theory: React.FC<Lesson18TheoryProps> = ({ onClose }) => {
               <div className="p-4 border border-slate-200 rounded-xl bg-white hover:border-indigo-300 transition-all">
                 <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">IN (...)</span>
                 <h4 className="font-extrabold text-sm text-slate-800 mt-2">IN ('A', 'B')</h4>
-                <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1 leading-relaxed">
                   Kiểm tra phần tử nằm trong danh sách. Tương đương câu lệnh ghép nhiều dấu <code className="text-emerald-700 font-bold font-mono text-[11px]">OR</code>.
                 </p>
               </div>
@@ -717,15 +717,15 @@ export const Lesson18Theory: React.FC<Lesson18TheoryProps> = ({ onClose }) => {
           </div>
         )}
 
-        {activeTab18 === '18.4' && (
+        {activeTab === '18.4' && (
           <div className="flex flex-col gap-6 animate-fadeIn">
             {/* 18.4 ORDER BY Section */}
             <div className="border border-slate-200 rounded-2xl p-5 bg-gradient-to-br from-indigo-50/30 to-purple-50/30">
               <div className="flex items-center gap-2 mb-2">
                 <ArrowUpDown className="text-indigo-600" size={20} />
-                <h3 className="text-base font-extrabold text-slate-800">18.4 並べ替え (Sắp xếp dữ liệu với ORDER BY)</h3>
+                <h3 className="text-lg md:text-xl font-extrabold text-slate-800">18.4 並べ替え (Sắp xếp dữ liệu với ORDER BY)</h3>
               </div>
-              <p className="text-xs text-slate-600 leading-relaxed mb-4">
+              <p className="text-slate-600 leading-relaxed text-sm md:text-base leading-relaxed mb-4">
                 Sử dụng cú pháp <code className="text-indigo-700 font-bold">ORDER BY</code> để sắp xếp kết quả trích xuất. 
                 Sắp xếp tăng dần từ nhỏ đến lớn ghi <code className="text-indigo-700 font-bold">ASC</code> (ascend - 昇順), 
                 sắp xếp giảm dần từ lớn đến nhỏ ghi <code className="text-indigo-700 font-bold">DESC</code> (descend - 降順).
@@ -752,9 +752,9 @@ export const Lesson18Theory: React.FC<Lesson18TheoryProps> = ({ onClose }) => {
             <div className="border border-slate-200 rounded-2xl p-5 bg-gradient-to-br from-purple-50/30 to-indigo-50/30">
               <div className="flex items-center gap-2 mb-2">
                 <LinkIcon className="text-purple-600" size={20} />
-                <h3 className="text-base font-extrabold text-slate-800">18.5 結合 (Phép nối 2 hay nhiều bảng)</h3>
+                <h3 className="text-lg md:text-xl font-extrabold text-slate-800">18.5 結合 (Phép nối 2 hay nhiều bảng)</h3>
               </div>
-              <p className="text-xs text-slate-600 leading-relaxed mb-3">
+              <p className="text-slate-600 leading-relaxed text-sm md:text-base leading-relaxed mb-3">
                 Thao tác kết hợp sử dụng 2 hoặc nhiều bảng (2つ以上の表). Trong điều kiện <code className="text-purple-700 font-bold">WHERE</code> phải chỉ rõ vị trí các trường trùng khớp dữ liệu: 
                 <code className="text-purple-700 font-bold bg-white px-2 py-0.5 rounded border border-purple-200 ml-1">学籍簿.学生証番号 ＝ 成績表.学生証番号</code>.
               </p>
@@ -834,7 +834,7 @@ export const Lesson18Theory: React.FC<Lesson18TheoryProps> = ({ onClose }) => {
           </div>
         )}
 
-        {activeTab18 === 'minitest' && (
+        {activeTab === 'minitest' && (
           <div className="flex flex-col gap-8 animate-fadeIn">
             
             {/* IT Passport Practice Question */}
@@ -846,7 +846,7 @@ export const Lesson18Theory: React.FC<Lesson18TheoryProps> = ({ onClose }) => {
                 <h3 className="text-sm font-extrabold text-slate-800">Thứ tự chèn dữ liệu khi thêm nhà cung cấp & hàng mới</h3>
               </div>
 
-              <div className="bg-white border border-slate-200 rounded-xl p-4 mb-4 text-xs text-slate-700 select-text leading-relaxed">
+              <div className="bg-white border border-slate-200 rounded-xl p-4 mb-4 text-sm text-slate-700 select-text leading-relaxed">
                 <p className="font-bold text-slate-800 mb-2">Đề bài SGK:</p>
                 「業者コード」「業者名」のフィールドを持つ"業者"表，「伝票番号」「枝番」「日付」「商品コード」「数量」のフィールドを持つ"仕入明細"表，「商品コード」「商品名」「業者コード」「単価」のフィールドを持つ"商品"表の 3 つの表が関係データベースで管理されている．新たな業者から新たな商品を仕入れた場合，表にデータを追加する順序のうち，適切なものはどれか．
               </div>
@@ -893,7 +893,7 @@ export const Lesson18Theory: React.FC<Lesson18TheoryProps> = ({ onClose }) => {
 
             {/* Mini Test 1 Section */}
             <div className="border-t border-slate-200 pt-6">
-              <h3 className="text-base font-extrabold text-slate-800 mb-3 flex items-center gap-2">
+              <h3 className="text-lg md:text-xl font-extrabold text-slate-800 mb-3 flex items-center gap-2">
                 <Languages size={18} className="text-indigo-600" />
                 ミニテスト 1 (Mini Test 1)
               </h3>
@@ -996,7 +996,7 @@ export const Lesson18Theory: React.FC<Lesson18TheoryProps> = ({ onClose }) => {
 
             {/* Mini Test 2 Section */}
             <div className="border-t border-slate-200 pt-6">
-              <h3 className="text-base font-extrabold text-slate-800 mb-3 flex items-center gap-2">
+              <h3 className="text-lg md:text-xl font-extrabold text-slate-800 mb-3 flex items-center gap-2">
                 <Languages size={18} className="text-indigo-600" />
                 ミニテスト 2 (Mini Test 2)
               </h3>

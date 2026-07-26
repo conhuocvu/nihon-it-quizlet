@@ -2393,6 +2393,7 @@ export const lessons: Lesson[] = [
   {
     id: 6,
     title: "Bài 6 - Công nghệ Internet",
+    hasTheory: true,
     sections: [
       {
         id: "lesson-6-vocabulary",
@@ -2827,12 +2828,146 @@ export const lessons: Lesson[] = [
             meaning: "thiết bị lân cận"
           }
         ]
+      },
+      {
+        id: "lesson-6-multiple-choice",
+        title: "Trắc nghiệm",
+        type: "multiple_choice",
+        items: [
+          {
+            id: "l6-mc-1",
+            question: "HTTPはハイパーテキスト(文字，図，音，表など)を送るためのアプリケーション層の（　）の1つです。",
+            choices: [
+              "転送プロトコル",
+              "放送プロトコル",
+              "転送テキスト",
+              "放送テキスト"
+            ],
+            answer: "転送プロトコル"
+          },
+          {
+            id: "l6-mc-2",
+            question: "IPアドレスとドメイン名の変換を行うサーバを何と言いますか。",
+            choices: [
+              "DNSサーバ",
+              "クライアントサーバ",
+              "ホストサーバ",
+              "ISPサーバ"
+            ],
+            answer: "DNSサーバ"
+          },
+          {
+            id: "l6-mc-3",
+            question: "ホームページを見るときも，ウェブサーバから何を経由してコンテンツ情報が送られてきますか。",
+            choices: [
+              "メール",
+              "バケツリレー",
+              "ルータ",
+              "アクセスポイント"
+            ],
+            answer: "ルータ"
+          },
+          {
+            id: "l6-mc-4",
+            question: "途中にあるサーバが故障していると，どのようなことが起こりますか。",
+            choices: [
+              "メールが故障しない",
+              "ホームページ閲覧ができる",
+              "サーバの管理者は情報が把握できない",
+              "メールが送られない"
+            ],
+            answer: "メールが送られない"
+          },
+          {
+            id: "l6-mc-5",
+            question: "インターネット経由のメールは，どんな程度の安全性ですか。",
+            choices: [
+              "手紙",
+              "はがき",
+              "秘密",
+              "機密"
+            ],
+            answer: "はがき"
+          },
+          {
+            id: "l6-mc-6",
+            question: "「.com」のように種別だけで国名がないのはどこのドメイン名ですか。",
+            choices: [
+              "ベトナム",
+              "イギリス",
+              "フランス",
+              "アメリカ"
+            ],
+            answer: "アメリカ"
+          },
+          {
+            id: "l6-mc-7",
+            question: "IPアドレスについて正しくないものをえらんでください。",
+            choices: [
+              "コンピュータの住所にあたる名前である",
+              "ネットワーク層のIPプロトコルに従って番号が割り当てられている",
+              "桁数の多い数字の並びである",
+              "覚えやすい"
+            ],
+            answer: "覚えやすい"
+          },
+          {
+            id: "l6-mc-8",
+            question: "プロトコルとは何ですか。",
+            choices: [
+              "コンピュータを接続したもの",
+              "コンピュータが従うべきデータ転送規約のこと",
+              "情報の送受信をするためのもの",
+              "標準規約を定めるもの"
+            ],
+            answer: "コンピュータが従うべきデータ転送規約のこと"
+          },
+          {
+            id: "l6-mc-9",
+            question: "HTMLは，「<」と「>」で囲まれた中の（　）という標識によって情報を記述します。",
+            choices: [
+              "ビット",
+              "スタイルシート",
+              "タイトル",
+              "タグ"
+            ],
+            answer: "タグ"
+          },
+          {
+            id: "l6-mc-10",
+            question: "IPアドレスは入力間違いが多い",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Đúng"
+          },
+          {
+            id: "l6-mc-11",
+            question: "ドメイン名は覚えにくい。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Sai"
+          },
+          {
+            id: "l6-mc-12",
+            question: "インターネットには世界中のコンピュータが接続されるので，メールを送ったりホームページにアクセスしたりする先のコンピュータを正しく指定しなければなりません",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Đúng"
+          }
+        ]
       }
     ]
   },
   {
     id: 7,
     title: "Bài 7 - Sử dụng Internet trong kinh doanh",
+    hasTheory: true,
     sections: [
       {
         id: "lesson-7-vocabulary",
@@ -3027,6 +3162,146 @@ export const lessons: Lesson[] = [
             reading: "りゅうつうかてい",
             answer: "quá trình lưu thông",
             meaning: "quá trình lưu thông"
+          }
+        ]
+      },
+      {
+        id: "lesson-7-multiple-choice",
+        title: "Trắc nghiệm",
+        type: "multiple_choice",
+        items: [
+          {
+            id: "l7-mc-1",
+            question: "（　）とは，オンラインで販売時点のデータを管理するシステムのことです。",
+            choices: [
+              "EOS",
+              "CALS",
+              "POS",
+              "EDI"
+            ],
+            answer: "POS"
+          },
+          {
+            id: "l7-mc-2",
+            question: "消費者間取引のことは何ですか。",
+            choices: [
+              "CtoC",
+              "BtoB",
+              "BtoC",
+              "CtoB"
+            ],
+            answer: "CtoC"
+          },
+          {
+            id: "l7-mc-3",
+            question: "EDIは何ですか。",
+            choices: [
+              "オンラインの受発注システムのこと",
+              "文書，図面，取引情報などが扱われること",
+              "製造業における全製造過程(開発，製造，納入，保守)の電子化についての標準化のこと",
+              "ネットワークを使った電子データ交換の標準化のこと"
+            ],
+            answer: "ネットワークを使った電子データ交換の標準化のこと"
+          },
+          {
+            id: "l7-mc-4",
+            question: "ウェブサイトに対するID情報を記憶させ，再度そのサイトにアクセスしたときには自分が誰かを自動的に伝えるのは何という仕組みですか。",
+            choices: [
+              "CRM",
+              "クッキー",
+              "ブラウザ",
+              "データマイニング"
+            ],
+            answer: "クッキー"
+          },
+          {
+            id: "l7-mc-5",
+            question: "電子商取引は何を介した取引プロセスの電子化のことですか。",
+            choices: [
+              "電気",
+              "電荷",
+              "ネットワーク",
+              "eコマース"
+            ],
+            answer: "ネットワーク"
+          },
+          {
+            id: "l7-mc-6",
+            question: "VISAキャッシュはどんな型の電子マネーですか。",
+            choices: [
+              "オープンループ型",
+              "クローズドループ型",
+              "バリュー型",
+              "インターネットを使った型"
+            ],
+            answer: "クローズドループ型"
+          },
+          {
+            id: "l7-mc-7",
+            question: "電子商取引情報の標準化 であるEOSについて正しいものをえらんでください。",
+            choices: [
+              "ネットワークを使った電子データ交換の標準化",
+              "オンラインの受発注システム",
+              "製造業における全製造過程の電子化についての標準化",
+              "企業間でも同じデータで取引できるように策定された標準化"
+            ],
+            answer: "オンラインの受発注システム"
+          },
+          {
+            id: "l7-mc-8",
+            question: "取引プロセスとは，受注，発注，（　）以外にも商品案内や配送などの処理，さらには商品開発まで含めます。",
+            choices: [
+              "決済",
+              "注文",
+              "計算",
+              "開発"
+            ],
+            answer: "決済"
+          },
+          {
+            id: "l7-mc-9",
+            question: "BtoCは企業対消費者取引のことです。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Đúng"
+          },
+          {
+            id: "l7-mc-10",
+            question: "BtoBは消費者間取引のことです。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Sai"
+          },
+          {
+            id: "l7-mc-11",
+            question: "コンピュータ化によって顧客についての多様な情報をまとめて管理することが容易になり，コピーして複製を残すことが容易になりました。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Đúng"
+          },
+          {
+            id: "l7-mc-12",
+            question: "クローズドループ型の代表的なものはMaster CardのMondexです。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Sai"
+          },
+          {
+            id: "l7-mc-13",
+            question: "電子化し，ネットワークを利用することで，コスト削減につながります。",
+            choices: [
+              "Đúng",
+              "Sai"
+            ],
+            answer: "Đúng"
           }
         ]
       }

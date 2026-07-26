@@ -4,6 +4,8 @@ import { Lesson2Theory } from './Lesson2Theory';
 import { Lesson3Theory } from './Lesson3Theory';
 import { Lesson4Theory } from './Lesson4Theory';
 import { Lesson5Theory } from './Lesson5Theory';
+import { Lesson6Theory } from './Lesson6Theory';
+import { Lesson7Theory } from './Lesson7Theory';
 import { Lesson16Theory } from './Lesson16Theory';
 import { Lesson17Theory } from './Lesson17Theory';
 import { Lesson18Theory } from './Lesson18Theory';
@@ -38,6 +40,14 @@ export const TheoryViewer: React.FC<TheoryViewerProps> = ({ lessonId, onClose })
 
   if (lessonId === 5) {
     return <Lesson5Theory onClose={onClose} />;
+  }
+
+  if (lessonId === 6) {
+    return <Lesson6Theory onClose={onClose} />;
+  }
+
+  if (lessonId === 7) {
+    return <Lesson7Theory onClose={onClose} />;
   }
 
   if (lessonId === 16) {

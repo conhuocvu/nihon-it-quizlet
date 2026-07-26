@@ -225,7 +225,7 @@ export const Lesson17Theory: React.FC<Lesson17TheoryProps> = ({ onClose }) => {
       </div>
 
       {/* Main Tab Content */}
-      <div className="bg-white border border-slate-200/80 rounded-2xl p-4 md:p-8 shadow-xl shadow-slate-100/40 min-h-[500px]">
+      <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm animate-fadeIn">
         
         {/* ==================== TAB 17.1 ==================== */}
         {activeTab === '17.1' && (
@@ -233,18 +233,18 @@ export const Lesson17Theory: React.FC<Lesson17TheoryProps> = ({ onClose }) => {
             {/* Textbook Intro */}
             <div className="border-l-4 border-indigo-500 pl-4 bg-indigo-50/40 p-4 rounded-r-xl">
               <span className="text-[10px] font-extrabold uppercase text-indigo-600 tracking-wider">Định nghĩa SGK</span>
-              <h3 className="text-lg font-bold text-slate-800 mt-1">17.1 データベースとは (Cơ sở dữ liệu là gì?)</h3>
+              <h3 className="text-xl md:text-2xl font-black text-slate-800 mt-1">17.1 データベースとは (Cơ sở dữ liệu là gì?)</h3>
               <p className="text-slate-700 text-sm leading-relaxed mt-2 select-text font-serif italic">
                 「データベースとは大量のデータを保存，管理でき，データの検索，書き換えが容易に行えるものです．学籍簿などの比較的小規模のシステムから，銀行のオンライン，戸籍管理などの大規模なものまであります．インターネット上の膨大なホームページもデータの集まりと見ることはできますが，組織的に保存，管理され，検索できるわけではないので，通常データベースシステムとは見なされません．」
               </p>
-              <div className="mt-3 text-xs text-slate-500 bg-white/70 p-2 rounded-lg border border-slate-100">
+              <div className="mt-3 text-sm text-slate-500 bg-white/70 p-2 rounded-lg border border-slate-100">
                 <span className="font-bold text-indigo-600">Dịch nghĩa:</span> CSDL là hệ thống có thể lưu trữ, quản lý một lượng lớn dữ liệu, giúp việc tìm kiếm và ghi đè (thay đổi) dữ liệu được thực hiện dễ dàng. Từ các hệ thống quy mô tương đối nhỏ như Học bạ/Danh sách học sinh (学籍簿) cho đến các hệ thống quy mô lớn như Hệ thống ngân hàng trực tuyến, Quản lý hộ khẩu (戸籍管理). Các trang web khổng lồ trên Internet có thể coi là tập hợp dữ liệu, nhưng do không được lưu trữ, quản lý và tìm kiếm một cách có hệ thống, nên thông thường chúng không được coi là hệ thống CSDL.
               </div>
             </div>
 
             {/* 3 Important Elements */}
             <div>
-              <h4 className="text-base font-bold text-slate-800 mb-3 flex items-center gap-2">
+              <h4 className="text-lg md:text-xl font-bold text-slate-800 mb-3 flex items-center gap-2">
                 <Info size={18} className="text-indigo-600" />
                 3 yếu tố quan trọng của Hệ thống CSDL (Học thuộc lòng!)
               </h4>
@@ -257,8 +257,8 @@ export const Lesson17Theory: React.FC<Lesson17TheoryProps> = ({ onClose }) => {
                       <span className="text-[10px] font-bold text-amber-600 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-100">Yếu tố 1</span>
                       <span className="text-xs text-slate-400 font-bold">Tìm kiếm nhanh</span>
                     </div>
-                    <h5 className="font-extrabold text-base text-slate-800">1. 検索速度 (Tốc độ tìm kiếm)</h5>
-                    <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                    <h5 className="font-bold text-lg md:text-xl text-slate-800">1. 検索速度 (Tốc độ tìm kiếm)</h5>
+                    <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-2 leading-relaxed">
                       Để xử lý lượng lớn dữ liệu, tốc độ khi tìm kiếm rất quan trọng. Thay vì duyệt từng phần tử từ đầu đến cuối (tốn thời gian), CSDL sử dụng <strong>Chỉ mục (索引 - Index)</strong> (ví dụ tra cứu theo vần A, K, S...) để tăng tốc độ tìm kiếm.
                     </p>
                   </div>
@@ -271,8 +271,8 @@ export const Lesson17Theory: React.FC<Lesson17TheoryProps> = ({ onClose }) => {
                       <span className="text-[10px] font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-full border border-blue-100">Yếu tố 2</span>
                       <span className="text-xs text-slate-400 font-bold">Chứa lượng lớn</span>
                     </div>
-                    <h5 className="font-extrabold text-base text-slate-800">2. データ量 (Lượng dữ liệu)</h5>
-                    <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                    <h5 className="font-bold text-lg md:text-xl text-slate-800">2. データ量 (Lượng dữ liệu)</h5>
+                    <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-2 leading-relaxed">
                       Ít nhất phải xử lý được hàng vạn (chục nghìn) dữ liệu. Nếu bị giới hạn bởi phần cứng, hệ điều hành (OS) hoặc đường truyền, hay khi lượng dữ liệu lớn lên làm tốc độ tìm kiếm giảm đột ngột (急激), thì không thể xây dựng CSDL lớn.
                     </p>
                   </div>
@@ -285,8 +285,8 @@ export const Lesson17Theory: React.FC<Lesson17TheoryProps> = ({ onClose }) => {
                       <span className="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">Yếu tố 3</span>
                       <span className="text-xs text-slate-400 font-bold">Độ toàn vẹn</span>
                     </div>
-                    <h5 className="font-extrabold text-base text-slate-800">3. 完備性 (Tính toàn vẹn / Hoàn bị)</h5>
-                    <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                    <h5 className="font-bold text-lg md:text-xl text-slate-800">3. 完備性 (Tính toàn vẹn / Hoàn bị)</h5>
+                    <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-2 leading-relaxed">
                       Đảm bảo tính nhất quán (整合性 - Integrity) của dữ liệu kể cả khi thay đổi hoặc xóa. Ví dụ: Khi thay đổi địa chỉ (住所), mã bưu điện (郵便番号) liên quan cũng phải tự động thay đổi đồng bộ để giữ tính nhất quán (一貫性).
                     </p>
                   </div>
@@ -301,7 +301,7 @@ export const Lesson17Theory: React.FC<Lesson17TheoryProps> = ({ onClose }) => {
                 <span className="p-1 rounded-lg bg-indigo-500 text-white"><Cpu size={16} /></span>
                 <div>
                   <h4 className="text-sm font-extrabold text-slate-800">Trực quan hóa: Tìm kiếm Tuyến tính (Linear) vs Chỉ mục (Index)</h4>
-                  <p className="text-xs text-slate-500">Mô phỏng cách hệ thống CSDL sử dụng Chỉ mục để tăng tốc độ truy cập.</p>
+                  <p className="text-sm text-slate-500">Mô phỏng cách hệ thống CSDL sử dụng Chỉ mục để tăng tốc độ truy cập.</p>
                 </div>
               </div>
 
@@ -452,11 +452,11 @@ export const Lesson17Theory: React.FC<Lesson17TheoryProps> = ({ onClose }) => {
           <div className="flex flex-col gap-6 animate-fadeIn">
             {/* Textbook Intro */}
             <div className="border-l-4 border-indigo-500 pl-4 bg-indigo-50/40 p-4 rounded-r-xl">
-              <h3 className="text-lg font-bold text-slate-800">17.2 データベースの表現法 (Mô hình biểu diễn CSDL)</h3>
+              <h3 className="text-xl md:text-2xl font-black text-slate-800">17.2 データベースの表現法 (Mô hình biểu diễn CSDL)</h3>
               <p className="text-slate-700 text-sm leading-relaxed mt-2 select-text font-serif italic">
                 「データベースのデータを表す単位のことをレコードと言い，レコード間の関係を表す代表的な表現法は階層的表現，網的表現，関係的表現の3つです．」
               </p>
-              <div className="mt-2 text-xs text-slate-500">
+              <div className="mt-2 text-sm text-slate-500">
                 <span className="font-bold text-indigo-600">Chú ý:</span> Đơn vị biểu diễn dữ liệu gọi là <strong>Record (レコード - Bản ghi)</strong>. Có 3 mô hình biểu diễn mối quan hệ giữa các bản ghi tiêu biểu:
               </div>
             </div>
@@ -480,7 +480,7 @@ export const Lesson17Theory: React.FC<Lesson17TheoryProps> = ({ onClose }) => {
                     <GitFork size={15} className="text-indigo-600 rotate-90" />
                     (1) 階層的表現 (木構造)
                   </h4>
-                  <p className="text-xs text-slate-500 mt-1 font-semibold">Phân cấp / Dạng cây (Tree)</p>
+                  <p className="text-sm text-slate-500 mt-1 font-semibold">Phân cấp / Dạng cây (Tree)</p>
                   <ul className="text-[11px] text-slate-600 mt-2 list-disc pl-4 flex flex-col gap-0.5">
                     <li>Dạng quan hệ cha-con-cháu.</li>
                     <li>Tìm từ gốc (根/ルート) rồi rẽ nhánh (節/ノード) để xuống lá (葉).</li>
@@ -496,7 +496,7 @@ export const Lesson17Theory: React.FC<Lesson17TheoryProps> = ({ onClose }) => {
                     <Network size={15} className="text-indigo-600" />
                     (2) 網的表現 (親子構造)
                   </h4>
-                  <p className="text-xs text-slate-500 mt-1 font-semibold">Dạng mạng lưới (Network)</p>
+                  <p className="text-sm text-slate-500 mt-1 font-semibold">Dạng mạng lưới (Network)</p>
                   <ul className="text-[11px] text-slate-600 mt-2 list-disc pl-4 flex flex-col gap-0.5">
                     <li>Mối quan hệ mẹ-con 2 cấp liên kết tuần tự.</li>
                     <li>Sử dụng cấu trúc bản ghi đặc biệt (構造レコード) liên kết với bản ghi dữ liệu (データレコード).</li>
@@ -513,7 +513,7 @@ export const Lesson17Theory: React.FC<Lesson17TheoryProps> = ({ onClose }) => {
                     <Table size={15} className="text-indigo-600" />
                     (3) 関係的表現 (リレーショナル)
                   </h4>
-                  <p className="text-xs text-slate-500 mt-1 font-semibold">Dạng quan hệ (Relational)</p>
+                  <p className="text-sm text-slate-500 mt-1 font-semibold">Dạng quan hệ (Relational)</p>
                   <ul className="text-[11px] text-slate-600 mt-2 list-disc pl-4 flex flex-col gap-0.5">
                     <li>Biểu diễn dữ liệu bằng các <strong>Bảng độc lập (表)</strong>.</li>
                     <li>Liên kết các bảng thông qua khóa để truy cập dữ liệu.</li>
@@ -646,7 +646,7 @@ export const Lesson17Theory: React.FC<Lesson17TheoryProps> = ({ onClose }) => {
                   </div>
 
                   <div className="flex flex-wrap gap-2 mb-3">
-                    <span className="text-xs text-slate-500 font-bold self-center">Chọn môn học cần tra:</span>
+                    <span className="text-sm text-slate-500 font-bold self-center">Chọn môn học cần tra:</span>
                     <button
                       onClick={() => setRelationalLecture('English')}
                       className={`px-3 py-1 text-xs font-bold rounded-lg border transition-all ${
@@ -771,11 +771,11 @@ export const Lesson17Theory: React.FC<Lesson17TheoryProps> = ({ onClose }) => {
           <div className="flex flex-col gap-6 animate-fadeIn">
             {/* Textbook Intro */}
             <div className="border-l-4 border-indigo-500 pl-4 bg-indigo-50/40 p-4 rounded-r-xl">
-              <h3 className="text-lg font-bold text-slate-800">17.3 関係的表現のデータ操作 (Thao tác dữ liệu quan hệ)</h3>
+              <h3 className="text-xl md:text-2xl font-black text-slate-800">17.3 関係的表現のデータ操作 (Thao tác dữ liệu quan hệ)</h3>
               <p className="text-slate-700 text-sm leading-relaxed mt-2 select-text font-serif italic">
                 「関係的表現の数学的基礎はエドガー・フランク・コッドによって1970年頃に研究されました．データ操作を数学的に表現することで，完備性を保証しています．」
               </p>
-              <div className="mt-2 text-xs text-slate-500">
+              <div className="mt-2 text-sm text-slate-500">
                 <span className="font-bold text-indigo-600">Lịch sử:</span> Nền tảng toán học do nhà khoa học <strong>Edgar F. Codd (エドガー・フランク・コッド)</strong> phát minh năm 1970 nhằm chứng minh tính hoàn bị bằng toán học.
               </div>
             </div>
@@ -787,7 +787,7 @@ export const Lesson17Theory: React.FC<Lesson17TheoryProps> = ({ onClose }) => {
                   <h4 className="text-sm font-extrabold text-indigo-700 flex items-center gap-1.5">
                     <List size={16} /> Phép toán Tập hợp (集合演算 - 4 phép)
                   </h4>
-                  <p className="text-xs text-slate-500">Bấm vào các phép toán để xem biểu diễn giản đồ Venn trực quan.</p>
+                  <p className="text-sm text-slate-500">Bấm vào các phép toán để xem biểu diễn giản đồ Venn trực quan.</p>
                 </div>
               </div>
 
@@ -815,7 +815,7 @@ export const Lesson17Theory: React.FC<Lesson17TheoryProps> = ({ onClose }) => {
                           {op.symbol}
                         </span>
                       </div>
-                      <p className="text-[11px] text-slate-500 mt-1">{op.desc}</p>
+                      <p className="text-xs md:text-sm text-slate-500 mt-1">{op.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -926,7 +926,7 @@ export const Lesson17Theory: React.FC<Lesson17TheoryProps> = ({ onClose }) => {
                   <h4 className="text-sm font-extrabold text-slate-800 flex items-center gap-1.5">
                     <Database size={16} className="text-indigo-600" /> Phép toán CSDL đặc trưng (3 phép)
                   </h4>
-                  <p className="text-xs text-slate-500">Thử nghiệm các thao tác dữ liệu: <strong>射影 (Chiếu)</strong>, <strong>選択 (Chọn)</strong>, và <strong>結合 (Kết hợp)</strong>.</p>
+                  <p className="text-sm text-slate-500">Thử nghiệm các thao tác dữ liệu: <strong>射影 (Chiếu)</strong>, <strong>選択 (Chọn)</strong>, và <strong>結合 (Kết hợp)</strong>.</p>
                 </div>
               </div>
 
@@ -1171,7 +1171,7 @@ export const Lesson17Theory: React.FC<Lesson17TheoryProps> = ({ onClose }) => {
             {/* Vocabulary Mini-quiz */}
             <div>
               <div className="flex justify-between items-center mb-3">
-                <h3 className="text-base font-extrabold text-slate-800 flex items-center gap-1.5">
+                <h3 className="text-lg md:text-xl font-extrabold text-slate-800 flex items-center gap-1.5">
                   <BookOpen size={18} className="text-indigo-600" />
                   Mục I: Cách đọc và Ý nghĩa từ vựng (Kiểm tra lại từ vựng bài học)
                 </h3>
@@ -1256,7 +1256,7 @@ export const Lesson17Theory: React.FC<Lesson17TheoryProps> = ({ onClose }) => {
 
             {/* Translation Japanese to Vietnamese */}
             <div className="border-t border-slate-200 pt-6">
-              <h3 className="text-base font-extrabold text-slate-800 mb-3 flex items-center gap-1.5">
+              <h3 className="text-lg md:text-xl font-extrabold text-slate-800 mb-3 flex items-center gap-1.5">
                 <Languages size={18} className="text-indigo-600" />
                 Mục II: Dịch câu Nhật → Việt (二重登録 - Tránh đăng ký trùng lặp)
               </h3>
@@ -1292,7 +1292,7 @@ export const Lesson17Theory: React.FC<Lesson17TheoryProps> = ({ onClose }) => {
 
             {/* Translation Vietnamese to Japanese */}
             <div className="border-t border-slate-200 pt-6">
-              <h3 className="text-base font-extrabold text-slate-800 mb-3 flex items-center gap-1.5">
+              <h3 className="text-lg md:text-xl font-extrabold text-slate-800 mb-3 flex items-center gap-1.5">
                 <Languages size={18} className="text-indigo-600" />
                 Mục III: Dịch câu Việt → Nhật (3 Mô hình CSDL)
               </h3>

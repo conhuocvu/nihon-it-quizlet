@@ -9,7 +9,7 @@ interface Lesson16TheoryProps {
 }
 
 export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
-  const [activeTab16, setActiveTab16] = useState<'16.1' | '16.2' | '16.3' | 'minitest'>('16.1');
+  const [activeTab, setActiveTab] = useState<'16.1' | '16.2' | '16.3' | 'minitest'>('16.1');
 
   // Interactive Virtual Memory & Swapping Simulator State (16.2)
   const [ramUsage, setRamUsage] = useState<number>(70);
@@ -111,36 +111,36 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
       {/* Tabs Navigation */}
       <div className="flex flex-wrap gap-2 p-1.5 bg-slate-100 rounded-2xl border border-slate-200">
         <button
-          onClick={() => setActiveTab16('16.1')}
+          onClick={() => setActiveTab('16.1')}
           className={`flex-1 min-w-[120px] py-3 text-xs md:text-sm font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 ${
-            activeTab16 === '16.1' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
+            activeTab === '16.1' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
           }`}
         >
           <BookOpen size={16} />
           16.1 Khái niệm OS & Phân loại
         </button>
         <button
-          onClick={() => setActiveTab16('16.2')}
+          onClick={() => setActiveTab('16.2')}
           className={`flex-1 min-w-[120px] py-3 text-xs md:text-sm font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 ${
-            activeTab16 === '16.2' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
+            activeTab === '16.2' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
           }`}
         >
           <Cpu size={16} />
           16.2 5 Chức năng chính của OS
         </button>
         <button
-          onClick={() => setActiveTab16('16.3')}
+          onClick={() => setActiveTab('16.3')}
           className={`flex-1 min-w-[120px] py-3 text-xs md:text-sm font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 ${
-            activeTab16 === '16.3' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
+            activeTab === '16.3' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
           }`}
         >
           <Laptop size={16} />
           16.3 Các loại OS tiêu biểu
         </button>
         <button
-          onClick={() => setActiveTab16('minitest')}
+          onClick={() => setActiveTab('minitest')}
           className={`flex-1 min-w-[120px] py-3 text-xs md:text-sm font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 ${
-            activeTab16 === 'minitest' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
+            activeTab === 'minitest' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
           }`}
         >
           <Languages size={16} />
@@ -149,18 +149,18 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
       </div>
 
       {/* Main Tab Content */}
-      <div className="bg-white border border-slate-200/80 rounded-2xl p-4 md:p-8 shadow-xl shadow-slate-100/40 min-h-[500px]">
+      <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm animate-fadeIn">
 
         {/* ================= TAB 16.1 ================= */}
-        {activeTab16 === '16.1' && (
+        {activeTab === '16.1' && (
           <div className="flex flex-col gap-6 animate-fadeIn">
             <div className="border-l-4 border-indigo-500 pl-4 bg-indigo-50/40 p-4 rounded-r-xl">
               <span className="text-[10px] font-extrabold uppercase text-indigo-600 tracking-wider">SGK 16.1</span>
-              <h3 className="text-lg font-bold text-slate-800 mt-1">16.1 オペレーティングシステムとは (Hệ điều hành OS là gì?)</h3>
+              <h3 className="text-xl md:text-2xl font-black text-slate-800 mt-1">16.1 オペレーティングシステムとは (Hệ điều hành OS là gì?)</h3>
               <p className="text-slate-700 text-sm leading-relaxed mt-2 select-text font-serif italic">
                 「Windows，MacOS，Linuxなどのソフトウェアは，オペレーティングシステム，または略してOSと呼ばれます．OSはソフトウェアの一種ですが，ワープロや表計算などのアプリケーションソフトと，ハードウェアとの中間的な位置付けになります．このため日本語では基本ソフトと呼ばれることもあります．」
               </p>
-              <div className="mt-3 text-xs text-slate-600 bg-white/80 p-3 rounded-xl border border-slate-200 leading-relaxed">
+              <div className="mt-3 text-slate-600 leading-relaxed text-sm md:text-base bg-white/80 p-3 rounded-xl border border-slate-200 leading-relaxed">
                 <span className="font-bold text-indigo-600">Dịch nghĩa:</span> Các phần mềm như Windows, MacOS, Linux… được gọi là Hệ điều hành (Operating System - OS). OS là một loại phần mềm đóng vai trò trung gian giữa phần mềm ứng dụng (Word, Excel...) và phần cứng (Hardware). Trong tiếng Nhật còn gọi là **Phần mềm cơ bản (基本ソフト)**.
               </div>
             </div>
@@ -178,7 +178,7 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
                     <span className="p-1.5 bg-indigo-500 rounded-lg text-white font-bold text-xs">APP</span>
                     <div>
                       <h5 className="font-bold text-xs text-white">アプリケーションソフト (Phần mềm ứng dụng)</h5>
-                      <p className="text-[11px] text-indigo-200">Word, Excel, Trình duyệt web, Game...</p>
+                      <p className="text-xs md:text-sm text-indigo-200">Word, Excel, Trình duyệt web, Game...</p>
                     </div>
                   </div>
                   <span className="text-[10px] font-bold bg-indigo-500/50 px-2 py-0.5 rounded text-white">Người dùng thao tác</span>
@@ -190,7 +190,7 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
                     <span className="p-1.5 bg-purple-500 rounded-lg text-white font-bold text-xs">MID</span>
                     <div>
                       <h5 className="font-bold text-xs text-white">ミドルウェア (Middleware / Phần mềm trung gian)</h5>
-                      <p className="text-[11px] text-purple-200">Hệ quản trị CSDL (DBMS), Tool hỗ trợ phát triển...</p>
+                      <p className="text-xs md:text-sm text-purple-200">Hệ quản trị CSDL (DBMS), Tool hỗ trợ phát triển...</p>
                     </div>
                   </div>
                   <span className="text-[10px] font-bold bg-purple-500/50 px-2 py-0.5 rounded text-white">Nằm giữa OS & App</span>
@@ -202,7 +202,7 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
                     <span className="p-1.5 bg-emerald-500 rounded-lg text-white font-bold text-xs">OS</span>
                     <div>
                       <h5 className="font-bold text-xs text-white">OS (オペレーティングシステム / 基本ソフト)</h5>
-                      <p className="text-[11px] text-emerald-200">Windows, MacOS, Linux, Android, iOS...</p>
+                      <p className="text-xs md:text-sm text-emerald-200">Windows, MacOS, Linux, Android, iOS...</p>
                     </div>
                   </div>
                   <span className="text-[10px] font-bold bg-emerald-500/50 px-2 py-0.5 rounded text-white">Quản lý tài nguyên</span>
@@ -214,7 +214,7 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
                     <span className="p-1.5 bg-amber-500 rounded-lg text-white font-bold text-xs">BIOS</span>
                     <div>
                       <h5 className="font-bold text-xs text-white">BIOS (バイオス / Boot firmware)</h5>
-                      <p className="text-[11px] text-amber-200">Khống chế phần cứng tối thiểu, khi Boot (ブート) nạp OS từ HDD vào RAM.</p>
+                      <p className="text-xs md:text-sm text-amber-200">Khống chế phần cứng tối thiểu, khi Boot (ブート) nạp OS từ HDD vào RAM.</p>
                     </div>
                   </div>
                   <span className="text-[10px] font-bold bg-amber-500/50 px-2 py-0.5 rounded text-white">Firmware phần cứng</span>
@@ -226,7 +226,7 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
                     <span className="p-1.5 bg-slate-700 rounded-lg text-white font-bold text-xs">HW</span>
                     <div>
                       <h5 className="font-bold text-xs text-white">ハードウェア (Phần cứng)</h5>
-                      <p className="text-[11px] text-slate-400">CPU, RAM, HDD/SSD, Màn hình, Chuột, Bàn phím...</p>
+                      <p className="text-xs md:text-sm text-slate-400">CPU, RAM, HDD/SSD, Màn hình, Chuột, Bàn phím...</p>
                     </div>
                   </div>
                   <span className="text-[10px] font-bold bg-slate-700 px-2 py-0.5 rounded text-slate-300">Vật lý</span>
@@ -237,12 +237,12 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
         )}
 
         {/* ================= TAB 16.2 ================= */}
-        {activeTab16 === '16.2' && (
+        {activeTab === '16.2' && (
           <div className="flex flex-col gap-6 animate-fadeIn">
             <div>
               <span className="text-[10px] font-extrabold text-indigo-600 bg-indigo-50 border border-indigo-100 px-3 py-1 rounded-full uppercase">Mục 16.2</span>
-              <h3 className="text-lg font-extrabold text-slate-800 mt-1">16.2 OS の機能 (5 Chức năng quan trọng của OS)</h3>
-              <p className="text-xs text-slate-600 mt-1">Chi tiết 5 chức năng cốt lõi của OS kèm theo các đoạn trích & câu tiếng Nhật trọng tâm cho kỳ thi IT.</p>
+              <h3 className="text-xl md:text-2xl font-black text-slate-800 mt-1">16.2 OS の機能 (5 Chức năng quan trọng của OS)</h3>
+              <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1">Chi tiết 5 chức năng cốt lõi của OS kèm theo các đoạn trích & câu tiếng Nhật trọng tâm cho kỳ thi IT.</p>
             </div>
 
             {/* 5 Detailed Function Sections with Japanese Sentences */}
@@ -251,18 +251,18 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
               <div className="p-5 border border-slate-200 rounded-2xl bg-white shadow-sm hover:border-blue-200 transition-all">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-[10px] font-extrabold text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-100 uppercase">Chức năng (1)</span>
-                  <h4 className="font-extrabold text-base text-slate-800">1. ユーザインタフェース (Giao diện người dùng - UI & GUI)</h4>
+                  <h4 className="font-bold text-lg md:text-xl text-slate-800">1. ユーザインタフェース (Giao diện người dùng - UI & GUI)</h4>
                 </div>
-                <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs text-slate-700 font-serif italic mb-3 select-text">
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm text-slate-700 font-serif italic mb-3 select-text">
                   <p className="font-bold text-slate-800">「(1) ユーザインタフェース」</p>
                   <p className="mt-1">「OS の機能の第 1 は，操作性を決めることです．...この操作性のことをユーザインタフェースと言います．特に見え方に関することを GUI(Graphical User Interface)と言います．」</p>
                 </div>
-                <div className="text-xs text-slate-600 leading-relaxed space-y-2">
+                <div className="text-slate-600 leading-relaxed text-sm md:text-base leading-relaxed space-y-2">
                   <p>• <strong>操作性 (Tính thao tác):</strong> OS quy định cách dùng chuột, bàn phím, giao diện cửa sổ (Window).</p>
                   <p>• <strong>GUI (Graphical User Interface):</strong> Nhấn mạnh vào yếu tố thị giác (<strong>見え方</strong>), giao diện đồ họa trực quan.</p>
                   <p>• <strong>Khác biệt hệ thống:</strong> Mac dùng chuột 1 nút, Windows 2 nút, Unix 3 nút; mỗi hệ điều hành có phím tắt và bàn phím đặc thù riêng.</p>
                 </div>
-                <div className="mt-3 p-2.5 bg-blue-50/70 border border-blue-100 rounded-lg text-[11px] text-blue-900">
+                <div className="mt-3 p-2.5 bg-blue-50/70 border border-blue-100 rounded-lg text-xs md:text-sm text-blue-900">
                   <span className="font-bold">🔑 Câu tiếng Nhật trọng tâm:</span> 「操作性のことをユーザインタフェースと言います。」 / 「特に見え方に関することを GUIと言います。」
                 </div>
               </div>
@@ -271,17 +271,17 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
               <div className="p-5 border border-slate-200 rounded-2xl bg-white shadow-sm hover:border-emerald-200 transition-all">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-[10px] font-extrabold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-100 uppercase">Chức năng (2)</span>
-                  <h4 className="font-extrabold text-base text-slate-800">2. ソフトとハードの仲介 (Trung gian Phần mềm & Phần cứng - 図95)</h4>
+                  <h4 className="font-bold text-lg md:text-xl text-slate-800">2. ソフトとハードの仲介 (Trung gian Phần mềm & Phần cứng - 図95)</h4>
                 </div>
-                <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs text-slate-700 font-serif italic mb-3 select-text">
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm text-slate-700 font-serif italic mb-3 select-text">
                   <p className="font-bold text-slate-800">「(2) ソフトとハードの仲介」</p>
                   <p className="mt-1">「OS の機能の第 2 は，図 95 に示すように，ハードウェアの相違を吸収することです．...OS が定めた基準を満たしている限り，どのメーカのソフト，ハードでも問題なく使うことができるようになります．」</p>
                 </div>
-                <div className="text-xs text-slate-600 leading-relaxed space-y-2">
+                <div className="text-slate-600 leading-relaxed text-sm md:text-base leading-relaxed space-y-2">
                   <p>• <strong>吸収する (Triệt tiêu/Trung hòa):</strong> Che giấu sự khác biệt phần cứng của các nhà sản xuất khác nhau (<strong>ハードウェアの相違を吸収する</strong>).</p>
                   <p>• <strong>Cải thiện hiệu quả phát triển (開発効率):</strong> Trước khi có OS, phần mềm phải viết riêng cho từng phần cứng của từng hãng. Nhờ OS chuẩn hóa, nhà phát triển chỉ cần tuân thủ tiêu chuẩn của OS.</p>
                 </div>
-                <div className="mt-3 p-2.5 bg-emerald-50/70 border border-emerald-100 rounded-lg text-[11px] text-emerald-900">
+                <div className="mt-3 p-2.5 bg-emerald-50/70 border border-emerald-100 rounded-lg text-xs md:text-sm text-emerald-900">
                   <span className="font-bold">🔑 Câu tiếng Nhật trọng tâm:</span> 「ハードウェアの相違を吸収することです。」 / 「OSが定めた基準を満たしている限り、どのメーカのソフト、ハードでも問題なく使うことができるようになります。」
                 </div>
               </div>
@@ -290,18 +290,18 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
               <div className="p-5 border border-slate-200 rounded-2xl bg-white shadow-sm hover:border-amber-200 transition-all">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-[10px] font-extrabold text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-full border border-amber-100 uppercase">Chức năng (3)</span>
-                  <h4 className="font-extrabold text-base text-slate-800">3. 記憶管理 (Quản lý bộ nhớ, 仮想記憶 & スワッピング - 図96)</h4>
+                  <h4 className="font-bold text-lg md:text-xl text-slate-800">3. 記憶管理 (Quản lý bộ nhớ, 仮想記憶 & スワッピング - 図96)</h4>
                 </div>
-                <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs text-slate-700 font-serif italic mb-3 select-text">
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm text-slate-700 font-serif italic mb-3 select-text">
                   <p className="font-bold text-slate-800">「(3) 記憶管理」</p>
                   <p className="mt-1">「見かけ上の記憶容量を実際のメモリ容量よりも大きくし，足りない部分はハードディスクを利用することで，大きなメモリ空間を確保することを仮想記憶と言い，メモリとハードディスクのデータの交換をスワッピングと言います．」</p>
                 </div>
-                <div className="text-xs text-slate-600 leading-relaxed space-y-2">
+                <div className="text-slate-600 leading-relaxed text-sm md:text-base leading-relaxed space-y-2">
                   <p>• <strong>Tối ưu hóa thứ cấp bộ nhớ:</strong> Luân chuyển dữ liệu giữa <strong>キャッシュ (Cache) ↔ メモリ (RAM) ↔ ハードディスク (HDD/SSD)</strong> dựa theo tốc độ truy xuất và dung lượng.</p>
                   <p>• <strong>仮想記憶 (Virtual Memory):</strong> Mượn bộ nhớ đĩa cứng làm RAM ảo, giúp tăng không gian bộ nhớ hiển thị trên bề mặt (<strong>見かけ上の記憶容量</strong>).</p>
                   <p>• <strong>スワッピング (Swapping):</strong> Đổi dữ liệu liên tục giữa RAM và Ổ cứng khi RAM bị đầy.</p>
                 </div>
-                <div className="mt-3 p-2.5 bg-amber-50/70 border border-amber-100 rounded-lg text-[11px] text-amber-900">
+                <div className="mt-3 p-2.5 bg-amber-50/70 border border-amber-100 rounded-lg text-xs md:text-sm text-amber-900">
                   <span className="font-bold">🔑 Câu tiếng Nhật trọng tâm:</span> 「大きなメモリ空間を確保することを仮想記憶と言い、メモリとハードディスクのデータの交換をスワッピングと言います。」
                 </div>
               </div>
@@ -310,13 +310,13 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
               <div className="p-5 border border-slate-200 rounded-2xl bg-white shadow-sm hover:border-purple-200 transition-all">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-[10px] font-extrabold text-purple-700 bg-purple-50 px-2.5 py-0.5 rounded-full border border-purple-100 uppercase">Chức năng (4)</span>
-                  <h4 className="font-extrabold text-base text-slate-800">4. プロセス管理 (Quản lý tiến trình & マルチタスク - 図97)</h4>
+                  <h4 className="font-bold text-lg md:text-xl text-slate-800">4. プロセス管理 (Quản lý tiến trình & マルチタスク - 図97)</h4>
                 </div>
-                <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs text-slate-700 font-serif italic mb-3 select-text">
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm text-slate-700 font-serif italic mb-3 select-text">
                   <p className="font-bold text-slate-800">「(4) プロセス管理」</p>
                   <p className="mt-1">「プロセスとはソフトウェアの処理のことです．...OS はアプリケーションソフトのプロセスを細かい単位に分け，それぞれの負荷に応じて最適なスケジューリングを行うことで，複数のソフトが同時に動いているように見せています．複数のプログラムが同時に動くように管理することをマルチタスクと呼んでいます．」</p>
                 </div>
-                <div className="text-xs text-slate-600 leading-relaxed space-y-2">
+                <div className="text-slate-600 leading-relaxed text-sm md:text-base leading-relaxed space-y-2">
                   <p>• <strong>プロセス (Process):</strong> Tiến trình xử lý phần mềm. 1 nhân CPU chỉ tính toán 1 tiến trình tại một thời điểm.</p>
                   <p>• <strong>スケジューリング (Scheduling):</strong> OS phân chia tiến trình và lập lịch tối ưu tùy theo tải (<strong>負荷</strong>), tạo ra xử lý đồng thời giả lập (<strong>見かけ上の同時処理</strong>).</p>
                   <p>• <strong>マルチタスク (Multitasking):</strong> Quản lý để nhiều phần mềm chạy cùng lúc.</p>
@@ -330,13 +330,13 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
               <div className="p-5 border border-slate-200 rounded-2xl bg-white shadow-sm hover:border-rose-200 transition-all">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-[10px] font-extrabold text-rose-700 bg-rose-50 px-2.5 py-0.5 rounded-full border border-rose-100 uppercase">Chức năng (5)</span>
-                  <h4 className="font-extrabold text-base text-slate-800">5. ユーザ管理 (Quản lý người dùng & マルチユーザ)</h4>
+                  <h4 className="font-bold text-lg md:text-xl text-slate-800">5. ユーザ管理 (Quản lý người dùng & マルチユーザ)</h4>
                 </div>
-                <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs text-slate-700 font-serif italic mb-3 select-text">
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 text-sm text-slate-700 font-serif italic mb-3 select-text">
                   <p className="font-bold text-slate-800">「(5) ユーザ管理」</p>
                   <p className="mt-1">「複数ユーザが利用するときには，ユーザ毎に利用環境を保存し，他人のファイルや情報へのアクセスを制限するユーザ管理機能が必要です．複数のユーザが利用することをマルチユーザと言います．...他人のファイルや作業を侵害しない安全性、安定性を持つ必要があります．」</p>
                 </div>
-                <div className="text-xs text-slate-600 leading-relaxed space-y-2">
+                <div className="text-slate-600 leading-relaxed text-sm md:text-base leading-relaxed space-y-2">
                   <p>• <strong>Bảo mật & Phân quyền:</strong> Lưu môi trường sử dụng của từng cá nhân, hạn chế truy cập file của người khác.</p>
                   <p>• <strong>マルチユーザ (Multi-user):</strong> Nhiều người cùng truy cập máy qua mạng đồng thời mà vẫn đảm bảo độ an toàn (<strong>安全性</strong>) và độ ổn định (<strong>安定性</strong>).</p>
                 </div>
@@ -407,7 +407,7 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
                 <Cpu size={16} className="text-indigo-600" />
                 Mô phỏng Đa nhiệm CPU (マルチタスク & スケジューリング) (図97)
               </h4>
-              <p className="text-xs text-slate-500 mb-4">
+              <p className="text-sm text-slate-500 mb-4">
                 CPU chỉ có thể xử lý 1 tiến trình tại một thời điểm cực ngắn, nhưng OS chia nhỏ thời gian lập lịch (Scheduling) giúp người dùng thấy 4 ứng dụng chạy song song.
               </p>
 
@@ -446,11 +446,11 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
         )}
 
         {/* ================= TAB 16.3 ================= */}
-        {activeTab16 === '16.3' && (
+        {activeTab === '16.3' && (
           <div className="flex flex-col gap-6 animate-fadeIn">
             <div className="border-l-4 border-indigo-500 pl-4 bg-indigo-50/40 p-4 rounded-r-xl">
               <span className="text-[10px] font-extrabold uppercase text-indigo-600 tracking-wider">SGK 16.3</span>
-              <h3 className="text-lg font-bold text-slate-800 mt-1">16.3 OS の種類 (Các hệ điều hành phổ biến & Lịch sử)</h3>
+              <h3 className="text-xl md:text-2xl font-black text-slate-800 mt-1">16.3 OS の種類 (Các hệ điều hành phổ biến & Lịch sử)</h3>
               <p className="text-slate-700 text-sm leading-relaxed mt-2 select-text font-serif italic">
                 「OS は，家電製品からスーパーコンピュータまで，多くの機器で使われています．」
               </p>
@@ -464,11 +464,11 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
                   <span className="text-[10px] font-extrabold text-indigo-700 bg-indigo-50 px-2.5 py-0.5 rounded-full border border-indigo-100">UNIX & Linux</span>
                   <Shield size={18} className="text-indigo-600" />
                 </div>
-                <h4 className="font-extrabold text-base text-slate-800">UNIX & Linux (リーナス・トーバルズ)</h4>
-                <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                <h4 className="font-bold text-lg md:text-xl text-slate-800">UNIX & Linux (リーナス・トーバルズ)</h4>
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-2 leading-relaxed">
                   • <strong>UNIX</strong>: Phát triển bởi AT&T Bell Labs & ĐH Berkeley. Ban đầu công khai mã nguồn, miễn phí cho nghiên cứu.
                 </p>
-                <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1 leading-relaxed">
                   • <strong>Linux</strong>: Phát triển bởi Linus Torvalds dưới dạng Freeware độc lập. Mã nguồn mở, an toàn, sử dụng phổ biến cho Máy chủ doanh nghiệp (企業サーバ).
                 </p>
               </div>
@@ -479,11 +479,11 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
                   <span className="text-[10px] font-extrabold text-blue-700 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-100">Windows</span>
                   <Monitor size={18} className="text-blue-600" />
                 </div>
-                <h4 className="font-extrabold text-base text-slate-800">Microsoft Windows (ビル・ゲイツ)</h4>
-                <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                <h4 className="font-bold text-lg md:text-xl text-slate-800">Microsoft Windows (ビル・ゲイツ)</h4>
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-2 leading-relaxed">
                   • Khởi nguồn từ <strong>MS-DOS</strong> của Microsoft (Bill Gates). Phát triển vượt bậc khi được tập đoàn khổng lồ <strong>IBM</strong> chọn làm OS cho PC.
                 </p>
-                <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1 leading-relaxed">
                   • Chuyển từ giao diện gõ dòng lệnh sang giao diện cửa sổ thao tác bằng chuột (Windows). Từ Windows 2000 tăng tính ổn định cao.
                 </p>
               </div>
@@ -494,11 +494,11 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
                   <span className="text-[10px] font-extrabold text-purple-700 bg-purple-50 px-2.5 py-0.5 rounded-full border border-purple-100">MacOS</span>
                   <Laptop size={18} className="text-purple-600" />
                 </div>
-                <h4 className="font-extrabold text-base text-slate-800">Apple MacOS (スティーブ・ジョブズ)</h4>
-                <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                <h4 className="font-bold text-lg md:text-xl text-slate-800">Apple MacOS (スティーブ・ジョブズ)</h4>
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-2 leading-relaxed">
                   • Sáng lập bởi Steve Jobs & Steve Wozniak từ xưởng nhà để xe (ガレージ).
                 </p>
-                <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1 leading-relaxed">
                   • Năm 1984 ra mắt hệ thống cửa sổ thao tác bằng chuột đột phá. Từ MacOS X tích hợp công nghệ UNIX mang lại sự ổn định tuyệt vời.
                 </p>
               </div>
@@ -509,11 +509,11 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
                   <span className="text-[10px] font-extrabold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-100">家電用OS</span>
                   <Smartphone size={18} className="text-emerald-600" />
                 </div>
-                <h4 className="font-extrabold text-base text-slate-800">家電用OS (Hệ điều hành nhúng)</h4>
-                <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                <h4 className="font-bold text-lg md:text-xl text-slate-800">家電用OS (Hệ điều hành nhúng)</h4>
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-2 leading-relaxed">
                   • Tích hợp trong thiết bị gia dụng, đầu ghi HDD, máy định vị ô tô, máy chơi game, điện thoại di động (Symbian, iOS, Android, Windows Phone...).
                 </p>
-                <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1 leading-relaxed">
                   • Giúp rút ngắn đáng kể thời gian phát triển sản phẩm mới và có số lượng tiêu thụ cực kỳ khổng lồ.
                 </p>
               </div>
@@ -522,7 +522,7 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
         )}
 
         {/* ================= TAB MINITEST ================= */}
-        {activeTab16 === 'minitest' && (
+        {activeTab === 'minitest' && (
           <div className="flex flex-col gap-8 animate-fadeIn">
             {/* IT Passport Practice Question */}
             <div className="border border-indigo-200 rounded-2xl p-5 bg-gradient-to-br from-indigo-50/50 via-white to-purple-50/50 shadow-sm">
@@ -533,7 +533,7 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
                 <h3 className="text-sm font-extrabold text-slate-800">Phát biểu đúng về Hệ điều hành (OS) của PC</h3>
               </div>
 
-              <div className="bg-white border border-slate-200 rounded-xl p-4 mb-4 text-xs text-slate-700 select-text leading-relaxed font-serif italic">
+              <div className="bg-white border border-slate-200 rounded-xl p-4 mb-4 text-sm text-slate-700 select-text leading-relaxed font-serif italic">
                 「PCのOSに関する記述のうち，適切なものはどれか．」
               </div>
 
@@ -580,7 +580,7 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
 
             {/* Mini Test 1 */}
             <div className="border-t border-slate-200 pt-6">
-              <h3 className="text-base font-extrabold text-slate-800 mb-3 flex items-center gap-2">
+              <h3 className="text-lg md:text-xl font-extrabold text-slate-800 mb-3 flex items-center gap-2">
                 <Languages size={18} className="text-indigo-600" />
                 ミニテスト 1 (Mini Test 1)
               </h3>
@@ -679,7 +679,7 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
 
             {/* Mini Test 2 */}
             <div className="border-t border-slate-200 pt-6">
-              <h3 className="text-base font-extrabold text-slate-800 mb-3 flex items-center gap-2">
+              <h3 className="text-lg md:text-xl font-extrabold text-slate-800 mb-3 flex items-center gap-2">
                 <Languages size={18} className="text-indigo-600" />
                 ミニテスト 2 (Mini Test 2)
               </h3>

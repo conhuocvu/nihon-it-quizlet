@@ -9,7 +9,7 @@ interface Lesson20TheoryProps {
 }
 
 export const Lesson20Theory: React.FC<Lesson20TheoryProps> = ({ onClose }) => {
-  const [activeTab20, setActiveTab20] = useState<'20.1' | '20.2' | '20.3' | '20.4' | 'minitest'>('20.1');
+  const [activeTab, setActiveTab] = useState<'20.1' | '20.2' | '20.3' | '20.4' | 'minitest'>('20.1');
 
   // Vending Machine Interactive State (20.1)
   const [vendingMoney, setVendingMoney] = useState<number>(0);
@@ -252,45 +252,45 @@ export const Lesson20Theory: React.FC<Lesson20TheoryProps> = ({ onClose }) => {
       {/* Tabs Navigation */}
       <div className="flex flex-wrap gap-2 p-1.5 bg-slate-100 rounded-2xl border border-slate-200">
         <button
-          onClick={() => setActiveTab20('20.1')}
+          onClick={() => setActiveTab('20.1')}
           className={`flex-1 min-w-[120px] py-3 text-xs md:text-sm font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 ${
-            activeTab20 === '20.1' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
+            activeTab === '20.1' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
           }`}
         >
           <BookOpen size={16} />
           20.1 Thuật toán là gì?
         </button>
         <button
-          onClick={() => setActiveTab20('20.2')}
+          onClick={() => setActiveTab('20.2')}
           className={`flex-1 min-w-[120px] py-3 text-xs md:text-sm font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 ${
-            activeTab20 === '20.2' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
+            activeTab === '20.2' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
           }`}
         >
           <Layers size={16} />
           20.2 Sơ đồ Flowchart
         </button>
         <button
-          onClick={() => setActiveTab20('20.3')}
+          onClick={() => setActiveTab('20.3')}
           className={`flex-1 min-w-[120px] py-3 text-xs md:text-sm font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 ${
-            activeTab20 === '20.3' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
+            activeTab === '20.3' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
           }`}
         >
           <ArrowUpDown size={16} />
           20.3 Thuật toán Sắp xếp
         </button>
         <button
-          onClick={() => setActiveTab20('20.4')}
+          onClick={() => setActiveTab('20.4')}
           className={`flex-1 min-w-[120px] py-3 text-xs md:text-sm font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 ${
-            activeTab20 === '20.4' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
+            activeTab === '20.4' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
           }`}
         >
           <Layout size={16} />
           20.4 Thiết kế UI & 8 Quy tắc
         </button>
         <button
-          onClick={() => setActiveTab20('minitest')}
+          onClick={() => setActiveTab('minitest')}
           className={`flex-1 min-w-[120px] py-3 text-xs md:text-sm font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 ${
-            activeTab20 === 'minitest' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
+            activeTab === 'minitest' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
           }`}
         >
           <Languages size={16} />
@@ -299,18 +299,18 @@ export const Lesson20Theory: React.FC<Lesson20TheoryProps> = ({ onClose }) => {
       </div>
 
       {/* Main Tab Content */}
-      <div className="bg-white border border-slate-200/80 rounded-2xl p-4 md:p-8 shadow-xl shadow-slate-100/40 min-h-[500px]">
+      <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm animate-fadeIn">
 
         {/* ================= TAB 20.1 ================= */}
-        {activeTab20 === '20.1' && (
+        {activeTab === '20.1' && (
           <div className="flex flex-col gap-6 animate-fadeIn">
             <div className="border-l-4 border-indigo-500 pl-4 bg-indigo-50/40 p-4 rounded-r-xl">
               <span className="text-[10px] font-extrabold uppercase text-indigo-600 tracking-wider">SGK 20.1</span>
-              <h3 className="text-lg font-bold text-slate-800 mt-1">20.1 アルゴリズム (Thuật toán là gì?)</h3>
+              <h3 className="text-xl md:text-2xl font-black text-slate-800 mt-1">20.1 アルゴリズム (Thuật toán là gì?)</h3>
               <p className="text-slate-700 text-sm leading-relaxed mt-2 select-text font-serif italic">
                 「プログラムの基本的な処理の手順をアルゴリズムと言います．アルゴリズムの目的は入力，出力，処理手順を明確にすることです．」
               </p>
-              <div className="mt-3 text-xs text-slate-600 bg-white/80 p-3 rounded-xl border border-slate-200 leading-relaxed">
+              <div className="mt-3 text-slate-600 leading-relaxed text-sm md:text-base bg-white/80 p-3 rounded-xl border border-slate-200 leading-relaxed">
                 <span className="font-bold text-indigo-600">Dịch nghĩa:</span> Quy trình xử lý cơ bản của một chương trình được gọi là **Thuật toán (Algorithm)**. Mục đích của thuật toán là làm rõ **Đầu vào (入力 - Input)**, **Đầu ra (出力 - Output)** và **Quy trình xử lý (処理手順)**.
               </div>
             </div>
@@ -320,19 +320,19 @@ export const Lesson20Theory: React.FC<Lesson20TheoryProps> = ({ onClose }) => {
               <div className="p-4 border border-blue-100 bg-blue-50/30 rounded-xl">
                 <span className="text-[10px] font-bold text-blue-600 bg-white px-2 py-0.5 rounded border border-blue-200">1. 入力 (Input)</span>
                 <h4 className="font-bold text-sm text-slate-800 mt-2">Đầu vào</h4>
-                <p className="text-xs text-slate-600 mt-1">Dữ liệu được nạp vào hệ thống (Ví dụ: Tiền nạp, Nút bấm chọn hàng...)</p>
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1">Dữ liệu được nạp vào hệ thống (Ví dụ: Tiền nạp, Nút bấm chọn hàng...)</p>
               </div>
 
               <div className="p-4 border border-amber-100 bg-amber-50/30 rounded-xl">
                 <span className="text-[10px] font-bold text-amber-600 bg-white px-2 py-0.5 rounded border border-amber-200">2. 処理手順 (Process)</span>
                 <h4 className="font-bold text-sm text-slate-800 mt-2">Quy trình xử lý</h4>
-                <p className="text-xs text-slate-600 mt-1">Kiểm tra điều kiện, tính toán, so sánh (Ví dụ: Đợi đủ 120円, kiểm tra nút bấm...)</p>
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1">Kiểm tra điều kiện, tính toán, so sánh (Ví dụ: Đợi đủ 120円, kiểm tra nút bấm...)</p>
               </div>
 
               <div className="p-4 border border-emerald-100 bg-emerald-50/30 rounded-xl">
                 <span className="text-[10px] font-bold text-emerald-600 bg-white px-2 py-0.5 rounded border border-emerald-200">3. 出力 (Output)</span>
                 <h4 className="font-bold text-sm text-slate-800 mt-2">Đầu ra</h4>
-                <p className="text-xs text-slate-600 mt-1">Kết quả xuất ra sau xử lý (Ví dụ: Lon nước, tiền thói thừa...)</p>
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1">Kết quả xuất ra sau xử lý (Ví dụ: Lon nước, tiền thói thừa...)</p>
               </div>
             </div>
 
@@ -424,15 +424,15 @@ export const Lesson20Theory: React.FC<Lesson20TheoryProps> = ({ onClose }) => {
         )}
 
         {/* ================= TAB 20.2 ================= */}
-        {activeTab20 === '20.2' && (
+        {activeTab === '20.2' && (
           <div className="flex flex-col gap-6 animate-fadeIn">
             <div className="border-l-4 border-indigo-500 pl-4 bg-indigo-50/40 p-4 rounded-r-xl">
               <span className="text-[10px] font-extrabold uppercase text-indigo-600 tracking-wider">SGK 20.2</span>
-              <h3 className="text-lg font-bold text-slate-800 mt-1">20.2 フローチャート (Sơ đồ thuật toán / Flowchart)</h3>
+              <h3 className="text-xl md:text-2xl font-black text-slate-800 mt-1">20.2 フローチャート (Sơ đồ thuật toán / Flowchart)</h3>
               <p className="text-slate-700 text-sm leading-relaxed mt-2 select-text font-serif italic">
                 「アルゴリズムを図形と矢印で表現したものをフローチャート(流れ図)と言い，直観的な理解のために使われます．」
               </p>
-              <div className="mt-3 text-xs text-slate-600 bg-white/80 p-3 rounded-xl border border-slate-200 leading-relaxed">
+              <div className="mt-3 text-slate-600 leading-relaxed text-sm md:text-base bg-white/80 p-3 rounded-xl border border-slate-200 leading-relaxed">
                 <span className="font-bold text-indigo-600">Dịch nghĩa:</span> Việc biểu diễn thuật toán bằng các hình vẽ và mũi tên được gọi là **Flowchart (Sơ đồ lưu đồ)**, dùng để hiểu thuật toán một cách trực quan.
               </div>
             </div>
@@ -449,7 +449,7 @@ export const Lesson20Theory: React.FC<Lesson20TheoryProps> = ({ onClose }) => {
                     開始 / 終了
                   </div>
                   <h5 className="font-bold text-xs text-slate-800">Hình Ovan (端子)</h5>
-                  <p className="text-[11px] text-slate-500 mt-1">Bắt đầu hoặc Kết thúc</p>
+                  <p className="text-xs md:text-sm text-slate-500 mt-1">Bắt đầu hoặc Kết thúc</p>
                 </div>
 
                 <div className="p-4 border border-slate-200 rounded-xl bg-white text-center">
@@ -457,7 +457,7 @@ export const Lesson20Theory: React.FC<Lesson20TheoryProps> = ({ onClose }) => {
                     処理
                   </div>
                   <h5 className="font-bold text-xs text-slate-800">Hình Chữ nhật (処理)</h5>
-                  <p className="text-[11px] text-slate-500 mt-1">Thao tác tính toán / Gán biến</p>
+                  <p className="text-xs md:text-sm text-slate-500 mt-1">Thao tác tính toán / Gán biến</p>
                 </div>
 
                 <div className="p-4 border border-slate-200 rounded-xl bg-white text-center">
@@ -465,7 +465,7 @@ export const Lesson20Theory: React.FC<Lesson20TheoryProps> = ({ onClose }) => {
                     <span className="-rotate-45">判断</span>
                   </div>
                   <h5 className="font-bold text-xs text-slate-800 mt-2">Hình Thoi (判断)</h5>
-                  <p className="text-[11px] text-slate-500 mt-1">Rẽ nhánh điều kiện (Đúng/Sai)</p>
+                  <p className="text-xs md:text-sm text-slate-500 mt-1">Rẽ nhánh điều kiện (Đúng/Sai)</p>
                 </div>
 
                 <div className="p-4 border border-slate-200 rounded-xl bg-white text-center">
@@ -473,7 +473,7 @@ export const Lesson20Theory: React.FC<Lesson20TheoryProps> = ({ onClose }) => {
                     ↓ / →
                   </div>
                   <h5 className="font-bold text-xs text-slate-800">Đường mũi tên (線/矢印)</h5>
-                  <p className="text-[11px] text-slate-500 mt-1">Chỉ hướng luồng xử lý</p>
+                  <p className="text-xs md:text-sm text-slate-500 mt-1">Chỉ hướng luồng xử lý</p>
                 </div>
               </div>
             </div>
@@ -493,16 +493,16 @@ export const Lesson20Theory: React.FC<Lesson20TheoryProps> = ({ onClose }) => {
         )}
 
         {/* ================= TAB 20.3 ================= */}
-        {activeTab20 === '20.3' && (
+        {activeTab === '20.3' && (
           <div className="flex flex-col gap-6 animate-fadeIn">
             {/* Header intro */}
             <div className="border-l-4 border-indigo-500 pl-4 bg-indigo-50/40 p-4 rounded-r-xl">
               <span className="text-[10px] font-extrabold uppercase text-indigo-600 tracking-wider">SGK 20.3</span>
-              <h3 className="text-lg font-bold text-slate-800 mt-1">20.3 ソーティング (Thuật toán Sắp xếp - Sorting)</h3>
+              <h3 className="text-xl md:text-2xl font-black text-slate-800 mt-1">20.3 ソーティング (Thuật toán Sắp xếp - Sorting)</h3>
               <p className="text-slate-700 text-sm leading-relaxed mt-2 select-text font-serif italic">
                 「ソーティングとは小さいものから順に，または逆に大きいものから順にデータを並べ替えることです．」
               </p>
-              <div className="mt-3 text-xs text-slate-600 bg-white/80 p-3 rounded-xl border border-slate-200 leading-relaxed">
+              <div className="mt-3 text-slate-600 leading-relaxed text-sm md:text-base bg-white/80 p-3 rounded-xl border border-slate-200 leading-relaxed">
                 <span className="font-bold text-indigo-600">Dịch nghĩa:</span> Sắp xếp (Sorting) là việc hoán đổi thứ tự dữ liệu theo chiều tăng dần từ nhỏ đến lớn (昇順) hoặc giảm dần từ lớn đến nhỏ (降順). Con người có thể nhìn toàn cục cùng lúc, nhưng máy tính **chỉ có thể so sánh 2 dữ liệu tại một thời điểm**!
               </div>
             </div>
@@ -578,7 +578,7 @@ export const Lesson20Theory: React.FC<Lesson20TheoryProps> = ({ onClose }) => {
                 <div className="p-4 rounded-xl border border-indigo-100 bg-indigo-50/30">
                   <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-indigo-100 text-indigo-700">1. バブルソート</span>
                   <h5 className="font-bold text-xs text-slate-800 mt-2">Bubble Sort (Nổi bọt)</h5>
-                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                  <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1 leading-relaxed">
                     So sánh từng cặp kề nhau từ phải qua trái. Nếu sai thứ tự thì đổi chỗ. Phần tử nhỏ nhất sẽ "nổi" dần lên vị trí đầu tiên.
                   </p>
                 </div>
@@ -586,7 +586,7 @@ export const Lesson20Theory: React.FC<Lesson20TheoryProps> = ({ onClose }) => {
                 <div className="p-4 rounded-xl border border-blue-100 bg-blue-50/30">
                   <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-700">2. 選択法</span>
                   <h5 className="font-bold text-xs text-slate-800 mt-2">Selection Sort (Chọn)</h5>
-                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                  <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1 leading-relaxed">
                     Duyệt toàn bộ mảng tìm phần tử nhỏ nhất, sau đó đổi chỗ nó với phần tử đầu tiên của dãy chưa sắp xếp. Lặp lại cho đến hết.
                   </p>
                 </div>
@@ -594,7 +594,7 @@ export const Lesson20Theory: React.FC<Lesson20TheoryProps> = ({ onClose }) => {
                 <div className="p-4 rounded-xl border border-purple-100 bg-purple-50/30">
                   <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-purple-100 text-purple-700">3. 挿入ソート</span>
                   <h5 className="font-bold text-xs text-slate-800 mt-2">Insertion Sort (Chèn)</h5>
-                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                  <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1 leading-relaxed">
                     Coi phần tử đầu đã sắp xếp. Lấy phần tử kế tiếp chèn vào đúng vị trí thích hợp trong đoạn đã sắp xếp (như xếp bài trên tay).
                   </p>
                 </div>
@@ -609,7 +609,7 @@ export const Lesson20Theory: React.FC<Lesson20TheoryProps> = ({ onClose }) => {
                     <Play size={16} className="text-indigo-600" fill="currentColor" />
                     2. Mô phỏng Trực quan thuật toán sắp xếp (Mảng ban đầu: [40, 20, 30, 10])
                   </h4>
-                  <p className="text-xs text-slate-500 mt-0.5">Chọn thuật toán muốn xem và bấm nút bắt đầu để theo dõi diễn biến từng bước.</p>
+                  <p className="text-sm text-slate-500 mt-0.5">Chọn thuật toán muốn xem và bấm nút bắt đầu để theo dõi diễn biến từng bước.</p>
                 </div>
 
                 {/* Algorithm Selector Buttons */}
@@ -726,15 +726,15 @@ export const Lesson20Theory: React.FC<Lesson20TheoryProps> = ({ onClose }) => {
         )}
 
         {/* ================= TAB 20.4 ================= */}
-        {activeTab20 === '20.4' && (
+        {activeTab === '20.4' && (
           <div className="flex flex-col gap-6 animate-fadeIn">
             <div className="border-l-4 border-indigo-500 pl-4 bg-indigo-50/40 p-4 rounded-r-xl">
               <span className="text-[10px] font-extrabold uppercase text-indigo-600 tracking-wider">SGK 20.4</span>
-              <h3 className="text-lg font-bold text-slate-800 mt-1">20.4 ヒューマンインタフェースの設計 (Thiết kế Giao diện Người - Máy)</h3>
+              <h3 className="text-xl md:text-2xl font-black text-slate-800 mt-1">20.4 ヒューマンインタフェースの設計 (Thiết kế Giao diện Người - Máy)</h3>
               <p className="text-slate-700 text-sm leading-relaxed mt-2 select-text font-serif italic">
                 「ヒューマンインタフェース，もしくはユーザインタフェースとは，ユーザに対するコンピュータなどの機械の使い勝手のことを言います．」
               </p>
-              <div className="mt-3 text-xs text-slate-600 bg-white/80 p-3 rounded-xl border border-slate-200 leading-relaxed">
+              <div className="mt-3 text-slate-600 leading-relaxed text-sm md:text-base bg-white/80 p-3 rounded-xl border border-slate-200 leading-relaxed">
                 <span className="font-bold text-indigo-600">Dịch nghĩa:</span> **Human Interface (Giao diện người - máy)** hay **User Interface (UI)** chính là **Tính tiện dụng / Dễ sử dụng (使い勝手)** của máy tính đối với người dùng. Dù xử lý bên trong tốt đến đâu, nếu thao tác nhập phiền phức thì cũng không thể gọi là chương trình tốt.
               </div>
             </div>
@@ -758,7 +758,7 @@ export const Lesson20Theory: React.FC<Lesson20TheoryProps> = ({ onClose }) => {
                 ].map((rule) => (
                   <div key={rule.num} className="p-3.5 bg-white border border-slate-200 rounded-xl shadow-sm hover:border-indigo-300 transition-all">
                     <span className="font-extrabold text-xs text-indigo-600 block">{rule.name}</span>
-                    <p className="text-xs text-slate-600 mt-1">{rule.desc}</p>
+                    <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1">{rule.desc}</p>
                   </div>
                 ))}
               </div>
@@ -784,7 +784,7 @@ export const Lesson20Theory: React.FC<Lesson20TheoryProps> = ({ onClose }) => {
         )}
 
         {/* ================= TAB MINITEST ================= */}
-        {activeTab20 === 'minitest' && (
+        {activeTab === 'minitest' && (
           <div className="flex flex-col gap-8 animate-fadeIn">
             {/* IT Passport Practice Question */}
             <div className="border border-indigo-200 rounded-2xl p-5 bg-gradient-to-br from-indigo-50/50 via-white to-purple-50/50 shadow-sm">
@@ -795,7 +795,7 @@ export const Lesson20Theory: React.FC<Lesson20TheoryProps> = ({ onClose }) => {
                 <h3 className="text-sm font-extrabold text-slate-800">Tính giá trị biến x sau thủ tục vòng lặp</h3>
               </div>
 
-              <div className="bg-white border border-slate-200 rounded-xl p-4 mb-4 text-xs text-slate-700 select-text leading-relaxed font-mono">
+              <div className="bg-white border border-slate-200 rounded-xl p-4 mb-4 text-sm text-slate-700 select-text leading-relaxed font-mono">
                 [手続き]{"\n"}
                 ① x に 2 を代入し，y に 3 を代入する．{"\n"}
                 ② y の値から 1 を引いたものを y に代入する．{"\n"}
@@ -846,7 +846,7 @@ export const Lesson20Theory: React.FC<Lesson20TheoryProps> = ({ onClose }) => {
 
             {/* Mini Test 1 */}
             <div className="border-t border-slate-200 pt-6">
-              <h3 className="text-base font-extrabold text-slate-800 mb-3 flex items-center gap-2">
+              <h3 className="text-lg md:text-xl font-extrabold text-slate-800 mb-3 flex items-center gap-2">
                 <Languages size={18} className="text-indigo-600" />
                 ミニテスト 1 (Mini Test 1)
               </h3>
@@ -945,7 +945,7 @@ export const Lesson20Theory: React.FC<Lesson20TheoryProps> = ({ onClose }) => {
 
             {/* Mini Test 2 */}
             <div className="border-t border-slate-200 pt-6">
-              <h3 className="text-base font-extrabold text-slate-800 mb-3 flex items-center gap-2">
+              <h3 className="text-lg md:text-xl font-extrabold text-slate-800 mb-3 flex items-center gap-2">
                 <Languages size={18} className="text-indigo-600" />
                 ミニテスト 2 (Mini Test 2)
               </h3>

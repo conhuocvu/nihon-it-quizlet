@@ -9,7 +9,7 @@ interface Lesson19TheoryProps {
 }
 
 export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
-  const [activeTab19, setActiveTab19] = useState<'19.1' | '19.2' | '19.3' | '19.4' | 'minitest'>('19.1');
+  const [activeTab, setActiveTab] = useState<'19.1' | '19.2' | '19.3' | '19.4' | 'minitest'>('19.1');
 
   // Interactive Code Execution Demo for 19.3
   const [arrIndexDemo, setArrIndexDemo] = useState<number>(0);
@@ -87,45 +87,45 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
       {/* Tabs Navigation */}
       <div className="flex flex-wrap gap-2 p-1.5 bg-slate-100 rounded-2xl border border-slate-200">
         <button
-          onClick={() => setActiveTab19('19.1')}
+          onClick={() => setActiveTab('19.1')}
           className={`flex-1 min-w-[120px] py-3 text-xs md:text-sm font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 ${
-            activeTab19 === '19.1' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
+            activeTab === '19.1' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
           }`}
         >
           <BookOpen size={16} />
           19.1 Ngôn ngữ lập trình
         </button>
         <button
-          onClick={() => setActiveTab19('19.2')}
+          onClick={() => setActiveTab('19.2')}
           className={`flex-1 min-w-[120px] py-3 text-xs md:text-sm font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 ${
-            activeTab19 === '19.2' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
+            activeTab === '19.2' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
           }`}
         >
           <Cpu size={16} />
           19.2 Hoạt động bên trong
         </button>
         <button
-          onClick={() => setActiveTab19('19.3')}
+          onClick={() => setActiveTab('19.3')}
           className={`flex-1 min-w-[120px] py-3 text-xs md:text-sm font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 ${
-            activeTab19 === '19.3' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
+            activeTab === '19.3' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
           }`}
         >
           <Code size={16} />
           19.3 Xử lý cơ bản & Giả lập
         </button>
         <button
-          onClick={() => setActiveTab19('19.4')}
+          onClick={() => setActiveTab('19.4')}
           className={`flex-1 min-w-[120px] py-3 text-xs md:text-sm font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 ${
-            activeTab19 === '19.4' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
+            activeTab === '19.4' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
           }`}
         >
           <Box size={16} />
           19.4 Hướng đối tượng
         </button>
         <button
-          onClick={() => setActiveTab19('minitest')}
+          onClick={() => setActiveTab('minitest')}
           className={`flex-1 min-w-[120px] py-3 text-xs md:text-sm font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center gap-2 ${
-            activeTab19 === 'minitest' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
+            activeTab === 'minitest' ? 'bg-white text-indigo-700 shadow-md' : 'text-slate-600 hover:text-indigo-600 hover:bg-white/50'
           }`}
         >
           <Languages size={16} />
@@ -134,18 +134,18 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
       </div>
 
       {/* Main Tab Content */}
-      <div className="bg-white border border-slate-200/80 rounded-2xl p-4 md:p-8 shadow-xl shadow-slate-100/40 min-h-[500px]">
+      <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 shadow-sm animate-fadeIn">
 
         {/* ================= TAB 19.1 ================= */}
-        {activeTab19 === '19.1' && (
+        {activeTab === '19.1' && (
           <div className="flex flex-col gap-6 animate-fadeIn">
             <div className="border-l-4 border-indigo-500 pl-4 bg-indigo-50/40 p-4 rounded-r-xl">
               <span className="text-[10px] font-extrabold uppercase text-indigo-600 tracking-wider">SGK 19.1</span>
-              <h3 className="text-lg font-bold text-slate-800 mt-1">19.1 プログラミング言語 (Ngôn ngữ lập trình)</h3>
+              <h3 className="text-xl md:text-2xl font-black text-slate-800 mt-1">19.1 プログラミング言語 (Ngôn ngữ lập trình)</h3>
               <p className="text-slate-700 text-sm leading-relaxed mt-2 select-text font-serif italic">
                 「プログラミング言語とは，コンピュータに対する命令記述の集まりであって，人工的な文法規則を持ちます．たとえば，SQLもプログラミング言語の1つと考えられます．」
               </p>
-              <div className="mt-3 text-xs text-slate-600 bg-white/80 p-3 rounded-xl border border-slate-200 leading-relaxed">
+              <div className="mt-3 text-slate-600 leading-relaxed text-sm md:text-base bg-white/80 p-3 rounded-xl border border-slate-200 leading-relaxed">
                 <span className="font-bold text-indigo-600">Dịch nghĩa:</span> Ngôn ngữ lập trình là tập hợp các mô tả câu lệnh dành cho máy tính, có các quy tắc ngữ pháp nhân tạo. Ví dụ, SQL cũng được coi là một loại ngôn ngữ lập trình.
               </div>
             </div>
@@ -154,8 +154,8 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div className="border border-slate-200 rounded-xl p-5 bg-gradient-to-b from-blue-50/40 to-white hover:border-blue-300 transition-all">
                 <span className="text-[10px] font-extrabold text-blue-700 bg-blue-100 px-2.5 py-0.5 rounded-full uppercase">Phân loại 1</span>
-                <h4 className="font-extrabold text-base text-slate-800 mt-2">手続型言語 (Ngôn ngữ thủ tục)</h4>
-                <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                <h4 className="font-bold text-lg md:text-xl text-slate-800 mt-2">手続型言語 (Ngôn ngữ thủ tục)</h4>
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-2 leading-relaxed">
                   Mô tả chi tiết <strong>Làm thế nào / Quy trình (How)</strong> để đạt kết quả. Chi phối đa số ngôn ngữ hiện nay.
                 </p>
                 <div className="mt-3 flex flex-wrap gap-1.5">
@@ -168,8 +168,8 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
 
               <div className="border border-slate-200 rounded-xl p-5 bg-gradient-to-b from-purple-50/40 to-white hover:border-purple-300 transition-all">
                 <span className="text-[10px] font-extrabold text-purple-700 bg-purple-100 px-2.5 py-0.5 rounded-full uppercase">Phân loại 2</span>
-                <h4 className="font-extrabold text-base text-slate-800 mt-2">非手続型言語 (Ngôn ngữ phi thủ tục)</h4>
-                <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+                <h4 className="font-bold text-lg md:text-xl text-slate-800 mt-2">非手続型言語 (Ngôn ngữ phi thủ tục)</h4>
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-2 leading-relaxed">
                   Mô tả <strong>Cái gì / Mục tiêu (What)</strong> cần lấy ra mà không cần quan tâm chi tiết từng bước. Thường đặc hóa chuyên biệt.
                 </p>
                 <div className="mt-3 flex flex-wrap gap-1.5">
@@ -188,7 +188,7 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
                 <div className="p-4 border border-slate-200 rounded-xl bg-white shadow-sm">
                   <span className="text-[10px] font-extrabold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-100">C++</span>
                   <h5 className="font-bold text-sm text-slate-800 mt-2">Đa năng / Cấp thấp hơn</h5>
-                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                  <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1 leading-relaxed">
                     Tính vạn năng cao (汎用性が高い). Tuy nhiên chương trình biên dịch phải chuẩn bị riêng theo từng OS (Windows, Mac...).
                   </p>
                 </div>
@@ -196,7 +196,7 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
                 <div className="p-4 border border-slate-200 rounded-xl bg-white shadow-sm">
                   <span className="text-[10px] font-extrabold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100">Java</span>
                   <h5 className="font-bold text-sm text-slate-800 mt-2">Độc lập OS (OS依存しない)</h5>
-                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                  <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1 leading-relaxed">
                     Cú pháp giống C++. Chạy tốt trên Windows, MacOS, điện thoại... Tốc độ thực thi chậm hơn C++ một chút.
                   </p>
                 </div>
@@ -204,7 +204,7 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
                 <div className="p-4 border border-slate-200 rounded-xl bg-white shadow-sm">
                   <span className="text-[10px] font-extrabold text-amber-600 bg-amber-50 px-2 py-0.5 rounded border border-amber-100">HTML & JS</span>
                   <h5 className="font-bold text-sm text-slate-800 mt-2">Trang web (ホームページ)</h5>
-                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                  <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1 leading-relaxed">
                     HTML dùng mô tả giao diện web nhưng không thể tính toán. Để tính toán hay rẽ nhánh phải kết hợp với JavaScript.
                   </p>
                 </div>
@@ -212,7 +212,7 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
                 <div className="p-4 border border-slate-200 rounded-xl bg-white shadow-sm">
                   <span className="text-[10px] font-extrabold text-rose-600 bg-rose-50 px-2 py-0.5 rounded border border-rose-100">XML</span>
                   <h5 className="font-bold text-sm text-slate-800 mt-2">Mở rộng HTML</h5>
-                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                  <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1 leading-relaxed">
                     Là bản mở rộng của HTML, dùng như hệ thống CSDL trên trang web, có vai trò rất quan trọng trong kinh doanh.
                   </p>
                 </div>
@@ -222,15 +222,15 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
         )}
 
         {/* ================= TAB 19.2 ================= */}
-        {activeTab19 === '19.2' && (
+        {activeTab === '19.2' && (
           <div className="flex flex-col gap-6 animate-fadeIn">
             <div className="border-l-4 border-indigo-500 pl-4 bg-indigo-50/40 p-4 rounded-r-xl">
               <span className="text-[10px] font-extrabold uppercase text-indigo-600 tracking-wider">SGK 19.2</span>
-              <h3 className="text-lg font-bold text-slate-800 mt-1">19.2 プログラムの内部動作 (Hoạt động bên trong của chương trình)</h3>
+              <h3 className="text-xl md:text-2xl font-black text-slate-800 mt-1">19.2 プログラムの内部動作 (Hoạt động bên trong của chương trình)</h3>
               <p className="text-slate-700 text-sm leading-relaxed mt-2 select-text font-serif italic">
                 「プログラムは内部的にはメモリに記憶されますが，メモリ上ではデータもプログラムも区別がありません．CPU はメモリ上のデータをアドレスに従って 1 つずつ読み込み，逐次的に処理を継続します．」
               </p>
-              <div className="mt-3 text-xs text-slate-600 bg-white/80 p-3 rounded-xl border border-slate-200 leading-relaxed">
+              <div className="mt-3 text-slate-600 leading-relaxed text-sm md:text-base bg-white/80 p-3 rounded-xl border border-slate-200 leading-relaxed">
                 <span className="font-bold text-indigo-600">Dịch nghĩa:</span> Chương trình được ghi nhớ bên trong bộ nhớ (Memory). Trên bộ nhớ, dữ liệu và chương trình không có sự phân biệt. CPU đọc dữ liệu trên bộ nhớ từng cái một theo địa chỉ (address) và thực hiện xử lý một cách tuần tự (逐次的に処理).
               </div>
             </div>
@@ -246,7 +246,7 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
                 <div className="p-4 bg-slate-800/90 border border-slate-700 rounded-xl">
                   <span className="text-[10px] font-extrabold text-emerald-400 bg-emerald-950 px-2 py-0.5 rounded border border-emerald-800 uppercase">1. Mã nguồn</span>
                   <h5 className="font-extrabold text-sm text-white mt-2">高級言語 (Ngôn ngữ cấp cao)</h5>
-                  <p className="text-[11px] text-slate-400 mt-1">Java, C++, Python...</p>
+                  <p className="text-xs md:text-sm text-slate-400 mt-1">Java, C++, Python...</p>
                   <code className="block mt-2 p-2 bg-slate-950 rounded text-emerald-300 font-mono text-[11px]">
                     c = a + b;
                   </code>
@@ -257,7 +257,7 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
                   <span className="text-xs font-bold text-purple-300 bg-purple-900/60 px-3 py-1 rounded-full border border-purple-700 mb-1">
                     コンパイラ (Compiler)
                   </span>
-                  <span className="text-[11px] text-slate-400">Tự động dịch (自動的に翻訳)</span>
+                  <span className="text-xs md:text-sm text-slate-400">Tự động dịch (自動的に翻訳)</span>
                   <ChevronRight size={24} className="text-indigo-400 hidden md:block mt-1" />
                 </div>
 
@@ -265,7 +265,7 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
                 <div className="p-4 bg-slate-800/90 border border-slate-700 rounded-xl">
                   <span className="text-[10px] font-extrabold text-amber-400 bg-amber-950 px-2 py-0.5 rounded border border-amber-800 uppercase">2. Mã máy</span>
                   <h5 className="font-extrabold text-sm text-white mt-2">低級言語 / 機械語 (Mã máy)</h5>
-                  <p className="text-[11px] text-slate-400 mt-1">Phụ thuộc dòng CPU cụ thể</p>
+                  <p className="text-xs md:text-sm text-slate-400 mt-1">Phụ thuộc dòng CPU cụ thể</p>
                   <code className="block mt-2 p-2 bg-slate-950 rounded text-amber-300 font-mono text-[11px]">
                     01001010 11000101
                   </code>
@@ -276,20 +276,20 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
         )}
 
         {/* ================= TAB 19.3 ================= */}
-        {activeTab19 === '19.3' && (
+        {activeTab === '19.3' && (
           <div className="flex flex-col gap-8 animate-fadeIn">
             <div>
               <span className="text-[10px] font-extrabold text-indigo-600 bg-indigo-50 border border-indigo-100 px-3 py-1 rounded-full uppercase">Mục 19.3</span>
-              <h3 className="text-lg font-extrabold text-slate-800 mt-1">19.3 高級言語の基本処理 (Các xử lý cơ bản của Ngôn ngữ cấp cao)</h3>
+              <h3 className="text-xl md:text-2xl font-black text-slate-800 mt-1">19.3 高級言語の基本処理 (Các xử lý cơ bản của Ngôn ngữ cấp cao)</h3>
             </div>
 
             {/* 1. 代入 (Phép gán) */}
             <div className="border border-slate-200 rounded-2xl p-5 bg-gradient-to-br from-indigo-50/30 to-white">
-              <h4 className="text-base font-extrabold text-slate-800 flex items-center gap-2">
+              <h4 className="text-lg md:text-xl font-extrabold text-slate-800 flex items-center gap-2">
                 <span className="w-6 h-6 rounded-lg bg-indigo-600 text-white flex items-center justify-center text-xs">1</span>
                 代入 (Phép gán giá trị vào Biến 変数)
               </h4>
-              <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-2 leading-relaxed">
                 Biến (変数) là chiếc hộp chứa giá trị (tương tự ô Excel A1, B1). Dấu <code className="text-indigo-700 font-bold bg-white px-1.5 py-0.5 rounded border">=</code> có nghĩa là gán giá trị ở vế phải vào biến ở vế trái (không phải bằng nhau trong toán học). Dấu <code className="text-indigo-700 font-bold bg-white px-1.5 py-0.5 rounded border">;</code> ngắt câu.
               </p>
 
@@ -325,11 +325,11 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
 
             {/* 2. 配列 (Mảng) */}
             <div className="border border-slate-200 rounded-2xl p-5 bg-gradient-to-br from-purple-50/30 to-white">
-              <h4 className="text-base font-extrabold text-slate-800 flex items-center gap-2">
+              <h4 className="text-lg md:text-xl font-extrabold text-slate-800 flex items-center gap-2">
                 <span className="w-6 h-6 rounded-lg bg-purple-600 text-white flex items-center justify-center text-xs">2</span>
                 配列 (Mảng dữ liệu & Chỉ số 添え字)
               </h4>
-              <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-2 leading-relaxed">
                 Khi cần quản lý hàng nghìn dữ liệu, ta dùng Mảng <code className="text-purple-700 font-bold bg-white px-1.5 py-0.5 rounded border">a[0], a[1], a[2]</code>. Trong ngoặc vuông là Chỉ số (添え字 - index), bắt đầu từ số 0.
               </p>
 
@@ -360,11 +360,11 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
 
             {/* 3. 四則演算 (4 phép toán) */}
             <div className="border border-slate-200 rounded-2xl p-5 bg-gradient-to-br from-amber-50/30 to-white">
-              <h4 className="text-base font-extrabold text-slate-800 flex items-center gap-2">
+              <h4 className="text-lg md:text-xl font-extrabold text-slate-800 flex items-center gap-2">
                 <span className="w-6 h-6 rounded-lg bg-amber-600 text-white flex items-center justify-center text-xs">3</span>
                 四則演算 (4 phép toán & Thứ tự ưu tiên)
               </h4>
-              <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-2 leading-relaxed">
                 Ký tự nhân/chia dùng <code className="text-amber-700 font-bold bg-white px-1.5 py-0.5 rounded border">*</code> và <code className="text-amber-700 font-bold bg-white px-1.5 py-0.5 rounded border">/</code>. Ký tự <code className="text-amber-700 font-bold bg-white px-1.5 py-0.5 rounded border">%</code> tính phần dư.
                 Thứ tự ưu tiên: <strong>1. ( ) → 2. * / % → 3. + -</strong>.
               </p>
@@ -384,11 +384,11 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
 
             {/* 4. 条件判断 (if - else) */}
             <div className="border border-slate-200 rounded-2xl p-5 bg-gradient-to-br from-emerald-50/30 to-white">
-              <h4 className="text-base font-extrabold text-slate-800 flex items-center gap-2">
+              <h4 className="text-lg md:text-xl font-extrabold text-slate-800 flex items-center gap-2">
                 <span className="w-6 h-6 rounded-lg bg-emerald-600 text-white flex items-center justify-center text-xs">4</span>
                 条件判断 (Rẽ nhánh điều kiện if - else)
               </h4>
-              <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-2 leading-relaxed">
                 Đánh giá điều kiện đúng (真) hay sai (偽). Dấu so sánh bằng ghi <code className="text-emerald-700 font-bold bg-white px-1.5 py-0.5 rounded border">==</code>, khác nhau ghi <code className="text-emerald-700 font-bold bg-white px-1.5 py-0.5 rounded border">!=</code>.
               </p>
 
@@ -421,11 +421,11 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
 
             {/* 5. 繰り返し (for loop) */}
             <div className="border border-slate-200 rounded-2xl p-5 bg-gradient-to-br from-blue-50/30 to-white">
-              <h4 className="text-base font-extrabold text-slate-800 flex items-center gap-2">
+              <h4 className="text-lg md:text-xl font-extrabold text-slate-800 flex items-center gap-2">
                 <span className="w-6 h-6 rounded-lg bg-blue-600 text-white flex items-center justify-center text-xs">5</span>
                 繰り返し (Vòng lặp for)
               </h4>
-              <p className="text-xs text-slate-600 mt-2 leading-relaxed">
+              <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-2 leading-relaxed">
                 Lặp lại câu lệnh khi điều kiện thỏa mãn. Cú pháp: <code className="text-blue-700 font-bold bg-white px-1.5 py-0.5 rounded border">for (Khởi tạo; Điều kiện; Tăng dần)</code>.
               </p>
 
@@ -456,15 +456,15 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
         )}
 
         {/* ================= TAB 19.4 ================= */}
-        {activeTab19 === '19.4' && (
+        {activeTab === '19.4' && (
           <div className="flex flex-col gap-6 animate-fadeIn">
             <div className="border-l-4 border-indigo-500 pl-4 bg-indigo-50/40 p-4 rounded-r-xl">
               <span className="text-[10px] font-extrabold uppercase text-indigo-600 tracking-wider">SGK 19.4</span>
-              <h3 className="text-lg font-bold text-slate-800 mt-1">19.4 オブジェクト指向 (Lập trình hướng đối tượng - OOP)</h3>
+              <h3 className="text-xl md:text-2xl font-black text-slate-800 mt-1">19.4 オブジェクト指向 (Lập trình hướng đối tượng - OOP)</h3>
               <p className="text-slate-700 text-sm leading-relaxed mt-2 select-text font-serif italic">
                 「オブジェクト指向とは，従来のプログラミングのような『こと』を中心にするのではなく，『もの』を中心にするという考え方です．」
               </p>
-              <div className="mt-3 text-xs text-slate-600 bg-white/80 p-3 rounded-xl border border-slate-200 leading-relaxed">
+              <div className="mt-3 text-slate-600 leading-relaxed text-sm md:text-base bg-white/80 p-3 rounded-xl border border-slate-200 leading-relaxed">
                 <span className="font-bold text-indigo-600">Dịch nghĩa:</span> Hướng đối tượng là tư duy tập trung vào **"Vật / Đối tượng (もの)"** thay vì tập trung vào **"Hành động / Sự việc (こと)"** như lập trình truyền thống.
               </div>
             </div>
@@ -474,7 +474,7 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
               <div className="p-4 border border-slate-200 rounded-xl bg-white shadow-sm">
                 <span className="text-[10px] font-extrabold text-blue-600 bg-blue-50 px-2 py-0.5 rounded border border-blue-100 uppercase">Khái niệm 1</span>
                 <h4 className="font-extrabold text-sm text-slate-800 mt-2">クラス (Class / Lớp)</h4>
-                <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1 leading-relaxed">
                   Là tập hợp khuôn mẫu các đối tượng có chung tính chất (VD: Lớp "ヒト - Con người").
                 </p>
               </div>
@@ -482,7 +482,7 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
               <div className="p-4 border border-slate-200 rounded-xl bg-white shadow-sm">
                 <span className="text-[10px] font-extrabold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-100 uppercase">Khái niệm 2</span>
                 <h4 className="font-extrabold text-sm text-slate-800 mt-2">インスタンス (Instance)</h4>
-                <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1 leading-relaxed">
                   Thực thể đối tượng cụ thể mang giá trị thực (VD: "Tanaka", cao 180cm, nặng 70kg).
                 </p>
               </div>
@@ -490,7 +490,7 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
               <div className="p-4 border border-slate-200 rounded-xl bg-white shadow-sm">
                 <span className="text-[10px] font-extrabold text-purple-600 bg-purple-50 px-2 py-0.5 rounded border border-purple-100 uppercase">Khái niệm 3</span>
                 <h4 className="font-extrabold text-sm text-slate-800 mt-2">メソッド (Method)</h4>
-                <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1 leading-relaxed">
                   Hành vi / Động tác của đối tượng (VD: nói, cười, thở, ngủ...).
                 </p>
               </div>
@@ -498,7 +498,7 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
               <div className="p-4 border border-slate-200 rounded-xl bg-white shadow-sm">
                 <span className="text-[10px] font-extrabold text-amber-600 bg-amber-50 px-2 py-0.5 rounded border border-amber-100 uppercase">Khái niệm 4</span>
                 <h4 className="font-extrabold text-sm text-slate-800 mt-2">カプセル化 (Đóng gói)</h4>
-                <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                <p className="text-slate-600 leading-relaxed text-sm md:text-base mt-1 leading-relaxed">
                   Ẩn giấu thông tin bên trong. Thay đổi ở lớp này không làm ảnh hưởng lớp khác, giữ tính nhất quán (整合性).
                 </p>
               </div>
@@ -529,7 +529,7 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
                 ))}
               </div>
 
-              <div className="p-4 bg-white border border-slate-200 rounded-xl text-xs text-slate-700 leading-relaxed">
+              <div className="p-4 bg-white border border-slate-200 rounded-xl text-sm text-slate-700 leading-relaxed">
                 {activeClassTab === 'animal' && (
                   <div>
                     <span className="font-bold text-indigo-700 block text-sm mb-1">上位クラス: 動物クラス (Lớp Động vật)</span>
@@ -555,7 +555,7 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
         )}
 
         {/* ================= TAB MINITEST ================= */}
-        {activeTab19 === 'minitest' && (
+        {activeTab === 'minitest' && (
           <div className="flex flex-col gap-8 animate-fadeIn">
             {/* IT Passport Practice Question */}
             <div className="border border-indigo-200 rounded-2xl p-5 bg-gradient-to-br from-indigo-50/50 via-white to-purple-50/50 shadow-sm">
@@ -566,7 +566,7 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
                 <h3 className="text-sm font-extrabold text-slate-800">Đặc điểm ngôn ngữ Java</h3>
               </div>
 
-              <div className="bg-white border border-slate-200 rounded-xl p-4 mb-4 text-xs text-slate-700 select-text leading-relaxed font-serif italic">
+              <div className="bg-white border border-slate-200 rounded-xl p-4 mb-4 text-sm text-slate-700 select-text leading-relaxed font-serif italic">
                 「Java 言語に関する記述として，適切なものはどれか．」
               </div>
 
@@ -610,7 +610,7 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
 
             {/* Mini Test 1 */}
             <div className="border-t border-slate-200 pt-6">
-              <h3 className="text-base font-extrabold text-slate-800 mb-3 flex items-center gap-2">
+              <h3 className="text-lg md:text-xl font-extrabold text-slate-800 mb-3 flex items-center gap-2">
                 <Languages size={18} className="text-indigo-600" />
                 ミニテスト 1 (Mini Test 1)
               </h3>
@@ -709,7 +709,7 @@ export const Lesson19Theory: React.FC<Lesson19TheoryProps> = ({ onClose }) => {
 
             {/* Mini Test 2 */}
             <div className="border-t border-slate-200 pt-6">
-              <h3 className="text-base font-extrabold text-slate-800 mb-3 flex items-center gap-2">
+              <h3 className="text-lg md:text-xl font-extrabold text-slate-800 mb-3 flex items-center gap-2">
                 <Languages size={18} className="text-indigo-600" />
                 ミニテスト 2 (Mini Test 2)
               </h3>

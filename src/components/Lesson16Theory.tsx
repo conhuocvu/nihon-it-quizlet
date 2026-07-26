@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { 
-  ArrowLeft, Cpu, HelpCircle, Languages, Zap, Layers, HardDrive, RefreshCw
+  ArrowLeft, Cpu, HelpCircle, Languages, Zap, Layers, HardDrive, RefreshCw, Monitor, Shield, Laptop
 } from 'lucide-react';
 
 interface Lesson16TheoryProps {
@@ -28,7 +28,6 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
     const potentialRam = ramUsage + size;
 
     if (potentialRam > 100) {
-      // Find an inactive or smallest app in RAM to swap out to disk
       if (ramApps.length === 0) {
         setSwapLogs(prev => [...prev, `⚠️ Ứng dụng quá lớn (${size}%) không thể nạp vào RAM!`]);
         return;
@@ -38,7 +37,7 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
       setDiskApps(prev => [...prev, { id: appToSwap.id, name: appToSwap.name, size: appToSwap.size }]);
       setSwapLogs(prev => [
         ...prev,
-        `⚠️ RAM đầy (${potentialRam}%)! OS thực hiện Swapping: Chuyển ${appToSwap.name} (${appToSwap.size}%) sang ổ đĩa cứng (Virtual Memory), nạp thành công ${name} (${size}%).`
+        `⚠️ RAM đầy (${potentialRam}%)! OS thực hiện Swapping (スワッピング): Chuyển ${appToSwap.name} (${appToSwap.size}%) sang ổ đĩa cứng (仮想記憶 - Virtual Memory) làm RAM ảo, nạp thành công ${name} (${size}%).`
       ]);
     } else {
       setRamApps(prev => [...prev, newApp]);
@@ -52,7 +51,6 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
 
     const potentialRam = ramUsage + appToRestore.size;
     if (potentialRam > 100) {
-      // Swap out the first app in RAM to make space
       const appToSwap = ramApps[0];
       setRamApps(prev => [...prev.slice(1), { id: appToRestore.id, name: appToRestore.name, size: appToRestore.size, active: true }]);
       setDiskApps(prev => [...prev.filter(a => a.id !== appId), { id: appToSwap.id, name: appToSwap.name, size: appToSwap.size }]);
@@ -210,42 +208,45 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
           <div className="flex flex-col gap-8 font-sans">
             <div>
               <h3 className="text-xl md:text-2xl font-black text-slate-800 mb-4">
-                16.1 オペレーティングシステムとは (Khái niệm về Hệ điều hành OS)
+                16.1 オペレーティングシステムとは (Hệ điều hành OS & Phân cấp phần mềm)
               </h3>
               
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-                <div className="lg:col-span-5 text-slate-600 leading-relaxed text-sm md:text-base flex flex-col gap-4">
+                <div className="lg:col-span-6 text-slate-600 leading-relaxed text-sm md:text-base flex flex-col gap-4">
                   <p>
-                    <strong>Hệ điều hành (Operating System - OS)</strong> là phần mềm hệ thống (基本ソフト) đóng vai trò trung gian liên kết phần cứng máy tính và ứng dụng của người dùng.
+                    <strong>Hệ điều hành (オペレーティングシステム - OS)</strong> còn gọi là <strong>基本ソフト (Phần mềm cơ bản)</strong>. OS đóng vai trò trung gian giữa phần cứng và phần mềm ứng dụng.
                   </p>
                   <p>
-                    <strong>Phân loại phần mềm (ソフトウェアの種類)</strong>:
+                    <strong>システムソフトウェア (Phần mềm hệ thống)</strong>: Là các phần mềm không phải phần mềm ứng dụng (<code>アプリケーションソフト以外のソフトウェア</code>). OS chính là một loại phần mềm hệ thống tiêu biểu.
                   </p>
-                  <ul className="list-disc pl-5 text-xs md:text-sm text-slate-700 flex flex-col gap-1.5">
-                    <li><strong>アプリケーション (Application)</strong>: Các phần mềm ứng dụng như Word, Excel, Trình duyệt.</li>
-                    <li><strong>ミドルウェア (Middleware)</strong>: Nằm giữa OS và App (như Hệ quản trị CSDL - DBMS).</li>
-                    <li><strong>BIOS</strong>: Hệ thống điều khiển phần cứng tối thiểu để nạp OS từ đĩa cứng vào RAM khi khởi động (<strong>ブート - Boot</strong>).</li>
-                  </ul>
+                  <p>
+                    <strong>ミドルウェア (Middleware / Phần mềm trung gian)</strong>: Nằm ở vị trí trung gian giữa OS và ứng dụng (<code>アプリケーションソフトとOSの中間的な位置付け</code>). Ví dụ: Hệ quản trị cơ sở dữ liệu (DBMS).
+                  </p>
+                  <p>
+                    <strong>BIOS (バイオス)</strong>: Phần mềm hệ thống thực hiện kiểm soát phần cứng ở mức tối thiểu, nạp OS từ ổ cứng vào bộ nhớ chính RAM khi khởi động máy (<code>ブート - Boot</code>).
+                  </p>
                 </div>
 
                 {/* Software Stack Diagram */}
-                <div className="lg:col-span-7 bg-slate-50 border border-slate-200 rounded-2xl p-5 flex flex-col gap-3 shadow-sm text-xs">
-                  <h4 className="font-bold text-slate-800 text-sm mb-1">Mô hình phân cấp hệ thống phần mềm (図 94)</h4>
+                <div className="lg:col-span-6 bg-slate-50 border border-slate-200 rounded-2xl p-5 flex flex-col gap-3 shadow-sm text-xs">
+                  <h4 className="font-bold text-slate-800 text-sm mb-1">Mô hình phân cấp phần mềm (図 94)</h4>
                   <div className="flex flex-col gap-1 bg-white border border-slate-200 p-3 rounded-xl shadow-inner font-mono text-center">
                     <div className="p-2 bg-rose-50 border border-rose-200 text-rose-800 rounded font-black">
-                      Ứng dụng (アプリケーションソフト)
+                      Ứng dụng (アプリケーションソフト)<br />
+                      <span className="text-[9px] font-normal text-rose-600">Word, Excel, Web Browser...</span>
                     </div>
-                    <div className="text-[10px] text-slate-400">⬇ Chạy trên nền tảng</div>
+                    <div className="text-[10px] text-slate-400">⬇ Chạy trên</div>
                     <div className="p-2 bg-amber-50 border border-amber-200 text-amber-800 rounded font-black">
-                      Phần mềm trung gian (ミドルウェア)
+                      Phần mềm trung gian (ミドルウェア)<br />
+                      <span className="text-[9px] font-normal text-amber-600">Database Management System...</span>
                     </div>
-                    <div className="text-[10px] text-slate-400">⬇ Hệ điều hành hỗ trợ</div>
+                    <div className="text-[10px] text-slate-400">⬇ Được hỗ trợ bởi</div>
                     <div className="p-2 bg-indigo-50 border border-indigo-200 text-indigo-800 rounded font-black">
-                      OS (基本ソフト)
+                      OS (オペレーティングシステム / 基本ソフト)
                     </div>
-                    <div className="text-[10px] text-slate-400">⬇ Nạp bởi</div>
+                    <div className="text-[10px] text-slate-400">⬇ Nạp hệ thống qua</div>
                     <div className="p-2 bg-slate-100 border border-slate-200 text-slate-600 rounded font-black">
-                      BIOS (ブート処理)
+                      BIOS (バイオス - Boot/起動)
                     </div>
                   </div>
                 </div>
@@ -259,26 +260,43 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
           <div className="flex flex-col gap-8 font-sans">
             <div>
               <h3 className="text-xl md:text-2xl font-black text-slate-800 mb-4">
-                16.2 OS の機能 (Chức năng cốt lõi & Cơ chế RAM ảo)
+                16.2 OS の機能 (5 Chức năng chính & Giả lập Đa nhiệm, RAM ảo)
               </h3>
               
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
                 <div className="lg:col-span-5 text-slate-600 leading-relaxed text-sm md:text-base flex flex-col gap-4">
-                  <p>
-                    Hệ điều hành gánh vác 5 chức năng quản lý nền tảng:
-                  </p>
-                  <ul className="list-disc pl-5 text-xs md:text-sm text-slate-700 flex flex-col gap-1.5">
-                    <li><strong>Giao diện (ユーザインタフェース - GUI)</strong>: Quyết định cách thức hiển thị và thao tác.</li>
-                    <li><strong>Điều phối (ソフトとハードの仲介)</strong>: Dung hòa các khác biệt phần cứng của các hãng.</li>
-                    <li><strong>Quản lý bộ nhớ (記憶管理)</strong>: Trao đổi tối ưu giữa Cache ↔ RAM ↔ HDD.</li>
-                    <li><strong>Tiến trình (プロセス管理)</strong>: Lập lịch (Scheduling) đa nhiệm (マルチタスク) cho CPU.</li>
-                    <li><strong>Người dùng (ユーザ管理)</strong>: Bảo mật truy cập file khi có nhiều người dùng (マルチユーザ).</li>
-                  </ul>
-                  <p className="p-3.5 bg-indigo-50 border border-indigo-150 rounded-xl text-indigo-950 text-xs">
-                    💡 **仮想記憶 (Virtual Memory) & Swapping (スワッピング):**
-                    <br />
-                    Khi dung lượng ứng dụng vượt quá bộ nhớ RAM thực tế, OS sử dụng một phân vùng ổ đĩa cứng làm bộ nhớ RAM ảo. Quá trình di chuyển hoán đổi liên tục dữ liệu nhàn rỗi từ RAM ra ổ cứng và ngược lại gọi là **Swapping**.
-                  </p>
+                  <div className="flex flex-col gap-3.5">
+                    <div>
+                      <h4 className="font-bold text-slate-800 text-xs uppercase text-indigo-600">1. ユーザインタフェース (GUI)</h4>
+                      <p className="text-xs text-slate-600 pl-3">
+                        Quyết định tính thao tác (<code>操作性を決めること</code>) như cách dùng chuột/phím, hình ảnh hiển thị (<code>見え方 GUI</code>).
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-800 text-xs uppercase text-indigo-600">2. ソフトとハードの仲介 (Trung gian)</h4>
+                      <p className="text-xs text-slate-600 pl-3">
+                        Hấp thụ/trung hòa các khác biệt phần cứng của các nhà sản xuất (<code>ハードウェアの相違を吸収すること</code>), giúp phần mềm chạy ổn định.
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-800 text-xs uppercase text-indigo-600">3. 記憶管理 (Quản lý bộ nhớ)</h4>
+                      <p className="text-xs text-slate-600 pl-3">
+                        Điều phối luân chuyển dữ liệu tối ưu giữa Cache ↔ RAM ↔ HDD. Dùng ổ cứng làm RAM ảo (<code>仮想記憶</code>) và trao đổi dữ liệu RAM - HDD (<code>スワッピング - Swapping</code>).
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-800 text-xs uppercase text-indigo-600">4. プロセス管理 (Quản lý tiến trình)</h4>
+                      <p className="text-xs text-slate-600 pl-3">
+                        Quản lý các xử lý của phần mềm (<code>プロセスとはソフトウェアの処理のこと</code>). Lập lịch (<code>スケジューリング</code>) giúp chạy đồng thời nhiều chương trình gọi là đa nhiệm (<code>マルチタスク</code>).
+                      </p>
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-slate-800 text-xs uppercase text-indigo-600">5. ユーザ管理 (Quản lý người dùng)</h4>
+                      <p className="text-xs text-slate-600 pl-3">
+                        Lưu trữ môi trường sử dụng của từng tài khoản, giới hạn quyền truy cập tệp tin (<code>他人のファイルへのアクセスを制限する</code>) trong môi trường nhiều người dùng (<code>マルチユーザ</code>).
+                      </p>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Virtual Memory & Swapping Simulator */}
@@ -421,47 +439,73 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
           <div className="flex flex-col gap-8 font-sans">
             <div>
               <h3 className="text-xl md:text-2xl font-black text-slate-800 mb-4">
-                16.3 OS の種類 (Lịch sử & Phân loại các Hệ điều hành tiêu biểu)
+                16.3 OS の種類 (Lịch sử & Đặc trưng nổi bật của các dòng OS)
               </h3>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="p-5 border border-slate-200 rounded-2xl bg-white shadow-sm hover:border-indigo-300 transition-all flex flex-col gap-2">
-                  <span className="font-extrabold text-indigo-700 bg-indigo-50 border border-indigo-150 px-2 py-0.5 rounded self-start text-[10px]">
-                    UNIX & Linux
-                  </span>
-                  <h4 className="font-bold text-lg text-slate-800">UNIX / Linux (Linus Torvalds)</h4>
+                  <div className="flex justify-between items-center">
+                    <span className="font-extrabold text-indigo-700 bg-indigo-50 border border-indigo-150 px-2 py-0.5 rounded text-[10px]">
+                      UNIX & Linux
+                    </span>
+                    <Shield size={16} className="text-indigo-600" />
+                  </div>
+                  <h4 className="font-bold text-lg text-slate-800">UNIX / Linux</h4>
                   <p className="text-xs md:text-sm text-slate-600 leading-relaxed">
-                    UNIX được phát triển tại AT&T Bell Labs, thiết kế nhỏ gọn, dễ mở rộng. Linux được phát triển bởi Linus Torvalds dưới dạng Freeware mã nguồn mở, kế thừa tinh thần chia sẻ của UNIX, hiện đóng vai trò chủ đạo cho máy chủ doanh nghiệp.
+                    • <strong>UNIX</strong>: Phát triển bởi AT&T Bell Labs & ĐH Berkeley. Hiệu năng vượt trội, ban đầu được cung cấp miễn phí và <strong>công khai toàn bộ thông tin mã nguồn bên trong (内部の情報も公開)</strong> giúp các trường đại học đóng góp phát triển.
+                    <br />
+                    • <strong>Linux</strong>: Phát triển bởi <strong>Linus Torvalds (リーナス・トーバルズ)</strong> dưới dạng Freeware độc lập. Mã nguồn mở, an toàn, sử dụng rộng rãi cho <strong>Máy chủ doanh nghiệp (企業のサーバ)</strong>.
                   </p>
                 </div>
 
                 <div className="p-5 border border-slate-200 rounded-2xl bg-white shadow-sm hover:border-blue-300 transition-all flex flex-col gap-2">
-                  <span className="font-extrabold text-blue-700 bg-blue-50 border border-blue-100 px-2 py-0.5 rounded self-start text-[10px]">
-                    Windows
-                  </span>
-                  <h4 className="font-bold text-lg text-slate-800">Microsoft Windows (Bill Gates)</h4>
+                  <div className="flex justify-between items-center">
+                    <span className="font-extrabold text-blue-700 bg-blue-50 border border-blue-100 px-2 py-0.5 rounded text-[10px]">
+                      Windows
+                    </span>
+                    <Monitor size={16} className="text-blue-600" />
+                  </div>
+                  <h4 className="font-bold text-lg text-slate-800">Microsoft Windows</h4>
                   <p className="text-xs md:text-sm text-slate-600 leading-relaxed">
-                    Khởi nguồn từ hệ điều hành MS-DOS hiển thị ký tự văn bản của Bill Gates, bùng nổ khi được hãng khổng lồ IBM chọn làm hệ điều hành cho máy tính cá nhân (PC). Sau đó phát triển giao diện đồ họa chuột và cửa sổ (GUI).
+                    • Khởi nguồn từ hệ điều hành gõ dòng lệnh <strong>MS-DOS</strong> của Microsoft (Bill Gates).
+                    <br />
+                    • Được tập đoàn máy tính khổng lồ <strong>IBM (巨大企業)</strong> chọn làm hệ điều hành cho dòng máy tính cá nhân PC ➔ <strong>飛躍的にユーザ数が増えました (Số lượng người dùng tăng tiến vượt bậc)</strong>.
+                    <br />
+                    • Phát triển hệ thống cửa sổ đồ họa dùng chuột (GUI). Bản Windows 2000 trở đi đổi mới lõi giúp tăng độ ổn định.
                   </p>
                 </div>
 
                 <div className="p-5 border border-slate-200 rounded-2xl bg-white shadow-sm hover:border-purple-300 transition-all flex flex-col gap-2">
-                  <span className="font-extrabold text-purple-700 bg-purple-50 border border-purple-100 px-2 py-0.5 rounded self-start text-[10px]">
-                    MacOS
-                  </span>
-                  <h4 className="font-bold text-lg text-slate-800">Apple MacOS (Steve Jobs)</h4>
+                  <div className="flex justify-between items-center">
+                    <span className="font-extrabold text-purple-700 bg-purple-50 border border-purple-100 px-2 py-0.5 rounded text-[10px]">
+                      MacOS
+                    </span>
+                    <Laptop size={16} className="text-purple-600" />
+                  </div>
+                  <h4 className="font-bold text-lg text-slate-800">Apple MacOS</h4>
                   <p className="text-xs md:text-sm text-slate-600 leading-relaxed">
-                    Khởi nghiệp từ ga-ra ô tô gia đình của Steve Jobs và Steve Wozniak. Năm 1984, Apple ra mắt MacOS tích hợp giao diện chuột kéo thả mang tính đột phá lớn về trải nghiệm người dùng. OS X về sau sử dụng lõi UNIX để tăng tính ổn định.
+                    • Sáng lập bởi Steve Jobs & Steve Wozniak, khởi nguồn từ một doanh nghiệp startup trong xưởng <strong>ga-ra xe gia đình (ガレージ)</strong>.
+                    <br />
+                    • Năm 1984, ra mắt MacOS tích hợp giao diện hệ thống cửa sổ đồ họa dùng chuột kéo thả đột phá lớn (GUI).
+                    <br />
+                    • MacOS X trở đi ứng dụng nhân hệ điều hành UNIX để gia tăng độ ổn định.
                   </p>
                 </div>
 
                 <div className="p-5 border border-slate-200 rounded-2xl bg-white shadow-sm hover:border-amber-300 transition-all flex flex-col gap-2">
-                  <span className="font-extrabold text-amber-700 bg-amber-50 border border-amber-100 px-2 py-0.5 rounded self-start text-[10px]">
-                    家電用OS
-                  </span>
+                  <div className="flex justify-between items-center">
+                    <span className="font-extrabold text-amber-700 bg-amber-50 border border-amber-100 px-2 py-0.5 rounded text-[10px]">
+                      家電用OS (Embedded OS)
+                    </span>
+                    <Cpu size={16} className="text-amber-600 animate-pulse" />
+                  </div>
                   <h4 className="font-bold text-lg text-slate-800">Hệ điều hành nhúng & Gia dụng</h4>
                   <p className="text-xs md:text-sm text-slate-600 leading-relaxed">
-                    OS tích hợp trong đầu đĩa, định vị ô tô, máy game. Đặc biệt trên thị trường di động, các hệ điều hành Symbian, iOS, Android, Windows Phone cạnh tranh thị phần gay gắt, đóng vai trò then chốt cho kinh doanh IT.
+                    • Tích hợp trong đầu thu đĩa cứng (HDD Recorder), car navigation (định vị ô tô), máy chơi game console... giúp rút ngắn chu kỳ phát triển sản phẩm.
+                    <br />
+                    • Đặc biệt trong mảng điện thoại di động: Symbian, iOS, Android, Windows Phone.
+                    <br />
+                    • Do lượng phân phối và bán ra cực kỳ khổng lồ (<strong>販売台数が圧倒的に多い</strong>), mảng này đóng vai trò sống còn trong kinh doanh công nghệ thông tin.
                   </p>
                 </div>
               </div>
@@ -488,7 +532,7 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
                     { label: '(ア) OS が異なっていても OS とアプリ間の I/F は統一されているため意識せず処理できる。', isCorrect: false },
                     { label: '(イ) OS はアプリケーションに対して，CPU やメモリ，補助記憶装置などのコンピュータ資源を割り当てる。', isCorrect: true },
                     { label: '(ウ) OS はファイルの文字コードを自動変換する機能をもつので意識せずに処理できる。', isCorrect: false },
-                    { label: '(エ) アプリが自由に OS 機能を利用できるようにソースコード公開が義務付けられている。', isCorrect: false }
+                    { label: '(エ) アプリが自由に OS 功能を利用できるようにソースコード公開が義務付けられている。', isCorrect: false }
                   ].map((opt, i) => (
                     <div
                       key={i}
@@ -504,7 +548,7 @@ export const Lesson16Theory: React.FC<Lesson16TheoryProps> = ({ onClose }) => {
                 </div>
                 <div className="mt-4 p-3 bg-indigo-50 border border-indigo-100 rounded-lg text-indigo-900 leading-relaxed text-xs">
                   💡 **Giải thích chi tiết:**<br />
-                  Hệ điều hành (OS) chịu trách nhiệm quản lý, phân phối tài nguyên hệ thống (bao gồm CPU, RAM, ổ đĩa cứng/bộ nhớ phụ) cho các ứng dụng một cách hợp lý và an toàn (Đáp án **イ**).
+                  Hệ điều hành (OS) chịu trách nhiệm quản lý, điều phối các tài nguyên phần cứng (CPU, RAM, thiết bị lưu trữ phụ như HDD/SSD) cho các phần mềm ứng dụng sử dụng an toàn và hiệu quả (Tương ứng đáp án **イ**).
                 </div>
               </div>
             </div>

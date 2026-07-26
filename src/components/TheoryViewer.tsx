@@ -13,6 +13,7 @@ import { Lesson11Theory } from './Lesson11Theory';
 import { Lesson12Theory } from './Lesson12Theory';
 import { Lesson13Theory } from './Lesson13Theory';
 import { Lesson14Theory } from './Lesson14Theory';
+import { Lesson15Theory } from './Lesson15Theory';
 import { Lesson16Theory } from './Lesson16Theory';
 import { Lesson17Theory } from './Lesson17Theory';
 import { Lesson18Theory } from './Lesson18Theory';
@@ -83,6 +84,10 @@ export const TheoryViewer: React.FC<TheoryViewerProps> = ({ lessonId, onClose })
 
   if (lessonId === 14) {
     return <Lesson14Theory onClose={onClose} />;
+  }
+
+  if (lessonId === 15) {
+    return <Lesson15Theory onClose={onClose} />;
   }
 
   if (lessonId === 16) {

@@ -6357,6 +6357,7 @@ export const lessons: Lesson[] = [
   {
     id: 15,
     title: "Bài 15 - Nén dữ liệu & Truyền dữ liệu",
+    hasTheory: true,
     sections: [
       {
         id: "lesson-15-vocabulary",
@@ -6692,6 +6693,18 @@ export const lessons: Lesson[] = [
             question: "ランレングス圧縮は色がいくつ並ぶかを記述する圧縮方式です。",
             choices: ["Đúng", "Sai"],
             answer: "Đúng"
+          },
+          {
+            id: "l15-mc-14",
+            question: "5×5 画素の図が 'BBBBB BWWWW BBBBW BWWWW BWWWW' で表されるとき，同じ手法（ランレングス圧縮）で表現すると，圧縮率は何%か。",
+            choices: [
+              "(ア) 48.0",
+              "(イ) 52.0",
+              "(ウ) 76.0",
+              "(エ) 88.0"
+            ],
+            answer: "(イ) 52.0",
+            explanation: "Chuỗi ban đầu có độ dài 25 ký tự: 'BBBBBBWWWWBBBBWBWWWWWBWWWW'. Khi nén theo cơ chế Run-Length: 6B liên tiếp ➔ B6 (2 ký tự); 4W liên tiếp ➔ W4 (2 ký tự); 4B liên tiếp ➔ B4 (2 ký tự); 1W ➔ W (1 ký tự); 1B ➔ B (1 ký tự); 4W liên tiếp ➔ W4 (2 ký tự); 1B ➔ B (1 ký tự); 4W liên tiếp ➔ W4 (2 ký tự). Tổng độ dài chuỗi sau nén = 2+2+2+1+1+2+1+2 = 13 ký tự. Tỷ lệ nén = 13 / 25 = 52.0% (Tương ứng đáp án **イ**)."
           }
         ]
       }

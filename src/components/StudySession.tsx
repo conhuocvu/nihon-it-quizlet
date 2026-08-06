@@ -18,6 +18,7 @@ interface StudySessionProps {
   lessons: Lesson[];
   onBackToSelector: () => void;
   examFilter?: string; // e.g. "de1" — lọc câu theo đề thi
+  qTypeFilter?: string; // e.g. "theory" / "calculation"
 }
 
 // Fisher-Yates shuffle algorithm
@@ -36,6 +37,7 @@ export const StudySession: React.FC<StudySessionProps> = ({
   lessons,
   onBackToSelector,
   examFilter,
+  qTypeFilter,
 }) => {
   const [questions, setQuestions] = useState<SessionQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -81,24 +83,38 @@ export const StudySession: React.FC<StudySessionProps> = ({
       setQuestions(sliced);
     } else if (examFilter) {
       // Filter all items by exam tag
+      const examTags = examFilter.split(',');
       lessons.forEach((lesson) => {
         lesson.sections.forEach((section) => {
           section.items.forEach((item) => {
-            if (item.exam === examFilter) {
-              aggregated.push({
-                item,
-                lessonTitle: lesson.title,
-                sectionTitle: section.title,
-                sectionType: section.type,
-              });
+            if (item.exam && examTags.includes(item.exam)) {
+              const matchesQType =
+                !qTypeFilter ||
+                qTypeFilter === 'all' ||
+                (qTypeFilter === 'theory' && (!item.qType || item.qType === 'theory')) ||
+                (qTypeFilter === 'calculation' && item.qType === 'calculation');
+
+              if (matchesQType) {
+                aggregated.push({
+                  item,
+                  lessonTitle: lesson.title,
+                  sectionTitle: section.title,
+                  sectionType: section.type,
+                });
+              }
             }
           });
         });
       });
-      // Sort by examOrder so questions appear in correct exam sequence
-      aggregated.sort((a, b) =>
-        (a.item.examOrder ?? 999) - (b.item.examOrder ?? 999)
-      );
+      // Sort by exam (based on order of examTags list) then by examOrder so questions appear in correct sequence
+      aggregated.sort((a, b) => {
+        const aExamIndex = examTags.indexOf(a.item.exam || '');
+        const bExamIndex = examTags.indexOf(b.item.exam || '');
+        if (aExamIndex !== bExamIndex) {
+          return aExamIndex - bExamIndex;
+        }
+        return (a.item.examOrder ?? 999) - (b.item.examOrder ?? 999);
+      });
       setQuestions(aggregated);
     } else {
       lessons.forEach((lesson) => {

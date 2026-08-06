@@ -60,6 +60,16 @@ function App() {
     return params.get('exam') || undefined;
   })();
 
+  // Parse qTypeFilter from URL search params (?qType=calculation)
+  const qTypeFilter = (() => {
+    if (route.page !== 'study') return undefined;
+    const hash = window.location.hash;
+    const qIndex = hash.indexOf('?');
+    if (qIndex === -1) return undefined;
+    const params = new URLSearchParams(hash.slice(qIndex + 1));
+    return params.get('qType') || undefined;
+  })();
+
   const handlePaywallSuccess = () => {
     setIsVipUnlocked(true);
     setIsPaywallOpen(false);
@@ -214,8 +224,8 @@ function App() {
             onStartByChapter={(sectionIds) =>
               navigate(`/subject/jfe301/study?sections=${sectionIds.join(',')}`)
             }
-            onStartByExam={(examTag) =>
-              navigate(`/subject/jfe301/study?exam=${examTag}`)
+            onStartByExam={(examTag, qType) =>
+              navigate(`/subject/jfe301/study?exam=${examTag}&qType=${qType}`)
             }
             onBackToHome={() => navigate('/')}
           />
@@ -248,6 +258,7 @@ function App() {
             selectedSectionIds={route.sections && route.sections.length > 0 ? route.sections : selectedSectionIds}
             range={route.range}
             examFilter={examFilter}
+            qTypeFilter={qTypeFilter}
             lessons={currentSubject.lessons}
             onBackToSelector={() => goBack()}
           />

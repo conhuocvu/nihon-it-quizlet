@@ -11,6 +11,7 @@ export type StudyItem = {
   image?: string;
   exam?: string;          // e.g. "de1", "de2" — tag theo đề thi
   examOrder?: number;     // thứ tự câu trong đề (1, 2, 3...)
+  qType?: 'theory' | 'calculation'; // phân loại lý thuyết vs tính toán
 };
 
 export type Section = {

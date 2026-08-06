@@ -1,11 +1,11 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import type { Lesson } from "../data/lessons";
 import { BookOpen, FileText, Play, Layers, ArrowLeft, ClipboardList } from "lucide-react";
 
 interface JFE301SelectorProps {
   lessons: Lesson[];
   onStartByChapter: (sectionIds: string[]) => void;
-  onStartByExam: (examTag: string) => void;
+  onStartByExam: (examTag: string, qType: 'all' | 'theory' | 'calculation') => void;
   onBackToHome: () => void;
 }
 
@@ -17,6 +17,14 @@ export const JFE301Selector: React.FC<JFE301SelectorProps> = ({
 }) => {
   const [tab, setTab] = useState<"chapter" | "exam">("chapter");
   const [selectedSections, setSelectedSections] = useState<string[]>([]);
+  const [selectedQType, setSelectedQType] = useState<"all" | "theory" | "calculation">("all");
+  const [selectedExams, setSelectedExams] = useState<string[]>([]);
+
+  // Clear selections when switching tabs
+  useEffect(() => {
+    setSelectedSections([]);
+    setSelectedExams([]);
+  }, [tab]);
 
   // Collect all exam tags
   const examList = useMemo(() => {
@@ -28,21 +36,47 @@ export const JFE301Selector: React.FC<JFE301SelectorProps> = ({
         })
       )
     );
-    return Array.from(tags).sort();
+    return Array.from(tags).sort((a, b) => {
+      if (a === "su26-fe") return -1;
+      if (b === "su26-fe") return 1;
+      return a.localeCompare(b);
+    });
   }, [lessons]);
 
-  // Count items per exam tag
+  // Count items per exam tag based on selectedQType
   const examCounts = useMemo(() => {
     const counts: Record<string, number> = {};
     lessons.forEach((l) =>
       l.sections.forEach((s) =>
         s.items.forEach((item) => {
-          if (item.exam) counts[item.exam] = (counts[item.exam] || 0) + 1;
+          if (item.exam) {
+            const matchesQType =
+              selectedQType === "all" ||
+              (selectedQType === "theory" && (!item.qType || item.qType === "theory")) ||
+              (selectedQType === "calculation" && item.qType === "calculation");
+            if (matchesQType) {
+              counts[item.exam] = (counts[item.exam] || 0) + 1;
+            }
+          }
         })
       )
     );
     return counts;
-  }, [lessons]);
+  }, [lessons, selectedQType]);
+
+  const selectedExamsCount = useMemo(() => {
+    let total = 0;
+    selectedExams.forEach((tag) => {
+      total += examCounts[tag] || 0;
+    });
+    return total;
+  }, [selectedExams, examCounts]);
+
+  const toggleExam = (tag: string) => {
+    setSelectedExams((prev) =>
+      prev.includes(tag) ? prev.filter((x) => x !== tag) : [...prev, tag]
+    );
+  };
 
 
   const toggleSection = (id: string) => {
@@ -210,40 +244,110 @@ export const JFE301Selector: React.FC<JFE301SelectorProps> = ({
       {/* ── TAB: THEO ĐỀ ── */}
       {tab === "exam" && (
         <div className="max-w-xl mx-auto">
+          {/* Segmented Control Filter */}
+          <div className="flex gap-2 p-1 bg-slate-100 rounded-xl mb-6 max-w-md mx-auto animate-fadeIn">
+            <button
+              onClick={() => setSelectedQType("all")}
+              className={`flex-1 text-center py-1.5 px-3 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                selectedQType === "all"
+                  ? "bg-white text-slate-800 shadow-sm"
+                  : "text-slate-500 hover:text-slate-700"
+              }`}
+            >
+              Tất cả câu hỏi
+            </button>
+            <button
+              onClick={() => setSelectedQType("theory")}
+              className={`flex-1 text-center py-1.5 px-3 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                selectedQType === "theory"
+                  ? "bg-white text-slate-800 shadow-sm"
+                  : "text-slate-500 hover:text-slate-700"
+              }`}
+            >
+              Chỉ Lý thuyết
+            </button>
+            <button
+              onClick={() => setSelectedQType("calculation")}
+              className={`flex-1 text-center py-1.5 px-3 rounded-lg text-xs font-bold transition-all cursor-pointer ${
+                selectedQType === "calculation"
+                  ? "bg-white text-slate-800 shadow-sm"
+                  : "text-slate-500 hover:text-slate-700"
+              }`}
+            >
+              Chỉ Tính toán
+            </button>
+          </div>
+
           {examList.length === 0 ? (
             <div className="text-center py-16 text-slate-400">
               <ClipboardList size={48} className="mx-auto mb-4 opacity-30" />
               <p className="font-semibold">Chưa có đề thi nào được thêm vào</p>
             </div>
           ) : (
-            <div className="flex flex-col gap-4">
-              {examList.map((tag) => {
-                const count = examCounts[tag] || 0;
-                return (
-                  <div
-                    key={tag}
-                    className="flex items-center justify-between p-5 bg-white border border-slate-200 rounded-2xl hover:border-blue-300 hover:shadow-md transition-all duration-200 group"
-                  >
-                    <div className="flex items-center gap-4">
-                      <span className="p-3 rounded-xl bg-blue-50 text-blue-600 group-hover:bg-blue-100 transition-colors">
-                        <ClipboardList size={22} />
-                      </span>
-                      <div>
-                        <p className="font-extrabold text-slate-800 text-lg">{formatExamLabel(tag)}</p>
-                        <p className="text-xs text-slate-400 font-semibold">{count} câu hỏi</p>
-                      </div>
-                    </div>
-                    <button
-                      onClick={() => onStartByExam(tag)}
-                      className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-sky-600 text-white text-sm font-bold shadow-md shadow-blue-200 hover:from-blue-700 hover:to-sky-700 active:scale-95 transition-all cursor-pointer"
+            <>
+              <div className="flex flex-col gap-4">
+                {examList.map((tag) => {
+                  const count = examCounts[tag] || 0;
+                  const isSelected = selectedExams.includes(tag);
+                  return (
+                    <div
+                      key={tag}
+                      onClick={() => toggleExam(tag)}
+                      className={`flex items-center justify-between p-5 bg-white border rounded-2xl hover:border-blue-300 hover:shadow-md transition-all duration-200 group cursor-pointer ${
+                        isSelected ? "border-blue-500 bg-blue-50/20" : "border-slate-200"
+                      }`}
                     >
-                      <Play size={15} fill="currentColor" />
-                      Làm đề
-                    </button>
+                      <div className="flex items-center gap-4">
+                        <input
+                          type="checkbox"
+                          checked={isSelected}
+                          onChange={() => {}} // handled by card click
+                          className="h-4.5 w-4.5 rounded accent-blue-600 cursor-pointer"
+                        />
+                        <span className={`p-3 rounded-xl transition-colors ${
+                          isSelected ? "bg-blue-100 text-blue-700" : "bg-blue-50 text-blue-600 group-hover:bg-blue-100"
+                        }`}>
+                          <ClipboardList size={22} />
+                        </span>
+                        <div>
+                          <p className="font-extrabold text-slate-800 text-lg">{formatExamLabel(tag)}</p>
+                          <p className="text-xs text-slate-400 font-semibold">{count} câu hỏi</p>
+                        </div>
+                      </div>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          onStartByExam(tag, selectedQType);
+                        }}
+                        className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-sky-600 text-white text-sm font-bold shadow-md shadow-blue-200 hover:from-blue-700 hover:to-sky-700 active:scale-95 transition-all cursor-pointer"
+                      >
+                        <Play size={15} fill="currentColor" />
+                        Làm đề
+                      </button>
+                    </div>
+                  );
+                })}
+              </div>
+
+              {/* Multi-Exam Start Bar */}
+              {selectedExams.length > 0 && (
+                <div className="sticky bottom-4 flex items-center justify-between gap-4 bg-white/90 backdrop-blur-md border border-slate-200 rounded-2xl px-6 py-4 shadow-xl shadow-slate-200/50 mt-6 animate-fadeIn">
+                  <div>
+                    <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider">Đã chọn ({selectedExams.length} đề)</p>
+                    <p className="text-lg font-extrabold text-slate-800">
+                      {selectedExamsCount} <span className="text-sm font-normal text-slate-400">câu hỏi</span>
+                    </p>
                   </div>
-                );
-              })}
-            </div>
+                  <button
+                    onClick={() => onStartByExam([...selectedExams].sort((a, b) => examList.indexOf(a) - examList.indexOf(b)).join(','), selectedQType)}
+                    className="flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-white shadow-lg bg-gradient-to-r from-blue-600 to-sky-600 hover:from-blue-700 hover:to-sky-700 cursor-pointer active:scale-95 transition-all"
+                  >
+                    <Play size={17} fill="currentColor" />
+                    Bắt đầu làm đề
+                  </button>
+                </div>
+              )}
+            </>
           )}
         </div>
       )}

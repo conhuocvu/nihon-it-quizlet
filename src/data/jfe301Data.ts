@@ -21,7 +21,8 @@ export const jfe301Lessons: Lesson[] = [
               "A system that can search for information on restaurants and entertainment, send and receive traffic information, and communicate the current position at the time of an emergency by using information-processing equipment installed in vehicles",
               "A system that supports varied work styles by enabling mutual communication between workers with varied working styles, such as home-based employees and senior workers"
             ],
-            "answer": "A system that aims to utilize recyclable energy, supply stable electric power, and optimise demand adjustment through integrated control of power generation and power consumption on the basis of communication and information-processing technology"
+            "answer": "A system that aims to utilize recyclable energy, supply stable electric power, and optimise demand adjustment through integrated control of power generation and power consumption on the basis of communication and information-processing technology",
+            "qType": "theory"
           },
           {
             "id": "jfe301-1-mc-2",
@@ -34,7 +35,8 @@ export const jfe301Lessons: Lesson[] = [
               "Production equipment in a factory is connected through high-speed communication so that the host computer can be controlled in real time.",
               "Productivity of employees in the factory improves each time the cumulative production volume doubles, and the unit cost reduces at a fixed percentage."
             ],
-            "answer": "Instead of programming the working method for the production robot in the factory, the robot itself learns, thus improving work efficiency."
+            "answer": "Instead of programming the working method for the production robot in the factory, the robot itself learns, thus improving work efficiency.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-1-mc-3",
@@ -47,7 +49,8 @@ export const jfe301Lessons: Lesson[] = [
               "By installing equipment that automatically performs idling stops, the fuel efficiency improves compared to that of a vehicle operated by a very experienced driver.",
               "The navigation system updates the software via a mobile phone line and refreshes the map."
             ],
-            "answer": "By acquiring and processing numerous images, the driver assistance system can more reliably distinguish between a pedestrian and a vehicle."
+            "answer": "By acquiring and processing numerous images, the driver assistance system can more reliably distinguish between a pedestrian and a vehicle.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-1-mc-4",
@@ -60,7 +63,8 @@ export const jfe301Lessons: Lesson[] = [
               "FCC standards",
               "ISO standards"
             ],
-            "answer": "ISO standards"
+            "answer": "ISO standards",
+            "qType": "theory"
           },
           {
             "id": "jfe301-1-mc-de2-53",
@@ -73,7 +77,8 @@ export const jfe301Lessons: Lesson[] = [
               "Temperature sensor for equipment",
               "Wireless communication within the factory"
             ],
-            "answer": "Temperature sensor for equipment"
+            "answer": "Temperature sensor for equipment",
+            "qType": "theory"
           },
           {
             "id": "jfe301-1-mc-de2-54",
@@ -86,7 +91,8 @@ export const jfe301Lessons: Lesson[] = [
               "It is used by inserting the tag into a dedicated magnetic reader.",
               "It uses GPS to display location information or attribute information about the current \nlocation."
             ],
-            "answer": "It is stain-resistant, and recorded information can be read from the outside of the \npackage."
+            "answer": "It is stain-resistant, and recorded information can be read from the outside of the \npackage.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-1-mc-de2-55",
@@ -99,7 +105,8 @@ export const jfe301Lessons: Lesson[] = [
               "It is a mechanism by which over-the-counter and Internet sales are integrated to combine \nthe benefits of both and expand overall sales.",
               "It is a mechanism, mainly between individuals, that uses the community function or \nother functions of social media to share, lend, or borrow unused assets owned by \nindividuals."
             ],
-            "answer": "It is a mechanism, mainly between individuals, that uses the community function or \nother functions of social media to share, lend, or borrow unused assets owned by \nindividuals."
+            "answer": "It is a mechanism, mainly between individuals, that uses the community function or \nother functions of social media to share, lend, or borrow unused assets owned by \nindividuals.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-1-mc-de2-60",
@@ -112,7 +119,8 @@ export const jfe301Lessons: Lesson[] = [
               "At the time the DVD-ROM package containing the software is opened",
               "At the time the software is installed on a PC"
             ],
-            "answer": "At the time the DVD-ROM package containing the software is opened"
+            "answer": "At the time the DVD-ROM package containing the software is opened",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-1-mc-de3-3",
@@ -125,7 +133,8 @@ export const jfe301Lessons: Lesson[] = [
               "It is a technology that reproduces vital phenomena or evolutionary processes by using \ncomputers and machines.",
               "It is a technology to give computers the ability to manage learning materials and learning \nby using a web system or other information technology so that people can learn \ninteractively."
             ],
-            "answer": "It is a technology that gives computers the ability to learn in the same way humans \nnaturally learn, such as finding specific patterns from memorized data."
+            "answer": "It is a technology that gives computers the ability to learn in the same way humans \nnaturally learn, such as finding specific patterns from memorized data.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-1-mc-de3-55",
@@ -138,7 +147,8 @@ export const jfe301Lessons: Lesson[] = [
               "Pay a success fee on the basis of the sales of the product",
               "Purchase the desired product"
             ],
-            "answer": "Pay a success fee on the basis of the sales of the product"
+            "answer": "Pay a success fee on the basis of the sales of the product",
+            "qType": "theory"
           },
           {
             "id": "jfe301-1-mc-de3-56",
@@ -151,7 +161,50 @@ export const jfe301Lessons: Lesson[] = [
               "Increasing awareness of power-saving through the visualization of the amount of power \nconsumption",
               "Restraining peak power by controlling power demand through the use of demand \nresponse"
             ],
-            "answer": "Continuing the power supply for a fixed amount of time by functioning as an auxiliary \npower source during a power failure"
+            "answer": "Continuing the power supply for a fixed amount of time by functioning as an auxiliary \npower source during a power failure",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-1-mc-de4-53",
+            "exam": "de4",
+            "examOrder": 53,
+            "image": "/images/jfe301/q53-de4.png",
+            "choices": [
+              "A centralized ledger on a server",
+              "A client-server network",
+              "A distributed ledger on a peer-to-peer network",
+              "A type of cryptocurrency"
+            ],
+            "answer": "A distributed ledger on a peer-to-peer network",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-1-mc-de4-60",
+            "exam": "de4",
+            "examOrder": 60,
+            "image": "/images/jfe301/q60-de4.png",
+            "choices": [
+              "A contract that establishes standard license conditions and deems that a license agreement is automatically established between the rightsholder and the purchaser when a certain amount of package is unwrapped within the scope of the standard license conditions",
+              "A contract that predefines the number of installations and permits the use of software for companies or other such purchasers of large amounts of software",
+              "A contract that restricts the location of use and permits the use of an unlimited number of units or persons within a specific facility",
+              "A contract where use is permitted by selecting to agree to the terms of the contract on the screen that is displayed when software is downloaded from the Internet"
+            ],
+            "answer": "A contract that predefines the number of installations and permits the use of software for companies or other such purchasers of large amounts of software",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-1-mc-de5-53",
+            "exam": "de5",
+            "examOrder": 53,
+            "image": "/images/jfe301/q53-de5.png",
+            "choices": [
+              "Computer networks",
+              "Deep learning",
+              "Internet of things",
+              "Network topology"
+            ],
+            "answer": "Internet of things",
+            "qType": "theory"
           }
         ]
       }
@@ -177,7 +230,8 @@ export const jfe301Lessons: Lesson[] = [
               "^/−ab+cde",
               "^e/−ab+cd"
             ],
-            "answer": "^/−ab+cde"
+            "answer": "^/−ab+cde",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-2",
@@ -190,7 +244,8 @@ export const jfe301Lessons: Lesson[] = [
               "1542.5",
               "5346.0"
             ],
-            "answer": "668.25"
+            "answer": "668.25",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-3",
@@ -203,7 +258,8 @@ export const jfe301Lessons: Lesson[] = [
               "abc×+de×+",
               "abc+×de×+"
             ],
-            "answer": "abc×+de×+"
+            "answer": "abc×+de×+",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-4",
@@ -216,7 +272,8 @@ export const jfe301Lessons: Lesson[] = [
               "Right child of 3",
               "Right child of 10"
             ],
-            "answer": "Right child of 10"
+            "answer": "Right child of 10",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-5",
@@ -229,7 +286,8 @@ export const jfe301Lessons: Lesson[] = [
               "5",
               "7"
             ],
-            "answer": "3"
+            "answer": "3",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-6",
@@ -242,7 +300,8 @@ export const jfe301Lessons: Lesson[] = [
               "Instruction register",
               "Program register (program counter)"
             ],
-            "answer": "Instruction register"
+            "answer": "Instruction register",
+            "qType": "theory"
           },
           {
             "id": "jfe301-2-mc-7",
@@ -255,7 +314,8 @@ export const jfe301Lessons: Lesson[] = [
               "When a cache miss occurs, the CPU fetches data from the cache memory.",
               "When a cache miss occurs, the CPU fetches data from the main memory."
             ],
-            "answer": "When a cache miss occurs, the CPU fetches data from the main memory."
+            "answer": "When a cache miss occurs, the CPU fetches data from the main memory.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-2-mc-8",
@@ -268,7 +328,8 @@ export const jfe301Lessons: Lesson[] = [
               "512",
               "1280"
             ],
-            "answer": "128"
+            "answer": "128",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-9",
@@ -281,7 +342,8 @@ export const jfe301Lessons: Lesson[] = [
               "RAID 5",
               "RAID 6"
             ],
-            "answer": "RAID 1"
+            "answer": "RAID 1",
+            "qType": "theory"
           },
           {
             "id": "jfe301-2-mc-10",
@@ -294,7 +356,8 @@ export const jfe301Lessons: Lesson[] = [
               "(iv), (ii), (i), (iii)",
               "(iv), (iii), (i), (ii)"
             ],
-            "answer": "(iii), (iv), (ii), (i)"
+            "answer": "(iii), (iv), (ii), (i)",
+            "qType": "theory"
           },
           {
             "id": "jfe301-2-mc-11",
@@ -307,7 +370,8 @@ export const jfe301Lessons: Lesson[] = [
               "90",
               "97"
             ],
-            "answer": "97"
+            "answer": "97",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-12",
@@ -320,7 +384,8 @@ export const jfe301Lessons: Lesson[] = [
               "11.5",
               "19"
             ],
-            "answer": "11.5"
+            "answer": "11.5",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-13",
@@ -333,7 +398,8 @@ export const jfe301Lessons: Lesson[] = [
               "OR circuit",
               "XOR circuit"
             ],
-            "answer": "NAND circuit"
+            "answer": "NAND circuit",
+            "qType": "theory"
           },
           {
             "id": "jfe301-2-mc-14",
@@ -346,7 +412,8 @@ export const jfe301Lessons: Lesson[] = [
               "73944",
               "73947"
             ],
-            "answer": "73940"
+            "answer": "73940",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-de2-1",
@@ -359,7 +426,8 @@ export const jfe301Lessons: Lesson[] = [
               "6.0",
               "14.0"
             ],
-            "answer": "14.0"
+            "answer": "14.0",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-de2-2",
@@ -372,7 +440,8 @@ export const jfe301Lessons: Lesson[] = [
               "Shift n 3 bits to the left, then add n to the result.",
               "Shift n 3 bits to the left, then subtract n from the result."
             ],
-            "answer": "Shift n 3 bits to the left, then add n to the result."
+            "answer": "Shift n 3 bits to the left, then add n to the result.",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-de2-3",
@@ -385,7 +454,8 @@ export const jfe301Lessons: Lesson[] = [
               "1/35",
               "1/7"
             ],
-            "answer": "1/7"
+            "answer": "1/7",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-de2-4",
@@ -398,7 +468,8 @@ export const jfe301Lessons: Lesson[] = [
               "0010001000",
               "0011111110"
             ],
-            "answer": "0001000110"
+            "answer": "0001000110",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-de2-5",
@@ -411,7 +482,8 @@ export const jfe301Lessons: Lesson[] = [
               "a, f",
               "b, e"
             ],
-            "answer": "a, f"
+            "answer": "a, f",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-de2-6",
@@ -424,7 +496,8 @@ export const jfe301Lessons: Lesson[] = [
               "4",
               "8"
             ],
-            "answer": "2"
+            "answer": "2",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-de2-8",
@@ -437,7 +510,8 @@ export const jfe301Lessons: Lesson[] = [
               "3.5",
               "5"
             ],
-            "answer": "2"
+            "answer": "2",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-de2-9",
@@ -450,7 +524,8 @@ export const jfe301Lessons: Lesson[] = [
               "30.725",
               "74.1"
             ],
-            "answer": "25.725"
+            "answer": "25.725",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-de2-10",
@@ -463,7 +538,8 @@ export const jfe301Lessons: Lesson[] = [
               "It makes three-dimensional objects using methods such as fused filament fabrication.",
               "It projects computer graphics onto uneven three-dimensional objects such as buildings \nand furniture."
             ],
-            "answer": "It makes three-dimensional objects using methods such as fused filament fabrication."
+            "answer": "It makes three-dimensional objects using methods such as fused filament fabrication.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-2-mc-de2-11",
@@ -476,7 +552,8 @@ export const jfe301Lessons: Lesson[] = [
               "Increasing throughput with parallel processing by virtualizing and integrating several \nservers and PCs and creating a single high-performance computer",
               "Starting up the required server only when data comes in, and freeing up resources by \nstopping the server as soon as the processing is finished"
             ],
-            "answer": "Increasing the real-time nature of processing by performing primary processing of data \non a server or other such computer in a location close to the origin of data, such as a \nsensor that is attached to a user or a device"
+            "answer": "Increasing the real-time nature of processing by performing primary processing of data \non a server or other such computer in a location close to the origin of data, such as a \nsensor that is attached to a user or a device",
+            "qType": "theory"
           },
           {
             "id": "jfe301-2-mc-de2-12",
@@ -489,7 +566,8 @@ export const jfe301Lessons: Lesson[] = [
               "a * (1 - b)^3 * (1 - c)^2",
               "a * (1 - (1 - b)^3) * (1 - (1 - c)^2)"
             ],
-            "answer": "a * (1 - (1 - b)^3) * (1 - (1 - c)^2)"
+            "answer": "a * (1 - (1 - b)^3) * (1 - (1 - c)^2)",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-de2-13",
@@ -502,7 +580,8 @@ export const jfe301Lessons: Lesson[] = [
               "20",
               "22"
             ],
-            "answer": "20"
+            "answer": "20",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-de2-14",
@@ -515,7 +594,8 @@ export const jfe301Lessons: Lesson[] = [
               "Splitting the record key into 123 and 456 and using their sum, 579, as the address",
               "Using the record key 123456 as the address"
             ],
-            "answer": "Splitting the record key into 123 and 456 and using their sum, 579, as the address"
+            "answer": "Splitting the record key into 123 and 456 and using their sum, 579, as the address",
+            "qType": "theory"
           },
           {
             "id": "jfe301-2-mc-de2-15",
@@ -528,7 +608,8 @@ export const jfe301Lessons: Lesson[] = [
               "3",
               "4"
             ],
-            "answer": "2"
+            "answer": "2",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-de2-16",
@@ -541,7 +622,8 @@ export const jfe301Lessons: Lesson[] = [
               "A • B̅",
               "A̅ • B̅"
             ],
-            "answer": "A̅ • B"
+            "answer": "A̅ • B",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-de2-17",
@@ -554,7 +636,8 @@ export const jfe301Lessons: Lesson[] = [
               "Shading",
               "Texture mapping"
             ],
-            "answer": "Anti-aliasing"
+            "answer": "Anti-aliasing",
+            "qType": "theory"
           },
           {
             "id": "jfe301-2-mc-de3-1",
@@ -567,7 +650,8 @@ export const jfe301Lessons: Lesson[] = [
               "Bitwise OR operation with 00001111.",
               "Bitwise XOR operation with 00001111."
             ],
-            "answer": "Bitwise AND operation with 11110000."
+            "answer": "Bitwise AND operation with 11110000.",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-de3-2",
@@ -580,7 +664,8 @@ export const jfe301Lessons: Lesson[] = [
               "11101.011",
               "11101.110"
             ],
-            "answer": "10111.011"
+            "answer": "10111.011",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-de3-4",
@@ -593,7 +678,8 @@ export const jfe301Lessons: Lesson[] = [
               "Sensor L > Sensor R: Motor L Increase, Motor R Decrease; Sensor L < Sensor R: Motor L Decrease, Motor R Increase",
               "Sensor L > Sensor R: Motor L Increase, Motor R Decrease; Sensor L < Sensor R: Motor L Increase, Motor R Decrease"
             ],
-            "answer": "Sensor L > Sensor R: Motor L Increase, Motor R Decrease; Sensor L < Sensor R: Motor L Decrease, Motor R Increase"
+            "answer": "Sensor L > Sensor R: Motor L Increase, Motor R Decrease; Sensor L < Sensor R: Motor L Decrease, Motor R Increase",
+            "qType": "theory"
           },
           {
             "id": "jfe301-2-mc-de3-5",
@@ -606,7 +692,8 @@ export const jfe301Lessons: Lesson[] = [
               "In-order, Post-order",
               "In-order, Pre-order"
             ],
-            "answer": "In-order, Pre-order"
+            "answer": "In-order, Pre-order",
+            "qType": "theory"
           },
           {
             "id": "jfe301-2-mc-de3-6",
@@ -619,7 +706,8 @@ export const jfe301Lessons: Lesson[] = [
               "A B D E F C",
               "A B D F E C"
             ],
-            "answer": "A B D F E C"
+            "answer": "A B D F E C",
+            "qType": "theory"
           },
           {
             "id": "jfe301-2-mc-de3-7",
@@ -632,7 +720,8 @@ export const jfe301Lessons: Lesson[] = [
               "79, 92, 35, 14",
               "92, 79, 14, 35"
             ],
-            "answer": "14, 79, 35, 92"
+            "answer": "14, 79, 35, 92",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-de3-8",
@@ -645,7 +734,8 @@ export const jfe301Lessons: Lesson[] = [
               "200",
               "3,200"
             ],
-            "answer": "200"
+            "answer": "200",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-de3-9",
@@ -658,7 +748,8 @@ export const jfe301Lessons: Lesson[] = [
               "Stack pointer",
               "Status register"
             ],
-            "answer": "Stack pointer"
+            "answer": "Stack pointer",
+            "qType": "theory"
           },
           {
             "id": "jfe301-2-mc-de3-10",
@@ -671,7 +762,8 @@ export const jfe301Lessons: Lesson[] = [
               "0.83",
               "1.00"
             ],
-            "answer": "0.83"
+            "answer": "0.83",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-de3-11",
@@ -684,7 +776,8 @@ export const jfe301Lessons: Lesson[] = [
               "If PaaS is to be used, platform management and OS updates are performed by the service provider, so the burden of installation and operation can be reduced.",
               "If SaaS is to be used temporarily for the development or evaluation of an internal business system, a highly flexible development environment can be provided."
             ],
-            "answer": "If PaaS is to be used, platform management and OS updates are performed by the service provider, so the burden of installation and operation can be reduced."
+            "answer": "If PaaS is to be used, platform management and OS updates are performed by the service provider, so the burden of installation and operation can be reduced.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-2-mc-de3-12",
@@ -697,7 +790,8 @@ export const jfe301Lessons: Lesson[] = [
               "0.18",
               "0.19"
             ],
-            "answer": "0.18"
+            "answer": "0.18",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-de3-13",
@@ -710,7 +804,8 @@ export const jfe301Lessons: Lesson[] = [
               "24576",
               "24684"
             ],
-            "answer": "24684"
+            "answer": "24684",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-de3-14",
@@ -723,7 +818,8 @@ export const jfe301Lessons: Lesson[] = [
               "3.25",
               "3.5"
             ],
-            "answer": "2.75"
+            "answer": "2.75",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-de3-15",
@@ -736,7 +832,8 @@ export const jfe301Lessons: Lesson[] = [
               "24",
               "25"
             ],
-            "answer": "24"
+            "answer": "24",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-2-mc-de3-16",
@@ -749,7 +846,8 @@ export const jfe301Lessons: Lesson[] = [
               "It converts power from an energy source into rotation, translational motion, or other movements based on control signals.",
               "It detects position, angle, velocity, acceleration, force, temperature, and similar parameters, and converts them into electrical information."
             ],
-            "answer": "It converts power from an energy source into rotation, translational motion, or other movements based on control signals."
+            "answer": "It converts power from an energy source into rotation, translational motion, or other movements based on control signals.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-2-mc-de3-17",
@@ -762,7 +860,834 @@ export const jfe301Lessons: Lesson[] = [
               "Logical check",
               "Sequence check"
             ],
-            "answer": "Logical check"
+            "answer": "Logical check",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-de4-1",
+            "exam": "de4",
+            "examOrder": 1,
+            "image": "/images/jfe301/q1-de4.png",
+            "choices": [
+              "Q: False, R: False",
+              "Q: False, R: True",
+              "Q: True, R: False",
+              "Q: True, R: True"
+            ],
+            "answer": "Q: True, R: True",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de4-2",
+            "exam": "de4",
+            "examOrder": 2,
+            "image": "/images/jfe301/q2-de4.png",
+            "choices": [
+              "-3",
+              "0",
+              "3",
+              "40/3"
+            ],
+            "answer": "0",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de4-3",
+            "exam": "de4",
+            "examOrder": 3,
+            "image": "/images/jfe301/q3-de4.png",
+            "choices": [
+              "O(log n)",
+              "O(n)",
+              "O(n^2)",
+              "O(n log n)"
+            ],
+            "answer": "O(n log n)",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-de4-4",
+            "exam": "de4",
+            "examOrder": 4,
+            "image": "/images/jfe301/q4-de4.png",
+            "choices": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "answer": "C",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-de4-5",
+            "exam": "de4",
+            "examOrder": 5,
+            "image": "/images/jfe301/q5-de4.png",
+            "choices": [
+              "11",
+              "20",
+              "27",
+              "45"
+            ],
+            "answer": "20",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de4-6",
+            "exam": "de4",
+            "examOrder": 6,
+            "image": "/images/jfe301/q6-de4.png",
+            "choices": [
+              "6",
+              "9",
+              "15",
+              "25"
+            ],
+            "answer": "15",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de4-7",
+            "exam": "de4",
+            "examOrder": 7,
+            "image": "/images/jfe301/q7-de4.png",
+            "choices": [
+              "An intermediate reference value is determined, and then the elements are divided into two groups of \"larger\" values and \"smaller\" values. This operation is recursively repeated.",
+              "Each set of elements extracted at regular intervals is sorted, and then the interval is further decreased. The operation is repeatedly performed until the interval becomes 1.",
+              "The element with the largest value is determined and swapped for the last element, and then the largest value of the unsorted elements is determined and swapped for the second-to-the-last element. This operation is repeated in the same way.",
+              "Two adjacent elements are repeatedly compared and swapped if the first element is larger than the second. This operation is repeated until all elements are arranged in an orderly fashion."
+            ],
+            "answer": "The element with the largest value is determined and swapped for the last element, and then the largest value of the unsorted elements is determined and swapped for the second-to-the-last element. This operation is repeated in the same way.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-de4-8",
+            "exam": "de4",
+            "examOrder": 8,
+            "image": "/images/jfe301/q8-de4.png",
+            "choices": [
+              "0.03",
+              "0.41",
+              "2.44",
+              "35.00"
+            ],
+            "answer": "2.44",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de4-9",
+            "exam": "de4",
+            "examOrder": 9,
+            "image": "/images/jfe301/q9-de4.png",
+            "choices": [
+              "315",
+              "360",
+              "1,215",
+              "1,260"
+            ],
+            "answer": "360",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de4-10",
+            "exam": "de4",
+            "examOrder": 10,
+            "image": "/images/jfe301/q10-de4.png",
+            "choices": [
+              "To access disk files faster and more efficiently",
+              "To clean up temporary and junk files",
+              "To delete IBG (interblock gap) and increase capacity",
+              "To protect disk drives from physical failures"
+            ],
+            "answer": "To access disk files faster and more efficiently",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-de4-11",
+            "exam": "de4",
+            "examOrder": 11,
+            "image": "/images/jfe301/q11-de4.png",
+            "choices": [
+              "Even when the user performs an incorrect operation, a problem does not occur in the system.",
+              "Even when there is a partial system fault, the required functions of the overall system are maintained.",
+              "When a device configuring the system fails, damage can be minimized by enabling the system to stop safely.",
+              "When a system failure occurs, processing is continued by switching to a standby system."
+            ],
+            "answer": "When a device configuring the system fails, damage can be minimized by enabling the system to stop safely.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-de4-12",
+            "exam": "de4",
+            "examOrder": 12,
+            "image": "/images/jfe301/q12-de4.png",
+            "choices": [
+              "0.003",
+              "0.031",
+              "0.282",
+              "0.795"
+            ],
+            "answer": "0.795",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de4-13",
+            "exam": "de4",
+            "examOrder": 13,
+            "image": "/images/jfe301/q13-de4.png",
+            "choices": [
+              "Asking the user to input the instruction corresponding to the page",
+              "Looking for a page in CPU cache",
+              "Looking for a page in virtual memory on the hard disk",
+              "Looking for the missed block corresponding to the page on the physical memory"
+            ],
+            "answer": "Looking for a page in virtual memory on the hard disk",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-de4-14",
+            "exam": "de4",
+            "examOrder": 14,
+            "image": "/images/jfe301/q14-de4.png",
+            "choices": [
+              "When A is launched during the execution of B, B is put into a ready state and A is executed.",
+              "When A is launched during the execution of B, B is put into a waiting state and A is executed.",
+              "When B is launched during the execution of A, A is put into a ready state and B is executed.",
+              "When B is launched during the execution of A, A is put into a waiting state and B is executed."
+            ],
+            "answer": "When A is launched during the execution of B, B is put into a ready state and A is executed.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-de4-15",
+            "exam": "de4",
+            "examOrder": 15,
+            "image": "/images/jfe301/q15-de4.png",
+            "choices": [
+              "P1: 0, P2: 2, P3: 4, P4: 9",
+              "P1: 0, P2: 4, P3: 6, P4: 6",
+              "P1: 6, P2: 4, P3: 9, P4: 14",
+              "P1: 6, P2: 6, P3: 13, P4: 12"
+            ],
+            "answer": "P1: 0, P2: 4, P3: 6, P4: 6",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de4-16",
+            "exam": "de4",
+            "examOrder": 16,
+            "image": "/images/jfe301/q16-de4.png",
+            "choices": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "answer": "D",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de4-17",
+            "exam": "de4",
+            "examOrder": 17,
+            "image": "/images/jfe301/q17-de4.png",
+            "choices": [
+              "77",
+              "96",
+              "775",
+              "969"
+            ],
+            "answer": "775",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de5-1",
+            "exam": "de5",
+            "examOrder": 1,
+            "image": "/images/jfe301/q1-de5.png",
+            "choices": [
+              "83.25",
+              "83.5",
+              "291.25",
+              "291.5"
+            ],
+            "answer": "291.25",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de5-2",
+            "exam": "de5",
+            "examOrder": 2,
+            "image": "/images/jfe301/q2-de5.png",
+            "choices": [
+              "1/30",
+              "1/20",
+              "1/10",
+              "3/10"
+            ],
+            "answer": "1/10",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de5-3",
+            "exam": "de5",
+            "examOrder": 3,
+            "image": "/images/jfe301/q3-de5.png",
+            "choices": [
+              "5",
+              "18",
+              "21",
+              "27"
+            ],
+            "answer": "27",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de5-4",
+            "exam": "de5",
+            "examOrder": 4,
+            "image": "/images/jfe301/q4-de5.png",
+            "choices": [
+              "It performs control in a predetermined order.",
+              "It performs control to keep the output in line with the target value.",
+              "It performs control to prevent external disturbances from affecting the output.",
+              "It performs control without using the output."
+            ],
+            "answer": "It performs control to keep the output in line with the target value.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-de5-5",
+            "exam": "de5",
+            "examOrder": 5,
+            "image": "/images/jfe301/q5-de5.png",
+            "choices": [
+              "2, 3, 4, 7, 8, 10, 13, 15, 18",
+              "2, 4, 8, 7, 3, 15, 18, 13, 10",
+              "10, 3, 2, 7, 4, 8, 13, 18, 15",
+              "10, 3, 13, 2, 7, 18, 4, 8, 15"
+            ],
+            "answer": "2, 4, 8, 7, 3, 15, 18, 13, 10",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de5-6",
+            "exam": "de5",
+            "examOrder": 6,
+            "image": "/images/jfe301/q6-de5.png",
+            "choices": [
+              "i >= 2N - 1",
+              "i >= 2N + 1",
+              "x >= 2N - 1",
+              "x >= 2N + 1"
+            ],
+            "answer": "i >= 2N + 1",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de5-7",
+            "exam": "de5",
+            "examOrder": 7,
+            "image": "/images/jfe301/q7-de5.png",
+            "choices": [
+              "N(N-1) / 2",
+              "N^2 / 2",
+              "N(N-1)",
+              "N^2"
+            ],
+            "answer": "N(N-1) / 2",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de5-8",
+            "exam": "de5",
+            "examOrder": 8,
+            "image": "/images/jfe301/q8-de5.png",
+            "choices": [
+              "28.57",
+              "40",
+              "50",
+              "71.43"
+            ],
+            "answer": "28.57",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de5-9",
+            "exam": "de5",
+            "examOrder": 9,
+            "image": "/images/jfe301/q9-de5.png",
+            "choices": [
+              "21.93",
+              "26.67",
+              "27.92",
+              "33.92"
+            ],
+            "answer": "27.92",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de5-10",
+            "exam": "de5",
+            "examOrder": 10,
+            "image": "/images/jfe301/q10-de5.png",
+            "choices": [
+              "Displayport",
+              "HDMI",
+              "SATA",
+              "USB"
+            ],
+            "answer": "USB",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-de5-11",
+            "exam": "de5",
+            "examOrder": 11,
+            "image": "/images/jfe301/q11-de5.png",
+            "choices": [
+              "A redundant configuration, such as duplication, can be used so that even when a device failure occurs, the functions of the overall system are not affected.",
+              "Even when the user performs an incorrect operation, a problem does not occur in the system.",
+              "When a device failure occurs, damage can be minimized by enabling the system to stop safely.",
+              "When a device failure occurs, the system runs even if the usable functions are restricted, and the processing efficiency is reduced."
+            ],
+            "answer": "Even when the user performs an incorrect operation, a problem does not occur in the system.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-de5-12",
+            "exam": "de5",
+            "examOrder": 12,
+            "image": "/images/jfe301/q12-de5.png",
+            "choices": [
+              "(iii), (ii), (iv), (i)",
+              "(iii), (iv), (ii), (i)",
+              "(iv), (ii), (i), (iii)",
+              "(iv), (iii), (i), (ii)"
+            ],
+            "answer": "(iii), (iv), (ii), (i)",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-de5-13",
+            "exam": "de5",
+            "examOrder": 13,
+            "image": "/images/jfe301/q13-de5.png",
+            "choices": [
+              "14",
+              "16",
+              "20",
+              "22"
+            ],
+            "answer": "16",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de5-14",
+            "exam": "de5",
+            "examOrder": 14,
+            "image": "/images/jfe301/q14-de5.png",
+            "choices": [
+              "L < ( R - S ) * T",
+              "L < ( S - R ) * T",
+              "L >= ( R - S ) * T",
+              "L >= ( S - R ) * T"
+            ],
+            "answer": "L >= ( S - R ) * T",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de5-15",
+            "exam": "de5",
+            "examOrder": 15,
+            "image": "/images/jfe301/q15-de5.png",
+            "choices": [
+              "It is advanced search technology that determines the intention of a user's search request by adding recognition and decision functions to an object that combines data and its processing.",
+              "It is data search technology that is fast and highly scalable, in which values converted from data with a specific algorithm are used for storage addresses of the data.",
+              "It is technology and techniques for searching a large volume of accumulated data to identify trends, correlations, patterns, and other information required for management and marketing.",
+              "It is technology created with the aim of increasing the hit ratio for keyword searches and preventing omissions in searches by using a list of synonyms and equivalent words."
+            ],
+            "answer": "It is data search technology that is fast and highly scalable, in which values converted from data with a specific algorithm are used for storage addresses of the data.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-de5-16",
+            "exam": "de5",
+            "examOrder": 16,
+            "image": "/images/jfe301/q16-de5.png",
+            "choices": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "answer": "D",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de5-17",
+            "exam": "de5",
+            "examOrder": 17,
+            "image": "/images/jfe301/q17-de5.png",
+            "choices": [
+              "Key frame method",
+              "Morphing",
+              "Motion capture",
+              "Pixel shader"
+            ],
+            "answer": "Motion capture",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-2",
+            "exam": "su26-fe",
+            "examOrder": 2,
+            "image": "/images/jfe301/q2-su26-fe.png",
+            "choices": [
+              "0",
+              "1",
+              "2",
+              "3"
+            ],
+            "answer": "2",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-3",
+            "exam": "su26-fe",
+            "examOrder": 3,
+            "image": "/images/jfe301/q3-su26-fe.png",
+            "choices": [
+              "1 and 3",
+              "2 and 4",
+              "4 and 5",
+              "2 and 5"
+            ],
+            "answer": "1 and 3",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-6",
+            "exam": "su26-fe",
+            "examOrder": 6,
+            "image": "/images/jfe301/q6-su26-fe.png",
+            "choices": [
+              "FIFO",
+              "LFU",
+              "LIFO",
+              "LRU"
+            ],
+            "answer": "LIFO",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-7",
+            "exam": "su26-fe",
+            "examOrder": 7,
+            "image": "/images/jfe301/q7-su26-fe.png",
+            "choices": [
+              "(A \\cap B) \\cup (A \\cap C) \\cup (B \\cap C)",
+              "((A \\cap B) \\cup (A \\cap C) \\cup (B \\cap C)) \\cap (A \\oplus B \\oplus C)",
+              "(A \\cup B \\cup C) - (A \\oplus B \\oplus C)",
+              "(A \\cup B \\cup C) - (A \\cap B \\cap C)"
+            ],
+            "answer": "(A \\cup B \\cup C) - (A \\oplus B \\oplus C)",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-8",
+            "exam": "su26-fe",
+            "examOrder": 8,
+            "image": "/images/jfe301/q8-su26-fe.png",
+            "choices": [
+              "1110",
+              "1100",
+              "1011",
+              "1101"
+            ],
+            "answer": "1101",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-11",
+            "exam": "su26-fe",
+            "examOrder": 11,
+            "image": "/images/jfe301/q11-su26-fe.png",
+            "choices": [
+              "A set of characters to be displayed on a computer",
+              "A set of glyphs and associated information such as code points",
+              "A set of letters used by a computer as an interface to users",
+              "A visual representation of generic elements generated from a script"
+            ],
+            "answer": "A set of glyphs and associated information such as code points",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-23",
+            "exam": "su26-fe",
+            "examOrder": 23,
+            "image": "/images/jfe301/q23-su26-fe.png",
+            "choices": [
+              "It enables the creation of applets and other programs that run in web browsers. The applets can be run on any environment where virtual machines are implemented.",
+              "It incorporates object-oriented concepts of class and inheritance into C and has upper compatibility with C.",
+              "It is a markup language used on the Web and describes the document structure using tags. It enables the creation of hypertext that links text, movies, etc.",
+              "It is an interpreter-type, object-oriented language developed in the 1970's and includes editor, debugger, and other integrated development environment as well as OS functions."
+            ],
+            "answer": "It enables the creation of applets and other programs that run in web browsers. The applets can be run on any environment where virtual machines are implemented.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-25",
+            "exam": "su26-fe",
+            "examOrder": 25,
+            "image": "/images/jfe301/q25-su26-fe.png",
+            "choices": [
+              "Compiler management, I/O management, and network management",
+              "Data management, job management, and task management",
+              "Development tool management, job management, and memory management",
+              "I/O management, multimedia management, and security management"
+            ],
+            "answer": "Data management, job management, and task management",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-31",
+            "exam": "su26-fe",
+            "examOrder": 31,
+            "image": "/images/jfe301/q31-su26-fe.png",
+            "choices": [
+              "c = 0, s = 0",
+              "c = 0, s = 1",
+              "c = 1, s = 0",
+              "c = 1, s = 1"
+            ],
+            "answer": "c = 1, s = 0",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-33",
+            "exam": "su26-fe",
+            "examOrder": 33,
+            "image": "/images/jfe301/q33-su26-fe.png",
+            "choices": [
+              "Tree A",
+              "Tree B",
+              "Tree C",
+              "Tree D"
+            ],
+            "answer": "Tree A",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-34",
+            "exam": "su26-fe",
+            "examOrder": 34,
+            "image": "/images/jfe301/q34-su26-fe.png",
+            "choices": [
+              "Matrix A",
+              "Matrix B",
+              "Matrix C",
+              "Matrix D"
+            ],
+            "answer": "Matrix D",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-36",
+            "exam": "su26-fe",
+            "examOrder": 36,
+            "image": "/images/jfe301/q36-su26-fe.png",
+            "choices": [
+              "CPU L2 cache memory",
+              "CPU register",
+              "Hard disk",
+              "Main memory"
+            ],
+            "answer": "Hard disk",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-39",
+            "exam": "su26-fe",
+            "examOrder": 39,
+            "image": "/images/jfe301/q39-su26-fe.png",
+            "choices": [
+              "0123456789",
+              "1023476985",
+              "5432018679",
+              "5483692701"
+            ],
+            "answer": "1023476985",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-41",
+            "exam": "su26-fe",
+            "examOrder": 41,
+            "image": "/images/jfe301/q41-su26-fe.png",
+            "choices": [
+              "20.70",
+              "4.76",
+              "18.02",
+              "10.30"
+            ],
+            "answer": "18.02",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-42",
+            "exam": "su26-fe",
+            "examOrder": 42,
+            "image": "/images/jfe301/q42-su26-fe.png",
+            "choices": [
+              "SATA",
+              "RS-232C",
+              "SCSI",
+              "USB"
+            ],
+            "answer": "USB",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-43",
+            "exam": "su26-fe",
+            "examOrder": 43,
+            "image": "/images/jfe301/q43-su26-fe.png",
+            "choices": [
+              "8",
+              "13",
+              "21",
+              "34"
+            ],
+            "answer": "21",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-44",
+            "exam": "su26-fe",
+            "examOrder": 44,
+            "image": "/images/jfe301/q44-su26-fe.png",
+            "choices": [
+              "1100111.1001110001",
+              "1100111.101",
+              "1110011.1001110001",
+              "1110011.101"
+            ],
+            "answer": "1110011.101",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-45",
+            "exam": "su26-fe",
+            "examOrder": 45,
+            "image": "/images/jfe301/q45-su26-fe.png",
+            "choices": [
+              "20",
+              "100",
+              "150",
+              "200"
+            ],
+            "answer": "200",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-47",
+            "exam": "su26-fe",
+            "examOrder": 47,
+            "image": "/images/jfe301/q47-su26-fe.png",
+            "choices": [
+              "It is the elapsed time after a job is submitted to the system until the final result is returned. It is affected by the I/O speed, overhead time, etc.",
+              "It is the maximum number of concurrently executable jobs. It depends on the resources of the system that can be used.",
+              "It is the number of jobs processed per unit time. Spooling helps to improve throughput.",
+              "It is the operating rate of a job, which can be calculated by the expression 'running time of the job / operations time'"
+            ],
+            "answer": "It is the number of jobs processed per unit time. Spooling helps to improve throughput.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-50",
+            "exam": "su26-fe",
+            "examOrder": 50,
+            "image": "/images/jfe301/q50-su26-fe.png",
+            "choices": [
+              "A is true and B is true",
+              "A is false and B is false",
+              "A is true and B is false",
+              "A is false and B is true"
+            ],
+            "answer": "A is false and B is true",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-52",
+            "exam": "su26-fe",
+            "examOrder": 52,
+            "image": "/images/jfe301/q52-su26-fe.png",
+            "choices": [
+              "5",
+              "3",
+              "2",
+              "6"
+            ],
+            "answer": "3",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-54",
+            "exam": "su26-fe",
+            "examOrder": 54,
+            "image": "/images/jfe301/q54-su26-fe.png",
+            "choices": [
+              "2.8",
+              "3.7",
+              "37",
+              "52.3"
+            ],
+            "answer": "3.7",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-55",
+            "exam": "su26-fe",
+            "examOrder": 55,
+            "image": "/images/jfe301/q55-su26-fe.png",
+            "choices": [
+              "In a system with a cluster configuration, even when a server does not work, another server takes over applications and provides functions.",
+              "In order not to lose data even when an application is shut down by mistake, the application regularly saves a copy of data on a storage device during editing.",
+              "In order not to stop a system because of partial functional failures, the system is composed only of hardware and software that are fully verified and highly reliable.",
+              "On the input screen of a reception system that requires an e-mail reply, two input fields for the e-mail address are provided and checked to see if they are the same."
+            ],
+            "answer": "In a system with a cluster configuration, even when a server does not work, another server takes over applications and provides functions.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-58",
+            "exam": "su26-fe",
+            "examOrder": 58,
+            "image": "/images/jfe301/q58-su26-fe.png",
+            "choices": [
+              "CPU L2 cache memory",
+              "CPU register",
+              "Hard disk",
+              "Main memory"
+            ],
+            "answer": "CPU register",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-su26-fe-59",
+            "exam": "su26-fe",
+            "examOrder": 59,
+            "image": "/images/jfe301/q59-su26-fe.png",
+            "choices": [
+              "VGA port",
+              "DVI port",
+              "HDMI port",
+              "Serial port"
+            ],
+            "answer": "HDMI port",
+            "qType": "theory"
           }
         ]
       }
@@ -788,7 +1713,8 @@ export const jfe301Lessons: Lesson[] = [
               "123-456-7890",
               "12345-678-910"
             ],
-            "answer": "123-456-7890"
+            "answer": "123-456-7890",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-3-mc-2",
@@ -801,7 +1727,8 @@ export const jfe301Lessons: Lesson[] = [
               "Constructors are responsible for initializing objects in class-based OOP.",
               "Constructors are inherited by subclasses exactly like regular methods in all class-based OOP languages."
             ],
-            "answer": "Constructors are responsible for initializing objects in class-based OOP."
+            "answer": "Constructors are responsible for initializing objects in class-based OOP.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-3-mc-3",
@@ -814,7 +1741,8 @@ export const jfe301Lessons: Lesson[] = [
               "Interpreter",
               "Linker"
             ],
-            "answer": "Linker"
+            "answer": "Linker",
+            "qType": "theory"
           },
           {
             "id": "jfe301-3-mc-4",
@@ -827,7 +1755,8 @@ export const jfe301Lessons: Lesson[] = [
               "Interaction overview diagram",
               "Use case diagram"
             ],
-            "answer": "Use case diagram"
+            "answer": "Use case diagram",
+            "qType": "theory"
           },
           {
             "id": "jfe301-3-mc-5",
@@ -840,7 +1769,8 @@ export const jfe301Lessons: Lesson[] = [
               "Iterator",
               "Singleton"
             ],
-            "answer": "Adapter"
+            "answer": "Adapter",
+            "qType": "theory"
           },
           {
             "id": "jfe301-3-mc-6",
@@ -853,7 +1783,8 @@ export const jfe301Lessons: Lesson[] = [
               "Creation of a base class by extracting the properties that are common among classes",
               "Inheritance of the properties of a base class by a subclass"
             ],
-            "answer": "Bundling of data and procedures operating on the data as a single object and concealing their implementation inside the object"
+            "answer": "Bundling of data and procedures operating on the data as a single object and concealing their implementation inside the object",
+            "qType": "theory"
           },
           {
             "id": "jfe301-3-mc-7",
@@ -866,7 +1797,8 @@ export const jfe301Lessons: Lesson[] = [
               "Perfective maintenance",
               "Preventive maintenance"
             ],
-            "answer": "Adaptive maintenance"
+            "answer": "Adaptive maintenance",
+            "qType": "theory"
           },
           {
             "id": "jfe301-3-mc-8",
@@ -879,7 +1811,8 @@ export const jfe301Lessons: Lesson[] = [
               "Spiral model",
               "Waterfall model"
             ],
-            "answer": "Agile model"
+            "answer": "Agile model",
+            "qType": "theory"
           },
           {
             "id": "jfe301-3-mc-9",
@@ -892,7 +1825,8 @@ export const jfe301Lessons: Lesson[] = [
               "Optimizing",
               "Quantitatively managed"
             ],
-            "answer": "Optimizing"
+            "answer": "Optimizing",
+            "qType": "theory"
           },
           {
             "id": "jfe301-3-mc-de2-7",
@@ -905,7 +1839,8 @@ export const jfe301Lessons: Lesson[] = [
               "Overloading",
               "Overriding"
             ],
-            "answer": "Overriding"
+            "answer": "Overriding",
+            "qType": "theory"
           },
           {
             "id": "jfe301-3-mc-de2-34",
@@ -918,7 +1853,8 @@ export const jfe301Lessons: Lesson[] = [
               "It shows the flow from one activity to another activity in a system or business process.",
               "It shows the scenarios for how actors, i.e., external users or machines, interact with a \nsystem."
             ],
-            "answer": "It shows the scenarios for how actors, i.e., external users or machines, interact with a \nsystem."
+            "answer": "It shows the scenarios for how actors, i.e., external users or machines, interact with a \nsystem.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-3-mc-de2-35",
@@ -931,7 +1867,8 @@ export const jfe301Lessons: Lesson[] = [
               "Obtaining the opinion of the customer and deciding on the specifications",
               "Transforming the requirements for the software items into a design that describes its top\nlevel structure and identifies the software components"
             ],
-            "answer": "Transforming the requirements for the software items into a design that describes its top\nlevel structure and identifies the software components"
+            "answer": "Transforming the requirements for the software items into a design that describes its top\nlevel structure and identifies the software components",
+            "qType": "theory"
           },
           {
             "id": "jfe301-3-mc-de2-36",
@@ -944,7 +1881,8 @@ export const jfe301Lessons: Lesson[] = [
               "A method that is suitable for tests of calculations and processing systems whose internal \nstate does not change depending on the occurrence of an event.",
               "A method that uses a data flow diagram and a decision table to analyze the internal state \nof a system."
             ],
-            "answer": "A method that checks whether a system behaves according to the designed combinations \nof events and internal states."
+            "answer": "A method that checks whether a system behaves according to the designed combinations \nof events and internal states.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-3-mc-de2-37",
@@ -957,7 +1895,8 @@ export const jfe301Lessons: Lesson[] = [
               "It is conducted by the project manager to verify whether users’ functional requirements \nare met or not.",
               "It is conducted by users to confirm that the software is complete and meets the business \nneeds that prompted the software to be developed."
             ],
-            "answer": "It is conducted by users to confirm that the software is complete and meets the business \nneeds that prompted the software to be developed."
+            "answer": "It is conducted by users to confirm that the software is complete and meets the business \nneeds that prompted the software to be developed.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-3-mc-de2-38",
@@ -970,7 +1909,8 @@ export const jfe301Lessons: Lesson[] = [
               "160,000",
               "640,000"
             ],
-            "answer": "64,000"
+            "answer": "64,000",
+            "qType": "theory"
           },
           {
             "id": "jfe301-3-mc-de2-39",
@@ -983,7 +1923,8 @@ export const jfe301Lessons: Lesson[] = [
               "In order to obtain feedback from users, the prototype of a program to be provided is created at an early stage.",
               "In order to promptly develop a program to be operated, test cases are set in advance, and the program is then coded."
             ],
-            "answer": "In order to improve the maintainability of a program, its internal structure is modified without any change to the external specifications."
+            "answer": "In order to improve the maintainability of a program, its internal structure is modified without any change to the external specifications.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-3-mc-de3-34",
@@ -996,7 +1937,8 @@ export const jfe301Lessons: Lesson[] = [
               "Serverless Architecture",
               "Service-Oriented Architecture (SOA)"
             ],
-            "answer": "Microservices Architecture"
+            "answer": "Microservices Architecture",
+            "qType": "theory"
           },
           {
             "id": "jfe301-3-mc-de3-35",
@@ -1009,7 +1951,8 @@ export const jfe301Lessons: Lesson[] = [
               "c",
               "d"
             ],
-            "answer": "c"
+            "answer": "c",
+            "qType": "theory"
           },
           {
             "id": "jfe301-3-mc-de3-36",
@@ -1022,7 +1965,8 @@ export const jfe301Lessons: Lesson[] = [
               "The source code is analyzed to find out if grammatical errors or logical errors exist in a \nprogram.",
               "The test data of the specified conditions and the program input files are generated \nautomatically."
             ],
-            "answer": "The source code is analyzed to find out if grammatical errors or logical errors exist in a \nprogram."
+            "answer": "The source code is analyzed to find out if grammatical errors or logical errors exist in a \nprogram.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-3-mc-de3-37",
@@ -1035,7 +1979,8 @@ export const jfe301Lessons: Lesson[] = [
               "(A = 4, B = 0), (A = 8, B = 0)",
               "(A = 7, B = 0), (A = 8, B = 2)"
             ],
-            "answer": "(A = 7, B = 0), (A = 8, B = 2)"
+            "answer": "(A = 7, B = 0), (A = 8, B = 2)",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-3-mc-de3-38",
@@ -1048,7 +1993,8 @@ export const jfe301Lessons: Lesson[] = [
               "Performance test",
               "Unit test"
             ],
-            "answer": "Integration test"
+            "answer": "Integration test",
+            "qType": "theory"
           },
           {
             "id": "jfe301-3-mc-de3-39",
@@ -1061,7 +2007,8 @@ export const jfe301Lessons: Lesson[] = [
               "Re-engineering",
               "Reverse engineering"
             ],
-            "answer": "Reverse engineering"
+            "answer": "Reverse engineering",
+            "qType": "theory"
           },
           {
             "id": "jfe301-3-mc-de3-40",
@@ -1074,7 +2021,330 @@ export const jfe301Lessons: Lesson[] = [
               "A self-organizing team responsible for product development",
               "List of tasks and features the Scrum team has yet to complete"
             ],
-            "answer": "A fixed-length period dedicated to developing a product increment"
+            "answer": "A fixed-length period dedicated to developing a product increment",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-de4-34",
+            "exam": "de4",
+            "examOrder": 34,
+            "image": "/images/jfe301/q34-de4.png",
+            "choices": [
+              "Activity diagram",
+              "Sequence diagram",
+              "State machine diagram",
+              "Use case diagram"
+            ],
+            "answer": "State machine diagram",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-de4-35",
+            "exam": "de4",
+            "examOrder": 35,
+            "image": "/images/jfe301/q35-de4.png",
+            "choices": [
+              "Concealing implementation details and exposing only a simplified interface for interacting with objects",
+              "Creating a subclass instance inheriting attributes and behaviors from its superclass",
+              "Defining multiple methods with the same name but different parameters",
+              "Redefining in the child class a method that is already provided by the superclass with the same name and parameters but a different implementation"
+            ],
+            "answer": "Concealing implementation details and exposing only a simplified interface for interacting with objects",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-de4-36",
+            "exam": "de4",
+            "examOrder": 36,
+            "image": "/images/jfe301/q36-de4.png",
+            "choices": [
+              "A mechanism that creates one (1) new object using multiple objects as its parts",
+              "A mechanism where a lower-level class inherits the attribute or operation of a higher-level class",
+              "A mechanism where an application of an operation to a certain object automatically causes the application of that operation to related objects",
+              "A mechanism where an operation to a certain object is internally requested to be performed by another object"
+            ],
+            "answer": "A mechanism where an operation to a certain object is internally requested to be performed by another object",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-de4-37",
+            "exam": "de4",
+            "examOrder": 37,
+            "image": "/images/jfe301/q37-de4.png",
+            "choices": [
+              "Boundary value analysis",
+              "Condition testing",
+              "Equivalence partitioning",
+              "Orthogonal array testing"
+            ],
+            "answer": "Condition testing",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-de4-38",
+            "exam": "de4",
+            "examOrder": 38,
+            "image": "/images/jfe301/q38-de4.png",
+            "choices": [
+              "A driver is a module that is called from the module to be tested",
+              "A driver passes arguments and calls the module to be tested",
+              "A stub is a module used to call the module to be tested",
+              "A stub is used to display or print the values returned from the module to be tested"
+            ],
+            "answer": "A driver passes arguments and calls the module to be tested",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-de4-39",
+            "exam": "de4",
+            "examOrder": 39,
+            "image": "/images/jfe301/q39-de4.png",
+            "choices": [
+              "Daily Scrum",
+              "Retrospective",
+              "Sprint planning",
+              "Sprint review"
+            ],
+            "answer": "Daily Scrum",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-de4-40",
+            "exam": "de4",
+            "examOrder": 40,
+            "image": "/images/jfe301/q40-de4.png",
+            "choices": [
+              "Coding standard",
+              "Pair programming",
+              "Planning game",
+              "Test-driven development"
+            ],
+            "answer": "Pair programming",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-de5-34",
+            "exam": "de5",
+            "examOrder": 34,
+            "image": "/images/jfe301/q34-de5.png",
+            "choices": [
+              "Message and Activity",
+              "Message and Transition",
+              "State and Message",
+              "State and Transition"
+            ],
+            "answer": "State and Transition",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-de5-35",
+            "exam": "de5",
+            "examOrder": 35,
+            "image": "/images/jfe301/q35-de5.png",
+            "choices": [
+              "A class can be defined as a group of objects with similar behavior and attributes. / An object is an instance of a class.",
+              "A class can be defined as a group of objects with similar behavior and attributes. / An object is the blueprint of the class.",
+              "A class is an instance of objects. / An object can be defined as a template that describes the behavior that the class of its type supports.",
+              "A class stores the actual values of its attributes. / An object has the definition and behavior of a class."
+            ],
+            "answer": "A class can be defined as a group of objects with similar behavior and attributes. / An object is an instance of a class.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-de5-36",
+            "exam": "de5",
+            "examOrder": 36,
+            "image": "/images/jfe301/q36-de5.png",
+            "choices": [
+              "It allows developers to define classes incrementally by reusing classes defined previously as the basis for new classes.",
+              "It allows the analyst to focus on the important dimensions while ignoring nonessential dimensions.",
+              "It combines processes and data into a single object.",
+              "It is the provision of a single interface to entities of different types."
+            ],
+            "answer": "It is the provision of a single interface to entities of different types.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-de5-37",
+            "exam": "de5",
+            "examOrder": 37,
+            "image": "/images/jfe301/q37-de5.png",
+            "choices": [
+              "24, 25, 49, 50",
+              "24, 25, 50, 51",
+              "25, 26, 49, 50",
+              "25, 26, 50, 51"
+            ],
+            "answer": "24, 25, 49, 50",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-de5-38",
+            "exam": "de5",
+            "examOrder": 38,
+            "image": "/images/jfe301/q38-de5.png",
+            "choices": [
+              "Acceptance test",
+              "Integration test",
+              "Qualification test",
+              "Unit test"
+            ],
+            "answer": "Integration test",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-de5-39",
+            "exam": "de5",
+            "examOrder": 39,
+            "image": "/images/jfe301/q39-de5.png",
+            "choices": [
+              "The entire software is reconstructed after the existing software is analyzed and understood.",
+              "The existing software is analyzed, and its specification and structure are clarified.",
+              "The internal structure of the software is changed without any change to the externally observed behavior.",
+              "The source code is automatically generated from the design information by a development support tool."
+            ],
+            "answer": "The existing software is analyzed, and its specification and structure are clarified.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-de5-40",
+            "exam": "de5",
+            "examOrder": 40,
+            "image": "/images/jfe301/q40-de5.png",
+            "choices": [
+              "Requirements Analysis -> Design -> Programming -> Deployment -> Testing -> Maintenance",
+              "Requirements Analysis -> Design -> Programming -> Testing -> Deployment -> Maintenance",
+              "Requirements Analysis -> Design -> Programming -> Testing -> Maintenance -> Deployment",
+              "Requirements Analysis -> Programming -> Testing -> Design -> Maintenance -> Deployment"
+            ],
+            "answer": "Requirements Analysis -> Design -> Programming -> Testing -> Deployment -> Maintenance",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-su26-fe-4",
+            "exam": "su26-fe",
+            "examOrder": 4,
+            "image": "/images/jfe301/q4-su26-fe.png",
+            "choices": [
+              "Driver",
+              "Emulator",
+              "Simulator",
+              "Stub"
+            ],
+            "answer": "Stub",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-su26-fe-5",
+            "exam": "su26-fe",
+            "examOrder": 5,
+            "image": "/images/jfe301/q5-su26-fe.png",
+            "choices": [
+              "Class diagram",
+              "Communication diagram",
+              "Object diagram",
+              "Use case diagram"
+            ],
+            "answer": "Class diagram",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-su26-fe-13",
+            "exam": "su26-fe",
+            "examOrder": 13,
+            "image": "/images/jfe301/q13-su26-fe.png",
+            "choices": [
+              "High strength (cohesion) and high coupling",
+              "High strength (cohesion) and low coupling",
+              "Low strength (cohesion) and high coupling",
+              "Low strength (cohesion) and low coupling"
+            ],
+            "answer": "High strength (cohesion) and low coupling",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-su26-fe-21",
+            "exam": "su26-fe",
+            "examOrder": 21,
+            "image": "/images/jfe301/q21-su26-fe.png",
+            "choices": [
+              "It is an architectural style or method to implement software functions corresponding to each activity in business operations as services, and to build the entire system by combining these services.",
+              "It is an architectural style or method to provide IT services that satisfy customer requirements in accordance with a service level agreement, and to build a process required to continuously improve their quality.",
+              "It is an architectural style or method to realize data communication between heterogeneous systems by dividing communication services into seven layers and defining standard protocols and specifications of communication services for each layer.",
+              "It is an architectural style or method to store software on servers in the network to provide only services required by users via a network."
+            ],
+            "answer": "It is an architectural style or method to implement software functions corresponding to each activity in business operations as services, and to build the entire system by combining these services.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-su26-fe-22",
+            "exam": "su26-fe",
+            "examOrder": 22,
+            "image": "/images/jfe301/q22-su26-fe.png",
+            "choices": [
+              "Evolution model",
+              "Growth model",
+              "Spiral model",
+              "Waterfall model"
+            ],
+            "answer": "Spiral model",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-su26-fe-30",
+            "exam": "su26-fe",
+            "examOrder": 30,
+            "image": "/images/jfe301/q30-su26-fe.png",
+            "choices": [
+              "It is necessary that the development environment leased from a rental company be always maintained under the responsibility of the rental company.",
+              "It is necessary to maintain the development environment by updating it to reflect the latest status, even if it is not frequently used.",
+              "It is necessary to maintain the development environment such as through periodic operational checks regardless of usage frequency.",
+              "It is not necessary to maintain the development environment after the commercialization of the product because the environment is not used again."
+            ],
+            "answer": "It is necessary to maintain the development environment such as through periodic operational checks regardless of usage frequency.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-su26-fe-32",
+            "exam": "su26-fe",
+            "examOrder": 32,
+            "image": "/images/jfe301/q32-su26-fe.png",
+            "choices": [
+              "Integration test",
+              "Operational test",
+              "System test",
+              "Unit test"
+            ],
+            "answer": "Integration test",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-su26-fe-37",
+            "exam": "su26-fe",
+            "examOrder": 37,
+            "image": "/images/jfe301/q37-su26-fe.png",
+            "choices": [
+              "Each data store must be connected to another data store with at least one data flow.",
+              "Each data store must have at least one data flow in and one data flow out.",
+              "Each external entity must be connected to another external entity with at least one data flow.",
+              "Each process must have at least one data flow in and one data flow out."
+            ],
+            "answer": "Each process must have at least one data flow in and one data flow out.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-su26-fe-40",
+            "exam": "su26-fe",
+            "examOrder": 40,
+            "image": "/images/jfe301/q40-su26-fe.png",
+            "choices": [
+              "Assertion checker",
+              "Code auditor",
+              "Inspector",
+              "Tracer"
+            ],
+            "answer": "Tracer",
+            "qType": "theory"
           }
         ]
       }
@@ -1100,7 +2370,8 @@ export const jfe301Lessons: Lesson[] = [
               "Risk mitigation",
               "Risk sharing"
             ],
-            "answer": "Risk avoidance"
+            "answer": "Risk avoidance",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-2",
@@ -1113,7 +2384,8 @@ export const jfe301Lessons: Lesson[] = [
               "Risk",
               "Scope"
             ],
-            "answer": "Scope"
+            "answer": "Scope",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-3",
@@ -1126,7 +2398,8 @@ export const jfe301Lessons: Lesson[] = [
               "65",
               "66"
             ],
-            "answer": "66"
+            "answer": "66",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-4-mc-4",
@@ -1139,7 +2412,8 @@ export const jfe301Lessons: Lesson[] = [
               "Understanding the chronological usage of a specific resource and predicting usage changes in the future",
               "Using mathematical techniques, such as queueing theory, and predicting the response time and throughput of a service"
             ],
-            "answer": "Understanding the chronological usage of a specific resource and predicting usage changes in the future"
+            "answer": "Understanding the chronological usage of a specific resource and predicting usage changes in the future",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-5",
@@ -1152,7 +2426,8 @@ export const jfe301Lessons: Lesson[] = [
               "A management system used in marketing and business to automate sales activities, such as contact management, order taking and fulfillment, information sharing, inventory monitoring, and sales forecast analysis",
               "A management technique used to redesign and restructure value-creating processes in an organization to gain significant benefits in productivity, profitability, service, and quality through maximizing the potential of individuals and teams"
             ],
-            "answer": "A management technique used to redesign and restructure value-creating processes in an organization to gain significant benefits in productivity, profitability, service, and quality through maximizing the potential of individuals and teams"
+            "answer": "A management technique used to redesign and restructure value-creating processes in an organization to gain significant benefits in productivity, profitability, service, and quality through maximizing the potential of individuals and teams",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-6",
@@ -1165,7 +2440,8 @@ export const jfe301Lessons: Lesson[] = [
               "In-basket",
               "Role-playing"
             ],
-            "answer": "In-basket"
+            "answer": "In-basket",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-7",
@@ -1178,7 +2454,8 @@ export const jfe301Lessons: Lesson[] = [
               "RFP",
               "Selecting a provider"
             ],
-            "answer": "RFP"
+            "answer": "RFP",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-8",
@@ -1191,7 +2468,8 @@ export const jfe301Lessons: Lesson[] = [
               "Synergy effect",
               "Vertical integration"
             ],
-            "answer": "Synergy effect"
+            "answer": "Synergy effect",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-9",
@@ -1204,7 +2482,8 @@ export const jfe301Lessons: Lesson[] = [
               "Licensing",
               "Wholesaling"
             ],
-            "answer": "Franchising"
+            "answer": "Franchising",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-10",
@@ -1217,7 +2496,8 @@ export const jfe301Lessons: Lesson[] = [
               "Since improvement in product development capability is the target, time for classroom training on product development areas is the indicator.",
               "Since sustainable growth is the target, backlog of orders is the indicator."
             ],
-            "answer": "Since improvement in manufacturing productivity of the product is the target, a reduction in the number of days in manufacturing is the indicator."
+            "answer": "Since improvement in manufacturing productivity of the product is the target, a reduction in the number of days in manufacturing is the indicator.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-11",
@@ -1230,7 +2510,8 @@ export const jfe301Lessons: Lesson[] = [
               "Modifying in-house assets",
               "Creating new products in-house"
             ],
-            "answer": "Purchasing samples and modifying them in-house"
+            "answer": "Purchasing samples and modifying them in-house",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-4-mc-12",
@@ -1243,7 +2524,8 @@ export const jfe301Lessons: Lesson[] = [
               "Prioritizing central decisions rather than empowerment to ensure the quality of products and services",
               "Promoting the capability of each department to work independently in a competitive manner"
             ],
-            "answer": "Designing products and services that meet or exceed customers’ expectations"
+            "answer": "Designing products and services that meet or exceed customers’ expectations",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-13",
@@ -1256,7 +2538,8 @@ export const jfe301Lessons: Lesson[] = [
               "Work sharing",
               "Work-life balance"
             ],
-            "answer": "Work sharing"
+            "answer": "Work sharing",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-14",
@@ -1269,7 +2552,8 @@ export const jfe301Lessons: Lesson[] = [
               "Scenario Analysis",
               "Sensitivity Analysis"
             ],
-            "answer": "Monte Carlo Analysis"
+            "answer": "Monte Carlo Analysis",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-15",
@@ -1282,7 +2566,8 @@ export const jfe301Lessons: Lesson[] = [
               "26,000",
               "26,200"
             ],
-            "answer": "18,200"
+            "answer": "18,200",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-4-mc-de2-40",
@@ -1295,7 +2580,8 @@ export const jfe301Lessons: Lesson[] = [
               "The use of patent rights is mutually licensed among companies in the specified fields of \ntechnology or products.",
               "To ensure that a company’s patent rights are not violated, the right to stop a \ncounterpart’s manufacturing is exercised."
             ],
-            "answer": "The use of patent rights is mutually licensed among companies in the specified fields of \ntechnology or products."
+            "answer": "The use of patent rights is mutually licensed among companies in the specified fields of \ntechnology or products.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de2-41",
@@ -1308,7 +2594,8 @@ export const jfe301Lessons: Lesson[] = [
               "B, E, H",
               "B, F, G"
             ],
-            "answer": "A, C, E, H"
+            "answer": "A, C, E, H",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de2-42",
@@ -1321,7 +2608,8 @@ export const jfe301Lessons: Lesson[] = [
               "80,000",
               "85,000"
             ],
-            "answer": "75,000"
+            "answer": "75,000",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de2-44",
@@ -1334,7 +2622,8 @@ export const jfe301Lessons: Lesson[] = [
               "One (1) problem record is always associated with one (1) incident record.",
               "Problems are classified and recorded by a different criterion from the classification of incidents."
             ],
-            "answer": "A cross-reference to the incident that triggered the problem is included in the record of the problem."
+            "answer": "A cross-reference to the incident that triggered the problem is included in the record of the problem.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de2-45",
@@ -1347,7 +2636,8 @@ export const jfe301Lessons: Lesson[] = [
               "Whether the test plan is created on the basis of the system test requirements, and the \nmanager’s approval of the system operations department is obtained",
               "Whether the user department participates in the review of the system design documents"
             ],
-            "answer": "Whether the user department participates in the review of the system design documents"
+            "answer": "Whether the user department participates in the review of the system design documents",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de2-46",
@@ -1360,7 +2650,8 @@ export const jfe301Lessons: Lesson[] = [
               "Scheduling feasibility",
               "Technical feasibility"
             ],
-            "answer": "Economic feasibility"
+            "answer": "Economic feasibility",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de2-47",
@@ -1373,7 +2664,8 @@ export const jfe301Lessons: Lesson[] = [
               "Securing human resources with capabilities to evaluate the appropriateness of service costs for system maintenance and operation within the company",
               "Using indexes that demonstrate the service quality in order to promote improvement activities after agreeing on the desired level of quality with the subcontractor"
             ],
-            "answer": "Using indexes that demonstrate the service quality in order to promote improvement activities after agreeing on the desired level of quality with the subcontractor"
+            "answer": "Using indexes that demonstrate the service quality in order to promote improvement activities after agreeing on the desired level of quality with the subcontractor",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de2-48",
@@ -1386,7 +2678,8 @@ export const jfe301Lessons: Lesson[] = [
               "Entity-Relationship Diagram (ERD)",
               "Use Case Diagram"
             ],
-            "answer": "Data Flow Diagram (DFD)"
+            "answer": "Data Flow Diagram (DFD)",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de2-49",
@@ -1399,7 +2692,8 @@ export const jfe301Lessons: Lesson[] = [
               "It refers to the ability to plan and manage the allocation of company-wide management \nresources in an effective and integrated manner in order to improve management \nefficiency.",
               "It refers to the concentration of management resources on the unique skills and \ntechnologies of a company that can generate profit and that are superior to those of other \ncompanies."
             ],
-            "answer": "It refers to a qualitative and quantitative understanding of a company’s own products, \nservices, and operations through comparison with those of competitors or advanced \ncompanies."
+            "answer": "It refers to a qualitative and quantitative understanding of a company’s own products, \nservices, and operations through comparison with those of competitors or advanced \ncompanies.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de2-50",
@@ -1412,7 +2706,8 @@ export const jfe301Lessons: Lesson[] = [
               "It is a marketing technique that aims at a diversified approach to consumers by using several media such as television, newspapers, and magazines.",
               "It is a marketing technique that aims to acquire stable sales over a long period of time from each customer by maintaining a good connection with the customer."
             ],
-            "answer": "It is a marketing technique that aims to acquire stable sales over a long period of time from each customer by maintaining a good connection with the customer."
+            "answer": "It is a marketing technique that aims to acquire stable sales over a long period of time from each customer by maintaining a good connection with the customer.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de2-51",
@@ -1425,7 +2720,8 @@ export const jfe301Lessons: Lesson[] = [
               "It is a method or concept that aims to drastically increase sales, profit, and customer \nsatisfaction by improving the efficiency and quality of sales through the use of IT in \nsales activities.",
               "It is a method or concept that aims to improve management efficiency by planning and \ncontrolling the management resources of an entire company in an effective and \ncomprehensive manner."
             ],
-            "answer": "It is a method or concept that aims to improve management efficiency by planning and \ncontrolling the management resources of an entire company in an effective and \ncomprehensive manner."
+            "answer": "It is a method or concept that aims to improve management efficiency by planning and \ncontrolling the management resources of an entire company in an effective and \ncomprehensive manner.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de2-52",
@@ -1438,7 +2734,8 @@ export const jfe301Lessons: Lesson[] = [
               "Outsourcing manufacturing to another company that has a semiconductor manufacturing \nprocess",
               "Wide adoption after passing the competition, resulting in the establishment of a de facto \nstandard"
             ],
-            "answer": "Development of innovative manufacturing procedures that improve the quality of a \nproduct"
+            "answer": "Development of innovative manufacturing procedures that improve the quality of a \nproduct",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de2-56",
@@ -1451,7 +2748,8 @@ export const jfe301Lessons: Lesson[] = [
               "Using a desktop PC instead of a thin client laptop",
               "Using web conferencing instead of traveling to meetings"
             ],
-            "answer": "Using web conferencing instead of traveling to meetings"
+            "answer": "Using web conferencing instead of traveling to meetings",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de2-57",
@@ -1464,7 +2762,8 @@ export const jfe301Lessons: Lesson[] = [
               "The CIO receives queries about the information system, reports on the problems, and gives specific instructions to the department in charge to ensure optimal management of the company-wide information system.",
               "The CIO understands the status of information system development and operation and provides specific instructions on improvements to ensure that the company-wide information system functions optimally."
             ],
-            "answer": "The CIO creates a plan to optimize the effect of investment on information resources across the company to support business strategy when a computerization strategy is established."
+            "answer": "The CIO creates a plan to optimize the effect of investment on information resources across the company to support business strategy when a computerization strategy is established.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de2-58",
@@ -1477,7 +2776,8 @@ export const jfe301Lessons: Lesson[] = [
               "c",
               "d"
             ],
-            "answer": "b"
+            "answer": "b",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de2-59",
@@ -1490,7 +2790,8 @@ export const jfe301Lessons: Lesson[] = [
               "Statement of Cash Flows",
               "Statement of Changes in Equity"
             ],
-            "answer": "Balance sheet"
+            "answer": "Balance sheet",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de3-41",
@@ -1503,7 +2804,8 @@ export const jfe301Lessons: Lesson[] = [
               "An authorized budget for the planned work",
               "Realized cost incurred for the work performed on an activity during a specific time \nperiod"
             ],
-            "answer": "A measure of work completed in terms of budget authorized for that work."
+            "answer": "A measure of work completed in terms of budget authorized for that work.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de3-42",
@@ -1516,7 +2818,8 @@ export const jfe301Lessons: Lesson[] = [
               "The size of the software and duration of the project are estimated based on the effort of \nthe project.",
               "The size of the software and effort of the project are estimated based on the duration of \nthe project."
             ],
-            "answer": "The effort and duration of the project are estimated based on the size of the software."
+            "answer": "The effort and duration of the project are estimated based on the size of the software.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de3-45",
@@ -1529,7 +2832,8 @@ export const jfe301Lessons: Lesson[] = [
               "Taking measures to ensure the confidentiality of documents",
               "Updating documents without delay as changes are made in the system"
             ],
-            "answer": "Taking measures to ensure the confidentiality of documents"
+            "answer": "Taking measures to ensure the confidentiality of documents",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de3-46",
@@ -1542,7 +2846,8 @@ export const jfe301Lessons: Lesson[] = [
               "Enterprise architecture",
               "IT portfolio"
             ],
-            "answer": "IT portfolio"
+            "answer": "IT portfolio",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de3-47",
@@ -1555,7 +2860,8 @@ export const jfe301Lessons: Lesson[] = [
               "To represent processes from multiple viewpoints, some purpose-specific modeling \nmethods are used, and each model is depicted by using standardized notation rules for \nobject modeling.",
               "To thoroughly represent the functions of a process, the events that occur in response to a \nsingle request are described by using the conditional branch format."
             ],
-            "answer": "To represent processes from multiple viewpoints, some purpose-specific modeling \nmethods are used, and each model is depicted by using standardized notation rules for \nobject modeling."
+            "answer": "To represent processes from multiple viewpoints, some purpose-specific modeling \nmethods are used, and each model is depicted by using standardized notation rules for \nobject modeling.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de3-48",
@@ -1568,7 +2874,8 @@ export const jfe301Lessons: Lesson[] = [
               "To provide an environment where data and application software are linked and interoperable between a cloud service for the exclusive use of a company and a general-purpose cloud service",
               "To separately provide the service content of a cloud service as paid services and free services"
             ],
-            "answer": "To provide an environment where data and application software are linked and interoperable between a cloud service for the exclusive use of a company and a general-purpose cloud service"
+            "answer": "To provide an environment where data and application software are linked and interoperable between a cloud service for the exclusive use of a company and a general-purpose cloud service",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de3-49",
@@ -1581,7 +2888,8 @@ export const jfe301Lessons: Lesson[] = [
               "It refers to international standards concerning environmental labels that are certified by a \nthird party on the basis of certain criteria.",
               "It refers to mass promotion of the details of environmental protection activities and \nraising funds for environmental protection from investors."
             ],
-            "answer": "It refers not only to the fulfillment of the requirements of quality and price but to the \npreferential purchase of products and services with a lower environmental burden from \ncompanies that work toward a reduction in their environmental impact."
+            "answer": "It refers not only to the fulfillment of the requirements of quality and price but to the \npreferential purchase of products and services with a lower environmental burden from \ncompanies that work toward a reduction in their environmental impact.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de3-50",
@@ -1594,7 +2902,8 @@ export const jfe301Lessons: Lesson[] = [
               "Demand reaches a peak, and the differentiation of the product and segmentation of the \nmarket become clear. The competition between competitors also intensifies, and it \nbecomes important to add new product types and reduce costs.",
               "The market starts to understand the value of the product. Both the product line and \ndistribution channels need to be expanded. This stage sees an increase in sales and also \nrequires investment."
             ],
-            "answer": "The market starts to understand the value of the product. Both the product line and \ndistribution channels need to be expanded. This stage sees an increase in sales and also \nrequires investment."
+            "answer": "The market starts to understand the value of the product. Both the product line and \ndistribution channels need to be expanded. This stage sees an increase in sales and also \nrequires investment.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de3-51",
@@ -1607,7 +2916,8 @@ export const jfe301Lessons: Lesson[] = [
               "It determines a price that ensures a certain profit margin after all costs are covered on the \nbasis of a target volume of sales.",
               "It determines an appealing price by researching the quality and price that customers \naccept."
             ],
-            "answer": "It determines a price by adding a certain margin to the manufacturing cost and the \npurchasing cost."
+            "answer": "It determines a price by adding a certain margin to the manufacturing cost and the \npurchasing cost.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de3-52",
@@ -1620,7 +2930,8 @@ export const jfe301Lessons: Lesson[] = [
               "Intellectual assets of individuals, such as know-how and experience, are shared across \nthe organization to be used for creative work.",
               "The entire series of business operations, from purchasing and production to sales and \ndistribution, is reexamined both within the company and among companies in view of \ntotal optimization in order to shorten delivery times and minimize inventory."
             ],
-            "answer": "The entire series of business operations, from purchasing and production to sales and \ndistribution, is reexamined both within the company and among companies in view of \ntotal optimization in order to shorten delivery times and minimize inventory."
+            "answer": "The entire series of business operations, from purchasing and production to sales and \ndistribution, is reexamined both within the company and among companies in view of \ntotal optimization in order to shorten delivery times and minimize inventory.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de3-53",
@@ -1633,7 +2944,8 @@ export const jfe301Lessons: Lesson[] = [
               "Making innovative reforms in business processes",
               "Strategically managing business with technology as the core"
             ],
-            "answer": "Developing new products or products that enable differentiation from other companies"
+            "answer": "Developing new products or products that enable differentiation from other companies",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de3-54",
@@ -1646,7 +2958,8 @@ export const jfe301Lessons: Lesson[] = [
               "The production of a product is initiated after an order from a customer is received.",
               "Work instructions and transport instructions are provided by using a worksheet."
             ],
-            "answer": "The number of required components is calculated on the basis of the standard production \nplan of a product."
+            "answer": "The number of required components is calculated on the basis of the standard production \nplan of a product.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de3-57",
@@ -1659,7 +2972,8 @@ export const jfe301Lessons: Lesson[] = [
               "To offer specialized support for meeting administration, such as adjusting the schedule, preparing materials, or taking minutes.",
               "To provide advice only on discussions related to specific areas in which the facilitator specializes, such as technical or legal fields"
             ],
-            "answer": "To encourage the meeting participants to express their opinions and organize the flow of discussions from a neutral and impartial position"
+            "answer": "To encourage the meeting participants to express their opinions and organize the flow of discussions from a neutral and impartial position",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de3-58",
@@ -1672,7 +2986,8 @@ export const jfe301Lessons: Lesson[] = [
               "B is the means of A.",
               "B is the purpose of A."
             ],
-            "answer": "B is the cause of A."
+            "answer": "B is the cause of A.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de3-59",
@@ -1685,7 +3000,8 @@ export const jfe301Lessons: Lesson[] = [
               "It is a methodology for improving performance by systematically removing unnecessary data.",
               "It is a technique for analyzing and improving business processes by using knowledge that is extracted from event logs."
             ],
-            "answer": "It is a technique for analyzing and improving business processes by using knowledge that is extracted from event logs."
+            "answer": "It is a technique for analyzing and improving business processes by using knowledge that is extracted from event logs.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-4-mc-de3-60",
@@ -1698,7 +3014,721 @@ export const jfe301Lessons: Lesson[] = [
               "21,000",
               "36,000"
             ],
-            "answer": "20,000"
+            "answer": "20,000",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-4-mc-de4-41",
+            "exam": "de4",
+            "examOrder": 41,
+            "image": "/images/jfe301/q41-de4.png",
+            "choices": [
+              "To clarify the sequence relation of activities and understand the critical path that should be intensively managed",
+              "To hierarchically detail activities and segment them into a manageable scale",
+              "To optimize the total cost when there is a trade-off between the duration and the cost of development",
+              "To represent the schedule of an activity with a horizontal bar, and clarify the start time and end time of the activity as well as the progress at the present point in time"
+            ],
+            "answer": "To hierarchically detail activities and segment them into a manageable scale",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de4-42",
+            "exam": "de4",
+            "examOrder": 42,
+            "image": "/images/jfe301/q42-de4.png",
+            "choices": [
+              "A hierarchical decomposition of the total scope of work to be carried out by the project team to accomplish the project objectives and create the required deliverables",
+              "Any change to the project scope, which almost consistently requires an adjustment to the project cost or schedule",
+              "The sum of the products, services, and results to be provided as a project",
+              "The uncontrolled expansion of product or project scope without adjustments to time, cost, and resources"
+            ],
+            "answer": "The uncontrolled expansion of product or project scope without adjustments to time, cost, and resources",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de4-43",
+            "exam": "de4",
+            "examOrder": 43,
+            "image": "/images/jfe301/q43-de4.png",
+            "choices": [
+              "A capacity plan is created, implemented, and maintained while human, technical, informational, and financial resources are considered.",
+              "A service catalog and SLA are created for the service to be provided, and they are agreed upon with the customer.",
+              "Costs are monitored and reported against the budget; the financial forecasts are reviewed, and costs are managed.",
+              "Risks to service continuity and availability of services are assessed and documented."
+            ],
+            "answer": "A service catalog and SLA are created for the service to be provided, and they are agreed upon with the customer.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de4-44",
+            "exam": "de4",
+            "examOrder": 44,
+            "image": "/images/jfe301/q44-de4.png",
+            "choices": [
+              "3",
+              "6",
+              "9",
+              "12"
+            ],
+            "answer": "6",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-4-mc-de4-45",
+            "exam": "de4",
+            "examOrder": 45,
+            "image": "/images/jfe301/q45-de4.png",
+            "choices": [
+              "The entire audit interview must be conducted by one (1) system auditor, because discrepancies may occur in the record if multiple auditors are involved.",
+              "The system auditor must instruct the department being audited to implement improvement measures for deficiencies identified during the audit interview.",
+              "The system auditor must make an effort to obtain documents and records that support the information obtained from the department being audited during the audit interview.",
+              "The system auditor must select audit interviewees from administrators who have been an auditor within the department being audited."
+            ],
+            "answer": "The system auditor must make an effort to obtain documents and records that support the information obtained from the department being audited during the audit interview.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de4-46",
+            "exam": "de4",
+            "examOrder": 46,
+            "image": "/images/jfe301/q46-de4.png",
+            "choices": [
+              "It systematically describes the business processes or the information flows necessary for the business strategy.",
+              "It systematically describes the contents of the data necessary for business operations, the relations or structures between the data, etc.",
+              "It systematically describes the functions or system configurations that support business processes.",
+              "It systematically describes the technical components necessary for the developments and operations of the information systems."
+            ],
+            "answer": "It systematically describes the functions or system configurations that support business processes.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de4-47",
+            "exam": "de4",
+            "examOrder": 47,
+            "image": "/images/jfe301/q47-de4.png",
+            "choices": [
+              "A concept of constructing a system by considering the software functions as components called services and combining them",
+              "A concept of improving sales efficiency and quality by using IT for sales activities to increase sales and profits as well as to improve customer satisfaction",
+              "A concept of re-designing the business processes to innovatively improve the cost, quality, service, and speed",
+              "Outsourcing the in-house operations that are not part of the core businesses to concentrate the management resources on the core businesses"
+            ],
+            "answer": "A concept of constructing a system by considering the software functions as components called services and combining them",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de4-48",
+            "exam": "de4",
+            "examOrder": 48,
+            "image": "/images/jfe301/q48-de4.png",
+            "choices": [
+              "Clarifying the flow of information (i.e., data) between the functions constituting business operations",
+              "Clarifying the interface for exchanging information with other systems",
+              "Creating the technical requirements for the development criteria and standards according to the programming language used in system development",
+              "Defining the scope to be implemented as system functions"
+            ],
+            "answer": "Creating the technical requirements for the development criteria and standards according to the programming language used in system development",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de4-49",
+            "exam": "de4",
+            "examOrder": 49,
+            "image": "/images/jfe301/q49-de4.png",
+            "choices": [
+              "Both labor and management to reach an agreement on working conditions and work together with the aim of increasing profits",
+              "For employees to harmonize between work and private life, approach their work with a sense of purpose, and increase the vitality of the organization",
+              "For employees to take an autonomous approach to work with the aim of achieving the objectives that they set for themselves and be evaluated according to the degree of achievement",
+              "To increase the vitality of the organization by respecting the diversity among its employees in terms of aspects such as gender, age, and nationality"
+            ],
+            "answer": "To increase the vitality of the organization by respecting the diversity among its employees in terms of aspects such as gender, age, and nationality",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de4-50",
+            "exam": "de4",
+            "examOrder": 50,
+            "image": "/images/jfe301/q50-de4.png",
+            "choices": [
+              "A group that accepts a new product, service, or other such offering at an early phase, has a large impact on consumers, is sensitive to trends, and makes decisions after collecting information themselves",
+              "A group that accepts a new product, service, or other such offering at the soonest phase without worrying about risks",
+              "A group that is skeptical about the adoption of a new product or new technology and only adopts it after seeing it being adopted by most people around them",
+              "A group that is the most conservative, has limited interest in movements in society and tends to adopt new trends only after they become common or, in some cases, remains firm in refusing their adoption"
+            ],
+            "answer": "A group that accepts a new product, service, or other such offering at an early phase, has a large impact on consumers, is sensitive to trends, and makes decisions after collecting information themselves",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de4-51",
+            "exam": "de4",
+            "examOrder": 51,
+            "image": "/images/jfe301/q51-de4.png",
+            "choices": [
+              "A framework used to support and integrate processes, people, and information across an organization to provide a unified gateway for information and a knowledge base for employees, partners, and customers",
+              "A technology for managing all of a company’s relationships and interactions with customers and potential customers in order to improve business relationships",
+              "A type of software that organizations use to manage day-to-day business activities such as accounting, procurement, project management, risk management and compliance, and supply chain operations",
+              "The broad range of activities required to plan, control, and execute a product's flow, from acquiring raw materials and production through distribution to the final customer, in the most streamlined and cost-effective way possible"
+            ],
+            "answer": "A technology for managing all of a company’s relationships and interactions with customers and potential customers in order to improve business relationships",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de4-52",
+            "exam": "de4",
+            "examOrder": 52,
+            "image": "/images/jfe301/q52-de4.png",
+            "choices": [
+              "A product development technique that sequentially executes processes, such as design, manufacturing, and sales activities",
+              "A technique that analyzes a target system and clarifies its specifications",
+              "A technique that executes processes, such as design and production planning, in parallel with product development",
+              "A technique that grasps the optimal combination of functions and costs and improves value through systematic procedures"
+            ],
+            "answer": "A technique that executes processes, such as design and production planning, in parallel with product development",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de4-54",
+            "exam": "de4",
+            "examOrder": 54,
+            "image": "/images/jfe301/q54-de4.png",
+            "choices": [
+              "Drawing information is managed on both electronic files and hard copies, so the history of design changes cannot be accurately traced.",
+              "High-mix, low-volume production is adopted, so the cost of installing production equipment is increasing.",
+              "Information about materials and quantities necessary for production is complicated, so a miscalculation of order quantity or an interruption of production often occurs.",
+              "There are too many design changes, so production efficiency does not improve."
+            ],
+            "answer": "Information about materials and quantities necessary for production is complicated, so a miscalculation of order quantity or an interruption of production often occurs.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de4-55",
+            "exam": "de4",
+            "examOrder": 55,
+            "image": "/images/jfe301/q55-de4.png",
+            "choices": [
+              "Products that require a wide variety and flexible production",
+              "Products that require division of labor by standardization, simplification, and specialization",
+              "Products that require mass production to increase productivity",
+              "Products whose specifications do not change for a long period"
+            ],
+            "answer": "Products that require a wide variety and flexible production",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de4-56",
+            "exam": "de4",
+            "examOrder": 56,
+            "image": "/images/jfe301/q56-de4.png",
+            "choices": [
+              "Data dictionary",
+              "Data flow diagram",
+              "Data mining",
+              "Data warehouse"
+            ],
+            "answer": "Data mining",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de4-57",
+            "exam": "de4",
+            "examOrder": 57,
+            "image": "/images/jfe301/q57-de4.png",
+            "choices": [
+              "In order to estimate y from x, a quadratic regression coefficient needs to be calculated.",
+              "The correlation coefficient between x and y is negative.",
+              "The correlation coefficient between x and y is positive.",
+              "The regression expression for estimating y from x is the same as that for estimating x from y."
+            ],
+            "answer": "The correlation coefficient between x and y is negative.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de4-58",
+            "exam": "de4",
+            "examOrder": 58,
+            "image": "/images/jfe301/q58-de4.png",
+            "choices": [
+              "50",
+              "60",
+              "70",
+              "80"
+            ],
+            "answer": "70",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-4-mc-de4-59",
+            "exam": "de4",
+            "examOrder": 59,
+            "image": "/images/jfe301/q59-de4.png",
+            "choices": [
+              "5,000",
+              "7,500",
+              "10,000",
+              "12,500"
+            ],
+            "answer": "7,500",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-4-mc-de5-41",
+            "exam": "de5",
+            "examOrder": 41,
+            "image": "/images/jfe301/q41-de5.png",
+            "choices": [
+              "The earliest start time of activity G is delayed by 5 days.",
+              "The latest start time of activity F is delayed by 5 days.",
+              "The project's minimum completion time does not change.",
+              "The project's minimum completion time is increased by 5 days."
+            ],
+            "answer": "The project's minimum completion time does not change.",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-4-mc-de5-42",
+            "exam": "de5",
+            "examOrder": 42,
+            "image": "/images/jfe301/q42-de5.png",
+            "choices": [
+              "0.25",
+              "0.8",
+              "1.0",
+              "1.25"
+            ],
+            "answer": "1.25",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-4-mc-de5-43",
+            "exam": "de5",
+            "examOrder": 43,
+            "image": "/images/jfe301/q43-de5.png",
+            "choices": [
+              "Service design -> Continual service improvement -> Service strategy -> Service operation -> Service transition",
+              "Service design -> Service strategy -> Service operation -> Service transition -> Continual service improvement",
+              "Service strategy -> Service design -> Service operation -> Service transition -> Continual service improvement",
+              "Service strategy -> Service design -> Service transition -> Service operation -> Continual service improvement"
+            ],
+            "answer": "Service strategy -> Service design -> Service transition -> Service operation -> Continual service improvement",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de5-44",
+            "exam": "de5",
+            "examOrder": 44,
+            "image": "/images/jfe301/q44-de5.png",
+            "choices": [
+              "Evaluating if customer satisfaction with the service desk meets the agreed service targets and performing a review to identify improvement opportunities",
+              "Examining measures wherein the amount of free space on a disk is near its threshold",
+              "Investigating the impact of changes made to a program",
+              "Receiving a failure report from a user and checking to see if it corresponds to a known error"
+            ],
+            "answer": "Receiving a failure report from a user and checking to see if it corresponds to a known error",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de5-45",
+            "exam": "de5",
+            "examOrder": 45,
+            "image": "/images/jfe301/q45-de5.png",
+            "choices": [
+              "The administrator of the audited department, who has experience in auditing tasks, is selected as the interviewee.",
+              "The entire interview is conducted by one (1) system auditor, as discrepancies may occur in the record if multiple auditors are involved.",
+              "The system auditor instructs the audited department to take improvement measures for deficiencies found during the interview.",
+              "The system auditor makes an effort to obtain documents and records that support the information obtained from the audited department during the interview."
+            ],
+            "answer": "The system auditor makes an effort to obtain documents and records that support the information obtained from the audited department during the interview.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de5-46",
+            "exam": "de5",
+            "examOrder": 46,
+            "image": "/images/jfe301/q46-de5.png",
+            "choices": [
+              "Deriving the most appropriate response in real time from related materials and all the previous support history according to the content of the inquiry made by a customer",
+              "Displaying the digital content of a response manual or basic customer information on a pop-up window of a screen for responding to requests from the operators",
+              "Repeatedly providing role play training to new operators from an experienced operator who serves as a lecturer by using the response manual as the teaching material",
+              "Transferring a phone call or the relevant support screen to an experienced operator or a dedicated staff when the operator who is responding to a customer over the phone is unable to provide an answer"
+            ],
+            "answer": "Deriving the most appropriate response in real time from related materials and all the previous support history according to the content of the inquiry made by a customer",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de5-47",
+            "exam": "de5",
+            "examOrder": 47,
+            "image": "/images/jfe301/q47-de5.png",
+            "choices": [
+              "Conduct business by a flat organizational structure that has as few hierarchical levels as possible for quick decision making.",
+              "Conduct business by utilizing its core strength in know-how and technology that are unique to the company and cannot be imitated by others.",
+              "Conduct business that enhances overall capabilities to solve problems by sharing knowledge that is scattered throughout the company.",
+              "Implement management innovation in the company on the basis of a comparative analysis with companies that have achieved superior performance."
+            ],
+            "answer": "Conduct business that enhances overall capabilities to solve problems by sharing knowledge that is scattered throughout the company.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de5-48",
+            "exam": "de5",
+            "examOrder": 48,
+            "image": "/images/jfe301/q48-de5.png",
+            "choices": [
+              "It is a document describing the basic policy for the system, including a summary of the system, purpose, necessary functions, system requirements, and contract matters.",
+              "It is a document that is created after an RFP.",
+              "It is a document used by companies looking for the implementation of computerization to request specific system proposals from prospective suppliers such as system vendors.",
+              "It is a document used to request information concerning computerization from prospective suppliers such as system vendors."
+            ],
+            "answer": "It is a document used to request information concerning computerization from prospective suppliers such as system vendors.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de5-49",
+            "exam": "de5",
+            "examOrder": 49,
+            "image": "/images/jfe301/q49-de5.png",
+            "choices": [
+              "Challenger strategy",
+              "Follower strategy",
+              "Leader strategy",
+              "Niche strategy"
+            ],
+            "answer": "Niche strategy",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de5-50",
+            "exam": "de5",
+            "examOrder": 50,
+            "image": "/images/jfe301/q50-de5.png",
+            "choices": [
+              "It refers to a qualitative and quantitative understanding of its products, services, and operations through comparisons with the strongest competitor or advanced companies.",
+              "It refers to dramatical improvements in the costs, quality, service, and speed of a company by fundamentally reviewing and radically redesigning its business processes.",
+              "It refers to the company's unique skills, technologies, and other strenghts that are superior to other companies, which serve as a source of competitive advantage.",
+              "It refers to the management of the allocation of company-wide management resources in an effective and integrated manner so as to achieve an improvement in management efficiency."
+            ],
+            "answer": "It refers to the company's unique skills, technologies, and other strenghts that are superior to other companies, which serve as a source of competitive advantage.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de5-51",
+            "exam": "de5",
+            "examOrder": 51,
+            "image": "/images/jfe301/q51-de5.png",
+            "choices": [
+              "It refers to direct marketing that includes calling people at home and asking for donations, opinions, or purchases.",
+              "It refers to direct marketing that sells products and services and builds customer relationships over the Internet.",
+              "It refers to direct marketing that sends offers, announcements, reminders, or other items to a person at a particular address.",
+              "It refers to direct marketing that sends sales alerts, links to website updates, appointments, or delivery reminders to large groups of people."
+            ],
+            "answer": "It refers to direct marketing that includes calling people at home and asking for donations, opinions, or purchases.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de5-52",
+            "exam": "de5",
+            "examOrder": 52,
+            "image": "/images/jfe301/q52-de5.png",
+            "choices": [
+              "It represents the diffusion process of a new technology. It shows that the growth rate of the penetration rate gradually decreases as products applying the technology penetrate the market, by using a frequency distribution curve.",
+              "It represents the maturing process of technology. It shows that during the time until the new technology is actually spread, the degree of awareness changes as time passes.",
+              "It represents the process of technological progress. It shows that technology advances slowly at the beginning, then advances rapidly, and thereafter, slowly stagnates.",
+              "It represents the relationship between production volume and unit cost. It shows the course of reduction in unit cost with an increase in cumulative production volume."
+            ],
+            "answer": "It represents the process of technological progress. It shows that technology advances slowly at the beginning, then advances rapidly, and thereafter, slowly stagnates.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de5-54",
+            "exam": "de5",
+            "examOrder": 54,
+            "image": "/images/jfe301/q54-de5.png",
+            "choices": [
+              "26,250",
+              "30,000",
+              "31,500",
+              "33,000"
+            ],
+            "answer": "33,000",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-4-mc-de5-55",
+            "exam": "de5",
+            "examOrder": 55,
+            "image": "/images/jfe301/q55-de5.png",
+            "choices": [
+              "A website of a company through which the company publishes information about its management and financial status, as well as performance trends for individual investors",
+              "A website of a company through which the company transmits information about the characteristics and usage methods of its products to the general consumers",
+              "A website of a government organization through which the organization publishes information about its policies and administrative services to the general public",
+              "A website such as a blog and SNS, etc. through which an individual transmits information to an unspecified number of people about the evaluation of products, etc. that the person has used"
+            ],
+            "answer": "A website such as a blog and SNS, etc. through which an individual transmits information to an unspecified number of people about the evaluation of products, etc. that the person has used",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de5-56",
+            "exam": "de5",
+            "examOrder": 56,
+            "image": "/images/jfe301/q56-de5.png",
+            "choices": [
+              "12",
+              "14",
+              "16",
+              "18"
+            ],
+            "answer": "16",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-4-mc-de5-57",
+            "exam": "de5",
+            "examOrder": 57,
+            "image": "/images/jfe301/q57-de5.png",
+            "choices": [
+              "14,000",
+              "18,200",
+              "26,000",
+              "26,200"
+            ],
+            "answer": "18,200",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-4-mc-de5-58",
+            "exam": "de5",
+            "examOrder": 58,
+            "image": "/images/jfe301/q58-de5.png",
+            "choices": [
+              "Designing products and services that meet or exceed customers' expectations",
+              "Focusing on the appointment of staff with long-term work experience in a similar environment",
+              "Prioritizing central decisions rather than empowerment to ensure the quality of products and services",
+              "Promoting the capability of each department to work independently in a competitive manner"
+            ],
+            "answer": "Designing products and services that meet or exceed customers' expectations",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de5-59",
+            "exam": "de5",
+            "examOrder": 59,
+            "image": "/images/jfe301/q59-de5.png",
+            "choices": [
+              "30,000",
+              "35,000",
+              "40,000",
+              "45,000"
+            ],
+            "answer": "45,000",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-4-mc-de5-60",
+            "exam": "de5",
+            "examOrder": 60,
+            "image": "/images/jfe301/q60-de5.png",
+            "choices": [
+              "A recipient who obtains the derivative work must be strictly prohibited from redistributing copies.",
+              "The source code of a separate application that is statically linked to the derivative work does not need to be disclosed.",
+              "When the software is modified and distributed, the source code of the distributed copies is made availabe to the recipients.",
+              "When the source code of the derivative work is disclosed, compensation such as related costs cannot be demanded."
+            ],
+            "answer": "When the software is modified and distributed, the source code of the distributed copies is made availabe to the recipients.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-su26-fe-9",
+            "exam": "su26-fe",
+            "examOrder": 9,
+            "image": "/images/jfe301/q9-su26-fe.png",
+            "choices": [
+              "10:20 a.m.",
+              "10:40 a.m.",
+              "11:20 a.m.",
+              "11:40 a.m."
+            ],
+            "answer": "11:20 a.m.",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-4-mc-su26-fe-12",
+            "exam": "su26-fe",
+            "examOrder": 12,
+            "image": "/images/jfe301/q12-su26-fe.png",
+            "choices": [
+              "Responsiveness",
+              "Availability",
+              "Integrity",
+              "Confidentiality"
+            ],
+            "answer": "Availability",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-su26-fe-15",
+            "exam": "su26-fe",
+            "examOrder": 15,
+            "image": "/images/jfe301/q15-su26-fe.png",
+            "choices": [
+              "Gantt chart",
+              "Network diagram",
+              "Sequence diagram",
+              "WBS"
+            ],
+            "answer": "Network diagram",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-su26-fe-16",
+            "exam": "su26-fe",
+            "examOrder": 16,
+            "image": "/images/jfe301/q16-su26-fe.png",
+            "choices": [
+              "2.0",
+              "3.0",
+              "4.0",
+              "5.8"
+            ],
+            "answer": "4.0",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-4-mc-su26-fe-17",
+            "exam": "su26-fe",
+            "examOrder": 17,
+            "image": "/images/jfe301/q17-su26-fe.png",
+            "choices": [
+              "To integrate groupware into equipment such as PCs and peripheral devices and provide basic hardware control functions",
+              "To enhance the overall work efficiency of the organization by providing an environment for collaborative work",
+              "To enhance the organization's Internet security by implementing a solution that combines both hardware and software into a single security product",
+              "To shorten the period of system development and improve the efficiency of maintenance by installing a suite of packaged software"
+            ],
+            "answer": "To enhance the overall work efficiency of the organization by providing an environment for collaborative work",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-su26-fe-18",
+            "exam": "su26-fe",
+            "examOrder": 18,
+            "image": "/images/jfe301/q18-su26-fe.png",
+            "choices": [
+              "The user is free to use the software for a certain trial period, but must pay to continue using it.",
+              "The user is free to obtain and modify the source code released to the public.",
+              "The copyright for the software is waived.",
+              "Fee-based support services cannot be received."
+            ],
+            "answer": "The user is free to obtain and modify the source code released to the public.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-su26-fe-26",
+            "exam": "su26-fe",
+            "examOrder": 26,
+            "image": "/images/jfe301/q26-su26-fe.png",
+            "choices": [
+              "A -> B -> D -> E, Duration = 15",
+              "A -> C -> D -> E, Duration = 13",
+              "A -> B -> D -> E, Duration = 15",
+              "A -> C -> D -> E, Duration = 14"
+            ],
+            "answer": "A -> B -> D -> E, Duration = 15",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-4-mc-su26-fe-27",
+            "exam": "su26-fe",
+            "examOrder": 27,
+            "image": "/images/jfe301/q27-su26-fe.png",
+            "choices": [
+              "Scope, delivery date, and budget",
+              "Scope, delivery date, and risk",
+              "Scope, budget, and risk",
+              "Delivery date, budget, and risk"
+            ],
+            "answer": "Scope, delivery date, and budget",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-su26-fe-28",
+            "exam": "su26-fe",
+            "examOrder": 28,
+            "image": "/images/jfe301/q28-su26-fe.png",
+            "choices": [
+              "A only",
+              "A and B",
+              "A, B, and C",
+              "A, B, C, and D"
+            ],
+            "answer": "A and B",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-4-mc-su26-fe-38",
+            "exam": "su26-fe",
+            "examOrder": 38,
+            "image": "/images/jfe301/q38-su26-fe.png",
+            "choices": [
+              "Critical path is A - B - D with duration 9",
+              "Critical path is A - C - D with duration 11",
+              "Both paths are critical",
+              "Activity C has slack time"
+            ],
+            "answer": "Critical path is A - C - D with duration 11",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-4-mc-su26-fe-48",
+            "exam": "su26-fe",
+            "examOrder": 48,
+            "image": "/images/jfe301/q48-su26-fe.png",
+            "choices": [
+              "The shortest path from start to finish",
+              "The path with the maximum number of activities",
+              "The longest path that determines the minimum project completion time",
+              "The path with the least cost"
+            ],
+            "answer": "The longest path that determines the minimum project completion time",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-su26-fe-53",
+            "exam": "su26-fe",
+            "examOrder": 53,
+            "image": "/images/jfe301/q53-su26-fe.png",
+            "choices": [
+              "Experience curve effect",
+              "Business continuity plan",
+              "Product life cycle strategy"
+            ],
+            "answer": "Product life cycle strategy",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-su26-fe-56",
+            "exam": "su26-fe",
+            "examOrder": 56,
+            "image": "/images/jfe301/q56-su26-fe.png",
+            "choices": [
+              "Business relation management",
+              "Change management",
+              "Incident management",
+              "Problem management"
+            ],
+            "answer": "Problem management",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-su26-fe-60",
+            "exam": "su26-fe",
+            "examOrder": 60,
+            "image": "/images/jfe301/q60-su26-fe.png",
+            "choices": [
+              "BSC",
+              "CRM",
+              "PPM",
+              "ERP"
+            ],
+            "answer": "CRM",
+            "qType": "theory"
           }
         ]
       }
@@ -1724,7 +3754,8 @@ export const jfe301Lessons: Lesson[] = [
               "Average service time",
               "Average retention number"
             ],
-            "answer": "Utilization"
+            "answer": "Utilization",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-2",
@@ -1737,7 +3768,8 @@ export const jfe301Lessons: Lesson[] = [
               "It inspects the IP packets during transmission to detect possible attacks and intrusions from the Internet.",
               "It only passes the IP packets intended for specific terminals."
             ],
-            "answer": "It converts between private and global IP addresses."
+            "answer": "It converts between private and global IP addresses.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-3",
@@ -1750,7 +3782,8 @@ export const jfe301Lessons: Lesson[] = [
               "Flow control",
               "Media access control"
             ],
-            "answer": "Flow control"
+            "answer": "Flow control",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-4",
@@ -1763,7 +3796,8 @@ export const jfe301Lessons: Lesson[] = [
               "It converts private IP addresses used within a company into global IP addresses and enables access to the Internet.",
               "It enables a program in a server to be called only by its name without being aware of the IP address of the server."
             ],
-            "answer": "It associates domain or host names with IP addresses."
+            "answer": "It associates domain or host names with IP addresses.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-5",
@@ -1776,7 +3810,8 @@ export const jfe301Lessons: Lesson[] = [
               "NFC",
               "UWB"
             ],
-            "answer": "LTE"
+            "answer": "LTE",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-6",
@@ -1789,7 +3824,8 @@ export const jfe301Lessons: Lesson[] = [
               "Authentication by password and one-time code generated by a smartphone application",
               "Authentication by username and password"
             ],
-            "answer": "Authentication by password and one-time code generated by a smartphone application"
+            "answer": "Authentication by password and one-time code generated by a smartphone application",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-7",
@@ -1802,7 +3838,8 @@ export const jfe301Lessons: Lesson[] = [
               "Confidentiality",
               "Integrity"
             ],
-            "answer": "Integrity"
+            "answer": "Integrity",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-8",
@@ -1815,7 +3852,8 @@ export const jfe301Lessons: Lesson[] = [
               "A malicious user that steals private information from a system",
               "A software tool to decrypt an encrypted password"
             ],
-            "answer": "A malicious computer program that presents itself as legitimate"
+            "answer": "A malicious computer program that presents itself as legitimate",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-9",
@@ -1828,7 +3866,8 @@ export const jfe301Lessons: Lesson[] = [
               "Software that assigns randomized MAC addresses to PCs to ensure user privacy on the Internet",
               "Software that generates the random numbers required by computer security application software"
             ],
-            "answer": "Malicious software blocking access to a victimized computer and demanding money to unblock it"
+            "answer": "Malicious software blocking access to a victimized computer and demanding money to unblock it",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-10",
@@ -1841,7 +3880,8 @@ export const jfe301Lessons: Lesson[] = [
               "An organization that creates technical documents concerning the Internet and investigates standardization issues",
               "An organization that defines the IP-address allocation policy, operating and monitoring DNS root servers and coordinating DNS management on a global scale"
             ],
-            "answer": "A generic term for an organization that is established within a company, organization, or government agency, receiving reports on information security incidents for investigation and response"
+            "answer": "A generic term for an organization that is established within a company, organization, or government agency, receiving reports on information security incidents for investigation and response",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-11",
@@ -1854,7 +3894,8 @@ export const jfe301Lessons: Lesson[] = [
               "It selects all the records in the “accounts” table and deletes the “accounts” table from the database.",
               "It selects one record from the “accounts” table and drops the rest of the records in the table."
             ],
-            "answer": "It selects all the records in the “accounts” table and deletes the “accounts” table from the database."
+            "answer": "It selects all the records in the “accounts” table and deletes the “accounts” table from the database.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-12",
@@ -1867,7 +3908,8 @@ export const jfe301Lessons: Lesson[] = [
               "It is a system that is first installed on a trial basis, and if successful, a full-scale installation is implemented.",
               "It is a system with operating performance close to the limit."
             ],
-            "answer": "It is a system that has a significant impact on corporate activities and society when a failure occurs."
+            "answer": "It is a system that has a significant impact on corporate activities and society when a failure occurs.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-13",
@@ -1880,7 +3922,8 @@ export const jfe301Lessons: Lesson[] = [
               "Managing and maintaining the level of SLA that defines downtime",
               "Prohibiting the removal of external storage media from the company without permission"
             ],
-            "answer": "Managing and maintaining the level of SLA that defines downtime"
+            "answer": "Managing and maintaining the level of SLA that defines downtime",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-de2-23",
@@ -1893,7 +3936,8 @@ export const jfe301Lessons: Lesson[] = [
               "QoS",
               "RTP"
             ],
-            "answer": "QoS"
+            "answer": "QoS",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-de2-24",
@@ -1906,7 +3950,8 @@ export const jfe301Lessons: Lesson[] = [
               "78:E1:00:3C:A1:9F",
               "FF:FF:FF:FF:FF:FF"
             ],
-            "answer": "FF:FF:FF:FF:FF:FF"
+            "answer": "FF:FF:FF:FF:FF:FF",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-de2-25",
@@ -1919,7 +3964,8 @@ export const jfe301Lessons: Lesson[] = [
               "Repeater",
               "Router"
             ],
-            "answer": "Gateway"
+            "answer": "Gateway",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-de2-26",
@@ -1932,7 +3978,8 @@ export const jfe301Lessons: Lesson[] = [
               "MIME",
               "SMTP"
             ],
-            "answer": "MIME"
+            "answer": "MIME",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-de2-27",
@@ -1945,7 +3992,8 @@ export const jfe301Lessons: Lesson[] = [
               "Phishing",
               "Pretexting"
             ],
-            "answer": "Baiting"
+            "answer": "Baiting",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-de2-28",
@@ -1958,7 +4006,8 @@ export const jfe301Lessons: Lesson[] = [
               "Y’s private key",
               "Y’s public key"
             ],
-            "answer": "Y’s public key"
+            "answer": "Y’s public key",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-de2-29",
@@ -1971,7 +4020,8 @@ export const jfe301Lessons: Lesson[] = [
               "Company B employees who try to connect to Company A’s web server",
               "Company B employees who try to connect to Company B’s web server"
             ],
-            "answer": "Company B employees who try to connect to Company A’s web server"
+            "answer": "Company B employees who try to connect to Company A’s web server",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-de2-30",
@@ -1984,7 +4034,8 @@ export const jfe301Lessons: Lesson[] = [
               "“Pressure,” also known as incentive or motivation, refers to the selfish reasoning to \njustify committing fraud, such as interpreting things in a way that overcomes guilt or \nshifts blame.",
               "“Rationalization” refers to the feeling of being forced caused by unrealistic performance \ntargets."
             ],
-            "answer": "“Opportunity” refers to the existence of an environment, such as technologies like the \ninformation system, physical environment, organizational rules, etc., that makes fraud \npossible or easy to commit."
+            "answer": "“Opportunity” refers to the existence of an environment, such as technologies like the \ninformation system, physical environment, organizational rules, etc., that makes fraud \npossible or easy to commit.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-de2-31",
@@ -1997,7 +4048,8 @@ export const jfe301Lessons: Lesson[] = [
               "It monitors a server or a network and notifies the administrator when it has detected an \nintrusion or infringement.",
               "It sends test data to a product that it examines and detects any vulnerability from the \nresponse or behavior of the product."
             ],
-            "answer": "It monitors a server or a network and notifies the administrator when it has detected an \nintrusion or infringement."
+            "answer": "It monitors a server or a network and notifies the administrator when it has detected an \nintrusion or infringement.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-de2-32",
@@ -2010,7 +4062,8 @@ export const jfe301Lessons: Lesson[] = [
               "It is conducted at the privilege escalation stage in order to look for any account whose \nprivileges can be obtained.",
               "It is conducted at the unauthorized action stage in order to look for any user information \nthat may be beneficial to the attacker."
             ],
-            "answer": "It is conducted at the preliminary investigation stage in order to look for any service that \ncan be attacked."
+            "answer": "It is conducted at the preliminary investigation stage in order to look for any service that \ncan be attacked.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-de2-33",
@@ -2023,7 +4076,8 @@ export const jfe301Lessons: Lesson[] = [
               "C",
               "D"
             ],
-            "answer": "C"
+            "answer": "C",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-de2-43",
@@ -2036,7 +4090,8 @@ export const jfe301Lessons: Lesson[] = [
               "4.8",
               "7.2"
             ],
-            "answer": "4.8"
+            "answer": "4.8",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-5-mc-de3-23",
@@ -2049,7 +4104,8 @@ export const jfe301Lessons: Lesson[] = [
               "Source IP address",
               "Source MAC address"
             ],
-            "answer": "Destination IP address"
+            "answer": "Destination IP address",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-de3-24",
@@ -2062,7 +4118,8 @@ export const jfe301Lessons: Lesson[] = [
               "Physical",
               "Transport"
             ],
-            "answer": "Network"
+            "answer": "Network",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-de3-25",
@@ -2075,7 +4132,8 @@ export const jfe301Lessons: Lesson[] = [
               "It resolves IP addresses into the corresponding MAC addresses.",
               "It translates IPv4 addresses into IPv6 addresses."
             ],
-            "answer": "It resolves IP addresses into the corresponding MAC addresses."
+            "answer": "It resolves IP addresses into the corresponding MAC addresses.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-de3-26",
@@ -2088,7 +4146,8 @@ export const jfe301Lessons: Lesson[] = [
               "A: ping, B: traceroute",
               "A: traceroute, B: ping"
             ],
-            "answer": "A: ping, B: traceroute"
+            "answer": "A: ping, B: traceroute",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-de3-27",
@@ -2101,7 +4160,8 @@ export const jfe301Lessons: Lesson[] = [
               "In order to obtain internal information, the zone information stored in the DNS server is \ncompiled and transferred.",
               "The version information of the DNS server software is obtained to identify a security \nhole."
             ],
-            "answer": "False domain information is injected into the DNS server that is referenced by a PC, and \nit leads the user to a fake server."
+            "answer": "False domain information is injected into the DNS server that is referenced by a PC, and \nit leads the user to a fake server.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-de3-28",
@@ -2114,7 +4174,8 @@ export const jfe301Lessons: Lesson[] = [
               "Update right",
               "Update right and reference right"
             ],
-            "answer": "Reference right"
+            "answer": "Reference right",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-de3-29",
@@ -2127,7 +4188,8 @@ export const jfe301Lessons: Lesson[] = [
               "No system operation needs to be performed, and no consideration concerning work \nprocedures at the time of a failure or backup is required.",
               "No system security management needs to be performed, and neither the creation of \ninformation security management rules nor the assignment of an administrator is \nrequired."
             ],
-            "answer": "No system construction needs to be performed, and neither the definition of security \nrequirements for application software development nor the design of storage volume for \nsystem logs is required."
+            "answer": "No system construction needs to be performed, and neither the definition of security \nrequirements for application software development nor the design of storage volume for \nsystem logs is required.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-de3-30",
@@ -2140,7 +4202,8 @@ export const jfe301Lessons: Lesson[] = [
               "The PIN is set by combining the numeric information imprinted on the surface of the IC \ncard.",
               "When an IC card is delivered, the PIN is not enclosed, but is notified to the user through \nanother channel."
             ],
-            "answer": "When an IC card is delivered, the PIN is not enclosed, but is notified to the user through \nanother channel."
+            "answer": "When an IC card is delivered, the PIN is not enclosed, but is notified to the user through \nanother channel.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-de3-31",
@@ -2153,7 +4216,8 @@ export const jfe301Lessons: Lesson[] = [
               "The memory usage of the web server is checked periodically to ensure that a buffer \noverflow has not occurred.",
               "The updated date of each file of the contents of the web server is stored and compared \nperiodically with the updated date of each file."
             ],
-            "answer": "The hash value of each file of the contents of the web server is stored and periodically \ncompared with the hash value generated from each file."
+            "answer": "The hash value of each file of the contents of the web server is stored and periodically \ncompared with the hash value generated from each file.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-de3-32",
@@ -2166,7 +4230,8 @@ export const jfe301Lessons: Lesson[] = [
               "Managing user authentication and authorization",
               "Scanning malware on a web server"
             ],
-            "answer": "Inspecting and filtering HTTP requests"
+            "answer": "Inspecting and filtering HTTP requests",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-de3-33",
@@ -2179,7 +4244,8 @@ export const jfe301Lessons: Lesson[] = [
               "It matches the sender mail server IP address with the information from the domain server \nand accepts or rejects email.",
               "It sends an email to the address of a specific person instead of sending them to multiple \nemail addresses."
             ],
-            "answer": "It matches the sender mail server IP address with the information from the domain server \nand accepts or rejects email."
+            "answer": "It matches the sender mail server IP address with the information from the domain server \nand accepts or rejects email.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-5-mc-de3-43",
@@ -2192,7 +4258,8 @@ export const jfe301Lessons: Lesson[] = [
               "3.0",
               "3.6"
             ],
-            "answer": "2.1"
+            "answer": "2.1",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-5-mc-de3-44",
@@ -2205,7 +4272,414 @@ export const jfe301Lessons: Lesson[] = [
               "RPO < MTD",
               "RTO < MTD"
             ],
-            "answer": "RTO < MTD"
+            "answer": "RTO < MTD",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de4-23",
+            "exam": "de4",
+            "examOrder": 23,
+            "image": "/images/jfe301/q23-de4.png",
+            "choices": [
+              "A bridge relays frames based on IP addresses.",
+              "A gateway converts the protocols of only the first through third levels in the OSI basic reference model.",
+              "A repeater extends the transmission distance by amplifying signals between segments of the same type.",
+              "A router relays frames based on MAC addresses."
+            ],
+            "answer": "A repeater extends the transmission distance by amplifying signals between segments of the same type.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de4-24",
+            "exam": "de4",
+            "examOrder": 24,
+            "image": "/images/jfe301/q24-de4.png",
+            "choices": [
+              "192.168.128.127",
+              "192.168.128.255",
+              "192.168.131.255",
+              "192.168.255.255"
+            ],
+            "answer": "192.168.131.255",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-5-mc-de4-25",
+            "exam": "de4",
+            "examOrder": 25,
+            "image": "/images/jfe301/q25-de4.png",
+            "choices": [
+              "NTP",
+              "SMTP",
+              "SNMP",
+              "TELNET"
+            ],
+            "answer": "SNMP",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de4-26",
+            "exam": "de4",
+            "examOrder": 26,
+            "image": "/images/jfe301/q26-de4.png",
+            "choices": [
+              "Dedicated mobile hotspots",
+              "PPPoE",
+              "Tethering",
+              "UPnP"
+            ],
+            "answer": "Tethering",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de4-27",
+            "exam": "de4",
+            "examOrder": 27,
+            "image": "/images/jfe301/q27-de4.png",
+            "choices": [
+              "An email containing pop-up ads for products unrelated to the email",
+              "An email intercepted, altered, and successfully sent",
+              "An email with a link that automatically installs an application collecting and sending data to the remote server",
+              "An email with a link that redirects to a fake banking site"
+            ],
+            "answer": "An email with a link that redirects to a fake banking site",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de4-28",
+            "exam": "de4",
+            "examOrder": 28,
+            "image": "/images/jfe301/q28-de4.png",
+            "choices": [
+              "AND",
+              "NAND",
+              "OR",
+              "XOR"
+            ],
+            "answer": "XOR",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de4-29",
+            "exam": "de4",
+            "examOrder": 29,
+            "image": "/images/jfe301/q29-de4.png",
+            "choices": [
+              "The message is encrypted using a pre-shared secret key.",
+              "The message is encrypted using a private key of the sender.",
+              "The message is encrypted using a public key of the receiver.",
+              "The message is encrypted using a public key of the sender."
+            ],
+            "answer": "The message is encrypted using a public key of the receiver.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de4-30",
+            "exam": "de4",
+            "examOrder": 30,
+            "image": "/images/jfe301/q30-de4.png",
+            "choices": [
+              "Brute Force Attack",
+              "Man-in-the-Middle Attack",
+              "Phishing Attack",
+              "Ransomware Attack"
+            ],
+            "answer": "Man-in-the-Middle Attack",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de4-31",
+            "exam": "de4",
+            "examOrder": 31,
+            "image": "/images/jfe301/q31-de4.png",
+            "choices": [
+              "Focusing on the case where there are users that set a word from the dictionary as their password, selecting one (1) user ID as the target of the attack, and attempting to log in using words in the dictionary and their combinations as the password",
+              "Focusing on the case where there are users that use the same user ID and password on multiple websites, and attempting to log in using a list of user IDs and passwords fraudulently acquired from other websites",
+              "Selecting one (1) frequently used password, and attempting to log in by using user IDs of all possible combinations of characters",
+              "Selecting one (1) user ID as the target of the attack on a website that has a low maximum number of characters for passwords, and attempting to log in by using the user ID and passwords of all possible combinations of characters"
+            ],
+            "answer": "Focusing on the case where there are users that use the same user ID and password on multiple websites, and attempting to log in using a list of user IDs and passwords fraudulently acquired from other websites",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de4-32",
+            "exam": "de4",
+            "examOrder": 32,
+            "image": "/images/jfe301/q32-de4.png",
+            "choices": [
+              "Cross-site scripting",
+              "DNS cache poisoning",
+              "SEO poisoning",
+              "Social engineering"
+            ],
+            "answer": "SEO poisoning",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de4-33",
+            "exam": "de4",
+            "examOrder": 33,
+            "image": "/images/jfe301/q33-de4.png",
+            "choices": [
+              "The centralized control of a range of communication devices in a network, and the changing of network configuration and security settings",
+              "The execution of a file in an isolated virtual environment, and the monitoring of communication to a C&C server and other behavior",
+              "The general analysis of logs that are collected from a range of devices, and the support of analysis and action by an administrator",
+              "The inspection of header information in packets, the identification of application programs that receive communication, and the control of communication"
+            ],
+            "answer": "The general analysis of logs that are collected from a range of devices, and the support of analysis and action by an administrator",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de5-23",
+            "exam": "de5",
+            "examOrder": 23,
+            "image": "/images/jfe301/q23-de5.png",
+            "choices": [
+              "Patch cable",
+              "Repeater hub",
+              "Router",
+              "Switching hub"
+            ],
+            "answer": "Switching hub",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de5-24",
+            "exam": "de5",
+            "examOrder": 24,
+            "image": "/images/jfe301/q24-de5.png",
+            "choices": [
+              "192.168.10.0",
+              "192.168.10.255",
+              "192.168.10.511",
+              "192.168.11.255"
+            ],
+            "answer": "192.168.11.255",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-5-mc-de5-25",
+            "exam": "de5",
+            "examOrder": 25,
+            "image": "/images/jfe301/q25-de5.png",
+            "choices": [
+              "LTE (Long Term Evolution)",
+              "MAC (Media Access Control)",
+              "MDM (Mobile Device Management)",
+              "VoIP (Voice over Internet Protocol)"
+            ],
+            "answer": "LTE (Long Term Evolution)",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de5-26",
+            "exam": "de5",
+            "examOrder": 26,
+            "image": "/images/jfe301/q26-de5.png",
+            "choices": [
+              "arp",
+              "ipconfig",
+              "netstat",
+              "ping"
+            ],
+            "answer": "netstat",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de5-27",
+            "exam": "de5",
+            "examOrder": 27,
+            "image": "/images/jfe301/q27-de5.png",
+            "choices": [
+              "Finding the key by observing the ciphertext change when the plaintext is altered by a certain amount",
+              "Finding the key by testing all key combinations sequentially when a set of plaintext and ciphertext is given",
+              "Finding the key by using the algebraic expression representing the relationship between the plaintext, ciphertext, and key as a clue",
+              "Finding the key by using the statistical correlation between a part of the information of the plaintext and part of the information of the ciphertext as a clue"
+            ],
+            "answer": "Finding the key by testing all key combinations sequentially when a set of plaintext and ciphertext is given",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de5-28",
+            "exam": "de5",
+            "examOrder": 28,
+            "image": "/images/jfe301/q28-de5.png",
+            "choices": [
+              "RFID",
+              "Rootkit",
+              "TKIP",
+              "Web beacon"
+            ],
+            "answer": "Rootkit",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de5-29",
+            "exam": "de5",
+            "examOrder": 29,
+            "image": "/images/jfe301/q29-de5.png",
+            "choices": [
+              "AES",
+              "DH",
+              "DSA",
+              "RSA"
+            ],
+            "answer": "RSA",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de5-30",
+            "exam": "de5",
+            "examOrder": 30,
+            "image": "/images/jfe301/q30-de5.png",
+            "choices": [
+              "Cross-site scripting",
+              "DNS cache poisoning",
+              "SEO poisoning",
+              "Social engineering"
+            ],
+            "answer": "SEO poisoning",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de5-31",
+            "exam": "de5",
+            "examOrder": 31,
+            "image": "/images/jfe301/q31-de5.png",
+            "choices": [
+              "It is a service that authenticates biometric information, such as fingerprints, voice prints, vein patterns, retina, and iris, by using the date and time when the information is registered in the authentication system.",
+              "It is a service that certifies that electronic data certainly exists on a particular date and time and that the data has not been modified since that date and time.",
+              "It is a service that securely verifies that the date and time information is not falsified midway for setting the clocks of the PCs and servers on the network.",
+              "It is a web service that securely displays the global date and time information used in official records by using encrypted communication."
+            ],
+            "answer": "It is a service that certifies that electronic data certainly exists on a particular date and time and that the data has not been modified since that date and time.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de5-32",
+            "exam": "de5",
+            "examOrder": 32,
+            "image": "/images/jfe301/q32-de5.png",
+            "choices": [
+              "Cybersecurity",
+              "Incident Management Center (IMC)",
+              "Network Operations Center (NOC)",
+              "Security Operations Center (SOC)"
+            ],
+            "answer": "Security Operations Center (SOC)",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de5-33",
+            "exam": "de5",
+            "examOrder": 33,
+            "image": "/images/jfe301/q33-de5.png",
+            "choices": [
+              "When 2 is set, reading and execution can be performed.",
+              "When 4 is set, only execution can be performed.",
+              "When 5 is set, only writing can be performed.",
+              "When 6 is set, reading and writing can be performed."
+            ],
+            "answer": "When 4 is set, only execution can be performed.",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-5-mc-su26-fe-1",
+            "exam": "su26-fe",
+            "examOrder": 1,
+            "image": "/images/jfe301/q1-su26-fe.png",
+            "choices": [
+              "Shared IDs are recommended rather than personal IDs in order to reduce consumption of system resources.",
+              "IDs for retired employees should be kept until removal is requested by them.",
+              "Registered IDs and user privileges should be regularly inspected.",
+              "When users are transferred, new access privileges should be granted in addition to the previously vested access privileges."
+            ],
+            "answer": "Registered IDs and user privileges should be regularly inspected.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-su26-fe-10",
+            "exam": "su26-fe",
+            "examOrder": 10,
+            "image": "/images/jfe301/q10-su26-fe.png",
+            "choices": [
+              "Based on the name list of the new employees, the registration of all users is performed beforehand in all business systems.",
+              "In order to promptly respond to the change in the person in charge of a business operation, a common user ID is used for each business group.",
+              "Irrespective of the user's job title, the appropriate access rights are set in each business system on the basis of the user's job role.",
+              "When staff reassignment occurs frequently, the access rights are changed all at once at the beginning of the year."
+            ],
+            "answer": "Irrespective of the user's job title, the appropriate access rights are set in each business system on the basis of the user's job role.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-su26-fe-19",
+            "exam": "su26-fe",
+            "examOrder": 19,
+            "image": "/images/jfe301/q19-su26-fe.png",
+            "choices": [
+              "Cold site, warm site, hot site",
+              "Hot site, warm site, cold site",
+              "Warm site, cold site, hot site",
+              "Warm site, hot site, cold site"
+            ],
+            "answer": "Hot site, warm site, cold site",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-su26-fe-29",
+            "exam": "su26-fe",
+            "examOrder": 29,
+            "image": "/images/jfe301/q29-su26-fe.png",
+            "choices": [
+              "A's private key",
+              "A's public key",
+              "B's private key",
+              "B's public key"
+            ],
+            "answer": "A's public key",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-su26-fe-35",
+            "exam": "su26-fe",
+            "examOrder": 35,
+            "image": "/images/jfe301/q35-su26-fe.png",
+            "choices": [
+              "Dynamic Home Configuration Protocol",
+              "Dynamic Host Configuration Protocol",
+              "Decentralized Hospital Computer Program",
+              "Dynamic Host Configuration Program"
+            ],
+            "answer": "Dynamic Host Configuration Protocol",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-su26-fe-46",
+            "exam": "su26-fe",
+            "examOrder": 46,
+            "image": "/images/jfe301/q46-su26-fe.png",
+            "choices": [
+              "Mr. X's private key",
+              "Mr. Y's public key",
+              "Mr. Y's private key",
+              "Mr. X's public key"
+            ],
+            "answer": "Mr. Y's public key",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-su26-fe-57",
+            "exam": "su26-fe",
+            "examOrder": 57,
+            "image": "/images/jfe301/q57-su26-fe.png",
+            "choices": [
+              "Router A forwards all packets to the router B and router C",
+              "Router A forwards packets only to router B...",
+              "Router A forwards packets only to router C on the basis of the destination IP address in the packet",
+              "Router A knows the location of the terminal B from the destination MAC address..."
+            ],
+            "answer": "Router A forwards packets only to router C on the basis of the destination IP address in the packet",
+            "qType": "theory"
           }
         ]
       }
@@ -2231,7 +4705,8 @@ export const jfe301Lessons: Lesson[] = [
               "Attributes and columns are ordered from left to right.",
               "Neither tuples nor rows have duplicates."
             ],
-            "answer": "A relation is mapped to a table."
+            "answer": "A relation is mapped to a table.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-6-mc-2",
@@ -2244,7 +4719,8 @@ export const jfe301Lessons: Lesson[] = [
               "A table is in the 3NF if it is in the 2NF and no repeating group exists in the table.",
               "A table is in the 3NF if it is in the 2NF and no transitive dependency exists in the table."
             ],
-            "answer": "A table is in the 3NF if it is in the 2NF and no transitive dependency exists in the table."
+            "answer": "A table is in the 3NF if it is in the 2NF and no transitive dependency exists in the table.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-6-mc-3",
@@ -2257,7 +4733,8 @@ export const jfe301Lessons: Lesson[] = [
               "PTY, QTY, QRY",
               "PTY, QTY, STY"
             ],
-            "answer": "PTY, QTY, STY"
+            "answer": "PTY, QTY, STY",
+            "qType": "calculation"
           },
           {
             "id": "jfe301-6-mc-4",
@@ -2270,7 +4747,8 @@ export const jfe301Lessons: Lesson[] = [
               "SELECT * FROM Student WHERE name LIKE 'A_';",
               "SELECT * FROM Student WHERE name LIKE 'A%';"
             ],
-            "answer": "SELECT * FROM Student WHERE name LIKE 'A%';"
+            "answer": "SELECT * FROM Student WHERE name LIKE 'A%';",
+            "qType": "theory"
           },
           {
             "id": "jfe301-6-mc-5",
@@ -2283,7 +4761,8 @@ export const jfe301Lessons: Lesson[] = [
               "The data updated in the main memory is written to a disk to reduce the recovery processing time of the database when the system goes down.",
               "The values before and after the update of data are written, and used to perform database recovery."
             ],
-            "answer": "The values before and after the update of data are written, and used to perform database recovery."
+            "answer": "The values before and after the update of data are written, and used to perform database recovery.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-6-mc-de2-18",
@@ -2296,7 +4775,8 @@ export const jfe301Lessons: Lesson[] = [
               "The same name can be given to two (2) or more attributes in a relation.",
               "There is no meaning in the order of attributes within a relation, and the relation remains \nunchanged even if the order is changed."
             ],
-            "answer": "There is no meaning in the order of attributes within a relation, and the relation remains \nunchanged even if the order is changed."
+            "answer": "There is no meaning in the order of attributes within a relation, and the relation remains \nunchanged even if the order is changed.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-6-mc-de2-19",
@@ -2309,7 +4789,8 @@ export const jfe301Lessons: Lesson[] = [
               "ProductCode → SupplierCode → ProductSalePrice",
               "SupplierCode → SupplierManagerCode → SupplierAddress"
             ],
-            "answer": "OrderCode → CustomerCode → CustomerAddress"
+            "answer": "OrderCode → CustomerCode → CustomerAddress",
+            "qType": "theory"
           },
           {
             "id": "jfe301-6-mc-de2-20",
@@ -2322,7 +4803,8 @@ export const jfe301Lessons: Lesson[] = [
               "It is a NoSQL database instead of a Relational Database Management System \n(RDBMS).",
               "It stores different parts of a database in different locations, and its processing is \ndistributed across those parts."
             ],
-            "answer": "It stores different parts of a database in different locations, and its processing is \ndistributed across those parts."
+            "answer": "It stores different parts of a database in different locations, and its processing is \ndistributed across those parts.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-6-mc-de2-21",
@@ -2335,7 +4817,8 @@ export const jfe301Lessons: Lesson[] = [
               "department_id IN (SELECT department_id FROM Employees WHERE location = 'New York');",
               "department_id = ALL (SELECT department_id FROM Employees WHERE location = 'New York');"
             ],
-            "answer": "department_id IN (SELECT department_id FROM Departments WHERE location = 'New York');"
+            "answer": "department_id IN (SELECT department_id FROM Departments WHERE location = 'New York');",
+            "qType": "theory"
           },
           {
             "id": "jfe301-6-mc-de2-22",
@@ -2348,7 +4831,8 @@ export const jfe301Lessons: Lesson[] = [
               "Transactions are either fully completed or revoked.",
               "Transactions are executed without affecting each other."
             ],
-            "answer": "Transactions are executed without affecting each other."
+            "answer": "Transactions are executed without affecting each other.",
+            "qType": "theory"
           },
           {
             "id": "jfe301-6-mc-de3-18",
@@ -2361,7 +4845,8 @@ export const jfe301Lessons: Lesson[] = [
               "Managing the data access rights of users",
               "Placing an exclusive lock to data before updates"
             ],
-            "answer": "Managing the data access rights of users"
+            "answer": "Managing the data access rights of users",
+            "qType": "theory"
           },
           {
             "id": "jfe301-6-mc-de3-19",
@@ -2374,7 +4859,8 @@ export const jfe301Lessons: Lesson[] = [
               "To determine the exact data types for every database attribute",
               "To implement database security measures"
             ],
-            "answer": "To define the logical structure of the database"
+            "answer": "To define the logical structure of the database",
+            "qType": "theory"
           },
           {
             "id": "jfe301-6-mc-de3-20",
@@ -2387,7 +4873,8 @@ export const jfe301Lessons: Lesson[] = [
               "I: 1..*, II: 0..*",
               "I: 1..*, II: 1..*"
             ],
-            "answer": "I: 1..*, II: 1..*"
+            "answer": "I: 1..*, II: 1..*",
+            "qType": "theory"
           },
           {
             "id": "jfe301-6-mc-de3-21",
@@ -2400,7 +4887,8 @@ export const jfe301Lessons: Lesson[] = [
               "HAVING SUM(UnitPrice * Quantity) >= 5000 GROUP BY ProductID;",
               "WHERE SUM(UnitPrice * Quantity) >= 5000;"
             ],
-            "answer": "GROUP BY ProductID HAVING SUM(UnitPrice * Quantity) >= 5000;"
+            "answer": "GROUP BY ProductID HAVING SUM(UnitPrice * Quantity) >= 5000;",
+            "qType": "theory"
           },
           {
             "id": "jfe301-6-mc-de3-22",
@@ -2413,7 +4901,218 @@ export const jfe301Lessons: Lesson[] = [
               "When large granularity is set for data to be updated, the waiting times for other \ntransactions increase, and the total throughput declines.",
               "When large granularity is set, the number of data items included increases, and the \nnumber of locks that one transaction makes increases."
             ],
-            "answer": "When large granularity is set for data to be updated, the waiting times for other \ntransactions increase, and the total throughput declines."
+            "answer": "When large granularity is set for data to be updated, the waiting times for other \ntransactions increase, and the total throughput declines.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-6-mc-de4-18",
+            "exam": "de4",
+            "examOrder": 18,
+            "image": "/images/jfe301/q18-de4.png",
+            "choices": [
+              "Hierarchical database",
+              "Network database",
+              "Object-oriented database",
+              "Relational database"
+            ],
+            "answer": "Relational database",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-6-mc-de4-19",
+            "exam": "de4",
+            "examOrder": 19,
+            "image": "/images/jfe301/q19-de4.png",
+            "choices": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "answer": "B",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-6-mc-de4-20",
+            "exam": "de4",
+            "examOrder": 20,
+            "image": "/images/jfe301/q20-de4.png",
+            "choices": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ],
+            "answer": "B",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-6-mc-de4-21",
+            "exam": "de4",
+            "examOrder": 21,
+            "image": "/images/jfe301/q21-de4.png",
+            "choices": [
+              "Post-update information of log files",
+              "Pre-update information of log files",
+              "The latest backup file information",
+              "The latest snapshot information"
+            ],
+            "answer": "Pre-update information of log files",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-6-mc-de4-22",
+            "exam": "de4",
+            "examOrder": 22,
+            "image": "/images/jfe301/q22-de4.png",
+            "choices": [
+              "Atomicity",
+              "Consistency",
+              "Durability",
+              "Isolation"
+            ],
+            "answer": "Atomicity",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-6-mc-de5-18",
+            "exam": "de5",
+            "examOrder": 18,
+            "image": "/images/jfe301/q18-de5.png",
+            "choices": [
+              "Building a network diagram",
+              "Creating entity-relationship diagrams",
+              "Designing a flowchart",
+              "Programming in C++"
+            ],
+            "answer": "Creating entity-relationship diagrams",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-6-mc-de5-19",
+            "exam": "de5",
+            "examOrder": 19,
+            "image": "/images/jfe301/q19-de5.png",
+            "choices": [
+              "A department has many employees, and employees can have multiple dependents.",
+              "A department has many employees, where each employee has exactly one dependent.",
+              "An employee can have at most one dependent.",
+              "An employee can work in two departments."
+            ],
+            "answer": "A department has many employees, and employees can have multiple dependents.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-6-mc-de5-20",
+            "exam": "de5",
+            "examOrder": 20,
+            "image": "/images/jfe301/q20-de5.png",
+            "choices": [
+              "CatalogID, Price, SpecialPrice",
+              "CatalogID, ProductID, Price, SpecialPrice",
+              "Price, SpecialPrice",
+              "ProductID, Price, SpecialPrice"
+            ],
+            "answer": "CatalogID, ProductID, Price, SpecialPrice",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-6-mc-de5-21",
+            "exam": "de5",
+            "examOrder": 21,
+            "image": "/images/jfe301/q21-de5.png",
+            "choices": [
+              "GROUP BY Class, AverageScore ORDER BY Class, Subject",
+              "GROUP BY Class, Subject ORDER BY Class, AVG(Score)",
+              "GROUP BY Class, Subject ORDER BY Class, Subject",
+              "GROUP BY Class, Subject, StudentNumber ORDER BY Class, Subject, AverageScore"
+            ],
+            "answer": "GROUP BY Class, Subject ORDER BY Class, Subject",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-6-mc-de5-22",
+            "exam": "de5",
+            "examOrder": 22,
+            "image": "/images/jfe301/q22-de5.png",
+            "choices": [
+              "Commit",
+              "Drop",
+              "Rollback",
+              "Roll Forward"
+            ],
+            "answer": "Rollback",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-6-mc-su26-fe-14",
+            "exam": "su26-fe",
+            "examOrder": 14,
+            "image": "/images/jfe301/q14-su26-fe.png",
+            "choices": [
+              "A is subtype, B is strong-type",
+              "A is super-type, B is subtype",
+              "A is subtype, B is weak-type",
+              "A is strong-type, B is weak-type"
+            ],
+            "answer": "A is super-type, B is subtype",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-6-mc-su26-fe-20",
+            "exam": "su26-fe",
+            "examOrder": 20,
+            "image": "/images/jfe301/q20-su26-fe.png",
+            "choices": [
+              "Product_Number: 100, 130",
+              "Product_Number: 100, 130, 267, 420",
+              "Product_Number: 130",
+              "Product_Number: 130, 267"
+            ],
+            "answer": "Product_Number: 130",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-6-mc-su26-fe-24",
+            "exam": "su26-fe",
+            "examOrder": 24,
+            "image": "/images/jfe301/q24-su26-fe.png",
+            "choices": [
+              "[S04, B03]",
+              "[S03, B03], [S04, B03], [S05, B03], [S07, B08]",
+              "[S03, B03], [S04, B03], [S05, B03], [S04, B03], [S07, B08]",
+              "[S03, B03], [S04, B03], [S05, B03], [S03, B08], [S04, B08], [S05, B08], [S07, B03], [S07, B08]"
+            ],
+            "answer": "[S03, B03], [S04, B03], [S05, B03], [S07, B08]",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-6-mc-su26-fe-49",
+            "exam": "su26-fe",
+            "examOrder": 49,
+            "image": "/images/jfe301/q49-su26-fe.png",
+            "choices": [
+              "Join",
+              "Projection",
+              "Selection",
+              "Union"
+            ],
+            "answer": "Projection",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-6-mc-su26-fe-51",
+            "exam": "su26-fe",
+            "examOrder": 51,
+            "image": "/images/jfe301/q51-su26-fe.png",
+            "choices": [
+              "To determine whether to commit or roll back the database updates",
+              "To enable recovery to be undertaken effectively in the event of a failure",
+              "To move transaction log records to the database backup files",
+              "To support concurrency control of the simultaneous execution of transactions"
+            ],
+            "answer": "To enable recovery to be undertaken effectively in the event of a failure",
+            "qType": "theory"
           }
         ]
       }

@@ -205,6 +205,34 @@ export const jfe301Lessons: Lesson[] = [
             ],
             "answer": "Internet of things",
             "qType": "theory"
+          },
+          {
+            "id": "jfe301-1-mc-de6-70",
+            "exam": "de6",
+            "examOrder": 70,
+            "image": "/images/jfe301/q70-de6.png",
+            "choices": [
+              "It refers to a form of electronic commerce carried out over the Internet, consisting of a typical C to C transaction by which a seller posts a product’s name, photo, minimum selling price, and other information on a website, after which the bidder that offers the highest amount within the time limit becomes the successful bidder.",
+              "It refers to data centers designed for the connection to the Internet, with server operation failure prevented through the implementation of measures including quality management of communication lines, server maintenance, air conditioning, and power source-related countermeasures against power interruptions and outages.",
+              "It refers to Internet advertising such as a banner advertisement that displays an image, with a link to an advertiser’s website, or an e-mail advertisement that publicizes an advertiser’s website.",
+              "It refers to the installation of communication functionality to various objects, in addition to information and communication devices, and enabling automatic recognition or remote measurement by connecting these to the Internet, to achieve high-level decision making services and automated control through the collection and analysis of large volumes of data."
+            ],
+            "answer": "It refers to the installation of communication functionality to various objects, in addition to information and communication devices, and enabling automatic recognition or remote measurement by connecting these to the Internet, to achieve high-level decision making services and automated control through the collection and analysis of large volumes of data.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-1-mc-de6-71",
+            "exam": "de6",
+            "examOrder": 71,
+            "image": "/images/jfe301/q71-de6.png",
+            "choices": [
+              "It is a system that aims at the utilization of recyclable energy, supply of stable electric power, and optimum demand adjustment through the integrated control of power generation and power consumption on the basis of communication and information processing technology.",
+              "It is a system that can provide ideal health advice to each individual by performing analysis on the basis of similar case reports such as the result of health examinations and medication use.",
+              "It is a system that can search for information on restaurants and entertainment, send and receive traffic information, and communicate the current position at the time of an emergency by using information-processing equipment installed in vehicles.",
+              "It is a system that supports varied work styles by enabling mutual communication between workers with varied working styles, such as home-based employees and senior workers."
+            ],
+            "answer": "It is a system that aims at the utilization of recyclable energy, supply of stable electric power, and optimum demand adjustment through the integrated control of power generation and power consumption on the basis of communication and information processing technology.",
+            "qType": "theory"
           }
         ]
       }
@@ -1688,6 +1716,314 @@ export const jfe301Lessons: Lesson[] = [
             ],
             "answer": "HDMI port",
             "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-de6-1",
+            "exam": "de6",
+            "examOrder": 1,
+            "image": "/images/jfe301/q1-de6.png",
+            "choices": [
+              "17",
+              "31",
+              "33",
+              "47"
+            ],
+            "answer": "31",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de6-2",
+            "exam": "de6",
+            "examOrder": 2,
+            "image": "/images/jfe301/q2-de6.png",
+            "choices": [
+              "Shift n 2 bits to the left, then add n to the result.",
+              "Shift n 2 bits to the left, then subtract n from the result.",
+              "Shift n 3 bits to the left, then add n to the result.",
+              "Shift n 3 bits to the left, then subtract n from the result."
+            ],
+            "answer": "Shift n 3 bits to the left, then subtract n from the result.",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de6-3",
+            "exam": "de6",
+            "examOrder": 3,
+            "image": "/images/jfe301/q3-de6.png",
+            "choices": [
+              "1/90",
+              "1/72",
+              "1/15",
+              "1/12"
+            ],
+            "answer": "1/15",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de6-4",
+            "exam": "de6",
+            "examOrder": 4,
+            "image": "/images/jfe301/q4-de6.png",
+            "choices": [
+              "2.5",
+              "2.75",
+              "2.875",
+              "2.9375"
+            ],
+            "answer": "2.75",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de6-5",
+            "exam": "de6",
+            "examOrder": 5,
+            "image": "/images/jfe301/q5-de6.png",
+            "choices": [
+              "2 5 3 4 * + +",
+              "2 5 + 3 4 * +",
+              "2 5 3 + * 4 +",
+              "2 5 3 * + 4 +"
+            ],
+            "answer": "2 5 3 * + 4 +",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de6-6",
+            "exam": "de6",
+            "examOrder": 6,
+            "image": "/images/jfe301/q6-de6.png",
+            "choices": [
+              "001",
+              "010",
+              "101",
+              "110"
+            ],
+            "answer": "110",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de6-7",
+            "exam": "de6",
+            "examOrder": 7,
+            "image": "/images/jfe301/q7-de6.png",
+            "choices": [
+              "2",
+              "3",
+              "4",
+              "6"
+            ],
+            "answer": "4",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de6-8",
+            "exam": "de6",
+            "examOrder": 8,
+            "image": "/images/jfe301/q8-de6.png",
+            "choices": [
+              "Left child of 16",
+              "Left child of 23",
+              "Right child of 3",
+              "Right child of 10"
+            ],
+            "answer": "Right child of 10",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de6-9",
+            "exam": "de6",
+            "examOrder": 9,
+            "image": "/images/jfe301/q9-de6.png",
+            "choices": [
+              "A, B, D",
+              "A, C, D",
+              "B, E",
+              "D, E"
+            ],
+            "answer": "B, E",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de6-11",
+            "exam": "de6",
+            "examOrder": 11,
+            "image": "/images/jfe301/q11-de6.png",
+            "choices": [
+              "Accumulator",
+              "Index register",
+              "Instruction register",
+              "Program counter"
+            ],
+            "answer": "Program counter",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-de6-12",
+            "exam": "de6",
+            "examOrder": 12,
+            "image": "/images/jfe301/q12-de6.png",
+            "choices": [
+              "When a cache hit occurs, the CPU fetches data from ROM.",
+              "When a cache hit occurs, the CPU fetches data from the main memory.",
+              "When a cache miss occurs, the CPU fetches data from the cache memory.",
+              "When a cache miss occurs, the CPU fetches data from the main memory."
+            ],
+            "answer": "When a cache miss occurs, the CPU fetches data from the main memory.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-de6-13",
+            "exam": "de6",
+            "examOrder": 13,
+            "image": "/images/jfe301/q13-de6.png",
+            "choices": [
+              "MIMD",
+              "MISD",
+              "SIMD",
+              "SISD"
+            ],
+            "answer": "SIMD",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-de6-14",
+            "exam": "de6",
+            "examOrder": 14,
+            "image": "/images/jfe301/q14-de6.png",
+            "choices": [
+              "3",
+              "8",
+              "9",
+              "10"
+            ],
+            "answer": "9",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de6-15",
+            "exam": "de6",
+            "examOrder": 15,
+            "image": "/images/jfe301/q15-de6.png",
+            "choices": [
+              "A computing task is distributed to several computers in the network to attain computational capacity.",
+              "Physical devices such as computers or network devices are emulated to circumvent compatibility constraints and attain software portability and flexibility.",
+              "Requirements are stated as constraints on response time and/or on the temporal validity of sensory data.",
+              "Sensing devices are connected to a network to provide feedback and control through personal mobile devices."
+            ],
+            "answer": "A computing task is distributed to several computers in the network to attain computational capacity.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-de6-16",
+            "exam": "de6",
+            "examOrder": 16,
+            "image": "/images/jfe301/q16-de6.png",
+            "choices": [
+              "RAID0",
+              "RAID1",
+              "RAID5",
+              "RAID6"
+            ],
+            "answer": "RAID6",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-de6-17",
+            "exam": "de6",
+            "examOrder": 17,
+            "image": "/images/jfe301/q17-de6.png",
+            "choices": [
+              "Fatal error",
+              "Page fault",
+              "Scheduling error",
+              "Segmentation fault"
+            ],
+            "answer": "Page fault",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-de6-18",
+            "exam": "de6",
+            "examOrder": 18,
+            "image": "/images/jfe301/q18-de6.png",
+            "choices": [
+              "CPU resources are allocated to each process in order of priority specified in advance when a particular event occurs.",
+              "CPU resources are allocated to each process in order of processing time from shortest to longest.",
+              "CPU resources are allocated to the first executable process in the queue when an interval-timer interrupt is generated.",
+              "CPU resources are allocated to the process that needs to start immediately when some kind of interrupt is generated."
+            ],
+            "answer": "CPU resources are allocated to the first executable process in the queue when an interval-timer interrupt is generated.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-de6-19",
+            "exam": "de6",
+            "examOrder": 19,
+            "image": "/images/jfe301/q19-de6.png",
+            "choices": [
+              "Compiling several files into one file or reconstructing the original files in order to perform data backup and distribution",
+              "Creating both an area for recording data and an area for managing data on a single hard disk",
+              "Keeping data secure through file protection for safeguarding data from unauthorized use and destruction, and also through copy protection for preventing unauthorized copying",
+              "Rearranging a file into contiguous areas, to the extent possible, on a hard disk in which fragmentation has occurred"
+            ],
+            "answer": "Compiling several files into one file or reconstructing the original files in order to perform data backup and distribution",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-de6-20",
+            "exam": "de6",
+            "examOrder": 20,
+            "image": "/images/jfe301/q20-de6.png",
+            "choices": [
+              "Adder circuit",
+              "Capacitor",
+              "Flip-flop",
+              "NAND gate"
+            ],
+            "answer": "Flip-flop",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-2-mc-de6-21",
+            "exam": "de6",
+            "examOrder": 21,
+            "image": "/images/jfe301/q21-de6.png",
+            "choices": [
+              "a",
+              "b",
+              "c",
+              "d"
+            ],
+            "answer": "c",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de6-22",
+            "exam": "de6",
+            "examOrder": 22,
+            "image": "/images/jfe301/q22-de6.png",
+            "choices": [
+              "100",
+              "400",
+              "625",
+              "900"
+            ],
+            "answer": "625",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-2-mc-de6-24",
+            "exam": "de6",
+            "examOrder": 24,
+            "image": "/images/jfe301/q24-de6.png",
+            "choices": [
+              "Encoding",
+              "Reverse quantization",
+              "Quantization",
+              "Sampling"
+            ],
+            "answer": "Sampling",
+            "qType": "theory"
           }
         ]
       }
@@ -2344,6 +2680,118 @@ export const jfe301Lessons: Lesson[] = [
               "Tracer"
             ],
             "answer": "Tracer",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-de6-23",
+            "exam": "de6",
+            "examOrder": 23,
+            "image": "/images/jfe301/q23-de6.png",
+            "choices": [
+              "Duplicate check",
+              "Format check",
+              "Logical check",
+              "Sequence check"
+            ],
+            "answer": "Logical check",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-de6-45",
+            "exam": "de6",
+            "examOrder": 45,
+            "image": "/images/jfe301/q45-de6.png",
+            "choices": [
+              "It represents a combination of conditions and the corresponding operations.",
+              "It represents entities by rectangles and their relationship through connecting lines.",
+              "It represents the flow of controls, such as a process or selection, by straight lines or arrows.",
+              "It represents the flow of data between an external interface, processes, and data store."
+            ],
+            "answer": "It represents a combination of conditions and the corresponding operations.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-de6-46",
+            "exam": "de6",
+            "examOrder": 46,
+            "image": "/images/jfe301/q46-de6.png",
+            "choices": [
+              "Driver",
+              "Emulator",
+              "Simulator",
+              "Stub"
+            ],
+            "answer": "Stub",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-de6-47",
+            "exam": "de6",
+            "examOrder": 47,
+            "image": "/images/jfe301/q47-de6.png",
+            "choices": [
+              "Developers are allowed to define classes incrementally by reusing classes defined previously as the basis for new classes.",
+              "Only the information required to use a software module is published to the module user.",
+              "The processes and data are combined into a single object.",
+              "The same message can be interpreted differently by different classes of objects."
+            ],
+            "answer": "The same message can be interpreted differently by different classes of objects.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-de6-48",
+            "exam": "de6",
+            "examOrder": 48,
+            "image": "/images/jfe301/q48-de6.png",
+            "choices": [
+              "Physical database specification",
+              "Program flowchart",
+              "Screen layout",
+              "System development plan"
+            ],
+            "answer": "Screen layout",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-de6-49",
+            "exam": "de6",
+            "examOrder": 49,
+            "image": "/images/jfe301/q49-de6.png",
+            "choices": [
+              "After the code is created, and it is confirmed that it can be integrated, test cases are created.",
+              "Integration of the code and testing are continuously repeated.",
+              "The code that passed the tests is not refactored until the next iteration.",
+              "The customer is responsible for the specification of unit tests."
+            ],
+            "answer": "Integration of the code and testing are continuously repeated.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-de6-50",
+            "exam": "de6",
+            "examOrder": 50,
+            "image": "/images/jfe301/q50-de6.png",
+            "choices": [
+              "Concurrent engineering",
+              "Forward engineering",
+              "Reverse engineering",
+              "Social engineering"
+            ],
+            "answer": "Reverse engineering",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-3-mc-de6-52",
+            "exam": "de6",
+            "examOrder": 52,
+            "image": "/images/jfe301/q52-de6.png",
+            "choices": [
+              "a",
+              "b",
+              "c",
+              "d"
+            ],
+            "answer": "d",
             "qType": "theory"
           }
         ]
@@ -3729,6 +4177,384 @@ export const jfe301Lessons: Lesson[] = [
             ],
             "answer": "CRM",
             "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de6-51",
+            "exam": "de6",
+            "examOrder": 51,
+            "image": "/images/jfe301/q51-de6.png",
+            "choices": [
+              "12",
+              "21",
+              "22",
+              "42"
+            ],
+            "answer": "21",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-4-mc-de6-53",
+            "exam": "de6",
+            "examOrder": 53,
+            "image": "/images/jfe301/q53-de6.png",
+            "choices": [
+              "8",
+              "9",
+              "12",
+              "13"
+            ],
+            "answer": "9",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-4-mc-de6-54",
+            "exam": "de6",
+            "examOrder": 54,
+            "image": "/images/jfe301/q54-de6.png",
+            "choices": [
+              "A -> B -> E -> I -> L",
+              "A -> C -> D -> E -> H -> K",
+              "A -> C -> F -> I -> L",
+              "A -> C -> G -> J -> L"
+            ],
+            "answer": "A -> C -> G -> J -> L",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-4-mc-de6-55",
+            "exam": "de6",
+            "examOrder": 55,
+            "image": "/images/jfe301/q55-de6.png",
+            "choices": [
+              "Setting a compensation as a penalty for every item that has a service level",
+              "Setting a service level for every item that can be taken into consideration",
+              "Setting a service level that is maintained into the future without any changes",
+              "Setting a service level under the cost and needs of a service provider and its customers"
+            ],
+            "answer": "Setting a service level under the cost and needs of a service provider and its customers",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de6-56",
+            "exam": "de6",
+            "examOrder": 56,
+            "image": "/images/jfe301/q56-de6.png",
+            "choices": [
+              "Additional operational costs are incurred because of parallel operations.",
+              "An additional application is required for connecting the old and new systems.",
+              "The old and new systems operate in parallel, and migration to the new system is performed at a particular point of time.",
+              "The problems that occur during migration to the new system have a big impact."
+            ],
+            "answer": "The problems that occur during migration to the new system have a big impact.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de6-57",
+            "exam": "de6",
+            "examOrder": 57,
+            "image": "/images/jfe301/q57-de6.png",
+            "choices": [
+              "Analyzing the occurrence trend of incidents and proposing measures that prevent an incident from occurring in the future",
+              "Classifying problems that have been detected and recorded, and setting the response priority",
+              "Evaluating the effectiveness of a resolution to a critical problem",
+              "Monitoring whether an incident occurs again or not for a certain period of time after the problem is resolved"
+            ],
+            "answer": "Analyzing the occurrence trend of incidents and proposing measures that prevent an incident from occurring in the future",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de6-58",
+            "exam": "de6",
+            "examOrder": 58,
+            "image": "/images/jfe301/q58-de6.png",
+            "choices": [
+              "Cold start",
+              "Rollback",
+              "Rollforward",
+              "Warm start"
+            ],
+            "answer": "Cold start",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de6-59",
+            "exam": "de6",
+            "examOrder": 59,
+            "image": "/images/jfe301/q59-de6.png",
+            "choices": [
+              "A compilation of the information security promissory letter that is presented to the audited department when the auditor implements an audit",
+              "A compilation of the standards and guidelines used by the auditor for implementing an audit",
+              "A document that must be disclosed along with the audit report to prove that the auditor has fulfilled his or her obligations with proper attention",
+              "An execution record of the auditing procedure by an auditor, and it forms the basis of the audit opinion"
+            ],
+            "answer": "An execution record of the auditing procedure by an auditor, and it forms the basis of the audit opinion",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de6-60",
+            "exam": "de6",
+            "examOrder": 60,
+            "image": "/images/jfe301/q60-de6.png",
+            "choices": [
+              "For an audit of the development progress in an information systems department, the audit team consists of members of the information systems department who are familiar with the details of the development.",
+              "In order to enable the person requesting the audit to issue improvement instructions on the basis of the audit report, the system audit team reports the audit results to the person requesting the audit.",
+              "When an audit of the information system is performed as a part of the business operations audit, the audit team is formed by the members of the user's department.",
+              "When the system audit team accepts the help of an expert, the decisions concerning the range of support, methods, and audit results is the responsibility of the expert."
+            ],
+            "answer": "In order to enable the person requesting the audit to issue improvement instructions on the basis of the audit report, the system audit team reports the audit results to the person requesting the audit.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de6-61",
+            "exam": "de6",
+            "examOrder": 61,
+            "image": "/images/jfe301/q61-de6.png",
+            "choices": [
+              "It is necessary for A and B to make the same amount of annual profit.",
+              "It is necessary for A to make twice as much as the annual profit than that of B.",
+              "It is necessary for B to make 1.5 times as much as the annual profit than that of A.",
+              "It is necessary for B to make twice as much as the annual profit than that of A."
+            ],
+            "answer": "It is necessary for B to make twice as much as the annual profit than that of A.",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-4-mc-de6-62",
+            "exam": "de6",
+            "examOrder": 62,
+            "image": "/images/jfe301/q62-de6.png",
+            "choices": [
+              "Analysis and effective use of information resources",
+              "Conservation and analysis of customer information",
+              "Continuous improvement of business processes",
+              "Effective use of management resources"
+            ],
+            "answer": "Continuous improvement of business processes",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de6-63",
+            "exam": "de6",
+            "examOrder": 63,
+            "image": "/images/jfe301/q63-de6.png",
+            "choices": [
+              "ERP",
+              "SaaS",
+              "SCM",
+              "XBRL"
+            ],
+            "answer": "SaaS",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de6-64",
+            "exam": "de6",
+            "examOrder": 64,
+            "image": "/images/jfe301/q64-de6.png",
+            "choices": [
+              "Analyzing a large volume of data stored on a business system to evaluate business performance and develop a business strategy",
+              "Computerizing daily routine works, such as decision requests, to ensure that such procedures are carried out without fail and to enable their swift completion",
+              "Enabling employees to use computerized learning materials via a network and managing their learning and performance",
+              "Obtaining publications, such as annual reports issued by competitors, to understand their business strategies and financial situations"
+            ],
+            "answer": "Analyzing a large volume of data stored on a business system to evaluate business performance and develop a business strategy",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de6-65",
+            "exam": "de6",
+            "examOrder": 65,
+            "image": "/images/jfe301/q65-de6.png",
+            "choices": [
+              "Aside from the items of an RFP, giving a high evaluation to a vendor who is familiar with the current system to select that vendor easily",
+              "Establishing processes of selection such as setting evaluation standards or weighting rules of conformity to the requested items",
+              "Issuing unofficial agreements to all vendors to whom the RFP has been presented and requesting them to prepare a contract and a statement of work to accelerate the conclusion of the contract after the vendor selection",
+              "Preparing a bailout for a vendor who received a high evaluation on the response to the RFI, in case it fails in the selection"
+            ],
+            "answer": "Establishing processes of selection such as setting evaluation standards or weighting rules of conformity to the requested items",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de6-66",
+            "exam": "de6",
+            "examOrder": 66,
+            "image": "/images/jfe301/q66-de6.png",
+            "choices": [
+              "Decline stage",
+              "Introduction stage",
+              "Growth stage",
+              "Maturity stage"
+            ],
+            "answer": "Maturity stage",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de6-67",
+            "exam": "de6",
+            "examOrder": 67,
+            "image": "/images/jfe301/q67-de6.png",
+            "choices": [
+              "It refers to a qualitative and quantitative understanding of a company’s own products, services, and operation through comparison with those of competitors or advanced companies.",
+              "It refers to drastically reforming the quality and structure of a company by redesigning its business processes from a customer viewpoint and by taking full advantage of information technology.",
+              "It refers to the ability to plan and manage the allocation of company-wide management resources in an effective and integrated manner and to achieve an improvement in management efficiency.",
+              "It refers to the concentration of management resources on the unique skills and technologies of a company that can generate profit and that are superior to those of other companies."
+            ],
+            "answer": "It refers to a qualitative and quantitative understanding of a company’s own products, services, and operation through comparison with those of competitors or advanced companies.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de6-68",
+            "exam": "de6",
+            "examOrder": 68,
+            "image": "/images/jfe301/q68-de6.png",
+            "choices": [
+              "Balanced scorecard",
+              "Growth matrix",
+              "Product portfolio management",
+              "SWOT analysis"
+            ],
+            "answer": "Balanced scorecard",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de6-69",
+            "exam": "de6",
+            "examOrder": 69,
+            "image": "/images/jfe301/q69-de6.png",
+            "choices": [
+              "To construct favorable customer relationships through unified management, including customer information, purchasing history, and complaints, and also through meticulous customer response",
+              "To improve management efficiency through integrated management of all information concerning core business operations such as production, sales, inventory, and accounting",
+              "To improve the efficiency of sales activity through unified management of customer information, business meeting schedules, and business meeting status including progress status",
+              "To reduce costs and shorten delivery periods through integrated management of information across multiple companies or organizations from procurement to sales"
+            ],
+            "answer": "To reduce costs and shorten delivery periods through integrated management of information across multiple companies or organizations from procurement to sales",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de6-72",
+            "exam": "de6",
+            "examOrder": 72,
+            "image": "/images/jfe301/q72-de6.png",
+            "choices": [
+              "Evaluating product performance and functions using computers, without using the actual product to perform testing or experimentation",
+              "Using a computer to convert product design drawings to process design information, and support automation of machine processing, etc.",
+              "Using a computer to create product design drawings from attribute data concerning product shape, composition, etc.",
+              "Using a computer to derive the required volumes and timing of materials from a production schedule, a BOM (bill of materials), inventory volumes, etc."
+            ],
+            "answer": "Using a computer to create product design drawings from attribute data concerning product shape, composition, etc.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de6-73",
+            "exam": "de6",
+            "examOrder": 73,
+            "image": "/images/jfe301/q73-de6.png",
+            "choices": [
+              "It is a method in which many sellers and buyers meet in a market set up on the Internet and trade directly without an intermediate distributor.",
+              "It is a method that aims for overall optimization from material procurement to product distribution by sharing information such as ordering, inventory, sales, and logistics between a company and its business partners.",
+              "It is a method that converts information concerning business transactions into a standardized format and electronically exchanges data such as estimation, ordering, shipment and delivery, and payment between companies.",
+              "It is a method that runs a sales promotion campaign on the Internet and then draws customers to a real store to encourage them to make purchases."
+            ],
+            "answer": "It is a method in which many sellers and buyers meet in a market set up on the Internet and trade directly without an intermediate distributor.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de6-74",
+            "exam": "de6",
+            "examOrder": 74,
+            "image": "/images/jfe301/q74-de6.png",
+            "choices": [
+              "It handles a large amount of information. Thus it uses an external storage device for storing information.",
+              "It is stain-resistant, and recorded information can be read from the outside of the package.",
+              "It is used by inserting the tag into a dedicated magnetic reader.",
+              "It uses GPS to display location information or attribute information about the current location."
+            ],
+            "answer": "It is stain-resistant, and recorded information can be read from the outside of the package.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de6-75",
+            "exam": "de6",
+            "examOrder": 75,
+            "image": "/images/jfe301/q75-de6.png",
+            "choices": [
+              "CCO",
+              "CIO",
+              "CISO",
+              "COO"
+            ],
+            "answer": "CISO",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de6-76",
+            "exam": "de6",
+            "examOrder": 76,
+            "image": "/images/jfe301/q76-de6.png",
+            "choices": [
+              "Case study",
+              "Debate",
+              "In-basket",
+              "Roll-playing"
+            ],
+            "answer": "Roll-playing",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de6-77",
+            "exam": "de6",
+            "examOrder": 77,
+            "image": "/images/jfe301/q77-de6.png",
+            "choices": [
+              "S1",
+              "S2",
+              "S3",
+              "S4"
+            ],
+            "answer": "S1",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-4-mc-de6-78",
+            "exam": "de6",
+            "examOrder": 78,
+            "image": "/images/jfe301/q78-de6.png",
+            "choices": [
+              "7,080",
+              "7,600",
+              "7,800",
+              "8,000"
+            ],
+            "answer": "7,600",
+            "qType": "calculation"
+          },
+          {
+            "id": "jfe301-4-mc-de6-79",
+            "exam": "de6",
+            "examOrder": 79,
+            "image": "/images/jfe301/q79-de6.png",
+            "choices": [
+              "Balance sheet",
+              "Statement of cash flows",
+              "Statement of changes in equity",
+              "Statement of profit or loss"
+            ],
+            "answer": "Balance sheet",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-4-mc-de6-80",
+            "exam": "de6",
+            "examOrder": 80,
+            "image": "/images/jfe301/q80-de6.png",
+            "choices": [
+              "Installing the software package on a large number of computers that are used for the company’s business",
+              "Making a backup copy of software for limited purposes, such as the licensee’s personal use or a temporary copy for maintenance",
+              "Modifying the software package for the company’s internal use and using it on a large number of computers within the company",
+              "Placing the software package on the company’s internal website so that staff members can download and install it"
+            ],
+            "answer": "Making a backup copy of software for limited purposes, such as the licensee’s personal use or a temporary copy for maintenance",
+            "qType": "theory"
           }
         ]
       }
@@ -4680,6 +5506,216 @@ export const jfe301Lessons: Lesson[] = [
             ],
             "answer": "Router A forwards packets only to router C on the basis of the destination IP address in the packet",
             "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de6-30",
+            "exam": "de6",
+            "examOrder": 30,
+            "image": "/images/jfe301/q30-de6.png",
+            "choices": [
+              "Destination IP address",
+              "Destination MAC address",
+              "Source IP address",
+              "Source MAC address"
+            ],
+            "answer": "Destination IP address",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de6-31",
+            "exam": "de6",
+            "examOrder": 31,
+            "image": "/images/jfe301/q31-de6.png",
+            "choices": [
+              "It breaks a received packet into smaller pieces (fragments) in the network layer.",
+              "It dynamically allocates an IP address for a terminal connected to its LAN port.",
+              "It forwards a received packet only to its LAN port connected to a device with the packet’s destination MAC address.",
+              "It forwards a received packet to all its LAN ports (broadcast)."
+            ],
+            "answer": "It forwards a received packet only to its LAN port connected to a device with the packet’s destination MAC address.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de6-32",
+            "exam": "de6",
+            "examOrder": 32,
+            "image": "/images/jfe301/q32-de6.png",
+            "choices": [
+              "DHCP",
+              "DNS",
+              "FTP",
+              "PPP"
+            ],
+            "answer": "DHCP",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de6-33",
+            "exam": "de6",
+            "examOrder": 33,
+            "image": "/images/jfe301/q33-de6.png",
+            "choices": [
+              "IEEE 802.11",
+              "LTE",
+              "NFC",
+              "UWB"
+            ],
+            "answer": "LTE",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de6-34",
+            "exam": "de6",
+            "examOrder": 34,
+            "image": "/images/jfe301/q34-de6.png",
+            "choices": [
+              "10.1.1.1",
+              "192.0.2.0",
+              "203.0.113.4",
+              "224.0.0.5"
+            ],
+            "answer": "224.0.0.5",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de6-35",
+            "exam": "de6",
+            "examOrder": 35,
+            "image": "/images/jfe301/q35-de6.png",
+            "choices": [
+              "Cross-site request forgery",
+              "Cross-site scripting",
+              "OGNL injection",
+              "SQL injection"
+            ],
+            "answer": "Cross-site scripting",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de6-36",
+            "exam": "de6",
+            "examOrder": 36,
+            "image": "/images/jfe301/q36-de6.png",
+            "choices": [
+              "A third party’s",
+              "Both Mr. A’s and Mr. B’s",
+              "Only Mr. A’s",
+              "Only Mr. B’s"
+            ],
+            "answer": "Only Mr. B’s",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de6-37",
+            "exam": "de6",
+            "examOrder": 37,
+            "image": "/images/jfe301/q37-de6.png",
+            "choices": [
+              "Brute force",
+              "Denial of service",
+              "Man-in-the-middle",
+              "Sniffing"
+            ],
+            "answer": "Brute force",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de6-38",
+            "exam": "de6",
+            "examOrder": 38,
+            "image": "/images/jfe301/q38-de6.png",
+            "choices": [
+              "Atomicity and consistency",
+              "Authenticity and integrity",
+              "Availability and confidentiality",
+              "Durability and isolation"
+            ],
+            "answer": "Authenticity and integrity",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de6-39",
+            "exam": "de6",
+            "examOrder": 39,
+            "image": "/images/jfe301/q39-de6.png",
+            "choices": [
+              "It interrupts the communication between two parties and then collects and falsifies the information being exchanged.",
+              "When Internet banking is used, it collects the password entered by the user.",
+              "When the user browses movies on a web browser, it arbitrarily displays unintended advertisements for the user.",
+              "When the web browser is started, it arbitrarily displays a tool bar that the user has not installed."
+            ],
+            "answer": "When Internet banking is used, it collects the password entered by the user.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de6-40",
+            "exam": "de6",
+            "examOrder": 40,
+            "image": "/images/jfe301/q40-de6.png",
+            "choices": [
+              "Adding a digital signature to an e-mail body as requested by a user",
+              "Enabling the synchronization of time by returning an accurate time to a user’s request",
+              "Issuing a digital certificate that certifies the private key of a user or server",
+              "Issuing a digital certificate that certifies the public key of a user or server"
+            ],
+            "answer": "Issuing a digital certificate that certifies the public key of a user or server",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de6-41",
+            "exam": "de6",
+            "examOrder": 41,
+            "image": "/images/jfe301/q41-de6.png",
+            "choices": [
+              "Changing the port number from its initial value that the database connection programs use for communication in the database management system",
+              "Encrypting the communication between the database connection programs",
+              "Restricting the IP addresses of the clients that can access the database connection program on the server to only those that are required",
+              "Setting a password for starting or stopping the database connection program on the server"
+            ],
+            "answer": "Encrypting the communication between the database connection programs",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de6-42",
+            "exam": "de6",
+            "examOrder": 42,
+            "image": "/images/jfe301/q42-de6.png",
+            "choices": [
+              "DMZ (DeMilitarized Zone)",
+              "SNMP (Simple Network Management Protocol)",
+              "VoIP (Voice over Internet Protocol)",
+              "VPN (Virtual Private Network)"
+            ],
+            "answer": "VPN (Virtual Private Network)",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de6-43",
+            "exam": "de6",
+            "examOrder": 43,
+            "image": "/images/jfe301/q43-de6.png",
+            "choices": [
+              "Penetration test",
+              "Regression test",
+              "Software inspection",
+              "Walk-through"
+            ],
+            "answer": "Penetration test",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-5-mc-de6-44",
+            "exam": "de6",
+            "examOrder": 44,
+            "image": "/images/jfe301/q44-de6.png",
+            "choices": [
+              "The encrypted private-key of the website",
+              "The encrypted public-key of the website",
+              "The unencrypted private-key of the website",
+              "The unencrypted public-key of the website"
+            ],
+            "answer": "The unencrypted public-key of the website",
+            "qType": "theory"
           }
         ]
       }
@@ -5112,6 +6148,90 @@ export const jfe301Lessons: Lesson[] = [
               "To support concurrency control of the simultaneous execution of transactions"
             ],
             "answer": "To enable recovery to be undertaken effectively in the event of a failure",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-6-mc-de6-10",
+            "exam": "de6",
+            "examOrder": 10,
+            "image": "/images/jfe301/q10-de6.png",
+            "choices": [
+              "It is based on HTML and expands its functions.",
+              "It requires a dedicated editor for writing XML documents.",
+              "It integrates the logical structure and display style of documents.",
+              "It enables users to define the attribute information and logical structure of documents by using the user's own tags."
+            ],
+            "answer": "It enables users to define the attribute information and logical structure of documents by using the user's own tags.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-6-mc-de6-25",
+            "exam": "de6",
+            "examOrder": 25,
+            "image": "/images/jfe301/q25-de6.png",
+            "choices": [
+              "Definition function",
+              "Maintenance function",
+              "Recovery function",
+              "Security function"
+            ],
+            "answer": "Definition function",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-6-mc-de6-26",
+            "exam": "de6",
+            "examOrder": 26,
+            "image": "/images/jfe301/q26-de6.png",
+            "choices": [
+              "Entity-relationship",
+              "Functional dependency",
+              "Hierarchical",
+              "Normalization"
+            ],
+            "answer": "Normalization",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-6-mc-de6-27",
+            "exam": "de6",
+            "examOrder": 27,
+            "image": "/images/jfe301/q27-de6.png",
+            "choices": [
+              "It determines the most efficient way to execute a query.",
+              "It minimizes the number of rows in a result set.",
+              "It parses a query and improves it for efficient network transmission.",
+              "It stores the results of frequently used queries in a cache."
+            ],
+            "answer": "It determines the most efficient way to execute a query.",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-6-mc-de6-28",
+            "exam": "de6",
+            "examOrder": 28,
+            "image": "/images/jfe301/q28-de6.png",
+            "choices": [
+              "StudentNumber HAVING AVG(Score) >= 80",
+              "StudentNumber WHERE Score >= 80",
+              "Subject HAVING AVG(Score) >= 80",
+              "Subject WHERE Score >= 80"
+            ],
+            "answer": "StudentNumber HAVING AVG(Score) >= 80",
+            "qType": "theory"
+          },
+          {
+            "id": "jfe301-6-mc-de6-29",
+            "exam": "de6",
+            "examOrder": 29,
+            "image": "/images/jfe301/q29-de6.png",
+            "choices": [
+              "Backup file",
+              "Checkpoint file",
+              "Dump file",
+              "Log file"
+            ],
+            "answer": "Log file",
             "qType": "theory"
           }
         ]

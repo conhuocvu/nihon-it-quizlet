@@ -9,6 +9,7 @@ import { JFE301Selector } from './components/JFE301Selector';
 import { StudySession } from './components/StudySession';
 import { TheoryViewer } from './components/TheoryViewer';
 import { FakePaywallModal } from './components/FakePaywallModal';
+import { KanjiMasterN3Selector } from './components/KanjiMasterN3Selector';
 import { GraduationCap, Github, ChevronRight, Crown, ArrowLeft, Home } from 'lucide-react';
 
 function App() {
@@ -231,7 +232,20 @@ function App() {
           />
         )}
 
-        {route.page === 'subject' && currentSubject.id !== 'mimi-n3-goi' && currentSubject.id !== 'jfe301' && (
+        {route.page === 'subject' && currentSubject.id === 'kanji-master-n3' && (
+          <KanjiMasterN3Selector
+            lessons={currentSubject.lessons}
+            onStartBySections={(sections) =>
+              navigate(`/subject/${currentSubject.id}/study?sections=${sections.join(',')}`)
+            }
+            onBackToHome={() => navigate('/')}
+          />
+        )}
+
+        {route.page === 'subject' && 
+          currentSubject.id !== 'mimi-n3-goi' && 
+          currentSubject.id !== 'jfe301' && 
+          currentSubject.id !== 'kanji-master-n3' && (
           <LessonSelector
             lessons={currentSubject.lessons}
             selectedSectionIds={selectedSectionIds}

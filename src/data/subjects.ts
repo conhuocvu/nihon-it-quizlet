@@ -1,6 +1,7 @@
 import { lessons as nihonItLessons } from './lessons';
 import { mimiN3Lessons } from './mimiN3FullData';
 import { jfe301Lessons } from './jfe301Data';
+import { kanjiMasterN3Lessons } from './kanjiMasterN3Data';
 import type { Lesson } from './lessons';
 
 export interface Subject {
@@ -50,6 +51,20 @@ export const subjects: Subject[] = [
     isFlashcardOnly: true,
   },
   {
+    id: 'kanji-master-n3',
+    title: 'Kanji Master N3',
+    japaneseTitle: '漢字マスター N3 (Chương 3, 4, 5 & 6)',
+    description: 'Giáo trình Kanji Master N3 chuyên sâu. Luyện tập các chữ Kanji (âm Hán, số nét, cách đọc) và học từ vựng đi kèm bằng Flashcard sinh động.',
+    category: 'Chữ Hán N3',
+    icon: 'award',
+    gradient: 'from-rose-600 to-red-600',
+    badge: 'Chương 3, 4, 5 & 6',
+    lessons: kanjiMasterN3Lessons,
+    totalLessons: kanjiMasterN3Lessons.length,
+    totalItems: kanjiMasterN3Lessons.reduce((acc, l) => acc + l.sections.reduce((sAcc, s) => sAcc + s.items.length, 0), 0),
+    isAvailable: true,
+  },
+  {
     id: 'jfe301',
     title: 'JFE301 - English for IT',
     japaneseTitle: 'English IT Terminology',
@@ -64,3 +79,4 @@ export const subjects: Subject[] = [
     isAvailable: true,
   }
 ];
+

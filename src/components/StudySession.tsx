@@ -3,7 +3,7 @@ import type { Lesson, StudyItem } from '../data/lessons';
 import { QuestionCard } from './QuestionCard';
 import { VocabularyCard } from './VocabularyCard';
 import { ResultScreen } from './ResultScreen';
-import { ArrowLeft, ArrowRight, Check, X, Shuffle, Sparkles } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, X, Shuffle, Sparkles, Settings, SlidersHorizontal } from 'lucide-react';
 
 interface SessionQuestion {
   item: StudyItem;
@@ -47,6 +47,10 @@ export const StudySession: React.FC<StudySessionProps> = ({
   const [wrongAnswers, setWrongAnswers] = useState<SessionQuestion[]>([]);
   const [isFinished, setIsFinished] = useState(false);
   const [showShuffleToast, setShowShuffleToast] = useState(false);
+
+  // Practice mode settings for Flashcard: 'default' vs 'write-kanji'
+  const [practiceMode, setPracticeMode] = useState<'default' | 'write-kanji'>('default');
+  const [showSettingsModal, setShowSettingsModal] = useState(false);
 
   const autoNextTimeoutRef = React.useRef<any>(null);
 
@@ -279,7 +283,23 @@ export const StudySession: React.FC<StudySessionProps> = ({
         </div>
 
         {/* Header Right Actions & Counter Stats Badge */}
-        <div className="flex items-center gap-2.5 shrink-0">
+        <div className="flex items-center gap-2 shrink-0">
+          <button
+            onClick={() => setShowSettingsModal(true)}
+            className={`p-2 text-xs font-bold rounded-xl border transition-all cursor-pointer shadow-sm flex items-center gap-1 ${practiceMode === 'write-kanji'
+              ? 'bg-amber-100 text-amber-900 border-amber-300 ring-2 ring-amber-200/60'
+              : 'bg-slate-100 text-slate-600 hover:bg-slate-200 border-slate-200'
+              }`}
+            title="Cài đặt chế độ thẻ"
+          >
+            <Settings size={15} />
+            {practiceMode === 'write-kanji' && (
+              <span className="text-[10px] font-black uppercase text-amber-900 hidden md:inline">
+                Tập viết Kanji
+              </span>
+            )}
+          </button>
+
           <button
             onClick={handleShuffleInSession}
             className="flex items-center gap-1.5 py-1.5 px-3 text-xs font-bold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 rounded-xl active:scale-95 transition-all cursor-pointer shadow-sm"
@@ -316,6 +336,7 @@ export const StudySession: React.FC<StudySessionProps> = ({
             lessonTitle={currentQuestion.lessonTitle}
             sectionTitle={currentQuestion.sectionTitle}
             onAnswerGraded={handleAnswerGraded}
+            practiceMode={practiceMode}
           />
         ) : (
           <QuestionCard
@@ -338,6 +359,109 @@ export const StudySession: React.FC<StudySessionProps> = ({
             {currentIndex === questions.length - 1 ? 'Xem kết quả' : 'Câu tiếp theo'}
             <ArrowRight size={18} />
           </button>
+        </div>
+      )}
+
+      {/* SETTINGS MODAL IN STUDY SESSION */}
+      {showSettingsModal && (
+        <div
+          className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn"
+          onClick={() => setShowSettingsModal(false)}
+        >
+          <div
+            className="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl relative border border-slate-100 flex flex-col gap-5"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="flex items-start justify-between pb-3 border-b border-slate-100">
+              <div className="flex items-center gap-2.5">
+                <div className="p-2.5 rounded-2xl bg-indigo-50 text-indigo-600 border border-indigo-100">
+                  <SlidersHorizontal size={20} />
+                </div>
+                <div>
+                  <h3 className="text-lg font-black text-slate-800">
+                    Cài Đặt Chế Độ Thẻ Học
+                  </h3>
+                  <p className="text-xs font-bold text-slate-400 mt-0.5">
+                    Chọn chế độ hiển thị phù hợp với mục tiêu ôn tập
+                  </p>
+                </div>
+              </div>
+              <button
+                onClick={() => setShowSettingsModal(false)}
+                className="p-2 rounded-2xl bg-slate-100 text-slate-400 hover:bg-rose-50 hover:text-rose-600 transition-colors cursor-pointer"
+              >
+                <X size={18} />
+              </button>
+            </div>
+
+            {/* Options */}
+            <div className="flex flex-col gap-3">
+              {/* Option 1: Default */}
+              <div
+                onClick={() => {
+                  setPracticeMode('default');
+                  setShowSettingsModal(false);
+                }}
+                className={`p-4 rounded-2xl border cursor-pointer transition-all flex items-start gap-3.5 ${practiceMode === 'default'
+                  ? 'bg-indigo-50/50 border-indigo-300 ring-2 ring-indigo-200/60 shadow-xs'
+                  : 'bg-slate-50/50 hover:bg-white border-slate-200'
+                  }`}
+              >
+                <div className={`mt-0.5 p-1 rounded-full ${practiceMode === 'default' ? 'bg-indigo-600 text-white' : 'border border-slate-300'}`}>
+                  <Check size={12} strokeWidth={3} />
+                </div>
+                <div>
+                  <h4 className="text-sm font-extrabold text-slate-800">
+                    Mặc Định (Xem Chữ Hán trước)
+                  </h4>
+                  <p className="text-xs text-slate-500 font-semibold mt-0.5 leading-relaxed">
+                    Mặt trước hiển thị Chữ Hán (`頭`). Lật thẻ để xem cách đọc & nghĩa tiếng Việt.
+                  </p>
+                  <div className="mt-2 text-xs font-bold text-slate-700 bg-white p-2 rounded-xl border border-slate-200/80 inline-flex items-center gap-2">
+                    <span className="text-base font-black text-slate-800">頭</span>
+                    <span className="text-xs text-slate-400 font-semibold">➡️ [あたま] - Cái đầu</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Option 2: Write Kanji Mode */}
+              <div
+                onClick={() => {
+                  setPracticeMode('write-kanji');
+                  setShowSettingsModal(false);
+                }}
+                className={`p-4 rounded-2xl border cursor-pointer transition-all flex items-start gap-3.5 ${practiceMode === 'write-kanji'
+                  ? 'bg-amber-50/70 border-amber-300 ring-2 ring-amber-200/60 shadow-xs'
+                  : 'bg-slate-50/50 hover:bg-white border-slate-200'
+                  }`}
+              >
+                <div className={`mt-0.5 p-1 rounded-full ${practiceMode === 'write-kanji' ? 'bg-amber-600 text-white' : 'border border-slate-300'}`}>
+                  <Check size={12} strokeWidth={3} />
+                </div>
+                <div>
+                  <h4 className="text-sm font-extrabold text-slate-800 flex items-center gap-1.5">
+                    <span>✍️ Tập Viết Kanji (Chỉ hiện Cách đọc, Ẩn Kanji & Nghĩa)</span>
+                  </h4>
+                  <p className="text-xs text-slate-500 font-semibold mt-0.5 leading-relaxed">
+                    Mặt trước thẻ CHỈ hiển thị duy nhất Cách đọc (`あたま`). Ẩn cả Chữ Hán lẫn Nghĩa tiếng Việt để bạn tập trung viết chữ Hán ra giấy!
+                  </p>
+                  <div className="mt-2 text-xs font-bold text-slate-700 bg-white p-2 rounded-xl border border-amber-200 inline-flex items-center gap-2">
+                    <span className="text-sm font-black text-rose-600">あたま</span>
+                    <span className="text-xs text-slate-400 font-semibold">➡️ Lật thẻ: <strong className="text-slate-800 font-black">頭 (Cái đầu)</strong></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Footer */}
+            <button
+              onClick={() => setShowSettingsModal(false)}
+              className="w-full py-3 rounded-2xl bg-indigo-600 text-white font-black text-xs shadow-md shadow-indigo-100 hover:bg-indigo-700 transition-all cursor-pointer text-center"
+            >
+              Áp Dụng & Đóng
+            </button>
+          </div>
         </div>
       )}
     </div>

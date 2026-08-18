@@ -65,7 +65,6 @@ export const kanjiMasterN3Lessons: Lesson[] = [
           { "id": "km-n3-c3-l2-11", "term": "素材", "reading": "そざい", "answer": "Nguyên liệu thô, nguyên bản", "meaning": "Nguyên liệu thô, nguyên bản", "example": "そざいをいかした料理。\n(Món ăn tận dụng được sự nguyên bản của nguyên liệu.)" },
           { "id": "km-n3-c3-l2-12", "term": "材料", "reading": "ざいりょう", "answer": "Tư liệu, nguyên liệu", "meaning": "Tư liệu, nguyên liệu", "example": "人生を小説のざいりょうにする。\n(Lấy cuộc đời làm tư liệu cho cuốn tiểu thuyết.)" },
           { "id": "km-n3-c3-l2-13", "term": "人材", "reading": "じんざい", "answer": "Nhân tài, nguồn nhân lực", "meaning": "Nhân tài, nguồn nhân lực", "example": "優れたじんざいを集める。\n(Thu hút nguồn nhân tài ưu tú.)" },
-          { "id": "km-n3-c3-l2-14", "term": "やきもち", "reading": "やきもち", "answer": "Ghen tuông, ghen tị", "meaning": "Ghen tuông, ghen tị", "example": "人気者の友人にやきもちをやく。\n(Ghen tị với người bạn nổi tiếng.)" },
           { "id": "km-n3-c3-l2-15", "term": "焼ける", "reading": "やける", "answer": "Được nướng chín, tỏa hương (Tự động từ)", "meaning": "Được nướng chín, tỏa hương (Tự động từ)", "example": "パンがやけるいいにおいがする。\n(Có mùi thơm nức của bánh mì đang được nướng.)" },
           { "id": "km-n3-c3-l2-16", "term": "容器", "reading": "ようき", "answer": "Đồ đựng, hộp chứa", "meaning": "Đồ đựng, hộp chứa", "example": "ガラスのようきに入ったジャム。\n(Mứt đựng trong lọ thủy tinh.)" },
           { "id": "km-n3-c3-l2-17", "term": "器", "reading": "うつわ", "answer": "Khí chất, tài làm sếp", "meaning": "Khí chất, tài làm sếp", "example": "彼は社長のうつわではない。\n(Anh ta không có khí chất để làm giám đốc.)" },
@@ -100,7 +99,8 @@ export const kanjiMasterN3Lessons: Lesson[] = [
           { "id": "km-n3-c3-l3-15", "term": "哺乳類", "reading": "ほにゅうるい", "answer": "Thủ loại, động vật có vú", "meaning": "Thủ loại, động vật có vú", "example": "地球上のほにゅうるいは約五千種だ。\n(Động vật có vú trên Trái đất có khoảng 5.000 loài.)" },
           { "id": "km-n3-c3-l3-16", "term": "粉雪", "reading": "こなゆき", "answer": "Tuyết bột, tuyết mịn", "meaning": "Tuyết bột, tuyết mịn", "example": "寒さがきびしくなり、こなゆきがちらつく。\n(Trời trở lạnh gay gắt, tuyết bột rơi lất phất.)" },
           { "id": "km-n3-c3-l3-17", "term": "花粉", "reading": "かふん", "answer": "Phấn hoa", "meaning": "Phấn hoa", "example": "春になるとかふんが大量に飛ぶ。\n(Khi mùa xuân đến, phấn hoa bay ngập tràn.)" },
-          { "id": "km-n3-c3-l3-18", "term": "塩分", "reading": "えんぶん", "answer": "Lượng muối, độ mặn", "meaning": "Lượng muối, độ mặn", "example": "えんぶんのとりすぎはよくない。\n(Hấp thụ quá nhiều lượng muối là không tốt.)" }
+          { "id": "km-n3-c3-l3-18", "term": "塩分", "reading": "えんぶん", "answer": "Lượng muối, độ mặn", "meaning": "Lượng muối, độ mặn", "example": "えんぶんのとりすぎはよくない。\n(Hấp thụ quá nhiều lượng muối là không tốt.)" },
+          { "id": "km-n3-c3-l3-19", "term": "粉", "reading": "こな", "answer": "Bột, chất bột", "meaning": "Bột, chất bột", "example": "小麦から粉を作る。\n(Làm bột từ lúa mì.)" }
         ]
       }
     ]
@@ -129,8 +129,9 @@ export const kanjiMasterN3Lessons: Lesson[] = [
           { "id": "km-n3-c3-l4-13", "term": "果てる", "reading": "はてる", "answer": "Tận cùng, kiệt sức (Tự động từ)", "meaning": "Tận cùng, kiệt sức (Tự động từ)", "example": "働きすぎてつかれはてた。 / 世界のはてまで旅をしたい。\n(Làm việc quá sức nên kiệt quệ mệt mỏi. / Muốn đi du lịch đến tận cùng thế giới.)" },
           { "id": "km-n3-c3-l4-14", "term": "豆", "reading": "まめ", "answer": "Hạt đậu, hạt cà phê", "meaning": "Hạt đậu, hạt cà phê", "example": "数種類のコーヒーまめをブレンドする。\n(Trộn lẫn vài loại hạt cà phê.)" },
           { "id": "km-n3-c3-l4-15", "term": "豆知識", "reading": "まめちしき", "answer": "Mẹo nhỏ, kiến thức bên lề", "meaning": "Mẹo nhỏ, kiến thức bên lề", "example": "まめ知識が豊富な人。\n(Người có lượng kiến thức bên lề phong phú.)" },
-          { "id": "km-n3-c3-l4-16", "term": "かんチューハイ", "reading": "かんちゅーはい", "answer": "Rượu Chu-hai đóng lon", "meaning": "Rượu Chu-hai đóng lon", "example": "コンビニでかんチューハイを買う。\n(Mua rượu Chu-hai lon ở cửa hàng tiện lợi.)" },
-          { "id": "km-n3-c3-l4-17", "term": "缶詰", "reading": "かんづめ", "answer": "Đồ hộp, thực phẩm đóng hộp", "meaning": "Đồ hộp, thực phẩm đóng hộp", "example": "かんづめを使ったかんたんな料理。\n(Món ăn đơn giản làm bằng đồ đóng hộp.)" }
+          { "id": "km-n3-c3-l4-17", "term": "缶詰", "reading": "かんづめ", "answer": "Đồ hộp, thực phẩm đóng hộp", "meaning": "Đồ hộp, thực phẩm đóng hộp", "example": "かんづめを使ったかんたんな料理。\n(Món ăn đơn giản làm bằng đồ đóng hộp.)" },
+          { "id": "km-n3-c3-l4-18", "term": "菜", "reading": "な", "answer": "Rau, ngọn rau", "meaning": "Rau, ngọn rau", "example": "春の菜を摘む。\n(Hái rau mùa xuân.)" },
+          { "id": "km-n3-c3-l4-19", "term": "果て", "reading": "はて", "answer": "Tận cùng, nơi cuối cùng", "meaning": "Tận cùng, nơi cuối cùng", "example": "世界のはてまで旅をする。\n(Đi du lịch đến tận cùng thế giới.)" }
         ]
       }
     ]
@@ -154,8 +155,7 @@ export const kanjiMasterN3Lessons: Lesson[] = [
           { "id": "km-n3-c3-l5-8", "term": "計量", "reading": "けいりょう", "answer": "Cân đo, định lượng", "meaning": "Cân đo, định lượng", "example": "おかし作りは計量がポイントだ。\n(Việc định lượng chính xác là mấu chốt khi làm bánh kẹo.)" },
           { "id": "km-n3-c3-l5-9", "term": "分量", "reading": "ぶんりょう", "answer": "Liều lượng, phân lượng", "meaning": "Liều lượng, phân lượng", "example": "分量をまちがえたのか、味がおかしい。\n(Không biết có bị sai liều lượng không mà mùi vị rất lạ.)" },
           { "id": "km-n3-c3-l5-10", "term": "重量", "reading": "じゅうりょう", "answer": "Trọng lượng", "meaning": "Trọng lượng", "example": "くうこうでは荷物の重量検査がある。\n(Tại sân bay có kiểm tra trọng lượng hành lý.)" },
-          { "id": "km-n3-c3-l5-11", "term": "一杯", "reading": "いっぱい", "answer": "Một ly nữa, đầy", "meaning": "Một ly nữa, đầy", "example": "コーヒーをもういっぱい飲む。\n(Uống thêm một ly cà phê nữa.)" },
-          { "id": "km-n3-c3-l5-12", "term": "さかずき", "reading": "さかずき", "answer": "Chén rượu", "meaning": "Chén rượu", "example": "さかずきを交わす。\n(Giao bôi, trao đổi chén rượu thề.)" },
+          { "id": "km-n3-c3-l5-12", "term": "杯", "reading": "さかずき", "answer": "Chén rượu", "meaning": "Chén rượu", "example": "さかずきを交わす。\n(Giao bôi, trao đổi chén rượu thề.)" },
           { "id": "km-n3-c3-l5-13", "term": "三枚", "reading": "さんまい", "answer": "Ba tấm/tờ (lạng/phần phi lê cá)", "meaning": "Ba tấm/tờ (lạng/phần phi lê cá)", "example": "魚をさんまいにおろす。\n(Phi lê xẻ cá làm 3 phần.)" },
           { "id": "km-n3-c3-l5-14", "term": "五枚", "reading": "ごまい", "answer": "Năm tờ/tấm", "meaning": "Năm tờ/tấm", "example": "八十円切手をごまい買う。\n(Mua 5 con tem 80 Yên.)" },
           { "id": "km-n3-c3-l5-15", "term": "二十匹", "reading": "にじゅっぴき", "answer": "Hai mươi con (động vật)", "meaning": "Hai mươi con (động vật)", "example": "にじゅっぴきの熱帯魚。\n(20 con cá nhiệt đới.)" },
@@ -186,13 +186,12 @@ export const kanjiMasterN3Lessons: Lesson[] = [
           { "id": "km-n3-c4-l1-9", "term": "鼻", "reading": "はな", "answer": "Mũi (Tự hào)", "meaning": "Mũi (Tự hào)", "example": "有名大学に合格して鼻が高い。\n(Đỗ trường đại học danh tiếng nên rất tự hào/phổng mũi.)" },
           { "id": "km-n3-c4-l1-10", "term": "耳鼻科", "reading": "じびか", "answer": "Khoa tai mũi họng", "meaning": "Khoa tai mũi họng", "example": "耳の調子が悪く、耳鼻科へ行く。\n(Tai có vấn đề nên đi khám tai mũi họng.)" },
           { "id": "km-n3-c4-l1-11", "term": "口頭", "reading": "こうとう", "answer": "Nói miệng, vấn đáp", "meaning": "Nói miệng, vấn đáp", "example": "受験科目にこうとう試験がある。\n(Trong các môn thi có bài thi vấn đáp.)" },
-          { "id": "km-n3-c4-l1-12", "term": "かしら文字", "reading": "かしらもじ", "answer": "Chữ cái đầu", "meaning": "Chữ cái đầu", "example": "名前のかしら文字を書く。\n(Viết chữ cái đầu của tên mình.)" },
+          { "id": "km-n3-c4-l1-12", "term": "頭文字", "reading": "かしらもじ", "answer": "Chữ cái đầu", "meaning": "Chữ cái đầu", "example": "名前のかしら文字を書く。\n(Viết chữ cái đầu của tên mình.)" },
           { "id": "km-n3-c4-l1-13", "term": "笑顔", "reading": "えがお", "answer": "Gương mặt tươi cười", "meaning": "Gương mặt tươi cười", "example": "友人をえがおで出迎える。\n(Đón tiếp người bạn bằng gương mặt rạng rỡ nụ cười.)" },
-          { "id": "km-n3-c4-l1-14", "term": "大人顔負け", "reading": "おとなかおまけ", "answer": "Khiến cả người lớn nể phục/chào thua", "meaning": "Khiến cả người lớn nể phục/chào thua", "example": "大人かおまけの知識がある。\n(Có kiến thức uyên bác khiến người lớn cũng chào thua.)" },
+          { "id": "km-n3-c4-l1-14", "term": "顔負け", "reading": "かおまけ", "answer": "Xấu hổ, nể phục, chào thua", "meaning": "Xấu hổ, nể phục, chào thua", "example": "大人かおまけの知識がある。\n(Có kiến thức uyên bác khiến người lớn cũng chào thua.)" },
           { "id": "km-n3-c4-l1-15", "term": "顔色", "reading": "かおいろ", "answer": "Sắc mặt", "meaning": "Sắc mặt", "example": "じょうしのかおいろをうかがう。\n(Quan sát sắc mặt của sếp.)" },
-          { "id": "km-n3-c4-l1-16", "term": "くび", "reading": "くび", "answer": "Bị sa thải, đuổi việc", "meaning": "Bị sa thải, đuổi việc", "example": "会社をくびになる。\n(Bị sa thải khỏi công ty.)" },
           { "id": "km-n3-c4-l1-17", "term": "首相", "reading": "しゅしょう", "answer": "Thủ tướng", "meaning": "Thủ tướng", "example": "歴代のしゅしょうを調べる。\n(Tìm hiểu các vị thủ tướng qua các thời kỳ.)" },
-          { "id": "km-n3-c4-l1-18", "term": "鼻声", "reading": "はなごえ", "answer": "Giọng mũi, giọng nũng nịu", "meaning": "Giọng mũi, giọng nũng nịu", "example": "はなにかかった声であまえる。\n(Làm nũng bằng giọng mũi nhẹ nhàng.)" }
+          { "id": "km-n3-c4-l1-19", "term": "音頭", "reading": "おんど", "answer": "Dẫn đầu, xướng nhịp", "meaning": "Dẫn đầu, xướng nhịp", "example": "宴会で乾杯の音頭を取る。\n(Bắt nhịp cạn ly trong buổi tiệc.)" }
         ]
       }
     ]
@@ -215,7 +214,6 @@ export const kanjiMasterN3Lessons: Lesson[] = [
           { "id": "km-n3-c4-l2-7", "term": "汗", "reading": "あせ", "answer": "Mồ hôi", "meaning": "Mồ hôi", "example": "たくさん運動して汗をかいた。 / きんちょうしてあせが出る。\n(Vận động nhiều toát cả mồ hôi. / Lo lắng toát hết mồ hôi.)" },
           { "id": "km-n3-c4-l2-8", "term": "呼吸", "reading": "こきゅう", "answer": "Hô hấp, thở", "meaning": "Hô hấp, thở", "example": "こきゅうが苦しい。\n(Hơi thở khó nhọc, khó thở.)" },
           { "id": "km-n3-c4-l2-9", "term": "吸い取る", "reading": "すいとる", "answer": "Hút đi", "meaning": "Hút đi", "example": "そうじきで部屋のゴミをすい取る。\n(Dùng máy hút bụi hút sạch rác trong phòng.)" },
-          { "id": "km-n3-c4-l2-10", "term": "息を吐く", "reading": "いきをはく", "answer": "Thở ra, hà hơi", "meaning": "Thở ra, hà hơi", "example": "いきをはいたらガラスがくもった。\n(Hà hơi vào tấm kính liền bị mờ đi.)" },
           { "id": "km-n3-c4-l2-11", "term": "息苦しい", "reading": "いきぐるしい", "answer": "Ngột ngạt, khó thở", "meaning": "Ngột ngạt, khó thở", "example": "この部屋はなんだかいきぐるしい。\n(Căn phòng này có vẻ gì đó ngột ngạt khó thở.)" },
           { "id": "km-n3-c4-l2-12", "term": "冷や汗", "reading": "ひやあせ", "answer": "Mồ hôi lạnh (Vì xấu hổ, sợ hãi)", "meaning": "Mồ hôi lạnh (Vì xấu hổ, sợ hãi)", "example": "はずかしくてひやあせをかいた。\n(Vì xấu hổ quá nên toát mồ hôi hột.)" },
           { "id": "km-n3-c4-l2-13", "term": "発汗", "reading": "はっかん", "answer": "Sự đổ mồ hôi", "meaning": "Sự đổ mồ hôi", "example": "この食品にははっかん作用がある。\n(Loại thực phẩm này có tác dụng kích thích đổ mồ hôi.)" },
@@ -248,7 +246,8 @@ export const kanjiMasterN3Lessons: Lesson[] = [
           { "id": "km-n3-c4-l3-13", "term": "痛む", "reading": "いたむ", "answer": "Đau nhức (động từ)", "meaning": "Đau nhức (động từ)", "example": "寒さでひざがいたむ。\n(Đầu gối đau nhức buốt vì trời lạnh.)" },
           { "id": "km-n3-c4-l3-14", "term": "検証", "reading": "けんしょう", "answer": "Kiểm chứng, xác minh nguyên nhân", "meaning": "Kiểm chứng, xác minh nguyên nhân", "example": "火事のげんいんをけんしょうする。\n(Xác minh nguyên nhân vụ hỏa hoạn.)" },
           { "id": "km-n3-c4-l3-15", "term": "検討", "reading": "けんとう", "answer": "Cân nhắc, thảo luận xem xét", "meaning": "Cân nhắc, thảo luận xem xét", "example": "会議でけんとうしたうえで決める。\n(Cân nhắc kỹ lưỡng trong cuộc họp rồi mới quyết định.)" },
-          { "id": "km-n3-c4-l3-16", "term": "審査員", "reading": "しんさいん", "answer": "Giám khảo, hội đồng thẩm định", "meaning": "Giám khảo, hội đồng thẩm định", "example": "スピーチ大会のしんさいん。\n(Ban giám khảo của cuộc thi hùng biện.)" }
+          { "id": "km-n3-c4-l3-16", "term": "審査員", "reading": "しんさいん", "answer": "Giám khảo, hội đồng thẩm định", "meaning": "Giám khảo, hội đồng thẩm định", "example": "スピーチ大会のしんさいん。\n(Ban giám khảo của cuộc thi hùng biện.)" },
+          { "id": "km-n3-c4-l3-17", "term": "痛める", "reading": "いためる", "answer": "Làm đau, làm tổn thương (Tha động từ)", "meaning": "Làm đau, làm tổn thương (Tha động từ)", "example": "足の関節を痛める。\n(Làm tổn thương khớp chân.)" }
         ]
       }
     ]
@@ -272,7 +271,6 @@ export const kanjiMasterN3Lessons: Lesson[] = [
           { "id": "km-n3-c4-l4-8", "term": "帯びる", "reading": "おびる", "answer": "Mang nồng độ, mang tính chất/hơi hướng", "meaning": "Mang nồng độ, mang tính chất/hơi hướng", "example": "酒気帯び運転は法律で禁止されている。\n(Luật cấm tuyệt đối việc lái xe khi có nồng độ cồn/hơi men.)" },
           { "id": "km-n3-c4-l4-9", "term": "一帯", "reading": "いったい", "answer": "Cả khu vực, toàn vùng", "meaning": "Cả khu vực, toàn vùng", "example": "じしんのひがいは関東一帯におよんだ。\n(Thiệt hại do trận động đất lan ra khắp toàn vùng Kanto.)" },
           { "id": "km-n3-c4-l4-10", "term": "帯", "reading": "おび", "answer": "Thắt lưng Kimono", "meaning": "Thắt lưng Kimono", "example": "着物に合わせた帯をしめる。\n(Thắt đai lưng phù hợp với bộ Kimono.)" },
-          { "id": "km-n3-c4-l4-11", "term": "血の praticing", "reading": "ちのにじむような努力", "answer": "Nỗ lực xương máu, mồ hôi nước mắt", "meaning": "Nỗ lực xương máu, mồ hôi nước mắt", "example": "ちのにじむような努力をする。\n(Nỗ lực kiên trì đến mức rỉ máu/mồ hôi xương máu.)" },
           { "id": "km-n3-c4-l4-12", "term": "血色", "reading": "けっしょく", "answer": "Sắc mặt hồng hào tươi tắn", "meaning": "Sắc mặt hồng hào tươi tắn", "example": "けっしょくのいい顔。\n(Khuôn mặt tươi tắn hồng hào sắc khí tốt.)" },
           { "id": "km-n3-c4-l4-13", "term": "液体", "reading": "えきたい", "answer": "Chất lỏng", "meaning": "Chất lỏng", "example": "びんの中の茶色いえきたい。\n(Chất lỏng màu nâu bên trong lọ.)" },
           { "id": "km-n3-c4-l4-14", "term": "血液型", "reading": "けつえきがた", "answer": "Nhóm máu", "meaning": "Nhóm máu", "example": "自分のけつえきがたを調べる。\n(Tìm hiểu/xét nghiệm nhóm máu của mình.)" },
@@ -305,7 +303,8 @@ export const kanjiMasterN3Lessons: Lesson[] = [
           { "id": "km-n3-c4-l10-12", "term": "援助", "reading": "えんじょ", "answer": "Viện trợ tài chính, giúp đỡ", "meaning": "Viện trợ tài chính, giúp đỡ", "example": "親に学費をえんじょしてもらう。\n(Được cha mẹ trợ giúp hỗ trợ học phí.)" },
           { "id": "km-n3-c4-l10-13", "term": "補助", "reading": "ほじょ", "answer": "Bổ trợ, phụ giúp chi phí", "meaning": "Bổ trợ, phụ giúp chi phí", "example": "息子の大学の学費をほじょする。\n(Hỗ trợ chu cấp một phần học phí đại học cho con trai.)" },
           { "id": "km-n3-c4-l10-14", "term": "亡命", "reading": "ぼうめい", "answer": "Tị nạn chính trị, đào tẩu", "meaning": "Tị nạn chính trị, đào tẩu", "example": "外国へぼうめいする。\n(Đào tẩu, tị nạn chính trị sang nước ngoài.)" },
-          { "id": "km-n3-c4-l10-15", "term": "死亡者", "reading": "しぼうしゃ", "answer": "Nạn nhân tử vong, số người chết", "meaning": "Nạn nhân tử vong, số người chết", "example": "交通じこによるしぼう者が多い。\n(Số người chết do tai nạn giao thông chiếm tỷ lệ cao.)" }
+          { "id": "km-n3-c4-l10-15", "term": "死亡者", "reading": "しぼうしゃ", "answer": "Nạn nhân tử vong, số người chết", "meaning": "Nạn nhân tử vong, số người chết", "example": "交通じこによるしぼう者が多い。\n(Số người chết do tai nạn giao thông chiếm tỷ lệ cao.)" },
+          { "id": "km-n3-c4-l10-16", "term": "救急箱", "reading": "きゅうきゅうばこ", "answer": "Hộp dụng cụ y tế sơ cứu", "meaning": "Hộp dụng cụ y tế sơ cứu", "example": "いざという時のために救急箱を用意する。\n(Chuẩn bị sẵn hộp dụng cụ y tế sơ cứu phòng khi khẩn cấp.)" }
         ]
       }
     ]

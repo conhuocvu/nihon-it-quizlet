@@ -7,6 +7,7 @@ interface VocabularyCardProps {
   lessonTitle: string;
   sectionTitle: string;
   onAnswerGraded: (isCorrect: boolean) => void;
+  practiceMode?: 'default' | 'write-kanji';
 }
 
 export const VocabularyCard: React.FC<VocabularyCardProps> = ({
@@ -14,6 +15,7 @@ export const VocabularyCard: React.FC<VocabularyCardProps> = ({
   lessonTitle,
   sectionTitle,
   onAnswerGraded,
+  practiceMode = 'default',
 }) => {
   const [isFlipped, setIsFlipped] = useState(false);
   const [isGraded, setIsGraded] = useState(false);
@@ -86,7 +88,8 @@ export const VocabularyCard: React.FC<VocabularyCardProps> = ({
     <div className="w-full max-w-xl mx-auto">
       {/* Lesson Details Header */}
       <div className="mb-4 flex items-center justify-between">
-        <span className="text-xs font-bold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-full uppercase tracking-wide">
+        <span className="text-xs font-bold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-full uppercase tracking-wide flex items-center gap-1.5">
+          {practiceMode === 'write-kanji' && <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />}
           {lessonTitle}
         </span>
         <span className="text-xs font-medium text-slate-500 flex items-center gap-1">
@@ -106,52 +109,75 @@ export const VocabularyCard: React.FC<VocabularyCardProps> = ({
           {/* FRONT FACE */}
           <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl border-2 border-slate-200 bg-white shadow-xl shadow-slate-100/40 p-6 md:p-8 flex flex-col justify-between cursor-pointer hover:border-indigo-300 transition-all duration-300">
             <div className="text-right">
-              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-indigo-50 text-[10px] font-bold text-indigo-600 uppercase tracking-wider">
-                Từ vựng
-              </span>
+              {practiceMode === 'write-kanji' ? (
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-100 text-[10px] font-black text-amber-800 uppercase tracking-wider border border-amber-200">
+                  ✍️ Tập viết Chữ Hán
+                </span>
+              ) : (
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-indigo-50 text-[10px] font-bold text-indigo-600 uppercase tracking-wider">
+                  Từ vựng
+                </span>
+              )}
             </div>
 
             <div className="text-center my-auto flex flex-col items-center justify-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-800 leading-tight mb-2 select-text">
-                {item.term}
-              </h2>
-              
-              {/* Show/Hide Hiragana Toggle Area with Fixed Height */}
-              {item.reading && (
-                <div className="mt-2 h-12 flex items-center justify-center">
-                  {showHira ? (
-                    <p className="text-slate-500 font-semibold text-sm md:text-base select-text flex items-center gap-1.5 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200/50 animate-fadeIn">
-                      <span>[{item.reading}]</span>
-                      <button
-                        onClick={(e) => {
-                          e.stopPropagation(); // Stop click from flipping card
-                          setShowHira(false);
-                        }}
-                        className="p-1 rounded-md text-slate-400 hover:text-rose-500 hover:bg-rose-50 transition-colors cursor-pointer"
-                        title="Ẩn cách đọc"
-                      >
-                        <EyeOff size={14} />
-                      </button>
-                    </p>
-                  ) : (
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation(); // Stop click from flipping card
-                        setShowHira(true);
-                      }}
-                      className="text-xs font-bold text-indigo-600 hover:text-indigo-700 bg-indigo-50 hover:bg-indigo-100/80 px-3 py-2 rounded-lg border border-indigo-100 flex items-center gap-1.5 active:scale-95 transition-all cursor-pointer shadow-sm"
-                    >
-                      <Eye size={12} />
-                      Hiện cách đọc / Từ gốc
-                    </button>
+              {practiceMode === 'write-kanji' ? (
+                <>
+                  {/* WRITE KANJI MODE FRONT: Show Reading Big ONLY, Hide Kanji & Hide Meaning */}
+                  <h2 className="text-4xl md:text-5xl font-black text-rose-600 leading-tight mb-2 select-text">
+                    {item.reading || item.term}
+                  </h2>
+                  <div className="mt-4 px-3.5 py-1.5 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 text-xs font-bold flex items-center gap-1.5">
+                    <span>✍️ Hãy tự viết Chữ Hán ra giấy trước khi xem đáp án</span>
+                  </div>
+                </>
+              ) : (
+                <>
+                  {/* DEFAULT MODE FRONT: Show Kanji Big */}
+                  <h2 className="text-3xl md:text-4xl font-bold text-slate-800 leading-tight mb-2 select-text">
+                    {item.term}
+                  </h2>
+                  
+                  {/* Show/Hide Hiragana Toggle Area with Fixed Height */}
+                  {item.reading && (
+                    <div className="mt-2 h-12 flex items-center justify-center">
+                      {showHira ? (
+                        <p className="text-slate-500 font-semibold text-sm md:text-base select-text flex items-center gap-1.5 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200/50 animate-fadeIn">
+                          <span>[{item.reading}]</span>
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setShowHira(false);
+                            }}
+                            className="p-1 rounded-md text-slate-400 hover:text-rose-500 hover:bg-rose-50 transition-colors cursor-pointer"
+                            title="Ẩn cách đọc"
+                          >
+                            <EyeOff size={14} />
+                          </button>
+                        </p>
+                      ) : (
+                        <button
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setShowHira(true);
+                          }}
+                          className="text-xs font-bold text-indigo-600 hover:text-indigo-700 bg-indigo-50 hover:bg-indigo-100/80 px-3 py-2 rounded-lg border border-indigo-100 flex items-center gap-1.5 active:scale-95 transition-all cursor-pointer shadow-sm"
+                        >
+                          <Eye size={12} />
+                          Hiện cách đọc / Từ gốc
+                        </button>
+                      )}
+                    </div>
                   )}
-                </div>
+                </>
               )}
             </div>
 
             <div className="flex items-center justify-center gap-2 text-indigo-600 font-semibold text-sm">
               <Eye size={16} />
-              Bấm vào thẻ hoặc nút dưới để xem nghĩa
+              {practiceMode === 'write-kanji'
+                ? 'Bấm vào thẻ để đối chiếu Chữ Hán đáp án'
+                : 'Bấm vào thẻ hoặc nút dưới để xem nghĩa'}
             </div>
           </div>
 
@@ -159,7 +185,7 @@ export const VocabularyCard: React.FC<VocabularyCardProps> = ({
           <div className="absolute inset-0 w-full h-full backface-hidden rounded-2xl border-2 border-slate-200 bg-white shadow-xl shadow-slate-100/40 rotate-y-180 p-6 md:p-8 flex flex-col justify-between cursor-default">
             <div className="text-right flex justify-between items-center">
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-[10px] font-bold text-emerald-600 uppercase tracking-wider">
-                Ý nghĩa
+                {practiceMode === 'write-kanji' ? 'Chữ Hán Đáp Án' : 'Ý nghĩa'}
               </span>
               <button
                 onClick={(e) => {
@@ -174,11 +200,23 @@ export const VocabularyCard: React.FC<VocabularyCardProps> = ({
               </button>
             </div>
 
-            {/* Meaning details */}
+            {/* Meaning / Kanji details */}
             <div className="text-center my-auto flex flex-col items-center justify-center overflow-y-auto max-h-[190px] py-2 px-1 w-full">
-              <h3 className="text-2xl md:text-3xl font-extrabold text-slate-800 leading-tight select-text">
-                {item.meaning || item.answer}
-              </h3>
+              {practiceMode === 'write-kanji' ? (
+                <>
+                  <h3 className="text-4xl md:text-5xl font-black text-slate-800 leading-tight select-text mb-2">
+                    {item.term}
+                  </h3>
+                  <div className="flex items-center gap-2 text-sm font-bold text-slate-500">
+                    {item.reading && <span className="bg-slate-100 px-2 py-0.5 rounded border border-slate-200">[{item.reading}]</span>}
+                    <span>{item.meaning || item.answer}</span>
+                  </div>
+                </>
+              ) : (
+                <h3 className="text-2xl md:text-3xl font-extrabold text-slate-800 leading-tight select-text">
+                  {item.meaning || item.answer}
+                </h3>
+              )}
               {item.explanation && (
                 <div className="mt-3 p-3 bg-slate-50 rounded-xl border border-slate-100 text-left text-xs md:text-sm text-slate-500 max-w-md w-full select-text">
                   <span className="font-bold text-slate-700 block mb-0.5">Giải thích:</span>

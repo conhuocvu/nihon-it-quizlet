@@ -34,21 +34,46 @@ export const KanjiMasterN3Selector: React.FC<KanjiMasterN3SelectorProps> = ({
   const [modalLessonId, setModalLessonId] = useState<number | null>(null);
   const [selectedKanjiInModal, setSelectedKanjiInModal] = useState<KanjiChar | null>(null);
 
-  // Chapter filter state: 'all' or chapter number 3, 4, 5, 6
+  // Chapter filter state: 'all' or chapter number 3, 4, 5, 6, 7, 8
   const [selectedChapter, setSelectedChapter] = useState<number | 'all'>('all');
+
+  const CHAPTERS = [
+    { num: 3, name: 'Chương 3: Ẩm thực (料理)', badge: 'C3: Ẩm thực (Bài 1-5)', color: 'from-amber-500 to-orange-500' },
+    { num: 4, name: 'Chương 4: Bệnh viện (病院)', badge: 'C4: Bệnh viện (Bài 6-10)', color: 'from-rose-500 to-pink-500' },
+    { num: 5, name: 'Chương 5: Thể thao (スポーツ)', badge: 'C5: Thể thao (Bài 11-15)', color: 'from-emerald-500 to-teal-500' },
+    { num: 6, name: 'Chương 6: Cảm xúc (感情)', badge: 'C6: Cảm xúc (Bài 16-20)', color: 'from-purple-500 to-indigo-500' },
+    { num: 7, name: 'Chương 7: Kết hôn (結婚)', badge: 'C7: Kết hôn (Bài 21-25)', color: 'from-pink-500 to-rose-500' },
+    { num: 8, name: 'Chương 8: Quan hệ (関係)', badge: 'C8: Quan hệ (Bài 26-30)', color: 'from-sky-500 to-blue-500' },
+  ];
 
   const getChapterInfo = (lessonId: number) => {
     if (lessonId <= 5) return { num: 3, name: 'Ẩm thực (料理)', color: 'from-amber-500 to-orange-500' };
     if (lessonId <= 10) return { num: 4, name: 'Bệnh viện (病院)', color: 'from-rose-500 to-pink-500' };
     if (lessonId <= 15) return { num: 5, name: 'Thể thao (スポーツ)', color: 'from-emerald-500 to-teal-500' };
-    return { num: 6, name: 'Cảm xúc (感情)', color: 'from-purple-500 to-indigo-500' };
+    if (lessonId <= 20) return { num: 6, name: 'Cảm xúc (感情)', color: 'from-purple-500 to-indigo-500' };
+    if (lessonId <= 25) return { num: 7, name: 'Kết hôn (結婚)', color: 'from-pink-500 to-rose-500' };
+    return { num: 8, name: 'Quan hệ (関係)', color: 'from-sky-500 to-blue-500' };
   };
 
   const getLessonNumInChapter = (lessonId: number) => {
     if (lessonId <= 5) return lessonId;
     if (lessonId <= 10) return lessonId - 5;
     if (lessonId <= 15) return lessonId - 10;
-    return lessonId - 15;
+    if (lessonId <= 20) return lessonId - 15;
+    if (lessonId <= 25) return lessonId - 20;
+    return lessonId - 25;
+  };
+
+  const handleToggleChapter = (chapterNum: number) => {
+    const chapterLessons = lessons.filter((l) => getChapterInfo(l.id).num === chapterNum);
+    const chapterSectionIds = chapterLessons.map((l) => l.sections[0].id);
+    const allChapterSelected = chapterSectionIds.every((id) => selectedSectionIds.includes(id));
+
+    if (allChapterSelected) {
+      setSelectedSectionIds((prev) => prev.filter((id) => !chapterSectionIds.includes(id)));
+    } else {
+      setSelectedSectionIds((prev) => Array.from(new Set([...prev, ...chapterSectionIds])));
+    }
   };
 
   const handleToggleSelect = (e: React.MouseEvent, sectionId: string) => {
@@ -181,12 +206,7 @@ export const KanjiMasterN3Selector: React.FC<KanjiMasterN3SelectorProps> = ({
         >
           Tất cả ({lessons.length} bài)
         </button>
-        {[
-          { num: 3, name: 'C3: Ẩm thực (Bài 1-5)' },
-          { num: 4, name: 'C4: Bệnh viện (Bài 6-10)' },
-          { num: 5, name: 'C5: Thể thao (Bài 11-15)' },
-          { num: 6, name: 'C6: Cảm xúc (Bài 16-20)' },
-        ].map((chap) => (
+        {CHAPTERS.map((chap) => (
           <button
             key={chap.num}
             onClick={() => setSelectedChapter(chap.num)}
@@ -195,86 +215,130 @@ export const KanjiMasterN3Selector: React.FC<KanjiMasterN3SelectorProps> = ({
               : 'bg-white text-slate-600 border-slate-200 hover:bg-rose-50 hover:border-rose-200 hover:text-rose-600'
               }`}
           >
-            {chap.name}
+            {chap.badge}
           </button>
         ))}
       </div>
 
-      {/* Grid of Lesson Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-        {filteredLessons.map((lesson) => {
-          const sectionId = lesson.sections[0].id;
-          const isSelected = selectedSectionIds.includes(sectionId);
-          const chapInfo = getChapterInfo(lesson.id);
-          const lessonNum = getLessonNumInChapter(lesson.id);
-          const chars = kanjiMasterN3Chars[lesson.id] || [];
-          const subtitle = lesson.title.split(': ')[1] || lesson.title;
+      {/* Chapter Sections with Grid of Lesson Cards */}
+      <div className="space-y-8">
+        {CHAPTERS.filter((chap) => selectedChapter === 'all' || selectedChapter === chap.num).map((chap) => {
+          const chapLessons = lessons.filter((l) => getChapterInfo(l.id).num === chap.num);
+          if (chapLessons.length === 0) return null;
+
+          const chapSectionIds = chapLessons.map((l) => l.sections[0].id);
+          const selectedInChapCount = chapSectionIds.filter((id) => selectedSectionIds.includes(id)).length;
+          const isAllChapSelected = chapSectionIds.length > 0 && selectedInChapCount === chapSectionIds.length;
 
           return (
-            <div
-              key={lesson.id}
-              onClick={() => openLessonSummary(lesson.id)}
-              className={`group relative bg-white rounded-3xl p-4 border transition-all cursor-pointer flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 ${isSelected
-                ? 'border-rose-300 ring-2 ring-rose-200/60 shadow-md bg-gradient-to-b from-rose-50/20 to-white'
-                : 'border-slate-200/90 hover:border-rose-200 shadow-sm'
-                }`}
-            >
-              {/* Card Top Row: Lesson Title Badge & Separate Checkbox */}
-              <div>
-                <div className="flex items-center justify-between gap-2 mb-2">
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-[10px] font-black px-2 py-0.5 rounded-lg bg-slate-100 text-slate-600 uppercase border border-slate-200/60">
-                      C{chapInfo.num} • Bài {lessonNum}
-                    </span>
-                  </div>
-
-                  {/* Independent Selection Checkbox */}
-                  <button
-                    type="button"
-                    onClick={(e) => handleToggleSelect(e, sectionId)}
-                    className={`p-1.5 rounded-xl transition-all cursor-pointer flex items-center justify-center ${isSelected
-                      ? 'bg-rose-500 text-white shadow-sm shadow-rose-200 scale-105'
-                      : 'bg-slate-100 text-slate-300 hover:bg-rose-100 hover:text-rose-500'
-                      }`}
-                    title={isSelected ? 'Bỏ chọn học bài này' : 'Chọn học bài này'}
-                  >
-                    {isSelected ? <Check size={14} strokeWidth={3} /> : <Square size={14} />}
-                  </button>
+            <div key={chap.num} className="bg-white/60 backdrop-blur-xs rounded-3xl p-5 border border-slate-200/80 shadow-xs">
+              {/* Chapter Header Banner */}
+              <div className="flex flex-wrap items-center justify-between gap-3 pb-3.5 mb-4 border-b border-slate-200/80">
+                <div className="flex items-center gap-2.5">
+                  <span className={`w-3.5 h-3.5 rounded-full bg-gradient-to-r ${chap.color} shadow-xs shrink-0`} />
+                  <h2 className="text-base sm:text-lg font-black text-slate-800 tracking-tight">
+                    {chap.name}
+                  </h2>
+                  <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200/80">
+                    Đã chọn {selectedInChapCount}/{chapLessons.length} bài
+                  </span>
                 </div>
 
-                {/* Subtitle Topic */}
-                <h3 className="text-sm font-extrabold text-slate-800 line-clamp-1 group-hover:text-rose-600 transition-colors mb-3">
-                  {subtitle}
-                </h3>
-
-                {/* 4 Kanji Characters Box */}
-                <div className="bg-slate-50/80 rounded-2xl p-2.5 border border-slate-100 group-hover:bg-rose-50/30 group-hover:border-rose-100 transition-colors">
-                  <div className="grid grid-cols-4 gap-1.5 text-center">
-                    {chars.map((k) => (
-                      <div
-                        key={k.char}
-                        className="bg-white rounded-xl py-2 px-1 border border-slate-200/60 shadow-xs flex flex-col items-center justify-center group-hover:border-rose-200/80 transition-colors"
-                      >
-                        <span className="text-xl font-black text-slate-800 leading-tight">
-                          {k.char}
-                        </span>
-                        <span className="text-[9px] font-black text-rose-600/80 uppercase truncate max-w-full px-0.5 mt-0.5">
-                          {k.hanViet}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                <button
+                  type="button"
+                  onClick={() => handleToggleChapter(chap.num)}
+                  className={`px-3.5 py-1.5 rounded-xl text-xs font-black transition-all flex items-center gap-1.5 cursor-pointer border shadow-xs ${
+                    isAllChapSelected
+                      ? 'bg-rose-500 text-white border-rose-500 hover:bg-rose-600 shadow-rose-100'
+                      : 'bg-white text-slate-700 border-slate-200 hover:bg-rose-50 hover:text-rose-600 hover:border-rose-200'
+                  }`}
+                >
+                  {isAllChapSelected ? <CheckSquare size={14} /> : <Square size={14} />}
+                  <span>{isAllChapSelected ? 'Bỏ chọn cả chương' : 'Tích chọn cả chương'}</span>
+                </button>
               </div>
 
-              {/* Card Footer: Summary Click Action Indicator */}
-              <div className="mt-3 pt-2.5 border-t border-slate-100/80 flex items-center justify-between text-[11px] font-bold text-slate-400 group-hover:text-rose-600">
-                <span className="flex items-center gap-1 text-[10px]">
-                  <Eye size={12} /> Xem chi tiết
-                </span>
-                <span className="text-[10px] text-slate-400 font-semibold">
-                  {lesson.sections[0].items.length} từ vựng
-                </span>
+              {/* Grid of Lesson Cards in Chapter */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                {chapLessons.map((lesson) => {
+                  const sectionId = lesson.sections[0].id;
+                  const isSelected = selectedSectionIds.includes(sectionId);
+                  const chapInfo = getChapterInfo(lesson.id);
+                  const lessonNum = getLessonNumInChapter(lesson.id);
+                  const chars = kanjiMasterN3Chars[lesson.id] || [];
+                  const subtitle = lesson.title.split(': ')[1] || lesson.title;
+
+                  return (
+                    <div
+                      key={lesson.id}
+                      onClick={() => openLessonSummary(lesson.id)}
+                      className={`group relative bg-white rounded-3xl p-4 border transition-all cursor-pointer flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 ${
+                        isSelected
+                          ? 'border-rose-300 ring-2 ring-rose-200/60 shadow-md bg-gradient-to-b from-rose-50/20 to-white'
+                          : 'border-slate-200/90 hover:border-rose-200 shadow-sm'
+                      }`}
+                    >
+                      {/* Card Top Row: Lesson Title Badge & Separate Checkbox */}
+                      <div>
+                        <div className="flex items-center justify-between gap-2 mb-2">
+                          <div className="flex items-center gap-1.5">
+                            <span className="text-[10px] font-black px-2 py-0.5 rounded-lg bg-slate-100 text-slate-600 uppercase border border-slate-200/60">
+                              C{chapInfo.num} • Bài {lessonNum}
+                            </span>
+                          </div>
+
+                          {/* Independent Selection Checkbox */}
+                          <button
+                            type="button"
+                            onClick={(e) => handleToggleSelect(e, sectionId)}
+                            className={`p-1.5 rounded-xl transition-all cursor-pointer flex items-center justify-center ${
+                              isSelected
+                                ? 'bg-rose-500 text-white shadow-sm shadow-rose-200 scale-105'
+                                : 'bg-slate-100 text-slate-300 hover:bg-rose-100 hover:text-rose-500'
+                            }`}
+                            title={isSelected ? 'Bỏ chọn học bài này' : 'Chọn học bài này'}
+                          >
+                            {isSelected ? <Check size={14} strokeWidth={3} /> : <Square size={14} />}
+                          </button>
+                        </div>
+
+                        {/* Subtitle Topic */}
+                        <h3 className="text-sm font-extrabold text-slate-800 line-clamp-1 group-hover:text-rose-600 transition-colors mb-3">
+                          {subtitle}
+                        </h3>
+
+                        {/* 4 Kanji Characters Box */}
+                        <div className="bg-slate-50/80 rounded-2xl p-2.5 border border-slate-100 group-hover:bg-rose-50/30 group-hover:border-rose-100 transition-colors">
+                          <div className="grid grid-cols-4 gap-1.5 text-center">
+                            {chars.map((k) => (
+                              <div
+                                key={k.char}
+                                className="bg-white rounded-xl py-2 px-1 border border-slate-200/60 shadow-xs flex flex-col items-center justify-center group-hover:border-rose-200/80 transition-colors"
+                              >
+                                <span className="text-xl font-black text-slate-800 leading-tight">
+                                  {k.char}
+                                </span>
+                                <span className="text-[9px] font-black text-rose-600/80 uppercase truncate max-w-full px-0.5 mt-0.5">
+                                  {k.hanViet}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Card Footer: Summary Click Action Indicator */}
+                      <div className="mt-3 pt-2.5 border-t border-slate-100/80 flex items-center justify-between text-[11px] font-bold text-slate-400 group-hover:text-rose-600">
+                        <span className="flex items-center gap-1 text-[10px]">
+                          <Eye size={12} /> Xem chi tiết
+                        </span>
+                        <span className="text-[10px] text-slate-400 font-semibold">
+                          {lesson.sections[0].items.length} từ vựng
+                        </span>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           );

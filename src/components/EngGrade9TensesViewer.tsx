@@ -147,12 +147,15 @@ export const EngGrade9TensesViewer: React.FC<EngGrade9TensesViewerProps> = ({
               3. Dấu hiệu nhận biết (Signal Words)
             </h4>
             <div className="flex flex-wrap gap-2 p-4 rounded-2xl bg-white border border-slate-200">
-              {activeTense.signalWords.map((word, idx) => (
+              {activeTense.signalWords.map((item, idx) => (
                 <span
                   key={idx}
-                  className="px-3 py-1 rounded-xl bg-teal-50 text-teal-800 border border-teal-200 text-xs font-bold"
+                  className="px-3 py-1.5 rounded-xl bg-teal-50 text-teal-900 border border-teal-200 text-xs font-bold flex items-center gap-1.5"
                 >
-                  {word}
+                  <span className="font-extrabold">{item.word}</span>
+                  <span className="text-[11px] text-teal-700 font-semibold border-l border-teal-200 pl-1.5">
+                    ➔ {item.meaning}
+                  </span>
                 </span>
               ))}
             </div>

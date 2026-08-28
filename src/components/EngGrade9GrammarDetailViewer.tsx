@@ -20,6 +20,8 @@ export const EngGrade9GrammarDetailViewer: React.FC<EngGrade9GrammarDetailViewer
   onStartQuiz
 }) => {
   const [activeTenseId, setActiveTenseId] = useState<string>('present-simple');
+  const [selectedSignalWord, setSelectedSignalWord] = useState<string | null>(null);
+  const [showAllSignalMeanings, setShowAllSignalMeanings] = useState<boolean>(false);
 
   const activeTense = engTensesData.find((t) => t.id === activeTenseId) || engTensesData[0];
 
@@ -214,19 +216,47 @@ export const EngGrade9GrammarDetailViewer: React.FC<EngGrade9GrammarDetailViewer
               </div>
 
               {/* Signal Words */}
-              <div className="space-y-2">
-                <h4 className="text-xs font-bold text-slate-700 uppercase tracking-wider">
-                  3. Dấu hiệu nhận biết (Signal Words)
-                </h4>
-                <div className="flex flex-wrap gap-2 p-4 rounded-2xl bg-white border border-slate-200">
-                  {activeTense.signalWords.map((word, idx) => (
-                    <span
-                      key={idx}
-                      className="px-3 py-1 rounded-xl bg-teal-50 text-teal-800 border border-teal-200 text-xs font-bold"
-                    >
-                      {word}
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <h4 className="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
+                    <span>3. Dấu hiệu nhận biết (Signal Words)</span>
+                    <span className="text-[11px] font-normal text-slate-400 normal-case hidden sm:inline">
+                      (Nhấp vào từ để xem nghĩa)
                     </span>
-                  ))}
+                  </h4>
+
+                  <button
+                    onClick={() => setShowAllSignalMeanings(!showAllSignalMeanings)}
+                    className="text-[11px] font-bold text-teal-700 hover:text-teal-900 bg-teal-50 hover:bg-teal-100 px-2.5 py-1 rounded-lg transition-all cursor-pointer border border-teal-200/60"
+                  >
+                    {showAllSignalMeanings ? 'Ẩn nghĩa tiếng Việt' : 'Hiện tất cả nghĩa'}
+                  </button>
+                </div>
+
+                <div className="flex flex-wrap gap-2.5 p-4 rounded-2xl bg-white border border-slate-200">
+                  {activeTense.signalWords.map((item, idx) => {
+                    const isSelected = selectedSignalWord === item.word;
+                    const isShowingMeaning = showAllSignalMeanings || isSelected;
+
+                    return (
+                      <button
+                        key={idx}
+                        onClick={() => setSelectedSignalWord(isSelected ? null : item.word)}
+                        className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all cursor-pointer text-left border flex items-center gap-1.5 ${
+                          isShowingMeaning
+                            ? 'bg-amber-50 text-amber-900 border-amber-300 shadow-sm ring-2 ring-amber-500/15'
+                            : 'bg-teal-50/80 text-teal-800 border-teal-200 hover:bg-teal-100 hover:border-teal-300'
+                        }`}
+                      >
+                        <span className="font-extrabold">{item.word}</span>
+                        {isShowingMeaning && (
+                          <span className="text-[11px] text-amber-800 font-semibold border-l border-amber-300/80 pl-1.5">
+                            ➔ {item.meaning}
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 

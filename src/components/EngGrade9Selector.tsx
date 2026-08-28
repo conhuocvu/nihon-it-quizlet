@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import type { Lesson } from '../data/lessons';
 import { engTopicLessons, engPosLessons, engGrade9Words, type EngWordItem } from '../data/engGrade9Data';
 import { EngGrade9TestRunner, type TestMode } from './EngGrade9TestRunner';
+import { EngGrade9GrammarDetailViewer } from './EngGrade9GrammarDetailViewer';
 import {
   BookOpen,
   Search,
@@ -9,8 +10,6 @@ import {
   Play,
   ArrowLeft,
   Volume2,
-  Grid,
-  List,
   CheckSquare,
   Square,
   GraduationCap,
@@ -19,7 +18,10 @@ import {
   Filter,
   Sparkles,
   X,
-  Target
+  Target,
+  BookMarked,
+  Clock,
+  Zap
 } from 'lucide-react';
 
 interface EngGrade9SelectorProps {
@@ -27,18 +29,23 @@ interface EngGrade9SelectorProps {
   onBackToHome: () => void;
 }
 
+type GrammarDetailType = 'tenses' | 'modal-verbs' | 'nouns' | 'verbs' | 'adjectives' | 'connectors';
+
 export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
   onStartBySections,
   onBackToHome
 }) => {
-  // Main Category Tab: 'vocab' (1. Từ vựng) vs 'exercises' (2. Bài tập)
-  const [mainTab, setMainTab] = useState<'vocab' | 'exercises'>('vocab');
+  // Main Category Tab: 'vocab' (1. Từ vựng) | 'grammar' (2. Ngữ pháp) | 'homework' (3. Bài tập về nhà)
+  const [mainTab, setMainTab] = useState<'vocab' | 'grammar' | 'homework'>('vocab');
 
-  // Sub Classification Mode: 'topics' (Theo Chủ đề) vs 'pos' (Theo Từ loại)
-  const [subMode, setSubMode] = useState<'topics' | 'pos'>('topics');
+  // Filter inside Homework Tab: 'topics' vs 'pos'
+  const [homeworkFilter, setHomeworkFilter] = useState<'topics' | 'pos'>('topics');
 
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedSectionIds, setSelectedSectionIds] = useState<string[]>([]);
+
+  // Inner Detail View for Grammar Lessons (Opens when clicking into a lesson card)
+  const [activeGrammarDetail, setActiveGrammarDetail] = useState<GrammarDetailType | null>(null);
 
   // Modal State for Custom Test Setup
   const [showTestModal, setShowTestModal] = useState(false);
@@ -52,7 +59,12 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
     testMode: TestMode;
   } | null>(null);
 
-  const currentLessons: Lesson[] = subMode === 'topics' ? engTopicLessons : engPosLessons;
+  // Active Lessons depending on mainTab & homeworkFilter
+  const currentLessons: Lesson[] = useMemo(() => {
+    if (mainTab === 'vocab') return engTopicLessons;
+    if (mainTab === 'grammar') return engPosLessons;
+    return homeworkFilter === 'topics' ? engTopicLessons : engPosLessons;
+  }, [mainTab, homeworkFilter]);
 
   // Speech Synthesis for English Pronunciation
   const speakWord = (text: string) => {
@@ -87,7 +99,7 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
 
   // Sections corresponding to active mainTab
   const activeTabSections = useMemo(() => {
-    const targetType = mainTab === 'vocab' ? 'vocabulary' : 'multiple_choice';
+    const targetType = mainTab === 'homework' ? 'multiple_choice' : 'vocabulary';
     return currentLessons
       .flatMap((l) => l.sections)
       .filter((s) => s.type === targetType);
@@ -164,6 +176,20 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
     );
   }
 
+  // If Grammar Detail Viewer is active, render detailed theory view!
+  if (activeGrammarDetail) {
+    return (
+      <EngGrade9GrammarDetailViewer
+        lessonType={activeGrammarDetail}
+        onClose={() => setActiveGrammarDetail(null)}
+        onStartQuiz={() => {
+          const posSectionIds = engPosLessons.flatMap((l) => l.sections.map((s) => s.id));
+          onStartBySections(posSectionIds);
+        }}
+      />
+    );
+  }
+
   return (
     <div className="w-full max-w-6xl mx-auto px-4 py-6 space-y-8">
       {/* Soothing Header Banner */}
@@ -195,30 +221,31 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
           </h1>
 
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed font-normal">
-            Chọn bài tập/từ vựng để lật thẻ Flashcard hoặc bấm **"Tạo Bài Test Tùy Chỉnh"** để tạo bài trắc nghiệm ngẫu nhiên theo số lượng mong muốn.
+            Chọn mục **1. Từ Vựng**, **2. Ngữ Pháp** hoặc **3. Bài Tập Về Nhà** để xem nội dung bài học và làm bài trắc nghiệm.
           </p>
 
           {/* Quick Info Badges */}
           <div className="pt-2 flex flex-wrap gap-4 text-xs font-medium text-slate-300">
             <div className="bg-white/5 px-3.5 py-2 rounded-xl backdrop-blur-md border border-white/10 flex items-center gap-2">
               <BookOpen size={15} className="text-sky-400" />
-              <span>139 Từ vựng + Phiên âm</span>
+              <span>139 Từ vựng theo Chủ đề</span>
             </div>
             <div className="bg-white/5 px-3.5 py-2 rounded-xl backdrop-blur-md border border-white/10 flex items-center gap-2">
-              <Grid size={15} className="text-indigo-400" />
-              <span>8 Chủ đề bài học</span>
+              <BookMarked size={15} className="text-teal-400" />
+              <span>Các thì & Từ loại Ngữ pháp</span>
             </div>
             <div className="bg-white/5 px-3.5 py-2 rounded-xl backdrop-blur-md border border-white/10 flex items-center gap-2">
-              <List size={15} className="text-teal-400" />
-              <span>4 Từ loại ngữ pháp</span>
+              <PenTool size={15} className="text-indigo-400" />
+              <span>Bài tập về nhà & Test ngẫu nhiên</span>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Main 2 Separate Tabs: 1. Từ Vựng vs 2. Bài Tập */}
+      {/* Main 3 Separate Tabs: 1. Từ Vựng | 2. Ngữ Pháp | 3. Bài Tập Về Nhà */}
       <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-200/80 space-y-6">
-        <div className="grid grid-cols-2 gap-3 p-1.5 bg-slate-100/80 rounded-2xl border border-slate-200/60 max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-1.5 bg-slate-100/80 rounded-2xl border border-slate-200/60 max-w-3xl mx-auto">
+          {/* TAB 1: TỪ VỰNG */}
           <button
             onClick={() => {
               setMainTab('vocab');
@@ -231,68 +258,94 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
             }`}
           >
             <BookOpen size={18} className={mainTab === 'vocab' ? 'text-sky-600' : 'text-slate-400'} />
-            <span>1. Từ Vựng (Flashcard)</span>
+            <span>1. Từ Vựng</span>
           </button>
 
+          {/* TAB 2: NGỮ PHÁP */}
           <button
             onClick={() => {
-              setMainTab('exercises');
+              setMainTab('grammar');
               setSelectedSectionIds([]);
             }}
             className={`py-3 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center justify-center gap-2 cursor-pointer ${
-              mainTab === 'exercises'
+              mainTab === 'grammar'
+                ? 'bg-white text-teal-700 shadow-md border border-teal-100 ring-2 ring-teal-500/10'
+                : 'text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'
+            }`}
+          >
+            <BookMarked size={18} className={mainTab === 'grammar' ? 'text-teal-600' : 'text-slate-400'} />
+            <span>2. Ngữ Pháp</span>
+          </button>
+
+          {/* TAB 3: BÀI TẬP VỀ NHÀ */}
+          <button
+            onClick={() => {
+              setMainTab('homework');
+              setSelectedSectionIds([]);
+            }}
+            className={`py-3 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center justify-center gap-2 cursor-pointer ${
+              mainTab === 'homework'
                 ? 'bg-white text-indigo-700 shadow-md border border-indigo-100 ring-2 ring-indigo-500/10'
                 : 'text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'
             }`}
           >
-            <PenTool size={18} className={mainTab === 'exercises' ? 'text-indigo-600' : 'text-slate-400'} />
-            <span>2. Bài Tập Về Nhà (Trắc nghiệm)</span>
+            <PenTool size={18} className={mainTab === 'homework' ? 'text-indigo-600' : 'text-slate-400'} />
+            <span>3. Bài Tập Về Nhà</span>
           </button>
         </div>
 
-        {/* Sub Classification Filter Bar & Action Control */}
+        {/* Top Control Bar & Action Buttons */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-100">
-          <div className="flex items-center gap-3 w-full md:w-auto">
-            <span className="text-xs font-bold text-slate-500 flex items-center gap-1.5 shrink-0">
-              <Filter size={14} className="text-slate-400" />
-              Chế độ hiển thị:
-            </span>
-            <div className="flex p-1 rounded-xl bg-slate-100 border border-slate-200/70 text-xs font-semibold">
-              <button
-                onClick={() => {
-                  setSubMode('topics');
-                  setSelectedSectionIds([]);
-                }}
-                className={`px-3.5 py-1.5 rounded-lg transition-all flex items-center gap-1.5 cursor-pointer ${
-                  subMode === 'topics'
-                    ? 'bg-white text-sky-700 shadow-sm font-bold'
-                    : 'text-slate-500 hover:text-slate-800'
-                }`}
-              >
-                <Grid size={14} />
-                <span>Theo Chủ đề (8 Topics)</span>
-              </button>
-
-              <button
-                onClick={() => {
-                  setSubMode('pos');
-                  setSelectedSectionIds([]);
-                }}
-                className={`px-3.5 py-1.5 rounded-lg transition-all flex items-center gap-1.5 cursor-pointer ${
-                  subMode === 'pos'
-                    ? 'bg-white text-sky-700 shadow-sm font-bold'
-                    : 'text-slate-500 hover:text-slate-800'
-                }`}
-              >
-                <List size={14} />
-                <span>Theo Từ loại (4 Parts of Speech)</span>
-              </button>
+          {/* Homework Filter toggle (only visible in Tab 3: Bài Tập Về Nhà) */}
+          {mainTab === 'homework' ? (
+            <div className="flex items-center gap-3 w-full md:w-auto">
+              <span className="text-xs font-bold text-slate-500 flex items-center gap-1.5 shrink-0">
+                <Filter size={14} className="text-slate-400" />
+                Lọc đề bài theo:
+              </span>
+              <div className="flex p-1 rounded-xl bg-slate-100 border border-slate-200/70 text-xs font-semibold">
+                <button
+                  onClick={() => {
+                    setHomeworkFilter('topics');
+                    setSelectedSectionIds([]);
+                  }}
+                  className={`px-3 py-1 rounded-lg transition-all cursor-pointer ${
+                    homeworkFilter === 'topics'
+                      ? 'bg-white text-indigo-700 shadow-sm font-bold'
+                      : 'text-slate-500 hover:text-slate-800'
+                  }`}
+                >
+                  Theo Chủ đề
+                </button>
+                <button
+                  onClick={() => {
+                    setHomeworkFilter('pos');
+                    setSelectedSectionIds([]);
+                  }}
+                  className={`px-3 py-1 rounded-lg transition-all cursor-pointer ${
+                    homeworkFilter === 'pos'
+                      ? 'bg-white text-indigo-700 shadow-sm font-bold'
+                      : 'text-slate-500 hover:text-slate-800'
+                  }`}
+                >
+                  Theo Từ loại
+                </button>
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className="text-xs text-slate-500 font-medium flex items-center gap-1.5">
+              <Sparkles size={14} className={mainTab === 'vocab' ? 'text-sky-500' : 'text-teal-500'} />
+              <span>
+                {mainTab === 'vocab'
+                  ? 'Học từ vựng Flashcard phân loại theo 8 Chủ đề gần gũi'
+                  : 'Chọn bài học bên dưới để mở giao diện xem chi tiết công thức & cách dùng'}
+              </span>
+            </div>
+          )}
 
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center gap-2.5 w-full md:w-auto justify-end">
-            <div className="relative w-full sm:w-48">
+            <div className="relative w-full sm:w-44">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400" />
               <input
                 type="text"
@@ -313,20 +366,22 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
 
             <button
               onClick={selectAllActiveTabSections}
-              className="px-3.5 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50 transition-all flex items-center gap-1.5 cursor-pointer shrink-0"
+              className="px-3 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50 transition-all flex items-center gap-1.5 cursor-pointer shrink-0"
             >
               <CheckSquare size={14} className={isAllActiveSelected ? 'text-sky-600' : 'text-slate-400'} />
               <span>{isAllActiveSelected ? 'Bỏ chọn' : 'Chọn tất cả'}</span>
             </button>
 
             {/* CUSTOM TEST GENERATOR BUTTON */}
-            <button
-              onClick={() => setShowTestModal(true)}
-              className="px-4 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white text-xs font-extrabold flex items-center gap-1.5 shadow-md shadow-amber-200 transition-all cursor-pointer shrink-0"
-            >
-              <Target size={15} />
-              <span>Tạo Bài Test Tùy Chỉnh</span>
-            </button>
+            {mainTab === 'homework' && (
+              <button
+                onClick={() => setShowTestModal(true)}
+                className="px-3.5 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white text-xs font-extrabold flex items-center gap-1.5 shadow-md shadow-amber-200 transition-all cursor-pointer shrink-0"
+              >
+                <Target size={15} />
+                <span>Tạo Bài Test Tùy Chỉnh</span>
+              </button>
+            )}
 
             <button
               onClick={handleStartSelected}
@@ -335,6 +390,8 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
                 selectedSectionIds.length > 0
                   ? mainTab === 'vocab'
                     ? 'bg-sky-600 hover:bg-sky-700 text-white shadow-md shadow-sky-200'
+                    : mainTab === 'grammar'
+                    ? 'bg-teal-600 hover:bg-teal-700 text-white shadow-md shadow-teal-200'
                     : 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-200'
                   : 'bg-slate-200 text-slate-400 cursor-not-allowed'
               }`}
@@ -361,13 +418,15 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
               </span>
             </div>
             <div className="flex items-center gap-3">
-              <button
-                onClick={() => setShowTestModal(true)}
-                className="text-[11px] font-bold text-amber-700 hover:underline cursor-pointer flex items-center gap-1"
-              >
-                <Target size={12} />
-                <span>Test ngẫu nhiên ({totalItemsSelected} từ này)</span>
-              </button>
+              {mainTab === 'homework' && (
+                <button
+                  onClick={() => setShowTestModal(true)}
+                  className="text-[11px] font-bold text-amber-700 hover:underline cursor-pointer flex items-center gap-1"
+                >
+                  <Target size={12} />
+                  <span>Test ngẫu nhiên ({totalItemsSelected} từ này)</span>
+                </button>
+              )}
               <button
                 onClick={() => setSelectedSectionIds([])}
                 className="text-[11px] font-bold text-sky-700 hover:underline cursor-pointer"
@@ -414,25 +473,19 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
           </div>
         )}
 
-        {/* CONTENT AREA 1: Từ Vựng (Flashcard) - COMPACT CLEAN GRID (4 COLUMNS) */}
+        {/* TAB 1 CONTENT: 1. Từ Vựng (Chủ đề) - COMPACT CLEAN GRID (4 COLUMNS) */}
         {mainTab === 'vocab' && (
           <div className="space-y-4">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <h3 className="text-sm font-bold text-slate-800 flex items-center gap-2">
                 <BookOpen size={16} className="text-sky-600" />
-                <span>
-                  Danh sách Các Bài Từ Vựng (Flashcard){' '}
-                  <span className="text-xs text-slate-400 font-normal">
-                    ({subMode === 'topics' ? '8 Chủ đề' : '4 Từ loại'})
-                  </span>
-                </span>
+                <span>Danh sách Bài Học Từ Vựng (Theo Chủ Đề)</span>
               </h3>
               <span className="text-xs text-slate-400 font-normal">Tích chọn card để học</span>
             </div>
 
-            {/* Compact Clean 4-Column Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5">
-              {currentLessons.map((lesson) => {
+              {engTopicLessons.map((lesson) => {
                 const vocabSection = lesson.sections.find((s) => s.type === 'vocabulary');
                 if (!vocabSection) return null;
 
@@ -478,23 +531,203 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
           </div>
         )}
 
-        {/* CONTENT AREA 2: Bài Tập Về Nhà (Trắc Nghiệm) - COMPACT CLEAN GRID (4 COLUMNS) */}
-        {mainTab === 'exercises' && (
+        {/* TAB 2 CONTENT: 2. Ngữ Pháp (CHỌN BÀI Ở NGOÀI -> ẤN VÀO TRONG MỚI XEM CONTENT) */}
+        {mainTab === 'grammar' && (
+          <div className="space-y-4">
+            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+              <h3 className="text-sm font-bold text-slate-800 flex items-center gap-2">
+                <BookMarked size={16} className="text-teal-600" />
+                <span>Danh sách Các Bài Học Ngữ Pháp</span>
+              </h3>
+              <span className="text-xs text-slate-400 font-normal">Click vào bài để xem lý thuyết & công thức</span>
+            </div>
+
+            {/* Grid of Grammar Lessons Outside */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+              {/* BÀI 1: CÁC THÌ TRONG TIẾNG ANH (8 THÌ) */}
+              <div
+                onClick={() => setActiveGrammarDetail('tenses')}
+                className="p-5 rounded-3xl border border-teal-200 bg-gradient-to-br from-teal-50/60 to-sky-50/60 hover:border-teal-400 transition-all cursor-pointer space-y-3 shadow-sm hover:shadow-md group"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="p-2.5 rounded-2xl bg-teal-600 text-white shadow-md shadow-teal-200 group-hover:scale-105 transition-transform">
+                    <Clock size={20} />
+                  </span>
+                  <span className="px-2.5 py-1 rounded-full bg-teal-100 text-teal-800 text-xs font-extrabold">
+                    8 Thì Trọng Tâm
+                  </span>
+                </div>
+
+                <div className="space-y-1">
+                  <h4 className="font-extrabold text-slate-900 text-base group-hover:text-teal-700 transition-colors">
+                    Bài 1: Các Thì Trong Tiếng Anh
+                  </h4>
+                  <p className="text-xs text-slate-500 font-medium leading-relaxed">
+                    Trọn bộ 8 thì trọng tâm: Hiện tại đơn, Tiếp diễn, Hoàn thành, Quá khứ đơn, Tiếp diễn, Quá khứ hoàn thành, Tương lai...
+                  </p>
+                </div>
+
+                <div className="pt-2 border-t border-teal-100 flex items-center justify-between text-xs font-bold text-teal-700">
+                  <span>Mở xem lý thuyết ➔</span>
+                  <Sparkles size={14} className="text-teal-500" />
+                </div>
+              </div>
+
+              {/* BÀI 2: ĐỘNG TỪ KHUYẾT THIẾU (MODAL VERBS) */}
+              <div
+                onClick={() => setActiveGrammarDetail('modal-verbs')}
+                className="p-5 rounded-3xl border border-sky-200 bg-gradient-to-br from-sky-50/60 to-indigo-50/60 hover:border-sky-400 transition-all cursor-pointer space-y-3 shadow-sm hover:shadow-md group"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="p-2.5 rounded-2xl bg-sky-600 text-white shadow-md shadow-sky-200 group-hover:scale-105 transition-transform">
+                    <Zap size={20} />
+                  </span>
+                  <span className="px-2.5 py-1 rounded-full bg-sky-100 text-sky-800 text-xs font-extrabold">
+                    Modal Verbs
+                  </span>
+                </div>
+
+                <div className="space-y-1">
+                  <h4 className="font-extrabold text-slate-900 text-base group-hover:text-sky-700 transition-colors">
+                    Bài 2: Động Từ Khuyết Thiếu
+                  </h4>
+                  <p className="text-xs text-slate-500 font-medium leading-relaxed">
+                    Chuyên đề Can/Could, Must/Mustn’t, Have to, Should/Ought to, May/Might với công thức $S + Modal + V_0$.
+                  </p>
+                </div>
+
+                <div className="pt-2 border-t border-sky-100 flex items-center justify-between text-xs font-bold text-sky-700">
+                  <span>Mở xem lý thuyết ➔</span>
+                  <Sparkles size={14} className="text-sky-500" />
+                </div>
+              </div>
+
+              {/* BÀI 3: DANH TỪ */}
+              <div
+                onClick={() => setActiveGrammarDetail('nouns')}
+                className="p-5 rounded-3xl border border-slate-200 bg-white hover:border-teal-300 transition-all cursor-pointer space-y-3 shadow-sm hover:shadow-md group"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="p-2.5 rounded-2xl bg-slate-100 text-slate-700 group-hover:scale-105 transition-transform">
+                    <BookMarked size={20} />
+                  </span>
+                  <span className="px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold">
+                    Nouns
+                  </span>
+                </div>
+
+                <div className="space-y-1">
+                  <h4 className="font-extrabold text-slate-900 text-base group-hover:text-teal-700 transition-colors">
+                    Bài 3: Danh Từ Ngữ Pháp
+                  </h4>
+                  <p className="text-xs text-slate-500 font-medium leading-relaxed">
+                    Danh từ đếm được, không đếm được, số ít, số nhiều và các mẫu câu hay gặp.
+                  </p>
+                </div>
+
+                <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-600">
+                  <span>Mở xem bài học ➔</span>
+                </div>
+              </div>
+
+              {/* BÀI 4: ĐỘNG TỪ & CỤM ĐỘNG TỪ */}
+              <div
+                onClick={() => setActiveGrammarDetail('verbs')}
+                className="p-5 rounded-3xl border border-slate-200 bg-white hover:border-teal-300 transition-all cursor-pointer space-y-3 shadow-sm hover:shadow-md group"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="p-2.5 rounded-2xl bg-slate-100 text-slate-700 group-hover:scale-105 transition-transform">
+                    <PenTool size={20} />
+                  </span>
+                  <span className="px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold">
+                    Verbs & Phrasal Verbs
+                  </span>
+                </div>
+
+                <div className="space-y-1">
+                  <h4 className="font-extrabold text-slate-900 text-base group-hover:text-teal-700 transition-colors">
+                    Bài 4: Động Từ & Cụm Động Từ
+                  </h4>
+                  <p className="text-xs text-slate-500 font-medium leading-relaxed">
+                    Tổng hợp các động từ hành động và phrasal verbs phổ biến (get into, go out, come on...).
+                  </p>
+                </div>
+
+                <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-600">
+                  <span>Mở xem bài học ➔</span>
+                </div>
+              </div>
+
+              {/* BÀI 5: TÍNH TỪ & TRẠNG TỪ */}
+              <div
+                onClick={() => setActiveGrammarDetail('adjectives')}
+                className="p-5 rounded-3xl border border-slate-200 bg-white hover:border-teal-300 transition-all cursor-pointer space-y-3 shadow-sm hover:shadow-md group"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="p-2.5 rounded-2xl bg-slate-100 text-slate-700 group-hover:scale-105 transition-transform">
+                    <Sparkles size={20} />
+                  </span>
+                  <span className="px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold">
+                    Adj & Adv
+                  </span>
+                </div>
+
+                <div className="space-y-1">
+                  <h4 className="font-extrabold text-slate-900 text-base group-hover:text-teal-700 transition-colors">
+                    Bài 5: Tính Từ & Trạng Từ
+                  </h4>
+                  <p className="text-xs text-slate-500 font-medium leading-relaxed">
+                    Vị trí và chức năng của tính từ, trạng từ chỉ thói quen/tần suất trong câu.
+                  </p>
+                </div>
+
+                <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-600">
+                  <span>Mở xem bài học ➔</span>
+                </div>
+              </div>
+
+              {/* BÀI 6: TỪ NỐI & GIỚI TỪ */}
+              <div
+                onClick={() => setActiveGrammarDetail('connectors')}
+                className="p-5 rounded-3xl border border-slate-200 bg-white hover:border-teal-300 transition-all cursor-pointer space-y-3 shadow-sm hover:shadow-md group"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="p-2.5 rounded-2xl bg-slate-100 text-slate-700 group-hover:scale-105 transition-transform">
+                    <BrainCircuit size={20} />
+                  </span>
+                  <span className="px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold">
+                    Connectors & Prepositions
+                  </span>
+                </div>
+
+                <div className="space-y-1">
+                  <h4 className="font-extrabold text-slate-900 text-base group-hover:text-teal-700 transition-colors">
+                    Bài 6: Từ Nối & Giới Từ
+                  </h4>
+                  <p className="text-xs text-slate-500 font-medium leading-relaxed">
+                    Từ nối chỉ mục đích (so that), điều kiện (if), đối lập (but, while) và giới từ chỉ vị trí.
+                  </p>
+                </div>
+
+                <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-600">
+                  <span>Mở xem bài học ➔</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* TAB 3 CONTENT: 3. Bài Tập Về Nhà (Trắc Nghiệm & Test) - COMPACT CLEAN GRID (4 COLUMNS) */}
+        {mainTab === 'homework' && (
           <div className="space-y-4">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <h3 className="text-sm font-bold text-slate-800 flex items-center gap-2">
                 <PenTool size={16} className="text-indigo-600" />
-                <span>
-                  Danh sách Đề Bài Tập Về Nhà (Trắc Nghiệm){' '}
-                  <span className="text-xs text-slate-400 font-normal">
-                    ({subMode === 'topics' ? '8 Chủ đề' : '4 Từ loại'})
-                  </span>
-                </span>
+                <span>Danh sách Bài Tập Về Nhà</span>
               </h3>
-              <span className="text-xs text-slate-400 font-normal">Tích chọn bài để làm</span>
+              <span className="text-xs text-slate-400 font-normal">Tích chọn bài để làm trắc nghiệm</span>
             </div>
 
-            {/* Compact Clean 4-Column Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5">
               {currentLessons.map((lesson) => {
                 const mcqSection = lesson.sections.find((s) => s.type === 'multiple_choice');

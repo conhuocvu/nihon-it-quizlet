@@ -2,6 +2,7 @@ import { lessons as nihonItLessons } from './lessons';
 import { mimiN3Lessons } from './mimiN3FullData';
 import { jfe301Lessons } from './jfe301Data';
 import { kanjiMasterN3Lessons } from './kanjiMasterN3Data';
+import { allEngGrade9Lessons } from './engGrade9Data';
 import type { Lesson } from './lessons';
 
 export interface Subject {
@@ -21,6 +22,20 @@ export interface Subject {
 }
 
 export const subjects: Subject[] = [
+  {
+    id: 'eng-grade9-hw',
+    title: 'Tiếng Anh Lớp 9 - Bài Tập Về Nhà & Từ Vựng',
+    japaneseTitle: 'Grade 9 English Vocabulary & Homework',
+    description: 'Học từ vựng Tiếng Anh Lớp 9 linh hoạt theo 2 chế độ phân loại song song: Theo Chủ đề (Topic) và Theo Từ loại (Danh từ, Động từ, Tính từ,...). Tích hợp Flashcard và Bài tập Trắc nghiệm củng cố.',
+    category: 'Tiếng Anh Lớp 9',
+    icon: 'globe',
+    gradient: 'from-amber-500 via-orange-600 to-red-600',
+    badge: 'Mới - Lớp 9',
+    lessons: allEngGrade9Lessons,
+    totalLessons: allEngGrade9Lessons.length,
+    totalItems: allEngGrade9Lessons.reduce((acc, l) => acc + l.sections.reduce((sAcc, s) => sAcc + s.items.length, 0), 0),
+    isAvailable: true,
+  },
   {
     id: 'nihon-it',
     title: 'JIT401 - Tiếng Nhật Chuyên Ngành CNTT',
@@ -79,4 +94,5 @@ export const subjects: Subject[] = [
     isAvailable: true,
   }
 ];
+
 

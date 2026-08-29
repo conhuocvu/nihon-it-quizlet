@@ -1556,6 +1556,481 @@ export const engGrade9Words: EngWordItem[] = [
     topic: 'Grammar & Connectors',
     example: 'I felt something soft in my hand.',
     exampleMeaning: 'Tôi cảm thấy có cái gì đó mềm mại trong tay mình.'
+  },
+
+  // --- BỔ SUNG TỪ VỰNG ĐỐI SOÁT CHÍNH XÁC 100% TỪ ĐỀ BÀI TẬP CHIA THÌ (ĐÃ LỌC TRÙNG) ---
+  {
+    id: 'eng-140',
+    term: 'tennis',
+    ipa: '/ˈtenɪs/',
+    answer: 'môn quần vợt, tennis',
+    meaning: 'môn thể thao đánh bóng qua lưới bằng vợt',
+    partOfSpeech: 'Noun',
+    topic: 'Objects & Nature',
+    example: 'She plays tennis every Sunday.',
+    exampleMeaning: 'Cô ấy chơi quần vợt vào mỗi Chủ Nhật.'
+  },
+  {
+    id: 'eng-141',
+    term: 'spanish',
+    ipa: '/ˈspænɪʃ/',
+    answer: 'tiếng Tây Ban Nha',
+    meaning: 'ngôn ngữ Tây Ban Nha',
+    partOfSpeech: 'Noun',
+    topic: 'Objects & Nature',
+    example: 'He is studying Spanish at the moment.',
+    exampleMeaning: 'Cậu ấy đang học tiếng Tây Ban Nha vào lúc này.'
+  },
+  {
+    id: 'eng-142',
+    term: 'parent',
+    ipa: '/ˈpeərənt/',
+    answer: 'bố mẹ, phụ huynh',
+    meaning: 'cha hoặc mẹ trong gia đình',
+    partOfSpeech: 'Noun',
+    topic: 'People, Family & Careers',
+    example: 'Will you visit your parents next month?',
+    exampleMeaning: 'Bạn sẽ đi thăm bố mẹ vào tháng tới chứ?'
+  },
+  {
+    id: 'eng-143',
+    term: 'beach',
+    ipa: '/biːtʃ/',
+    answer: 'bãi biển',
+    meaning: 'bờ cát ven biển',
+    partOfSpeech: 'Noun',
+    topic: 'Places, Transport & Shops',
+    example: 'They will go to the beach tomorrow.',
+    exampleMeaning: 'Họ sẽ đi bãi biển vào ngày mai.'
+  },
+  {
+    id: 'eng-144',
+    term: 'party',
+    ipa: '/ˈpɑːti/',
+    answer: 'bữa tiệc, buổi tiệc',
+    meaning: 'buổi tiệc vui chơi tụ họp',
+    partOfSpeech: 'Noun',
+    topic: 'Daily Life & Routines',
+    example: 'Did she go to the party last night?',
+    exampleMeaning: 'Cô ấy có đi dự tiệc tối qua không?'
+  },
+  {
+    id: 'eng-145',
+    term: 'pregnant',
+    ipa: '/ˈpreɡnənt/',
+    answer: 'mang thai, có bầu',
+    meaning: 'trạng thái mang thai',
+    partOfSpeech: 'Adjective/Adverb',
+    topic: 'Adjectives & Descriptions',
+    example: 'She has been pregnant for three months this week.',
+    exampleMeaning: 'Cô ấy đã mang thai được 3 tháng vào tuần này.'
+  },
+  {
+    id: 'eng-146',
+    term: 'president',
+    ipa: '/ˈprezɪdənt/',
+    answer: 'tổng thống, chủ tịch',
+    meaning: 'người đứng đầu nhà nước hoặc tổ chức',
+    partOfSpeech: 'Noun',
+    topic: 'People, Family & Careers',
+    example: 'They have been waiting for the president for 5 hours.',
+    exampleMeaning: 'Họ đã chờ đợi vị tổng thống trong suốt 5 giờ.'
+  },
+  {
+    id: 'eng-147',
+    term: 'novel',
+    ipa: '/ˈnɒvl/',
+    answer: 'cuốn tiểu thuyết',
+    meaning: 'truyện dài hư cấu',
+    partOfSpeech: 'Noun',
+    topic: 'Objects & Nature',
+    example: 'Will you have finished this novel by next week?',
+    exampleMeaning: 'Bạn sẽ đọc xong cuốn tiểu thuyết này trước tuần sau chứ?'
+  },
+  {
+    id: 'eng-148',
+    term: 'cinema',
+    ipa: '/ˈsɪnəmɑː/',
+    answer: 'rạp chiếu phim',
+    meaning: 'nơi xem phim điện ảnh',
+    partOfSpeech: 'Noun',
+    topic: 'Places, Transport & Shops',
+    example: 'They do not go to the cinema very often.',
+    exampleMeaning: 'Họ không đi xem phim ở rạp rất thường xuyên.'
+  },
+  {
+    id: 'eng-149',
+    term: 'coffee',
+    ipa: '/ˈkɒfi/',
+    answer: 'cà phê',
+    meaning: 'thức uống cà phê',
+    partOfSpeech: 'Noun',
+    topic: 'Objects & Nature',
+    example: 'My father usually drinks coffee in the morning.',
+    exampleMeaning: 'Bố tôi thường uống cà phê vào buổi sáng.'
+  },
+  {
+    id: 'eng-150',
+    term: 'grass',
+    ipa: '/ɡrɑːs/',
+    answer: 'bãi cỏ, thảm cỏ',
+    meaning: 'cỏ mọc trên mặt đất',
+    partOfSpeech: 'Noun',
+    topic: 'Objects & Nature',
+    example: 'Look at the sign! You must not step on the grass.',
+    exampleMeaning: 'Hãy nhìn biển báo! Bạn không được giẫm lên cỏ.'
+  },
+  {
+    id: 'eng-151',
+    term: 'abroad',
+    ipa: '/əˈbrɔːd/',
+    answer: 'ở nước ngoài, ngoại quốc',
+    meaning: 'ở hoặc đi sang quốc gia khác',
+    partOfSpeech: 'Adjective/Adverb',
+    topic: 'Places, Transport & Shops',
+    example: 'She is studying English because she wants to study abroad.',
+    exampleMeaning: 'Cô ấy đang học tiếng Anh vì muốn đi du học nước ngoài.'
+  },
+  {
+    id: 'eng-152',
+    term: 'degree',
+    ipa: '/dɪˈɡriː/',
+    answer: 'độ (nhiệt độ/góc), mức độ',
+    meaning: 'đơn vị đo nhiệt độ',
+    partOfSpeech: 'Noun',
+    topic: 'Objects & Nature',
+    example: 'Water boils at 100 degrees Celsius.',
+    exampleMeaning: 'Nước sôi ở 100 độ C.'
+  },
+  {
+    id: 'eng-153',
+    term: 'fit',
+    ipa: '/fɪt/',
+    answer: 'vừa vặn, hợp',
+    meaning: 'vừa kích thước',
+    partOfSpeech: 'Verb',
+    topic: 'Actions & Movement',
+    example: 'I think this dress fits you perfectly.',
+    exampleMeaning: 'Tôi nghĩ chiếc váy này vừa vặn với bạn một cách hoàn hảo.'
+  },
+  {
+    id: 'eng-154',
+    term: 'perfectly',
+    ipa: '/ˈpɜːfɪktli/',
+    answer: 'hoàn hảo, rất vừa',
+    meaning: 'một cách hoàn toàn tuyệt đối',
+    partOfSpeech: 'Adjective/Adverb',
+    topic: 'Adjectives & Descriptions',
+    example: 'This dress fits you perfectly.',
+    exampleMeaning: 'Chiếc váy này vừa vặn với bạn một cách hoàn hảo.'
+  },
+  {
+    id: 'eng-155',
+    term: 'football',
+    ipa: '/ˈfʊtbɔːl/',
+    answer: 'môn bóng đá',
+    meaning: 'trò chơi đá bóng',
+    partOfSpeech: 'Noun',
+    topic: 'Objects & Nature',
+    example: 'John plays football with his friends every Sunday.',
+    exampleMeaning: 'John chơi bóng đá với bạn bè vào mỗi Chủ Nhật.'
+  },
+  {
+    id: 'eng-156',
+    term: 'baby',
+    ipa: '/ˈbeɪbi/',
+    answer: 'em bé, trẻ sơ sinh',
+    meaning: 'trẻ em còn rất nhỏ',
+    partOfSpeech: 'Noun',
+    topic: 'People, Family & Careers',
+    example: 'Be quiet! The baby is sleeping in the next room.',
+    exampleMeaning: 'Hãy giữ trật tự! Em bé đang ngủ ở phòng bên cạnh.'
+  },
+  {
+    id: 'eng-157',
+    term: 'umbrella',
+    ipa: '/ʌmˈbrelə/',
+    answer: 'cái ô, cái dù',
+    meaning: 'vật che mưa nắng',
+    partOfSpeech: 'Noun',
+    topic: 'Objects & Nature',
+    example: 'Who does this umbrella belong to?',
+    exampleMeaning: 'Chiếc ô này thuộc về ai?'
+  },
+  {
+    id: 'eng-158',
+    term: 'diet',
+    ipa: '/ˈdaɪət/',
+    answer: 'ăn kiêng, chế độ ăn',
+    meaning: 'ăn uống theo chế độ để giảm cân',
+    partOfSpeech: 'Verb',
+    topic: 'Actions & Movement',
+    example: 'We have been dieting strictly since last week to lose weight.',
+    exampleMeaning: 'Chúng tôi đã ăn kiêng nghiêm ngặt từ tuần trước để giảm cân.'
+  },
+  {
+    id: 'eng-159',
+    term: 'strictly',
+    ipa: '/ˈstrɪktli/',
+    answer: 'nghiêm ngặt, nghiêm túc',
+    meaning: 'một cách nghiêm túc, tuân thủ chặt chẽ',
+    partOfSpeech: 'Adjective/Adverb',
+    topic: 'Adjectives & Descriptions',
+    example: 'We have been dieting strictly since last week.',
+    exampleMeaning: 'Chúng tôi đã ăn kiêng một cách nghiêm ngặt từ tuần trước.'
+  },
+  {
+    id: 'eng-160',
+    term: 'lose weight',
+    ipa: '/luːz weɪt/',
+    answer: 'giảm cân, sút cân',
+    meaning: 'làm giảm trọng lượng cơ thể',
+    partOfSpeech: 'Verb',
+    topic: 'Actions & Movement',
+    example: 'She diets strictly to lose weight.',
+    exampleMeaning: 'Cô ấy ăn kiêng nghiêm ngặt để giảm cân.'
+  },
+  {
+    id: 'eng-161',
+    term: 'station',
+    ipa: '/ˈsteɪʃn/',
+    answer: 'nhà ga, trạm',
+    meaning: 'nơi tàu hỏa dừng đón khách',
+    partOfSpeech: 'Noun',
+    topic: 'Places, Transport & Shops',
+    example: 'When I arrived at the station, the train had left.',
+    exampleMeaning: 'Khi tôi đến nhà ga, tàu hỏa đã rời đi.'
+  },
+  {
+    id: 'eng-162',
+    term: 'thief',
+    ipa: '/θiːf/',
+    answer: 'tên trộm, kẻ cắp',
+    meaning: 'người lén lút lấy trộm đồ',
+    partOfSpeech: 'Noun',
+    topic: 'People, Family & Careers',
+    example: 'By the time the police came, the thief had run away.',
+    exampleMeaning: 'Trước khi cảnh sát đến, tên trộm đã tẩu thoát.'
+  },
+  {
+    id: 'eng-163',
+    term: 'police',
+    ipa: '/pəˈliːs/',
+    answer: 'cảnh sát, công an',
+    meaning: 'lực lượng giữ gìn trật tự',
+    partOfSpeech: 'Noun',
+    topic: 'People, Family & Careers',
+    example: 'By the time the police came, the thief had run away.',
+    exampleMeaning: 'Trước khi cảnh sát đến, tên trộm đã tẩu thoát.'
+  },
+  {
+    id: 'eng-164',
+    term: 'divorce',
+    ipa: '/dɪˈvɔːs/',
+    answer: 'ly hôn, ly dị',
+    meaning: 'chấm dứt hôn nhân',
+    partOfSpeech: 'Verb',
+    topic: 'People, Family & Careers',
+    example: 'They had been married for two years before they divorced.',
+    exampleMeaning: 'Họ đã kết hôn được 2 năm trước khi ly hôn.'
+  },
+  {
+    id: 'eng-165',
+    term: 'dirty',
+    ipa: '/ˈdɜːti/',
+    answer: 'bẩn, dơ bẩn',
+    meaning: 'không sạch vẽ, đầy vết bẩn',
+    partOfSpeech: 'Adjective/Adverb',
+    topic: 'Adjectives & Descriptions',
+    example: 'The house was dirty because nobody had cleaned it.',
+    exampleMeaning: 'Căn nhà bị bẩn vì không ai dọn dẹp.'
+  },
+  {
+    id: 'eng-166',
+    term: 'delicious',
+    ipa: '/dɪˈlɪʃəs/',
+    answer: 'ngon miệng, thơm ngon',
+    meaning: 'thức ăn có hương vị tuyệt vời',
+    partOfSpeech: 'Adjective/Adverb',
+    topic: 'Adjectives & Descriptions',
+    example: 'It was the most delicious meal I had ever eaten.',
+    exampleMeaning: 'Đó là bữa ăn ngon nhất tôi từng ăn.'
+  },
+  {
+    id: 'eng-167',
+    term: 'discover',
+    ipa: '/dɪˈskʌvər/',
+    answer: 'phát hiện, khám phá',
+    meaning: 'tìm ra điều mới',
+    partOfSpeech: 'Verb',
+    topic: 'Actions & Movement',
+    example: 'Scientists will discover a cure for cancer.',
+    exampleMeaning: 'Các nhà khoa học sẽ khám phá ra phương thuốc chữa bệnh ung thư.'
+  },
+  {
+    id: 'eng-168',
+    term: 'cure',
+    ipa: '/kjʊər/',
+    answer: 'phương thuốc, cách chữa bệnh',
+    meaning: 'cách điều trị khỏi bệnh',
+    partOfSpeech: 'Noun',
+    topic: 'Objects & Nature',
+    example: 'Scientists will discover a cure for cancer.',
+    exampleMeaning: 'Các nhà khoa học sẽ tìm ra phương thuốc chữa bệnh ung thư.'
+  },
+  {
+    id: 'eng-169',
+    term: 'cancer',
+    ipa: '/ˈkænsər/',
+    answer: 'bệnh ung thư',
+    meaning: 'căn bệnh hiểm nghèo',
+    partOfSpeech: 'Noun',
+    topic: 'Objects & Nature',
+    example: 'Research helps in fighting against cancer.',
+    exampleMeaning: 'Nghiên cứu giúp ích trong việc chống lại bệnh ung thư.'
+  },
+  {
+    id: 'eng-170',
+    term: 'borrow',
+    ipa: '/ˈbɒrəʊ/',
+    answer: 'vay, mượn',
+    meaning: 'mượn đồ của ai',
+    partOfSpeech: 'Verb',
+    topic: 'Actions & Movement',
+    example: 'Can I borrow your car for tomorrow morning?',
+    exampleMeaning: 'Tôi có thể mượn ô tô của bạn sáng mai được không?'
+  },
+  {
+    id: 'eng-171',
+    term: 'meeting',
+    ipa: '/ˈmiːtɪŋ/',
+    answer: 'cuộc họp, buổi họp',
+    meaning: 'buổi họp thảo luận công việc',
+    partOfSpeech: 'Noun',
+    topic: 'Daily Life & Routines',
+    example: 'She will be attending an important meeting.',
+    exampleMeaning: 'Cô ấy sẽ tham dự một cuộc họp quan trọng.'
+  },
+  {
+    id: 'eng-172',
+    term: 'promise',
+    ipa: '/ˈprɒmɪs/',
+    answer: 'hứa, cam kết',
+    meaning: 'hứa hẹn làm điều gì',
+    partOfSpeech: 'Verb',
+    topic: 'Actions & Movement',
+    example: 'I promise I will call you as soon as I arrive.',
+    exampleMeaning: 'Tôi hứa tôi sẽ gọi cho bạn ngay khi tôi đến nơi.'
+  },
+  {
+    id: 'eng-173',
+    term: 'grandparent',
+    ipa: '/ˈɡrænpeərənt/',
+    answer: 'ông bà',
+    meaning: 'ông hoặc bà trong gia đình',
+    partOfSpeech: 'Noun',
+    topic: 'People, Family & Careers',
+    example: 'I visited my grandparents in the countryside.',
+    exampleMeaning: 'Tôi đã thăm ông bà ở quê.'
+  },
+  {
+    id: 'eng-174',
+    term: 'countryside',
+    ipa: '/ˈkʌntrisaɪd/',
+    answer: 'vùng nông thôn, làng quê',
+    meaning: 'vùng làng quê yên bình',
+    partOfSpeech: 'Noun',
+    topic: 'Places, Transport & Shops',
+    example: 'My grandparents live in the countryside.',
+    exampleMeaning: 'Ông bà tôi sống ở vùng nông thôn.'
+  },
+  {
+    id: 'eng-175',
+    term: 'prepare',
+    ipa: '/prɪˈpeər/',
+    answer: 'chuẩn bị, sửa soạn',
+    meaning: 'sửa soạn đồ đạc/bữa ăn',
+    partOfSpeech: 'Verb',
+    topic: 'Actions & Movement',
+    example: 'They were preparing lunch in the kitchen.',
+    exampleMeaning: 'Họ đang chuẩn bị bữa trưa trong bếp.'
+  },
+  {
+    id: 'eng-176',
+    term: 'plant',
+    ipa: '/plɑːnt/',
+    answer: 'trồng cây, cây trồng',
+    meaning: 'trồng cây xanh vào đất',
+    partOfSpeech: 'Verb',
+    topic: 'Actions & Movement',
+    example: 'He planted several trees in the garden.',
+    exampleMeaning: 'Anh ấy đã trồng vài cây xanh trong vườn.'
+  },
+  {
+    id: 'eng-177',
+    term: 'heavily',
+    ipa: '/ˈhevɪli/',
+    answer: 'nặng hạt, dữ dội',
+    meaning: 'ở mức độ nhiều/dữ dội',
+    partOfSpeech: 'Adjective/Adverb',
+    topic: 'Adjectives & Descriptions',
+    example: 'It started to rain heavily while we were walking.',
+    exampleMeaning: 'Trời bắt đầu mưa nặng hạt trong khi chúng tôi đang đi dạo.'
+  },
+  {
+    id: 'eng-178',
+    term: 'shelter',
+    ipa: '/ˈʃeltər/',
+    answer: 'nơi trú ẩn, chỗ trú mưa',
+    meaning: 'nơi che chắn mưa nắng',
+    partOfSpeech: 'Noun',
+    topic: 'Places, Transport & Shops',
+    example: 'We ran under a large tree for shelter.',
+    exampleMeaning: 'Chúng tôi chạy dưới cây to để tìm chỗ trú mưa.'
+  },
+  {
+    id: 'eng-179',
+    term: 'bench',
+    ipa: '/bentʃ/',
+    answer: 'ghế dài công viên',
+    meaning: 'ghế ngồi bằng gỗ/đá',
+    partOfSpeech: 'Noun',
+    topic: 'Objects & Nature',
+    example: 'We sat on a wooden bench near the lake.',
+    exampleMeaning: 'Chúng tôi ngồi trên một chiếc ghế dài bằng gỗ gần hồ.'
+  },
+  {
+    id: 'eng-180',
+    term: 'manager',
+    ipa: '/ˈmænɪdʒər/',
+    answer: 'quản lý, giám đốc',
+    meaning: 'người quản lý bộ phận',
+    partOfSpeech: 'Noun',
+    topic: 'People, Family & Careers',
+    example: 'The manager called me while I was driving home.',
+    exampleMeaning: 'Quản lý đã gọi điện cho tôi trong khi tôi đang lái xe về nhà.'
+  },
+  {
+    id: 'eng-181',
+    term: 'traffic',
+    ipa: '/ˈtræfɪk/',
+    answer: 'giao thông, xe cộ',
+    meaning: 'lượng xe cộ trên đường',
+    partOfSpeech: 'Noun',
+    topic: 'Places, Transport & Shops',
+    example: 'I got stuck in heavy traffic on my way home.',
+    exampleMeaning: 'Tôi bị kẹt trong dòng xe cộ đông đúc trên đường về nhà.'
+  },
+  {
+    id: 'eng-182',
+    term: 'urgent',
+    ipa: '/ˈɜːdʒənt/',
+    answer: 'khẩn cấp, gấp',
+    meaning: 'cần xử lý gấp ngay lập tức',
+    partOfSpeech: 'Adjective/Adverb',
+    topic: 'Adjectives & Descriptions',
+    example: 'The manager asked me to fix an urgent error.',
+    exampleMeaning: 'Quản lý yêu cầu tôi sửa một lỗi khẩn cấp.'
   }
 ];
 
@@ -1602,7 +2077,7 @@ export const POS_TITLES_VI: Record<string, string> = {
 // Convert EngWords to Lesson objects for standard compatibility with Flashcard & Quiz system
 export const engTopicLessons: Lesson[] = TOPICS.map((topic, index) => {
   const wordsInTopic = engGrade9Words.filter(w => w.topic === topic);
-  
+
   return {
     id: 100 + index + 1,
     title: TOPIC_TITLES_VI[topic] || topic,
@@ -1630,7 +2105,7 @@ export const engTopicLessons: Lesson[] = TOPICS.map((topic, index) => {
           const otherWords = engGrade9Words.filter(other => other.id !== w.id);
           const wrongOptions = Array.from(new Set(otherWords.map(o => o.answer)))
             .slice((wIdx * 2) % 30, ((wIdx * 2) % 30) + 3);
-          
+
           const allChoices = Array.from(new Set([w.answer, ...wrongOptions])).slice(0, 4);
           while (allChoices.length < 4) {
             allChoices.push('Không có phương án đúng');

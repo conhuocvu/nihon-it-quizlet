@@ -172,11 +172,10 @@ function App() {
             {/* VIP Status Button */}
             <button
               onClick={() => setIsPaywallOpen(true)}
-              className={`py-1.5 px-3 rounded-full text-xs font-black flex items-center gap-1.5 transition-all cursor-pointer shadow-sm ${
-                isVipUnlocked
+              className={`py-1.5 px-3 rounded-full text-xs font-black flex items-center gap-1.5 transition-all cursor-pointer shadow-sm ${isVipUnlocked
                   ? 'bg-gradient-to-r from-amber-400 to-orange-400 text-amber-950 shadow-amber-200 ring-2 ring-amber-300'
                   : 'bg-amber-100 text-amber-800 hover:bg-amber-200 border border-amber-300 animate-pulse'
-              }`}
+                }`}
             >
               <Crown size={14} className={isVipUnlocked ? 'fill-amber-950' : 'text-amber-700'} />
               <span>{isVipUnlocked ? 'VIP Pro Ultra Max' : 'Nâng cấp VIP (5k)'}</span>
@@ -252,24 +251,24 @@ function App() {
           />
         )}
 
-        {route.page === 'subject' && 
-          currentSubject.id !== 'mimi-n3-goi' && 
-          currentSubject.id !== 'jfe301' && 
+        {route.page === 'subject' &&
+          currentSubject.id !== 'mimi-n3-goi' &&
+          currentSubject.id !== 'jfe301' &&
           currentSubject.id !== 'kanji-master-n3' &&
           currentSubject.id !== 'eng-grade9-hw' && (
-          <LessonSelector
-            lessons={currentSubject.lessons}
-            selectedSectionIds={selectedSectionIds}
-            setSelectedSectionIds={setSelectedSectionIds}
-            onStartSession={handleStartSession}
-            onViewTheory={(lessonId) =>
-              navigate(`/subject/${currentSubject.id}/theory/${lessonId}`)
-            }
-            subjectTitle={currentSubject.title}
-            subjectJapaneseTitle={currentSubject.japaneseTitle}
-            onBackToHome={() => navigate('/')}
-          />
-        )}
+            <LessonSelector
+              lessons={currentSubject.lessons}
+              selectedSectionIds={selectedSectionIds}
+              setSelectedSectionIds={setSelectedSectionIds}
+              onStartSession={handleStartSession}
+              onViewTheory={(lessonId) =>
+                navigate(`/subject/${currentSubject.id}/theory/${lessonId}`)
+              }
+              subjectTitle={currentSubject.title}
+              subjectJapaneseTitle={currentSubject.japaneseTitle}
+              onBackToHome={() => navigate('/')}
+            />
+          )}
 
         {route.page === 'theory' && (
           <TheoryViewer

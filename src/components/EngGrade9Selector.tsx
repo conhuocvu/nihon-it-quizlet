@@ -1,9 +1,10 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import type { Lesson } from '../data/lessons';
-import { engTopicLessons, engGrade9Words, type EngWordItem } from '../data/engGrade9Data';
+import { engTopicLessons, engGrade9Words, TOPICS, type EngWordItem } from '../data/engGrade9Data';
 import { EngGrade9TestRunner, type TestMode } from './EngGrade9TestRunner';
 import { EngGrade9GrammarDetailViewer } from './EngGrade9GrammarDetailViewer';
 import { EngTenseExercisesRunner } from './EngTenseExercisesRunner';
+import { EngIrregularVerbsViewer } from './EngIrregularVerbsViewer';
 import {
   BookOpen,
   Search,
@@ -30,34 +31,53 @@ interface EngGrade9SelectorProps {
   onBackToHome: () => void;
 }
 
-type GrammarDetailType = 'tenses' | 'modal-verbs' | 'nouns' | 'verbs' | 'adjectives' | 'connectors';
+export type GrammarDetailType = 'tenses' | 'modal-verbs' | 'nouns' | 'verbs' | 'adjectives' | 'connectors';
 
 export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
   onStartBySections,
   onBackToHome
 }) => {
-  // Main Category Tab: 'vocab' (1. Từ vựng) | 'grammar' (2. Ngữ pháp) | 'homework' (3. Bài tập về nhà)
+  // Main Tab State: 'vocab' | 'grammar' | 'homework'
   const [mainTab, setMainTab] = useState<'vocab' | 'grammar' | 'homework'>(() => {
     try {
       const saved = localStorage.getItem('eng_grade9_active_maintab');
-      if (saved === 'vocab' || saved === 'grammar' || saved === 'homework') return saved;
-    } catch {}
+      if (saved && ['vocab', 'grammar', 'homework'].includes(saved)) {
+        return saved as 'vocab' | 'grammar' | 'homework';
+      }
+    } catch { }
     return 'vocab';
   });
 
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedSectionIds, setSelectedSectionIds] = useState<string[]>([]);
+  // Vocab Sub Tab State: 'master' (SGK 182 từ) | 'irregular' (Bảng Động Từ Bất Quy Tắc)
+  const [vocabSubTab, setVocabSubTab] = useState<'master' | 'irregular'>(() => {
+    try {
+      const saved = localStorage.getItem('eng_grade9_vocab_subtab');
+      if (saved && ['master', 'irregular'].includes(saved)) {
+        return saved as 'master' | 'irregular';
+      }
+    } catch { }
+    return 'master';
+  });
+
+  // Tự động lưu vocabSubTab vào localStorage khi chuyển tab nhỏ từ vựng
+  useEffect(() => {
+    try {
+      localStorage.setItem('eng_grade9_vocab_subtab', vocabSubTab);
+    } catch { }
+  }, [vocabSubTab]);
+
+  const totalWordsCount = engGrade9Words.length;
 
   // TAB 1: RANGE SELECTOR STATE (1 List master + Range Selector)
   const [rangeStart, setRangeStart] = useState<number>(1);
-  const [rangeEnd, setRangeEnd] = useState<number>(30);
+  const [rangeEnd, setRangeEnd] = useState<number>(totalWordsCount);
 
   // Inner Detail View for Grammar Lessons (Opens when clicking into a lesson card)
   const [activeGrammarDetail, setActiveGrammarDetail] = useState<GrammarDetailType | null>(() => {
     try {
       const saved = localStorage.getItem('eng_grade9_active_grammardetail');
       if (saved) return saved as GrammarDetailType;
-    } catch {}
+    } catch { }
     return null;
   });
 
@@ -65,7 +85,7 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
   useEffect(() => {
     try {
       localStorage.setItem('eng_grade9_active_maintab', mainTab);
-    } catch (e) {}
+    } catch (e) { }
   }, [mainTab]);
 
   // Tự động lưu activeGrammarDetail vào localStorage
@@ -76,7 +96,7 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
       } else {
         localStorage.removeItem('eng_grade9_active_grammardetail');
       }
-    } catch (e) {}
+    } catch (e) { }
   }, [activeGrammarDetail]);
 
   // Modal State for Custom Test Setup
@@ -93,7 +113,7 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
     try {
       const saved = localStorage.getItem('eng_grade9_active_test_config_v1');
       return saved ? JSON.parse(saved) : null;
-    } catch {}
+    } catch { }
     return null;
   });
 
@@ -105,7 +125,7 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
       } else {
         localStorage.removeItem('eng_grade9_active_test_config_v1');
       }
-    } catch (e) {}
+    } catch (e) { }
   }, [activeTestConfig]);
 
   // State to launch Tense Exercises Runner (Điền từ, MCQ, Điền đoạn văn)
@@ -113,7 +133,7 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
     try {
       const saved = localStorage.getItem('eng_grade9_show_tense_runner_v1');
       return saved === 'true';
-    } catch {}
+    } catch { }
     return false;
   });
 
@@ -121,7 +141,7 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
   useEffect(() => {
     try {
       localStorage.setItem('eng_grade9_show_tense_runner_v1', showTenseExercisesRunner ? 'true' : 'false');
-    } catch (e) {}
+    } catch (e) { }
   }, [showTenseExercisesRunner]);
 
   // Speech Synthesis for English Pronunciation
@@ -135,7 +155,10 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
     }
   };
 
-  // Filtered words for search in master 139 list
+  // Filtered words for search in master list
+  const [searchQuery, setSearchQuery] = useState<string>('');
+  const [selectedSectionIds, setSelectedSectionIds] = useState<string[]>([]);
+
   const filteredWords = useMemo(() => {
     const q = searchQuery.toLowerCase().trim();
     if (!q) return engGrade9Words;
@@ -151,38 +174,33 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
 
   // Selected words within [rangeStart .. rangeEnd] (1-indexed)
   const selectedRangeWords = useMemo(() => {
-    const start = Math.max(1, Math.min(rangeStart, engGrade9Words.length));
-    const end = Math.max(start, Math.min(rangeEnd, engGrade9Words.length));
+    const start = Math.max(1, Math.min(rangeStart, totalWordsCount));
+    const end = Math.max(start, Math.min(rangeEnd, totalWordsCount));
     return engGrade9Words.slice(start - 1, end);
-  }, [rangeStart, rangeEnd]);
+  }, [rangeStart, rangeEnd, totalWordsCount]);
 
   // Active Lessons for Homework Tab
   const currentLessons: Lesson[] = useMemo(() => engTopicLessons, []);
 
+  // Toggle selection for topic
   const toggleSection = (id: string) => {
     setSelectedSectionIds((prev) =>
       prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
     );
   };
 
-  // Launch Flashcard Study for Range
+  // Launch Flashcard Study for Range (Động theo các từ được chọn)
   const handleStartRangeFlashcard = () => {
-    // Find all topic section IDs matching the range
-    const start = Math.max(1, Math.min(rangeStart, engGrade9Words.length));
-    const end = Math.max(start, Math.min(rangeEnd, engGrade9Words.length));
-    
-    // Map word positions to section IDs
-    const matchedSectionIds = new Set<string>();
-    if (start <= 20 || end <= 20) matchedSectionIds.add('eng-topic-1-vocab');
-    if ((start <= 40 && end >= 21)) matchedSectionIds.add('eng-topic-2-vocab');
-    if ((start <= 60 && end >= 41)) matchedSectionIds.add('eng-topic-3-vocab');
-    if ((start <= 85 && end >= 61)) matchedSectionIds.add('eng-topic-4-vocab');
-    if ((start <= 105 && end >= 86)) matchedSectionIds.add('eng-topic-5-vocab');
-    if ((start <= 120 && end >= 106)) matchedSectionIds.add('eng-topic-6-vocab');
-    if ((start <= 130 && end >= 121)) matchedSectionIds.add('eng-topic-7-vocab');
-    if ((start <= 139 && end >= 131)) matchedSectionIds.add('eng-topic-8-vocab');
+    const topicIndices = new Set<number>();
+    selectedRangeWords.forEach((w) => {
+      const idx = TOPICS.indexOf(w.topic as any);
+      if (idx !== -1) {
+        topicIndices.add(idx + 1);
+      }
+    });
 
-    onStartBySections(Array.from(matchedSectionIds));
+    const matchedSectionIds = Array.from(topicIndices).map((idx) => `eng-topic-${idx}-vocab`);
+    onStartBySections(matchedSectionIds.length > 0 ? matchedSectionIds : ['eng-topic-1-vocab']);
   };
 
   // Active pool of words for test
@@ -192,7 +210,6 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
 
   // Open Custom Test Modal
   const handleOpenTestModal = () => {
-    // Default customQuestionCount to pool length if smaller than current count
     if (customQuestionCount > activeTestPool.length) {
       setCustomQuestionCount(activeTestPool.length);
     }
@@ -208,6 +225,20 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
     });
     setShowTestModal(false);
   };
+
+  // Dynamic Preset Ranges for 30-word blocks + All
+  const presetRanges = useMemo(() => {
+    const list: { start: number; end: number; label: string }[] = [];
+    let curr = 1;
+    while (curr <= totalWordsCount) {
+      const end = Math.min(curr + 29, totalWordsCount);
+      const count = end - curr + 1;
+      list.push({ start: curr, end, label: `${curr} - ${end} (${count} từ)` });
+      curr += 30;
+    }
+    list.push({ start: 1, end: totalWordsCount, label: `Tất cả (1 - ${totalWordsCount})` });
+    return list;
+  }, [totalWordsCount]);
 
   // If Tense Exercises Runner is active, render exercises view!
   if (showTenseExercisesRunner) {
@@ -238,11 +269,11 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
   }
 
   return (
-    <div className="w-full max-w-6xl mx-auto px-4 py-6 space-y-8">
-      {/* Soothing Header Banner */}
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-sky-950 to-indigo-950 text-white p-6 sm:p-10 shadow-xl border border-sky-500/20">
-        <div className="absolute top-0 right-0 -mt-10 -mr-10 w-96 h-96 rounded-full bg-sky-500/10 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-1/3 -mb-10 w-80 h-80 rounded-full bg-indigo-500/10 blur-3xl pointer-events-none" />
+    <div className="max-w-7xl mx-auto space-y-6 animate-fadeIn pb-16">
+      {/* Header Panel */}
+      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white p-6 sm:p-8 shadow-xl border border-slate-800">
+        <div className="absolute top-0 right-0 -mt-8 -mr-8 w-64 h-64 bg-sky-500/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/3 -mb-12 w-80 h-80 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative z-10 space-y-4">
           <button
@@ -259,7 +290,7 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
               TIẾNG ANH LỚP 9
             </span>
             <span className="px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-200 text-xs font-medium">
-              139 Từ vựng SGK
+              {totalWordsCount} Từ vựng SGK
             </span>
           </div>
 
@@ -268,14 +299,14 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
           </h1>
 
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed font-normal">
-            Chọn mục **1. Từ Vựng** (1 Danh sách 139 từ + Chọn dải số ôn tập), **2. Ngữ Pháp** hoặc **3. Bài Tập Về Nhà**.
+            Chọn mục **1. Từ Vựng** (1 Danh sách {totalWordsCount} từ + Chọn dải số ôn tập), **2. Ngữ Pháp** hoặc **3. Bài Tập Về Nhà**.
           </p>
 
           {/* Quick Info Badges */}
           <div className="pt-2 flex flex-wrap gap-4 text-xs font-medium text-slate-300">
             <div className="bg-white/5 px-3.5 py-2 rounded-xl backdrop-blur-md border border-white/10 flex items-center gap-2">
               <BookOpen size={15} className="text-sky-400" />
-              <span>1 Master List 139 Từ vựng</span>
+              <span>1 Master List {totalWordsCount} Từ vựng</span>
             </div>
             <div className="bg-white/5 px-3.5 py-2 rounded-xl backdrop-blur-md border border-white/10 flex items-center gap-2">
               <BookMarked size={15} className="text-teal-400" />
@@ -291,7 +322,7 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
 
       {/* Main 3 Separate Tabs: 1. Từ Vựng | 2. Ngữ Pháp | 3. Bài Tập Về Nhà */}
       <div className="bg-white rounded-3xl p-6 shadow-sm border border-slate-200/80 space-y-6">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-1.5 bg-slate-100/80 rounded-2xl border border-slate-200/60 max-w-3xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-1.5 bg-slate-100/80 rounded-2xl border border-slate-200/60 w-full">
           {/* TAB 1: TỪ VỰNG */}
           <button
             onClick={() => setMainTab('vocab')}
@@ -332,217 +363,239 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
           </button>
         </div>
 
-        {/* TAB 1 CONTENT: 1 MASTER LIST + RANGE SELECTOR */}
+        {/* TAB 1 CONTENT: 1 MASTER LIST + RANGE SELECTOR + BẢNG ĐỘNG TỪ BẤT QUY TẮC */}
         {mainTab === 'vocab' && (
           <div className="space-y-6">
-            {/* RANGE SELECTOR CONTROL BOX */}
-            <div className="p-5 sm:p-6 rounded-3xl bg-slate-50/80 border border-sky-200/80 space-y-5 shadow-sm">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-slate-200/80 pb-3">
-                <div className="space-y-0.5">
-                  <h3 className="text-sm sm:text-base font-black text-slate-900 flex items-center gap-2">
-                    <Sliders size={18} className="text-sky-600" />
-                    <span>Chọn Dải Số Từ Vựng Để Ôn Tập (Range Selector)</span>
-                  </h3>
-                  <p className="text-xs text-slate-500 font-medium">
-                    Chọn nhanh các dải 30 từ hoặc nhập tùy chỉnh vị trí câu từ 1 đến 139.
-                  </p>
-                </div>
+            {/* Sub-Tab Navigation inside Tab 1 - Độ rộng đồng đều 100% */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 p-1.5 bg-slate-100/90 rounded-2xl border border-slate-200/70 w-full">
+              <button
+                onClick={() => setVocabSubTab('master')}
+                className={`py-3 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer flex items-center justify-center gap-2 ${vocabSubTab === 'master'
+                    ? 'bg-white text-sky-700 shadow-md border border-sky-100 ring-2 ring-sky-500/10'
+                    : 'text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'
+                  }`}
+              >
+                <BookOpen size={18} className={vocabSubTab === 'master' ? 'text-sky-600' : 'text-slate-400'} />
+                <span>📚 Từ Vựng SGK Lớp 9 ({totalWordsCount} từ)</span>
+              </button>
 
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-100 text-sky-900 text-xs font-extrabold shrink-0">
-                  <Sparkles size={13} className="text-sky-600" />
-                  <span>Đã chọn: Từ câu {rangeStart} ➔ {rangeEnd} ({selectedRangeWords.length} từ)</span>
-                </div>
-              </div>
+              <button
+                onClick={() => setVocabSubTab('irregular')}
+                className={`py-3 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all cursor-pointer flex items-center justify-center gap-2 ${vocabSubTab === 'irregular'
+                    ? 'bg-white text-indigo-700 shadow-md border border-indigo-100 ring-2 ring-indigo-500/10'
+                    : 'text-slate-500 hover:text-slate-800 hover:bg-slate-200/50'
+                  }`}
+              >
+                <Zap size={18} className={vocabSubTab === 'irregular' ? 'text-amber-500 fill-amber-500' : 'text-slate-400'} />
+                <span>⚡ Bảng Động Từ Bất Quy Tắc (90 từ)</span>
+              </button>
+            </div>
 
-              {/* Preset Range Buttons */}
-              <div className="space-y-2">
-                <span className="text-xs font-bold text-slate-700 block">Dải số nhanh:</span>
-                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2">
-                  {[
-                    { start: 1, end: 30, label: '1 - 30 (30 từ)' },
-                    { start: 31, end: 60, label: '31 - 60 (30 từ)' },
-                    { start: 61, end: 90, label: '61 - 90 (30 từ)' },
-                    { start: 91, end: 120, label: '91 - 120 (30 từ)' },
-                    { start: 121, end: 139, label: '121 - 139 (19 từ)' },
-                    { start: 1, end: 139, label: 'Tất cả (1 - 139)' }
-                  ].map((preset, idx) => {
-                    const isActive = rangeStart === preset.start && rangeEnd === preset.end;
-                    return (
+            {vocabSubTab === 'irregular' ? (
+              <EngIrregularVerbsViewer />
+            ) : (
+              <>
+                {/* RANGE SELECTOR CONTROL BOX */}
+                <div className="p-5 sm:p-6 rounded-3xl bg-slate-50/80 border border-sky-200/80 space-y-5 shadow-sm">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-slate-200/80 pb-3">
+                    <div className="space-y-0.5">
+                      <h3 className="text-sm sm:text-base font-black text-slate-900 flex items-center gap-2">
+                        <Sliders size={18} className="text-sky-600" />
+                        <span>Chọn Dải Số Từ Vựng Để Ôn Tập (Range Selector)</span>
+                      </h3>
+                      <p className="text-xs text-slate-500 font-medium">
+                        Chọn nhanh các dải 30 từ hoặc nhập tùy chỉnh vị trí từ 1 đến {totalWordsCount}.
+                      </p>
+                    </div>
+
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-100 text-sky-900 text-xs font-extrabold shrink-0">
+                      <Sparkles size={13} className="text-sky-600" />
+                      <span>Đã chọn: Từ câu {rangeStart} ➔ {rangeEnd} ({selectedRangeWords.length} từ)</span>
+                    </div>
+                  </div>
+
+                  {/* Preset Range Buttons */}
+                  <div className="space-y-2">
+                    <span className="text-xs font-bold text-slate-700 block">Dải số nhanh:</span>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 gap-2">
+                      {presetRanges.map((preset, idx) => {
+                        const isActive = rangeStart === preset.start && rangeEnd === preset.end;
+                        return (
+                          <button
+                            key={idx}
+                            onClick={() => {
+                              setRangeStart(preset.start);
+                              setRangeEnd(preset.end);
+                            }}
+                            className={`py-2.5 px-2.5 rounded-2xl text-xs font-extrabold transition-all cursor-pointer border text-center ${isActive
+                                ? 'bg-sky-600 text-white border-sky-600 shadow-md shadow-sky-200 ring-2 ring-sky-500/20 scale-[1.02]'
+                                : 'bg-white border-slate-200 text-slate-700 hover:border-sky-300 hover:bg-slate-100/60'
+                              }`}
+                          >
+                            {preset.label}
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Custom Range Inputs & Action Buttons */}
+                  <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-3 border-t border-slate-200/80">
+                    {/* Inputs */}
+                    <div className="flex items-center gap-2.5 text-xs font-bold text-slate-700 w-full md:w-auto">
+                      <span>Tùy chỉnh: Từ câu</span>
+                      <input
+                        type="number"
+                        min={1}
+                        max={totalWordsCount}
+                        value={rangeStart}
+                        onChange={(e) => setRangeStart(Math.max(1, Math.min(totalWordsCount, Number(e.target.value) || 1)))}
+                        className="w-16 px-2.5 py-1.5 rounded-xl border border-slate-300 text-center font-extrabold text-sky-700 bg-white focus:outline-none focus:ring-2 focus:ring-sky-500/30"
+                      />
+                      <span>đến câu</span>
+                      <input
+                        type="number"
+                        min={1}
+                        max={totalWordsCount}
+                        value={rangeEnd}
+                        onChange={(e) => setRangeEnd(Math.max(1, Math.min(totalWordsCount, Number(e.target.value) || totalWordsCount)))}
+                        className="w-16 px-2.5 py-1.5 rounded-xl border border-slate-300 text-center font-extrabold text-sky-700 bg-white focus:outline-none focus:ring-2 focus:ring-sky-500/30"
+                      />
+                    </div>
+
+                    {/* Launch Actions */}
+                    <div className="flex flex-wrap items-center gap-2.5 w-full md:w-auto justify-end">
                       <button
-                        key={idx}
-                        onClick={() => {
-                          setRangeStart(preset.start);
-                          setRangeEnd(preset.end);
-                        }}
-                        className={`py-2.5 px-3 rounded-2xl text-xs font-extrabold transition-all cursor-pointer border text-center ${
-                          isActive
-                            ? 'bg-sky-600 text-white border-sky-600 shadow-md shadow-sky-200 ring-2 ring-sky-500/20 scale-[1.02]'
-                            : 'bg-white border-slate-200 text-slate-700 hover:border-sky-300 hover:bg-slate-100/60'
-                        }`}
+                        onClick={handleOpenTestModal}
+                        className="px-4 py-2.5 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white text-xs font-extrabold flex items-center gap-1.5 shadow-md shadow-amber-200 transition-all cursor-pointer"
                       >
-                        {preset.label}
+                        <Target size={15} />
+                        <span>Làm Test ({selectedRangeWords.length} từ này)</span>
                       </button>
-                    );
-                  })}
-                </div>
-              </div>
 
-              {/* Custom Range Inputs & Action Buttons */}
-              <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-3 border-t border-slate-200/80">
-                {/* Inputs */}
-                <div className="flex items-center gap-2.5 text-xs font-bold text-slate-700 w-full md:w-auto">
-                  <span>Tùy chỉnh: Từ câu</span>
-                  <input
-                    type="number"
-                    min={1}
-                    max={139}
-                    value={rangeStart}
-                    onChange={(e) => setRangeStart(Math.max(1, Math.min(139, Number(e.target.value) || 1)))}
-                    className="w-16 px-2.5 py-1.5 rounded-xl border border-slate-300 text-center font-extrabold text-sky-700 bg-white focus:outline-none focus:ring-2 focus:ring-sky-500/30"
-                  />
-                  <span>đến câu</span>
-                  <input
-                    type="number"
-                    min={1}
-                    max={139}
-                    value={rangeEnd}
-                    onChange={(e) => setRangeEnd(Math.max(1, Math.min(139, Number(e.target.value) || 139)))}
-                    className="w-16 px-2.5 py-1.5 rounded-xl border border-slate-300 text-center font-extrabold text-sky-700 bg-white focus:outline-none focus:ring-2 focus:ring-sky-500/30"
-                  />
+                      <button
+                        onClick={handleStartRangeFlashcard}
+                        className="px-5 py-2.5 rounded-2xl bg-sky-600 hover:bg-sky-700 text-white text-xs font-black flex items-center gap-2 shadow-lg shadow-sky-200 transition-all cursor-pointer"
+                      >
+                        <Play size={15} fill="currentColor" />
+                        <span>Vào Học Flashcard ({selectedRangeWords.length} từ)</span>
+                      </button>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Launch Actions */}
-                <div className="flex flex-wrap items-center gap-2.5 w-full md:w-auto justify-end">
-                  <button
-                    onClick={handleOpenTestModal}
-                    className="px-4 py-2.5 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white text-xs font-extrabold flex items-center gap-1.5 shadow-md shadow-amber-200 transition-all cursor-pointer"
-                  >
-                    <Target size={15} />
-                    <span>Làm Test ({selectedRangeWords.length} từ này)</span>
-                  </button>
+                {/* Search Bar for List */}
+                <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
+                  <h3 className="text-sm font-bold text-slate-800 flex items-center gap-2">
+                    <ListOrdered size={18} className="text-sky-600" />
+                    <span>Bảng Danh Sách {totalWordsCount} Từ Vựng SGK Lớp 9</span>
+                  </h3>
 
-                  <button
-                    onClick={handleStartRangeFlashcard}
-                    className="px-5 py-2.5 rounded-2xl bg-sky-600 hover:bg-sky-700 text-white text-xs font-black flex items-center gap-2 shadow-lg shadow-sky-200 transition-all cursor-pointer"
-                  >
-                    <Play size={15} fill="currentColor" />
-                    <span>Vào Học Flashcard ({selectedRangeWords.length} từ)</span>
-                  </button>
+                  <div className="relative w-full sm:w-64">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400" />
+                    <input
+                      type="text"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      placeholder="Tra từ trong danh sách..."
+                      className="w-full pl-9 pr-8 py-2 rounded-xl border border-slate-200 text-xs text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500/30 bg-slate-50/50"
+                    />
+                    {searchQuery && (
+                      <button
+                        onClick={() => setSearchQuery('')}
+                        className="absolute right-2.5 top-1/2 -translate-y-1/2 text-xs text-slate-400 hover:text-slate-600 font-bold"
+                      >
+                        ✕
+                      </button>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </div>
 
-            {/* Search Bar for 139 List */}
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
-              <h3 className="text-sm font-bold text-slate-800 flex items-center gap-2">
-                <ListOrdered size={18} className="text-sky-600" />
-                <span>Bảng Danh Sách 139 Từ Vựng SGK Lớp 9</span>
-              </h3>
-
-              <div className="relative w-full sm:w-64">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400" />
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Tra từ trong danh sách..."
-                  className="w-full pl-9 pr-8 py-2 rounded-xl border border-slate-200 text-xs text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500/30 bg-slate-50/50"
-                />
-                {searchQuery && (
-                  <button
-                    onClick={() => setSearchQuery('')}
-                    className="absolute right-2.5 top-1/2 -translate-y-1/2 text-xs text-slate-400 hover:text-slate-600 font-bold"
-                  >
-                    ✕
-                  </button>
-                )}
-              </div>
-            </div>
-
-            {/* MASTER 1 CONTINUOUS LIST TABLE */}
-            <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm">
-              <div className="overflow-x-auto max-h-[600px] overflow-y-auto">
-                <table className="w-full text-left border-collapse">
-                  <thead className="sticky top-0 bg-slate-100/90 backdrop-blur-md text-[11px] font-extrabold text-slate-600 uppercase tracking-wider border-b border-slate-200">
-                    <tr>
-                      <th className="py-3.5 px-4 text-center w-14">STT</th>
-                      <th className="py-3.5 px-4">Từ Tiếng Anh</th>
-                      <th className="py-3.5 px-4">Phiên Âm</th>
-                      <th className="py-3.5 px-4">Nghĩa Tiếng Việt</th>
-                      <th className="py-3.5 px-4 hidden md:table-cell">Chủ Đề</th>
-                      <th className="py-3.5 px-4 hidden lg:table-cell">Ví Dụ Minh Họa</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-100 text-xs font-medium text-slate-800">
-                    {filteredWords.map((word, index) => {
-                      const stt = index + 1;
-                      const isInRange = stt >= rangeStart && stt <= rangeEnd;
-
-                      return (
-                        <tr
-                          key={word.id}
-                          className={`transition-colors ${
-                            isInRange
-                              ? 'bg-sky-50/50 hover:bg-sky-100/60 font-semibold'
-                              : 'hover:bg-slate-50/80 text-slate-600'
-                          }`}
-                        >
-                          {/* STT */}
-                          <td className="py-3 px-4 text-center font-bold text-slate-400 text-[11px]">
-                            {isInRange ? (
-                              <span className="inline-block px-2 py-0.5 rounded-md bg-sky-600 text-white font-extrabold text-[10px]">
-                                {stt}
-                              </span>
-                            ) : (
-                              stt
-                            )}
-                          </td>
-
-                          {/* Term + Audio */}
-                          <td className="py-3 px-4 font-extrabold text-slate-900">
-                            <div className="flex items-center gap-2">
-                              <span>{word.term}</span>
-                              <button
-                                onClick={() => speakWord(word.term)}
-                                className="p-1 rounded-lg text-sky-600 hover:bg-sky-100 transition-all cursor-pointer"
-                                title="Nghe phát âm"
-                              >
-                                <Volume2 size={13} />
-                              </button>
-                            </div>
-                          </td>
-
-                          {/* IPA */}
-                          <td className="py-3 px-4 font-mono text-[11px] text-slate-400">
-                            {word.ipa}
-                          </td>
-
-                          {/* Meaning */}
-                          <td className="py-3 px-4 font-bold text-sky-900">
-                            {word.answer}
-                          </td>
-
-                          {/* Topic */}
-                          <td className="py-3 px-4 text-slate-500 hidden md:table-cell text-[11px]">
-                            <span className="px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-600 font-semibold">
-                              {word.topic}
-                            </span>
-                          </td>
-
-                          {/* Example */}
-                          <td className="py-3 px-4 text-slate-600 hidden lg:table-cell">
-                            <div className="text-[11px]">
-                              <span className="font-semibold text-slate-800">{word.example}</span>
-                              <span className="text-slate-400 block text-[10px] italic">➔ {word.exampleMeaning}</span>
-                            </div>
-                          </td>
+                {/* MASTER 1 CONTINUOUS LIST TABLE */}
+                <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm">
+                  <div className="overflow-x-auto max-h-[600px] overflow-y-auto">
+                    <table className="w-full text-left border-collapse">
+                      <thead className="sticky top-0 bg-slate-100/90 backdrop-blur-md text-[11px] font-extrabold text-slate-600 uppercase tracking-wider border-b border-slate-200">
+                        <tr>
+                          <th className="py-3.5 px-4 text-center w-14">STT</th>
+                          <th className="py-3.5 px-4">Từ Tiếng Anh</th>
+                          <th className="py-3.5 px-4">Phiên Âm</th>
+                          <th className="py-3.5 px-4">Nghĩa Tiếng Việt</th>
+                          <th className="py-3.5 px-4 hidden md:table-cell">Chủ Đề</th>
+                          <th className="py-3.5 px-4 hidden lg:table-cell">Ví Dụ Minh Họa</th>
                         </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
-              </div>
-            </div>
+                      </thead>
+                      <tbody className="divide-y divide-slate-100 text-xs font-medium text-slate-800">
+                        {filteredWords.map((word, index) => {
+                          const stt = index + 1;
+                          const isInRange = stt >= rangeStart && stt <= rangeEnd;
+
+                          return (
+                            <tr
+                              key={word.id}
+                              className={`transition-colors ${isInRange
+                                  ? 'bg-sky-50/50 hover:bg-sky-100/60 font-semibold'
+                                  : 'hover:bg-slate-50/80 text-slate-600'
+                                }`}
+                            >
+                              {/* STT */}
+                              <td className="py-3 px-4 text-center font-bold text-slate-400 text-[11px]">
+                                {isInRange ? (
+                                  <span className="inline-block px-2 py-0.5 rounded-md bg-sky-600 text-white font-extrabold text-[10px]">
+                                    {stt}
+                                  </span>
+                                ) : (
+                                  stt
+                                )}
+                              </td>
+
+                              {/* Term + Audio */}
+                              <td className="py-3 px-4 font-extrabold text-slate-900">
+                                <div className="flex items-center gap-2">
+                                  <span>{word.term}</span>
+                                  <button
+                                    onClick={() => speakWord(word.term)}
+                                    className="p-1 rounded-lg text-sky-600 hover:bg-sky-100 transition-all cursor-pointer"
+                                    title="Nghe phát âm"
+                                  >
+                                    <Volume2 size={13} />
+                                  </button>
+                                </div>
+                              </td>
+
+                              {/* IPA */}
+                              <td className="py-3 px-4 font-mono text-[11px] text-slate-400">
+                                {word.ipa}
+                              </td>
+
+                              {/* Meaning */}
+                              <td className="py-3 px-4 font-bold text-sky-900">
+                                {word.answer}
+                              </td>
+
+                              {/* Topic */}
+                              <td className="py-3 px-4 text-slate-500 hidden md:table-cell text-[11px]">
+                                <span className="px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-600 font-semibold">
+                                  {word.topic}
+                                </span>
+                              </td>
+
+                              {/* Example */}
+                              <td className="py-3 px-4 text-slate-600 hidden lg:table-cell">
+                                <div className="text-[11px]">
+                                  <span className="font-semibold text-slate-800">{word.example}</span>
+                                  <span className="text-slate-400 block text-[10px] italic">➔ {word.exampleMeaning}</span>
+                                </div>
+                              </td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         )}
 
@@ -808,11 +861,10 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
                   <div
                     key={lesson.id}
                     onClick={() => toggleSection(mcqSection.id)}
-                    className={`p-4 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between space-y-3 hover:shadow-md ${
-                      isSelected
+                    className={`p-4 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between space-y-3 hover:shadow-md ${isSelected
                         ? 'border-indigo-500 bg-indigo-50/40 ring-2 ring-indigo-500/15 shadow-sm'
                         : 'border-slate-200 bg-white hover:border-indigo-300 hover:bg-slate-50/50'
-                    }`}
+                      }`}
                   >
                     <div className="flex items-start justify-between gap-2">
                       <div className="p-2 rounded-xl bg-indigo-100 text-indigo-700 font-bold text-xs shrink-0">
@@ -888,11 +940,10 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
                       <button
                         key={idx}
                         onClick={() => setCustomQuestionCount(count)}
-                        className={`py-2 px-1 rounded-xl text-xs font-bold transition-all cursor-pointer border ${
-                          isSelected
+                        className={`py-2 px-1 rounded-xl text-xs font-bold transition-all cursor-pointer border ${isSelected
                             ? 'bg-amber-500 text-white border-amber-500 shadow-md ring-2 ring-amber-500/20'
                             : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100 hover:border-amber-300'
-                        }`}
+                          }`}
                       >
                         {label}
                       </button>
@@ -936,11 +987,10 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
                     <div
                       key={mode.id}
                       onClick={() => setCustomTestMode(mode.id)}
-                      className={`p-3.5 rounded-2xl border transition-all cursor-pointer flex items-center justify-between gap-3 ${
-                        isSelected
+                      className={`p-3.5 rounded-2xl border transition-all cursor-pointer flex items-center justify-between gap-3 ${isSelected
                           ? 'border-amber-500 bg-amber-50/50 ring-2 ring-amber-500/20'
                           : 'border-slate-200 bg-slate-50/50 hover:bg-slate-100'
-                      }`}
+                        }`}
                     >
                       <div>
                         <div className="text-xs font-extrabold text-slate-900">{mode.title}</div>

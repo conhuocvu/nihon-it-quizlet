@@ -74,7 +74,7 @@ export const EngGrade9TestRunner: React.FC<EngGrade9TestRunnerProps> = ({
     return sampledWords.map((word) => {
       const isEnVi = testMode === 'mcq-en-vi';
       const questionText = isEnVi
-        ? `Nghĩa của từ "${word.term}" (${word.ipa}) là gì?`
+        ? `Nghĩa của từ "${word.term}" là gì?`
         : `Từ tiếng Anh tương ứng với "${word.answer}" là gì?`;
 
       const correctAnswer = isEnVi ? word.answer : word.term;

@@ -1,27 +1,28 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import type { Lesson } from '../data/lessons';
-import { engTopicLessons, engPosLessons, engGrade9Words, type EngWordItem } from '../data/engGrade9Data';
+import { engTopicLessons, engGrade9Words, type EngWordItem } from '../data/engGrade9Data';
 import { EngGrade9TestRunner, type TestMode } from './EngGrade9TestRunner';
 import { EngGrade9GrammarDetailViewer } from './EngGrade9GrammarDetailViewer';
+import { EngTenseExercisesRunner } from './EngTenseExercisesRunner';
 import {
   BookOpen,
   Search,
   CheckCircle2,
+  Square,
   Play,
   ArrowLeft,
   Volume2,
-  CheckSquare,
-  Square,
   GraduationCap,
   PenTool,
   BrainCircuit,
-  Filter,
   Sparkles,
   X,
   Target,
   BookMarked,
   Clock,
-  Zap
+  Zap,
+  Sliders,
+  ListOrdered
 } from 'lucide-react';
 
 interface EngGrade9SelectorProps {
@@ -36,16 +37,47 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
   onBackToHome
 }) => {
   // Main Category Tab: 'vocab' (1. Từ vựng) | 'grammar' (2. Ngữ pháp) | 'homework' (3. Bài tập về nhà)
-  const [mainTab, setMainTab] = useState<'vocab' | 'grammar' | 'homework'>('vocab');
-
-  // Filter inside Homework Tab: 'topics' vs 'pos'
-  const [homeworkFilter, setHomeworkFilter] = useState<'topics' | 'pos'>('topics');
+  const [mainTab, setMainTab] = useState<'vocab' | 'grammar' | 'homework'>(() => {
+    try {
+      const saved = localStorage.getItem('eng_grade9_active_maintab');
+      if (saved === 'vocab' || saved === 'grammar' || saved === 'homework') return saved;
+    } catch {}
+    return 'vocab';
+  });
 
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedSectionIds, setSelectedSectionIds] = useState<string[]>([]);
 
+  // TAB 1: RANGE SELECTOR STATE (1 List master + Range Selector)
+  const [rangeStart, setRangeStart] = useState<number>(1);
+  const [rangeEnd, setRangeEnd] = useState<number>(30);
+
   // Inner Detail View for Grammar Lessons (Opens when clicking into a lesson card)
-  const [activeGrammarDetail, setActiveGrammarDetail] = useState<GrammarDetailType | null>(null);
+  const [activeGrammarDetail, setActiveGrammarDetail] = useState<GrammarDetailType | null>(() => {
+    try {
+      const saved = localStorage.getItem('eng_grade9_active_grammardetail');
+      if (saved) return saved as GrammarDetailType;
+    } catch {}
+    return null;
+  });
+
+  // Tự động lưu mainTab vào localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem('eng_grade9_active_maintab', mainTab);
+    } catch (e) {}
+  }, [mainTab]);
+
+  // Tự động lưu activeGrammarDetail vào localStorage
+  useEffect(() => {
+    try {
+      if (activeGrammarDetail) {
+        localStorage.setItem('eng_grade9_active_grammardetail', activeGrammarDetail);
+      } else {
+        localStorage.removeItem('eng_grade9_active_grammardetail');
+      }
+    } catch (e) {}
+  }, [activeGrammarDetail]);
 
   // Modal State for Custom Test Setup
   const [showTestModal, setShowTestModal] = useState(false);
@@ -57,14 +89,40 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
     wordsPool: EngWordItem[];
     questionCount: number;
     testMode: TestMode;
-  } | null>(null);
+  } | null>(() => {
+    try {
+      const saved = localStorage.getItem('eng_grade9_active_test_config_v1');
+      return saved ? JSON.parse(saved) : null;
+    } catch {}
+    return null;
+  });
 
-  // Active Lessons depending on mainTab & homeworkFilter
-  const currentLessons: Lesson[] = useMemo(() => {
-    if (mainTab === 'vocab') return engTopicLessons;
-    if (mainTab === 'grammar') return engPosLessons;
-    return homeworkFilter === 'topics' ? engTopicLessons : engPosLessons;
-  }, [mainTab, homeworkFilter]);
+  // Tự động lưu activeTestConfig vào localStorage
+  useEffect(() => {
+    try {
+      if (activeTestConfig) {
+        localStorage.setItem('eng_grade9_active_test_config_v1', JSON.stringify(activeTestConfig));
+      } else {
+        localStorage.removeItem('eng_grade9_active_test_config_v1');
+      }
+    } catch (e) {}
+  }, [activeTestConfig]);
+
+  // State to launch Tense Exercises Runner (Điền từ, MCQ, Điền đoạn văn)
+  const [showTenseExercisesRunner, setShowTenseExercisesRunner] = useState<boolean>(() => {
+    try {
+      const saved = localStorage.getItem('eng_grade9_show_tense_runner_v1');
+      return saved === 'true';
+    } catch {}
+    return false;
+  });
+
+  // Tự động lưu showTenseExercisesRunner vào localStorage
+  useEffect(() => {
+    try {
+      localStorage.setItem('eng_grade9_show_tense_runner_v1', showTenseExercisesRunner ? 'true' : 'false');
+    } catch (e) {}
+  }, [showTenseExercisesRunner]);
 
   // Speech Synthesis for English Pronunciation
   const speakWord = (text: string) => {
@@ -77,7 +135,7 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
     }
   };
 
-  // Filtered words for search
+  // Filtered words for search in master 139 list
   const filteredWords = useMemo(() => {
     const q = searchQuery.toLowerCase().trim();
     if (!q) return engGrade9Words;
@@ -91,78 +149,70 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
     );
   }, [searchQuery]);
 
+  // Selected words within [rangeStart .. rangeEnd] (1-indexed)
+  const selectedRangeWords = useMemo(() => {
+    const start = Math.max(1, Math.min(rangeStart, engGrade9Words.length));
+    const end = Math.max(start, Math.min(rangeEnd, engGrade9Words.length));
+    return engGrade9Words.slice(start - 1, end);
+  }, [rangeStart, rangeEnd]);
+
+  // Active Lessons for Homework Tab
+  const currentLessons: Lesson[] = useMemo(() => engTopicLessons, []);
+
   const toggleSection = (id: string) => {
     setSelectedSectionIds((prev) =>
       prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
     );
   };
 
-  // Sections corresponding to active mainTab
-  const activeTabSections = useMemo(() => {
-    const targetType = mainTab === 'homework' ? 'multiple_choice' : 'vocabulary';
-    return currentLessons
-      .flatMap((l) => l.sections)
-      .filter((s) => s.type === targetType);
-  }, [currentLessons, mainTab]);
+  // Launch Flashcard Study for Range
+  const handleStartRangeFlashcard = () => {
+    // Find all topic section IDs matching the range
+    const start = Math.max(1, Math.min(rangeStart, engGrade9Words.length));
+    const end = Math.max(start, Math.min(rangeEnd, engGrade9Words.length));
+    
+    // Map word positions to section IDs
+    const matchedSectionIds = new Set<string>();
+    if (start <= 20 || end <= 20) matchedSectionIds.add('eng-topic-1-vocab');
+    if ((start <= 40 && end >= 21)) matchedSectionIds.add('eng-topic-2-vocab');
+    if ((start <= 60 && end >= 41)) matchedSectionIds.add('eng-topic-3-vocab');
+    if ((start <= 85 && end >= 61)) matchedSectionIds.add('eng-topic-4-vocab');
+    if ((start <= 105 && end >= 86)) matchedSectionIds.add('eng-topic-5-vocab');
+    if ((start <= 120 && end >= 106)) matchedSectionIds.add('eng-topic-6-vocab');
+    if ((start <= 130 && end >= 121)) matchedSectionIds.add('eng-topic-7-vocab');
+    if ((start <= 139 && end >= 131)) matchedSectionIds.add('eng-topic-8-vocab');
 
-  // Pool of selected EngWords for Custom Test
-  const selectedWordsPool = useMemo(() => {
-    if (selectedSectionIds.length === 0) return engGrade9Words;
-
-    const wordIdsInSelectedSections = new Set<string>();
-    currentLessons.forEach((lesson) => {
-      lesson.sections.forEach((section) => {
-        if (selectedSectionIds.includes(section.id)) {
-          section.items.forEach((item) => wordIdsInSelectedSections.add(item.id.replace('-mcq', '').replace('-pos', '')));
-        }
-      });
-    });
-
-    const pool = engGrade9Words.filter((w) => wordIdsInSelectedSections.has(w.id));
-    return pool.length > 0 ? pool : engGrade9Words;
-  }, [selectedSectionIds, currentLessons]);
-
-  // Total items count selected
-  const totalItemsSelected = useMemo(() => {
-    let count = 0;
-    activeTabSections.forEach((s) => {
-      if (selectedSectionIds.includes(s.id)) {
-        count += s.items.length;
-      }
-    });
-    return count;
-  }, [selectedSectionIds, activeTabSections]);
-
-  const isAllActiveSelected = useMemo(() => {
-    return (
-      activeTabSections.length > 0 &&
-      activeTabSections.every((s) => selectedSectionIds.includes(s.id))
-    );
-  }, [activeTabSections, selectedSectionIds]);
-
-  const selectAllActiveTabSections = () => {
-    const activeSectionIds = activeTabSections.map((s) => s.id);
-    if (isAllActiveSelected) {
-      setSelectedSectionIds((prev) => prev.filter((id) => !activeSectionIds.includes(id)));
-    } else {
-      setSelectedSectionIds((prev) => Array.from(new Set([...prev, ...activeSectionIds])));
-    }
+    onStartBySections(Array.from(matchedSectionIds));
   };
 
-  const handleStartSelected = () => {
-    if (selectedSectionIds.length > 0) {
-      onStartBySections(selectedSectionIds);
+  // Active pool of words for test
+  const activeTestPool = useMemo(() => {
+    return selectedRangeWords.length > 0 ? selectedRangeWords : engGrade9Words;
+  }, [selectedRangeWords]);
+
+  // Open Custom Test Modal
+  const handleOpenTestModal = () => {
+    // Default customQuestionCount to pool length if smaller than current count
+    if (customQuestionCount > activeTestPool.length) {
+      setCustomQuestionCount(activeTestPool.length);
     }
+    setShowTestModal(true);
   };
 
   const handleLaunchCustomTest = () => {
+    const finalCount = customQuestionCount > activeTestPool.length ? activeTestPool.length : customQuestionCount;
     setActiveTestConfig({
-      wordsPool: selectedWordsPool,
-      questionCount: Math.min(customQuestionCount, selectedWordsPool.length),
+      wordsPool: activeTestPool,
+      questionCount: Math.max(1, finalCount),
       testMode: customTestMode
     });
     setShowTestModal(false);
   };
+
+  // If Tense Exercises Runner is active, render exercises view!
+  if (showTenseExercisesRunner) {
+    return <EngTenseExercisesRunner onClose={() => setShowTenseExercisesRunner(false)} />;
+  }
 
   // If Custom Test Runner is active, render runner view!
   if (activeTestConfig) {
@@ -182,10 +232,7 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
       <EngGrade9GrammarDetailViewer
         lessonType={activeGrammarDetail}
         onClose={() => setActiveGrammarDetail(null)}
-        onStartQuiz={() => {
-          const posSectionIds = engPosLessons.flatMap((l) => l.sections.map((s) => s.id));
-          onStartBySections(posSectionIds);
-        }}
+        onStartQuiz={() => setShowTenseExercisesRunner(true)}
       />
     );
   }
@@ -221,18 +268,18 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
           </h1>
 
           <p className="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed font-normal">
-            Chọn mục **1. Từ Vựng**, **2. Ngữ Pháp** hoặc **3. Bài Tập Về Nhà** để xem nội dung bài học và làm bài trắc nghiệm.
+            Chọn mục **1. Từ Vựng** (1 Danh sách 139 từ + Chọn dải số ôn tập), **2. Ngữ Pháp** hoặc **3. Bài Tập Về Nhà**.
           </p>
 
           {/* Quick Info Badges */}
           <div className="pt-2 flex flex-wrap gap-4 text-xs font-medium text-slate-300">
             <div className="bg-white/5 px-3.5 py-2 rounded-xl backdrop-blur-md border border-white/10 flex items-center gap-2">
               <BookOpen size={15} className="text-sky-400" />
-              <span>139 Từ vựng theo Chủ đề</span>
+              <span>1 Master List 139 Từ vựng</span>
             </div>
             <div className="bg-white/5 px-3.5 py-2 rounded-xl backdrop-blur-md border border-white/10 flex items-center gap-2">
               <BookMarked size={15} className="text-teal-400" />
-              <span>Các thì & Từ loại Ngữ pháp</span>
+              <span>8 Thì & Động từ khuyết thiếu</span>
             </div>
             <div className="bg-white/5 px-3.5 py-2 rounded-xl backdrop-blur-md border border-white/10 flex items-center gap-2">
               <PenTool size={15} className="text-indigo-400" />
@@ -247,10 +294,7 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 p-1.5 bg-slate-100/80 rounded-2xl border border-slate-200/60 max-w-3xl mx-auto">
           {/* TAB 1: TỪ VỰNG */}
           <button
-            onClick={() => {
-              setMainTab('vocab');
-              setSelectedSectionIds([]);
-            }}
+            onClick={() => setMainTab('vocab')}
             className={`py-3 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center justify-center gap-2 cursor-pointer ${
               mainTab === 'vocab'
                 ? 'bg-white text-sky-700 shadow-md border border-sky-100 ring-2 ring-sky-500/10'
@@ -263,10 +307,7 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
 
           {/* TAB 2: NGỮ PHÁP */}
           <button
-            onClick={() => {
-              setMainTab('grammar');
-              setSelectedSectionIds([]);
-            }}
+            onClick={() => setMainTab('grammar')}
             className={`py-3 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center justify-center gap-2 cursor-pointer ${
               mainTab === 'grammar'
                 ? 'bg-white text-teal-700 shadow-md border border-teal-100 ring-2 ring-teal-500/10'
@@ -279,10 +320,7 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
 
           {/* TAB 3: BÀI TẬP VỀ NHÀ */}
           <button
-            onClick={() => {
-              setMainTab('homework');
-              setSelectedSectionIds([]);
-            }}
+            onClick={() => setMainTab('homework')}
             className={`py-3 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center justify-center gap-2 cursor-pointer ${
               mainTab === 'homework'
                 ? 'bg-white text-indigo-700 shadow-md border border-indigo-100 ring-2 ring-indigo-500/10'
@@ -294,239 +332,216 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
           </button>
         </div>
 
-        {/* Top Control Bar & Action Buttons */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-4 border-t border-slate-100">
-          {/* Homework Filter toggle (only visible in Tab 3: Bài Tập Về Nhà) */}
-          {mainTab === 'homework' ? (
-            <div className="flex items-center gap-3 w-full md:w-auto">
-              <span className="text-xs font-bold text-slate-500 flex items-center gap-1.5 shrink-0">
-                <Filter size={14} className="text-slate-400" />
-                Lọc đề bài theo:
-              </span>
-              <div className="flex p-1 rounded-xl bg-slate-100 border border-slate-200/70 text-xs font-semibold">
-                <button
-                  onClick={() => {
-                    setHomeworkFilter('topics');
-                    setSelectedSectionIds([]);
-                  }}
-                  className={`px-3 py-1 rounded-lg transition-all cursor-pointer ${
-                    homeworkFilter === 'topics'
-                      ? 'bg-white text-indigo-700 shadow-sm font-bold'
-                      : 'text-slate-500 hover:text-slate-800'
-                  }`}
-                >
-                  Theo Chủ đề
-                </button>
-                <button
-                  onClick={() => {
-                    setHomeworkFilter('pos');
-                    setSelectedSectionIds([]);
-                  }}
-                  className={`px-3 py-1 rounded-lg transition-all cursor-pointer ${
-                    homeworkFilter === 'pos'
-                      ? 'bg-white text-indigo-700 shadow-sm font-bold'
-                      : 'text-slate-500 hover:text-slate-800'
-                  }`}
-                >
-                  Theo Từ loại
-                </button>
-              </div>
-            </div>
-          ) : (
-            <div className="text-xs text-slate-500 font-medium flex items-center gap-1.5">
-              <Sparkles size={14} className={mainTab === 'vocab' ? 'text-sky-500' : 'text-teal-500'} />
-              <span>
-                {mainTab === 'vocab'
-                  ? 'Học từ vựng Flashcard phân loại theo 8 Chủ đề gần gũi'
-                  : 'Chọn bài học bên dưới để mở giao diện xem chi tiết công thức & cách dùng'}
-              </span>
-            </div>
-          )}
-
-          {/* Action Buttons */}
-          <div className="flex flex-wrap items-center gap-2.5 w-full md:w-auto justify-end">
-            <div className="relative w-full sm:w-44">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400" />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Tra từ..."
-                className="w-full pl-9 pr-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500/30 bg-slate-50/50"
-              />
-              {searchQuery && (
-                <button
-                  onClick={() => setSearchQuery('')}
-                  className="absolute right-2.5 top-1/2 -translate-y-1/2 text-xs text-slate-400 hover:text-slate-600 font-bold"
-                >
-                  ✕
-                </button>
-              )}
-            </div>
-
-            <button
-              onClick={selectAllActiveTabSections}
-              className="px-3 py-2 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50 transition-all flex items-center gap-1.5 cursor-pointer shrink-0"
-            >
-              <CheckSquare size={14} className={isAllActiveSelected ? 'text-sky-600' : 'text-slate-400'} />
-              <span>{isAllActiveSelected ? 'Bỏ chọn' : 'Chọn tất cả'}</span>
-            </button>
-
-            {/* CUSTOM TEST GENERATOR BUTTON */}
-            {mainTab === 'homework' && (
-              <button
-                onClick={() => setShowTestModal(true)}
-                className="px-3.5 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white text-xs font-extrabold flex items-center gap-1.5 shadow-md shadow-amber-200 transition-all cursor-pointer shrink-0"
-              >
-                <Target size={15} />
-                <span>Tạo Bài Test Tùy Chỉnh</span>
-              </button>
-            )}
-
-            <button
-              onClick={handleStartSelected}
-              disabled={selectedSectionIds.length === 0}
-              className={`px-4 py-2 rounded-xl text-xs font-extrabold flex items-center gap-1.5 transition-all cursor-pointer shrink-0 ${
-                selectedSectionIds.length > 0
-                  ? mainTab === 'vocab'
-                    ? 'bg-sky-600 hover:bg-sky-700 text-white shadow-md shadow-sky-200'
-                    : mainTab === 'grammar'
-                    ? 'bg-teal-600 hover:bg-teal-700 text-white shadow-md shadow-teal-200'
-                    : 'bg-indigo-600 hover:bg-indigo-700 text-white shadow-md shadow-indigo-200'
-                  : 'bg-slate-200 text-slate-400 cursor-not-allowed'
-              }`}
-            >
-              <Play size={13} fill="currentColor" />
-              <span>
-                Vào Học{' '}
-                {selectedSectionIds.length > 0
-                  ? `(${totalItemsSelected} từ / ${selectedSectionIds.length} bài)`
-                  : ''}
-              </span>
-            </button>
-          </div>
-        </div>
-
-        {/* Selected Word Counter Banner */}
-        {selectedSectionIds.length > 0 && (
-          <div className="bg-sky-50/80 border border-sky-200/80 rounded-2xl p-3 px-4 flex items-center justify-between text-xs text-sky-900 font-semibold animate-fadeIn">
-            <div className="flex items-center gap-2">
-              <Sparkles size={16} className="text-sky-600 animate-pulse" />
-              <span>
-                Đã chọn <strong className="font-extrabold text-sky-700">{selectedSectionIds.length} bài</strong> với tổng số{' '}
-                <strong className="font-extrabold text-sky-700 text-sm">{totalItemsSelected} từ vựng</strong> sẵn sàng luyện tập!
-              </span>
-            </div>
-            <div className="flex items-center gap-3">
-              {mainTab === 'homework' && (
-                <button
-                  onClick={() => setShowTestModal(true)}
-                  className="text-[11px] font-bold text-amber-700 hover:underline cursor-pointer flex items-center gap-1"
-                >
-                  <Target size={12} />
-                  <span>Test ngẫu nhiên ({totalItemsSelected} từ này)</span>
-                </button>
-              )}
-              <button
-                onClick={() => setSelectedSectionIds([])}
-                className="text-[11px] font-bold text-sky-700 hover:underline cursor-pointer"
-              >
-                Xóa lựa chọn
-              </button>
-            </div>
-          </div>
-        )}
-
-        {/* Quick Search Drawer */}
-        {searchQuery && (
-          <div className="bg-slate-50/70 rounded-2xl p-4 border border-slate-200 space-y-3">
-            <h4 className="text-xs font-bold text-slate-700 flex items-center gap-1.5">
-              <Search size={14} className="text-sky-600" />
-              Kết quả tra cứu từ vựng ({filteredWords.length} từ)
-            </h4>
-            {filteredWords.length === 0 ? (
-              <p className="text-xs text-slate-400 py-2">Không tìm thấy từ khớp.</p>
-            ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2.5 max-h-60 overflow-y-auto pr-1">
-                {filteredWords.map((w) => (
-                  <div
-                    key={w.id}
-                    className="p-2.5 rounded-xl border border-slate-200 bg-white hover:border-sky-300 transition-all flex flex-col justify-between space-y-1"
-                  >
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-1.5">
-                        <span className="font-extrabold text-xs text-slate-900">{w.term}</span>
-                        <button
-                          onClick={() => speakWord(w.term)}
-                          className="p-0.5 rounded text-sky-600 hover:bg-sky-50 transition-all cursor-pointer"
-                        >
-                          <Volume2 size={12} />
-                        </button>
-                      </div>
-                      <span className="text-[10px] font-mono text-slate-400">{w.ipa}</span>
-                    </div>
-                    <p className="text-xs font-medium text-slate-600">{w.answer}</p>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* TAB 1 CONTENT: 1. Từ Vựng (Chủ đề) - COMPACT CLEAN GRID (4 COLUMNS) */}
+        {/* TAB 1 CONTENT: 1 MASTER LIST + RANGE SELECTOR */}
         {mainTab === 'vocab' && (
-          <div className="space-y-4">
-            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-              <h3 className="text-sm font-bold text-slate-800 flex items-center gap-2">
-                <BookOpen size={16} className="text-sky-600" />
-                <span>Danh sách Bài Học Từ Vựng (Theo Chủ Đề)</span>
-              </h3>
-              <span className="text-xs text-slate-400 font-normal">Tích chọn card để học</span>
+          <div className="space-y-6">
+            {/* RANGE SELECTOR CONTROL BOX */}
+            <div className="p-5 sm:p-6 rounded-3xl bg-slate-50/80 border border-sky-200/80 space-y-5 shadow-sm">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-slate-200/80 pb-3">
+                <div className="space-y-0.5">
+                  <h3 className="text-sm sm:text-base font-black text-slate-900 flex items-center gap-2">
+                    <Sliders size={18} className="text-sky-600" />
+                    <span>Chọn Dải Số Từ Vựng Để Ôn Tập (Range Selector)</span>
+                  </h3>
+                  <p className="text-xs text-slate-500 font-medium">
+                    Chọn nhanh các dải 30 từ hoặc nhập tùy chỉnh vị trí câu từ 1 đến 139.
+                  </p>
+                </div>
+
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-100 text-sky-900 text-xs font-extrabold shrink-0">
+                  <Sparkles size={13} className="text-sky-600" />
+                  <span>Đã chọn: Từ câu {rangeStart} ➔ {rangeEnd} ({selectedRangeWords.length} từ)</span>
+                </div>
+              </div>
+
+              {/* Preset Range Buttons */}
+              <div className="space-y-2">
+                <span className="text-xs font-bold text-slate-700 block">Dải số nhanh:</span>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2">
+                  {[
+                    { start: 1, end: 30, label: '1 - 30 (30 từ)' },
+                    { start: 31, end: 60, label: '31 - 60 (30 từ)' },
+                    { start: 61, end: 90, label: '61 - 90 (30 từ)' },
+                    { start: 91, end: 120, label: '91 - 120 (30 từ)' },
+                    { start: 121, end: 139, label: '121 - 139 (19 từ)' },
+                    { start: 1, end: 139, label: 'Tất cả (1 - 139)' }
+                  ].map((preset, idx) => {
+                    const isActive = rangeStart === preset.start && rangeEnd === preset.end;
+                    return (
+                      <button
+                        key={idx}
+                        onClick={() => {
+                          setRangeStart(preset.start);
+                          setRangeEnd(preset.end);
+                        }}
+                        className={`py-2.5 px-3 rounded-2xl text-xs font-extrabold transition-all cursor-pointer border text-center ${
+                          isActive
+                            ? 'bg-sky-600 text-white border-sky-600 shadow-md shadow-sky-200 ring-2 ring-sky-500/20 scale-[1.02]'
+                            : 'bg-white border-slate-200 text-slate-700 hover:border-sky-300 hover:bg-slate-100/60'
+                        }`}
+                      >
+                        {preset.label}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Custom Range Inputs & Action Buttons */}
+              <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-3 border-t border-slate-200/80">
+                {/* Inputs */}
+                <div className="flex items-center gap-2.5 text-xs font-bold text-slate-700 w-full md:w-auto">
+                  <span>Tùy chỉnh: Từ câu</span>
+                  <input
+                    type="number"
+                    min={1}
+                    max={139}
+                    value={rangeStart}
+                    onChange={(e) => setRangeStart(Math.max(1, Math.min(139, Number(e.target.value) || 1)))}
+                    className="w-16 px-2.5 py-1.5 rounded-xl border border-slate-300 text-center font-extrabold text-sky-700 bg-white focus:outline-none focus:ring-2 focus:ring-sky-500/30"
+                  />
+                  <span>đến câu</span>
+                  <input
+                    type="number"
+                    min={1}
+                    max={139}
+                    value={rangeEnd}
+                    onChange={(e) => setRangeEnd(Math.max(1, Math.min(139, Number(e.target.value) || 139)))}
+                    className="w-16 px-2.5 py-1.5 rounded-xl border border-slate-300 text-center font-extrabold text-sky-700 bg-white focus:outline-none focus:ring-2 focus:ring-sky-500/30"
+                  />
+                </div>
+
+                {/* Launch Actions */}
+                <div className="flex flex-wrap items-center gap-2.5 w-full md:w-auto justify-end">
+                  <button
+                    onClick={handleOpenTestModal}
+                    className="px-4 py-2.5 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white text-xs font-extrabold flex items-center gap-1.5 shadow-md shadow-amber-200 transition-all cursor-pointer"
+                  >
+                    <Target size={15} />
+                    <span>Làm Test ({selectedRangeWords.length} từ này)</span>
+                  </button>
+
+                  <button
+                    onClick={handleStartRangeFlashcard}
+                    className="px-5 py-2.5 rounded-2xl bg-sky-600 hover:bg-sky-700 text-white text-xs font-black flex items-center gap-2 shadow-lg shadow-sky-200 transition-all cursor-pointer"
+                  >
+                    <Play size={15} fill="currentColor" />
+                    <span>Vào Học Flashcard ({selectedRangeWords.length} từ)</span>
+                  </button>
+                </div>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5">
-              {engTopicLessons.map((lesson) => {
-                const vocabSection = lesson.sections.find((s) => s.type === 'vocabulary');
-                if (!vocabSection) return null;
+            {/* Search Bar for 139 List */}
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
+              <h3 className="text-sm font-bold text-slate-800 flex items-center gap-2">
+                <ListOrdered size={18} className="text-sky-600" />
+                <span>Bảng Danh Sách 139 Từ Vựng SGK Lớp 9</span>
+              </h3>
 
-                const isSelected = selectedSectionIds.includes(vocabSection.id);
-                const wordCount = vocabSection.items.length;
-
-                return (
-                  <div
-                    key={lesson.id}
-                    onClick={() => toggleSection(vocabSection.id)}
-                    className={`p-4 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between space-y-3 hover:shadow-md ${
-                      isSelected
-                        ? 'border-sky-500 bg-sky-50/40 ring-2 ring-sky-500/15 shadow-sm'
-                        : 'border-slate-200 bg-white hover:border-sky-300 hover:bg-slate-50/50'
-                    }`}
+              <div className="relative w-full sm:w-64">
+                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Tra từ trong danh sách..."
+                  className="w-full pl-9 pr-8 py-2 rounded-xl border border-slate-200 text-xs text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500/30 bg-slate-50/50"
+                />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery('')}
+                    className="absolute right-2.5 top-1/2 -translate-y-1/2 text-xs text-slate-400 hover:text-slate-600 font-bold"
                   >
-                    <div className="flex items-start justify-between gap-2">
-                      <div className="p-2 rounded-xl bg-sky-100 text-sky-700 font-bold text-xs shrink-0">
-                        <BookOpen size={16} />
-                      </div>
+                    ✕
+                  </button>
+                )}
+              </div>
+            </div>
 
-                      {isSelected ? (
-                        <div className="p-0.5 rounded-full bg-sky-600 text-white shrink-0">
-                          <CheckCircle2 size={18} fill="currentColor" className="text-sky-600 stroke-white" />
-                        </div>
-                      ) : (
-                        <Square size={18} className="text-slate-300 hover:text-sky-400 transition-colors shrink-0" />
-                      )}
-                    </div>
+            {/* MASTER 1 CONTINUOUS LIST TABLE */}
+            <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm">
+              <div className="overflow-x-auto max-h-[600px] overflow-y-auto">
+                <table className="w-full text-left border-collapse">
+                  <thead className="sticky top-0 bg-slate-100/90 backdrop-blur-md text-[11px] font-extrabold text-slate-600 uppercase tracking-wider border-b border-slate-200">
+                    <tr>
+                      <th className="py-3.5 px-4 text-center w-14">STT</th>
+                      <th className="py-3.5 px-4">Từ Tiếng Anh</th>
+                      <th className="py-3.5 px-4">Phiên Âm</th>
+                      <th className="py-3.5 px-4">Nghĩa Tiếng Việt</th>
+                      <th className="py-3.5 px-4 hidden md:table-cell">Chủ Đề</th>
+                      <th className="py-3.5 px-4 hidden lg:table-cell">Ví Dụ Minh Họa</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100 text-xs font-medium text-slate-800">
+                    {filteredWords.map((word, index) => {
+                      const stt = index + 1;
+                      const isInRange = stt >= rangeStart && stt <= rangeEnd;
 
-                    <div className="space-y-1">
-                      <h4 className="font-extrabold text-slate-800 text-xs sm:text-sm line-clamp-2 leading-tight">
-                        {lesson.title}
-                      </h4>
-                      <span className="inline-block px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-600 text-[11px] font-bold">
-                        {wordCount} từ vựng
-                      </span>
-                    </div>
-                  </div>
-                );
-              })}
+                      return (
+                        <tr
+                          key={word.id}
+                          className={`transition-colors ${
+                            isInRange
+                              ? 'bg-sky-50/50 hover:bg-sky-100/60 font-semibold'
+                              : 'hover:bg-slate-50/80 text-slate-600'
+                          }`}
+                        >
+                          {/* STT */}
+                          <td className="py-3 px-4 text-center font-bold text-slate-400 text-[11px]">
+                            {isInRange ? (
+                              <span className="inline-block px-2 py-0.5 rounded-md bg-sky-600 text-white font-extrabold text-[10px]">
+                                {stt}
+                              </span>
+                            ) : (
+                              stt
+                            )}
+                          </td>
+
+                          {/* Term + Audio */}
+                          <td className="py-3 px-4 font-extrabold text-slate-900">
+                            <div className="flex items-center gap-2">
+                              <span>{word.term}</span>
+                              <button
+                                onClick={() => speakWord(word.term)}
+                                className="p-1 rounded-lg text-sky-600 hover:bg-sky-100 transition-all cursor-pointer"
+                                title="Nghe phát âm"
+                              >
+                                <Volume2 size={13} />
+                              </button>
+                            </div>
+                          </td>
+
+                          {/* IPA */}
+                          <td className="py-3 px-4 font-mono text-[11px] text-slate-400">
+                            {word.ipa}
+                          </td>
+
+                          {/* Meaning */}
+                          <td className="py-3 px-4 font-bold text-sky-900">
+                            {word.answer}
+                          </td>
+
+                          {/* Topic */}
+                          <td className="py-3 px-4 text-slate-500 hidden md:table-cell text-[11px]">
+                            <span className="px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-600 font-semibold">
+                              {word.topic}
+                            </span>
+                          </td>
+
+                          {/* Example */}
+                          <td className="py-3 px-4 text-slate-600 hidden lg:table-cell">
+                            <div className="text-[11px]">
+                              <span className="font-semibold text-slate-800">{word.example}</span>
+                              <span className="text-slate-400 block text-[10px] italic">➔ {word.exampleMeaning}</span>
+                            </div>
+                          </td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         )}
@@ -592,7 +607,7 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
                     Bài 2: Động Từ Khuyết Thiếu
                   </h4>
                   <p className="text-xs text-slate-500 font-medium leading-relaxed">
-                    Chuyên đề Can/Could, Must/Mustn’t, Have to, Should/Ought to, May/Might với công thức $S + Modal + V_0$.
+                    Chuyên đề Can/Could, Must/Mustn’t, Have to, Should/Ought to, May/Might với công thức $S + Modal + V$.
                   </p>
                 </div>
 
@@ -717,18 +732,71 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
           </div>
         )}
 
-        {/* TAB 3 CONTENT: 3. Bài Tập Về Nhà (Trắc Nghiệm & Test) - COMPACT CLEAN GRID (4 COLUMNS) */}
+        {/* TAB 3 CONTENT: 3. Bài Tập Về Nhà (Trắc Nghiệm & Test) */}
         {mainTab === 'homework' && (
-          <div className="space-y-4">
+          <div className="space-y-6">
+            {/* Banner Luyện Tập Các Thì Ngữ Pháp */}
+            <div className="p-5 rounded-3xl bg-gradient-to-r from-slate-900 via-indigo-950 to-sky-950 text-white flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-lg border border-indigo-500/20">
+              <div className="space-y-1">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-200 border border-indigo-400/30 text-xs font-bold">
+                  <Sparkles size={13} className="text-indigo-300" />
+                  <span>CHUYÊN ĐỀ BÀI TẬP VỀ THÌ</span>
+                </div>
+                <h3 className="text-base sm:text-lg font-black bg-gradient-to-r from-white via-indigo-100 to-sky-200 bg-clip-text text-transparent">
+                  Luyện Tập Bài Tập Các Thì (Điền từ, Trắc nghiệm & Điền đoạn văn)
+                </h3>
+                <p className="text-xs text-slate-300 font-medium">
+                  Trọn bộ 42 câu bài tập về thì có gắn tag, lọc chọn thì tùy ý & trộn ngẫu nhiên câu hỏi.
+                </p>
+              </div>
+
+              <button
+                onClick={() => setShowTenseExercisesRunner(true)}
+                className="px-5 py-2.5 rounded-2xl bg-gradient-to-r from-indigo-500 to-sky-500 hover:from-indigo-600 hover:to-sky-600 text-white text-xs font-black shadow-lg shadow-indigo-500/20 transition-all cursor-pointer shrink-0 flex items-center gap-2"
+              >
+                <PenTool size={16} />
+                <span>Vào Làm Bài Tập Ngay ➔</span>
+              </button>
+            </div>
+
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <h3 className="text-sm font-bold text-slate-800 flex items-center gap-2">
                 <PenTool size={16} className="text-indigo-600" />
-                <span>Danh sách Bài Tập Về Nhà</span>
+                <span>Danh sách Đề Trắc Nghiệm Theo Bài Học SGK</span>
               </h3>
               <span className="text-xs text-slate-400 font-normal">Tích chọn bài để làm trắc nghiệm</span>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3.5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {/* FEATURED HOMEWORK CARD: BÀI TẬP VỀ THÌ (42 CÂU - 3 DẠNG ĐỀ) */}
+              <div
+                onClick={() => setShowTenseExercisesRunner(true)}
+                className="p-5 rounded-3xl border-2 border-indigo-500 bg-gradient-to-br from-indigo-50/90 via-sky-50/90 to-indigo-100/50 hover:border-indigo-600 transition-all cursor-pointer flex flex-col justify-between space-y-3 shadow-md hover:shadow-lg group scale-[1.01]"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="p-2.5 rounded-2xl bg-indigo-600 text-white font-bold text-xs shrink-0 shadow-md shadow-indigo-200 group-hover:scale-110 transition-transform">
+                    <BrainCircuit size={20} />
+                  </div>
+                  <span className="px-2.5 py-1 rounded-full bg-indigo-600 text-white text-[11px] font-black shadow-sm animate-pulse">
+                    🔥 Hot • 42 câu
+                  </span>
+                </div>
+
+                <div className="space-y-1">
+                  <h4 className="font-black text-slate-900 text-sm group-hover:text-indigo-700 transition-colors">
+                    Bài Tập Về Thì (Tập 1, 2, 3, 4)
+                  </h4>
+                  <p className="text-xs text-slate-600 font-medium leading-relaxed">
+                    Trọn bộ Điền từ (20 câu), Trắc nghiệm MCQ 4 đáp án (10 câu) & Điền đoạn văn (12 vị trí) có lọc thì & trộn ngẫu nhiên.
+                  </p>
+                </div>
+
+                <div className="pt-2 border-t border-indigo-200 flex items-center justify-between text-xs font-black text-indigo-700">
+                  <span>Mở làm bài ngay ➔</span>
+                  <Sparkles size={15} className="text-indigo-600" />
+                </div>
+              </div>
+
               {currentLessons.map((lesson) => {
                 const mcqSection = lesson.sections.find((s) => s.type === 'multiple_choice');
                 if (!mcqSection) return null;
@@ -796,34 +864,40 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
                 Tạo Bài Kiểm Tra Tùy Chỉnh
               </h3>
               <p className="text-xs text-slate-500">
-                Lấy từ vựng ngẫu nhiên từ kho {selectedWordsPool.length} từ đã chọn để kiểm tra phản xạ.
+                Lấy từ vựng ngẫu nhiên từ kho {activeTestPool.length} từ đã chọn để kiểm tra phản xạ.
               </p>
             </div>
 
             {/* Step 1: Select Question Count */}
             <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-700 flex items-center gap-1">
+              <label className="text-xs font-bold text-slate-700 flex items-center justify-between">
                 <span>1. Số lượng câu hỏi test:</span>
+                <span className="text-amber-700 font-extrabold text-[11px]">
+                  (Đang chọn: {customQuestionCount} câu)
+                </span>
               </label>
               <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
-                {[5, 10, 15, 20, 30, selectedWordsPool.length].map((count, idx) => {
-                  const isSelected = customQuestionCount === count;
-                  const label = idx === 5 ? `Tất cả (${count})` : `${count} câu`;
+                {Array.from(new Set([5, 10, 15, 20, 30, activeTestPool.length]))
+                  .filter((c) => c > 0 && c <= activeTestPool.length)
+                  .map((count, idx, arr) => {
+                    const isSelected = customQuestionCount === count;
+                    const isAllOption = count === activeTestPool.length && idx === arr.length - 1;
+                    const label = isAllOption ? `Tất cả (${count})` : `${count} câu`;
 
-                  return (
-                    <button
-                      key={idx}
-                      onClick={() => setCustomQuestionCount(count)}
-                      className={`py-2 px-1 rounded-xl text-xs font-bold transition-all cursor-pointer border ${
-                        isSelected
-                          ? 'bg-amber-500 text-white border-amber-500 shadow-sm'
-                          : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
-                      }`}
-                    >
-                      {label}
-                    </button>
-                  );
-                })}
+                    return (
+                      <button
+                        key={idx}
+                        onClick={() => setCustomQuestionCount(count)}
+                        className={`py-2 px-1 rounded-xl text-xs font-bold transition-all cursor-pointer border ${
+                          isSelected
+                            ? 'bg-amber-500 text-white border-amber-500 shadow-md ring-2 ring-amber-500/20'
+                            : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100 hover:border-amber-300'
+                        }`}
+                      >
+                        {label}
+                      </button>
+                    );
+                  })}
               </div>
             </div>
 

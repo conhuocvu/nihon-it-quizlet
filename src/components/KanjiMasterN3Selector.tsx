@@ -44,6 +44,8 @@ export const KanjiMasterN3Selector: React.FC<KanjiMasterN3SelectorProps> = ({
     { num: 6, name: 'Chương 6: Cảm xúc (感情)', badge: 'C6: Cảm xúc (Bài 16-20)', color: 'from-purple-500 to-indigo-500' },
     { num: 7, name: 'Chương 7: Kết hôn (結婚)', badge: 'C7: Kết hôn (Bài 21-25)', color: 'from-pink-500 to-rose-500' },
     { num: 8, name: 'Chương 8: Quan hệ (関係)', badge: 'C8: Quan hệ (Bài 26-30)', color: 'from-sky-500 to-blue-500' },
+    { num: 9, name: 'Chương 9: Đơn vị (単位)', badge: 'C9: Đơn vị (Bài 31-32)', color: 'from-indigo-500 to-cyan-500' },
+    { num: 10, name: 'Chương 10: Trường học (学校)', badge: 'C10: Trường học (Bài 33-37)', color: 'from-blue-500 to-indigo-500' },
   ];
 
   const getChapterInfo = (lessonId: number) => {
@@ -52,7 +54,9 @@ export const KanjiMasterN3Selector: React.FC<KanjiMasterN3SelectorProps> = ({
     if (lessonId <= 15) return { num: 5, name: 'Thể thao (スポーツ)', color: 'from-emerald-500 to-teal-500' };
     if (lessonId <= 20) return { num: 6, name: 'Cảm xúc (感情)', color: 'from-purple-500 to-indigo-500' };
     if (lessonId <= 25) return { num: 7, name: 'Kết hôn (結婚)', color: 'from-pink-500 to-rose-500' };
-    return { num: 8, name: 'Quan hệ (関係)', color: 'from-sky-500 to-blue-500' };
+    if (lessonId <= 30) return { num: 8, name: 'Quan hệ (関係)', color: 'from-sky-500 to-blue-500' };
+    if (lessonId <= 32) return { num: 9, name: 'Đơn vị (単位)', color: 'from-indigo-500 to-cyan-500' };
+    return { num: 10, name: 'Trường học (学校)', color: 'from-blue-500 to-indigo-500' };
   };
 
   const getLessonNumInChapter = (lessonId: number) => {
@@ -61,7 +65,9 @@ export const KanjiMasterN3Selector: React.FC<KanjiMasterN3SelectorProps> = ({
     if (lessonId <= 15) return lessonId - 10;
     if (lessonId <= 20) return lessonId - 15;
     if (lessonId <= 25) return lessonId - 20;
-    return lessonId - 25;
+    if (lessonId <= 30) return lessonId - 25;
+    if (lessonId <= 32) return lessonId - 30;
+    return lessonId - 32;
   };
 
   const handleToggleChapter = (chapterNum: number) => {

@@ -1,24 +1,60 @@
 import { useState, useEffect, useCallback } from 'react';
 
+/** Chế độ của một phiên luyện tập. */
+export type StudyMode = 'normal' | 'srs' | 'mistakes';
+
 export type AppRoute =
   | { page: 'home' }
   | { page: 'subject'; subjectId: string }
   | { page: 'theory'; subjectId: string; lessonId: number }
-  | { page: 'study'; subjectId: string; sections?: string[]; range?: [number, number] };
+  | {
+      page: 'study';
+      subjectId: string;
+      sections?: string[];
+      range?: [number, number];
+      mode: StudyMode;
+    }
+  | { page: 'exam'; subjectId: string; examTags: string[]; qType: string; durationMin: number }
+  | { page: 'mistakes'; tab: 'srs' | 'jlpt' }
+  | { page: 'jlpt-import' }
+  | { page: 'jlpt-exam'; examId: string }
+  | { page: 'jlpt-review' };
 
 function parseHash(hash: string): AppRoute {
-  // Normalize hash, e.g. "#/subject/nihon-it/theory/16" -> "/subject/nihon-it/theory/16"
+  // Chuẩn hoá hash, ví dụ "#/subject/nihon-it/theory/16" -> "/subject/nihon-it/theory/16"
   const cleanHash = hash.replace(/^#/, '').trim();
-  
+
   if (!cleanHash || cleanHash === '/' || cleanHash === '/home') {
     return { page: 'home' };
   }
 
-  // Parse path and optional query string
+  // Tách phần đường dẫn và query string
   const [pathPart, queryPart] = cleanHash.split('?');
   const segments = pathPart.split('/').filter(Boolean);
+  const params = new URLSearchParams(queryPart || '');
 
-  // #/subject/:subjectId
+  // #/mistakes?tab=jlpt — sổ tay câu sai gộp mọi môn; tab nằm trên URL để dẫn thẳng vào
+  // đúng loại sổ tay từ trang chủ (và để bấm Back quay lại đúng tab đang xem).
+  if (segments[0] === 'mistakes') {
+    return { page: 'mistakes', tab: params.get('tab') === 'jlpt' ? 'jlpt' : 'srs' };
+  }
+
+  // #/jlpt/import — nhập đề JLPT từ JSON/file ngoài vào
+  if (segments[0] === 'jlpt' && segments[1] === 'import') {
+    return { page: 'jlpt-import' };
+  }
+
+  // #/jlpt/exam/:examId — làm một đề JLPT đã nhập
+  if (segments[0] === 'jlpt' && segments[1] === 'exam' && segments[2]) {
+    return { page: 'jlpt-exam', examId: segments[2] };
+  }
+
+  // #/jlpt/review — ôn lại câu hỏi JLPT đến hạn (ticket 005)
+  if (segments[0] === 'jlpt' && segments[1] === 'review') {
+    return { page: 'jlpt-review' };
+  }
+
+  // #/subject/:subjectId  (subjectId có thể là "all" cho phiên gộp mọi môn)
   if (segments[0] === 'subject' && segments[1]) {
     const subjectId = segments[1];
 
@@ -30,13 +66,25 @@ function parseHash(hash: string): AppRoute {
       }
     }
 
-    // #/subject/:subjectId/study
+    // #/subject/:subjectId/exam?exam=de1,de2&qType=all&duration=90
+    if (segments[2] === 'exam') {
+      const examTags = (params.get('exam') || '').split(',').filter(Boolean);
+      const durationMin = parseInt(params.get('duration') || '', 10);
+      return {
+        page: 'exam',
+        subjectId,
+        examTags,
+        qType: params.get('qType') || 'all',
+        durationMin: isNaN(durationMin) ? 0 : durationMin,
+      };
+    }
+
+    // #/subject/:subjectId/study?sections=...&range=1-100&mode=srs
     if (segments[2] === 'study') {
-      const params = new URLSearchParams(queryPart || '');
       const sectionsParam = params.get('sections');
       const rangeParam = params.get('range');
       const sections = sectionsParam ? sectionsParam.split(',').filter(Boolean) : undefined;
-      
+
       let range: [number, number] | undefined = undefined;
       if (rangeParam) {
         const [fromStr, toStr] = rangeParam.split('-');
@@ -47,7 +95,11 @@ function parseHash(hash: string): AppRoute {
         }
       }
 
-      return { page: 'study', subjectId, sections, range };
+      const rawMode = params.get('mode');
+      const mode: StudyMode =
+        rawMode === 'srs' || rawMode === 'mistakes' ? rawMode : 'normal';
+
+      return { page: 'study', subjectId, sections, range, mode };
     }
 
     return { page: 'subject', subjectId };

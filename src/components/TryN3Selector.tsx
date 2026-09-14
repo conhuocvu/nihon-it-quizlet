@@ -6,6 +6,7 @@ import {
   tryN3Chapter1Part2Story,
   tryN3Chapter2Story,
   tryN3Chapter2Part2Story,
+  tryN3Chapter3Story,
   type GrammarPoint,
 } from '../data/tryN3Data';
 import { renderFormattedText } from '../utils/formatText';
@@ -39,8 +40,8 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
   const [selectedGrammarModal, setSelectedGrammarModal] = useState<GrammarPoint | null>(null);
   const [expandedGrammarId, setExpandedGrammarId] = useState<string | null>('try-n3-c1-g1');
   const [showVietnameseTranslation, setShowVietnameseTranslation] = useState(false);
-  const [selectedStoryPart, setSelectedStoryPart] = useState<1 | 2 | 3 | 4>(1);
-  const [handbookFilter, setHandbookFilter] = useState<'all' | 'part1' | 'part2' | 'part3' | 'part4'>('all');
+  const [selectedStoryPart, setSelectedStoryPart] = useState<1 | 2 | 3 | 4 | 5>(1);
+  const [handbookFilter, setHandbookFilter] = useState<'all' | 'part1' | 'part2' | 'part3' | 'part4' | 'part5'>('all');
 
   // Unified Lesson & Sections
   const mainLesson = lessons.find((l) => l.id === 1) || lessons[0];
@@ -170,18 +171,22 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
     ? tryN3Chapter1Part2Story
     : selectedStoryPart === 3
     ? tryN3Chapter2Story
-    : tryN3Chapter2Part2Story;
+    : selectedStoryPart === 4
+    ? tryN3Chapter2Part2Story
+    : tryN3Chapter3Story;
 
   const part1Points = tryN3GrammarPoints.filter((g) => g.number <= 5);
   const part2Points = tryN3GrammarPoints.filter((g) => g.number > 5 && g.number <= 10);
   const part3Points = tryN3GrammarPoints.filter((g) => g.number >= 11 && g.number <= 16);
   const part4Points = tryN3GrammarPoints.filter((g) => g.number >= 17 && g.number <= 20);
+  const part5Points = tryN3GrammarPoints.filter((g) => g.number >= 21 && g.number <= 25);
 
   const filteredGrammarPoints = tryN3GrammarPoints.filter((g) => {
     if (handbookFilter === 'part1') return g.number <= 5;
     if (handbookFilter === 'part2') return g.number > 5 && g.number <= 10;
     if (handbookFilter === 'part3') return g.number >= 11 && g.number <= 16;
     if (handbookFilter === 'part4') return g.number >= 17 && g.number <= 20;
+    if (handbookFilter === 'part5') return g.number >= 21 && g.number <= 25;
     return true;
   });
 
@@ -534,6 +539,33 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
                 ))}
               </div>
             </div>
+
+            {/* Quick Grammar Buttons: Phần 5 (21 - 25) */}
+            <div className="pt-4 border-t-3 border-black/15 space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-black text-slate-500 uppercase tracking-wider">
+                  Phần 5 • 市民農園の募集（１） [Mẫu 21 ➔ 25]:
+                </span>
+              </div>
+              <div className="flex flex-wrap gap-2.5">
+                {part5Points.map((g) => (
+                  <button
+                    key={g.id}
+                    onClick={() => setSelectedGrammarModal(g)}
+                    className="px-3.5 py-2.5 bg-[#F0F9FF] hover:bg-[#7DD3FC] border-3 border-black font-black text-sm text-black shadow-[3px_3px_0px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-100 cursor-pointer flex items-center gap-2 select-none"
+                    title={`Xem chi tiết ${g.pattern}: ${g.translationVi}`}
+                  >
+                    <span className="w-6 h-6 bg-black text-white text-xs font-black flex items-center justify-center shrink-0">
+                      {g.number}
+                    </span>
+                    <span>{g.pattern}</span>
+                    <span className="text-xs font-bold text-slate-700 bg-white px-1.5 py-0.5 border border-black/30">
+                      {g.translationVi}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       )}
@@ -583,6 +615,16 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
                 }`}
               >
                 Phần 4 (Kuro 2)
+              </button>
+              <button
+                onClick={() => setSelectedStoryPart(5)}
+                className={`px-3 py-1.5 border-2 border-black font-black text-xs uppercase tracking-wider transition-all duration-100 cursor-pointer ${
+                  selectedStoryPart === 5
+                    ? 'bg-[#7DD3FC] text-black shadow-[3px_3px_0px_0px_#000]'
+                    : 'bg-white text-slate-700 hover:bg-[#F0F9FF]'
+                }`}
+              >
+                Chương 3 (P1)
               </button>
             </div>
 
@@ -826,7 +868,7 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
                 </span>
                 。
               </p>
-            ) : (
+            ) : selectedStoryPart === 4 ? (
               /* Phần 4: Kuro Story 2 Text with clickable highlights */
               <p className="text-base md:text-lg leading-loose text-black font-bold select-text">
                 近くの公園を1周するのが、いつもの散歩コースだ。
@@ -887,6 +929,35 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
                   なめられてしまう
                 </span>
                 。なめられるとくすぐったいが、クロは本当にかわいい。
+              </p>
+            ) : (
+              /* Phần 5: Chapter 3 Story Text with clickable highlights */
+              <p className="text-base md:text-lg leading-loose text-black font-bold select-text whitespace-pre-wrap">
+                {currentStory.textJa.split(/(\n|インターネットによる|に対して|ため|につき|とおり)/).map((part, index) => {
+                  if (part === '\n') return <br key={index} className="my-2" />;
+                  
+                  const highlight = currentStory.grammarHighlights?.find(h => h.text.includes(part));
+                  if (highlight && ['インターネットによる', 'に対して', 'ため', 'につき', 'とおり'].includes(part)) {
+                    const matchedGrammar = tryN3GrammarPoints.find(g => 
+                      highlight.grammarName.includes(g.pattern.split('／')[0].replace('〜', ''))
+                    );
+                    
+                    return (
+                      <span
+                        key={index}
+                        onClick={() => {
+                          if (matchedGrammar) setSelectedGrammarModal(matchedGrammar);
+                        }}
+                        className="bg-[#7DD3FC] text-black font-black px-1.5 py-0.5 border-2 border-black shadow-[2px_2px_0px_0px_#000] mx-1 cursor-pointer hover:bg-black hover:text-white transition-all select-none"
+                        title={`Bấm để xem ngữ pháp ${highlight.grammarName}: ${highlight.explanation}`}
+                      >
+                        {part}
+                      </span>
+                    );
+                  }
+                  
+                  return <span key={index}>{part}</span>;
+                })}
               </p>
             )}
           </div>
@@ -969,6 +1040,16 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
                 }`}
               >
                 Phần 4 (17 - 20)
+              </button>
+              <button
+                onClick={() => setHandbookFilter('part5')}
+                className={`px-2.5 py-1 border-2 border-black text-xs font-black transition-colors ${
+                  handbookFilter === 'part5'
+                    ? 'bg-[#7DD3FC] text-black shadow-[2px_2px_0px_0px_#000]'
+                    : 'bg-white text-slate-600 hover:bg-[#F0F9FF]'
+                }`}
+              >
+                Phần 5 (21 - 25)
               </button>
             </div>
           </div>

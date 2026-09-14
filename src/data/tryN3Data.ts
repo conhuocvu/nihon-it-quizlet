@@ -235,12 +235,70 @@ Thỉnh thoảng, trên đường về tôi cũng có ghé vào cửa hàng ti�
   ]
 };
 
+
+export const tryN3Chapter3Story: ChapterStory = {
+  chapter: 3,
+  titleJa: '3 市民農園の募集（１）',
+  titleVi: '3. Tuyển người cho nông trại thành phố (1)',
+  canDoJa: '参加者募集のお知らせを見て、申込方法などの内容が理解できる。',
+  canDoVi: 'Xem thông báo tuyển dụng người tham gia và hiểu được các nội dung như là cách thức đăng ký.',
+  textJa: `都会の真ん中で野菜作り！
+
+本年度も市民農園の利用者の募集を開始します。ご希望の方は2月末日までにお申し込みください。インターネットによるお申し込みも受け付けます。昨年は100区画の募集に対して、約120名のご応募がありました。希望者が多いため、定員を超えた場合は初めての方を優先いたします。また、１家族につき１区画に限定させていただきます。申し込み、お問い合わせ、しめ切りなどは下記のとおりです。
+皆様のご応募をお待ちしております。
+
+募集区画：100区画
+利用料金：年1万円
+しめ切り：2月末日
+申し込み・問い合わせ：市役所生活課
+012-345-6789 内線110  FAX 012-345-6780
+shimin@abk.co.jp  http://www.abk-try/shimin-noen/`,
+  textVi: `Trồng rau giữa lòng thành phố!
+
+Năm nay chúng tôi cũng bắt đầu tuyển chọn người sử dụng nông trại thành phố. Những ai có nguyện vọng xin vui lòng đăng ký trước ngày cuối cùng của tháng 2. Chúng tôi cũng tiếp nhận đăng ký thông qua internet. Năm ngoái so với 100 lô đất cần tuyển thì đã có khoảng 120 người ứng tuyển. Vì số người có nguyện vọng nhiều nên trong trường hợp vượt quá số lượng, chúng tôi sẽ ưu tiên những người mới tham gia lần đầu. Hơn nữa, chúng tôi xin phép giới hạn mỗi gia đình chỉ được 1 lô. Việc đăng ký, hỏi đáp, hạn chót... thì theo như nội dung bên dưới.
+Chúng tôi rất mong chờ sự đăng ký của quý vị.
+
+Khu vực tuyển dụng: 100 lô
+Phí sử dụng: 10,000 yên/năm
+Hạn chót: Ngày cuối cùng của tháng 2
+Đăng ký/Hỏi đáp: Phòng đời sống tòa thị chính
+012-345-6789 Số máy lẻ 110  FAX 012-345-6780
+shimin@abk.co.jp  http://www.abk-try/shimin-noen/`,
+  grammarHighlights: [
+    {
+      text: 'インターネットによるお申し込みも',
+      grammarName: '〜による／〜によって',
+      explanation: 'Sử dụng để chỉ phương thức thực hiện hành động: "thông qua internet".'
+    },
+    {
+      text: '100区画の募集に対して、約120名のご応募',
+      grammarName: '〜に対して',
+      explanation: 'Thể hiện sự tương phản hoặc đối chiếu: "so với 100 lô đất tuyển thì có khoảng 120 người ứng tuyển".'
+    },
+    {
+      text: '希望者が多いため、',
+      grammarName: '〜ため（に）',
+      explanation: 'Thể hiện nguyên nhân/lý do: "Bởi vì số lượng người nguyện vọng nhiều".'
+    },
+    {
+      text: '１家族につき１区画',
+      grammarName: '〜につき',
+      explanation: 'Thể hiện tỷ lệ: "cứ mỗi 1 gia đình là 1 lô đất".'
+    },
+    {
+      text: '下記のとおりです。',
+      grammarName: '〜とおり',
+      explanation: 'Thể hiện sự đúng như đã định: "đúng như nội dung bên dưới".'
+    }
+  ]
+};
+
 export const tryN3ChapterStories: ChapterStory[] = [
   tryN3Chapter1Story,
   tryN3Chapter1Part2Story,
   tryN3Chapter2Story,
   tryN3Chapter2Part2Story
-];
+, tryN3Chapter3Story];
 
 export const tryN3GrammarPoints: GrammarPoint[] = [
   {
@@ -937,7 +995,167 @@ export const tryN3GrammarPoints: GrammarPoint[] = [
         vi: 'Nếu diễn đạt không đủ lời thì đôi khi sẽ bị hiểu lầm.'
       }
     ]
+  },
+  // Chương 3: 市民農園の募集（１）
+  {
+    id: 'try-n3-c3-g21',
+    chapter: 3,
+    number: 21,
+    pattern: '〜による／〜によって',
+    title: '21. 〜による／〜によって',
+    stars: 2,
+    formation: 'N ＋ によって\nN ＋ による ＋ N',
+    translationVi: 'Bằng cách / Thông qua',
+    meaningJa: '何かを行うときの手段、方法を表す。',
+    meaningVi: 'Sử dụng để thể hiện phương pháp, cách thức, phương tiện khi làm cái gì đó.',
+    examples: [
+      {
+        ja: '大学はアンケートによる満足度調査の結果を発表した。',
+        vi: 'Đại học đã công bố kết quả điều tra độ hài lòng bằng phiếu khảo sát.'
+      },
+      {
+        ja: '経営学理論の講義は試験を行わず、レポートによる評価を行う。',
+        vi: 'Bài giảng lý thuyết quản trị kinh doanh sẽ không tổ chức thi mà đánh giá qua báo cáo.'
+      },
+      {
+        ja: 'オリンピックの開催地はIOCの委員の投票によって決めることになっている。',
+        vi: 'Địa điểm tổ chức Olympic được quyết định bằng sự bỏ phiếu của các ủy viên IOC.'
+      },
+      {
+        ja: 'わが社は社内の公用語を英語にすることによって国際化を目指している。',
+        vi: 'Công ty chúng tôi hướng đến quốc tế hóa bằng cách lấy tiếng Anh làm ngôn ngữ chính thức trong công ty.'
+      }
+    ]
+  },
+  {
+    id: 'try-n3-c3-g22',
+    chapter: 3,
+    number: 22,
+    pattern: '〜に対して',
+    title: '22. 〜に対して',
+    stars: 3,
+    formation: 'N ＋ に対して（は／も）\nN ＋ に対し\nN ＋ に対する ＋ N',
+    translationVi: 'Đối với',
+    meaningJa: '人に向かって直接働きかけをしたり、「やさしい」「失礼だ」といった態度を表すときに使う。意見・問題・要求に応えたり反対したりするときにも使う。',
+    meaningVi: 'Sử dụng khi nói về thái độ như là "tốt bụng", "thất lễ" hoặc những hành động trực tiếp hướng đến người khác. Cũng sử dụng khi phản đối hoặc đáp ứng lại ý kiến, vấn đề, yêu cầu.',
+    examples: [
+      {
+        ja: '彼女はだれに対しても親切です。',
+        vi: 'Cô ấy tốt bụng với tất cả mọi người.'
+      },
+      {
+        ja: '目上の人に対しては敬語を使いましょう。',
+        vi: 'Hãy dùng kính ngữ với người bề trên.'
+      },
+      {
+        ja: '私費留学生に対する奨学金などの援助はまだ十分ではないと思う。',
+        vi: 'Tôi nghĩ rằng viện trợ như học bổng cho du học sinh tự túc vẫn chưa đủ.'
+      },
+      {
+        ja: 'この病気に対する効果的な治療法はまだ見つかっていない。',
+        vi: 'Phương pháp điều trị hiệu quả cho căn bệnh này vẫn chưa được tìm ra.'
+      }
+    ]
+  },
+  {
+    id: 'try-n3-c3-g23',
+    chapter: 3,
+    number: 23,
+    pattern: '〜ため（に）',
+    title: '23. 〜ため（に）',
+    stars: 3,
+    formation: '普通形 ＋ ため（に）\n(※ なA-~~だ~~ ＋ な / N-~~だ~~ ＋ の)',
+    translationVi: 'Vì / Do',
+    meaningJa: '〜が原因、理由でと言うときに使う。',
+    meaningVi: 'Sử dụng khi nói rằng "~" là nguyên nhân, lý do.',
+    usageNote: '文末に「〜たい・〜つもりだ」などは使わない。(Không sử dụng "~たい / ~つもりだ" ở cuối câu.)',
+    examples: [
+      {
+        ja: '雨のためにハイキングは中止になりました。',
+        vi: 'Vì trời mưa nên cuộc đi bộ đường dài bị hủy.'
+      },
+      {
+        ja: '外国人観光客が増えたため、外国語のパンフレットを作ることになった。',
+        vi: 'Vì khách du lịch nước ngoài tăng nên đã quyết định làm tờ rơi tiếng nước ngoài.'
+      },
+      {
+        ja: '事故のため、電車が遅れております。',
+        vi: 'Vì tai nạn nên xe điện đang bị trễ.'
+      },
+      {
+        ja: '理由：ABK大学受験のため',
+        vi: 'Lý do: Vì dự thi đại học ABK'
+      }
+    ]
+  },
+  {
+    id: 'try-n3-c3-g24',
+    chapter: 3,
+    number: 24,
+    pattern: '〜につき',
+    title: '24. 〜につき',
+    stars: 1,
+    formation: 'N ＋ につき',
+    translationVi: 'Mỗi / Cứ mỗi',
+    meaningJa: '「使用料は１時間につき1000円」のように「〜」の数の単位（１時間）で「…」の数（1000円）と言うときなどに使う。',
+    meaningVi: 'Sử dụng khi nói cứ mỗi "~" là "...". Ví dụ như "phí sử dụng thì cứ mỗi 1 tiếng là 1000 yên".',
+    examples: [
+      {
+        ja: '当スポーツクラブ会員以外の方でも、１回につき2,000円で施設をご利用いただけます。',
+        vi: 'Ngay cả những người không phải là hội viên câu lạc bộ thể thao này cũng có thể sử dụng cơ sở vật chất với giá 2,000 yên cho mỗi 1 lần.'
+      },
+      {
+        ja: '今回のチャリティコンサートは、ハガキ１枚につき２名様までお申し込みいただけます。',
+        vi: 'Buổi hòa nhạc từ thiện lần này, mỗi 1 tấm bưu thiếp có thể đăng ký tối đa 2 người.'
+      },
+      {
+        ja: 'ランニングマシンは予約制で、ご利用はお１人につき30分までとなっております。',
+        vi: 'Máy chạy bộ phải đặt trước, thời gian sử dụng giới hạn tối đa 30 phút cho mỗi 1 người.'
+      }
+    ]
+  },
+  {
+    id: 'try-n3-c3-g25',
+    chapter: 3,
+    number: 25,
+    pattern: '〜とおり',
+    title: '25. 〜とおり',
+    stars: 3,
+    formation: 'V-る / V-た ＋ とおりだ / とおり（に）\nN ＋ の ＋ とおりだ / とおり（に）',
+    translationVi: 'Đúng như / Theo như',
+    meaningJa: '言ったことや予想したことなどと同じだと言うときに使う。',
+    meaningVi: 'Sử dụng khi nói cái gì đó xảy ra giống như đã nói hoặc đã dự đoán.',
+    examples: [
+      {
+        ja: '今日の映画は本当におもしろかった。友だちが言ったとおりだった。',
+        vi: 'Bộ phim hôm nay thật sự rất thú vị. Đúng như bạn tôi đã nói.'
+      },
+      {
+        ja: '初めて見た富士山は私が想像していたとおりにきれいだった。',
+        vi: 'Lần đầu tiên nhìn thấy núi Phú Sĩ, nó đẹp đúng như tôi đã tưởng tượng.'
+      },
+      {
+        ja: '料理の本に書いてあるとおりに作ったら、おいしくできた。',
+        vi: 'Sau khi làm đúng như những gì viết trong sách nấu ăn thì đã ra món rất ngon.'
+      }
+    ],
+    plusNote: {
+      title: '〜どおり',
+      meaningVi: 'Cũng được sử dụng dưới dạng N + どおり',
+      formation: 'N ＋ どおり',
+      examples: [
+        {
+          ja: '今日は予定どおりに仕事が進んだ。',
+          vi: 'Hôm nay công việc đã tiến triển đúng như dự định.'
+        },
+        {
+          ja: 'あいちゃんと純君が結婚するそうだ。やはり私の予想どおりだった。',
+          vi: 'Nghe nói Ai và Jun sẽ kết hôn. Quả nhiên đúng như dự đoán của tôi.'
+        }
+      ]
+    }
   }
+
 ];
 
 // Flashcard items for Chapter 1
@@ -2208,6 +2426,118 @@ export const chapter2MatomeItems: StudyItem[] = [
     answer: '乗らされた',
     choices: ['乗らされた', '乗らせてもらった', '乗られた', '乗られてしまった'],
     explanation: 'Theo đoạn văn trang 39: Tôi tính để con bé chơi đu quay một mình nhưng rốt cuộc bị nó bắt phải ngồi cùng ➔ 一緒に乗らされた (thể bị sai khiến 乗る ➔ 乗らされる ➔ 乗らされた).'
+  }
+];
+
+
+export const chapter34MatomeItems: StudyItem[] = [
+  // 問題１
+  {
+    id: 'try-n3-c34-matome-1-1',
+    question: 'このバスは安全のため急停車（　　　）のでご注意ください。',
+    choices: ['しようとします', 'することがあります', 'していることがあります', 'させてもらいます'],
+    answer: 'することがあります',
+    explanation: 'V-る・V-ない + ことがあります: Có khi/Có lúc làm gì đó. Giải thích: Vì sự an toàn, có lúc xe buýt sẽ phanh gấp nên xin hãy chú ý.'
+  },
+  {
+    id: 'try-n3-c34-matome-1-2',
+    question: 'A：かわいいウサギですね。写真を（　　　）いいですか。\nB：ええ、どうぞ。名前はピョンちゃんって言うんです。',
+    choices: ['撮らせてくれても', '撮らせてもらっても', '撮られても', '撮られてしまっても'],
+    answer: '撮らせてもらっても',
+    explanation: 'V-させてもらってもいいですか: Xin phép cho mình làm gì đó. Giải thích: Xin phép cho tôi chụp ảnh được không?'
+  },
+  {
+    id: 'try-n3-c34-matome-1-3',
+    question: '仕事が終わってうちへ（　　　）、部長に新しい仕事を頼まれた。',
+    choices: ['帰ろうとしたら', '帰りがったら', '帰らせたら', '帰ったとたん'],
+    answer: '帰ろうとしたら',
+    explanation: 'V-ようとしたら: Vừa định làm gì thì... Giải thích: Vừa định đi về nhà thì bị trưởng phòng nhờ công việc mới.'
+  },
+  {
+    id: 'try-n3-c34-matome-1-4',
+    question: '空港でだれかにスーツケースを（　　　）しまって、困ったことがある。',
+    choices: ['間違えて', '間違えさせて', '間違えられて', '間違えさせられて'],
+    answer: '間違えられて',
+    explanation: 'Bị động: bị ai đó làm gì gây rắc rối/phiền toái. Giải thích: Từng gặp rắc rối vì bị ai đó lấy nhầm vali ở sân bay.'
+  },
+  {
+    id: 'try-n3-c34-matome-1-5',
+    question: '私は（　　　）なので、いつもくつ下を２枚はいています。',
+    choices: ['暑がり', '寒がり', '痛がり', 'こわがり'],
+    answer: '寒がり',
+    explanation: '～がり: Người hay (cảm thấy)... Giải thích: Vì tôi là người hay sợ lạnh nên lúc nào cũng đi 2 đôi tất.'
+  },
+  {
+    id: 'try-n3-c34-matome-1-6',
+    question: '家族で食事しているときでも携帯メールを（　　　）子どもが増えているそうです。',
+    choices: ['しようとしない', 'させておく', 'やめさせない', 'やめようとしない'],
+    answer: 'やめようとしない',
+    explanation: 'V-ようとしない: Không có ý định làm gì / Không chịu làm gì. Giải thích: Nghe nói trẻ em không chịu ngừng việc nhắn tin điện thoại ngay cả khi đang ăn cùng gia đình đang tăng lên.'
+  },
+  {
+    id: 'try-n3-c34-matome-1-7',
+    question: 'サッカーの練習のときにコーチに毎回ランニングを（　　　）、大変でしたが、だんだん慣れて速く走れるようになりました。',
+    choices: ['させられて', 'されて', 'させて', 'させようとして'],
+    answer: 'させられて',
+    explanation: 'Bị động sai khiến (V-させられる): Bị bắt làm gì. Giải thích: Bị huấn luyện viên bắt chạy mỗi lần tập bóng đá.'
+  },
+  {
+    id: 'try-n3-c34-matome-1-8',
+    question: '散歩から帰ってきた（　　　）、大つぶの雨が降り始めた。',
+    choices: ['ように', 'なら', 'とたん', 'ほど'],
+    answer: 'とたん',
+    explanation: 'V-たとたん: Vừa mới... thì ngay lập tức. Giải thích: Vừa mới đi dạo về xong thì trời bắt đầu mưa to.'
+  },
+  // 問題２
+  {
+    id: 'try-n3-c34-matome-2-1',
+    question: 'パックの牛乳は横を強く＿＿　＿＿　★　＿＿ので気をつけてください。',
+    choices: ['ことがある', '持つと', 'こぼれる', '中身が'],
+    answer: 'こぼれる',
+    explanation: 'Thứ tự đúng: 持つと(2) -> 中身が(4) -> こぼれる(3) -> ことがある(1). V-る ことがある: có lúc/có khi.'
+  },
+  {
+    id: 'try-n3-c34-matome-2-2',
+    question: '仕事中に頭痛が＿＿　＿＿　★　＿＿、病院へ行った。',
+    choices: ['もらって', '早退させて', 'ので', 'ひどくなった'],
+    answer: '早退させて',
+    explanation: 'Thứ tự đúng: ひどくなった(4) -> ので(3) -> 早退させて(2) -> もらって(1). V-させてもらう: Xin phép làm gì.'
+  },
+  {
+    id: 'try-n3-c34-matome-2-3',
+    question: '友だちが＿＿　＿＿　★　＿＿から、びっくりした。',
+    choices: ['見た', 'メールを', 'とたん', '泣き出した'],
+    answer: 'とたん',
+    explanation: 'Thứ tự đúng: メールを(2) -> 見た(1) -> とたん(3) -> 泣き出した(4). V-たとたん: Vừa mới... thì.'
+  },
+  // 問題３
+  {
+    id: 'try-n3-c34-matome-3-1',
+    question: '文章の文法 - 空欄〔　１　〕に入る言葉を選びなさい。\n\nうちの子は遊園地が大好きだ。今週も〔　１　〕から、連れていくことにした。',
+    choices: ['行った', '行きたかった', '行ったばかりだ', '行きたがった'],
+    answer: '行きたがった',
+    explanation: 'V-たがる / V-たがった: Diễn tả mong muốn của ngôi thứ 3 (đứa con). Vì tuần này con cũng tỏ ý muốn đi nên tôi đã quyết định dẫn đi.'
+  },
+  {
+    id: 'try-n3-c34-matome-3-2',
+    question: '文章の文法 - 空欄〔　２　〕に入る言葉を選びなさい。\n\n「連れていって！」と〔　２　〕と、なかなかいやとは言えない。',
+    choices: ['頼まれてもらう', '頼まれてしまう', '頼んでしまう', '頼んでもらう'],
+    answer: '頼まれてしまう',
+    explanation: 'Bị động + てしまう: Bị nhờ vả (mang sắc thái không thể chối từ). Hễ bị nhờ "Hãy dẫn con đi!" thì khó mà nói không được.'
+  },
+  {
+    id: 'try-n3-c34-matome-3-3',
+    question: '文章の文法 - 空欄〔　３　〕に入る言葉を選びなさい。\n\n遊園地に入った〔　３　〕、娘はうれしそうに好きな乗り物に向かって走り出した。',
+    choices: ['ばかりで', 'そうで', 'とたん', 'らしい'],
+    answer: 'とたん',
+    explanation: 'V-たとたん: Vừa mới... thì ngay lập tức. Vừa bước vào khu vui chơi thì con bé chạy ào về phía trò chơi yêu thích.'
+  },
+  {
+    id: 'try-n3-c34-matome-3-4',
+    question: '文章の文法 - 空欄〔　４　〕に入る言葉を選びなさい。\n\nぼくは疲れてしまってメリーゴーラウンドには一人で乗ってもらおうとしたが、結局、一緒に〔　４　〕。',
+    choices: ['乗らされた', '乗らせてもらった', '乗られた', '乗られてしまった'],
+    answer: '乗らされた',
+    explanation: 'Bị động sai khiến (V-させられる / V-らされる): Bị bắt phải làm gì. Định để con bé lên chơi vòng quay ngựa gỗ một mình nhưng rốt cuộc lại bị bắt lên chơi cùng.'
   }
 ];
 

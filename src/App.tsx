@@ -11,6 +11,7 @@ import { TheoryViewer } from './components/TheoryViewer';
 import { FakePaywallModal } from './components/FakePaywallModal';
 import { KanjiMasterN3Selector } from './components/KanjiMasterN3Selector';
 import { EngGrade9Selector } from './components/EngGrade9Selector';
+import { engMasterVocabLesson } from './data/engGrade9Data';
 import { TryN3Selector } from './components/TryN3Selector';
 import { GraduationCap, Github, ChevronRight, Crown, ArrowLeft, Home } from 'lucide-react';
 
@@ -248,6 +249,9 @@ function App() {
             onStartBySections={(sections) =>
               navigate(`/subject/${currentSubject.id}/study?sections=${sections.join(',')}`)
             }
+            onStartByRange={(from, to) =>
+              navigate(`/subject/${currentSubject.id}/study?range=${from}-${to}`)
+            }
             onBackToHome={() => navigate('/')}
           />
         )}
@@ -295,7 +299,11 @@ function App() {
             range={route.range}
             examFilter={examFilter}
             qTypeFilter={qTypeFilter}
-            lessons={currentSubject.lessons}
+            lessons={
+              currentSubject.id === 'eng-grade9-hw' && route.range
+                ? [engMasterVocabLesson]
+                : currentSubject.lessons
+            }
             onBackToSelector={() => goBack()}
           />
         )}

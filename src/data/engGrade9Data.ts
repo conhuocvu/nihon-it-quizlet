@@ -2177,3 +2177,26 @@ export const engPosLessons: Lesson[] = PARTS_OF_SPEECH.map((pos, index) => {
 
 // All Combined English Grade 9 Lessons
 export const allEngGrade9Lessons = [...engTopicLessons, ...engPosLessons];
+
+// Master 182 Vocabulary Lesson for Flashcard Range Study
+export const engMasterVocabLesson: Lesson = {
+  id: 999,
+  title: 'Tiếng Anh Lớp 9 - Từ Vựng SGK',
+  hasTheory: false,
+  sections: [
+    {
+      id: 'eng-grade9-all-vocab',
+      title: 'Danh sách 182 Từ Vựng SGK Lớp 9',
+      type: 'vocabulary',
+      items: engGrade9Words.map((w) => ({
+        id: w.id,
+        term: w.term,
+        reading: w.ipa,
+        answer: w.answer,
+        meaning: w.meaning,
+        explanation: `[${w.partOfSpeech}] ${w.example} (${w.exampleMeaning})`,
+        example: w.example
+      }))
+    }
+  ]
+};

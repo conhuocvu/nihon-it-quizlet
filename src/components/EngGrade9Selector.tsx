@@ -28,6 +28,7 @@ import {
 
 interface EngGrade9SelectorProps {
   onStartBySections: (sectionIds: string[]) => void;
+  onStartByRange?: (fromIndex: number, toIndex: number) => void;
   onBackToHome: () => void;
 }
 
@@ -35,6 +36,7 @@ export type GrammarDetailType = 'tenses' | 'modal-verbs' | 'nouns' | 'verbs' | '
 
 export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
   onStartBySections,
+  onStartByRange,
   onBackToHome
 }) => {
   // Main Tab State: 'vocab' | 'grammar' | 'homework'
@@ -69,8 +71,60 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
   const totalWordsCount = engGrade9Words.length;
 
   // TAB 1: RANGE SELECTOR STATE (1 List master + Range Selector)
-  const [rangeStart, setRangeStart] = useState<number>(1);
-  const [rangeEnd, setRangeEnd] = useState<number>(totalWordsCount);
+  const [rangeStart, setRangeStart] = useState<number>(() => {
+    try {
+      const saved = localStorage.getItem('eng_grade9_range_start');
+      if (saved) {
+        const val = Number(saved);
+        if (val >= 1 && val <= totalWordsCount) return val;
+      }
+    } catch { }
+    return 1;
+  });
+
+  const [rangeEnd, setRangeEnd] = useState<number>(() => {
+    try {
+      const saved = localStorage.getItem('eng_grade9_range_end');
+      if (saved) {
+        const val = Number(saved);
+        if (val >= 1 && val <= totalWordsCount) return val;
+      }
+    } catch { }
+    return totalWordsCount;
+  });
+
+  const [startInput, setStartInput] = useState<string>(() => String(rangeStart));
+  const [endInput, setEndInput] = useState<string>(() => String(rangeEnd));
+
+  // Sync inputs and save to localStorage
+  useEffect(() => {
+    setStartInput(String(rangeStart));
+    try {
+      localStorage.setItem('eng_grade9_range_start', String(rangeStart));
+    } catch { }
+  }, [rangeStart]);
+
+  useEffect(() => {
+    setEndInput(String(rangeEnd));
+    try {
+      localStorage.setItem('eng_grade9_range_end', String(rangeEnd));
+    } catch { }
+  }, [rangeEnd]);
+
+  const safeStart = Math.max(1, Math.min(Number(rangeStart) || 1, totalWordsCount));
+  const safeEnd = Math.max(safeStart, Math.min(Number(rangeEnd) || totalWordsCount, totalWordsCount));
+
+  // Table filter mode: 'range' (Chỉ hiện các từ trong dải đã chọn) | 'all' (Hiện tất cả 182 từ)
+  const [tableFilterMode, setTableFilterMode] = useState<'range' | 'all'>('range');
+
+  const scrollToRow = (targetStt: number) => {
+    setTimeout(() => {
+      const el = document.getElementById(`eng-word-row-${targetStt}`);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 60);
+  };
 
   // Inner Detail View for Grammar Lessons (Opens when clicking into a lesson card)
   const [activeGrammarDetail, setActiveGrammarDetail] = useState<GrammarDetailType | null>(() => {
@@ -159,10 +213,23 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedSectionIds, setSelectedSectionIds] = useState<string[]>([]);
 
-  const filteredWords = useMemo(() => {
+  // Selected words within [safeStart .. safeEnd] (1-indexed)
+  const selectedRangeWords = useMemo(() => {
+    return engGrade9Words.slice(safeStart - 1, safeEnd);
+  }, [safeStart, safeEnd]);
+
+  // Base words based on tableFilterMode: 'range' vs 'all'
+  const baseWords = useMemo(() => {
+    if (tableFilterMode === 'range') {
+      return selectedRangeWords;
+    }
+    return engGrade9Words;
+  }, [tableFilterMode, selectedRangeWords]);
+
+  const displayedWords = useMemo(() => {
     const q = searchQuery.toLowerCase().trim();
-    if (!q) return engGrade9Words;
-    return engGrade9Words.filter(
+    if (!q) return baseWords;
+    return baseWords.filter(
       (w) =>
         w.term.toLowerCase().includes(q) ||
         w.answer.toLowerCase().includes(q) ||
@@ -170,14 +237,7 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
         w.topic.toLowerCase().includes(q) ||
         w.partOfSpeech.toLowerCase().includes(q)
     );
-  }, [searchQuery]);
-
-  // Selected words within [rangeStart .. rangeEnd] (1-indexed)
-  const selectedRangeWords = useMemo(() => {
-    const start = Math.max(1, Math.min(rangeStart, totalWordsCount));
-    const end = Math.max(start, Math.min(rangeEnd, totalWordsCount));
-    return engGrade9Words.slice(start - 1, end);
-  }, [rangeStart, rangeEnd, totalWordsCount]);
+  }, [baseWords, searchQuery]);
 
   // Active Lessons for Homework Tab
   const currentLessons: Lesson[] = useMemo(() => engTopicLessons, []);
@@ -189,18 +249,22 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
     );
   };
 
-  // Launch Flashcard Study for Range (Động theo các từ được chọn)
+  // Launch Flashcard Study for Range (Động chuẩn theo dải từ được chọn)
   const handleStartRangeFlashcard = () => {
-    const topicIndices = new Set<number>();
-    selectedRangeWords.forEach((w) => {
-      const idx = TOPICS.indexOf(w.topic as any);
-      if (idx !== -1) {
-        topicIndices.add(idx + 1);
-      }
-    });
+    if (onStartByRange) {
+      onStartByRange(safeStart, safeEnd);
+    } else {
+      const topicIndices = new Set<number>();
+      selectedRangeWords.forEach((w) => {
+        const idx = TOPICS.indexOf(w.topic as any);
+        if (idx !== -1) {
+          topicIndices.add(idx + 1);
+        }
+      });
 
-    const matchedSectionIds = Array.from(topicIndices).map((idx) => `eng-topic-${idx}-vocab`);
-    onStartBySections(matchedSectionIds.length > 0 ? matchedSectionIds : ['eng-topic-1-vocab']);
+      const matchedSectionIds = Array.from(topicIndices).map((idx) => `eng-topic-${idx}-vocab`);
+      onStartBySections(matchedSectionIds.length > 0 ? matchedSectionIds : ['eng-topic-1-vocab']);
+    }
   };
 
   // Active pool of words for test
@@ -410,7 +474,7 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
 
                     <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-100 text-sky-900 text-xs font-extrabold shrink-0">
                       <Sparkles size={13} className="text-sky-600" />
-                      <span>Đã chọn: Từ câu {rangeStart} ➔ {rangeEnd} ({selectedRangeWords.length} từ)</span>
+                      <span>Đã chọn: Từ câu {safeStart} ➔ {safeEnd} ({selectedRangeWords.length} từ)</span>
                     </div>
                   </div>
 
@@ -419,13 +483,16 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
                     <span className="text-xs font-bold text-slate-700 block">Dải số nhanh:</span>
                     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 gap-2">
                       {presetRanges.map((preset, idx) => {
-                        const isActive = rangeStart === preset.start && rangeEnd === preset.end;
+                        const isActive = safeStart === preset.start && safeEnd === preset.end;
                         return (
                           <button
                             key={idx}
                             onClick={() => {
                               setRangeStart(preset.start);
                               setRangeEnd(preset.end);
+                              if (tableFilterMode === 'all') {
+                                scrollToRow(preset.start);
+                              }
                             }}
                             className={`py-2.5 px-2.5 rounded-2xl text-xs font-extrabold transition-all cursor-pointer border text-center ${isActive
                                 ? 'bg-sky-600 text-white border-sky-600 shadow-md shadow-sky-200 ring-2 ring-sky-500/20 scale-[1.02]'
@@ -448,8 +515,29 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
                         type="number"
                         min={1}
                         max={totalWordsCount}
-                        value={rangeStart}
-                        onChange={(e) => setRangeStart(Math.max(1, Math.min(totalWordsCount, Number(e.target.value) || 1)))}
+                        value={startInput}
+                        onChange={(e) => {
+                          const val = e.target.value;
+                          setStartInput(val);
+                          const num = parseInt(val, 10);
+                          if (!isNaN(num) && num >= 1) {
+                            setRangeStart(Math.min(num, totalWordsCount));
+                          }
+                        }}
+                        onBlur={() => {
+                          let num = parseInt(startInput, 10);
+                          if (isNaN(num) || num < 1) num = 1;
+                          if (num > totalWordsCount) num = totalWordsCount;
+                          setRangeStart(num);
+                          setStartInput(String(num));
+                          if (safeEnd < num) {
+                            setRangeEnd(num);
+                            setEndInput(String(num));
+                          }
+                          if (tableFilterMode === 'all') {
+                            scrollToRow(num);
+                          }
+                        }}
                         className="w-16 px-2.5 py-1.5 rounded-xl border border-slate-300 text-center font-extrabold text-sky-700 bg-white focus:outline-none focus:ring-2 focus:ring-sky-500/30"
                       />
                       <span>đến câu</span>
@@ -457,8 +545,23 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
                         type="number"
                         min={1}
                         max={totalWordsCount}
-                        value={rangeEnd}
-                        onChange={(e) => setRangeEnd(Math.max(1, Math.min(totalWordsCount, Number(e.target.value) || totalWordsCount)))}
+                        value={endInput}
+                        onChange={(e) => {
+                          const val = e.target.value;
+                          setEndInput(val);
+                          const num = parseInt(val, 10);
+                          if (!isNaN(num) && num >= 1) {
+                            setRangeEnd(Math.min(num, totalWordsCount));
+                          }
+                        }}
+                        onBlur={() => {
+                          let num = parseInt(endInput, 10);
+                          if (isNaN(num) || num < 1) num = totalWordsCount;
+                          if (num > totalWordsCount) num = totalWordsCount;
+                          if (num < safeStart) num = safeStart;
+                          setRangeEnd(num);
+                          setEndInput(String(num));
+                        }}
                         className="w-16 px-2.5 py-1.5 rounded-xl border border-slate-300 text-center font-extrabold text-sky-700 bg-white focus:outline-none focus:ring-2 focus:ring-sky-500/30"
                       />
                     </div>
@@ -484,12 +587,52 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
                   </div>
                 </div>
 
-                {/* Search Bar for List */}
-                <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-2">
-                  <h3 className="text-sm font-bold text-slate-800 flex items-center gap-2">
-                    <ListOrdered size={18} className="text-sky-600" />
-                    <span>Bảng Danh Sách {totalWordsCount} Từ Vựng SGK Lớp 9</span>
-                  </h3>
+                {/* Search Bar & View Mode Toggle for List */}
+                <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 pt-2">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <h3 className="text-sm font-bold text-slate-800 flex items-center gap-2">
+                      <ListOrdered size={18} className="text-sky-600" />
+                      <span>Danh Sách Từ Vựng SGK Lớp 9</span>
+                    </h3>
+
+                    {/* View Mode Switcher: Range vs All */}
+                    <div className="flex items-center gap-1 p-1 bg-slate-100/90 rounded-xl border border-slate-200">
+                      <button
+                        onClick={() => setTableFilterMode('range')}
+                        className={`px-3 py-1 rounded-lg text-xs font-extrabold transition-all cursor-pointer ${
+                          tableFilterMode === 'range'
+                            ? 'bg-white text-sky-700 shadow-sm border border-sky-100'
+                            : 'text-slate-500 hover:text-slate-800'
+                        }`}
+                      >
+                        🎯 Chỉ dải đã chọn ({selectedRangeWords.length} từ)
+                      </button>
+                      <button
+                        onClick={() => {
+                          setTableFilterMode('all');
+                          scrollToRow(safeStart);
+                        }}
+                        className={`px-3 py-1 rounded-lg text-xs font-extrabold transition-all cursor-pointer ${
+                          tableFilterMode === 'all'
+                            ? 'bg-white text-sky-700 shadow-sm border border-sky-100'
+                            : 'text-slate-500 hover:text-slate-800'
+                        }`}
+                      >
+                        📋 Xem tất cả ({totalWordsCount} từ)
+                      </button>
+                    </div>
+
+                    {tableFilterMode === 'all' && (
+                      <button
+                        onClick={() => scrollToRow(safeStart)}
+                        className="px-2.5 py-1 rounded-lg bg-sky-50 hover:bg-sky-100 text-sky-700 text-xs font-bold border border-sky-200 transition-all cursor-pointer flex items-center gap-1"
+                        title="Cuộn tới vị trí câu bắt đầu của dải đang chọn"
+                      >
+                        <Sliders size={12} />
+                        <span>Tới câu #{safeStart}</span>
+                      </button>
+                    )}
+                  </div>
 
                   <div className="relative w-full sm:w-64">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400" />
@@ -497,7 +640,7 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
                       type="text"
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      placeholder="Tra từ trong danh sách..."
+                      placeholder={tableFilterMode === 'range' ? `Tra trong ${selectedRangeWords.length} từ đã chọn...` : "Tra từ trong danh sách..."}
                       className="w-full pl-9 pr-8 py-2 rounded-xl border border-slate-200 text-xs text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sky-500/30 bg-slate-50/50"
                     />
                     {searchQuery && (
@@ -517,7 +660,7 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
                     <table className="w-full text-left border-collapse">
                       <thead className="sticky top-0 bg-slate-100/90 backdrop-blur-md text-[11px] font-extrabold text-slate-600 uppercase tracking-wider border-b border-slate-200">
                         <tr>
-                          <th className="py-3.5 px-4 text-center w-14">STT</th>
+                          <th className="py-3.5 px-4 text-center w-16">STT</th>
                           <th className="py-3.5 px-4">Từ Tiếng Anh</th>
                           <th className="py-3.5 px-4">Phiên Âm</th>
                           <th className="py-3.5 px-4">Nghĩa Tiếng Việt</th>
@@ -526,70 +669,79 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
                         </tr>
                       </thead>
                       <tbody className="divide-y divide-slate-100 text-xs font-medium text-slate-800">
-                        {filteredWords.map((word, index) => {
-                          const stt = index + 1;
-                          const isInRange = stt >= rangeStart && stt <= rangeEnd;
+                        {displayedWords.length === 0 ? (
+                          <tr>
+                            <td colSpan={6} className="py-8 text-center text-slate-400 text-xs font-bold">
+                              Không tìm thấy từ vựng nào khớp với bộ lọc tìm kiếm
+                            </td>
+                          </tr>
+                        ) : (
+                          displayedWords.map((word) => {
+                            const originalStt = engGrade9Words.findIndex((w) => w.id === word.id) + 1;
+                            const isInRange = originalStt >= safeStart && originalStt <= safeEnd;
 
-                          return (
-                            <tr
-                              key={word.id}
-                              className={`transition-colors ${isInRange
-                                  ? 'bg-sky-50/50 hover:bg-sky-100/60 font-semibold'
-                                  : 'hover:bg-slate-50/80 text-slate-600'
-                                }`}
-                            >
-                              {/* STT */}
-                              <td className="py-3 px-4 text-center font-bold text-slate-400 text-[11px]">
-                                {isInRange ? (
-                                  <span className="inline-block px-2 py-0.5 rounded-md bg-sky-600 text-white font-extrabold text-[10px]">
-                                    {stt}
+                            return (
+                              <tr
+                                key={word.id}
+                                id={`eng-word-row-${originalStt}`}
+                                className={`transition-colors ${isInRange
+                                    ? 'bg-sky-50/60 hover:bg-sky-100/70 font-semibold'
+                                    : 'hover:bg-slate-50/80 text-slate-600'
+                                  }`}
+                              >
+                                {/* STT */}
+                                <td className="py-3 px-4 text-center font-bold text-slate-400 text-[11px]">
+                                  {isInRange ? (
+                                    <span className="inline-block px-2 py-0.5 rounded-md bg-sky-600 text-white font-extrabold text-[10px]">
+                                      #{originalStt}
+                                    </span>
+                                  ) : (
+                                    `#${originalStt}`
+                                  )}
+                                </td>
+
+                                {/* Term + Audio */}
+                                <td className="py-3 px-4 font-extrabold text-slate-900">
+                                  <div className="flex items-center gap-2">
+                                    <span>{word.term}</span>
+                                    <button
+                                      onClick={() => speakWord(word.term)}
+                                      className="p-1 rounded-lg text-sky-600 hover:bg-sky-100 transition-all cursor-pointer"
+                                      title="Nghe phát âm"
+                                    >
+                                      <Volume2 size={13} />
+                                    </button>
+                                  </div>
+                                </td>
+
+                                {/* IPA */}
+                                <td className="py-3 px-4 font-mono text-[11px] text-slate-400">
+                                  {word.ipa}
+                                </td>
+
+                                {/* Meaning */}
+                                <td className="py-3 px-4 font-bold text-sky-900">
+                                  {word.answer}
+                                </td>
+
+                                {/* Topic */}
+                                <td className="py-3 px-4 text-slate-500 hidden md:table-cell text-[11px]">
+                                  <span className="px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-600 font-semibold">
+                                    {word.topic}
                                   </span>
-                                ) : (
-                                  stt
-                                )}
-                              </td>
+                                </td>
 
-                              {/* Term + Audio */}
-                              <td className="py-3 px-4 font-extrabold text-slate-900">
-                                <div className="flex items-center gap-2">
-                                  <span>{word.term}</span>
-                                  <button
-                                    onClick={() => speakWord(word.term)}
-                                    className="p-1 rounded-lg text-sky-600 hover:bg-sky-100 transition-all cursor-pointer"
-                                    title="Nghe phát âm"
-                                  >
-                                    <Volume2 size={13} />
-                                  </button>
-                                </div>
-                              </td>
-
-                              {/* IPA */}
-                              <td className="py-3 px-4 font-mono text-[11px] text-slate-400">
-                                {word.ipa}
-                              </td>
-
-                              {/* Meaning */}
-                              <td className="py-3 px-4 font-bold text-sky-900">
-                                {word.answer}
-                              </td>
-
-                              {/* Topic */}
-                              <td className="py-3 px-4 text-slate-500 hidden md:table-cell text-[11px]">
-                                <span className="px-2.5 py-0.5 rounded-md bg-slate-100 text-slate-600 font-semibold">
-                                  {word.topic}
-                                </span>
-                              </td>
-
-                              {/* Example */}
-                              <td className="py-3 px-4 text-slate-600 hidden lg:table-cell">
-                                <div className="text-[11px]">
-                                  <span className="font-semibold text-slate-800">{word.example}</span>
-                                  <span className="text-slate-400 block text-[10px] italic">➔ {word.exampleMeaning}</span>
-                                </div>
-                              </td>
-                            </tr>
-                          );
-                        })}
+                                {/* Example */}
+                                <td className="py-3 px-4 text-slate-600 hidden lg:table-cell">
+                                  <div className="text-[11px]">
+                                    <span className="font-semibold text-slate-800">{word.example}</span>
+                                    <span className="text-slate-400 block text-[10px] italic">➔ {word.exampleMeaning}</span>
+                                  </div>
+                                </td>
+                              </tr>
+                            );
+                          })
+                        )}
                       </tbody>
                     </table>
                   </div>

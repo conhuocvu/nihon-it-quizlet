@@ -72,14 +72,16 @@ export const StudySession: React.FC<StudySessionProps> = ({
       const allFlat: SessionQuestion[] = [];
       lessons.forEach((lesson) => {
         lesson.sections.forEach((section) => {
-          section.items.forEach((item) => {
-            allFlat.push({
-              item,
-              lessonTitle: lesson.title,
-              sectionTitle: section.title,
-              sectionType: section.type,
+          if (section.type === 'vocabulary') {
+            section.items.forEach((item) => {
+              allFlat.push({
+                item,
+                lessonTitle: lesson.title,
+                sectionTitle: section.title,
+                sectionType: section.type,
+              });
             });
-          });
+          }
         });
       });
 

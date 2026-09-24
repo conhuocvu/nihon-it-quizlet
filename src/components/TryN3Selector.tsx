@@ -6,7 +6,11 @@ import {
   tryN3Chapter1Part2Story,
   tryN3Chapter2Story,
   tryN3Chapter2Part2Story,
-  tryN3Chapter3Story,
+  tryN3Chapter3Part1Story,
+  tryN3Chapter3Part2Story,
+  tryN3Chapter4Story,
+  tryN3Chapter5Story,
+  tryN3Chapter5Part2Story,
   type GrammarPoint,
 } from '../data/tryN3Data';
 import { renderFormattedText } from '../utils/formatText';
@@ -40,8 +44,8 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
   const [selectedGrammarModal, setSelectedGrammarModal] = useState<GrammarPoint | null>(null);
   const [expandedGrammarId, setExpandedGrammarId] = useState<string | null>('try-n3-c1-g1');
   const [showVietnameseTranslation, setShowVietnameseTranslation] = useState(false);
-  const [selectedStoryPart, setSelectedStoryPart] = useState<1 | 2 | 3 | 4 | 5>(1);
-  const [handbookFilter, setHandbookFilter] = useState<'all' | 'part1' | 'part2' | 'part3' | 'part4' | 'part5'>('all');
+  const [selectedStoryPart, setSelectedStoryPart] = useState<1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9>(1);
+  const [handbookFilter, setHandbookFilter] = useState<'all' | 'chapter1' | 'chapter2' | 'chapter3' | 'chapter4' | 'chapter5'>('all');
 
   // Unified Lesson & Sections
   const mainLesson = lessons.find((l) => l.id === 1) || lessons[0];
@@ -49,19 +53,28 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
   const flashcardP1Section = mainLesson?.sections.find((s) => s.id === 'try-n3-c1-flashcard');
   const flashcardP3Section = mainLesson?.sections.find((s) => s.id === 'try-n3-c2-flashcard');
   const flashcardP4Section = mainLesson?.sections.find((s) => s.id === 'try-n3-c2-p2-flashcard');
+  const flashcardP6Section = mainLesson?.sections.find((s) => s.id === 'try-n3-c3-flashcard');
+  const flashcardP7Section = mainLesson?.sections.find((s) => s.id === 'try-n3-c4-flashcard');
 
   const ex1Section = mainLesson?.sections.find((s) => s.id === 'try-n3-c1-exercises');
   const ex2Section = mainLesson?.sections.find((s) => s.id === 'try-n3-c1-exercises-p2');
   const ex3Section = mainLesson?.sections.find((s) => s.id === 'try-n3-c2-exercises');
   const ex4Section = mainLesson?.sections.find((s) => s.id === 'try-n3-c2-exercises-p2');
+  const ex6Section = mainLesson?.sections.find((s) => s.id === 'try-n3-c3-exercises');
+  const ex7Section = mainLesson?.sections.find((s) => s.id === 'try-n3-c4-ex');
 
   const check1Section = mainLesson?.sections.find((s) => s.id === 'try-n3-c1-check');
   const check2Section = mainLesson?.sections.find((s) => s.id === 'try-n3-c1-check-p2');
   const check3Section = mainLesson?.sections.find((s) => s.id === 'try-n3-c2-check');
   const check4Section = mainLesson?.sections.find((s) => s.id === 'try-n3-c2-check-p2');
+  const check6Section = mainLesson?.sections.find((s) => s.id === 'try-n3-c3-check');
+  const check7Section = mainLesson?.sections.find((s) => s.id === 'try-n3-c4-check');
 
   const matome1Section = mainLesson?.sections.find((s) => s.id === 'try-n3-c1-matome');
   const matome2Section = mainLesson?.sections.find((s) => s.id === 'try-n3-c2-matome');
+  const matome3Section = mainLesson?.sections.find((s) => s.id === 'try-n3-c3-matome');
+  const matome4Section = mainLesson?.sections.find((s) => s.id === 'try-n3-c4-matome');
+  const matome5Section = mainLesson?.sections.find((s) => s.id === 'try-n3-c5-matome');
 
   const handleStartFlashcardAll = () => {
     if (flashcardAllSection) {
@@ -71,6 +84,8 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
       if (flashcardP1Section) ids.push(flashcardP1Section.id);
       if (flashcardP3Section) ids.push(flashcardP3Section.id);
       if (flashcardP4Section) ids.push(flashcardP4Section.id);
+      if (flashcardP6Section) ids.push(flashcardP6Section.id);
+      if (flashcardP7Section) ids.push(flashcardP7Section.id);
       if (ids.length) onStartBySections(ids);
     }
   };
@@ -90,12 +105,24 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
     if (flashcardP4Section) onStartBySections([flashcardP4Section.id]);
   };
 
+  const handleStartFlashcardP6 = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (flashcardP6Section) onStartBySections([flashcardP6Section.id]);
+  };
+
+  const handleStartFlashcardP7 = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (flashcardP7Section) onStartBySections([flashcardP7Section.id]);
+  };
+
   const handleStartExercisesAll = () => {
     const ids: string[] = [];
     if (ex1Section) ids.push(ex1Section.id);
     if (ex2Section) ids.push(ex2Section.id);
     if (ex3Section) ids.push(ex3Section.id);
     if (ex4Section) ids.push(ex4Section.id);
+    if (ex6Section) ids.push(ex6Section.id);
+    if (ex7Section) ids.push(ex7Section.id);
     if (ids.length) onStartBySections(ids);
   };
 
@@ -119,12 +146,24 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
     if (ex4Section) onStartBySections([ex4Section.id]);
   };
 
+  const handleStartExercisesP6 = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (ex6Section) onStartBySections([ex6Section.id]);
+  };
+
+  const handleStartExercisesP7 = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (ex7Section) onStartBySections([ex7Section.id]);
+  };
+
   const handleStartCheckAll = () => {
     const ids: string[] = [];
     if (check1Section) ids.push(check1Section.id);
     if (check2Section) ids.push(check2Section.id);
     if (check3Section) ids.push(check3Section.id);
     if (check4Section) ids.push(check4Section.id);
+    if (check6Section) ids.push(check6Section.id);
+    if (check7Section) ids.push(check7Section.id);
     if (ids.length) onStartBySections(ids);
   };
 
@@ -148,6 +187,16 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
     if (check4Section) onStartBySections([check4Section.id]);
   };
 
+  const handleStartCheckP6 = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (check6Section) onStartBySections([check6Section.id]);
+  };
+
+  const handleStartCheckP7 = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (check7Section) onStartBySections([check7Section.id]);
+  };
+
   const handleStartMatome1 = (e?: React.MouseEvent) => {
     if (e) e.stopPropagation();
     if (matome1Section) onStartBySections([matome1Section.id]);
@@ -158,10 +207,28 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
     if (matome2Section) onStartBySections([matome2Section.id]);
   };
 
+  const handleStartMatome3 = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    if (matome3Section) onStartBySections([matome3Section.id]);
+  };
+
+  const handleStartMatome4 = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    if (matome4Section) onStartBySections([matome4Section.id]);
+  };
+
+  const handleStartMatome5 = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    if (matome5Section) onStartBySections([matome5Section.id]);
+  };
+
   const handleStartMatomeAll = () => {
     const ids: string[] = [];
     if (matome1Section) ids.push(matome1Section.id);
     if (matome2Section) ids.push(matome2Section.id);
+    if (matome3Section) ids.push(matome3Section.id);
+    if (matome4Section) ids.push(matome4Section.id);
+    if (matome5Section) ids.push(matome5Section.id);
     if (ids.length) onStartBySections(ids);
   };
 
@@ -173,22 +240,36 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
     ? tryN3Chapter2Story
     : selectedStoryPart === 4
     ? tryN3Chapter2Part2Story
-    : tryN3Chapter3Story;
+    : selectedStoryPart === 5
+    ? tryN3Chapter3Part1Story
+    : selectedStoryPart === 6
+      ? tryN3Chapter3Part2Story
+    : selectedStoryPart === 7
+      ? tryN3Chapter4Story
+      : selectedStoryPart === 8
+      ? tryN3Chapter5Story
+      : tryN3Chapter5Part2Story;
 
   const part1Points = tryN3GrammarPoints.filter((g) => g.number <= 5);
   const part2Points = tryN3GrammarPoints.filter((g) => g.number > 5 && g.number <= 10);
   const part3Points = tryN3GrammarPoints.filter((g) => g.number >= 11 && g.number <= 16);
   const part4Points = tryN3GrammarPoints.filter((g) => g.number >= 17 && g.number <= 20);
   const part5Points = tryN3GrammarPoints.filter((g) => g.number >= 21 && g.number <= 25);
+  const part6Points = tryN3GrammarPoints.filter((g) => g.number >= 26 && g.number <= 30);
+  const part7Points = tryN3GrammarPoints.filter((g) => g.number >= 31 && g.number <= 34);
+  const part8Points = tryN3GrammarPoints.filter((g) => g.number >= 35 && g.number <= 41);
+  const part9Points = tryN3GrammarPoints.filter((g) => g.number >= 42 && g.number <= 45);
+  const part10Points = tryN3GrammarPoints.filter((g) => g.number >= 46 && g.number <= 50);
 
   const filteredGrammarPoints = tryN3GrammarPoints.filter((g) => {
-    if (handbookFilter === 'part1') return g.number <= 5;
-    if (handbookFilter === 'part2') return g.number > 5 && g.number <= 10;
-    if (handbookFilter === 'part3') return g.number >= 11 && g.number <= 16;
-    if (handbookFilter === 'part4') return g.number >= 17 && g.number <= 20;
-    if (handbookFilter === 'part5') return g.number >= 21 && g.number <= 25;
+    if (handbookFilter === 'all') return true;
+    if (handbookFilter === 'chapter1') return g.chapter === 1;
+    if (handbookFilter === 'chapter2') return g.chapter === 2;
+    if (handbookFilter === 'chapter3') return g.chapter === 3;
+    if (handbookFilter === 'chapter4') return g.chapter === 4;
+    if (handbookFilter === 'chapter5') return g.chapter === 5;
     return true;
-  });
+  }).sort((a, b) => a.number - b.number);
 
   return (
     <div className="w-full max-w-4xl mx-auto px-4 py-6 space-y-6 font-['Space_Grotesk',sans-serif]">
@@ -290,7 +371,7 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
                     <Sparkles size={16} strokeWidth={3} />
                     <span>Flashcard</span>
                   </span>
-                  <span className="bg-black text-white px-2 py-0.5 text-xs font-black">25</span>
+                  <span className="bg-black text-white px-2 py-0.5 text-xs font-black">50</span>
                 </div>
                 <div className="flex flex-wrap items-center gap-1.5 text-[10px] font-bold">
                   <button
@@ -311,6 +392,18 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
                   >
                     P4: 5 thẻ
                   </button>
+                  <button
+                    onClick={handleStartFlashcardP6}
+                    className="px-1.5 py-0.5 bg-white border border-black hover:bg-black hover:text-white transition-colors"
+                  >
+                    P6: 5 thẻ
+                  </button>
+                  <button
+                    onClick={handleStartFlashcardP7}
+                    className="px-1.5 py-0.5 bg-white border border-black hover:bg-black hover:text-white transition-colors"
+                  >
+                    P7: 4 thẻ
+                  </button>
                 </div>
               </div>
 
@@ -324,7 +417,7 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
                     <HelpCircle size={16} strokeWidth={3} />
                     <span>Bài tập</span>
                   </span>
-                  <span className="bg-black text-white px-2 py-0.5 text-xs font-black">70</span>
+                  <span className="bg-black text-white px-2 py-0.5 text-xs font-black">96</span>
                 </div>
                 <div className="flex flex-wrap items-center gap-1 text-[10px] font-bold">
                   <button
@@ -351,6 +444,18 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
                   >
                     P4: 12c
                   </button>
+                  <button
+                    onClick={handleStartExercisesP6}
+                    className="px-1.5 py-0.5 bg-white border border-black hover:bg-black hover:text-white transition-colors"
+                  >
+                    P6: 15c
+                  </button>
+                  <button
+                    onClick={handleStartExercisesP7}
+                    className="px-1.5 py-0.5 bg-white border border-black hover:bg-black hover:text-white transition-colors"
+                  >
+                    P7: 11c
+                  </button>
                 </div>
               </div>
 
@@ -364,32 +469,44 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
                     <CheckCircle2 size={16} strokeWidth={3} />
                     <span>Kiểm tra Check</span>
                   </span>
-                  <span className="bg-black text-white px-2 py-0.5 text-xs font-black">20</span>
+                  <span className="bg-black text-white px-2 py-0.5 text-xs font-black">28</span>
                 </div>
                 <div className="flex flex-wrap items-center gap-1 text-[10px] font-bold">
                   <button
                     onClick={handleStartCheckP1}
                     className="px-1.5 py-0.5 bg-white border border-black hover:bg-black hover:text-white transition-colors"
                   >
-                    Check 1: 6c
+                    C 1: 6c
                   </button>
                   <button
                     onClick={handleStartCheckP2}
                     className="px-1.5 py-0.5 bg-white border border-black hover:bg-black hover:text-white transition-colors"
                   >
-                    Check 2: 6c
+                    C 2: 6c
                   </button>
                   <button
                     onClick={handleStartCheckP3}
                     className="px-1.5 py-0.5 bg-white border border-black hover:bg-black hover:text-white transition-colors"
                   >
-                    Check 3: 5c
+                    C 3: 5c
                   </button>
                   <button
                     onClick={handleStartCheckP4}
                     className="px-1.5 py-0.5 bg-white border border-black hover:bg-black hover:text-white transition-colors"
                   >
-                    Check 4: 3c
+                    C 4: 3c
+                  </button>
+                  <button
+                    onClick={handleStartCheckP6}
+                    className="px-1.5 py-0.5 bg-white border border-black hover:bg-black hover:text-white transition-colors"
+                  >
+                    C 6: 5c
+                  </button>
+                  <button
+                    onClick={handleStartCheckP7}
+                    className="px-1.5 py-0.5 bg-white border border-black hover:bg-black hover:text-white transition-colors"
+                  >
+                    C 7: 3c
                   </button>
                 </div>
               </div>
@@ -404,7 +521,7 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
                     <Award size={16} strokeWidth={3} />
                     <span>Tổng ôn Matome</span>
                   </span>
-                  <span className="bg-black text-white px-2 py-0.5 text-xs font-black">30</span>
+                  <span className="bg-black text-white px-2 py-0.5 text-xs font-black">73</span>
                 </div>
                 <div className="flex flex-wrap items-center gap-1 text-[10px] font-bold">
                   <button
@@ -420,13 +537,31 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
                     C2: 15c
                   </button>
                   <button
+                    onClick={handleStartMatome3}
+                    className="px-1.5 py-0.5 bg-white border border-black hover:bg-black hover:text-white transition-colors"
+                  >
+                    C3: 16c
+                  </button>
+                  <button
+                    onClick={handleStartMatome4}
+                    className="px-1.5 py-0.5 bg-white border border-black hover:bg-black hover:text-white transition-colors"
+                  >
+                    C4: 10c
+                  </button>
+                  <button
+                    onClick={handleStartMatome5}
+                    className="px-1.5 py-0.5 bg-white border border-black hover:bg-black hover:text-white transition-colors"
+                  >
+                    C5: 17c
+                  </button>
+                  <button
                     onClick={(e) => {
                       e.stopPropagation();
                       handleStartMatomeAll();
                     }}
                     className="px-1.5 py-0.5 bg-black text-white border border-black hover:bg-white hover:text-black transition-colors"
                   >
-                    Cả 2: 30c
+                    Cả 5: 73c
                   </button>
                 </div>
               </div>
@@ -566,6 +701,141 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
                 ))}
               </div>
             </div>
+
+            {/* Quick Grammar Buttons: Phần 6 (26 - 30) */}
+            <div className="pt-4 border-t-3 border-black/15 space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-black text-slate-500 uppercase tracking-wider">
+                  Phần 6 • 市民農園の募集（２） [Mẫu 26 ➔ 30]:
+                </span>
+              </div>
+              <div className="flex flex-wrap gap-2.5">
+                {part6Points.map((g) => (
+                  <button
+                    key={g.id}
+                    onClick={() => setSelectedGrammarModal(g)}
+                    className="px-3.5 py-2.5 bg-[#F0F9FF] hover:bg-[#7DD3FC] border-3 border-black font-black text-sm text-black shadow-[3px_3px_0px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-100 cursor-pointer flex items-center gap-2 select-none"
+                    title={`Xem chi tiết ${g.pattern}: ${g.translationVi}`}
+                  >
+                    <span className="w-6 h-6 bg-black text-white text-xs font-black flex items-center justify-center shrink-0">
+                      {g.number}
+                    </span>
+                    <span>{g.pattern}</span>
+                    <span className="text-xs font-bold text-slate-700 bg-white px-1.5 py-0.5 border border-black/30">
+                      {g.translationVi}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Quick Grammar Buttons: Phần 7 (31 - 34) */}
+            <div className="pt-4 border-t-3 border-black/15 space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-black text-slate-500 uppercase tracking-wider">
+                  Phần 7 • 水泳大会（１） [Mẫu 31 ➔ 34]:
+                </span>
+              </div>
+              <div className="flex flex-wrap gap-2.5">
+                {part7Points.map((g) => (
+                  <button
+                    key={g.id}
+                    onClick={() => setSelectedGrammarModal(g)}
+                    className="px-3.5 py-2.5 bg-[#F0F9FF] hover:bg-[#7DD3FC] border-3 border-black font-black text-sm text-black shadow-[3px_3px_0px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-100 cursor-pointer flex items-center gap-2 select-none"
+                    title={`Xem chi tiết ${g.pattern}: ${g.translationVi}`}
+                  >
+                    <span className="w-6 h-6 bg-black text-white text-xs font-black flex items-center justify-center shrink-0">
+                      {g.number}
+                    </span>
+                    <span>{g.pattern}</span>
+                    <span className="text-xs font-bold text-slate-700 bg-white px-1.5 py-0.5 border border-black/30">
+                      {g.translationVi}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Quick Grammar Buttons: Phần 8 (35 - 41) */}
+            <div className="pt-4 border-t-3 border-black/15 space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-black text-slate-500 uppercase tracking-wider">
+                  Phần 8 • 水泳大会（２） [Mẫu 35 ➔ 41]:
+                </span>
+              </div>
+              <div className="flex flex-wrap gap-2.5">
+                {part8Points.map((g) => (
+                  <button
+                    key={g.id}
+                    onClick={() => setSelectedGrammarModal(g)}
+                    className="px-3.5 py-2.5 bg-[#F0F9FF] hover:bg-[#7DD3FC] border-3 border-black font-black text-sm text-black shadow-[3px_3px_0px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-100 cursor-pointer flex items-center gap-2 select-none"
+                    title={`Xem chi tiết ${g.pattern}: ${g.translationVi}`}
+                  >
+                    <span className="w-6 h-6 bg-black text-white text-xs font-black flex items-center justify-center shrink-0">
+                      {g.number}
+                    </span>
+                    <span>{g.pattern}</span>
+                    <span className="text-xs font-bold text-slate-700 bg-white px-1.5 py-0.5 border border-black/30">
+                      {g.translationVi}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Quick Grammar Buttons: Phần 9 (42 - 45) */}
+            <div className="pt-4 border-t-3 border-black/15 space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-black text-slate-500 uppercase tracking-wider">
+                  Phần 9 • 手作りハムのレシピ（１） [Mẫu 42 ➔ 45]:
+                </span>
+              </div>
+              <div className="flex flex-wrap gap-2.5">
+                {part9Points.map((g) => (
+                  <button
+                    key={g.id}
+                    onClick={() => setSelectedGrammarModal(g)}
+                    className="px-3.5 py-2.5 bg-[#F0F9FF] hover:bg-[#7DD3FC] border-3 border-black font-black text-sm text-black shadow-[3px_3px_0px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-100 cursor-pointer flex items-center gap-2 select-none"
+                    title={`Xem chi tiết ${g.pattern}: ${g.translationVi}`}
+                  >
+                    <span className="w-6 h-6 bg-black text-white text-xs font-black flex items-center justify-center shrink-0">
+                      {g.number}
+                    </span>
+                    <span>{g.pattern}</span>
+                    <span className="text-xs font-bold text-slate-700 bg-white px-1.5 py-0.5 border border-black/30">
+                      {g.translationVi}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Quick Grammar Buttons: Phần 10 (46 - 50) */}
+            <div className="pt-4 border-t-3 border-black/15 space-y-3">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-black text-slate-500 uppercase tracking-wider">
+                  Phần 10 • 手作りハムのレシピ（２） [Mẫu 46 ➔ 50]:
+                </span>
+              </div>
+              <div className="flex flex-wrap gap-2.5">
+                {part10Points.map((g) => (
+                  <button
+                    key={g.id}
+                    onClick={() => setSelectedGrammarModal(g)}
+                    className="px-3.5 py-2.5 bg-[#F0F9FF] hover:bg-[#7DD3FC] border-3 border-black font-black text-sm text-black shadow-[3px_3px_0px_0px_#000] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all duration-100 cursor-pointer flex items-center gap-2 select-none"
+                    title={`Xem chi tiết ${g.pattern}: ${g.translationVi}`}
+                  >
+                    <span className="w-6 h-6 bg-black text-white text-xs font-black flex items-center justify-center shrink-0">
+                      {g.number}
+                    </span>
+                    <span>{g.pattern}</span>
+                    <span className="text-xs font-bold text-slate-700 bg-white px-1.5 py-0.5 border border-black/30">
+                      {g.translationVi}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       )}
@@ -625,6 +895,46 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
                 }`}
               >
                 Chương 3 (P1)
+              </button>
+              <button
+                onClick={() => setSelectedStoryPart(6)}
+                className={`px-3 py-1.5 border-2 border-black font-black text-xs uppercase tracking-wider transition-all duration-100 cursor-pointer ${
+                  selectedStoryPart === 6
+                    ? 'bg-[#7DD3FC] text-black shadow-[3px_3px_0px_0px_#000]'
+                    : 'bg-white text-slate-700 hover:bg-[#F0F9FF]'
+                }`}
+              >
+                Chương 3 (P2)
+              </button>
+              <button
+                onClick={() => setSelectedStoryPart(7)}
+                className={`px-3 py-1.5 border-2 border-black font-black text-xs uppercase tracking-wider transition-all duration-100 cursor-pointer ${
+                  selectedStoryPart === 7
+                    ? 'bg-[#7DD3FC] text-black shadow-[3px_3px_0px_0px_#000]'
+                    : 'bg-white text-slate-700 hover:bg-[#F0F9FF]'
+                }`}
+              >
+                Chương 4
+              </button>
+              <button
+                onClick={() => setSelectedStoryPart(8)}
+                className={`px-3 py-1.5 border-2 border-black font-black text-xs uppercase tracking-wider transition-all duration-100 cursor-pointer ${
+                  selectedStoryPart === 8
+                    ? 'bg-[#7DD3FC] text-black shadow-[3px_3px_0px_0px_#000]'
+                    : 'bg-white text-slate-700 hover:bg-[#F0F9FF]'
+                }`}
+              >
+                Chương 5 (P1)
+              </button>
+              <button
+                onClick={() => setSelectedStoryPart(9)}
+                className={`px-3 py-1.5 border-2 border-black font-black text-xs uppercase tracking-wider transition-all duration-100 cursor-pointer ${
+                  selectedStoryPart === 9
+                    ? 'bg-[#7DD3FC] text-black shadow-[3px_3px_0px_0px_#000]'
+                    : 'bg-white text-slate-700 hover:bg-[#F0F9FF]'
+                }`}
+              >
+                Chương 5 (P2)
               </button>
             </div>
 
@@ -933,10 +1243,10 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
             ) : (
               /* Phần 5: Chapter 3 Story Text with clickable highlights */
               <p className="text-base md:text-lg leading-loose text-black font-bold select-text whitespace-pre-wrap">
-                {currentStory.textJa.split(/(\n|インターネットによる|に対して|ため|につき|とおり)/).map((part, index) => {
+                {currentStory.textJa.split(/(\n|インターネットによる|に対して|ため|につき|とおり)/).map((part: string, index: number) => {
                   if (part === '\n') return <br key={index} className="my-2" />;
                   
-                  const highlight = currentStory.grammarHighlights?.find(h => h.text.includes(part));
+                  const highlight = currentStory.grammarHighlights?.find((h: any) => h.text.includes(part));
                   if (highlight && ['インターネットによる', 'に対して', 'ため', 'につき', 'とおり'].includes(part)) {
                     const matchedGrammar = tryN3GrammarPoints.find(g => 
                       highlight.grammarName.includes(g.pattern.split('／')[0].replace('〜', ''))
@@ -985,7 +1295,7 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
                 Sổ tay Ngữ pháp TRY! N3
               </h2>
               <p className="text-xs font-bold text-slate-500">
-                20 Mẫu ngữ pháp & 5 Điểm Plus đầy đủ cấu trúc, dịch nghĩa, ý hiểu và ví dụ
+                34 Mẫu ngữ pháp & 5 Điểm Plus đầy đủ cấu trúc, dịch nghĩa, ý hiểu và ví dụ
               </p>
             </div>
 
@@ -999,57 +1309,57 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
                     : 'bg-white text-slate-600 hover:bg-[#F0F9FF]'
                 }`}
               >
-                Tất cả (20)
+                Tất cả (34)
               </button>
               <button
-                onClick={() => setHandbookFilter('part1')}
+                onClick={() => setHandbookFilter('chapter1')}
                 className={`px-2.5 py-1 border-2 border-black text-xs font-black transition-colors ${
-                  handbookFilter === 'part1'
+                  handbookFilter === 'chapter1'
                     ? 'bg-[#7DD3FC] text-black shadow-[2px_2px_0px_0px_#000]'
                     : 'bg-white text-slate-600 hover:bg-[#F0F9FF]'
                 }`}
               >
-                Phần 1 (1 - 5)
+                Chương 1 (1 - 10)
               </button>
               <button
-                onClick={() => setHandbookFilter('part2')}
+                onClick={() => setHandbookFilter('chapter2')}
                 className={`px-2.5 py-1 border-2 border-black text-xs font-black transition-colors ${
-                  handbookFilter === 'part2'
+                  handbookFilter === 'chapter2'
                     ? 'bg-[#7DD3FC] text-black shadow-[2px_2px_0px_0px_#000]'
                     : 'bg-white text-slate-600 hover:bg-[#F0F9FF]'
                 }`}
               >
-                Phần 2 (6 - 10)
+                Chương 2 (11 - 20)
               </button>
               <button
-                onClick={() => setHandbookFilter('part3')}
+                onClick={() => setHandbookFilter('chapter3')}
                 className={`px-2.5 py-1 border-2 border-black text-xs font-black transition-colors ${
-                  handbookFilter === 'part3'
+                  handbookFilter === 'chapter3'
                     ? 'bg-[#7DD3FC] text-black shadow-[2px_2px_0px_0px_#000]'
                     : 'bg-white text-slate-600 hover:bg-[#F0F9FF]'
                 }`}
               >
-                Phần 3 (11 - 16)
+                Chương 3 (21 - 30)
               </button>
               <button
-                onClick={() => setHandbookFilter('part4')}
+                onClick={() => setHandbookFilter('chapter4')}
                 className={`px-2.5 py-1 border-2 border-black text-xs font-black transition-colors ${
-                  handbookFilter === 'part4'
+                  handbookFilter === 'chapter4'
                     ? 'bg-[#7DD3FC] text-black shadow-[2px_2px_0px_0px_#000]'
                     : 'bg-white text-slate-600 hover:bg-[#F0F9FF]'
                 }`}
               >
-                Phần 4 (17 - 20)
+                Chương 4 (31 - 41)
               </button>
               <button
-                onClick={() => setHandbookFilter('part5')}
+                onClick={() => setHandbookFilter('chapter5')}
                 className={`px-2.5 py-1 border-2 border-black text-xs font-black transition-colors ${
-                  handbookFilter === 'part5'
+                  handbookFilter === 'chapter5'
                     ? 'bg-[#7DD3FC] text-black shadow-[2px_2px_0px_0px_#000]'
                     : 'bg-white text-slate-600 hover:bg-[#F0F9FF]'
                 }`}
               >
-                Phần 5 (21 - 25)
+                Chương 5 (42 - 50)
               </button>
             </div>
           </div>
@@ -1140,6 +1450,39 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
                       {g.usageNote && (
                         <div className="text-xs text-black font-bold bg-[#7DD3FC]/20 p-2.5 border border-black mt-2">
                           📌 <strong>Lưu ý:</strong> {renderFormattedText(g.usageNote)}
+                        </div>
+                      )}
+                      {g.table && (
+                        <div className="mt-2 overflow-x-auto border-2 border-black shadow-[2px_2px_0px_0px_#000]">
+                          <table className="w-full text-left text-[11px] md:text-xs border-collapse bg-white">
+                            <thead>
+                              <tr className="bg-[#7DD3FC] text-black">
+                                {g.table.headers.map((header, i) => (
+                                  <th key={i} className="border-b-2 border-r-2 border-black p-2 font-black whitespace-pre-line last:border-r-0">
+                                    {header}
+                                  </th>
+                                ))}
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {g.table.rows.map((row, rIdx) => (
+                                <tr key={rIdx} className="border-b-2 border-black last:border-b-0 font-bold text-slate-800">
+                                  {row.map((cell, cIdx) => (
+                                    <td key={cIdx} className="border-r-2 border-black p-2 whitespace-pre-line last:border-r-0">
+                                      {cell}
+                                    </td>
+                                  ))}
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                          {g.table.notes && g.table.notes.length > 0 && (
+                            <div className="p-2 bg-[#F0F9FF] border-t-2 border-black text-[10px] md:text-[11px] font-bold text-slate-700 space-y-1">
+                              {g.table.notes.map((note, nIdx) => (
+                                <div key={nIdx}>{note}</div>
+                              ))}
+                            </div>
+                          )}
                         </div>
                       )}
                     </div>
@@ -1247,6 +1590,39 @@ export const TryN3Selector: React.FC<TryN3SelectorProps> = ({
                 {selectedGrammarModal.usageNote && (
                   <div className="text-[11px] text-black font-bold bg-[#7DD3FC]/20 p-2 border border-black mt-1">
                     📌 <strong>Lưu ý:</strong> {renderFormattedText(selectedGrammarModal.usageNote)}
+                  </div>
+                )}
+                {selectedGrammarModal.table && (
+                  <div className="mt-2 overflow-x-auto border-2 border-black shadow-[2px_2px_0px_0px_#000]">
+                    <table className="w-full text-left text-[11px] border-collapse bg-white">
+                      <thead>
+                        <tr className="bg-[#7DD3FC] text-black">
+                          {selectedGrammarModal.table.headers.map((header, i) => (
+                            <th key={i} className="border-b-2 border-r-2 border-black p-1.5 font-black whitespace-pre-line last:border-r-0">
+                              {header}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {selectedGrammarModal.table.rows.map((row, rIdx) => (
+                          <tr key={rIdx} className="border-b-2 border-black last:border-b-0 font-bold text-slate-800">
+                            {row.map((cell, cIdx) => (
+                              <td key={cIdx} className="border-r-2 border-black p-1.5 whitespace-pre-line last:border-r-0">
+                                {cell}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                    {selectedGrammarModal.table.notes && selectedGrammarModal.table.notes.length > 0 && (
+                      <div className="p-1.5 bg-[#F0F9FF] border-t-2 border-black text-[10px] font-bold text-slate-700 space-y-1">
+                        {selectedGrammarModal.table.notes.map((note, nIdx) => (
+                          <div key={nIdx}>{note}</div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )}
               </div>

@@ -23,6 +23,11 @@ export interface GrammarPoint {
     meaningVi: string;
     examples: Array<{ ja: string; vi: string }>;
   };
+  table?: {
+    headers: string[];
+    rows: string[][];
+    notes?: string[];
+  };
 }
 
 export interface ChapterStory {
@@ -236,7 +241,7 @@ Thỉnh thoảng, trên đường về tôi cũng có ghé vào cửa hàng ti�
 };
 
 
-export const tryN3Chapter3Story: ChapterStory = {
+export const tryN3Chapter3Part1Story: ChapterStory = {
   chapter: 3,
   titleJa: '3 市民農園の募集（１）',
   titleVi: '3. Tuyển người cho nông trại thành phố (1)',
@@ -292,15 +297,633 @@ shimin@abk.co.jp  http://www.abk-try/shimin-noen/`,
     }
   ]
 };
+export const tryN3Chapter3Part2Story: ChapterStory = {
+  chapter: 3,
+  titleJa: '3 市民農園の募集（２）',
+  titleVi: '3. Tuyển người cho nông trại thành phố (2)',
+  canDoJa: '募集・案内などの書かれたものを読んで、条件や申し込み方法などを理解することができる。',
+  canDoVi: 'Xem thông báo tuyển dụng người tham gia và hiểu được các nội dung như là cách thức đăng ký.',
+  textJa: `家族や仲間と一緒に収穫した野菜を食べるのは最高です。野菜作りを通して、自然に親しむこともできるし、バーベキューパーティーのような楽しいイベントもあります。実際に利用されている方のお話によれば、思ったより簡単にできるし、それに子どもと話す機会が増えて楽しかったということです。
+農園の活動について詳しいことは、ホームページでも紹介しています。皆さん、一緒に野菜を作りましょう！`,
+  textVi: `Ăn những loại rau mà mình thu hoạch cùng gia đình và bạn bè là tuyệt nhất. Thông qua việc trồng rau, chúng ta cũng có thể trở nên gần gũi với thiên nhiên, và cũng có những sự kiện thú vị như là tiệc BBQ. Theo như câu chuyện của những người đang thực tế sử dụng, nghe nói là có thể làm dễ dàng hơn so với suy nghĩ, hơn nữa cơ hội nói chuyện với con cái tăng lên nên rất vui.
+Về những thông tin chi tiết về hoạt động của nông trại, chúng tôi cũng đang giới thiệu trên trang chủ. Mọi người hãy cùng nhau trồng rau nhé!`,
+
+  grammarHighlights: [
+    {
+      text: 'を通して',
+      grammarName: '〜を通して／〜を通じて',
+      explanation: 'Sử dụng khi làm một cái gì đó không trực tiếp mà thông qua người khác, cách thức khác, sự việc khác.'
+    },
+    {
+      text: 'のような',
+      grammarName: '〜のような／〜のように',
+      explanation: 'Sử dụng khi đưa ra một ví dụ điển hình.'
+    },
+    {
+      text: 'によれば',
+      grammarName: '〜によれば／〜によると',
+      explanation: 'Sử dụng khi muốn nói bạn đã biết cái thông tin gì đó từ đâu, do đâu. Cuối câu thường đi với 〜そうだ／〜ということだ.'
+    },
+    {
+      text: 'ということ',
+      grammarName: '〜ということだ／〜とのことだ',
+      explanation: 'Sử dụng khi nói với người khác nội dung thông tin mình đã nghe.'
+    },
+    {
+      text: 'について',
+      grammarName: '〜について',
+      explanation: 'Sử dụng khi bạn trình bày nội dung lấy làm chủ đề, đề tài, suy nghĩ hoặc điều tra.'
+    }
+  ]
+};
+
+
+
+
+export const tryN3Chapter4Story: ChapterStory = {
+  chapter: 4,
+  titleJa: '4 水泳大会（１）',
+  titleVi: '4. Hội thi bơi lội (1)',
+  canDoJa: '個人的なことについて、確認しながら、友だちとおしゃべりができる。',
+  canDoVi: 'Nói chuyện với bạn bè về đề tài cá nhân đồng thời xác nhận thông tin.',
+  textJa: `鈴木：あー、疲れた。
+佐藤：どうして？
+鈴木：来週の日曜に水泳の大会があるから、毎日練習してるんだ。
+佐藤：え？ 応援に行かなきゃ。何時に始まるの？
+鈴木：9時からだけど、バイトだろ？ 来なくてもいいよ。
+佐藤：自由形に出るんだっけ。
+鈴木：うん。100メートルと200メートル。
+佐藤：がんばってね。もしかして優勝したりして？
+鈴木：ははは…。`,
+  textVi: `Suzuki: Aa, mệt quá.
+Satou: Sao vậy?
+Suzuki: Vì chủ nhật tuần sau có hội thi bơi lội nên ngày nào mình cũng luyện tập.
+Satou: Hả? Mình phải đi cổ vũ mới được. Mấy giờ bắt đầu vậy?
+Suzuki: Từ 9 giờ nhưng cậu phải đi làm thêm đúng không? Không đến cũng được đâu.
+Satou: Cậu tham gia bơi tự do phải không nhỉ?
+Suzuki: Ừ. 100 mét và 200 mét.
+Satou: Cố lên nhé. Không chừng cậu sẽ vô địch cũng nên?
+Suzuki: Hahaha...`,
+  grammarHighlights: [
+    {
+      text: 'してる',
+      grammarName: '〜てる',
+      translation: 'đang luyện tập',
+      explanation: 'Rút gọn của 〜ている để nói nhanh trong hội thoại.'
+    },
+    {
+      text: '行かなきゃ',
+      grammarName: '〜なきゃ',
+      translation: 'phải đi',
+      explanation: 'Rút gọn của 〜なければいけない (Phải làm gì đó).'
+    },
+    {
+      text: '出るんだっけ',
+      grammarName: '〜っけ',
+      translation: 'tham gia phải không nhỉ',
+      explanation: 'Sử dụng khi xác nhận điều gì đó mà bạn không rõ hoặc đã nghe rồi nhưng quên mất.'
+    },
+    {
+      text: '優勝したりして',
+      grammarName: '〜たりして',
+      translation: 'biết đâu vô địch',
+      explanation: 'Mang nghĩa "〜かもしれない" (có lẽ ~, không chừng ~).'
+    }
+  ]
+};
+
+export const tryN3Chapter5Story: ChapterStory = {
+  chapter: 5,
+  titleJa: '5 手作りハムのレシピ（１）',
+  titleVi: '5. Công thức tự làm món thịt nguội (1)',
+  canDoJa: 'レシピを読んで、どんな料理か理解できる。',
+  canDoVi: 'Đọc công thức biết được là món ăn gì.',
+  textJa: `皆様、本日ご紹介する「とりハム」は、安いとり肉を本当のハムのようにおいしくできます。サラダやサンドイッチはもちろん、ほかの料理にもおすすめです。2日かかりますが、とても簡単に作れるので、ぜひ作ってみてください。
+
+材料
+・とりむね肉 1枚 (むね肉はもも肉ほどあぶらが多くないので、あっさりしていて食べやすい)
+・はちみつ 大さじ1 (はちみつのかわりに砂糖でもよい)
+・塩 大さじ1
+・こしょう 少々`,
+  textVi: `Thưa các bạn, món "thịt gà nguội" mà tôi giới thiệu hôm nay, làm từ thịt gà rẻ tiền nhưng ngon như thịt nguội thật sự. Không chỉ dùng cho salad hay sandwich, mà còn rất được khuyến khích dùng cho các món ăn khác. Sẽ mất khoảng 2 ngày, nhưng vì cách làm rất đơn giản, nên các bạn nhất định hãy làm thử nhé.
+
+Nguyên liệu
+- Thịt ức gà 1 miếng (Vì thịt ức không nhiều mỡ bằng thịt đùi, nên vị thanh và dễ ăn)
+- Mật ong 1 muỗng canh (Thay cho mật ong dùng đường cũng được)
+- Muối 1 muỗng canh
+- Tiêu một chút`,
+  grammarHighlights: [
+    {
+      text: '本当のハムのように',
+      grammarName: '〜のように',
+      translation: 'Giống như là thịt nguội thật sự',
+      explanation: 'N の ＋ ように: Ví von cái gì đó giống hệt như một thứ khác.'
+    },
+    {
+      text: 'サンドイッチはもちろん、ほかの料理にも',
+      grammarName: '〜はもちろん',
+      translation: 'Không chỉ bánh sandwich mà các món ăn khác cũng',
+      explanation: 'N1 ＋ はもちろん N2 ＋ も: Không chỉ A mà B cũng (còn hơn thế nữa).'
+    },
+    {
+      text: 'もも肉ほどあぶらが多くない',
+      grammarName: '〜ほど〜ない',
+      translation: 'Không nhiều mỡ bằng thịt đùi',
+      explanation: 'N ＋ ほど〜ない: A không đạt đến mức độ của B (không bằng).'
+    },
+    {
+      text: 'はちみつのかわりに',
+      grammarName: '〜かわりに',
+      translation: 'Thay cho mật ong',
+      explanation: 'N の ＋ かわりに: Sử dụng cái này thay thế cho cái kia.'
+    }
+  ]
+};
+
+export const tryN3Chapter5Part2Story: ChapterStory = {
+  chapter: 5,
+  titleJa: '5 手作りハムのレシピ（２）',
+  titleVi: '5. Công thức tự làm món thịt nguội (2)',
+  canDoJa: 'レシピを読んで、料理の手順や注意が理解できる。',
+  canDoVi: 'Đọc công thức biết được các bước nấu ăn và những chú ý khi làm.',
+  textJa: `(1日目)
+1. とりむね肉を切らずにボウルに入れて、初めにはちみつ、または砂糖をかけて、次に塩、こしょうの順にかけてよく混ぜます。
+2. 1をビニール袋に入れます。そのときできるだけ空気を入れないようにします。
+3. ビニール袋に入れたまま、冷蔵庫の中に入れて1日置いておきます。
+
+(2日目)
+1. とり肉をビニール袋から出してボウルに入れ、水ではちみつ（砂糖）、塩を洗い流します。
+2. さらに、きれいな水に1時間つけたままにします。
+3. 鍋にお湯をわかし、ふっとうしたところへとり肉を入れます。
+4. もう一度ふっとうしたら、すぐに火を止めてふたをします。
+5. そのまま冷めるまで置いておきましょう。
+6. 冷めたら取り出して冷蔵庫に入れて2、3日で食べきってください。`,
+  textVi: `(Ngày 1)
+1. Cho nguyên miếng ức gà chưa cắt vào bát, trước tiên rưới mật ong hoặc đường lên, tiếp theo rắc muối và tiêu theo thứ tự rồi trộn đều.
+2. Cho hỗn hợp số 1 vào túi nilon. Lúc đó cố gắng không để không khí lọt vào càng nhiều càng tốt.
+3. Cứ để nguyên trong túi nilon, cho vào tủ lạnh để 1 ngày.
+
+(Ngày 2)
+1. Lấy thịt gà ra khỏi túi nilon, cho vào bát, rửa sạch mật ong (đường), muối bằng nước.
+2. Hơn nữa, cứ ngâm trong nước sạch 1 tiếng đồng hồ.
+3. Đun sôi nước trong nồi, ngay lúc nước sôi thì thả thịt gà vào.
+4. Khi nước sôi lại một lần nữa, tắt bếp ngay và đậy vung lại.
+5. Hãy cứ để nguyên như vậy cho đến khi nguội.
+6. Khi đã nguội thì lấy ra cho vào tủ lạnh và hãy ăn hết trong 2, 3 ngày.`,
+  grammarHighlights: [
+    {
+      text: 'とりむね肉を切らずに',
+      grammarName: '〜ずに',
+      translation: 'Không cắt thịt ức gà',
+      explanation: 'V-ない + ずに: Không làm gì đó (giống 〜ないで).'
+    },
+    {
+      text: 'ビニール袋に入れたまま',
+      grammarName: '〜まま',
+      translation: 'Cứ để nguyên trong túi nilon',
+      explanation: 'V-た ＋ まま: Cứ để nguyên một trạng thái nào đó không đổi.'
+    },
+    {
+      text: 'ボウルに入れ、',
+      grammarName: 'V-~~ます~~',
+      translation: 'Cho vào bát,',
+      explanation: 'Dùng thể ます (bỏ ます) thay cho 〜て để nối câu (thường dùng trong văn viết).'
+    },
+    {
+      text: 'ふっとうしたところへ',
+      grammarName: '〜ところへ',
+      translation: 'Đúng lúc nước sôi',
+      explanation: '〜ところ: Đúng lúc (một việc gì đó xảy ra hoặc ai đó làm gì).'
+    },
+    {
+      text: '食べきってください',
+      grammarName: '〜きる',
+      translation: 'Hãy ăn cho hết',
+      explanation: 'V-~~ます~~ ＋ きる: Làm gì đó toàn bộ, hoàn thành hoàn toàn.'
+    }
+  ]
+};
 
 export const tryN3ChapterStories: ChapterStory[] = [
+  tryN3Chapter4Story,
+  tryN3Chapter5Story,
+  tryN3Chapter5Part2Story,
   tryN3Chapter1Story,
   tryN3Chapter1Part2Story,
   tryN3Chapter2Story,
-  tryN3Chapter2Part2Story
-, tryN3Chapter3Story];
+  tryN3Chapter2Part2Story,
+  tryN3Chapter3Part1Story,
+  tryN3Chapter3Part2Story
+];
+
+
+
 
 export const tryN3GrammarPoints: GrammarPoint[] = [
+
+  // Chương 4 (P1)
+  {
+    id: 'try-n3-c4-g31',
+    chapter: 4,
+    number: 31, stars: 3, formation: '〜ている／〜ておく → 〜てる／〜とく', translationVi: 'Thể rút gọn',
+    pattern: '〜てる／〜とく／〜ちゃう／〜なきゃ',
+    title: 'してる',
+    meaningJa: '音を省略したり、形を変えて使う',
+    meaningVi: 'Thể rút gọn (Văn nói)',
+    usageNote: 'Dùng để nói ngắn gọn lại trong hội thoại hàng ngày.',
+    table: {
+      headers: ['普通形\nThể thông thường', '縮約形\nThể rút gọn', '変化の法則\nQuy tắc chuyển đổi'],
+      rows: [
+        ['見ている\n読んでいる', '見てる\n読んでる', 'ている → てる\nでいる → でる *1'],
+        ['見ておく\n読んでおく', '見とく\n読んどく', 'ておく → とく\nでおく → どく *2'],
+        ['忘れてしまう\n読んでしまう', '忘れちゃう\n読んじゃう', 'てしまう → ちゃう\nでしまう → じゃう *3'],
+        ['見てはいけない\n読んではいけない', '見ちゃいけない\n読んじゃいけない', 'ては → ちゃ\nでは → じゃ'],
+        ['読まなければいけない\n読まなくてはいけない', '読まなきゃいけない\n読まなくちゃいけない', 'なければ → なきゃ\nなくては → なくちゃ'],
+      ],
+      notes: [
+        '*1 「見てて」「読んでた」のように II グループの動詞と同じように使われる。\n(được dùng giống như động từ nhóm 2: "見てて" và "読んでた")',
+        '*2 「見といて」「読んどいた」のように I グループの動詞と同じように使われる。\n(được dùng giống như động từ nhóm 1: "見といて" và "読んどいた")',
+        '*3 「読んじゃって」「忘れちゃった」のように I グループの動詞と同じように使われる。\n(được dùng giống như động từ nhóm 1: "読んじゃって" và "忘れちゃった")'
+      ]
+    },
+    examples: [
+      { ja: 'A：あ、あそこにきれいな花が咲いてるよ。\nB：ほんとだ。', vi: 'A: A, đằng kia có bông hoa đẹp đang nở kìa.\nB: Đúng thật.' },
+      { ja: 'A：これ、どこに置きますか。\nB：じゃ、あそこの机の上に置いといてください。', vi: 'A: Cái này để ở đâu ạ?\nB: Thế thì cứ để trên cái bàn đằng kia đi.' },
+      { ja: 'A：昼ご飯、食べた？\nB：うん、11時に食べちゃった。', vi: 'A: Đã ăn trưa chưa?\nB: Ừ, đã ăn xong lúc 11 giờ mất rồi.' },
+      { ja: 'A：宿題、終わった？ちゃんとしなきゃだめよ。\nB：はーい。', vi: 'A: Bài tập xong chưa? Không làm đàng hoàng là không được đâu đấy.\nB: Vâng ạ.' },
+    ]
+  },
+  {
+    id: 'try-n3-c4-g32',
+    chapter: 4,
+    number: 32, stars: 3, formation: '〜ない → 〜なきゃ', translationVi: 'Phải làm gì đó',
+    pattern: '〜なきゃ',
+    title: '行かなきゃ',
+    meaningJa: '〜なければいけない（省略）',
+    meaningVi: 'Phải làm gì đó',
+    usageNote: 'V-ない → V-なきゃ. Có đôi khi không cần nói hết câu, người ta vẫn hiểu nghĩa.',
+    examples: [
+      { ja: 'ねえ、ちょっと手伝って（ください）。', vi: 'Này' },
+      { ja: 'A：これ、よくわからないなあ。\nB：山田さんに聞いたら（どうですか）？', vi: 'giúp tớ một chút (nhé).' },
+      { ja: 'A：明日、来られる？\nB：わからない。無理かも（しれない）。', vi: 'A: Cái này tớ không hiểu lắm. \nB: Hỏi anh Yamada thì (sao)?' },
+      { ja: 'あ！大変！宿題しなきゃ（いけない）。', vi: 'A: Ngày mai cậu đến được không? \nB: Không biết nữa. Có thể là không được (cũng nên).' },
+    ]
+  },
+  {
+    id: 'try-n3-c4-g33',
+    chapter: 4,
+    number: 33, stars: 3, formation: '〜っけ', translationVi: '...phải không nhỉ?',
+    pattern: '〜っけ',
+    title: '出るんだっけ',
+    meaningJa: '確認する',
+    meaningVi: '...phải không nhỉ? (Xác nhận lại)',
+    usageNote: 'Thể thông thường ＋ っけ. (N/A-na thì thêm だ/だった + っけ). Sử dụng khi xác nhận điều gì đó mà bạn không rõ hoặc đã nghe rồi nhưng quên mất.',
+    examples: [
+      { ja: 'クリーニング屋、何時までだっけ。', vi: 'Tiệm giặt ủi mở cửa đến mấy giờ ấy nhỉ.' },
+      { ja: 'そのケーキ、どうしたの？今日、だれかの誕生日だっけ。', vi: 'Cái bánh kem đó sao vậy? Hôm nay là sinh nhật của ai à.' },
+      { ja: 'A：おかえりなさい。あれ、買ってきてくれた？\nB：え？何か頼まれてたっけ。', vi: 'A: Anh đã về. Ủa' },
+      { ja: 'A：あの店、ディナーだと高いんだっけ。\nB：クーポン券があるから、大丈夫だよ。', vi: 'anh đã mua về cho em chưa? \nB: Hả? Em có nhờ anh cái gì à.' },
+    ]
+  },
+  {
+    id: 'try-n3-c4-g34',
+    chapter: 4,
+    number: 34, stars: 1, formation: '普通形 (QK) ＋ りして', translationVi: 'Không chừng là',
+    pattern: '〜たりして',
+    title: '優勝したりして',
+    meaningJa: '〜かもしれない',
+    meaningVi: 'Không chừng là / Có lẽ',
+    usageNote: 'V-た / A-い(bỏ い)->かった / A-na/N だった ＋ りして. Phía trước luôn là thể quá khứ. Thể hiện sự phỏng đoán, "có lẽ ~", "không chừng ~".',
+    examples: [
+      { ja: 'A：佐藤さん、まだ来ないね。\nB：もしかして寝てたりして…。', vi: 'A: Sato vẫn chưa đến nhỉ. \nB: Không chừng là đang ngủ cũng nên...' },
+      { ja: 'A：これいくらかな？\nB：すごく高かったりして…。', vi: 'A: Cái này bao nhiêu nhỉ? \nB: Không chừng là đắt lắm đấy...' },
+      { ja: 'A：ねえ、あのサングラスの人、かっこいいよね。\nB：芸能人だったりして…。', vi: 'A: Này' },
+    ]
+  },
+  {
+    id: 'try-n3-c4-g35',
+    chapter: 4,
+    number: 35, stars: 2,
+    formation: 'V-た / V-ないくた ＋ って\nいA-~~い~~ くた / いA-~~い~~ くなくた ＋ って\nなA だ / なA じゃなくた ＋ って\nN だ / N じゃなくた ＋ って',
+    translationVi: 'Cho dù / Dù có... thì',
+    pattern: '〜たって',
+    title: 'がんばったって',
+    meaningJa: '「〜たって」は、「急いだって間に合わない」「先生だってわからないことはある」のように、「〜ても」と同じ意味で使う。',
+    meaningVi: 'Sử dụng với nghĩa giống 〜ても như trong câu "急いだって間に合わない" và "先生だってわからないことはある".',
+    examples: [
+      { ja: 'お金持ちだって、幸せじゃない人もいます。', vi: 'Dù có giàu thì cũng có người không hạnh phúc.' },
+      { ja: '病院に行ったって、すぐには治らないよ。', vi: 'Dù có đi bệnh viện thì cũng không khỏi ngay được đâu.' },
+      { ja: '悲しくたって、さびしくたって、絶対泣かない。', vi: 'Dù có buồn hay cô đơn thì tuyệt đối cũng không khóc.' },
+      { ja: 'まだ若いので、一晩ぐらい寝なくたって大丈夫です。', vi: 'Vì còn trẻ nên dù có một đêm không ngủ cũng không sao.' }
+    ]
+  },
+  {
+    id: 'try-n3-c4-g36',
+    chapter: 4,
+    number: 36, stars: 2,
+    formation: '普通形 ＋ に決まっている\n(※ なA~~だ~~ / N~~だ~~)',
+    translationVi: 'Chắc chắn là... / Nhất định là...',
+    pattern: '〜に決まっている',
+    title: '無理に決まってるよ',
+    meaningJa: '「〜に決まっている」は、「絶対〜だと思う」と強く言うときに使う。',
+    meaningVi: 'Sử dụng khi nói mạnh rằng tôi nghĩ nhất định/chắc chắn là ~.',
+    examples: [
+      { ja: 'A：あ、かわいい犬。チョコレートあげてもいいかな。\nB：え？犬にチョコ？だめに決まってるじゃない！', vi: 'A: A, chó con dễ thương quá. Cho sô cô la có được không nhỉ.\nB: Hả? Cho chó ăn sô cô la á? Chắc chắn là không được rồi!' },
+      { ja: 'あのチームは今年も最下位に決まってるよ。', vi: 'Đội đó năm nay chắc chắn cũng chót bảng thôi.' },
+      { ja: 'A：おばあちゃん、プレゼント、喜んでくれるかなあ。\nB：Aちゃんが選んだんだから、喜ぶに決まってるよ。', vi: 'A: Bà ngoại liệu có vui mừng với món quà này không nhỉ.\nB: Quà do bé A chọn thì chắc chắn là bà sẽ vui rồi.' }
+    ]
+  },
+  {
+    id: 'try-n3-c4-g37',
+    chapter: 4,
+    number: 37, stars: 3,
+    formation: '普通形 ＋ じゃない\n(※ 下降イントネーションになる)',
+    translationVi: 'Chẳng phải là... sao / Đúng không',
+    pattern: '〜じゃない',
+    title: '行かなきゃだめじゃない',
+    meaningJa: '「〜じゃない」は、聞き手も知っていると思うことや同じ意見だと思うことを確認するときに使う。非難や発見の意味を表すこともある。否定の意味はない。言うときに語尾を上げない。',
+    meaningVi: 'Sử dụng khi xác nhận điều mà bạn nghĩ người nghe cũng biết điều đó hoặc bạn nghĩ người nghe có cùng ý kiến với bạn. Có khi mang nghĩa chê trách hoặc phát hiện ra một điều gì đó. Không mang nghĩa phủ định. Khi nói, không lên giọng ở cuối câu.',
+    examples: [
+      { ja: 'A：今度のクラス会、どこでする？\nB：レストランABK、広くて、交通の便もいいじゃない。あそこがいいよ。', vi: 'A: Buổi họp lớp lần này sẽ tổ chức ở đâu?\nB: Nhà hàng ABK rộng rãi mà giao thông cũng tiện lợi chẳng phải sao. Chỗ đó được đấy.' },
+      { ja: 'A：駅前に新しいコンビニができたじゃないですか。今、おにぎりが全部50円引きなんですよ。\nB：へえ、そうですか。', vi: 'A: Chẳng phải là có cửa hàng tiện lợi mới mở trước nhà ga sao. Bây giờ cơm nắm đều đang giảm giá 50 yên đấy.\nB: Ồ, vậy à.' },
+      { ja: 'A：あ！いけない！電話するの忘れてた。\nB：だめじゃない。ちゃんと連絡しなきゃ。', vi: 'A: Á! Chết rồi! Quên gọi điện mất.\nB: Không được rồi đúng không. Cậu phải liên lạc đàng hoàng chứ.' },
+      { ja: 'A：Bさん、すごい！歌下手だって言ってたけど、上手じゃない。\nB：この歌だけね。一生けんめい練習したの。', vi: 'A: Anh B, giỏi quá! Anh bảo mình hát dở nhưng mà hát hay chẳng phải sao.\nB: Chỉ bài này thôi. Tôi đã phải luyện tập rất chăm chỉ đấy.' }
+    ],
+    plusNote: {
+      title: 'Plus: 〜じゃん',
+      formation: '普通形 ＋ じゃん',
+      meaningVi: '「〜じゃん」cũng được sử dụng tương tự như「〜じゃない」trong văn nói thân mật.',
+      examples: [
+        { ja: 'A：だめじゃん。友だちの宿題写しちゃ。自分でやらなきゃ意味ないじゃん！\nB：そんなに怒らなくてもいいじゃん。', vi: 'A: Không được đâu nhé. Chép bài tập của bạn ấy. Phải tự làm thì mới có ý nghĩa chứ!\nB: Không cần phải nổi cáu như thế đâu.' }
+      ]
+    }
+  },
+  {
+    id: 'try-n3-c4-g38',
+    chapter: 4,
+    number: 38, stars: 1,
+    formation: 'N ＋ って',
+    translationVi: 'Về ~ thì / Cái gọi là ~ thì',
+    pattern: '〜って',
+    title: '強い選手って',
+    meaningJa: '「〜って」は、「クロってかわいいね」のように、「〜は」のかわりに使う。',
+    meaningVi: 'Sử dụng thay cho trợ từ「〜は」như trong câu "クロってかわいいね" (nhấn mạnh chủ đề được nhắc tới).',
+    examples: [
+      { ja: '山田さんって親切よね。', vi: 'Yamada thì tốt bụng nhỉ.' },
+      { ja: 'これってただでもらってもいいの？', vi: 'Cái này thì nhận miễn phí có được không?' },
+      { ja: 'ディズニーランドってどこにあるか知ってる？', vi: 'Disneyland thì cậu có biết nằm ở đâu không?' },
+      { ja: 'リンさんっていつ帰国するんだっけ。', vi: 'Lin thì khi nào về nước ấy nhỉ.' }
+    ]
+  },
+  {
+    id: 'try-n3-c4-g39',
+    chapter: 4,
+    number: 39, stars: 3,
+    formation: '普通形 ＋ みたい（だ）\n(※ なA~~だ~~ / N~~だ~~)',
+    translationVi: 'Có vẻ là / Hình như là',
+    pattern: '〜みたいだ',
+    title: '大変みたいだね',
+    meaningJa: '「〜みたい」は、話し手の推量を表す「〜よう」の意味で使う。',
+    meaningVi: 'Sử dụng với nghĩa giống「〜よう」để biểu thị sự suy đoán của người nói dựa trên cảm giác hoặc thông tin nhận được.',
+    examples: [
+      { ja: 'A：なんか疲れてるみたいだけど、仕事忙しいの？\nB：そうじゃなくて、勤務地が変わって通勤が大変なんだ。', vi: 'A: Trông cậu có vẻ mệt mỏi, công việc bận rộn lắm à?\nB: Không phải vậy, do nơi làm việc thay đổi nên đi làm hơi vất vả.' },
+      { ja: 'A：新しくできた美術館、人気あるみたいだね。もう行った？\nB：うん、すてきな絵がたくさんあったよ。', vi: 'A: Bảo tàng mĩ thuật mới xây có vẻ được yêu thích nhỉ. Cậu đã đi chưa?\nB: Ừ, có nhiều bức tranh tuyệt đẹp lắm.' },
+      { ja: 'となりのお嬢さん、今日成人式みたい。きれいな着物着て出ていったから。', vi: 'Cô gái nhà bên hình như hôm nay đi dự lễ Thành nhân. Thấy cô ấy mặc bộ Kimono rất đẹp đi ra ngoài.' },
+      { ja: 'ようやく梅雨明けしたみたいだね。これから暑くなるね。', vi: 'Có vẻ như mùa mưa cuối cùng cũng đã kết thúc rồi. Từ giờ sẽ nóng lên đây.' },
+      { ja: '私、どこかで財布落としちゃったみたい。いくら探してもないのよ。', vi: 'Tôi có vẻ như đã làm rơi ví ở đâu đó rồi. Tìm mãi mà không thấy.' }
+    ]
+  },
+  {
+    id: 'try-n3-c4-g40',
+    chapter: 4,
+    number: 40, stars: 3,
+    formation: 'V-ば / V-なければ ＋ よかった\nいA-~~い~~ ければ / いA-~~い~~ くなければ ＋ よかった\nなA なら / なA じゃなければ ＋ よかった\nN なら / N じゃなければ ＋ よかった',
+    translationVi: 'Giá mà... thì tốt / Phải chi...',
+    pattern: '〜ばよかった',
+    title: 'やっておけばよかった',
+    meaningJa: '「〜ばよかった」は、自分が〜しなかったから悪い結果になったことを後悔したり、ほかの人がしなかったことを残念に思ったときに使う。',
+    meaningVi: 'Sử dụng khi bạn hối hận vì mình đã không làm "~" nên bị kết quả xấu hoặc cảm thấy tiếc về việc người khác đã không làm.',
+    examples: [
+      { ja: 'A：わあ、富士山がとってもきれい！\nB：ほんと！カメラを持ってくればよかったね。', vi: 'A: Oa, núi Phú Sĩ đẹp quá!\nB: Thật đấy! Giá mà mình mang máy ảnh theo thì tốt quá nhỉ.' },
+      { ja: '急いでいたからタクシーに乗ったんだけど、乗らなければよかったよ。電車より時間がかかっちゃった。', vi: 'Vì đang vội nên tôi đã bắt taxi, nhưng giá mà tôi không bắt taxi thì tốt. Đi taxi còn mất nhiều thời gian hơn cả đi tàu điện.' },
+      { ja: 'このかばん、機内持ち込みだめだって。もうちょっと小さければよかったんだけど…。', vi: 'Cái túi này nghe nói không được mang lên máy bay. Giá mà nó nhỏ hơn một chút thì tốt...' },
+      { ja: 'A：Bちゃんのお母さん、すてきだよね。私は子どものころ、Bちゃんのお母さんが私のお母さんならよかったのにって、思っていたの。\nB：へえ。Aちゃん、そんなこと思っていたの。ぜんぜん知らなかった。', vi: 'A: Mẹ của bé B tuyệt vời nhỉ. Hồi nhỏ, tớ đã từng ước giá mà mẹ của B là mẹ của mình thì tốt biết mấy.\nB: Ồ. A từng nghĩ như vậy sao. Tớ hoàn toàn không biết luôn.' }
+    ]
+  },
+  {
+    id: 'try-n3-c4-g41',
+    chapter: 4,
+    number: 41, stars: 3,
+    formation: 'N / V-て ＋ ばかり',
+    translationVi: 'Toàn là / Chỉ lo / Suốt ngày',
+    pattern: '〜ばかり',
+    title: '遊んでばかりだった',
+    meaningJa: '「〜ばかり」は、〜が多くて困る、〜以外のことをしないから困ると批判的に言うときに使う。',
+    meaningVi: 'Sử dụng khi nói mang tính chỉ trích rằng bởi vì chỉ làm "~" hoặc làm "~" quá nhiều nên gặp khó khăn.',
+    usageNote: 'Ngoài ra còn có dạng 「V-る / V-ている ＋ ばかり」cũng được sử dụng.',
+    examples: [
+      { ja: '最近雨ばかりで、洗濯物が乾かなくて困っています。', vi: 'Gần đây toàn mưa nên tôi đang khổ sở vì đồ giặt không khô được.' },
+      { ja: 'ゲームばかりしていると、目が悪くなりますよ。', vi: 'Nếu cứ chơi game suốt thì mắt sẽ kém đi đấy.' },
+      { ja: '逃げてばかりじゃ勝てないぞ。攻めていけ！', vi: 'Nếu cứ lo chạy trốn suốt thì không thắng được đâu. Tấn công đi!' },
+      { ja: 'あの子はいたずら好きで、みんなを困らせてばかりいる。', vi: 'Đứa trẻ đó thích nghịch ngợm, lúc nào cũng toàn làm khó mọi người.' },
+      { ja: '彼は文句を言うばかりで、ぜんぜん働かない。', vi: 'Anh ta toàn là phàn nàn chứ chẳng chịu làm việc gì cả.' },
+      { ja: 'コアラを見に行ったのに、寝ているばかりでぜんぜん動かないのでがっかりした。', vi: 'Rõ ràng là đã đi xem gấu koala thế mà nó toàn ngủ, chẳng chịu nhúc nhích gì cả nên tôi thấy thất vọng.' }
+    ]
+  },
+  {
+    id: 'try-n3-c5-g42',
+    chapter: 5,
+    number: 42, stars: 2,
+    formation: 'N の / V-る / V-た / V-ている ＋ ように / ような N / ようだ',
+    translationVi: 'Giống như là / Như là...',
+    pattern: '〜のように',
+    title: '本当のハムのように',
+    meaningJa: '「〜よう」は、「氷のように冷たい手」のように、似ているものを言って、様子や状況を説明するときに使う。',
+    meaningVi: 'Sử dụng khi giải thích trạng thái, tình huống bằng cách ví nó giống như là cái gì đó, ví dụ như "氷のように冷たい手".',
+    examples: [
+      { ja: 'あのえんぴつのような形をしている建物は、電話会社のビルです。', vi: 'Tòa nhà có hình dáng giống như cây bút chì kia là tòa nhà của công ty điện thoại.' },
+      { ja: 'わが社の新しいロボットはまるで人間のように手足が自由に動きます。', vi: 'Robot mới của công ty chúng tôi có tay chân chuyển động tự do hệt như con người.' },
+      { ja: 'あの2人が話していると、まるでけんかをしているように聞こえる。', vi: 'Hai người kia mà nói chuyện thì nghe giống hệt như đang cãi nhau vậy.' },
+      { ja: '今日は宿題が山のようにたくさんある。', vi: 'Hôm nay bài tập về nhà nhiều như núi.' },
+      { ja: '夕方になって半額セールが始まると、お弁当は飛ぶように売れて、あっという間になくなってしまった。', vi: 'Trời về chiều, khi đợt giảm giá một nửa bắt đầu thì cơm hộp bán chạy như tôm tươi, chớp mắt đã hết sạch.' }
+    ],
+    plusNote: {
+      title: 'Plus: 〜みたい',
+      formation: 'N / V-る / V-た / V-ている ＋ みたい(だ) / みたいに / みたいな N',
+      meaningVi: 'Trong văn nói hội thoại thường sử dụng dạng「〜みたい」thay cho「〜よう」.',
+      examples: [
+        { ja: 'A：山田先生って厳しいけど私たちのことほんとに心配してくれるよね。\nB：そうそう、ちょっとお父さんみたい。', vi: 'A: Thầy Yamada khó tính thế thôi chứ thực sự rất lo lắng cho chúng ta nhỉ.\nB: Đúng đúng, hơi giống như bố vậy.' },
+        { ja: 'A：生まれたばかりの赤ちゃんって、猿みたいだよね。\nB：そんなことないよ。うちの子はかわいかったよ。', vi: 'A: Trẻ sơ sinh mới đẻ trông giống như khỉ ấy nhỉ.\nB: Đâu có. Con tôi hồi trước trông dễ thương lắm.' },
+        { ja: 'わあ、すごい汗だね。シャワーを浴びたみたい。', vi: 'Oa, mồ hôi đầm đìa thế. Giống như vừa mới tắm vòi sen xong vậy.' }
+      ]
+    }
+  },
+  {
+    id: 'try-n3-c5-g43',
+    chapter: 5,
+    number: 43, stars: 2,
+    formation: 'N1 ＋ はもちろん N2 ＋ も',
+    translationVi: 'Không chỉ... mà còn...',
+    pattern: '〜はもちろん',
+    title: 'サンドイッチはもちろん、ほかの料理にも',
+    meaningJa: '「AはもちろんBも」の形で、「Aだけでなく、さらにBも」と言いたいときに使う。',
+    meaningVi: 'Sử dụng khi muốn nói "không chỉ A mà B cũng" (A là điều hiển nhiên, B cũng vậy).',
+    examples: [
+      { ja: '山形はスキーはもちろん、温泉もいいのでたいへん人気があります。', vi: 'Yamagata không chỉ nổi tiếng về trượt tuyết mà suối nước nóng cũng rất tuyệt nên rất được yêu thích.' },
+      { ja: 'この店、ラーメンはもちろん、ギョーザもおいしいと評判ですよ。', vi: 'Cửa hàng này không chỉ mì ramen mà gyoza cũng được đánh giá là ngon đấy.' },
+      { ja: 'このタイプの旅行保険は、事故はもちろん、病気や盗難も保障いたします。', vi: 'Loại bảo hiểm du lịch này sẽ bảo đảm cho không chỉ tai nạn mà cả bệnh tật hay trộm cắp.' },
+      { ja: '父はゴルフが趣味で、週末はもちろん平日も仕事のあとで練習しています。', vi: 'Bố tôi có sở thích đánh golf, cuối tuần thì đương nhiên rồi, ngay cả ngày thường sau khi làm việc cũng đi luyện tập.' }
+    ]
+  },
+  {
+    id: 'try-n3-c5-g44',
+    chapter: 5,
+    number: 44, stars: 2,
+    formation: 'N / V-る / V-た / V-ている / V-ていた ＋ ほど〜ない',
+    translationVi: 'Không... bằng',
+    pattern: '〜ほど〜ない',
+    title: 'もも肉ほどあぶらが多くない',
+    meaningJa: '「AはBほど〜ない」の形で、AはBのレベルまでは達していないことを言うときに使う。',
+    meaningVi: 'Sử dụng khi muốn nói A không đạt đến mức độ của B (A không... bằng B).',
+    examples: [
+      { ja: '今年の冬は去年ほど寒くないですね。', vi: 'Mùa đông năm nay không lạnh bằng năm ngoái nhỉ.' },
+      { ja: '和菓子はケーキほどカロリーが高くないと思って、つい食べすぎてしまう。', vi: 'Nghĩ là bánh kẹo Nhật không cao calo bằng bánh kem nên lỡ ăn quá nhiều.' },
+      { ja: '世の中はあなたが考えているほど甘くない。', vi: 'Thế giới này không dễ dàng như bạn nghĩ đâu.' },
+      { ja: '昨日の数学のテストは、思ったほど難しくなかった。', vi: 'Bài kiểm tra toán ngày hôm qua không khó như đã nghĩ.' },
+      { ja: '今日見た映画は、友だちが言っていたほどおもしろくなかった。', vi: 'Bộ phim hôm nay tôi xem không thú vị bằng mức bạn tôi đã nói.' }
+    ]
+  },
+  {
+    id: 'try-n3-c5-g45',
+    chapter: 5,
+    number: 45, stars: 3,
+    formation: 'N の / V-る / V-た / V-ない ＋ かわりに',
+    translationVi: 'Thay cho / Thay vì / Đổi lại',
+    pattern: '〜かわりに',
+    title: 'はちみつのかわりに',
+    meaningJa: '「〜かわりに」は、ほかの人がする、ほかのものを使う、ほかのことをすると言うときに使う。交換条件などを表すときにも使われる。',
+    meaningVi: 'Sử dụng khi nói rằng làm việc khác, sử dụng cái khác, người khác làm (thay cho). Mẫu này cũng được sử dụng khi đưa ra điều kiện trao đổi (đổi lại).',
+    examples: [
+      { ja: '母の帰りが遅くなる日は、母のかわりに私が夕食を作ることになっている。', vi: 'Vào những ngày mẹ về trễ, theo quy định thì tôi sẽ làm bữa tối thay cho mẹ.' },
+      { ja: 'スミスさんはそばを食べるとき、おはしのかわりにフォークを使うそうだ。', vi: 'Anh Smith nghe nói khi ăn mì soba, anh ấy dùng nĩa thay cho đũa.' },
+      { ja: '私たちは便利な生活を手に入れたかわりに、多くの自然を失った。', vi: 'Chúng ta đã đổi lấy một cuộc sống tiện lợi, nhưng bù lại đã đánh mất đi rất nhiều thiên nhiên.' },
+      { ja: '友だちに韓国語を教えるかわりに、日本料理の作り方を教えてもらっている。', vi: 'Tôi dạy tiếng Hàn cho bạn, bù lại bạn ấy dạy tôi cách làm các món ăn Nhật.' }
+    ],
+    plusNote: {
+      title: 'Plus: N にかわって / にかわり',
+      formation: 'N ＋ にかわって / にかわり',
+      meaningVi: 'Sử dụng tương tự như 〜かわりに, mang nghĩa thay mặt ai đó, thay thế cho cái gì đó.',
+      examples: [
+        { ja: '今後はガソリンで走る車にかわって電気自動車が普及するのだろうか。', vi: 'Từ nay về sau liệu xe điện có trở nên phổ biến thay thế cho xe chạy bằng xăng không nhỉ?' },
+        { ja: '本日は、入院中の父にかわり、私がごあいさつさせていただきます。', vi: 'Hôm nay, thay mặt cho người bố đang nằm viện, tôi xin phép được phát biểu đôi lời.' }
+      ]
+    }
+  },
+  {
+    id: 'try-n3-c5-g46',
+    chapter: 5,
+    number: 46, stars: 2,
+    formation: 'V-ない ＋ ずに\n(※「する」→「せずに」「来る」→「来ずに」)',
+    translationVi: 'Không / Mà không',
+    pattern: '〜ずに',
+    title: 'とりむね肉を切らずに',
+    meaningJa: '「〜ずに」は、「〜ないで」の意味で使われる。',
+    meaningVi: 'Được sử dụng với nghĩa giống như「〜ないで」.',
+    examples: [
+      { ja: 'かさを持たずに出かけて、雨に降られてしまった。', vi: 'Tôi đi ra ngoài mà không mang ô nên đã bị mắc mưa.' },
+      { ja: '名前を書かずにテストを出してしまった。', vi: 'Tôi đã nộp bài kiểm tra mà không viết tên.' },
+      { ja: '涙のわけは聞かずに、そっとしておいてほしいと彼女に言われた。', vi: 'Cô ấy nói với tôi rằng mong tôi cứ để cô ấy yên mà không hỏi lý do cô ấy khóc.' },
+      { ja: '宛先のアドレスをよく確認せずに送信してしまった。', vi: 'Tôi đã lỡ bấm gửi đi mà không xác nhận kĩ địa chỉ nhận.' }
+    ]
+  },
+  {
+    id: 'try-n3-c5-g47',
+    chapter: 5,
+    number: 47, stars: 3,
+    formation: 'V-た / N の ＋ まま',
+    translationVi: 'Cứ để nguyên / Giữ nguyên',
+    pattern: '〜まま',
+    title: 'ビニール袋に入れたまま',
+    meaningJa: '「〜たまま」は、状態が変わらないで続いていることを言うときに使う。次に何かをしなければならないのに、していないと言うときにも使う。',
+    meaningVi: 'Sử dụng khi nói một trạng thái nào đó vẫn đang tiếp tục không thay đổi. Có khi dùng để nói rằng phải làm một việc gì đó tiếp theo nhưng lại không làm.',
+    usageNote: 'Ngoài ra tính từ cũng được sử dụng (いA ＋ まま / なAな ＋ まま).',
+    examples: [
+      { ja: 'すぐに戻ってきますから、机の上はこのままにしておいてください。', vi: 'Vì tôi sẽ quay lại ngay nên trên bàn cứ để nguyên như vậy nhé.' },
+      { ja: '久しぶりに帰ったふるさとは以前のままだった。', vi: 'Quê hương mà đã lâu lắm tôi mới trở về vẫn y như trước kia.' },
+      { ja: '日本では卵を生のまま食べるというのは本当ですか。', vi: 'Ở Nhật người ta ăn trứng sống có phải là sự thật không?' },
+      { ja: '冬はくつ下をはいたまま寝ています。', vi: 'Mùa đông tôi toàn mang tất để đi ngủ.' },
+      { ja: '友だちから本を借りたままで、まだ返していない。', vi: 'Tôi mượn sách của bạn cứ để đó mà vẫn chưa trả.' },
+      { ja: '部屋の電気をつけたままで寝てしまった。', vi: 'Tôi cứ để điện trong phòng sáng nguyên như thế mà ngủ mất.' }
+    ],
+    plusNote: {
+      title: 'Plus: いA / なA ＋ まま',
+      meaningVi: 'Tính từ cũng có thể kết hợp với まま.',
+      examples: [
+        { ja: 'この本は2冊買って、1冊は新しいままとっておくつもりです。', vi: 'Cuốn sách này tôi mua 2 quyển, dự định sẽ giữ lại 1 quyển cứ để nguyên mới tinh như vậy.' },
+        { ja: 'この冷蔵庫は魚でも野菜でも新鮮なまま保存できます。', vi: 'Cái tủ lạnh này dù là cá hay rau thì cũng có thể bảo quản tươi nguyên.' }
+      ]
+    }
+  },
+  {
+    id: 'try-n3-c5-g48',
+    chapter: 5,
+    number: 48, stars: 3,
+    formation: 'V-~~ます~~',
+    translationVi: '(Làm gì đó) và...',
+    pattern: 'V-~~ます~~',
+    title: 'ボウルに入れ、',
+    meaningJa: '「調査し、レポートを書く」のように、「〜て」のかわりに、ます形を使うことがある。',
+    meaningVi: 'Dùng thể ます thay cho「〜て」, như trong câu "調査し、レポートを書く". Thường được sử dụng trong văn viết.',
+    examples: [
+      { ja: 'アンケートを実施し、結果をまとめて発表する。', vi: 'Tiến hành khảo sát, tổng hợp kết quả và báo cáo.' },
+      { ja: '交通ルールを守り、安全運転をしましょう。', vi: 'Hãy tuân thủ luật lệ giao thông và lái xe an toàn.' },
+      { ja: '高速道路の料金が値下げされ、利用者が増えた。', vi: 'Phí đường cao tốc được giảm xuống và số người sử dụng đã tăng lên.' }
+    ]
+  },
+  {
+    id: 'try-n3-c5-g49',
+    chapter: 5,
+    number: 49, stars: 2,
+    formation: 'V-る / V-た / V-ている ＋ ところ',
+    translationVi: 'Đúng lúc / Vào lúc',
+    pattern: '〜ところ',
+    title: 'ふっとうしたところへ',
+    meaningJa: '「〜ところへ、…」は、ちょうど「〜」の場面、「〜」のときに、「…」をする、「…」が起きたと言うときに使う。',
+    meaningVi: 'Dùng「〜ところへ、…」khi bạn nói rằng ai đó đã làm "..." hay cái "..." đã xảy ra đúng ngay lúc "~" hay trong hoàn cảnh "~".',
+    usageNote: 'Trợ từ đi sau "ところ" thay đổi theo động từ đằng sau nó, ví dụ như "〜ところを見られた", "〜ところへ/に来た" và "〜ところで終わった".\nNgoài ra dạng「V-ていた / V-ようとした ＋ ところ」「いA ＋ ところ」cũng được sử dụng.',
+    examples: [
+      { ja: 'あくびしたところを写真に撮られたって、佐藤さん、怒ってたよ。', vi: 'Đúng lúc ngáp thì bị chụp ảnh lại, Satou tức giận lắm đó.' },
+      { ja: '大統領が記者会見をしているところに、緊急ニュースが飛び込んできた。', vi: 'Đúng lúc tổng thống đang tổ chức họp báo thì có tin khẩn cấp chen ngang.' },
+      { ja: 'A：試験、どうだった？\nB：うん。最後の問題が解けたところで、試験終了のチャイムが鳴ったんだ。', vi: 'A: Bài kiểm tra sao rồi?\nB: Ừ. Vừa đúng lúc giải xong bài cuối thì chuông báo hết giờ làm bài reo.' },
+      { ja: '部長がお客さんと話をしているところに声をかけて、あとで注意されてしまった。', vi: 'Tôi lên tiếng gọi đúng lúc trưởng phòng đang nói chuyện với khách nên sau đó đã bị nhắc nhở.' }
+    ],
+    plusNote: {
+      title: 'Plus: V-ていた / V-ようとした / いA ＋ ところ',
+      meaningVi: 'Các dạng khác kết hợp với ところ.',
+      examples: [
+        { ja: 'その亀は子どもたちにいじめられていたところを、太郎に助けられました。', vi: 'Con rùa đó đang bị bọn trẻ bắt nạt thì đúng lúc đó được Tarou cứu.' },
+        { ja: '犯人は逃げようとしたところを、警官に撃たれ、重傷を負いました。', vi: 'Phạm nhân định bỏ trốn thì đúng lúc đó bị cảnh sát bắn trọng thương.' },
+        { ja: 'A：おばさん、こんにちは。\nB：あ、ちょうどいいところへ来た。ちょっと手伝って。', vi: 'A: Chào bác ạ.\nB: A, cháu đến đúng lúc quá. Phụ bác một tay với.' }
+      ]
+    }
+  },
+  {
+    id: 'try-n3-c5-g50',
+    chapter: 5,
+    number: 50, stars: 3,
+    formation: 'V-~~ます~~ ＋ きる',
+    translationVi: '... hết / Xong / Hoàn toàn',
+    pattern: '〜きる',
+    title: '２、３日で食べきってください',
+    meaningJa: '「〜きる」は、全部〜する、最後まで〜すると言うときに使われる。「〜きれない」は多すぎて全部〜できない、完全には〜できないという意味で使う。「疲れきる」「困りきる」など、決まった言葉と一緒に「とても〜だ」という意味で使われることもある。',
+    meaningVi: '〜きる được dùng để nói làm gì đó hết toàn bộ hay làm đến cùng. 〜きれない nghĩa là quá nhiều nên không thể làm toàn bộ hoặc không thể hoàn thành cái gì đó. Có khi nó đi cùng với một số từ nhất định như "疲れきる", "困りきる" với nghĩa "rất ~".',
+    examples: [
+      { ja: 'この目薬は2週間で使いきってください。残ったら使わないで捨ててください。', vi: 'Thuốc nhỏ mắt này hãy dùng hết trong 2 tuần. Nếu còn thừa thì đừng dùng mà hãy vứt đi.' },
+      { ja: 'こんなたくさんの荷物、寮の部屋に入りきらないよ。', vi: 'Đồ đạc nhiều thế này thì không thể cho hết vào phòng ký túc xá được đâu.' },
+      { ja: '父はずっと残業が続いていて、疲れきった顔をしている。', vi: 'Bố tôi liên tục làm thêm giờ suốt nên nét mặt trông có vẻ hoàn toàn kiệt sức.' },
+      { ja: '両親に反対されているけれど、歌手になる夢はどうしてもあきらめきれない。', vi: 'Tuy bị bố mẹ phản đối nhưng giấc mơ trở thành ca sĩ thì dù thế nào tôi cũng không thể hoàn toàn từ bỏ được.' }
+    ]
+  },
   {
     id: 'try-n3-c1-g1',
     chapter: 1,
@@ -1002,7 +1625,7 @@ export const tryN3GrammarPoints: GrammarPoint[] = [
     chapter: 3,
     number: 21,
     pattern: '〜による／〜によって',
-    title: '21. 〜による／〜によって',
+    title: 'インターネットによる',
     stars: 2,
     formation: 'N ＋ によって\nN ＋ による ＋ N',
     translationVi: 'Bằng cách / Thông qua',
@@ -1032,7 +1655,7 @@ export const tryN3GrammarPoints: GrammarPoint[] = [
     chapter: 3,
     number: 22,
     pattern: '〜に対して',
-    title: '22. 〜に対して',
+    title: 'に対して',
     stars: 3,
     formation: 'N ＋ に対して（は／も）\nN ＋ に対し\nN ＋ に対する ＋ N',
     translationVi: 'Đối với',
@@ -1062,7 +1685,7 @@ export const tryN3GrammarPoints: GrammarPoint[] = [
     chapter: 3,
     number: 23,
     pattern: '〜ため（に）',
-    title: '23. 〜ため（に）',
+    title: 'ため',
     stars: 3,
     formation: '普通形 ＋ ため（に）\n(※ なA-~~だ~~ ＋ な / N-~~だ~~ ＋ の)',
     translationVi: 'Vì / Do',
@@ -1093,7 +1716,7 @@ export const tryN3GrammarPoints: GrammarPoint[] = [
     chapter: 3,
     number: 24,
     pattern: '〜につき',
-    title: '24. 〜につき',
+    title: 'につき',
     stars: 1,
     formation: 'N ＋ につき',
     translationVi: 'Mỗi / Cứ mỗi',
@@ -1119,7 +1742,7 @@ export const tryN3GrammarPoints: GrammarPoint[] = [
     chapter: 3,
     number: 25,
     pattern: '〜とおり',
-    title: '25. 〜とおり',
+    title: 'とおり',
     stars: 3,
     formation: 'V-る / V-た ＋ とおりだ / とおり（に）\nN ＋ の ＋ とおりだ / とおり（に）',
     translationVi: 'Đúng như / Theo như',
@@ -1154,6 +1777,172 @@ export const tryN3GrammarPoints: GrammarPoint[] = [
         }
       ]
     }
+  },
+  {
+    id: 'try-n3-c3-g26',
+    chapter: 3,
+    number: 26,
+    pattern: '〜を通して／〜を通じて',
+    title: '野菜作りを通して',
+    stars: 1,
+    formation: 'N ＋ を通して / を通じて',
+    translationVi: 'Thông qua',
+    meaningJa: '直接ではなく、人、手段、物事が間に入って何かをすることを表す。',
+    meaningVi: 'Sử dụng khi làm một cái gì đó không trực tiếp mà thông qua người khác, cách thức khác, sự việc khác.',
+    examples: [
+      {
+        ja: '現在はインターネットを通して、すぐに世界中にニュースが広まる。',
+        vi: 'Hiện tại thông qua internet, tin tức lập tức lan truyền ra toàn thế giới.'
+      },
+      {
+        ja: '私たちは読書を通して色々な人の考え方を知ることができます。',
+        vi: 'Chúng ta có thể biết được cách suy nghĩ của nhiều người thông qua việc đọc sách.'
+      },
+      {
+        ja: '取材は、弁護士を通して申し込んでください。',
+        vi: 'Việc lấy tin tức xin vui lòng đăng ký thông qua luật sư.'
+      },
+      {
+        ja: '私は海外留学の経験を通じて多くのことを学んだ。',
+        vi: 'Tôi đã học được rất nhiều điều thông qua kinh nghiệm du học nước ngoài.'
+      }
+    ]
+  },
+  {
+    id: 'try-n3-c3-g27',
+    chapter: 3,
+    number: 27,
+    pattern: '〜のような／〜のように',
+    title: 'バーベキューパーティーのような楽しいイベント',
+    stars: 3,
+    formation: 'N ＋ のように\nN ＋ のような ＋ N',
+    translationVi: 'Giống như / Như là (đưa ra ví dụ)',
+    meaningJa: '代表的な例をあげるときに使う。',
+    meaningVi: 'Sử dụng khi đưa ra một ví dụ điển hình.',
+    examples: [
+      {
+        ja: 'インフルエンザのようなほかの人にうつる病気になったら、治るまで学校へ来てはいけないことになっています。',
+        vi: 'Nếu mắc bệnh lây nhiễm cho người khác như là cúm, theo quy định thì không được đến trường cho đến khi khỏi.'
+      },
+      {
+        ja: 'われわれのようなプロのスポーツ選手には食事も練習と同じぐらい大切です。',
+        vi: 'Đối với những vận động viên thể thao chuyên nghiệp như chúng tôi thì bữa ăn cũng quan trọng giống như việc luyện tập vậy.'
+      },
+      {
+        ja: '梅雨のように雨の多い季節は洗濯物が乾かなくて困ります。',
+        vi: 'Vào những mùa mưa nhiều như mùa mưa (Tsuyu) thì quần áo giặt không khô được rất rắc rối.'
+      },
+      {
+        ja: '退院したばかりなので、テニスのように激しいスポーツはまだできません。',
+        vi: 'Vì vừa mới xuất viện nên tôi chưa thể chơi được những môn thể thao mạnh như là quần vợt.'
+      }
+    ],
+    plusNote: {
+      title: 'Plus: 〜みたい',
+      formation: 'N ＋ みたい',
+      translationVi: 'Giống như là',
+      meaningVi: 'Trong hội thoại với bạn bè cũng dùng「〜みたい」.',
+      examples: [
+        {
+          ja: 'ピアノみたいに大きくて重いものがあると、引っ越しが大変だね。',
+          vi: 'Nếu có đồ vật to và nặng như đàn piano thì chuyển nhà cực lắm nhỉ.'
+        },
+        {
+          ja: 'キュウリやトマトみたいな夏野菜は育てやすいそうだ。',
+          vi: 'Nghe nói các loại rau mùa hè như dưa chuột hay cà chua thì dễ trồng.'
+        },
+        {
+          ja: '冬は沖縄みたいな暖かいところに旅行に行きたいな。',
+          vi: 'Vào mùa đông tôi muốn đi du lịch đến những nơi ấm áp như Okinawa quá.'
+        }
+      ]
+    }
+  },
+  {
+    id: 'try-n3-c3-g28',
+    chapter: 3,
+    number: 28,
+    pattern: '〜によれば／〜によると',
+    title: '利用されている方のお話によれば',
+    stars: 2,
+    formation: 'N ＋ によれば / によると',
+    translationVi: 'Theo như (nguồn thông tin)',
+    meaningJa: '情報を何で知ったかを言いたいときに使う。文の終わりは「〜そうだ／〜ということだ」などの形になる。',
+    meaningVi: 'Sử dụng khi muốn nói bạn đã biết cái thông tin gì đó từ đâu, do đâu. Cuối câu thường là mẫu 〜そうだ／〜ということだ.',
+    examples: [
+      {
+        ja: '最近の調査によれば、病気ではないが不健康な人が増えているそうだ。',
+        vi: 'Theo như cuộc khảo sát gần đây, nghe nói số người tuy không có bệnh nhưng không khỏe mạnh đang tăng lên.'
+      },
+      {
+        ja: '今朝の天気予報によると、今週はずっと晴れるそうだ。',
+        vi: 'Theo như dự báo thời tiết sáng nay, nghe nói tuần này sẽ nắng suốt.'
+      },
+      {
+        ja: '観光ガイドブックによれば、この町では毎週日曜日に朝市が開かれるらしい。',
+        vi: 'Theo như sách hướng dẫn du lịch, hình như ở thị trấn này mỗi sáng chủ nhật đều có mở chợ sáng.'
+      }
+    ]
+  },
+  {
+    id: 'try-n3-c3-g29',
+    chapter: 3,
+    number: 29,
+    pattern: '〜ということだ／〜とのことだ',
+    title: '楽しかったということです',
+    stars: 3,
+    formation: '普通形 ＋ ということだ / とのことだ',
+    translationVi: 'Nghe nói là / Người ta nói là',
+    meaningJa: '聞いた情報の内容をほかの人に伝えるときに使う。',
+    meaningVi: 'Sử dụng khi nói với người khác nội dung thông tin mình đã nghe.',
+    examples: [
+      {
+        ja: 'ニュースでは、今年は水不足の心配はないということです。',
+        vi: 'Trên tin tức người ta nói là năm nay không có lo lắng về việc thiếu nước.'
+      },
+      {
+        ja: '部長の話によると、今年の新入社員の数は去年の倍だということだ。',
+        vi: 'Theo câu chuyện của trưởng phòng, nghe nói số lượng nhân viên mới năm nay gấp đôi năm ngoái.'
+      },
+      {
+        ja: '高橋さんから電話がありました。またあとで電話するとのことです。',
+        vi: 'Có điện thoại từ anh Takahashi. Anh ấy nói là lát nữa sẽ gọi lại.'
+      },
+      {
+        ja: 'お孫さんがお生まれになったとのこと、おめでとうございます。',
+        vi: 'Nghe tin cháu của ông/bà mới chào đời, xin chúc mừng.'
+      }
+    ]
+  },
+  {
+    id: 'try-n3-c3-g30',
+    chapter: 3,
+    number: 30,
+    pattern: '〜について',
+    title: '農園の活動について詳しいことは',
+    stars: 3,
+    formation: 'N ＋ について（は／も）\nN ＋ についての ＋ N',
+    translationVi: 'Về (chủ đề, vấn đề)',
+    meaningJa: '話題にしたり、考えたり、調べたりする内容を言うときに使う。',
+    meaningVi: 'Sử dụng khi bạn trình bày nội dung lấy làm chủ đề, đề tài, suy nghĩ hoặc điều tra.',
+    examples: [
+      {
+        ja: '兄は大学院で、アジアの経済について研究しています。',
+        vi: 'Anh trai tôi đang nghiên cứu về kinh tế Châu Á ở trường cao học.'
+      },
+      {
+        ja: '今年度の求人情報については、ホームページをご覧ください。',
+        vi: 'Về thông tin tuyển dụng năm nay, xin vui lòng xem trên trang chủ.'
+      },
+      {
+        ja: '部屋を借りるときは安全面についても確認したほうがいい。',
+        vi: 'Khi thuê phòng thì cũng nên xác nhận về mặt an toàn.'
+      },
+      {
+        ja: 'この図書館には、機械工学についての本がたくさんある。',
+        vi: 'Ở thư viện này có rất nhiều sách về kỹ thuật cơ khí.'
+      }
+    ]
   }
 
 ];
@@ -1740,6 +2529,209 @@ export const chapter1Part2CheckItems: StudyItem[] = [
     answer: 'ほど',
     choices: ['ほど', 'なら', 'と', 'ように'],
     explanation: 'Theo bài Check trang 25: Bất ngờ bị đập vào lưng, giật mình đến mức nghẹt thở ➔ 息が止まる + ほど.'
+  }
+];
+
+// Review / Exam items from pages 71-72 (まとめ問題 - 10 questions)
+export const chapter4MatomeItems: StudyItem[] = [
+  // 問題１〈文法形式の判断〉
+  {
+    id: 'try-n3-c4-matome-1-1',
+    question: 'A: だめよ。新聞を火のそばに置いたら火事になっちゃう（＿＿＿＿＿＿）。\nB: ごめん、ごめん。すぐ片付けるから。',
+    answer: 'じゃない',
+    choices: ['か', 'なら', 'っけ', 'じゃない'],
+    explanation: 'Theo まとめ問題 trang 71: じゃない. Mang ý nghĩa chê trách, nhắc nhở (chẳng phải là sẽ thành hỏa hoạn sao).'
+  },
+  {
+    id: 'try-n3-c4-matome-1-2',
+    question: '昨日からのどが痛くて、なんだか風邪をひいた（＿＿＿＿＿＿）なんだ。',
+    answer: 'みたい',
+    choices: ['ばかり', 'みたい', 'ところ', 'はず'],
+    explanation: 'Theo まとめ問題 trang 71: みたい. "Có vẻ như đã cảm cúm rồi."'
+  },
+  {
+    id: 'try-n3-c4-matome-1-3',
+    question: 'A: 奨学金の申し込みっていつまでだった（＿＿＿＿＿＿）？\nB: 来週の金曜までだよ。',
+    answer: 'っけ',
+    choices: ['んだ', 'っけ', 'よ', 'か'],
+    explanation: 'Theo まとめ問題 trang 71: っけ. "Việc đăng ký học bổng đến bao giờ ấy nhỉ?" (xác nhận lại thông tin đã biết nhưng quên).'
+  },
+  {
+    id: 'try-n3-c4-matome-1-4',
+    question: 'A: このケーキ、おいしいね。\nB: ほんと？うれしい！昨日がんばって作った（＿＿＿＿＿＿）。',
+    answer: 'んだ',
+    choices: ['んだ', 'って', 'っけ', 'じゃない'],
+    explanation: 'Theo まとめ問題 trang 71: んだ. Dùng để giải thích, nhấn mạnh lý do "Hôm qua mình đã cố gắng làm đấy".'
+  },
+  {
+    id: 'try-n3-c4-matome-1-5',
+    question: 'A: わあ！立派な家！どんな人が住んでるのかな？\nB: お金持ち（＿＿＿＿＿＿）よ。',
+    answer: 'に決まってる',
+    choices: ['ばかり', 'ならよかった', 'に決まってる', 'じゃない'],
+    explanation: 'Theo まとめ問題 trang 71: に決まってる. "Nhà đẹp thế thì chắc chắn là người giàu ở rồi."'
+  },
+  {
+    id: 'try-n3-c4-matome-1-6',
+    question: 'A: うー、寒い！風邪ひきそう。コートを（＿＿＿＿＿＿）。\nB: だから、「コートは？」って聞いたのに。',
+    answer: '着てくればよかった',
+    choices: ['着てくればよかった', '着てきてよかった', '着てこないでよかった', '着てこなければよかった'],
+    explanation: 'Theo まとめ問題 trang 71: 着てくればよかった. Thể hiện sự hối hận "Giá mà mặc áo khoác đến thì tốt".'
+  },
+  {
+    id: 'try-n3-c4-matome-1-7',
+    question: 'A: さっき買ったコップに、ひびが入ってたんだ。\nB: じゃ、取り替えて（＿＿＿＿＿＿）？',
+    answer: 'もらったら',
+    choices: ['もらえたら', 'もらったら', 'もらったっけ', 'もらえたって'],
+    explanation: 'Theo まとめ問題 trang 72: もらったら？ "Vậy cậu thử nhờ đổi lại xem sao?" (〜たら？ dùng để khuyên nhủ).'
+  },
+  // 問題２〈文の組み立て〉
+  {
+    id: 'try-n3-c4-matome-2-1',
+    question: 'A: 明日の集合時間、6時だよ。\nB: そんな ★ ないじゃない。どうしよう。\n(1 電車 / 2 早い / 3 動いて / 4 時間じゃ)',
+    answer: '電車',
+    choices: ['電車', '早い', '動いて', '時間じゃ'],
+    explanation: 'Thứ tự đúng: そんな 早い(2) 時間じゃ(4) 電車(1) 動いて(3) ないじゃない。\nDấu ★ nằm ở vị trí số 3, tức là từ 電車.'
+  },
+  {
+    id: 'try-n3-c4-matome-2-2',
+    question: 'いくら ★ 勉強しなきゃ受からないよ。\n(1 ように / 2 お祈り / 3 したって / 4 合格する)',
+    answer: 'お祈り',
+    choices: ['ように', 'お祈り', 'したって', '合格する'],
+    explanation: 'Thứ tự đúng: いくら 合格する(4) ように(1) お祈り(2) したって(3) 勉強しなきゃ受からないよ。\nDấu ★ nằm ở vị trí số 3, tức là từ お祈り.'
+  },
+  {
+    id: 'try-n3-c4-matome-2-3',
+    question: '忙しくても、仕事 ★ 体を壊すよ。\n(1 していないで / 2 休まないと / 3 ばかり / 4 少しは)',
+    answer: '少しは',
+    choices: ['していないで', '休まないと', 'ばかり', '少しは'],
+    explanation: 'Thứ tự đúng: 忙しくても、仕事 ばかり(3) していないで(1) 少しは(4) 休まないと(2) 体を壊すよ。\nDấu ★ nằm ở vị trí số 3, tức là từ 少しは.'
+  }
+];
+
+export const chapter5MatomeItems: StudyItem[] = [
+  // 問題1
+  {
+    id: 'try-n3-c5-matome-1-1',
+    question: 'テレビを買おうと思って店に行ったら、（　　　）高くなかった。',
+    answer: '思っていたほど',
+    choices: ['思っていたほど', '思うより', '思うかわりに', '思わずに'],
+    explanation: 'Dịch: Tôi định mua tivi nên đi đến cửa hàng, nhưng nó không đắt bằng mức tôi đã nghĩ.\nCấu trúc: N / V ＋ ほど〜ない (Không... bằng)'
+  },
+  {
+    id: 'try-n3-c5-matome-1-2',
+    question: '夏休みは帰国できないので、その（　　　）、両親を東京に呼ぶことにした。',
+    answer: 'かわりに',
+    choices: ['とおりに', 'かわりに', 'ように', 'とたん'],
+    explanation: 'Dịch: Nghỉ hè tôi không thể về nước được nên thay vào đó, tôi quyết định gọi bố mẹ sang Tokyo.\nCấu trúc: そのかわりに (Đổi lại, thay vào đó)'
+  },
+  {
+    id: 'try-n3-c5-matome-1-3',
+    question: '兄は両親に（　　　）大学を決めてしまった。',
+    answer: '相談せずに',
+    choices: ['相談はもちろん', '相談するより', '相談するほど', '相談せずに'],
+    explanation: 'Dịch: Anh trai tôi đã quyết định chọn trường đại học mà không thèm bàn bạc với bố mẹ.\nCấu trúc: V-ない ＋ ずに (Làm gì đó mà không làm V)'
+  },
+  {
+    id: 'try-n3-c5-matome-1-4',
+    question: '弟は本当に疲れたらしく、服を（　　　）ベッドで寝てしまった。',
+    answer: '着たまま',
+    choices: ['着るかわりに', '着たまま', '着るほど', '着るように'],
+    explanation: 'Dịch: Em trai tôi có vẻ thực sự rất mệt nên cứ để nguyên quần áo như thế lên giường ngủ mất.\nCấu trúc: V-た ＋ まま (Cứ để nguyên như vậy)'
+  },
+  {
+    id: 'try-n3-c5-matome-1-5',
+    question: 'この商品は手作りなので、注文が増えて対応（　　　）困りますから、あまり宣伝していません。',
+    answer: 'しきれないと',
+    choices: ['しきれないと', 'したとたん', 'したまま', 'しないほど'],
+    explanation: 'Dịch: Sản phẩm này làm thủ công nên nếu số lượng đơn đặt hàng tăng lên thì không thể nào giải quyết hết được, vì vậy tôi không quảng cáo nhiều lắm.\nCấu trúc: V-~~ます~~ ＋ きれない (Không thể làm hết toàn bộ)'
+  },
+  {
+    id: 'try-n3-c5-matome-1-6',
+    question: 'この大学の図書館は本校の学生（　　　）、一般の方もご利用になれます。',
+    answer: 'はもちろん',
+    choices: ['はもちろん', 'ほど', 'のまま', 'にたいして'],
+    explanation: 'Dịch: Thư viện của trường đại học này, sinh viên của trường thì tất nhiên rồi, ngay cả người bình thường cũng có thể sử dụng được.\nCấu trúc: N1 ＋ はもちろん N2 ＋ も (Không chỉ N1 mà N2 cũng)'
+  },
+  {
+    id: 'try-n3-c5-matome-1-7',
+    question: 'この絵は世界的に有名な画家が描いたものだが、子どもが描いた絵（　　　）見える。',
+    answer: 'のように',
+    choices: ['のように', 'のかわりに', 'のままに', 'ほどに'],
+    explanation: 'Dịch: Bức tranh này do một họa sĩ nổi tiếng thế giới vẽ, thế mà trông cứ như là bức tranh do trẻ con vẽ vậy.\nCấu trúc: N ＋ のように (Trông giống như là)'
+  },
+  {
+    id: 'try-n3-c5-matome-1-8',
+    question: '私は中学生になっても泣き虫だったので、よく母に「子ども（　　　）すぐ泣くのはやめなさい」と言われました。',
+    answer: 'みたいに',
+    choices: ['のかわりに', 'はもちろん', 'みたいに', 'ほど'],
+    explanation: 'Dịch: Đến lúc lên cấp hai tôi vẫn là đứa hay khóc nhè, nên thường bị mẹ mắng là "bỏ cái kiểu hơi tí là khóc giống như trẻ con đi".\nCấu trúc: N ＋ みたいに (Giống như là - văn nói)'
+  },
+  {
+    id: 'try-n3-c5-matome-1-9',
+    question: 'ちょうどスキーに行きたいと（　　　）、友だちから誘いの電話がかかってきた。',
+    answer: '思っていたところに',
+    choices: ['思ったまま', '思っていたところに', '思わずに', '思っているように'],
+    explanation: 'Dịch: Đúng lúc đang muốn đi trượt tuyết thì nhận được cuộc điện thoại rủ rê của bạn.\nCấu trúc: V-ている ＋ ところに (Đúng vào lúc đang...)'
+  },
+
+  // 問題2
+  {
+    id: 'try-n3-c5-matome-2-1',
+    question: '明日は、胃の＿＿ ＿＿ ★ ＿＿ 来てください。\n(1 あるので / 2 食べずに / 3 朝食を / 4 検査が)',
+    answer: '朝食を',
+    choices: ['あるので', '食べずに', '朝食を', '検査が'],
+    explanation: 'Thứ tự đúng: 胃の 検査が(4) あるので(1) 朝食を(3) 食べずに(2) (4-1-3-2)\nDịch: Ngày mai vì có kiểm tra dạ dày nên hãy đến mà không ăn sáng nhé.'
+  },
+  {
+    id: 'try-n3-c5-matome-2-2',
+    question: 'Mのコンサートチケットを買おうとしたが、＿＿ ＿＿ ★ ＿＿ 買えなかった。\n(1 売りきれて / 2 10分で / 3 発売開始から / 4 しまって)',
+    answer: '売りきれて',
+    choices: ['売りきれて', '10分で', '発売開始から', 'しまって'],
+    explanation: 'Thứ tự đúng: 発売開始から(3) 10分で(2) 売りきれて(1) しまって(4) (3-2-1-4)\nDịch: Tôi định mua vé buổi biểu diễn của M nhưng mới bắt đầu bán 10 phút đã bán hết sạch nên không thể mua được.'
+  },
+  {
+    id: 'try-n3-c5-matome-2-3',
+    question: '大学に入ってから一人暮らしで、＿＿ ＿＿ ★ ＿＿ しなければならないのでけっこう忙しいんです。\n(1 そうじや / 2 洗濯も / 3 もちろん / 4 勉強は)',
+    answer: 'そうじや',
+    choices: ['そうじや', '洗濯も', 'もちろん', '勉強は'],
+    explanation: 'Thứ tự đúng: 勉強は(4) もちろん(3) そうじや(1) 洗濯も(2) (4-3-1-2)\nDịch: Từ sau khi vào đại học sống một mình, việc học thì đương nhiên rồi, còn phải dọn dẹp và giặt giũ nữa nên cũng khá bận rộn.'
+  },
+  {
+    id: 'try-n3-c5-matome-2-4',
+    question: '今日の相手チームは、＿＿ ＿＿ ★ ＿＿ ないから、勝てるかもしれない。\n(1 ほど / 2 チーム / 3 強く / 4 昨日の)',
+    answer: 'ほど',
+    choices: ['ほど', 'チーム', '強く', '昨日の'],
+    explanation: 'Thứ tự đúng: 昨日の(4) チーム(2) ほど(1) 強く(3) (4-2-1-3)\nDịch: Đội đối thủ ngày hôm nay không mạnh bằng đội hôm qua nên có lẽ sẽ thắng.'
+  },
+
+  // 問題3
+  {
+    id: 'try-n3-c5-matome-3-1',
+    question: '今日は、火を [ 1 ] できるとても簡単なデザートをご紹介します。',
+    answer: '使わずに',
+    choices: ['使わない', '使わずに', '使うまま', '使うほど'],
+    explanation: 'Dịch: Hôm nay tôi xin giới thiệu một món tráng miệng rất đơn giản có thể làm mà không dùng đến lửa.\nCấu trúc: 使わずに (Không sử dụng lửa)'
+  },
+  {
+    id: 'try-n3-c5-matome-3-2',
+    question: 'ふきんを敷いたざるにヨーグルトをのせて、その下 [ 2 ] ボウルを置きます。',
+    answer: 'に',
+    choices: ['に', 'が', 'で', 'を'],
+    explanation: 'Dịch: Cho sữa chua lên trên cái rổ có lót sẵn khăn tay, và đặt một cái bát ở bên dưới đó.\nTrợ từ に chỉ nơi chốn tồn tại của đồ vật (置く).'
+  },
+  {
+    id: 'try-n3-c5-matome-3-3',
+    question: 'ヨーグルトから水分が出て、豆腐の [ 3 ] 固さになります。',
+    answer: 'ような',
+    choices: ['ようだ', 'ように', 'ようで', 'ような'],
+    explanation: 'Dịch: Nước từ sữa chua sẽ chảy ra, và nó sẽ trở nên cứng giống như độ cứng của đậu phụ.\nCấu trúc: N ＋ のような ＋ N (固さ là danh từ nên đi với ような).'
+  },
+  {
+    id: 'try-n3-c5-matome-3-4',
+    question: 'フルーツと一緒に食べるの [ 4 ] パンに塗って食べてもおいしいです。',
+    answer: 'はもちろん',
+    choices: ['について', 'にかわって', 'はもちろん', 'によって'],
+    explanation: 'Dịch: Trộn ăn cùng với trái cây thì đương nhiên rồi, ngoài ra trét lên bánh mì ăn cũng rất ngon.\nCấu trúc: 〜はもちろん〜も (Không chỉ... mà còn...)'
   }
 ];
 
@@ -2429,6 +3421,341 @@ export const chapter2MatomeItems: StudyItem[] = [
   }
 ];
 
+// Chapter 3 Flashcards (Mẫu 26 ➔ 30)
+export const chapter3FlashcardItems: StudyItem[] = [
+  {
+    id: 'try-n3-c3-fc-26',
+    term: '〜を通して／〜を通じて',
+    reading: 'N ＋ をとおして / をつうじて',
+    answer: 'Thông qua (người, cách thức, sự việc)',
+    meaning: 'Sử dụng khi làm một việc gì đó không trực tiếp mà thông qua người khác, cách thức khác.',
+    explanation: '★ Cấu trúc: N ＋ を通して / を通じて\n★ Trong bài đọc: 野菜作りを通して (Thông qua việc trồng rau).',
+    example: '① 現在はインターネットを通して、すぐに世界中にニュースが広まる。(Hiện tại thông qua internet, tin tức lan truyền ra toàn thế giới ngay lập tức).\n② 取材は、弁護士を通して申し込んでください。(Việc lấy tin tức xin vui lòng đăng ký thông qua luật sư).'
+  },
+  {
+    id: 'try-n3-c3-fc-27',
+    term: '〜のような／〜のように',
+    reading: 'N ＋ のように / のような ＋ N',
+    answer: 'Giống như / Như là',
+    meaning: 'Đưa ra một ví dụ điển hình',
+    explanation: '★ Cấu trúc: N ＋ のように (bổ nghĩa cho động từ/tính từ) / N ＋ のような ＋ N (bổ nghĩa cho danh từ)\n★ Plus: 〜みたい (dùng trong văn nói, ý nghĩa tương đương).\n★ Trong bài đọc: パーティーのような楽しいイベント (Sự kiện vui vẻ giống như một bữa tiệc).',
+    example: '① インフルエンザのような病気になったら、学校へ来てはいけない。(Nếu mắc bệnh như cúm thì không được đến trường).\n② 退院したばかりなので、テニスのように激しいスポーツはできません。(Vì vừa xuất viện nên chưa thể chơi thể thao mạnh như tennis).'
+  },
+  {
+    id: 'try-n3-c3-fc-28',
+    term: '〜によれば／〜によると',
+    reading: 'N ＋ によれば / によると',
+    answer: 'Theo như (nguồn thông tin)',
+    meaning: 'Sử dụng khi muốn nói bạn đã biết thông tin gì đó từ đâu.',
+    explanation: '★ Cấu trúc: N ＋ によれば / によると\n★ Cuối câu thường đi kèm với mẫu「〜そうだ／〜ということだ」để truyền đạt lại.\n★ Trong bài đọc: 利用されている方のお話によれば (Theo như chia sẻ của những người đang sử dụng).',
+    example: '① 最近の調査によれば、不健康な人が増えているそうだ。(Theo khảo sát gần đây, nghe nói người không khoẻ đang tăng lên).\n② 今朝の天気予報によると、今週はずっと晴れるそうだ。(Theo dự báo thời tiết sáng nay, nghe nói tuần này sẽ nắng suốt).'
+  },
+  {
+    id: 'try-n3-c3-fc-29',
+    term: '〜ということだ／〜とのことだ',
+    reading: 'Thể thông thường (PI) ＋ ということだ / とのことだ',
+    answer: 'Nghe nói là / Người ta nói là',
+    meaning: 'Truyền đạt lại cho người khác nội dung thông tin mình đã nghe',
+    explanation: '★ Cấu trúc: Thể thông thường (PI) ＋ ということだ / とのことだ\n★ Dùng để truyền đạt lại thông tin.「〜とのことだ」trang trọng hơn.\n★ Trong bài đọc: 話す機会が増えて楽しかったということです (Nghe nói họ đã rất vui vì có thêm cơ hội trò chuyện).',
+    example: '① ニュースでは、今年は水不足の心配はないということです。(Trên tin tức nói năm nay không lo thiếu nước).\n② 高橋さんから電話がありました。またあとで電話するとのことです。(Có điện thoại từ anh Takahashi, anh ấy nói lát sẽ gọi lại).'
+  },
+  {
+    id: 'try-n3-c3-fc-30',
+    term: '〜について',
+    reading: 'N ＋ について（は／も） / N ＋ についての ＋ N',
+    answer: 'Về (chủ đề, vấn đề)',
+    meaning: 'Trình bày nội dung lấy làm chủ đề, suy nghĩ hoặc điều tra.',
+    explanation: '★ Cấu trúc: N ＋ について\n★ Khi bổ nghĩa cho danh từ phía sau thì dùng「〜についての ＋ N」.\n★ Trong bài đọc: 農園の活動について詳しいことは (Về thông tin chi tiết các hoạt động của nông trại).',
+    example: '① 兄は大学院で、アジアの経済について研究しています。(Anh trai tôi nghiên cứu về kinh tế Châu Á).\n② この図書館には、機械工学についての本がたくさんある。(Thư viện này có nhiều sách về kỹ thuật cơ khí).'
+  }
+];
+
+// Chapter 3 Exercises (Mẫu 26 ➔ 30)
+export const chapter3ExerciseItems: StudyItem[] = [
+  {
+    id: 'try-n3-c3-q-1',
+    question: '世の中には＿＿＿＿＿＿のように人の仕事を手伝って働いている動物がいる。',
+    answer: '牛や馬',
+    choices: ['東京', '牛や馬', 'トンカツ', 'ベッド'],
+    explanation: 'Theo bài やっみよう! trang 52: Động vật giúp đỡ công việc con người ➔ 牛や馬.'
+  },
+  {
+    id: 'try-n3-c3-q-2',
+    question: '＿＿＿＿＿＿のような大都市では車より電車や地下鉄のほうが便利ですよ。',
+    answer: '東京',
+    choices: ['東京', '牛や馬', 'トンカツ', 'ベッド'],
+    explanation: 'Theo bài やっみよう! trang 52: Thành phố lớn ➔ 東京.'
+  },
+  {
+    id: 'try-n3-c3-q-3',
+    question: '＿＿＿＿＿＿のような大きいものを捨てるときは区役所に連絡して取りに来てもらわなければなりません。',
+    answer: 'ベッド',
+    choices: ['東京', '牛や馬', 'トンカツ', 'ベッド'],
+    explanation: 'Theo bài やっみよう! trang 52: Vật lớn vứt đi phải liên hệ ủy ban ➔ ベッド.'
+  },
+  {
+    id: 'try-n3-c3-q-4',
+    question: '＿＿＿＿＿＿のようなカロリーの高いものを食べすぎると体に悪いですよ。',
+    answer: 'トンカツ',
+    choices: ['東京', '牛や馬', 'トンカツ', 'ベッド'],
+    explanation: 'Theo bài やっみよう! trang 52: Đồ ăn nhiều calo ➔ トンカツ.'
+  },
+  {
+    id: 'try-n3-c3-q-5',
+    question: 'ネットの掲示板（＿＿＿＿＿＿）さくら商店街のレストランのランチは安くておいしいということだ。',
+    answer: 'によれば',
+    choices: ['によれば', 'によって'],
+    explanation: 'Theo bài やっみよう! trang 53: Theo nguồn thông tin từ bảng tin trên mạng ➔ によれば.'
+  },
+  {
+    id: 'try-n3-c3-q-6',
+    question: 'わが社は新しいシステムの導入（＿＿＿＿＿＿）全社員の残業時間が大幅に短縮された。',
+    answer: 'によって',
+    choices: ['によって', 'によれば'],
+    explanation: 'Theo bài やっみよう! trang 53: Nhờ vào/bằng cách đưa vào hệ thống mới (nguyên nhân/cách thức) ➔ によって.'
+  },
+  {
+    id: 'try-n3-c3-q-7',
+    question: 'アンケート（＿＿＿＿＿＿）このホテルは利用者の90%が非常に満足しているそうだ。',
+    answer: 'によれば',
+    choices: ['によれば', 'によって'],
+    explanation: 'Theo bài やっみよう! trang 53: Theo nguồn thông tin từ bảng khảo sát ➔ によれば.'
+  },
+  {
+    id: 'try-n3-c3-q-8',
+    question: '山田さんからメールがあって、道が混んでいるので、（＿＿＿＿＿＿）。',
+    answer: '到着が少し遅れるとのことです',
+    choices: [
+      '到着が少し遅れるとのことです',
+      '電車はちゃんと動いていますか',
+      'お会いできるのを楽しみにしております',
+      '機械に異常はなかったということです'
+    ],
+    explanation: 'Theo bài やっみよう! trang 54: Đường đang tắc nên nghe nói là đến sẽ hơi trễ ➔ 到着が少し遅れるとのことです.'
+  },
+  {
+    id: 'try-n3-c3-q-9',
+    question: '東京は雪が降っているということですが、（＿＿＿＿＿＿）。',
+    answer: '電車はちゃんと動いていますか',
+    choices: [
+      '電車はちゃんと動いていますか',
+      '到着が少し遅れるとのことです',
+      'お会いできるのを楽しみにしております',
+      '機械に異常はなかったということです'
+    ],
+    explanation: 'Theo bài やっみよう! trang 54: Nghe nói Tokyo đang tuyết, vậy xe điện có chạy bình thường không? ➔ 電車はちゃんと動いていますか.'
+  },
+  {
+    id: 'try-n3-c3-q-10',
+    question: '来月日本にいらっしゃるとのことで、（＿＿＿＿＿＿）。',
+    answer: 'お会いできるのを楽しみにしております',
+    choices: [
+      'お会いできるのを楽しみにしております',
+      '電車はちゃんと動いていますか',
+      '到着が少し遅れるとのことです',
+      '機械に異常はなかったということです'
+    ],
+    explanation: 'Theo bài やっみよう! trang 54: Nghe nói tháng sau anh/chị đến Nhật, tôi rất mong đợi được gặp ➔ お会いできるのを楽しみにしております.'
+  },
+  {
+    id: 'try-n3-c3-q-11',
+    question: '事故の原因を調べてもらいましたが、（＿＿＿＿＿＿）。',
+    answer: '機械に異常はなかったということです',
+    choices: [
+      '機械に異常はなかったということです',
+      'お会いできるのを楽しみにしております',
+      '電車はちゃんと動いていますか',
+      '到着が少し遅れるとのことです'
+    ],
+    explanation: 'Theo bài やっみよう! trang 54: Đã điều tra nguyên nhân tai nạn và nghe báo lại là không có bất thường gì ở máy móc ➔ 機械に異常はなかったということです.'
+  },
+  {
+    id: 'try-n3-c3-q-12',
+    question: 'あなたの趣味（＿＿＿＿＿＿）話してください。',
+    answer: 'について',
+    choices: ['について', 'についての'],
+    explanation: 'Theo bài やっみよう! trang 55: Bổ nghĩa cho động từ 話す ➔ について.'
+  },
+  {
+    id: 'try-n3-c3-q-13',
+    question: '製品（＿＿＿＿＿＿）ご質問はサポートセンターにご連絡ください。',
+    answer: 'についての',
+    choices: ['についての', 'について'],
+    explanation: 'Theo bài やっみよう! trang 55: Bổ nghĩa cho danh từ ご質問 ➔ についての.'
+  },
+  {
+    id: 'try-n3-c3-q-14',
+    question: 'わが社の経営方針（＿＿＿＿＿＿）説明します。',
+    answer: 'について',
+    choices: ['について', 'に対して'],
+    explanation: 'Theo bài やっみよう! trang 55: Giải thích "về" phương châm kinh doanh ➔ について.'
+  },
+  {
+    id: 'try-n3-c3-q-15',
+    question: '毎年、学校では自転車の利用者（＿＿＿＿＿＿）交通安全指導を行っている。',
+    answer: 'に対して',
+    choices: ['に対して', 'について'],
+    explanation: 'Theo bài やっみよう! trang 55: Hướng dẫn an toàn giao thông "đối với" người sử dụng xe đạp ➔ に対して.'
+  }
+];
+
+// Check 📖 items for Chapter 3 from page 55 (5 questions)
+export const chapter3CheckItems: StudyItem[] = [
+  {
+    id: 'try-n3-c3-chk-1',
+    question: '卒業論文のテーマ ＿＿＿＿＿＿ 先生に相談したいと思っている。',
+    answer: 'について',
+    choices: ['について', 'のような', 'によれば', 'を通じて', 'ということです'],
+    explanation: 'Theo bài Check trang 55: Thảo luận với thầy "về" chủ đề luận văn tốt nghiệp ➔ について.'
+  },
+  {
+    id: 'try-n3-c3-chk-2',
+    question: 'A: どこへ旅行に行きたいですか。\nB: パリ ＿＿＿＿＿＿ すばらしい美術館がある町へ行きたいですね。',
+    answer: 'のような',
+    choices: ['のような', 'について', 'によれば', 'を通じて', 'ということです'],
+    explanation: 'Theo bài Check trang 55: Đưa ra ví dụ điển hình "thành phố có bảo tàng mỹ thuật tuyệt vời NHƯ LÀ Paris" ➔ のような.'
+  },
+  {
+    id: 'try-n3-c3-chk-3',
+    question: '先生の話 ＿＿＿＿＿＿ 、来週は大きいテストが3つもあるそうだ。',
+    answer: 'によれば',
+    choices: ['によれば', 'について', 'のような', 'を通じて', 'ということです'],
+    explanation: 'Theo bài Check trang 55: Theo như câu chuyện của thầy giáo (nguồn thông tin) ➔ によれば.'
+  },
+  {
+    id: 'try-n3-c3-chk-4',
+    question: '私は、共通の友人 ＿＿＿＿＿＿ 妻と知り合いました。',
+    answer: 'を通じて',
+    choices: ['を通じて', 'について', 'のような', 'によれば', 'ということです'],
+    explanation: 'Theo bài Check trang 55: Quen biết vợ "thông qua" người bạn chung ➔ を通じて.'
+  },
+  {
+    id: 'try-n3-c3-chk-5',
+    question: '台風が近づいている ＿＿＿＿＿＿ から、皆さん十分気をつけてください。',
+    answer: 'ということです',
+    choices: ['ということです', 'を通じて', 'について', 'のような', 'によれば'],
+    explanation: 'Theo bài Check trang 55: Nghe báo đài nói là bão đang đến gần nên mọi người chú ý cẩn thận nhé ➔ ということです.'
+  }
+];
+
+
+export const chapter3MatomeItems: StudyItem[] = [
+  // 問題１〈文法形式の判断〉
+  {
+    id: 'try-n3-c3-matome-1-1',
+    question: '彼の意見（＿＿＿＿＿＿）反対する人はだれもいなかった。',
+    answer: 'にたいして',
+    choices: ['にたいする', 'にたいして', 'について', 'についての'],
+    explanation: 'Theo まとめ問題 trang 41: に対して (Đối với). "Không có ai phản đối ý kiến của anh ấy." - 意見に対して反対する'
+  },
+  {
+    id: 'try-n3-c3-matome-1-2',
+    question: '父の店でもコンピューター（＿＿＿＿＿＿）商品管理を行っている。',
+    answer: 'による',
+    choices: ['によると', 'によれば', 'による', 'によったら'],
+    explanation: 'Theo まとめ問題 trang 41: による (Bằng/Thông qua). Bổ nghĩa cho danh từ 商品管理. "Ở cửa hàng của bố tôi cũng đang tiến hành quản lý sản phẩm bằng máy tính."'
+  },
+  {
+    id: 'try-n3-c3-matome-1-3',
+    question: '今朝のニュース（＿＿＿＿＿＿）、昨日高速道路で大事故があったそうだ。',
+    answer: 'によれば',
+    choices: ['によれば', 'によって', 'について', 'をつうじて'],
+    explanation: 'Theo まとめ問題 trang 41: によれば (Theo như). Đi với そうだ ở cuối câu. "Theo như tin tức sáng nay, nghe nói hôm qua đã có một vụ tai nạn lớn trên đường cao tốc."'
+  },
+  {
+    id: 'try-n3-c3-matome-1-4',
+    question: '部長の指示（＿＿＿＿＿＿）仕事を進めたが、うまくいかなかった。',
+    answer: 'どおりに',
+    choices: ['どおりに', 'とおりに', 'にたいして', 'にたいしての'],
+    explanation: 'Theo まとめ問題 trang 41: N ＋ どおりに (Theo đúng như). Nếu là とおりに thì phải có の đằng trước. "Tôi đã tiến hành công việc theo đúng như chỉ thị của trưởng phòng, nhưng đã không suôn sẻ."'
+  },
+  {
+    id: 'try-n3-c3-matome-1-5',
+    question: '見学を希望する場合は、1週間前までに担当者（＿＿＿＿＿＿）申し込んでください。',
+    answer: 'をつうじて',
+    choices: ['について', 'のために', 'のとおりに', 'をつうじて'],
+    explanation: 'Theo まとめ問題 trang 41: を通じて (Thông qua người trung gian). "Trường hợp có nguyện vọng kiến tập, xin hãy đăng ký thông qua người phụ trách trước 1 tuần."'
+  },
+  {
+    id: 'try-n3-c3-matome-1-6',
+    question: '兄は工業ロボット（＿＿＿＿＿＿）研究している。',
+    answer: 'について',
+    choices: ['についての', 'について', 'にたいして', 'にたいしての'],
+    explanation: 'Theo まとめ問題 trang 41: について (Về chủ đề). Đi với động từ 研究する. "Anh trai tôi đang nghiên cứu về robot công nghiệp."'
+  },
+  {
+    id: 'try-n3-c3-matome-1-7',
+    question: 'インフルエンザが流行している（＿＿＿＿＿＿）、お見舞いの方にもマスクをしていただくことになっています。',
+    answer: 'ため',
+    choices: ['と', 'ように', 'という', 'ため'],
+    explanation: 'Theo まとめ問題 trang 41: ため (Vì / Do nguyên nhân). "Vì bệnh cúm đang lưu hành, nên những người đến thăm bệnh cũng được yêu cầu phải đeo khẩu trang."'
+  },
+  {
+    id: 'try-n3-c3-matome-1-8',
+    question: '私の国は暑いので、スキー（＿＿＿＿＿＿）冬のスポーツは一度もしたことがないんです。',
+    answer: 'のような',
+    choices: ['のとおりに', 'のような', 'について', 'にたいして'],
+    explanation: 'Theo まとめ問題 trang 41: のような (Như là - Đưa ra ví dụ). "Vì đất nước của tôi nóng, nên những môn thể thao mùa đông như là trượt tuyết thì tôi chưa từng làm qua lần nào."'
+  },
+  {
+    id: 'try-n3-c3-matome-1-9',
+    question: '本日発売されたゲームは、たいへん人気で、1時間ぐらいで全部売れてしまった（＿＿＿＿＿＿）。',
+    answer: 'ということです',
+    choices: ['ところです', 'ということです', 'ばかりです', 'とたんです'],
+    explanation: 'Theo まとめ問題 trang 42: ということです (Nghe nói là / Truyền đạt lại). "Trò chơi được phát hành hôm nay rất được yêu thích, nghe nói là chỉ trong khoảng 1 tiếng đã bán hết sạch toàn bộ."'
+  },
+  // 問題２〈文の組み立て〉
+  {
+    id: 'try-n3-c3-matome-2-1',
+    question: '昨日私の大学で、＿＿＿　＿＿＿　＿★＿　＿＿＿ 開かれた。',
+    answer: '考える',
+    choices: ['について', '考える', 'アジア経済', '国際会議が'],
+    explanation: 'Thứ tự đúng: アジア経済(3) -> について(1) -> 考える(2) -> 国際会議が(4). Dấu ★ nằm ở vị trí số 3 là "考える". "Hôm qua tại trường đại học của tôi, một hội nghị quốc tế suy nghĩ về kinh tế châu Á đã được tổ chức."'
+  },
+  {
+    id: 'try-n3-c3-matome-2-2',
+    question: '祖父は会社では厳しい社長だが、＿＿＿　＿＿＿　＿★＿　＿＿＿ 優しい。',
+    answer: 'に対しては',
+    choices: ['に対しては', '私たち', '孫の', 'とても'],
+    explanation: 'Thứ tự đúng: 孫の(3) -> 私たち(2) -> に対しては(1) -> とても(4). Dấu ★ nằm ở vị trí số 3 là "に対しては". "Ông tôi là một giám đốc nghiêm khắc ở công ty, nhưng đối với những đứa cháu là chúng tôi thì lại rất hiền."'
+  },
+  {
+    id: 'try-n3-c3-matome-2-3',
+    question: '昨日見た映画は、＿＿＿　＿＿＿　＿★＿　＿＿＿ なった。',
+    answer: 'とおりの',
+    choices: ['予想した', '私が', '結末に', 'とおりの'],
+    explanation: 'Thứ tự đúng: 私が(2) -> 予想した(1) -> とおりの(4) -> 結末に(3). Dấu ★ nằm ở vị trí số 3 là "とおりの". "Bộ phim tôi xem hôm qua đã có một cái kết đúng như những gì tôi đã dự đoán."'
+  },
+  // 問題３〈文章の文法〉
+  {
+    id: 'try-n3-c3-matome-3-1',
+    question: 'バレンタインデーにチョコレートを贈る習慣（＿＿＿）、女性にアンケートを行ったら、「続けたい」が「やめたい」を上回った。',
+    answer: 'について',
+    choices: ['について', 'についての', 'にたいして', 'にたいしての'],
+    explanation: 'Theo まとめ問題 trang 42: について (Về). Thực hiện khảo sát "VỀ" tập quán tặng socola. アンケートを行う đi với について.'
+  },
+  {
+    id: 'try-n3-c3-matome-3-2',
+    question: 'いちばん好きな人には特別に手作りのチョコや、値段の高いチョコを贈るというのは予想（＿＿＿）だが、それ以外の人に贈る場合はどうなのだろうか。',
+    answer: 'どおり',
+    choices: ['とおり', 'どおり', 'をとおして', 'をとおって'],
+    explanation: 'Theo まとめ問題 trang 42: どおり (Theo như). Vì 予想 là danh từ ghép trực tiếp nên sẽ biến âm thành どおり (予想どおり).'
+  },
+  {
+    id: 'try-n3-c3-matome-3-3',
+    question: '働いている人は、「義理チョコ」（＿＿＿）、職場の人間関係がよくなればいいと答える人が多かった。',
+    answer: 'をとおして',
+    choices: ['とおり', 'どおり', 'をとおして', 'をとおって'],
+    explanation: 'Theo まとめ問題 trang 42: をとおして (Thông qua). "Thông qua giri-choco (socola nghĩa vụ), mối quan hệ giữa con người nơi làm việc trở nên tốt đẹp hơn là được."'
+  },
+  {
+    id: 'try-n3-c3-matome-3-4',
+    question: 'また、女子高校生の回答（＿＿＿）、男子に贈らないで、クラスの女の子に「友チョコ」を贈ることが多いということだ。',
+    answer: 'によると',
+    choices: ['によって', 'によっての', 'によると', 'について'],
+    explanation: 'Theo まとめ問題 trang 42: によると (Theo như). Đi chung với ということだ (nghe nói là) ở cuối câu.'
+  }
+];
 
 export const chapter34MatomeItems: StudyItem[] = [
   // 問題１
@@ -2541,21 +3868,138 @@ export const chapter34MatomeItems: StudyItem[] = [
   }
 ];
 
+
+export const chapter4FlashcardItems: StudyItem[] = [
+  { id: 'try-n3-c4-fc-31', term: '〜てる／とく／ちゃう／なきゃ', meaning: 'Thể rút gọn (Văn nói)', reading: 'Rút gọn của ている/ておく/てしまう/なければいけない', answer: 'Ngày nào tôi cũng đang luyện tập.', explanation: 'Ví dụ: 毎日練習してるんだ。\nNghĩa: Ngày nào tôi cũng đang luyện tập.' },
+  { id: 'try-n3-c4-fc-32', term: '〜なきゃ', meaning: 'Phải làm gì đó', reading: 'Rút gọn của なければいけない', answer: 'Tôi phải đi cổ vũ mới được.', explanation: 'Ví dụ: 応援に行かなきゃ。\nNghĩa: Tôi phải đi cổ vũ mới được.' },
+  { id: 'try-n3-c4-fc-33', term: '〜っけ', meaning: '...phải không nhỉ? (Xác nhận lại)', reading: 'Sử dụng khi đã nghe rồi nhưng quên mất', answer: 'Cậu tham gia bơi tự do phải không nhỉ.', explanation: 'Ví dụ: 自由形に出るんだっけ。\nNghĩa: Cậu tham gia bơi tự do phải không nhỉ.' },
+  { id: 'try-n3-c4-fc-34', term: '〜たりして', meaning: 'Không chừng là / Có lẽ', reading: 'Giống かもしれない', answer: 'Không chừng cậu sẽ vô địch cũng nên?', explanation: 'Ví dụ: もしかして優勝したりして？\nNghĩa: Không chừng cậu sẽ vô địch cũng nên?' }
+];
+
+export const chapter4ExerciseItems: StudyItem[] = [
+  // Ex 31
+  {
+    id: 'try-n3-c4-ex-31-1',
+    question: 'この本、読ん（＿＿＿＿＿＿）ください。',
+    answer: 'どいて',
+    choices: ['どいて', 'でいて', 'じゃって', 'ちゃって'],
+    explanation: '読んでおいて -> 読んどいて (Hãy đọc sẵn quyển sách này đi).'
+  },
+  {
+    id: 'try-n3-c4-ex-31-2',
+    question: '発表の前にいろいろ調べと（＿＿＿＿＿＿）。',
+    answer: 'かなきゃいけないよ',
+    choices: ['かなきゃいけないよ', 'かちゃいけないよ', 'かじゃいけないよ', 'かなければ'],
+    explanation: '調べておかなければいけない -> 調べとかなきゃいけない (Trước khi phát biểu thì phải tìm hiểu sẵn nhiều thứ).'
+  },
+  {
+    id: 'try-n3-c4-ex-31-3',
+    question: '試験勉強、まだぜんぜんやっ（＿＿＿＿＿＿）。',
+    answer: 'てない',
+    choices: ['てない', 'とない', 'ちゃない', 'じゃない'],
+    explanation: 'やっていない -> やってない (Việc học thi, tôi vẫn chưa làm chút nào cả).'
+  },
+  {
+    id: 'try-n3-c4-ex-31-4',
+    question: 'レポート、絶対出さ（＿＿＿＿＿＿）。',
+    answer: 'なきゃだめかな',
+    choices: ['なきゃだめかな', 'なくちゃだめかな', 'ちゃだめかな', 'なきゃ'],
+    explanation: '出さなければだめかな -> 出さなきゃだめかな (Báo cáo, nhất định là phải nộp đúng không?).'
+  },
+  // Ex 32
+  {
+    id: 'try-n3-c4-ex-32-1',
+    question: '帰国前にお土産買っておか（＿＿＿＿＿＿）。',
+    answer: 'なきゃ',
+    choices: ['なきゃ', 'なくちゃ', 'とかなきゃ', 'なきゃいけない'],
+    explanation: '買っておかなければ -> 買っておかなきゃ (Trước khi về nước thì phải mua sẵn quà).'
+  },
+  {
+    id: 'try-n3-c4-ex-32-2',
+    question: '具合が悪かったら、早く帰って寝たら（＿＿＿＿＿＿）？',
+    answer: 'どう',
+    choices: ['どう', 'いい', 'だめ', 'いけない'],
+    explanation: '寝たらどうですか -> 寝たら（どう） (Nếu thấy không khỏe thì về sớm ngủ đi thì sao?)'
+  },
+  {
+    id: 'try-n3-c4-ex-32-3',
+    question: '部屋を出るときは、電気を消して（＿＿＿＿＿＿）。',
+    answer: 'ください',
+    choices: ['ください', 'いる', 'おく', 'しまう'],
+    explanation: '消してください -> 消して（ください） (Khi ra khỏi phòng hãy tắt điện).'
+  },
+  // Ex 33
+  {
+    id: 'try-n3-c4-ex-33-1',
+    question: 'A: おなかすいた。何かお菓子、買ってあった（＿＿＿＿＿＿）。\nB: 冷蔵庫にアイスクリームがあるよ。',
+    answer: 'っけ',
+    choices: ['っけ', 'よ', 'だ', 'ね'],
+    explanation: '買ってあったっけ (Có mua sẵn kẹo gì không nhỉ? - Xác nhận lại).'
+  },
+  {
+    id: 'try-n3-c4-ex-33-2',
+    question: '何だ（＿＿＿＿＿＿）、先生がいいって言ってた本の名前。',
+    answer: 'っけ',
+    choices: ['っけ', 'よ', 'だ', 'ね'],
+    explanation: '何だっけ (Là gì ấy nhỉ - Quên mất thông tin).'
+  },
+  {
+    id: 'try-n3-c4-ex-33-3',
+    question: 'A: ぼく、昨日、ジョニーの新しい映画見たんだ（＿＿＿＿＿＿）。\nB: え？もう始まってるんだよ。',
+    answer: 'よ',
+    choices: ['っけ', 'よ', 'だ', 'ね'],
+    explanation: '見たんだよ (Nhấn mạnh thông tin truyền đạt cho người khác, không phải là hỏi lại).'
+  },
+  {
+    id: 'try-n3-c4-ex-33-4',
+    question: 'A: 石油の値段がまた上がるらしいね。\nB: え？そんなこと言ってた（＿＿＿＿＿＿）。',
+    answer: 'っけ',
+    choices: ['っけ', 'よ', 'だ', 'ね'],
+    explanation: '言ってたっけ (Có nói chuyện đó à? - Xác nhận lại vì không nhớ).'
+  }
+];
+
+export const chapter4CheckItems: StudyItem[] = [
+  {
+    id: 'try-n3-c4-check-1',
+    question: 'あれ？天気予報、今日雨降るって言ってた（＿＿＿＿＿＿）？\nううん。晴れって言ってたのに…。',
+    answer: 'っけ',
+    choices: ['っけ', 'って', 'よ', 'ね'],
+    explanation: 'Xác nhận lại thông tin đã nghe: 言ってたっけ？ (Dự báo thời tiết có nói hôm nay trời mưa không nhỉ?)'
+  },
+  {
+    id: 'try-n3-c4-check-2',
+    question: 'さくらちゃん、遅いね。大丈夫かな？\nそうね。道に迷って（＿＿＿＿＿＿）。',
+    answer: 'たりして',
+    choices: ['たりして', 'たっけ', 'てて', 'といて'],
+    explanation: 'Phỏng đoán: 道に迷ったりして (Không chừng là lạc đường rồi cũng nên).'
+  },
+  {
+    id: 'try-n3-c4-check-3',
+    question: '大変だ！キャッシュカード落としちゃった。\nじゃ、すぐに銀行に連絡（＿＿＿＿＿＿）。',
+    answer: 'しなきゃ',
+    choices: ['しちゃ', 'しなきゃ', 'してる', 'しとく'],
+    explanation: 'Rút gọn của 連絡しなければいけない: 連絡しなきゃ (Phải liên lạc cho ngân hàng ngay).'
+  }
+];
+
 export const allTryN3FlashcardItems: StudyItem[] = [
+  ...chapter4FlashcardItems,
   ...chapter1FlashcardItems,
   ...chapter2FlashcardItems,
-  ...chapter2Part2FlashcardItems
+  ...chapter2Part2FlashcardItems,
+  ...chapter3FlashcardItems
 ];
 
 export const tryN3Lessons: Lesson[] = [
   {
     id: 1,
-    title: 'TRY! N3: Ngữ Pháp Trọng Tâm (Phần 1 ➔ 4)',
+    title: 'TRY! N3: Ngữ Pháp Trọng Tâm (Phần 1 ➔ 5)',
     hasTheory: true,
     sections: [
       {
         id: 'try-n3-flashcard-all',
-        title: 'Flashcard Toàn bộ 20 Mẫu Ngữ Pháp & Điểm Plus (25 thẻ)',
+        title: 'Flashcard Toàn bộ 25 Mẫu Ngữ Pháp & Điểm Plus (30 thẻ)',
         type: 'vocabulary',
         items: allTryN3FlashcardItems
       },
@@ -2626,6 +4070,55 @@ export const tryN3Lessons: Lesson[] = [
         items: chapter2Part2CheckItems
       },
       {
+        id: 'try-n3-c3-flashcard',
+        title: 'Flashcard Phần 6 (5 thẻ)',
+        type: 'vocabulary',
+        items: chapter3FlashcardItems
+      },
+      {
+        id: 'try-n3-c3-exercises',
+        title: 'Trắc nghiệm やっみよう! Phần 6 (15 câu)',
+        type: 'multiple_choice',
+        items: chapter3ExerciseItems
+      },
+      {
+        id: 'try-n3-c3-check',
+        title: 'Kiểm tra Check 📖 Phần 6 (5 câu)',
+        type: 'multiple_choice',
+        items: chapter3CheckItems
+      },
+
+      {
+        id: 'try-n3-c4-flashcard',
+        title: 'Flashcard Phần 5 (4 thẻ)',
+        type: 'vocabulary',
+        items: chapter4FlashcardItems
+      },
+      {
+        id: 'try-n3-c4-ex',
+        title: 'Luyện tập やってみよう - Phần 5 (11 câu)',
+        type: 'multiple_choice',
+        items: chapter4ExerciseItems
+      },
+      {
+        id: 'try-n3-c4-check',
+        title: 'Kiểm tra Check ✔️ - Phần 5 (3 câu)',
+        type: 'multiple_choice',
+        items: chapter4CheckItems
+      },
+      {
+        id: 'try-n3-c3-matome',
+        title: '🎯 Tổng ôn Chương 3: まとめ (16 câu chuẩn JLPT)',
+        type: 'multiple_choice',
+        items: chapter3MatomeItems
+      },
+      {
+        id: 'try-n3-c4-matome',
+        title: '🎯 Tổng ôn Chương 4: まとめ (10 câu chuẩn JLPT)',
+        type: 'multiple_choice',
+        items: chapter4MatomeItems
+      },
+      {
         id: 'try-n3-c1-matome',
         title: '🏆 Tổng ôn Chương 1: 富士登山 (15 câu chuẩn JLPT)',
         type: 'multiple_choice',
@@ -2636,6 +4129,12 @@ export const tryN3Lessons: Lesson[] = [
         title: '🏆 Tổng ôn Chương 2: ぼくの犬、クロ (15 câu chuẩn JLPT)',
         type: 'multiple_choice',
         items: chapter2MatomeItems
+      },
+      {
+        id: 'try-n3-c5-matome',
+        title: '🏆 Tổng ôn Chương 5: 手作りハムのレシピ',
+        type: 'multiple_choice',
+        items: chapter5MatomeItems
       }
     ]
   }

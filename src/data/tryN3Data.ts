@@ -1943,6 +1943,125 @@ export const tryN3GrammarPoints: GrammarPoint[] = [
         vi: 'Ở thư viện này có rất nhiều sách về kỹ thuật cơ khí.'
       }
     ]
+  },
+  // Chương 6
+  {
+    id: 'try-n3-c6-g51',
+    chapter: 6,
+    number: 51, stars: 3,
+    formation: '普通形 ＋ おかげで\n(※ なA~~だ~~な / N~~だ~~の)',
+    translationVi: 'Nhờ có... (mà mang lại kết quả tốt)',
+    pattern: '〜のおかげで',
+    title: '自然のおかげで',
+    meaningJa: '「〜おかげ」は、「〜」が原因でいい結果になって、感謝や「よかった」という気持ちを言うときに使う。',
+    meaningVi: '〜おかげ sử dụng khi nói lên tâm trạng vui mừng, sự biết ơn vì nhờ có "〜" là nguyên nhân đưa đến kết quả tốt.',
+    examples: [
+      { ja: '今年の夏は新しいエアコンのおかげで快適に過ごせた。', vi: 'Mùa hè năm nay nhờ có máy điều hòa mới mà trải qua rất thoải mái.' },
+      { ja: '子どもの病気が治ったのは山下先生のおかげです。', vi: 'Con tôi khỏi bệnh là nhờ có bác sĩ Yamashita.' },
+      { ja: 'みんなが手伝ってくれたおかげで、引っ越しが早く済んだ。', vi: 'Nhờ mọi người giúp đỡ nên việc chuyển nhà đã xong sớm.' },
+      { ja: '気候が温暖なおかげで、このあたりで作られるみかんは甘くておいしいと評判です。', vi: 'Nhờ khí hậu ôn hòa mà quýt trồng ở vùng này được đánh giá là ngọt và ngon.' },
+      { ja: 'A：お元気ですか。\nB：はい、おかげさまで。', vi: 'A: Bạn có khỏe không?\nB: Vâng, ơn trời tôi vẫn khỏe.' }
+    ]
+  },
+  {
+    id: 'try-n3-c6-g52',
+    chapter: 6,
+    number: 52, stars: 1,
+    formation: '[時間の言葉] ＋ を通じて／を通して',
+    translationVi: 'Trong suốt (khoảng thời gian)',
+    pattern: '〜を通じて／〜を通して',
+    title: '四季を通じて',
+    meaningJa: '「〜を通じて／〜を通して」は、その間ずっとと言いたいとき、「一年・四季・一生」などの言葉と一緒に使う。',
+    meaningVi: '〜を通じて／〜を通して dùng kết hợp với các từ như là "一年・四季・一生" khi muốn nói rằng suốt trong khoảng thời gian đó.',
+    examples: [
+      { ja: '京都は1年を通じてたくさんの観光客が訪れる。', vi: 'Kyoto suốt 1 năm có rất nhiều khách du lịch đến thăm.' },
+      { ja: '工場内は年間を通じて、気温・湿度が一定に保たれています。', vi: 'Trong nhà máy suốt cả năm nhiệt độ và độ ẩm được giữ ở mức ổn định.' },
+      { ja: '弟は中学の3年間を通して、無遅刻、無欠席だった。', vi: 'Em trai tôi trong suốt 3 năm học cấp 2 không đi trễ, không vắng mặt buổi nào.' }
+    ]
+  },
+  {
+    id: 'try-n3-c6-g53',
+    chapter: 6,
+    number: 53, stars: 3,
+    formation: 'V-~~ます~~ ＋ ませんか\nいA く / なA じゃ / N じゃ ＋ [ないですか / ありませんか]',
+    translationVi: '... đúng không? / ... phải không?',
+    pattern: '〜ませんか／〜ないですか／〜ありませんか',
+    title: '守りたいと思いませんか',
+    meaningJa: '「〜ませんか／〜ないですか／〜ありませんか」は、「私は〜と思いますが、あなたも同じように思うでしょう？」と聞き手に同意を求めるときに使う。おしゃべりでは「〜ない？」の形をよく使う。男性の場合は「〜ないか」になることもある。',
+    meaningVi: '〜ませんか／〜ないですか／〜ありませんか sử dụng khi đòi hỏi sự đồng ý ở người nghe kiểu như là "Tôi nghĩ ~, bạn cũng nghĩ giống như vậy đúng không?". Văn nói thường dùng thể "〜ない？". Nam giới thì có thể dùng "〜ないか".',
+    examples: [
+      { ja: 'A：最近、自転車通勤する人が増えていませんか。\nB：そうですね。昔は少なかったのに…。', vi: 'A: Gần đây số người đi làm bằng xe đạp đang tăng lên phải không?\nB: Đúng vậy nhỉ. Ngày xưa ít vậy mà...' },
+      { ja: 'A：ちょっと寒くないですか。\nB：そうですね。窓、閉めましょうか。', vi: 'A: Có hơi lạnh không nhỉ?\nB: Đúng vậy nhỉ. Để tôi đóng cửa sổ lại nhé.' },
+      { ja: 'A：この上着、だれのですか。\nB：佐藤さんのじゃありませんか。佐藤さん、さっきそこに座ってましたから。', vi: 'A: Cái áo khoác này của ai vậy?\nB: Chẳng phải của Sato sao. Hồi nãy anh Sato đã ngồi ở đó mà.' },
+      { ja: 'A：ねえ、いいにおいがしない？\nB：うん、する。あ、あそこにパン屋さんがあるよ。', vi: 'A: Này, có mùi gì thơm thơm đúng không?\nB: Ừ, có. A, đằng kia có tiệm bánh mì kìa.' },
+      { ja: 'A：あの人、営業の本田さんじゃない？\nB：え！？あ、ほんとだ！', vi: 'A: Người kia, chẳng phải là anh Honda phòng kinh doanh sao?\nB: Hả!? A, đúng rồi!' },
+      { ja: 'A：ねえ、この時計、かわいくない？\nB：うん。でも、ちょっと高くないか？', vi: 'A: Này, cái đồng hồ này dễ thương không?\nB: Ừ. Nhưng mà có hơi đắt không?' }
+    ]
+  },
+  {
+    id: 'try-n3-c6-g54',
+    chapter: 6,
+    number: 54, stars: 2,
+    formation: 'N ＋ というと／といえば／といったら',
+    translationVi: 'Nhắc đến / Nói đến',
+    pattern: '〜というと／〜といえば／〜といったら',
+    title: '自然保護というと',
+    meaningJa: '「〜というと／〜といえば／〜といったら」は、その言葉から多くの人がイメージする物事を言うときに使う。有名なものや代表的なものを言うことが多い。',
+    meaningVi: '〜というと／〜といえば／〜といったら khi nói tới "~" thì nhiều người sẽ hình dung ra điều gì đó, hoặc liên tưởng tới cái đặc trưng nhất của sự vật đó. Thường nêu ra những cái nổi tiếng hoặc tiêu biểu.',
+    examples: [
+      { ja: '日本の花というと、桜がすぐ頭に浮かぶ。', vi: 'Nhắc đến hoa của Nhật Bản, thì hoa anh đào sẽ lập tức hiện lên trong đầu.' },
+      { ja: '外国人に人気のある観光地といえば、やはり京都でしょうか。', vi: 'Nhắc đến địa điểm du lịch được người nước ngoài yêu thích, thì quả nhiên là Kyoto nhỉ.' },
+      { ja: 'ファストフードといえば、何といってもハンバーガーだろう。', vi: 'Nhắc đến thức ăn nhanh, dù nói gì đi nữa thì chắc chắn là Hamburger rồi.' },
+      { ja: '冬のスポーツといったら、やっぱりスキーだよね。', vi: 'Nhắc đến thể thao mùa đông, thì tất nhiên là trượt tuyết rồi nhỉ.' }
+    ]
+  },
+  {
+    id: 'try-n3-c6-g55',
+    chapter: 6,
+    number: 55, stars: 2,
+    formation: 'V-る ＋ [べきだ／べき ＋ N]\n＊「するべき」は「すべき」も使われる。',
+    translationVi: 'Nên / Không nên',
+    pattern: '〜べきだ／〜べきではない',
+    title: 'そのまま残すべきだ',
+    meaningJa: '「〜べき」は、一般的に、〜するのが当然だ、〜するのが正しいと言うときに使う。〜しないのが当然だと言うときは「〜するべきではない」と言う。「〜するべきではない」を相手の行為について使うと「そんなことをしてはいけない」という強い意味になるので注意。',
+    meaningVi: '〜べき sử dụng khi nói rằng thông thường thì làm "~" là chuyện đương nhiên, làm "~" là đúng đắn. Khi nói không làm "~" là chuyện đương nhiên thì nói "〜するべきではない". Chú ý là nếu sử dụng "〜するべきではない" về hành vi của người khác thì nó có nghĩa nhấn mạnh: "Bạn không được làm vậy!".',
+    examples: [
+      { ja: '人にお金を借りたらすぐに返すべきだ。', vi: 'Nếu mượn tiền người khác thì nên trả lại ngay.' },
+      { ja: '上司に相談するべきかどうか悩むことがある。', vi: 'Có những lúc tôi băn khoăn không biết có nên thảo luận với cấp trên hay không.' },
+      { ja: '慣れない人は雪道で車の運転をするべきではないと思う。', vi: 'Tôi nghĩ những người chưa quen thì không nên lái xe trên đường tuyết.' },
+      { ja: '特に問題がなくても仕事の経過は上司に報告すべきですよ。', vi: 'Dù không có vấn đề gì đặc biệt cũng nên báo cáo tiến độ công việc cho cấp trên đấy.' },
+      { ja: 'やるべきことはすべてやったんだから、自信を持って試合にのぞめばいいよ。', vi: 'Vì đã làm tất cả những việc cần làm rồi nên cứ tự tin mà bước vào trận đấu thôi.' }
+    ],
+    plusNote: {
+      title: 'Plus: 〜べきだった',
+      stars: 2,
+      translationVi: 'Đáng lẽ nên / Đáng lẽ không nên',
+      meaningVi: 'Dùng 〜べきだった khi bạn muốn nói "Tôi hối hận, lấy làm tiếc về việc đã không làm ~ mặc dù đó là chuyện mình nên làm".',
+      examples: [
+        { ja: 'もっと早く試験の準備をしておくべきだったなあ。', vi: 'Đáng lẽ ra mình nên chuẩn bị cho kỳ thi sớm hơn.' },
+        { ja: '面接試験の前に思ったことは、社会の様子を知るために毎日、新聞を読んでおくべきだったということでした。', vi: 'Điều tôi đã nghĩ trước khi thi phỏng vấn là, đáng lẽ ra mình nên đọc báo mỗi ngày để biết tình hình xã hội.' }
+      ]
+    }
+  },
+  {
+    id: 'try-n3-c6-g56',
+    chapter: 6,
+    number: 56, stars: 3,
+    formation: 'N ＋ にとって (は/も)',
+    translationVi: 'Đối với',
+    pattern: '〜にとって',
+    title: '人にとっていい環境',
+    meaningJa: '「〜にとって…」は、「〜」の立場から見てどうであるかを言うときに使う。「…」には「難しい・大切だ」などの評価を表す言葉が続く。',
+    meaningVi: '〜にとって... sử dụng khi nói điều bạn cảm thấy khi đứng trên quan điểm/ở cương vị của "~" mà xem xét. Ở phần "..." thường là những từ biểu hiện sự đánh giá chẳng hạn như "難しい・大切だ".',
+    usageNote: 'Không thể sử dụng những từ ngữ thể hiện thái độ đối với một đối tượng nào đó như là "賛成・反対" hoặc "好き・嫌い".',
+    examples: [
+      { ja: '今回の旅行は私にとって忘れられない思い出になるだろう。', vi: 'Chuyến du lịch lần này đối với tôi có lẽ sẽ trở thành một kỷ niệm không thể nào quên.' },
+      { ja: '農家にとって天候不順は深刻な問題だ。', vi: 'Đối với nông dân, thời tiết không thuận lợi là một vấn đề nghiêm trọng.' },
+      { ja: 'だれにとってもいちばん大切なものは健康だと思います。', vi: 'Đối với ai cũng vậy, tôi nghĩ sức khỏe là điều quan trọng nhất.' },
+      { ja: 'ネットショッピングは、消費者にとっても、企業にとっても便利なシステムだ。', vi: 'Mua sắm trên mạng là một hệ thống tiện lợi đối với cả người tiêu dùng lẫn doanh nghiệp.' },
+      { ja: '都会は、いろいろなものがあって、若者にとっては楽しいところだろう。', vi: 'Thành phố có nhiều thứ, đối với giới trẻ thì chắc hẳn là một nơi thú vị.' },
+      { ja: 'A：新しい空港の建設についてどう思いますか。\nB：私は反対です。この地域の住民にとって、メリットは少ないですから。', vi: 'A: Bạn nghĩ sao về việc xây dựng sân bay mới?\nB: Tôi phản đối. Vì đối với cư dân ở khu vực này, lợi ích rất ít.' }
+    ]
   }
 
 ];

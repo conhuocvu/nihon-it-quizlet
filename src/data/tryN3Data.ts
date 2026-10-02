@@ -18,6 +18,7 @@ export interface GrammarPoint {
   }>;
   plusNote?: {
     title: string;
+    stars?: number;
     formation?: string;
     translationVi?: string;
     meaningVi: string;

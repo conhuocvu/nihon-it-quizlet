@@ -966,6 +966,187 @@ export const fillInBlankQuestions: SingleTenseQuestion[] = [
     answer: 'see',
     acceptedAnswers: ['see'],
     explanation: 'Sau "until" chia Hiện tại đơn: see.'
+  },
+  // --- BÀI TẬP B.1: VIẾT LẠI CÂU TRỰC TIẾP SANG GIÁN TIẾP (REPORTED SPEECH) ---
+  {
+    id: 'fill-rep-1',
+    type: 'fill',
+    tenseTags: ['Reported Speech', 'Past Perfect'],
+    prompt: 'Nam said: "I have just received a postcard from my foreign friend." ➔ Nam said that he __________ (just / receive) a postcard from his foreign friend.',
+    answer: 'had just received',
+    acceptedAnswers: ['had just received'],
+    explanation: 'Câu gián tiếp: Hiện tại hoàn thành (have received) lùi thì thành Quá khứ hoàn thành (had received). Trạng từ "just" đứng sau "had".'
+  },
+  {
+    id: 'fill-rep-2',
+    type: 'fill',
+    tenseTags: ['Reported Speech', 'Future Simple'],
+    prompt: 'Thu said: "All the students will have a meeting next week." ➔ Thu said that all the students __________ (have) a meeting the following week.',
+    answer: 'would have',
+    acceptedAnswers: ['would have'],
+    explanation: 'Câu gián tiếp: "will have" lùi thì thành "would have". "next week" chuyển thành "the following week".'
+  },
+  {
+    id: 'fill-rep-3',
+    type: 'fill',
+    tenseTags: ['Reported Speech', 'Past Perfect'],
+    prompt: 'I told my teacher: "I forgot to do my homework." ➔ I told my teacher that I __________ (forget) to do my homework.',
+    answer: 'had forgotten',
+    acceptedAnswers: ['had forgotten'],
+    explanation: 'Câu gián tiếp: Quá khứ đơn (forgot) lùi thì thành Quá khứ hoàn thành (had forgotten).'
+  },
+  {
+    id: 'fill-rep-4',
+    type: 'fill',
+    tenseTags: ['Reported Speech', 'Conditional'],
+    prompt: 'Peter said: "If I pass this test, my father will buy me a new skateboard." ➔ Peter said that if he __________ (pass) that test, his father would buy him a new skateboard.',
+    answer: 'passed',
+    acceptedAnswers: ['passed'],
+    explanation: 'Câu điều kiện trong lời nói gián tiếp: Câu điều kiện loại 1 lùi về loại 2 ("pass" ➔ "passed", "will buy" ➔ "would buy", "this test" ➔ "that test").'
+  },
+  {
+    id: 'fill-rep-5',
+    type: 'fill',
+    tenseTags: ['Reported Speech'],
+    prompt: 'Her father said to her: "You can go to the movie with your friend." ➔ Her father told her that she __________ (can / go) to the movie with her friend.',
+    answer: 'could go',
+    acceptedAnswers: ['could go'],
+    explanation: 'Câu gián tiếp: Động từ khuyết thiếu "can" lùi thì thành "could". "said to her" chuyển thành "told her".'
+  },
+  {
+    id: 'fill-rep-6',
+    type: 'fill',
+    tenseTags: ['Reported Speech', 'Past Continuous'],
+    prompt: 'Phong said: "I am looking forward to my grandfather\'s gift." ➔ Phong said that he __________ (look forward to) his grandfather\'s gift.',
+    answer: 'was looking forward to',
+    acceptedAnswers: ['was looking forward to', 'was looking forward'],
+    explanation: 'Câu gián tiếp: Hiện tại tiếp diễn (am looking forward to) lùi thì thành Quá khứ tiếp diễn (was looking forward to).'
+  },
+  {
+    id: 'fill-rep-7',
+    type: 'fill',
+    tenseTags: ['Reported Speech', 'Future Simple'],
+    prompt: 'Minh said to me: "We will start collecting the data next month." ➔ Minh told me that they __________ (start) collecting the data the following month.',
+    answer: 'would start',
+    acceptedAnswers: ['would start'],
+    explanation: 'Câu gián tiếp: "will start" lùi thì thành "would start". "next month" đổi thành "the following month".'
+  },
+  {
+    id: 'fill-rep-8',
+    type: 'fill',
+    tenseTags: ['Reported Speech', 'Past Simple'],
+    prompt: 'She asked her mom: "Are there any oranges in the fridge?" ➔ She asked her mom if there __________ (be) any oranges in the fridge.',
+    answer: 'were',
+    acceptedAnswers: ['were'],
+    explanation: 'Câu hỏi Yes/No gián tiếp: Dùng "if/whether" + S + V lùi thì. Động từ "are" lùi thì thành "were" theo sau bởi chủ ngữ số nhiều (oranges).'
+  },
+  {
+    id: 'fill-rep-9',
+    type: 'fill',
+    tenseTags: ['Reported Speech', 'Past Perfect Continuous'],
+    prompt: 'She asked Ba: "Were you reading this book at 8 o\'clock last Sunday?" ➔ She asked Ba if he __________ (read) that book at 8 o\'clock the previous Sunday.',
+    answer: 'had been reading',
+    acceptedAnswers: ['had been reading', 'was reading'],
+    explanation: 'Câu hỏi Yes/No gián tiếp: Quá khứ tiếp diễn (were you reading) lùi thì thành Quá khứ hoàn thành tiếp diễn (had been reading) hoặc giữ Quá khứ tiếp diễn (was reading).'
+  },
+  {
+    id: 'fill-rep-10',
+    type: 'fill',
+    tenseTags: ['Reported Speech', 'Future Simple'],
+    prompt: 'He asked his friend: "Will it rain tomorrow morning?" ➔ He asked his friend if it __________ (rain) the following morning.',
+    answer: 'would rain',
+    acceptedAnswers: ['would rain'],
+    explanation: 'Câu hỏi Yes/No gián tiếp: Dùng "if/whether" + S + V lùi thì ("will rain" ➔ "would rain"). "tomorrow morning" ➔ "the following morning".'
+  },
+  {
+    id: 'fill-rep-11',
+    type: 'fill',
+    tenseTags: ['Reported Speech', 'Past Simple'],
+    prompt: '"Do your sister and brother go to the same school?", she asked Nam. ➔ She asked Nam if his sister and brother __________ (go) to the same school.',
+    answer: 'went',
+    acceptedAnswers: ['went'],
+    explanation: 'Câu hỏi Yes/No gián tiếp: Dùng "if/whether" + S + V lùi thì. Hiện tại đơn "go" lùi thì thành Quá khứ đơn "went".'
+  },
+  {
+    id: 'fill-rep-12',
+    type: 'fill',
+    tenseTags: ['Reported Speech', 'Past Perfect'],
+    prompt: 'He said: "Have you finished your task, Nam?" ➔ He asked Nam if he __________ (finish) his task.',
+    answer: 'had finished',
+    acceptedAnswers: ['had finished'],
+    explanation: 'Câu hỏi Yes/No gián tiếp: Hiện tại hoàn thành "Have you finished" lùi thì thành Quá khứ hoàn thành "had finished".'
+  },
+  {
+    id: 'fill-rep-13',
+    type: 'fill',
+    tenseTags: ['Reported Speech'],
+    prompt: '"Can you lend me ten pounds?" said the boy to me. ➔ The boy asked me if I __________ (can / lend) him ten pounds.',
+    answer: 'could lend',
+    acceptedAnswers: ['could lend'],
+    explanation: 'Câu gián tiếp: "can" lùi thì thành "could", đại từ "you" ➔ "I", "me" ➔ "him".'
+  },
+  {
+    id: 'fill-rep-14',
+    type: 'fill',
+    tenseTags: ['Reported Speech', 'Past Continuous'],
+    prompt: 'I said to John, "Why aren\'t you looking for a job?" ➔ I asked John why he __________ (not / be / look) for a job.',
+    answer: "wasn't looking",
+    acceptedAnswers: ["wasn't looking", 'was not looking'],
+    explanation: 'Câu hỏi Wh-question gián tiếp: Dùng "why" + S + V lùi thì. Hiện tại tiếp diễn phủ định "aren\'t looking" lùi thì thành Quá khứ tiếp diễn "wasn\'t looking".'
+  },
+  {
+    id: 'fill-rep-15',
+    type: 'fill',
+    tenseTags: ['Reported Speech', 'Past Simple'],
+    prompt: '"How do you go to the airport?" his friend asked him. ➔ His friend asked him how he __________ (go) to the airport.',
+    answer: 'went',
+    acceptedAnswers: ['went'],
+    explanation: 'Câu hỏi Wh-question gián tiếp: Dùng "how" + S + V lùi thì ("do you go" ➔ "he went").'
+  },
+  {
+    id: 'fill-rep-16',
+    type: 'fill',
+    tenseTags: ['Reported Speech', 'Past Perfect'],
+    prompt: '"Whose car did you borrow last night?" I said to him. ➔ I asked him whose car he __________ (borrow) the previous night.',
+    answer: 'had borrowed',
+    acceptedAnswers: ['had borrowed'],
+    explanation: 'Câu hỏi Wh-question gián tiếp: "Whose car" + S + V lùi thì ("did you borrow" ➔ "he had borrowed"). "last night" ➔ "the previous night".'
+  },
+  {
+    id: 'fill-rep-17',
+    type: 'fill',
+    tenseTags: ['Reported Speech', 'Past Simple'],
+    prompt: '"Where does your father work?" the teacher asked me. ➔ The teacher asked me where my father __________ (work).',
+    answer: 'worked',
+    acceptedAnswers: ['worked'],
+    explanation: 'Câu hỏi Wh-question gián tiếp: Dùng "where" + S + V lùi thì ("does your father work" ➔ "my father worked").'
+  },
+  {
+    id: 'fill-rep-18',
+    type: 'fill',
+    tenseTags: ['Reported Speech', 'Future Simple'],
+    prompt: 'Tam\'s friend asked him: "How long will you stay in England?" ➔ Tam\'s friend asked him how long he __________ (stay) in England.',
+    answer: 'would stay',
+    acceptedAnswers: ['would stay'],
+    explanation: 'Câu hỏi Wh-question gián tiếp: Dùng "how long" + S + V lùi thì ("will you stay" ➔ "he would stay").'
+  },
+  {
+    id: 'fill-rep-19',
+    type: 'fill',
+    tenseTags: ['Reported Speech', 'Past Perfect'],
+    prompt: '“What have you done to cope with your work stress?” My doctor asked me. ➔ My doctor asked me what I __________ (do) to cope with my work stress.',
+    answer: 'had done',
+    acceptedAnswers: ['had done'],
+    explanation: 'Câu hỏi Wh-question gián tiếp: Hiện tại hoàn thành "have you done" lùi thì thành Quá khứ hoàn thành "had done".'
+  },
+  {
+    id: 'fill-rep-20',
+    type: 'fill',
+    tenseTags: ['Reported Speech', 'Near Future'],
+    prompt: '"How many lessons are you going to learn next month?", he asked me. ➔ He asked me how many lessons I __________ (be / go) to learn the following month.',
+    answer: 'was going',
+    acceptedAnswers: ['was going'],
+    explanation: 'Câu hỏi Wh-question gián tiếp: "are you going" lùi thì thành "I was going". "next month" ➔ "the following month".'
   }
 ];
 
@@ -1423,6 +1604,287 @@ export const mcqTenseQuestions: SingleTenseQuestion[] = [
     options: ['A. will watch', 'B. watched', 'C. will be watching', 'D. have watched'],
     answer: 'C. will be watching',
     explanation: 'Thời điểm cụ thể trong tương lai ➔ Chia Tương lai tiếp diễn: C. will be watching.'
+  },
+  // --- BÀI TẬP B.1 TRẮC NGHIỆM: CÂU TRỰC TIẾP SANG GIÁN TIẾP (REPORTED SPEECH) ---
+  {
+    id: 'mcq-rep-1',
+    type: 'mcq',
+    tenseTags: ['Reported Speech', 'Past Perfect'],
+    prompt: 'Nam said: "I have just received a postcard from my foreign friend." Chuyển sang câu gián tiếp:',
+    options: [
+      'A. Nam said that he had just received a postcard from his foreign friend.',
+      'B. Nam said that I have just received a postcard from my foreign friend.',
+      'C. Nam said that he has just received a postcard from his foreign friend.',
+      'D. Nam said that he would just receive a postcard from his foreign friend.'
+    ],
+    answer: 'A. Nam said that he had just received a postcard from his foreign friend.',
+    explanation: 'Lùi thì từ Hiện tại hoàn thành "have received" sang Quá khứ hoàn thành "had received", đại từ "I" chuyển thành "he", "my" chuyển thành "his".'
+  },
+  {
+    id: 'mcq-rep-2',
+    type: 'mcq',
+    tenseTags: ['Reported Speech', 'Future Simple'],
+    prompt: 'Thu said: "All the students will have a meeting next week." Chuyển sang câu gián tiếp:',
+    options: [
+      'A. Thu said that all the students would have a meeting the following week.',
+      'B. Thu said that all the students will have a meeting next week.',
+      'C. Thu said that all the students had a meeting the following week.',
+      'D. Thu said that all the students shall have a meeting next week.'
+    ],
+    answer: 'A. Thu said that all the students would have a meeting the following week.',
+    explanation: '"will" lùi thành "would", trạng từ chỉ thời gian "next week" chuyển thành "the following week" hoặc "the next week".'
+  },
+  {
+    id: 'mcq-rep-3',
+    type: 'mcq',
+    tenseTags: ['Reported Speech', 'Past Perfect'],
+    prompt: 'I told my teacher: "I forgot to do my homework." Chuyển sang câu gián tiếp:',
+    options: [
+      'A. I told my teacher that I had forgotten to do my homework.',
+      'B. I told my teacher that I forgot to do my homework.',
+      'C. I told my teacher that I have forgotten to do my homework.',
+      'D. I told my teacher that I will forget to do my homework.'
+    ],
+    answer: 'A. I told my teacher that I had forgotten to do my homework.',
+    explanation: 'Quá khứ đơn "forgot" lùi thành Quá khứ hoàn thành "had forgotten".'
+  },
+  {
+    id: 'mcq-rep-4',
+    type: 'mcq',
+    tenseTags: ['Reported Speech', 'Conditional'],
+    prompt: 'Peter said: "If I pass this test, my father will buy me a new skateboard." Chuyển sang câu gián tiếp:',
+    options: [
+      'A. Peter said that if he passed that test, his father would buy him a new skateboard.',
+      'B. Peter said that if I pass this test, my father will buy me a new skateboard.',
+      'C. Peter said that if he passes this test, his father will buy him a new skateboard.',
+      'D. Peter said that if he would pass that test, his father bought him a new skateboard.'
+    ],
+    answer: 'A. Peter said that if he passed that test, his father would buy him a new skateboard.',
+    explanation: 'Câu điều kiện loại 1 lùi về loại 2 trong câu gián tiếp: "pass" ➔ "passed", "will buy" ➔ "would buy", "this" ➔ "that".'
+  },
+  {
+    id: 'mcq-rep-5',
+    type: 'mcq',
+    tenseTags: ['Reported Speech'],
+    prompt: 'Her father said to her: "You can go to the movie with your friend." Chuyển sang câu gián tiếp:',
+    options: [
+      'A. Her father told her that she could go to the movie with her friend.',
+      'B. Her father said to her that you can go to the movie with your friend.',
+      'C. Her father told her that she can go to the movie with her friend.',
+      'D. Her father told her that she would can go to the movie with her friend.'
+    ],
+    answer: 'A. Her father told her that she could go to the movie with her friend.',
+    explanation: '"said to her" chuyển thành "told her", "can" lùi thì thành "could", đại từ "you" ➔ "she", "your" ➔ "her".'
+  },
+  {
+    id: 'mcq-rep-6',
+    type: 'mcq',
+    tenseTags: ['Reported Speech', 'Past Continuous'],
+    prompt: '"I am looking forward to my grandfather\'s gift", Phong said. Chuyển sang câu gián tiếp:',
+    options: [
+      'A. Phong said that he was looking forward to his grandfather\'s gift.',
+      'B. Phong said that I am looking forward to my grandfather\'s gift.',
+      'C. Phong said that he had looked forward to his grandfather\'s gift.',
+      'D. Phong said that he is looking forward to his grandfather\'s gift.'
+    ],
+    answer: 'A. Phong said that he was looking forward to his grandfather\'s gift.',
+    explanation: 'Hiện tại tiếp diễn "am looking forward" lùi thì thành Quá khứ tiếp diễn "was looking forward", "I" ➔ "he", "my" ➔ "his".'
+  },
+  {
+    id: 'mcq-rep-7',
+    type: 'mcq',
+    tenseTags: ['Reported Speech', 'Future Simple'],
+    prompt: '"We will start collecting the data next month." Minh said to me. Chuyển sang câu gián tiếp:',
+    options: [
+      'A. Minh told me that they would start collecting the data the following month.',
+      'B. Minh said to me that we will start collecting the data next month.',
+      'C. Minh told me that they will start collecting the data the next month.',
+      'D. Minh told me that they started collecting the data the following month.'
+    ],
+    answer: 'A. Minh told me that they would start collecting the data the following month.',
+    explanation: '"will start" lùi thành "would start", "next month" chuyển thành "the following month", "we" ➔ "they".'
+  },
+  {
+    id: 'mcq-rep-8',
+    type: 'mcq',
+    tenseTags: ['Reported Speech', 'Past Simple'],
+    prompt: '"Are there any oranges in the fridge?", she asked her mom. Chuyển sang câu gián tiếp:',
+    options: [
+      'A. She asked her mom if there were any oranges in the fridge.',
+      'B. She asked her mom were there any oranges in the fridge.',
+      'C. She asked her mom if are there any oranges in the fridge.',
+      'D. She asked her mom that there were any oranges in the fridge.'
+    ],
+    answer: 'A. She asked her mom if there were any oranges in the fridge.',
+    explanation: 'Câu hỏi Yes/No gián tiếp: Dùng "if/whether", chuyển trật tự từ đảo ngữ sang trần thuật và lùi thì: "are there" ➔ "there were".'
+  },
+  {
+    id: 'mcq-rep-9',
+    type: 'mcq',
+    tenseTags: ['Reported Speech', 'Past Perfect Continuous'],
+    prompt: '"Were you reading this book at 8 o\'clock last Sunday?", she asked Ba. Chuyển sang câu gián tiếp:',
+    options: [
+      'A. She asked Ba if he had been reading that book at 8 o\'clock the previous Sunday.',
+      'B. She asked Ba was he reading this book at 8 o\'clock last Sunday.',
+      'C. She asked Ba if had he been reading that book at 8 o\'clock the previous Sunday.',
+      'D. She asked Ba that he was reading this book at 8 o\'clock the previous Sunday.'
+    ],
+    answer: 'A. She asked Ba if he had been reading that book at 8 o\'clock the previous Sunday.',
+    explanation: 'Câu hỏi Yes/No gián tiếp: Dùng "if/whether" + S + V, "were you reading" ➔ "he had been reading", "this" ➔ "that", "last Sunday" ➔ "the previous Sunday".'
+  },
+  {
+    id: 'mcq-rep-10',
+    type: 'mcq',
+    tenseTags: ['Reported Speech', 'Future Simple'],
+    prompt: '"Will it rain tomorrow morning?", he asked his friend. Chuyển sang câu gián tiếp:',
+    options: [
+      'A. He asked his friend if it would rain the following morning.',
+      'B. He asked his friend will it rain tomorrow morning.',
+      'C. He asked his friend if would it rain the following morning.',
+      'D. He asked his friend that it would rain the next morning.'
+    ],
+    answer: 'A. He asked his friend if it would rain the following morning.',
+    explanation: 'Câu hỏi Yes/No gián tiếp: Dùng "if/whether", "will it rain" lùi thì và đổi trật tự thành "it would rain", "tomorrow morning" ➔ "the following morning".'
+  },
+  {
+    id: 'mcq-rep-11',
+    type: 'mcq',
+    tenseTags: ['Reported Speech', 'Past Simple'],
+    prompt: '"Do your sister and brother go to the same school?", she asked Nam. Chuyển sang câu gián tiếp:',
+    options: [
+      'A. She asked Nam if his sister and brother went to the same school.',
+      'B. She asked Nam if his sister and brother go to the same school.',
+      'C. She asked Nam did his sister and brother go to the same school.',
+      'D. She asked Nam that his sister and brother went to the same school.'
+    ],
+    answer: 'A. She asked Nam if his sister and brother went to the same school.',
+    explanation: 'Câu hỏi Yes/No gián tiếp: Dùng "if/whether", đổi trật tự sang câu trần thuật và lùi thì: "Do ... go" ➔ "... went".'
+  },
+  {
+    id: 'mcq-rep-12',
+    type: 'mcq',
+    tenseTags: ['Reported Speech', 'Past Perfect'],
+    prompt: 'He said: "Have you finished your task, Nam?" Chuyển sang câu gián tiếp:',
+    options: [
+      'A. He asked Nam if he had finished his task.',
+      'B. He asked Nam had he finished his task.',
+      'C. He asked Nam if he finished his task.',
+      'D. He asked Nam that he has finished his task.'
+    ],
+    answer: 'A. He asked Nam if he had finished his task.',
+    explanation: 'Hiện tại hoàn thành "Have you finished" lùi thì thành Quá khứ hoàn thành "had finished", "your task" ➔ "his task".'
+  },
+  {
+    id: 'mcq-rep-13',
+    type: 'mcq',
+    tenseTags: ['Reported Speech'],
+    prompt: '"Can you lend me ten pounds?" said the boy to me. Chuyển sang câu gián tiếp:',
+    options: [
+      'A. The boy asked me to lend him ten pounds.',
+      'B. The boy said to me can you lend me ten pounds.',
+      'C. The boy asked me if could I lend him ten pounds.',
+      'D. The boy told me that I can lend him ten pounds.'
+    ],
+    answer: 'A. The boy asked me to lend him ten pounds.',
+    explanation: 'Với lời đề nghị/yêu cầu lịch sự: Dùng cấu trúc "asked somebody to do something" (asked me to lend him ten pounds) hoặc "asked me if I could lend him ten pounds".'
+  },
+  {
+    id: 'mcq-rep-14',
+    type: 'mcq',
+    tenseTags: ['Reported Speech', 'Past Continuous'],
+    prompt: 'I said to John, "Why aren\'t you looking for a job?" Chuyển sang câu gián tiếp:',
+    options: [
+      'A. I asked John why he was not looking for a job.',
+      'B. I asked John why wasn\'t he looking for a job.',
+      'C. I said to John why he is not looking for a job.',
+      'D. I asked John that why he was not looking for a job.'
+    ],
+    answer: 'A. I asked John why he was not looking for a job.',
+    explanation: 'Câu hỏi Wh-question: Dùng "why" + S + V trần thuật lùi thì ("aren\'t looking" ➔ "was not looking").'
+  },
+  {
+    id: 'mcq-rep-15',
+    type: 'mcq',
+    tenseTags: ['Reported Speech', 'Past Simple'],
+    prompt: '"How do you go to the airport?" his friend asked him. Chuyển sang câu gián tiếp:',
+    options: [
+      'A. His friend asked him how he went to the airport.',
+      'B. His friend asked him how did he go to the airport.',
+      'C. His friend asked him how he goes to the airport.',
+      'D. His friend asked him that how he went to the airport.'
+    ],
+    answer: 'A. His friend asked him how he went to the airport.',
+    explanation: 'Câu hỏi Wh-question: Dùng "how" + S + V trần thuật lùi thì: "do you go" ➔ "he went".'
+  },
+  {
+    id: 'mcq-rep-16',
+    type: 'mcq',
+    tenseTags: ['Reported Speech', 'Past Perfect'],
+    prompt: '"Whose car did you borrow last night?" I said to him. Chuyển sang câu gián tiếp:',
+    options: [
+      'A. I asked him whose car he had borrowed the previous night.',
+      'B. I asked him whose car had he borrowed the previous night.',
+      'C. I said to him whose car he borrowed last night.',
+      'D. I asked him whose car he has borrowed the previous night.'
+    ],
+    answer: 'A. I asked him whose car he had borrowed the previous night.',
+    explanation: 'Quá khứ đơn "did you borrow" lùi thì thành "he had borrowed", "last night" ➔ "the previous night".'
+  },
+  {
+    id: 'mcq-rep-17',
+    type: 'mcq',
+    tenseTags: ['Reported Speech', 'Past Simple'],
+    prompt: '"Where does your father work?" the teacher asked me. Chuyển sang câu gián tiếp:',
+    options: [
+      'A. The teacher asked me where my father worked.',
+      'B. The teacher asked me where did my father work.',
+      'C. The teacher asked me where my father works.',
+      'D. The teacher asked me that where my father worked.'
+    ],
+    answer: 'A. The teacher asked me where my father worked.',
+    explanation: 'Dùng "where" + S + V lùi thì: "does your father work" ➔ "my father worked".'
+  },
+  {
+    id: 'mcq-rep-18',
+    type: 'mcq',
+    tenseTags: ['Reported Speech', 'Future Simple'],
+    prompt: 'Tam\'s friend asked him: "How long will you stay in England?" Chuyển sang câu gián tiếp:',
+    options: [
+      'A. Tam\'s friend asked him how long he would stay in England.',
+      'B. Tam\'s friend asked him how long would he stay in England.',
+      'C. Tam\'s friend asked him how long he will stay in England.',
+      'D. Tam\'s friend asked him that how long he would stay in England.'
+    ],
+    answer: 'A. Tam\'s friend asked him how long he would stay in England.',
+    explanation: 'Dùng "how long" + S + V lùi thì: "will you stay" ➔ "he would stay".'
+  },
+  {
+    id: 'mcq-rep-19',
+    type: 'mcq',
+    tenseTags: ['Reported Speech', 'Past Perfect'],
+    prompt: '“What have you done to cope with your work stress?” My doctor asked me. Chuyển sang câu gián tiếp:',
+    options: [
+      'A. My doctor asked me what I had done to cope with my work stress.',
+      'B. My doctor asked me what have I done to cope with my work stress.',
+      'C. My doctor asked me what I did to cope with my work stress.',
+      'D. My doctor asked me what had I done to cope with my work stress.'
+    ],
+    answer: 'A. My doctor asked me what I had done to cope with my work stress.',
+    explanation: 'Hiện tại hoàn thành "have you done" lùi thì thành Quá khứ hoàn thành "I had done".'
+  },
+  {
+    id: 'mcq-rep-20',
+    type: 'mcq',
+    tenseTags: ['Reported Speech', 'Near Future'],
+    prompt: '"How many lessons are you going to learn next month?", he asked me. Chuyển sang câu gián tiếp:',
+    options: [
+      'A. He asked me how many lessons I was going to learn the following month.',
+      'B. He asked me how many lessons was I going to learn next month.',
+      'C. He asked me how many lessons I am going to learn the following month.',
+      'D. He asked me that how many lessons I was going to learn the next month.'
+    ],
+    answer: 'A. He asked me how many lessons I was going to learn the following month.',
+    explanation: 'Thì tương lai gần lùi thì: "are you going" ➔ "I was going", "next month" ➔ "the following month".'
   }
 ];
 

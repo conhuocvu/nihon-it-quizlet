@@ -233,9 +233,12 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
       (w) =>
         w.term.toLowerCase().includes(q) ||
         w.answer.toLowerCase().includes(q) ||
+        w.meaning.toLowerCase().includes(q) ||
         w.ipa.toLowerCase().includes(q) ||
         w.topic.toLowerCase().includes(q) ||
-        w.partOfSpeech.toLowerCase().includes(q)
+        w.partOfSpeech.toLowerCase().includes(q) ||
+        (w.example && w.example.toLowerCase().includes(q)) ||
+        (w.exampleMeaning && w.exampleMeaning.toLowerCase().includes(q))
     );
   }, [baseWords, searchQuery]);
 

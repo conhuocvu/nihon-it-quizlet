@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import type { Lesson } from '../data/lessons';
+import React, { useState, useMemo } from 'react';
+import type { Lesson, StudyItem } from '../data/lessons';
 import { kanjiMasterN3Chars } from '../data/kanjiMasterN3Data';
 import type { KanjiChar } from '../data/kanjiMasterN3Data';
 import {
@@ -12,6 +12,11 @@ import {
   Eye,
   Check,
   Filter,
+  CheckCircle2,
+  ChevronDown,
+  ChevronUp,
+  Search,
+  Play,
 } from 'lucide-react';
 
 interface KanjiMasterN3SelectorProps {
@@ -37,6 +42,10 @@ export const KanjiMasterN3Selector: React.FC<KanjiMasterN3SelectorProps> = ({
   // Chapter filter state: 'all' or chapter number 3, 4, 5, 6, 7, 8
   const [selectedChapter, setSelectedChapter] = useState<number | 'all'>('all');
 
+  // Preview List controls (similar to MimiKara Oboeru)
+  const [showWordList, setShowWordList] = useState<boolean>(true);
+  const [previewSearch, setPreviewSearch] = useState<string>('');
+
   const CHAPTERS = [
     { num: 1, name: 'Chương 1: Đời sống (生活)', badge: 'C1: Đời sống (Bài 1-5)', color: 'from-teal-500 to-emerald-500' },
     { num: 2, name: 'Chương 2: Nhà cửa (家)', badge: 'C2: Nhà cửa (Bài 1-5)', color: 'from-amber-600 to-yellow-500' },
@@ -48,6 +57,7 @@ export const KanjiMasterN3Selector: React.FC<KanjiMasterN3SelectorProps> = ({
     { num: 8, name: 'Chương 8: Quan hệ (関係)', badge: 'C8: Quan hệ (Bài 26-30)', color: 'from-sky-500 to-blue-500' },
     { num: 9, name: 'Chương 9: Đơn vị (単位)', badge: 'C9: Đơn vị (Bài 31-32)', color: 'from-indigo-500 to-cyan-500' },
     { num: 10, name: 'Chương 10: Trường học (学校)', badge: 'C10: Trường học (Bài 33-37)', color: 'from-blue-500 to-indigo-500' },
+    { num: 11, name: 'Chương 11: Phỏng vấn (面接)', badge: 'C11: Phỏng vấn (Bài 38-42)', color: 'from-violet-500 to-purple-600' },
   ];
 
   const getChapterInfo = (lessonId: number) => {
@@ -60,7 +70,8 @@ export const KanjiMasterN3Selector: React.FC<KanjiMasterN3SelectorProps> = ({
     if (lessonId <= 25) return { num: 7, name: 'Kết hôn (結婚)', color: 'from-pink-500 to-rose-500' };
     if (lessonId <= 30) return { num: 8, name: 'Quan hệ (関係)', color: 'from-sky-500 to-blue-500' };
     if (lessonId <= 32) return { num: 9, name: 'Đơn vị (単位)', color: 'from-indigo-500 to-cyan-500' };
-    return { num: 10, name: 'Trường học (学校)', color: 'from-blue-500 to-indigo-500' };
+    if (lessonId <= 37) return { num: 10, name: 'Trường học (学校)', color: 'from-blue-500 to-indigo-500' };
+    return { num: 11, name: 'Phỏng vấn (面接)', color: 'from-violet-500 to-purple-600' };
   };
 
   const getLessonNumInChapter = (lessonId: number) => {
@@ -73,7 +84,8 @@ export const KanjiMasterN3Selector: React.FC<KanjiMasterN3SelectorProps> = ({
     if (lessonId <= 25) return lessonId - 20;
     if (lessonId <= 30) return lessonId - 25;
     if (lessonId <= 32) return lessonId - 30;
-    return lessonId - 32;
+    if (lessonId <= 37) return lessonId - 32;
+    return lessonId - 37;
   };
 
   const handleToggleChapter = (chapterNum: number) => {
@@ -131,9 +143,63 @@ export const KanjiMasterN3Selector: React.FC<KanjiMasterN3SelectorProps> = ({
     return chapInfo.num === selectedChapter;
   });
 
-  const selectedItemsCount = lessons
-    .filter((l) => selectedSectionIds.includes(l.sections[0].id))
-    .reduce((acc, l) => acc + l.sections[0].items.length, 0);
+  const totalItemsCount = useMemo(() => {
+    return lessons.reduce((acc, l) => acc + l.sections.reduce((sAcc, s) => sAcc + s.items.length, 0), 0);
+  }, [lessons]);
+
+  // Flatten all items with numbering and lesson/chapter metadata
+  const allFlatItemsWithNumber = useMemo(() => {
+    let globalCounter = 1;
+    const list: {
+      globalNum: number;
+      item: StudyItem;
+      sectionId: string;
+      lessonTitle: string;
+      lessonId: number;
+      chapterNum: number;
+      chapterName: string;
+    }[] = [];
+    lessons.forEach((lesson) => {
+      const chap = getChapterInfo(lesson.id);
+      lesson.sections.forEach((section) => {
+        section.items.forEach((item) => {
+          list.push({
+            globalNum: globalCounter++,
+            item,
+            sectionId: section.id,
+            lessonTitle: lesson.title,
+            lessonId: lesson.id,
+            chapterNum: chap.num,
+            chapterName: chap.name,
+          });
+        });
+      });
+    });
+    return list;
+  }, [lessons]);
+
+  // Selected words list based on selectedSectionIds
+  const selectedWordList = useMemo(() => {
+    const validSections = new Set(selectedSectionIds);
+    return allFlatItemsWithNumber.filter((entry) => validSections.has(entry.sectionId));
+  }, [allFlatItemsWithNumber, selectedSectionIds]);
+
+  // Filter within preview list via search query
+  const filteredPreviewList = useMemo(() => {
+    const q = previewSearch.toLowerCase().trim();
+    if (!q) return selectedWordList;
+    return selectedWordList.filter(
+      (entry) =>
+        entry.globalNum.toString().includes(q) ||
+        (entry.item.term && entry.item.term.toLowerCase().includes(q)) ||
+        (entry.item.reading && entry.item.reading.toLowerCase().includes(q)) ||
+        (entry.item.meaning && entry.item.meaning.toLowerCase().includes(q)) ||
+        (entry.item.answer && entry.item.answer.toLowerCase().includes(q)) ||
+        (entry.item.example && entry.item.example.toLowerCase().includes(q)) ||
+        entry.lessonTitle.toLowerCase().includes(q) ||
+        entry.chapterName.toLowerCase().includes(q)
+    );
+  }, [selectedWordList, previewSearch]);
 
   const activeModalLesson = modalLessonId
     ? lessons.find((l) => l.id === modalLessonId)
@@ -158,7 +224,7 @@ export const KanjiMasterN3Selector: React.FC<KanjiMasterN3SelectorProps> = ({
                 Giáo Trình Mới N3
               </span>
               <span className="text-xs font-bold text-slate-400">
-                {lessons.length} Bài học • {lessons.length * 4} Chữ Hán
+                {lessons.length} Bài học • {lessons.length * 4} Chữ Hán • {totalItemsCount} Từ vựng
               </span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-black text-slate-800 tracking-tight flex items-center gap-2">
@@ -199,7 +265,7 @@ export const KanjiMasterN3Selector: React.FC<KanjiMasterN3SelectorProps> = ({
               }`}
           >
             <BookOpen size={14} />
-            <span>Học các bài đã chọn ({selectedSectionIds.length})</span>
+            <span>Học các bài đã chọn ({selectedSectionIds.length} bài • {selectedWordList.length} từ)</span>
           </button>
         </div>
       </div>
@@ -357,11 +423,159 @@ export const KanjiMasterN3Selector: React.FC<KanjiMasterN3SelectorProps> = ({
         })}
       </div>
 
+      {/* CONFIRMATION PREVIEW LIST OF NUMBERED WORDS (MimiKara Oboeru Style) */}
+      <div id="kanji-preview-list" className="bg-white rounded-3xl border border-slate-200 shadow-md overflow-hidden transition-all scroll-mt-6">
+        {/* Preview Panel Header Bar */}
+        <div
+          onClick={() => setShowWordList((prev) => !prev)}
+          className="px-6 py-4 bg-slate-900 text-white flex items-center justify-between cursor-pointer hover:bg-slate-800 transition-colors"
+        >
+          <div className="flex items-center gap-3">
+            <span className="p-2 rounded-xl bg-rose-500 text-white font-extrabold text-xs">
+              <CheckCircle2 size={16} />
+            </span>
+            <div>
+              <h3 className="font-extrabold text-base flex items-center gap-2">
+                <span>Danh sách Confirm các từ sẽ học</span>
+                <span className="px-2.5 py-0.5 rounded-full bg-rose-500/20 text-rose-300 text-xs border border-rose-500/30">
+                  {selectedWordList.length} từ
+                </span>
+              </h3>
+              <p className="text-xs text-slate-400 font-medium">
+                Đã đánh số thứ tự từ #1 đến #{totalItemsCount}. Kiểm tra danh sách từ vựng trước khi vào Flashcard.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              className="px-3 py-1.5 rounded-lg bg-white/10 text-slate-200 hover:text-white text-xs font-bold flex items-center gap-1 cursor-pointer"
+            >
+              <span>{showWordList ? 'Thu gọn' : 'Xem danh sách'}</span>
+              {showWordList ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+            </button>
+          </div>
+        </div>
+
+        {/* Preview Content Area */}
+        {showWordList && (
+          <div className="p-4 md:p-6 space-y-4 bg-slate-50/50">
+            {/* Search Filter for Preview */}
+            <div className="relative max-w-md">
+              <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+              <input
+                type="text"
+                value={previewSearch}
+                onChange={(e) => setPreviewSearch(e.target.value)}
+                placeholder="Lọc từ trong danh sách sẽ học (ví dụ: 起きる, #12, おきる, thức dậy)..."
+                className="w-full pl-10 pr-12 py-2.5 rounded-xl border border-slate-200 bg-white text-xs font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-rose-500"
+              />
+              {previewSearch && (
+                <button
+                  type="button"
+                  onClick={() => setPreviewSearch('')}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[10px] text-slate-400 hover:text-slate-600 bg-slate-100 px-1.5 py-0.5 rounded cursor-pointer"
+                >
+                  Xóa
+                </button>
+              )}
+            </div>
+
+            {/* Scrollable Word Table */}
+            {filteredPreviewList.length === 0 ? (
+              <div className="text-center py-8 text-slate-400 text-xs font-bold">
+                {selectedWordList.length === 0
+                  ? 'Chưa chọn bài học nào. Hãy tích chọn ít nhất 1 bài để xem danh sách từ vựng.'
+                  : 'Không có từ vựng nào khớp với bộ lọc tìm kiếm'}
+              </div>
+            ) : (
+              <div className="overflow-x-auto max-h-[420px] overflow-y-auto border border-slate-200 rounded-2xl bg-white shadow-inner scrollbar-thin">
+                <table className="w-full text-left text-xs border-collapse">
+                  <thead className="bg-slate-100 border-b border-slate-200 text-slate-600 font-extrabold uppercase text-[10px] tracking-wider sticky top-0 z-10">
+                    <tr>
+                      <th className="py-3 px-4 w-16 text-center">STT (#)</th>
+                      <th className="py-3 px-4 w-36">Chữ Hán / Từ vựng</th>
+                      <th className="py-3 px-4 w-32">Cách đọc (Reading)</th>
+                      <th className="py-3 px-4">Ý nghĩa (Meaning)</th>
+                      <th className="py-3 px-4 w-32 text-right">Bài học</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100 font-medium">
+                    {filteredPreviewList.map((entry) => (
+                      <tr key={entry.item.id} className="hover:bg-rose-50/40 transition-colors">
+                        <td className="py-2.5 px-4 text-center">
+                          <span className="inline-block px-2 py-0.5 rounded-md bg-rose-100 text-rose-800 font-black text-[11px]">
+                            #{entry.globalNum}
+                          </span>
+                        </td>
+                        <td className="py-2.5 px-4 font-black text-slate-900 text-sm">
+                          {entry.item.term}
+                        </td>
+                        <td className="py-2.5 px-4 font-bold text-rose-600">
+                          {entry.item.reading || '-'}
+                        </td>
+                        <td className="py-2.5 px-4 text-slate-700 leading-snug">
+                          <div className="font-semibold">{entry.item.meaning || entry.item.answer}</div>
+                          {entry.item.example && (
+                            <div className="text-[11px] text-slate-400 mt-0.5 font-normal">
+                              {entry.item.example.split('\n')[0]}
+                            </div>
+                          )}
+                        </td>
+                        <td className="py-2.5 px-4 text-right text-slate-500 font-bold text-[11px] whitespace-nowrap">
+                          <button
+                            type="button"
+                            onClick={() => openLessonSummary(entry.lessonId)}
+                            className="px-2 py-0.5 rounded-md bg-slate-100 hover:bg-rose-100 hover:text-rose-700 text-slate-600 border border-slate-200/60 inline-flex items-center gap-1 transition-colors cursor-pointer"
+                            title="Xem tổng hợp 4 chữ Hán bài này"
+                          >
+                            <span>C{entry.chapterNum} • B{getLessonNumInChapter(entry.lessonId)}</span>
+                          </button>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+
+            <div className="flex items-center justify-between text-[11px] text-slate-500 font-semibold px-1">
+              <span>Hiển thị {filteredPreviewList.length} / {selectedWordList.length} từ chọn</span>
+              <span>Đã sẵn sàng confirm để vào học Flashcard</span>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Main Start Action CTA Button */}
+      <div className="flex justify-center pt-2">
+        <button
+          type="button"
+          onClick={() => {
+            if (selectedSectionIds.length > 0) {
+              onStartBySections(selectedSectionIds);
+            }
+          }}
+          disabled={selectedSectionIds.length === 0}
+          className={`px-10 py-4 rounded-2xl font-black text-lg text-white shadow-xl flex items-center gap-3 transition-all duration-300 ${
+            selectedSectionIds.length > 0
+              ? 'bg-gradient-to-r from-rose-500 via-red-500 to-rose-600 hover:from-rose-600 hover:to-red-700 shadow-rose-200 active:scale-98 cursor-pointer'
+              : 'bg-slate-300 shadow-none cursor-not-allowed opacity-60'
+          }`}
+        >
+          <Play size={22} fill="currentColor" />
+          <span>
+            Bắt đầu học Flashcard ({selectedWordList.length} từ)
+          </span>
+        </button>
+      </div>
+
       {/* Floating Action Bar at bottom when lessons are selected */}
       {selectedSectionIds.length > 0 && (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-slate-900/90 text-white backdrop-blur-md px-5 py-3.5 rounded-3xl shadow-2xl flex items-center justify-between gap-4 z-40 border border-slate-700/60 w-[92%] max-w-xl animate-fade-in">
+        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-slate-900/95 text-white backdrop-blur-md px-5 py-3.5 rounded-3xl shadow-2xl flex items-center justify-between gap-4 z-40 border border-slate-700/60 w-[94%] max-w-2xl animate-fade-in">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-2xl bg-rose-500 text-white flex items-center justify-center font-black shadow-md shadow-rose-900/40">
+            <div className="w-9 h-9 rounded-2xl bg-rose-500 text-white flex items-center justify-center font-black shadow-md shadow-rose-900/40 text-sm">
               {selectedSectionIds.length}
             </div>
             <div>
@@ -369,13 +583,27 @@ export const KanjiMasterN3Selector: React.FC<KanjiMasterN3SelectorProps> = ({
                 Đã chọn {selectedSectionIds.length} bài học
               </p>
               <p className="text-[11px] font-semibold text-slate-400">
-                Tổng cộng {selectedItemsCount} từ vựng & cụm gạch chân
+                Tổng cộng {selectedWordList.length} từ vựng
               </p>
             </div>
           </div>
 
           <div className="flex items-center gap-2">
             <button
+              type="button"
+              onClick={() => {
+                setShowWordList(true);
+                const el = document.getElementById('kanji-preview-list');
+                el?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="text-[11px] font-bold text-slate-300 hover:text-white px-3 py-1.5 rounded-xl hover:bg-slate-800 transition-colors cursor-pointer flex items-center gap-1.5"
+            >
+              <Eye size={13} />
+              <span>Xem danh sách từ</span>
+            </button>
+
+            <button
+              type="button"
               onClick={() => setSelectedSectionIds([])}
               className="text-[11px] font-bold text-slate-400 hover:text-white px-2.5 py-1.5 rounded-xl hover:bg-slate-800 transition-colors cursor-pointer"
             >
@@ -383,10 +611,11 @@ export const KanjiMasterN3Selector: React.FC<KanjiMasterN3SelectorProps> = ({
             </button>
 
             <button
+              type="button"
               onClick={() => onStartBySections(selectedSectionIds)}
               className="px-4 py-2.5 rounded-2xl bg-gradient-to-r from-rose-500 to-red-500 hover:from-rose-600 hover:to-red-600 text-white font-black text-xs shadow-lg shadow-rose-900/30 flex items-center gap-1.5 cursor-pointer hover:scale-102 transition-all"
             >
-              <BookOpen size={14} />
+              <Play size={14} fill="currentColor" />
               <span>Học ngay</span>
             </button>
           </div>

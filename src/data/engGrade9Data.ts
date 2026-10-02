@@ -2031,6 +2031,458 @@ export const engGrade9Words: EngWordItem[] = [
     topic: 'Adjectives & Descriptions',
     example: 'The manager asked me to fix an urgent error.',
     exampleMeaning: 'Quản lý yêu cầu tôi sửa một lỗi khẩn cấp.'
+  },
+  // --- TỪ VỰNG TỪ BÀI TẬP B.1 (TẤT CẢ CÁC TỪ BÔI VÀNG Ở THỂ GỐC) ---
+  {
+    id: 'eng-183',
+    term: 'just',
+    ipa: '/dʒʌst/',
+    answer: 'vừa mới, chỉ',
+    meaning: 'vừa mới (dùng trong thì hiện tại hoàn thành); chỉ là',
+    partOfSpeech: 'Adjective/Adverb',
+    topic: 'Grammar & Connectors',
+    example: 'Nam said: "I have just received a postcard from my foreign friend."',
+    exampleMeaning: 'Nam nói: "Tôi vừa mới nhận được một tấm bưu thiếp từ người bạn nước ngoài của mình."'
+  },
+  {
+    id: 'eng-184',
+    term: 'receive',
+    ipa: '/rɪˈsiːv/',
+    answer: 'nhận, nhận được',
+    meaning: 'nhận được thư từ, bưu phẩm, quà tặng hoặc thông tin từ ai đó (thể gốc của received)',
+    partOfSpeech: 'Verb',
+    topic: 'Actions & Movement',
+    example: 'Nam said that he had just received a postcard from his foreign friend.',
+    exampleMeaning: 'Nam nói rằng cậu ấy vừa mới nhận được một tấm bưu thiếp từ người bạn nước ngoài của mình.'
+  },
+  {
+    id: 'eng-185',
+    term: 'postcard',
+    ipa: '/ˈpəʊstkɑːd/',
+    answer: 'bưu thiếp, thiệp bưu điện',
+    meaning: 'tấm thiệp có hình chụp một mặt dùng để gửi thư qua bưu điện mà không cần phong bì',
+    partOfSpeech: 'Noun',
+    topic: 'Objects & Nature',
+    example: 'Nam received a beautiful postcard from his foreign friend.',
+    exampleMeaning: 'Nam đã nhận được một tấm bưu thiếp tuyệt đẹp từ người bạn nước ngoài của mình.'
+  },
+  {
+    id: 'eng-186',
+    term: 'from',
+    ipa: '/frɒm/',
+    answer: 'từ, đến từ',
+    meaning: 'giới từ chỉ xuất xứ, nguồn gốc, địa điểm xuất phát hoặc người gửi',
+    partOfSpeech: 'Grammar/Connector',
+    topic: 'Grammar & Connectors',
+    example: 'I received a nice gift from my foreign friend.',
+    exampleMeaning: 'Tôi đã nhận được một món quà đẹp từ người bạn nước ngoài của mình.'
+  },
+  {
+    id: 'eng-187',
+    term: 'foreign',
+    ipa: '/ˈfɒrən/',
+    answer: 'thuộc về nước ngoài, ngoại quốc',
+    meaning: 'đến từ hoặc thuộc về một quốc gia khác',
+    partOfSpeech: 'Adjective/Adverb',
+    topic: 'Adjectives & Descriptions',
+    example: 'She enjoys talking with foreign tourists to practice English.',
+    exampleMeaning: 'Cô ấy thích trò chuyện với khách du lịch nước ngoài để rèn luyện tiếng Anh.'
+  },
+  {
+    id: 'eng-188',
+    term: 'meeting',
+    ipa: '/ˈmiːtɪŋ/',
+    answer: 'cuộc họp, buổi họp',
+    meaning: 'buổi họp, sự tụ họp của nhiều người vì một mục đích chung',
+    partOfSpeech: 'Noun',
+    topic: 'Daily Life & Routines',
+    example: 'Thu said: "All the students will have a meeting next week."',
+    exampleMeaning: 'Thu nói: "Tất cả các học sinh sẽ có một cuộc họp vào tuần tới."'
+  },
+  {
+    id: 'eng-189',
+    term: 'forget',
+    ipa: '/fəˈɡet/',
+    answer: 'quên',
+    meaning: 'không nhớ làm việc gì hoặc quên mất điều gì đó (thể gốc của forgot)',
+    partOfSpeech: 'Verb',
+    topic: 'Daily Life & Routines',
+    example: 'I told my teacher: "I forgot to do my homework."',
+    exampleMeaning: 'Em thưa với cô giáo: "Em đã quên làm bài tập về nhà."'
+  },
+  {
+    id: 'eng-190',
+    term: 'if',
+    ipa: '/ɪf/',
+    answer: 'nếu, liệu rằng',
+    meaning: 'liên từ chỉ điều kiện giả định hoặc dùng trong câu hỏi Yes/No gián tiếp',
+    partOfSpeech: 'Grammar/Connector',
+    topic: 'Grammar & Connectors',
+    example: 'Peter said: "If I pass this test, my father will buy me a new skateboard."',
+    exampleMeaning: 'Peter nói: "Nếu con thi đỗ bài kiểm tra này, bố sẽ mua cho con một chiếc ván trượt mới."'
+  },
+  {
+    id: 'eng-191',
+    term: 'pass',
+    ipa: '/pɑːs/',
+    answer: 'vượt qua, thi đỗ, qua môn',
+    meaning: 'đạt kết quả chuẩn để vượt qua một bài thi hoặc kì kiểm tra',
+    partOfSpeech: 'Verb',
+    topic: 'Daily Life & Routines',
+    example: 'Peter said: "If I pass this test, my father will buy me a new skateboard."',
+    exampleMeaning: 'Peter nói: "Nếu con thi đỗ bài kiểm tra này, bố sẽ mua cho con một chiếc ván trượt mới."'
+  },
+  {
+    id: 'eng-192',
+    term: 'test',
+    ipa: '/test/',
+    answer: 'bài kiểm tra, bài thi',
+    meaning: 'bài kiểm tra để đánh giá trình độ, kiến thức của học sinh',
+    partOfSpeech: 'Noun',
+    topic: 'Daily Life & Routines',
+    example: 'All the students studied hard to pass the final test.',
+    exampleMeaning: 'Tất cả học sinh đều học tập chăm chỉ để vượt qua bài kiểm tra cuối kỳ.'
+  },
+  {
+    id: 'eng-193',
+    term: 'skateboard',
+    ipa: '/ˈskeɪtbɔːd/',
+    answer: 'ván trượt, trượt ván',
+    meaning: 'tấm ván có 4 bánh xe nhỏ dùng trong môn trượt ván đường phố',
+    partOfSpeech: 'Noun',
+    topic: 'Objects & Nature',
+    example: 'Peter loves riding his new skateboard in the school yard.',
+    exampleMeaning: 'Peter rất thích trượt chiếc ván trượt mới của mình trong sân trường.'
+  },
+  {
+    id: 'eng-194',
+    term: 'can',
+    ipa: '/kæn/',
+    answer: 'có thể',
+    meaning: 'động từ khuyết thiếu chỉ khả năng hoặc sự cho phép (quá khứ: could)',
+    partOfSpeech: 'Grammar/Connector',
+    topic: 'Grammar & Connectors',
+    example: 'Her father said to her: "You can go to the movie with your friend."',
+    exampleMeaning: 'Bố cô ấy nói với cô ấy: "Con có thể đi xem phim với bạn của con."'
+  },
+  {
+    id: 'eng-195',
+    term: 'movie',
+    ipa: '/ˈmuːvi/',
+    answer: 'bộ phim, rạp chiếu phim',
+    meaning: 'phim điện ảnh chiếu rạp hoặc trên màn ảnh',
+    partOfSpeech: 'Noun',
+    topic: 'Objects & Nature',
+    example: 'Her father said that she could go to the movie with her friend.',
+    exampleMeaning: 'Bố cô ấy nói rằng cô có thể đi xem phim cùng với bạn của mình.'
+  },
+  {
+    id: 'eng-196',
+    term: 'look forward to',
+    ipa: '/lʊk ˈfɔːwəd tuː/',
+    answer: 'mong đợi, trông chờ (+ V-ing/N)',
+    meaning: 'háo hức mong chờ một sự kiện tốt đẹp trong tương lai (thể gốc của looking forward)',
+    partOfSpeech: 'Verb',
+    topic: 'Actions & Movement',
+    example: 'Phong said: "I am looking forward to my grandfather\'s gift."',
+    exampleMeaning: 'Phong nói: "Cháu đang rất mong đợi món quà của ông."'
+  },
+  {
+    id: 'eng-197',
+    term: 'grandfather',
+    ipa: '/ˈɡrænfɑːðər/',
+    answer: 'ông (ông nội / ông ngoại)',
+    meaning: 'cha của bố hoặc cha của mẹ (thể gốc của grandfather\'s)',
+    partOfSpeech: 'Noun',
+    topic: 'People, Family & Careers',
+    example: 'Phong received a wonderful birthday gift from his grandfather.',
+    exampleMeaning: 'Phong đã nhận được một món quà sinh nhật tuyệt vời từ ông của mình.'
+  },
+  {
+    id: 'eng-198',
+    term: 'gift',
+    ipa: '/ɡɪft/',
+    answer: 'món quà, quà tặng',
+    meaning: 'đồ vật được tặng để thể hiện tình cảm hoặc mừng dịp lễ, sinh nhật',
+    partOfSpeech: 'Noun',
+    topic: 'Objects & Nature',
+    example: 'Phong was looking forward to receiving the special gift.',
+    exampleMeaning: 'Phong đã rất mong chờ được nhận món quà đặc biệt.'
+  },
+  {
+    id: 'eng-199',
+    term: 'start',
+    ipa: '/stɑːt/',
+    answer: 'bắt đầu, khởi đầu',
+    meaning: 'bắt đầu làm một hành động hoặc quá trình (+ to V hoặc + V-ing)',
+    partOfSpeech: 'Verb',
+    topic: 'Actions & Movement',
+    example: 'Minh said: "We will start collecting the data next month."',
+    exampleMeaning: 'Minh nói: "Chúng tôi sẽ bắt đầu thu thập dữ liệu vào tháng tới."'
+  },
+  {
+    id: 'eng-200',
+    term: 'collect',
+    ipa: '/kəˈlekt/',
+    answer: 'thu thập, sưu tầm, gom lại',
+    meaning: 'tìm kiếm và tập hợp các đồ vật, thông tin từ nhiều nơi lại với nhau (thể gốc của collecting)',
+    partOfSpeech: 'Verb',
+    topic: 'Actions & Movement',
+    example: 'Minh told me that they would start to collect the data the following month.',
+    exampleMeaning: 'Minh nói với tôi rằng họ sẽ bắt đầu thu thập dữ liệu vào tháng kế tiếp.'
+  },
+  {
+    id: 'eng-201',
+    term: 'data',
+    ipa: '/ˈdeɪtə/',
+    answer: 'dữ liệu, số liệu, thông tin',
+    meaning: 'thông tin, sự kiện, con số được lưu trữ hoặc xử lý trên máy tính / tài liệu',
+    partOfSpeech: 'Noun',
+    topic: 'Objects & Nature',
+    example: 'They started collecting the data for their science project.',
+    exampleMeaning: 'Họ đã bắt đầu việc thu thập dữ liệu cho dự án khoa học của mình.'
+  },
+  {
+    id: 'eng-202',
+    term: 'there',
+    ipa: '/ðeər/',
+    answer: 'ở đó, có (There is / There are)',
+    meaning: 'ở vị trí đó, hoặc dùng trong cấu trúc There is/There are diễn tả sự tồn tại',
+    partOfSpeech: 'Grammar/Connector',
+    topic: 'Grammar & Connectors',
+    example: 'She asked her mom if there were any oranges in the fridge.',
+    exampleMeaning: 'Cô bé hỏi mẹ xem liệu có còn quả cam nào trong tủ lạnh không.'
+  },
+  {
+    id: 'eng-203',
+    term: 'orange',
+    ipa: '/ˈɒrɪndʒ/',
+    answer: 'quả cam, màu cam',
+    meaning: 'loại quả có múi mọng nước, vỏ cam giàu vitamin C; màu cam (thể gốc của oranges)',
+    partOfSpeech: 'Noun',
+    topic: 'Objects & Nature',
+    example: 'She asked her mom: "Are there any oranges in the fridge?"',
+    exampleMeaning: 'Cô bé hỏi mẹ: "Có còn quả cam nào trong tủ lạnh không mẹ?"'
+  },
+  {
+    id: 'eng-204',
+    term: 'fridge',
+    ipa: '/frɪdʒ/',
+    answer: 'tủ lạnh',
+    meaning: 'thiết bị điện gia dụng giữ cho thực phẩm luôn lạnh và tươi ngon (từ gốc: refrigerator)',
+    partOfSpeech: 'Noun',
+    topic: 'Objects & Nature',
+    example: 'Please put the fresh milk and fruit into the fridge.',
+    exampleMeaning: 'Làm ơn hãy để sữa tươi và trái cây vào trong tủ lạnh.'
+  },
+  {
+    id: 'eng-205',
+    term: 'read',
+    ipa: '/riːd/',
+    answer: 'đọc, đọc sách',
+    meaning: 'đọc sách, chữ, tài liệu (thể gốc của reading)',
+    partOfSpeech: 'Verb',
+    topic: 'Daily Life & Routines',
+    example: 'Were you reading this book at 8 o\'clock last Sunday?',
+    exampleMeaning: 'Bạn có đang đọc cuốn sách này vào lúc 8 giờ Chủ Nhật tuần trước không?'
+  },
+  {
+    id: 'eng-206',
+    term: 'Sunday',
+    ipa: '/ˈsʌndeɪ/',
+    answer: 'Chủ Nhật',
+    meaning: 'ngày cuối tuần, đứng sau thứ Bảy và trước thứ Hai',
+    partOfSpeech: 'Noun',
+    topic: 'Time, Seasons & Weather',
+    example: 'She asked Ba if he was reading that book last Sunday.',
+    exampleMeaning: 'Cô ấy hỏi Ba xem cậu có đang đọc cuốn sách đó vào Chủ Nhật tuần trước không.'
+  },
+  {
+    id: 'eng-207',
+    term: 'rain',
+    ipa: '/reɪn/',
+    answer: 'mưa, cơn mưa',
+    meaning: 'nước rơi từ mây xuống; trời mưa',
+    partOfSpeech: 'Verb',
+    topic: 'Time, Seasons & Weather',
+    example: 'He asked his friend if it would rain tomorrow morning.',
+    exampleMeaning: 'Cậu ấy hỏi bạn mình xem liệu trời có mưa vào sáng mai không.'
+  },
+  {
+    id: 'eng-208',
+    term: 'tomorrow',
+    ipa: '/təˈmɒrəʊ/',
+    answer: 'ngày mai',
+    meaning: 'vào ngày tiếp sau ngày hôm nay (chuyển sang gián tiếp: the following day / the next day)',
+    partOfSpeech: 'Adjective/Adverb',
+    topic: 'Time, Seasons & Weather',
+    example: 'He asked his friend: "Will it rain tomorrow morning?"',
+    exampleMeaning: 'Cậu ấy hỏi bạn mình: "Liệu sáng mai trời có mưa không?"'
+  },
+  {
+    id: 'eng-209',
+    term: 'same',
+    ipa: '/seɪm/',
+    answer: 'cùng, giống nhau',
+    meaning: 'cùng một, giống hệt nhau, không khác biệt (thường dùng the same)',
+    partOfSpeech: 'Adjective/Adverb',
+    topic: 'Adjectives & Descriptions',
+    example: 'She asked Nam if his sister and brother went to the same school.',
+    exampleMeaning: 'Cô ấy hỏi Nam liệu anh chị em của cậu có học cùng một trường hay không.'
+  },
+  {
+    id: 'eng-210',
+    term: 'task',
+    ipa: '/tɑːsk/',
+    answer: 'nhiệm vụ, bài tập, công việc',
+    meaning: 'công việc hoặc nhiệm vụ được giao cần phải hoàn thành',
+    partOfSpeech: 'Noun',
+    topic: 'Daily Life & Routines',
+    example: 'He asked Nam if he had finished his task.',
+    exampleMeaning: 'Anh ấy hỏi Nam xem cậu ấy đã hoàn thành nhiệm vụ của mình chưa.'
+  },
+  {
+    id: 'eng-211',
+    term: 'lend',
+    ipa: '/lend/',
+    answer: 'cho vay, cho mượn',
+    meaning: 'cho ai đó mượn tiền hoặc đồ vật trong một khoảng thời gian (quá khứ: lent)',
+    partOfSpeech: 'Verb',
+    topic: 'Actions & Movement',
+    example: 'The boy asked me if I could lend him ten pounds.',
+    exampleMeaning: 'Cậu bé hỏi tôi liệu tôi có thể cho cậu mượn 10 bảng Anh không.'
+  },
+  {
+    id: 'eng-212',
+    term: 'pound',
+    ipa: '/paʊnd/',
+    answer: 'đồng bảng Anh (đơn vị tiền tệ)',
+    meaning: 'đơn vị tiền tệ chính thức của Vương quốc Anh (kí hiệu: £, thể gốc của pounds)',
+    partOfSpeech: 'Noun',
+    topic: 'Objects & Nature',
+    example: 'The boy asked me: "Can you lend me ten pounds?"',
+    exampleMeaning: 'Cậu bé nói với tôi: "Chú có thể cho cháu mượn mười bảng Anh được không?"'
+  },
+  {
+    id: 'eng-213',
+    term: 'look for',
+    ipa: '/lʊk fɔːr/',
+    answer: 'tìm kiếm',
+    meaning: 'tìm kiếm ai đó hoặc việc gì đó (thể gốc của looking for trong looking for a job)',
+    partOfSpeech: 'Verb',
+    topic: 'Actions & Movement',
+    example: 'I asked John why he was not looking for a job.',
+    exampleMeaning: 'Tôi đã hỏi John tại sao anh ấy lại không đi tìm một công việc.'
+  },
+  {
+    id: 'eng-214',
+    term: 'job',
+    ipa: '/dʒɒb/',
+    answer: 'công việc, nghề nghiệp',
+    meaning: 'công việc làm để kiếm tiền, nghề nghiệp',
+    partOfSpeech: 'Noun',
+    topic: 'People, Family & Careers',
+    example: 'I said to John: "Why aren\'t you looking for a job?"',
+    exampleMeaning: 'Tôi nói với John: "Tại sao bạn lại không đi tìm một công việc?"'
+  },
+  {
+    id: 'eng-215',
+    term: 'airport',
+    ipa: '/ˈeəpɔːt/',
+    answer: 'sân bay, phi trường',
+    meaning: 'nơi máy bay cất cánh và hạ cánh',
+    partOfSpeech: 'Noun',
+    topic: 'Places, Transport & Shops',
+    example: 'His friend asked him how he went to the airport.',
+    exampleMeaning: 'Bạn của cậu ấy đã hỏi cậu ấy làm thế nào để đi đến sân bay.'
+  },
+  {
+    id: 'eng-216',
+    term: 'whose',
+    ipa: '/huːz/',
+    answer: 'của ai (từ để hỏi sở hữu)',
+    meaning: 'từ dùng để hỏi về chủ sở hữu của một đồ vật hoặc mối quan hệ',
+    partOfSpeech: 'Grammar/Connector',
+    topic: 'Grammar & Connectors',
+    example: 'I asked him whose car he had borrowed last night.',
+    exampleMeaning: 'Tôi đã hỏi anh ấy chiếc ô tô anh ấy mượn tối qua là của ai.'
+  },
+  {
+    id: 'eng-217',
+    term: 'borrow',
+    ipa: '/ˈbɒrəʊ/',
+    answer: 'mượn, vay',
+    meaning: 'mượn tiền hoặc đồ vật từ ai đó với ý định sẽ trả lại',
+    partOfSpeech: 'Verb',
+    topic: 'Actions & Movement',
+    example: 'I said to him: "Whose car did you borrow last night?"',
+    exampleMeaning: 'Tôi hỏi anh ấy: "Tối qua bạn đã mượn xe của ai vậy?"'
+  },
+  {
+    id: 'eng-218',
+    term: 'how long',
+    ipa: '/haʊ lɒŋ/',
+    answer: 'bao lâu (khoảng thời gian)',
+    meaning: 'từ để hỏi về độ dài thời gian hoặc khoảng thời gian kéo dài',
+    partOfSpeech: 'Grammar/Connector',
+    topic: 'Grammar & Connectors',
+    example: 'Tam\'s friend asked him how long he would stay in England.',
+    exampleMeaning: 'Bạn của Tâm đã hỏi cậu ấy sẽ ở lại nước Anh trong bao lâu.'
+  },
+  {
+    id: 'eng-219',
+    term: 'England',
+    ipa: '/ˈɪŋɡlənd/',
+    answer: 'nước Anh',
+    meaning: 'quốc gia thuộc Vương quốc Anh (United Kingdom)',
+    partOfSpeech: 'Noun',
+    topic: 'Places, Transport & Shops',
+    example: 'Tam\'s friend asked him: "How long will you stay in England?"',
+    exampleMeaning: 'Bạn của Tâm hỏi cậu ấy: "Cậu sẽ ở lại nước Anh trong bao lâu?"'
+  },
+  {
+    id: 'eng-220',
+    term: 'cope with',
+    ipa: '/kəʊp wɪð/',
+    answer: 'đối phó, đương đầu với',
+    meaning: 'xử lý hoặc giải quyết thành công một tình huống khó khăn, căng thẳng (thể gốc của cope)',
+    partOfSpeech: 'Verb',
+    topic: 'Daily Life & Routines',
+    example: 'My doctor asked me what I had done to cope with my work stress.',
+    exampleMeaning: 'Bác sĩ hỏi tôi đã làm những gì để đối phó với sự căng thẳng trong công việc.'
+  },
+  {
+    id: 'eng-221',
+    term: 'how many',
+    ipa: '/haʊ ˈmeni/',
+    answer: 'bao nhiêu (danh từ đếm được)',
+    meaning: 'từ dùng để hỏi số lượng của danh từ đếm được số nhiều',
+    partOfSpeech: 'Grammar/Connector',
+    topic: 'Grammar & Connectors',
+    example: 'He asked me how many lessons I was going to learn next month.',
+    exampleMeaning: 'Cậu ấy hỏi tôi sẽ học bao nhiêu bài học vào tháng tới.'
+  },
+  {
+    id: 'eng-222',
+    term: 'lesson',
+    ipa: '/ˈlesn/',
+    answer: 'bài học, tiết học',
+    meaning: 'khoảng thời gian học tập hoặc một bài học trong sách giáo trình (thể gốc của lessons)',
+    partOfSpeech: 'Noun',
+    topic: 'Daily Life & Routines',
+    example: 'He asked me: "How many lessons are you going to learn next month?"',
+    exampleMeaning: 'Cậu ấy hỏi tôi: "Bạn dự định sẽ học bao nhiêu bài vào tháng tới?"'
+  },
+  {
+    id: 'eng-223',
+    term: 'learn',
+    ipa: '/lɜːn/',
+    answer: 'học, học tập',
+    meaning: 'tiếp thu kiến thức, kĩ năng thông qua học tập hoặc rèn luyện',
+    partOfSpeech: 'Verb',
+    topic: 'Daily Life & Routines',
+    example: 'Students learn many useful things from this English course.',
+    exampleMeaning: 'Học sinh học được nhiều điều bổ ích từ khóa học tiếng Anh này.'
   }
 ];
 
@@ -2178,7 +2630,7 @@ export const engPosLessons: Lesson[] = PARTS_OF_SPEECH.map((pos, index) => {
 // All Combined English Grade 9 Lessons
 export const allEngGrade9Lessons = [...engTopicLessons, ...engPosLessons];
 
-// Master 182 Vocabulary Lesson for Flashcard Range Study
+// Master Vocabulary Lesson for Flashcard Range Study
 export const engMasterVocabLesson: Lesson = {
   id: 999,
   title: 'Tiếng Anh Lớp 9 - Từ Vựng SGK',
@@ -2186,7 +2638,7 @@ export const engMasterVocabLesson: Lesson = {
   sections: [
     {
       id: 'eng-grade9-all-vocab',
-      title: 'Danh sách 182 Từ Vựng SGK Lớp 9',
+      title: `Danh sách ${engGrade9Words.length} Từ Vựng SGK Lớp 9`,
       type: 'vocabulary',
       items: engGrade9Words.map((w) => ({
         id: w.id,

@@ -1467,6 +1467,156 @@ export const kanjiMasterN3Lessons: Lesson[] = [
         ]
       }
     ]
+  },
+  {
+    id: 38,
+    title: "Chương 11 - Bài 1: 希望 (希, 望, 夢, 的)",
+    sections: [
+      {
+        id: "km-n3-c11-l1-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          { "id": "km-n3-c11-l1-1", "term": "希少", "reading": "きしょう", "answer": "Quý hiếm, hiếm có", "meaning": "Quý hiếm, hiếm có", "example": "希少動物をほごする。\n(Bảo vệ động vật quý hiếm.)" },
+          { "id": "km-n3-c11-l1-2", "term": "希望", "reading": "きぼう", "answer": "Hy vọng, nguyện vọng", "meaning": "Hy vọng, nguyện vọng", "example": "きぼう校は、東京大学だ。\n(Trường đại học nguyện vọng là Đại học Tokyo.)" },
+          { "id": "km-n3-c11-l1-3", "term": "望遠", "reading": "ぼうえん", "answer": "Viễn vọng, nhìn xa", "meaning": "Viễn vọng, nhìn xa", "example": "望遠鏡で星を見る。\n(Ngắm sao bằng kính viễn vọng.)" },
+          { "id": "km-n3-c11-l1-4", "term": "望む", "reading": "のぞむ", "answer": "Mong ước, hy vọng", "meaning": "Mong ước, hy vọng", "example": "平和な世の中を望んでいる。\n(Mong ước một thế giới hòa bình.)" },
+          { "id": "km-n3-c11-l1-5", "term": "失望", "reading": "しつぼう", "answer": "Thất vọng", "meaning": "Thất vọng", "example": "彼の言動にしつぼうする。\n(Thất vọng với lời nói và hành động của anh ấy.)" },
+          { "id": "km-n3-c11-l1-6", "term": "夢", "reading": "ゆめ", "answer": "Giấc mơ", "meaning": "Giấc mơ", "example": "夢に好きな人が出てきた。\n(Người tôi thích xuất hiện trong giấc mơ.)" },
+          { "id": "km-n3-c11-l1-7", "term": "夢中", "reading": "むちゅう", "answer": "Say sưa, đam mê", "meaning": "Say sưa, đam mê", "example": "テレビゲームに夢中になる。\n(Say sưa chơi trò chơi điện tử.)" },
+          { "id": "km-n3-c11-l1-8", "term": "夢見る", "reading": "ゆめみる", "answer": "Mơ ước", "meaning": "Mơ ước", "example": "オリンピック選手を夢見る。\n(Mơ ước trở thành vận động viên Olympic.)" },
+          { "id": "km-n3-c11-l1-9", "term": "悪夢", "reading": "あくむ", "answer": "Ác mộng", "meaning": "Ác mộng", "example": "あくむのような事件が起きる。\n(Một vụ việc như ác mộng xảy ra.)" },
+          { "id": "km-n3-c11-l1-10", "term": "的", "reading": "まと", "answer": "Đích, bia, trung tâm", "meaning": "Đích, bia, trung tâm", "example": "彼女のファッションは注目の的だ。\n(Thời trang của cô ấy là trung tâm của sự chú ý.)" },
+          { "id": "km-n3-c11-l1-11", "term": "全国的", "reading": "ぜんこくてき", "answer": "Toàn quốc, mang tính toàn quốc", "meaning": "Toàn quốc, mang tính toàn quốc", "example": "今年は全国的に暑かった。\n(Năm nay thời tiết nóng trên toàn quốc.)" },
+          { "id": "km-n3-c11-l1-12", "term": "目的", "reading": "もくてき", "answer": "Mục đích", "meaning": "Mục đích", "example": "日本に来た目的を聞かれた。\n(Bị hỏi mục đích đến Nhật Bản.)" },
+          { "id": "km-n3-c11-l1-13", "term": "具体的", "reading": "ぐたいてき", "answer": "Cụ thể", "meaning": "Cụ thể", "example": "ぐたいてきな例をあげて説明する。\n(Đưa ra ví dụ cụ thể để giải thích.)" },
+          { "id": "km-n3-c11-l1-14", "term": "的中", "reading": "てきちゅう", "answer": "Trúng đích, đoán trúng", "meaning": "Trúng đích, đoán trúng", "example": "テストで予想がてきちゅうした。\n(Dự đoán đề kiểm tra đã trúng phóc.)" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 39,
+    title: "Chương 11 - Bài 2: 可能 (可, 能, 調, 選)",
+    sections: [
+      {
+        id: "km-n3-c11-l2-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          { "id": "km-n3-c11-l2-1", "term": "可能", "reading": "かのう", "answer": "Có thể, khả năng", "meaning": "Có thể, khả năng", "example": "可能なかぎりがんばりたい。\n(Tôi muốn cố gắng trong chừng mực có thể.)" },
+          { "id": "km-n3-c11-l2-2", "term": "不可能", "reading": "ふかのう", "answer": "Không thể, bất khả thi", "meaning": "Không thể, bất khả thi", "example": "この世にふかのうなことはない。\n(Trên đời này không có gì là không thể.)" },
+          { "id": "km-n3-c11-l2-3", "term": "可能性", "reading": "かのうせい", "answer": "Tính khả thi, khả năng", "meaning": "Tính khả thi, khả năng", "example": "雨が降る可能性がある。\n(Có khả năng trời sẽ mưa.)" },
+          { "id": "km-n3-c11-l2-4", "term": "才能", "reading": "さいのう", "answer": "Tài năng", "meaning": "Tài năng", "example": "彼はすばらしい才能を持っている。\n(Anh ấy có tài năng tuyệt vời.)" },
+          { "id": "km-n3-c11-l2-5", "term": "能力", "reading": "のうりょく", "answer": "Năng lực, khả năng", "meaning": "Năng lực, khả năng", "example": "日本語能力試験を受けた。\n(Đã dự thi Kỳ thi Năng lực Tiếng Nhật.)" },
+          { "id": "km-n3-c11-l2-6", "term": "性能", "reading": "せいのう", "answer": "Tính năng, hiệu suất", "meaning": "Tính năng, hiệu suất", "example": "せいのうが良い自動車。\n(Chiếc ô tô có hiệu suất tốt.)" },
+          { "id": "km-n3-c11-l2-7", "term": "調べる", "reading": "しらべる", "answer": "Điều tra, tìm hiểu", "meaning": "Điều tra, tìm hiểu", "example": "辞書で言葉の意味を調べる。\n(Tra nghĩa của từ bằng từ điển.)" },
+          { "id": "km-n3-c11-l2-8", "term": "順調", "reading": "じゅんちょう", "answer": "Thuận lợi", "meaning": "Thuận lợi", "example": "日本での生活は順調だ。\n(Cuộc sống ở Nhật rất thuận lợi.)" },
+          { "id": "km-n3-c11-l2-9", "term": "調う", "reading": "ととのう", "answer": "Được chuẩn bị, sẵn sàng", "meaning": "Được chuẩn bị, sẵn sàng", "example": "結婚式の準備が調った。\n(Chuẩn bị cho lễ kết hôn đã sẵn sàng.)" },
+          { "id": "km-n3-c11-l2-10", "term": "調える", "reading": "ととのえる", "answer": "Chuẩn bị, điều chỉnh (hương vị)", "meaning": "Chuẩn bị, điều chỉnh (hương vị)", "example": "塩を入れて味をととのえる。\n(Cho muối vào để nêm nếm lại vị.)" },
+          { "id": "km-n3-c11-l2-11", "term": "調子", "reading": "ちょうし", "answer": "Tình trạng", "meaning": "Tình trạng", "example": "体のちょうしが悪い。\n(Tình trạng cơ thể không được tốt.)" },
+          { "id": "km-n3-c11-l2-12", "term": "体調", "reading": "たいちょう", "answer": "Tình trạng cơ thể", "meaning": "Tình trạng cơ thể", "example": "最近たいちょうがあまり良くない。\n(Gần đây tình trạng cơ thể không được tốt lắm.)" },
+          { "id": "km-n3-c11-l2-13", "term": "調査", "reading": "ちょうさ", "answer": "Điều tra, khảo sát", "meaning": "Điều tra, khảo sát", "example": "アンケート調査を行った。\n(Đã tiến hành khảo sát bằng bảng hỏi.)" },
+          { "id": "km-n3-c11-l2-14", "term": "選挙", "reading": "せんきょ", "answer": "Bầu cử", "meaning": "Bầu cử", "example": "新しい市長を決める選挙がある。\n(Có cuộc bầu cử để quyết định thị trưởng mới.)" },
+          { "id": "km-n3-c11-l2-15", "term": "選ぶ", "reading": "えらぶ", "answer": "Chọn, lựa chọn", "meaning": "Chọn, lựa chọn", "example": "家から近い学校を選ぶ。\n(Chọn trường học gần nhà.)" },
+          { "id": "km-n3-c11-l2-16", "term": "選手", "reading": "せんしゅ", "answer": "Tuyển thủ, vận động viên", "meaning": "Tuyển thủ, vận động viên", "example": "私の姉はテニスせんしゅだ。\n(Chị gái tôi là vận động viên tennis.)" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 40,
+    title: "Chương 11 - Bài 3: 面接 1 (面, 接, 受, 落)",
+    sections: [
+      {
+        id: "km-n3-c11-l3-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          { "id": "km-n3-c11-l3-1", "term": "面接", "reading": "めんせつ", "answer": "Phỏng vấn", "meaning": "Phỏng vấn", "example": "二次の面接試験にも合格した。\n(Đã đỗ cả bài thi phỏng vấn vòng hai.)" },
+          { "id": "km-n3-c11-l3-2", "term": "面長", "reading": "おもなが", "answer": "Khuôn mặt dài", "meaning": "Khuôn mặt dài", "example": "彼女は面長美人だ。\n(Cô ấy là người đẹp có khuôn mặt dài.)" },
+          { "id": "km-n3-c11-l3-3", "term": "面", "reading": "おも", "answer": "Mặt, khuôn mặt, diện mạo", "meaning": "Mặt, khuôn mặt, diện mạo", "example": "面を上げる。\n(Ngẩng mặt lên.)" },
+          { "id": "km-n3-c11-l3-4", "term": "外面", "reading": "そとづら", "answer": "Bề ngoài, bộ mặt bên ngoài", "meaning": "Bề ngoài, bộ mặt bên ngoài", "example": "彼は外面だけはいい。\n(Anh ta chỉ được cái vẻ bề ngoài thôi.)" },
+          { "id": "km-n3-c11-l3-5", "term": "顔面", "reading": "がんめん", "answer": "Khuôn mặt", "meaning": "Khuôn mặt", "example": "ボールががんめんに当たった。\n(Bóng đập trúng vào mặt.)" },
+          { "id": "km-n3-c11-l3-6", "term": "面する", "reading": "めんする", "answer": "Hướng ra, giáp mặt", "meaning": "Hướng ra, giáp mặt", "example": "私の家は大通りに面している。\n(Nhà tôi hướng ra đường lớn.)" },
+          { "id": "km-n3-c11-l3-7", "term": "面", "reading": "おもて", "answer": "Bề mặt, mặt nước", "meaning": "Bề mặt, mặt nước", "example": "湖のおもてに太陽が映る。\n(Mặt trời in bóng trên mặt hồ.)" },
+          { "id": "km-n3-c11-l3-8", "term": "接ぐ", "reading": "つぐ", "answer": "Ghép (cây), nối", "meaning": "Ghép (cây), nối", "example": "バラの若木を接ぐ。\n(Ghép cây hồng non.)" },
+          { "id": "km-n3-c11-l3-9", "term": "接近", "reading": "せっきん", "answer": "Tiếp cận, đến gần", "meaning": "Tiếp cận, đến gần", "example": "台風が接近している。\n(Bão đang tiến đến gần.)" },
+          { "id": "km-n3-c11-l3-10", "term": "接する", "reading": "せっする", "answer": "Tiếp xúc, giao tiếp", "meaning": "Tiếp xúc, giao tiếp", "example": "人とせっする仕事がしたい。\n(Muốn làm công việc tiếp xúc với mọi người.)" },
+          { "id": "km-n3-c11-l3-11", "term": "受ける", "reading": "うける", "answer": "Nhận, bắt (bóng), dự thi", "meaning": "Nhận, bắt (bóng), dự thi", "example": "投手のボールを受ける。\n(Bắt lấy quả bóng của người ném bóng.)" },
+          { "id": "km-n3-c11-l3-12", "term": "受験", "reading": "じゅけん", "answer": "Dự thi", "meaning": "Dự thi", "example": "大学を受験する。\n(Dự thi vào đại học.)" },
+          { "id": "km-n3-c11-l3-13", "term": "受かる", "reading": "うかる", "answer": "Đỗ, thi qua", "meaning": "Đỗ, thi qua", "example": "大学の試験にうかった。\n(Đã đỗ kỳ thi đại học.)" },
+          { "id": "km-n3-c11-l3-14", "term": "受話器", "reading": "じゅわき", "answer": "Ống nghe điện thoại", "meaning": "Ống nghe điện thoại", "example": "電話が鳴ったのでじゅわきを取った。\n(Vì điện thoại reo nên đã nhấc ống nghe lên.)" },
+          { "id": "km-n3-c11-l3-15", "term": "落とす", "reading": "おとす", "answer": "Làm rơi, đánh rơi", "meaning": "Làm rơi, đánh rơi", "example": "さいふを落としてしまった。\n(Lỡ đánh rơi mất ví tiền rồi.)" },
+          { "id": "km-n3-c11-l3-16", "term": "落ちる", "reading": "おちる", "answer": "Rơi, rớt", "meaning": "Rơi, rớt", "example": "近所にかみなりが落ちた。\n(Sét đánh rơi xuống khu vực gần nhà.)" },
+          { "id": "km-n3-c11-l3-17", "term": "落書き", "reading": "らくがき", "answer": "Viết bậy, vẽ bậy", "meaning": "Viết bậy, vẽ bậy", "example": "子どもが、かべにらくがきする。\n(Trẻ con vẽ bậy lên tường.)" },
+          { "id": "km-n3-c11-l3-18", "term": "落語", "reading": "らくご", "answer": "Kể chuyện tấu hài Rakugo", "meaning": "Kể chuyện tấu hài Rakugo", "example": "らくごを見に行く。\n(Đi xem Rakugo.)" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 41,
+    title: "Chương 11 - Bài 4: 面接 2 (倍, 率, 平, 均)",
+    sections: [
+      {
+        id: "km-n3-c11-l4-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          { "id": "km-n3-c11-l4-1", "term": "二倍", "reading": "にばい", "answer": "Gấp đôi", "meaning": "Gấp đôi", "example": "野菜のねだんが例年の二倍になった。\n(Giá rau đã tăng gấp đôi so với mọi năm.)" },
+          { "id": "km-n3-c11-l4-2", "term": "三倍", "reading": "さんばい", "answer": "Gấp ba", "meaning": "Gấp ba", "example": "売り上げは去年のさんばいだ。\n(Doanh thu gấp ba lần năm ngoái.)" },
+          { "id": "km-n3-c11-l4-3", "term": "人一倍", "reading": "ひといちばい", "answer": "Gấp đôi người thường", "meaning": "Gấp đôi người thường", "example": "彼は人一倍元気だ。\n(Anh ấy khỏe mạnh gấp đôi người bình thường.)" },
+          { "id": "km-n3-c11-l4-4", "term": "倍率", "reading": "ばいりつ", "answer": "Tỷ lệ chọi, độ phóng đại", "meaning": "Tỷ lệ chọi, độ phóng đại", "example": "カメラの倍率を変える。\n(Thay đổi độ phóng đại của máy ảnh.)" },
+          { "id": "km-n3-c11-l4-5", "term": "率いる", "reading": "ひきいる", "answer": "Dẫn dắt, chỉ huy", "meaning": "Dẫn dắt, chỉ huy", "example": "学生を率いて、遠足へ行く。\n(Dẫn dắt học sinh đi dã ngoại.)" },
+          { "id": "km-n3-c11-l4-6", "term": "引率", "reading": "いんそつ", "answer": "Dẫn đường, hướng dẫn", "meaning": "Dẫn đường, hướng dẫn", "example": "先生が生徒をいんそつする。\n(Giáo viên dẫn dắt học sinh.)" },
+          { "id": "km-n3-c11-l4-7", "term": "確率", "reading": "かくりつ", "answer": "Xác suất", "meaning": "Xác suất", "example": "雨が降る確率は10%だ。\n(Xác suất trời mưa là 10%.)" },
+          { "id": "km-n3-c11-l4-8", "term": "効率", "reading": "こうりつ", "answer": "Hiệu suất, năng suất", "meaning": "Hiệu suất, năng suất", "example": "こうりつ良く仕事をする。\n(Làm việc một cách có hiệu suất tốt.)" },
+          { "id": "km-n3-c11-l4-9", "term": "平ら", "reading": "たいら", "answer": "Bằng phẳng", "meaning": "Bằng phẳng", "example": "たいらな岩の上に座る。\n(Ngồi trên một tảng đá bằng phẳng.)" },
+          { "id": "km-n3-c11-l4-10", "term": "平", "reading": "ひら", "answer": "Bình thường, phẳng", "meaning": "Bình thường, phẳng", "example": "平社員（ひらしゃいん）\n(Nhân viên bình thường, không có chức vụ)" },
+          { "id": "km-n3-c11-l4-11", "term": "平社員", "reading": "ひらしゃいん", "answer": "Nhân viên quèn (không có chức vụ)", "meaning": "Nhân viên quèn (không có chức vụ)", "example": "彼は入社以来ずっと平社員のままだ。\n(Từ khi vào công ty, anh ấy vẫn luôn là nhân viên bình thường.)" },
+          { "id": "km-n3-c11-l4-12", "term": "平日", "reading": "へいじつ", "answer": "Ngày thường", "meaning": "Ngày thường", "example": "平日の夕方はアルバイトをしている。\n(Buổi chiều tối ngày thường tôi làm thêm.)" },
+          { "id": "km-n3-c11-l4-13", "term": "平和", "reading": "へいわ", "answer": "Hòa bình", "meaning": "Hòa bình", "example": "へいわな世の中を望んでいる。\n(Mong ước một thế giới hòa bình.)" },
+          { "id": "km-n3-c11-l4-14", "term": "平成", "reading": "へいせい", "answer": "Thời kỳ Bình Thành (Heisei)", "meaning": "Thời kỳ Bình Thành (Heisei)", "example": "私はへいせい元年生まれだ。\n(Tôi sinh vào năm Bình Thành đầu tiên.)" },
+          { "id": "km-n3-c11-l4-15", "term": "手の平", "reading": "てのひら", "answer": "Lòng bàn tay", "meaning": "Lòng bàn tay", "example": "てのひらを広げて手相を見てもらう。\n(Mở lòng bàn tay ra để được xem chỉ tay.)" },
+          { "id": "km-n3-c11-l4-16", "term": "平等", "reading": "びょうどう", "answer": "Bình đẳng", "meaning": "Bình đẳng", "example": "チャンスはびょうどうにあたえられる。\n(Cơ hội được trao một cách bình đẳng.)" },
+          { "id": "km-n3-c11-l4-17", "term": "平均", "reading": "へいきん", "answer": "Trung bình", "meaning": "Trung bình", "example": "前回のテストの平均は80点だった。\n(Điểm trung bình của bài kiểm tra lần trước là 80 điểm.)" },
+          { "id": "km-n3-c11-l4-18", "term": "均一", "reading": "きんいつ", "answer": "Đồng giá, đồng nhất", "meaning": "Đồng giá, đồng nhất", "example": "この店の商品は全て百円均一だ。\n(Tất cả sản phẩm của cửa hàng này đều đồng giá 100 yên.)" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 42,
+    title: "Chương 11 - Bài 5: 成績 (成, 績, 良, 悪)",
+    sections: [
+      {
+        id: "km-n3-c11-l5-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          { "id": "km-n3-c11-l5-1", "term": "成る", "reading": "なる", "answer": "Trở thành, bao gồm", "meaning": "Trở thành, bao gồm", "example": "この映画は前編と後編から成る。\n(Bộ phim này bao gồm phần đầu và phần cuối.)" },
+          { "id": "km-n3-c11-l5-2", "term": "成す", "reading": "なす", "answer": "Làm nên, tạo thành, lập nên", "meaning": "Làm nên, tạo thành, lập nên", "example": "一財産を成す。\n(Gây dựng nên một khối tài sản / sự nghiệp.)" },
+          { "id": "km-n3-c11-l5-3", "term": "成功", "reading": "せいこう", "answer": "Thành công", "meaning": "Thành công", "example": "ロケットの打ち上げに成功する。\n(Phóng tên lửa thành công.)" },
+          { "id": "km-n3-c11-l5-4", "term": "完成", "reading": "かんせい", "answer": "Hoàn thành", "meaning": "Hoàn thành", "example": "会社の新しいビルがかんせいした。\n(Tòa nhà mới của công ty đã hoàn thành.)" },
+          { "id": "km-n3-c11-l5-5", "term": "成長", "reading": "せいちょう", "answer": "Trưởng thành, phát triển", "meaning": "Trưởng thành, phát triển", "example": "子どものせいちょうを楽しみにする。\n(Mong đợi sự trưởng thành của con cái.)" },
+          { "id": "km-n3-c11-l5-6", "term": "達成", "reading": "たっせい", "answer": "Đạt được, hoàn thành (mục tiêu)", "meaning": "Đạt được, hoàn thành (mục tiêu)", "example": "世界記録をたっせいする。\n(Đạt được kỷ lục thế giới.)" },
+          { "id": "km-n3-c11-l5-7", "term": "成人", "reading": "せいじん", "answer": "Người trưởng thành", "meaning": "Người trưởng thành", "example": "せいじんしきに和服を着る。\n(Mặc đồ Nhật vào lễ trưởng thành.)" },
+          { "id": "km-n3-c11-l5-8", "term": "成績", "reading": "せいせき", "answer": "Thành tích, điểm số", "meaning": "Thành tích, điểm số", "example": "成績が上がってうれしかった。\n(Điểm số tăng nên tôi rất vui.)" },
+          { "id": "km-n3-c11-l5-9", "term": "業績", "reading": "ぎょうせき", "answer": "Thành tích kinh doanh", "meaning": "Thành tích kinh doanh", "example": "あの会社は最近業績が伸びている。\n(Công ty đó dạo này thành tích kinh doanh đang tăng trưởng.)" },
+          { "id": "km-n3-c11-l5-10", "term": "実績", "reading": "じっせき", "answer": "Thành tích thực tế", "meaning": "Thành tích thực tế", "example": "じっせきが認められた。\n(Thành tích thực tế đã được công nhận.)" },
+          { "id": "km-n3-c11-l5-11", "term": "良い", "reading": "よい", "answer": "Tốt", "meaning": "Tốt", "example": "気分が良くないので、早退した。\n(Vì tâm trạng không tốt nên tôi đã về sớm.)" },
+          { "id": "km-n3-c11-l5-12", "term": "良好", "reading": "りょうこう", "answer": "Tốt đẹp", "meaning": "Tốt đẹp", "example": "検査の結果は良好だった。\n(Kết quả kiểm tra tốt đẹp.)" },
+          { "id": "km-n3-c11-l5-13", "term": "良心的", "reading": "りょうしんてき", "answer": "Có lương tâm, giá cả phải chăng", "meaning": "Có lương tâm, giá cả phải chăng", "example": "あの店の商品は良心的なねだんだ。\n(Sản phẩm của cửa hàng đó có giá cả phải chăng.)" },
+          { "id": "km-n3-c11-l5-14", "term": "悪い", "reading": "わるい", "answer": "Xấu, tồi", "meaning": "Xấu, tồi", "example": "明日は天気が悪くなるそうだ。\n(Nghe nói ngày mai thời tiết sẽ trở nên xấu đi.)" },
+          { "id": "km-n3-c11-l5-15", "term": "悪寒", "reading": "おかん", "answer": "Ớn lạnh", "meaning": "Ớn lạnh", "example": "熱もあるし、悪寒もする。\n(Vừa bị sốt vừa có cảm giác ớn lạnh.)" },
+          { "id": "km-n3-c11-l5-16", "term": "悪意", "reading": "あくい", "answer": "Ác ý", "meaning": "Ác ý", "example": "悪意に満ちた目でにらむ。\n(Lườm bằng ánh mắt đầy ác ý.)" },
+          { "id": "km-n3-c11-l5-17", "term": "不良", "reading": "ふりょう", "answer": "Lỗi, hỏng, lưu manh", "meaning": "Lỗi, hỏng, lưu manh", "example": "ふりょうひんを返品する。\n(Trả lại hàng hóa bị lỗi.)" },
+          { "id": "km-n3-c11-l5-18", "term": "悪口", "reading": "わるぐち", "answer": "Nói xấu", "meaning": "Nói xấu", "example": "友達にわるぐちを言われた。\n(Bị bạn bè nói xấu.)" },
+          { "id": "km-n3-c11-l5-19", "term": "悪化", "reading": "あっか", "answer": "Xấu đi, tồi tệ đi", "meaning": "Xấu đi, tồi tệ đi", "example": "寒い中外出したら、かぜがあっかした。\n(Ra ngoài lúc trời lạnh nên bệnh cảm trở nên tồi tệ hơn.)" }
+        ]
+      }
+    ]
   }
 ];
 
@@ -1752,6 +1902,36 @@ export const kanjiMasterN3Chars: { [lessonId: number]: KanjiChar[] } = {
     { char: "箱", hanViet: "TƯƠNG", strokes: 15, onyomi: [], kunyomi: ["はこ"], meaning: "Cái hộp, rương, thùng", examples: [{ word: "箱", reading: "はこ", meaning: "Cái hộp" }, { word: "ゴミ箱", reading: "ごみばこ", meaning: "Thùng rác" }] },
     { char: "棒", hanViet: "BỔNG", strokes: 12, onyomi: ["ボウ"], kunyomi: [], meaning: "Gậy gỗ, gậy iron, làm hỏng", examples: [{ word: "棒", reading: "ぼう", meaning: "Cây gậy" }, { word: "鉄棒", reading: "てつぼう", meaning: "Xà đơn" }] },
     { char: "伸", hanViet: "THÂN", strokes: 7, onyomi: ["シン"], kunyomi: ["の-びる", "の-ばす", "の-べる"], meaning: "Kéo dài, cao lên, duỗi thẳng", examples: [{ word: "伸びる", reading: "のびる", meaning: "Dài ra" }, { word: "伸ばす", reading: "のばす", meaning: "Kéo dài" }] }
+  ],
+  38: [
+    { char: "希", hanViet: "HY", strokes: 7, onyomi: ["キ"], kunyomi: [], meaning: "Hy vọng, mong mỏi", examples: [{ word: "希少", reading: "きしょう", meaning: "Quý hiếm" }, { word: "希望", reading: "きぼう", meaning: "Hy vọng" }] },
+    { char: "望", hanViet: "VỌNG", strokes: 11, onyomi: ["ボウ", "モウ"], kunyomi: ["のぞ-む"], meaning: "Mong ước, hy vọng, nhìn xa", examples: [{ word: "望む", reading: "のぞむ", meaning: "Mong ước" }, { word: "希望", reading: "きぼう", meaning: "Hy vọng" }, { word: "望遠鏡", reading: "ぼうえんきょう", meaning: "Kính viễn vọng" }] },
+    { char: "夢", hanViet: "MỘNG", strokes: 13, onyomi: ["ム"], kunyomi: ["ゆめ"], meaning: "Giấc mơ", examples: [{ word: "夢", reading: "ゆめ", meaning: "Giấc mơ" }, { word: "夢中", reading: "むちゅう", meaning: "Say sưa, đam mê" }, { word: "悪夢", reading: "あくむ", meaning: "Ác mộng" }] },
+    { char: "的", hanViet: "ĐÍCH", strokes: 8, onyomi: ["テキ"], kunyomi: ["まと"], meaning: "Đích, bia, mang tính chất", examples: [{ word: "目的", reading: "もくてき", meaning: "Mục đích" }, { word: "全国的", reading: "ぜんこくてき", meaning: "Mang tính toàn quốc" }, { word: "的中", reading: "てきちゅう", meaning: "Trúng đích" }] }
+  ],
+  39: [
+    { char: "可", hanViet: "KHẢ", strokes: 5, onyomi: ["カ"], kunyomi: [], meaning: "Có thể, khả năng", examples: [{ word: "可能", reading: "かのう", meaning: "Có thể" }, { word: "不可能", reading: "ふかのう", meaning: "Không thể" }] },
+    { char: "能", hanViet: "NĂNG", strokes: 10, onyomi: ["ノウ"], kunyomi: [], meaning: "Năng lực, khả năng", examples: [{ word: "能力", reading: "のうりょく", meaning: "Năng lực" }, { word: "才能", reading: "さいのう", meaning: "Tài năng" }, { word: "性能", reading: "せいのう", meaning: "Tính năng" }] },
+    { char: "調", hanViet: "ĐIỀU", strokes: 15, onyomi: ["チョウ"], kunyomi: ["しら-べる", "ととの-う", "ととの-える"], meaning: "Điều tra, điều chỉnh, tình trạng", examples: [{ word: "調べる", reading: "しらべる", meaning: "Điều tra" }, { word: "順調", reading: "じゅんちょう", meaning: "Thuận lợi" }, { word: "調子", reading: "ちょうし", meaning: "Tình trạng" }] },
+    { char: "選", hanViet: "TUYỂN", strokes: 15, onyomi: ["セン"], kunyomi: ["えら-ぶ"], meaning: "Tuyển chọn, bầu cử", examples: [{ word: "選ぶ", reading: "えらぶ", meaning: "Chọn" }, { word: "選挙", reading: "せんきょ", meaning: "Bầu cử" }, { word: "選手", reading: "せんしゅ", meaning: "Tuyển thủ" }] }
+  ],
+  40: [
+    { char: "面", hanViet: "DIỆN", strokes: 9, onyomi: ["メン"], kunyomi: ["おも", "おもて", "つら"], meaning: "Bề mặt, khuôn mặt, phương diện", examples: [{ word: "面接", reading: "めんせつ", meaning: "Phỏng vấn" }, { word: "面長", reading: "おもなが", meaning: "Khuôn mặt dài" }, { word: "面する", reading: "めんする", meaning: "Hướng ra" }] },
+    { char: "接", hanViet: "TIẾP", strokes: 11, onyomi: ["セツ"], kunyomi: ["つ-ぐ"], meaning: "Tiếp xúc, tiếp nối", examples: [{ word: "面接", reading: "めんせつ", meaning: "Phỏng vấn" }, { word: "接する", reading: "せっする", meaning: "Tiếp xúc" }, { word: "接近", reading: "せっきん", meaning: "Tiếp cận" }] },
+    { char: "受", hanViet: "THỤ", strokes: 8, onyomi: ["ジュ"], kunyomi: ["う-かる", "う-ける"], meaning: "Nhận, dự thi, đỗ", examples: [{ word: "受ける", reading: "うける", meaning: "Dự thi, nhận" }, { word: "受験", reading: "じゅけん", meaning: "Dự thi đại học" }, { word: "受かる", reading: "うかる", meaning: "Đỗ" }] },
+    { char: "落", hanViet: "LẠC", strokes: 12, onyomi: ["ラク"], kunyomi: ["お-ちる", "お-とす"], meaning: "Rơi, đánh rớt, rớt", examples: [{ word: "落ちる", reading: "おちる", meaning: "Rơi, rớt" }, { word: "落とす", reading: "おとす", meaning: "Đánh rơi" }, { word: "落書き", reading: "らくがき", meaning: "Viết bậy" }] }
+  ],
+  41: [
+    { char: "倍", hanViet: "BỘI", strokes: 10, onyomi: ["バイ"], kunyomi: [], meaning: "Gấp bội, số lần", examples: [{ word: "二倍", reading: "にばい", meaning: "Gấp đôi" }, { word: "倍率", reading: "ばいりつ", meaning: "Tỷ lệ chọi" }, { word: "人一倍", reading: "ひといちばい", meaning: "Gấp đôi người thường" }] },
+    { char: "率", hanViet: "SUẤT", strokes: 11, onyomi: ["ソツ", "リツ"], kunyomi: ["ひき-いる"], meaning: "Tỷ lệ, dẫn dắt", examples: [{ word: "確率", reading: "かくりつ", meaning: "Xác suất" }, { word: "率いる", reading: "ひきいる", meaning: "Dẫn dắt" }, { word: "効率", reading: "こうりつ", meaning: "Hiệu suất" }] },
+    { char: "平", hanViet: "BÌNH", strokes: 5, onyomi: ["ヘイ", "ビョウ"], kunyomi: ["たい-ら", "ひら"], meaning: "Bằng phẳng, hòa bình, bình thường", examples: [{ word: "平ら", reading: "たいら", meaning: "Bằng phẳng" }, { word: "平日", reading: "へいじつ", meaning: "Ngày thường" }, { word: "平和", reading: "へいわ", meaning: "Hòa bình" }] },
+    { char: "均", hanViet: "QUÂN", strokes: 7, onyomi: ["キン"], kunyomi: [], meaning: "Quân bình, bằng nhau", examples: [{ word: "平均", reading: "へいきん", meaning: "Trung bình" }, { word: "均一", reading: "きんいつ", meaning: "Đồng giá" }] }
+  ],
+  42: [
+    { char: "成", hanViet: "THÀNH", strokes: 6, onyomi: ["セイ", "ジョウ"], kunyomi: ["な-る", "な-す"], meaning: "Trở thành, thành công, hoàn thành", examples: [{ word: "成る", reading: "なる", meaning: "Trở thành, bao gồm" }, { word: "成功", reading: "せいこう", meaning: "Thành công" }, { word: "成績", reading: "せいせき", meaning: "Thành tích" }] },
+    { char: "績", hanViet: "TÍCH", strokes: 17, onyomi: ["セキ"], kunyomi: [], meaning: "Thành tích, công tích", examples: [{ word: "成績", reading: "せいせき", meaning: "Thành tích" }, { word: "業績", reading: "ぎょうせき", meaning: "Thành tích kinh doanh" }, { word: "実績", reading: "じっせき", meaning: "Thành tích thực tế" }] },
+    { char: "良", hanViet: "LƯƠNG", strokes: 7, onyomi: ["リョウ"], kunyomi: ["よ-い"], meaning: "Tốt, lương tâm", examples: [{ word: "良い", reading: "よい", meaning: "Tốt" }, { word: "良好", reading: "りょうこう", meaning: "Tốt đẹp" }, { word: "良心的", reading: "りょうしんてき", meaning: "Có lương tâm" }] },
+    { char: "悪", hanViet: "ÁC", strokes: 11, onyomi: ["アク", "オ"], kunyomi: ["わる-い"], meaning: "Xấu, ác", examples: [{ word: "悪い", reading: "わるい", meaning: "Xấu" }, { word: "悪寒", reading: "おかん", meaning: "Ớn lạnh" }, { word: "悪意", reading: "あくい", meaning: "Ác ý" }] }
   ]
 };
 

@@ -1,17 +1,21 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import type { EngWordItem } from '../data/engGrade9Data';
 import {
   ArrowLeft,
   Volume2,
   CheckCircle2,
   XCircle,
-  Sparkles,
   Trophy,
   HelpCircle,
   Send,
   PenTool,
   BrainCircuit,
-  Grid
+  Grid,
+  Clock,
+  ChevronLeft,
+  ChevronRight,
+  RotateCcw,
+  Award
 } from 'lucide-react';
 
 export type TestMode = 'mcq-en-vi' | 'mcq-vi-en' | 'spelling' | 'matching';
@@ -36,11 +40,18 @@ export const EngGrade9TestRunner: React.FC<EngGrade9TestRunnerProps> = ({
   testMode,
   onClose
 }) => {
-  // Randomly sample N words from pool
+  // Key to force re-sampling when user restarts test
+  const [testSessionKey, setTestSessionKey] = useState(0);
+
+  // Randomly sample N words from pool (capped for matching to keep board playable)
   const sampledWords = useMemo(() => {
     const shuffled = [...wordsPool].sort(() => Math.random() - 0.5);
-    return shuffled.slice(0, Math.min(questionCount, wordsPool.length));
-  }, [wordsPool, questionCount]);
+    const limit = testMode === 'matching' ? Math.min(questionCount, 12) : questionCount;
+    return shuffled.slice(0, Math.min(limit, wordsPool.length));
+  }, [wordsPool, questionCount, testMode, testSessionKey]);
+
+  // Timer state (đếm thời gian làm bài)
+  const [elapsedSeconds, setElapsedSeconds] = useState(0);
 
   // Speech Synthesis
   const speakWord = (text: string) => {
@@ -60,12 +71,28 @@ export const EngGrade9TestRunner: React.FC<EngGrade9TestRunnerProps> = ({
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState(0);
   const [wrongWords, setWrongWords] = useState<EngWordItem[]>([]);
+  const [showQuestionMap, setShowQuestionMap] = useState<boolean>(true);
 
   // State for Matching mode
   const [matchedPairs, setMatchedPairs] = useState<string[]>([]); // word IDs that are matched
   const [selectedEngId, setSelectedEngId] = useState<string | null>(null);
   const [selectedViId, setSelectedViId] = useState<string | null>(null);
   const [matchingError, setMatchingError] = useState<boolean>(false);
+
+  // Timer effect
+  useEffect(() => {
+    if (isSubmitted) return;
+    const timer = setInterval(() => {
+      setElapsedSeconds((prev) => prev + 1);
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [isSubmitted]);
+
+  const formatTimer = (totalSecs: number) => {
+    const mins = Math.floor(totalSecs / 60);
+    const secs = totalSecs % 60;
+    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  };
 
   // Generate MCQ questions if in MCQ mode
   const mcqQuestions: MCQQuestion[] = useMemo(() => {
@@ -151,6 +178,14 @@ export const EngGrade9TestRunner: React.FC<EngGrade9TestRunnerProps> = ({
     }
   };
 
+  // Previous Question logic
+  const handlePrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex((prev) => prev - 1);
+      setSpellingInput('');
+    }
+  };
+
   // Matching Selection Logic
   const handleSelectEngForMatching = (wordId: string) => {
     if (matchedPairs.includes(wordId)) return;
@@ -159,7 +194,6 @@ export const EngGrade9TestRunner: React.FC<EngGrade9TestRunnerProps> = ({
 
     if (selectedViId) {
       if (selectedViId === wordId) {
-        // Correct match!
         setMatchedPairs((prev) => [...prev, wordId]);
         setScore((prev) => prev + 1);
         setSelectedEngId(null);
@@ -169,7 +203,6 @@ export const EngGrade9TestRunner: React.FC<EngGrade9TestRunnerProps> = ({
           setIsSubmitted(true);
         }
       } else {
-        // Wrong match
         setMatchingError(true);
         setTimeout(() => {
           setSelectedEngId(null);
@@ -187,7 +220,6 @@ export const EngGrade9TestRunner: React.FC<EngGrade9TestRunnerProps> = ({
 
     if (selectedEngId) {
       if (selectedEngId === wordId) {
-        // Correct match!
         setMatchedPairs((prev) => [...prev, wordId]);
         setScore((prev) => prev + 1);
         setSelectedEngId(null);
@@ -197,7 +229,6 @@ export const EngGrade9TestRunner: React.FC<EngGrade9TestRunnerProps> = ({
           setIsSubmitted(true);
         }
       } else {
-        // Wrong match
         setMatchingError(true);
         setTimeout(() => {
           setSelectedEngId(null);
@@ -208,12 +239,29 @@ export const EngGrade9TestRunner: React.FC<EngGrade9TestRunnerProps> = ({
     }
   };
 
+  // Restart / Retest handler
+  const handleRestartTest = () => {
+    setTestSessionKey((prev) => prev + 1);
+    setCurrentIndex(0);
+    setUserAnswers({});
+    setSpellingInput('');
+    setIsSubmitted(false);
+    setScore(0);
+    setWrongWords([]);
+    setMatchedPairs([]);
+    setSelectedEngId(null);
+    setSelectedViId(null);
+    setElapsedSeconds(0);
+  };
+
   const currentWord = sampledWords[currentIndex];
+  const scale10Score = sampledWords.length > 0 ? ((score / sampledWords.length) * 10).toFixed(1) : '0';
+  const answeredCount = Object.keys(userAnswers).length;
 
   return (
     <div className="w-full max-w-4xl mx-auto px-4 py-6 space-y-6">
       {/* Top Header Navigation */}
-      <div className="flex items-center justify-between bg-white rounded-2xl p-4 shadow-sm border border-slate-200/80">
+      <div className="flex flex-wrap items-center justify-between gap-3 bg-white rounded-2xl p-4 shadow-sm border border-slate-200/80">
         <button
           onClick={onClose}
           className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition-all cursor-pointer"
@@ -238,22 +286,105 @@ export const EngGrade9TestRunner: React.FC<EngGrade9TestRunnerProps> = ({
           <p className="text-[11px] text-slate-500 font-medium">
             {testMode === 'matching'
               ? `Nối ${matchedPairs.length}/${sampledWords.length} cặp từ`
-              : `Câu ${currentIndex + 1}/${sampledWords.length}`}
+              : `Câu ${currentIndex + 1} / ${sampledWords.length}`}
           </p>
         </div>
 
-        <div className="px-3 py-1 rounded-full bg-sky-50 text-sky-700 text-xs font-extrabold border border-sky-200">
-          Điểm: {score}/{testMode === 'matching' ? sampledWords.length : currentIndex + (userAnswers[currentIndex] !== undefined ? 1 : 0)}
+        <div className="flex items-center gap-2">
+          {/* Timer Clock */}
+          <div className="px-3 py-1 rounded-full bg-amber-50 text-amber-800 text-xs font-extrabold border border-amber-200 flex items-center gap-1.5">
+            <Clock size={13} className="text-amber-600" />
+            <span>{formatTimer(elapsedSeconds)}</span>
+          </div>
+
+          {/* Current Score Badge */}
+          <div className="px-3 py-1 rounded-full bg-sky-50 text-sky-700 text-xs font-extrabold border border-sky-200">
+            {score}/{testMode === 'matching' ? sampledWords.length : answeredCount}
+          </div>
         </div>
       </div>
 
       {/* Progress Bar */}
       {testMode !== 'matching' && (
-        <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+        <div className="w-full bg-slate-200 h-2.5 rounded-full overflow-hidden">
           <div
-            className="bg-gradient-to-r from-sky-500 to-indigo-600 h-full transition-all duration-300"
+            className="bg-gradient-to-r from-sky-500 via-indigo-500 to-amber-500 h-full transition-all duration-300"
             style={{ width: `${((currentIndex + 1) / sampledWords.length) * 100}%` }}
           />
+        </div>
+      )}
+
+      {/* Question Jump Palette (Bản đồ câu hỏi 1 -> 50 - Cực tiện khi làm đề 50 câu) */}
+      {testMode !== 'matching' && !isSubmitted && sampledWords.length > 1 && (
+        <div className="bg-white rounded-2xl p-4 shadow-sm border border-slate-200/80 space-y-2">
+          <div className="flex items-center justify-between text-xs font-bold text-slate-700">
+            <span className="flex items-center gap-1.5">
+              <Grid size={15} className="text-sky-600" />
+              <span>
+                Bản đồ câu hỏi ({answeredCount}/{sampledWords.length} câu đã làm)
+              </span>
+            </span>
+
+            <div className="flex items-center gap-2">
+              <button
+                onClick={() => setShowQuestionMap(!showQuestionMap)}
+                className="text-[11px] text-sky-600 hover:text-sky-800 font-bold cursor-pointer"
+              >
+                {showQuestionMap ? 'Thu gọn' : 'Mở rộng'}
+              </button>
+
+              {answeredCount > 0 && (
+                <button
+                  onClick={() => setIsSubmitted(true)}
+                  className="text-[11px] font-black px-2.5 py-1 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 cursor-pointer transition-all"
+                >
+                  Nộp bài sớm
+                </button>
+              )}
+            </div>
+          </div>
+
+          {showQuestionMap && (
+            <div className="flex flex-wrap gap-1.5 max-h-32 overflow-y-auto pr-1 pt-1">
+              {sampledWords.map((_, i) => {
+                const isAnswered = userAnswers[i] !== undefined;
+                const isCurrent = currentIndex === i;
+                let btnClass = 'bg-slate-100 text-slate-600 hover:bg-slate-200 border-slate-200';
+
+                if (isAnswered) {
+                  if (testMode.startsWith('mcq')) {
+                    const isCorrect = userAnswers[i] === mcqQuestions[i]?.correctAnswer;
+                    btnClass = isCorrect
+                      ? 'bg-emerald-500 text-white border-emerald-600 font-extrabold shadow-sm'
+                      : 'bg-rose-500 text-white border-rose-600 font-extrabold shadow-sm';
+                  } else {
+                    const isCorrect = userAnswers[i]?.toLowerCase() === sampledWords[i].term.toLowerCase();
+                    btnClass = isCorrect
+                      ? 'bg-emerald-500 text-white border-emerald-600 font-extrabold shadow-sm'
+                      : 'bg-rose-500 text-white border-rose-600 font-extrabold shadow-sm';
+                  }
+                }
+
+                if (isCurrent) {
+                  btnClass += ' ring-2 ring-sky-500 ring-offset-1 scale-105';
+                }
+
+                return (
+                  <button
+                    key={i}
+                    onClick={() => {
+                      setCurrentIndex(i);
+                      setSpellingInput('');
+                    }}
+                    className={`w-7 h-7 rounded-lg text-[11px] font-bold border transition-all cursor-pointer flex items-center justify-center shrink-0 ${btnClass}`}
+                    title={`Câu ${i + 1}`}
+                  >
+                    {i + 1}
+                  </button>
+                );
+              })}
+            </div>
+          )}
         </div>
       )}
 
@@ -264,30 +395,52 @@ export const EngGrade9TestRunner: React.FC<EngGrade9TestRunnerProps> = ({
             <Trophy size={40} />
           </div>
 
-          <div className="space-y-2">
+          <div className="space-y-1">
             <h3 className="text-2xl font-black text-slate-900">Hoàn Thành Bài Test! 🎉</h3>
-            <p className="text-sm text-slate-500">
-              Bạn đã hoàn thành bài kiểm tra từ vựng ngẫu nhiên.
+            <p className="text-xs sm:text-sm text-slate-500">
+              Bạn đã hoàn thành bài kiểm tra {sampledWords.length} câu trong thời gian{' '}
+              <strong className="text-slate-700">{formatTimer(elapsedSeconds)}</strong>.
             </p>
           </div>
 
           {/* Score Badge */}
-          <div className="p-6 rounded-2xl bg-gradient-to-br from-slate-900 to-indigo-950 text-white max-w-sm mx-auto shadow-lg space-y-2">
-            <div className="text-xs uppercase font-extrabold tracking-widest text-sky-400">Kết quả của bạn</div>
-            <div className="text-4xl font-black text-white">
-              {score} / {sampledWords.length}
+          <div className="p-6 rounded-2xl bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white max-w-md mx-auto shadow-xl space-y-3 border border-slate-800">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold border border-amber-400/30">
+              <Award size={14} />
+              <span>Kết quả bài thi vào 10</span>
             </div>
-            <div className="text-xs text-slate-300 font-medium">
-              Tỷ lệ chính xác: {Math.round((score / sampledWords.length) * 100)}%
+
+            <div className="flex items-center justify-center gap-6 py-2">
+              <div>
+                <div className="text-3xl sm:text-4xl font-black text-amber-400">{scale10Score}</div>
+                <div className="text-[11px] text-slate-300 font-medium">Thang điểm 10</div>
+              </div>
+
+              <div className="h-10 w-px bg-white/20" />
+
+              <div>
+                <div className="text-3xl sm:text-4xl font-black text-white">
+                  {score}/{sampledWords.length}
+                </div>
+                <div className="text-[11px] text-slate-300 font-medium">Số câu đúng</div>
+              </div>
+            </div>
+
+            <div className="text-xs text-slate-300 font-medium border-t border-white/10 pt-2 flex items-center justify-around">
+              <span>Độ chính xác: <strong>{Math.round((score / sampledWords.length) * 100)}%</strong></span>
+              <span>Thời gian: <strong>{formatTimer(elapsedSeconds)}</strong></span>
             </div>
           </div>
 
           {/* Wrong Words List (If any) */}
           {wrongWords.length > 0 && (
             <div className="text-left bg-slate-50 rounded-2xl p-5 border border-slate-200 space-y-3 max-w-xl mx-auto">
-              <h4 className="text-xs font-bold text-slate-800 flex items-center gap-1.5">
-                <HelpCircle size={15} className="text-rose-500" />
-                Các từ cần ôn lại ({wrongWords.length} từ):
+              <h4 className="text-xs font-bold text-slate-800 flex items-center justify-between">
+                <span className="flex items-center gap-1.5">
+                  <HelpCircle size={15} className="text-rose-500" />
+                  <span>Các từ cần ôn lại ({wrongWords.length} từ):</span>
+                </span>
+                <span className="text-[11px] text-rose-600 font-medium">Hãy ghi nhớ các từ này nhé!</span>
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-48 overflow-y-auto pr-1">
                 {wrongWords.map((w) => (
@@ -300,7 +453,15 @@ export const EngGrade9TestRunner: React.FC<EngGrade9TestRunnerProps> = ({
             </div>
           )}
 
-          <div className="flex justify-center gap-3 pt-2">
+          {/* Action Buttons */}
+          <div className="flex flex-wrap justify-center gap-3 pt-2">
+            <button
+              onClick={handleRestartTest}
+              className="px-6 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white text-xs font-black transition-all cursor-pointer shadow-md flex items-center gap-2"
+            >
+              <RotateCcw size={15} />
+              <span>Làm Lại Đề Này (Đảo Câu Mới)</span>
+            </button>
             <button
               onClick={onClose}
               className="px-6 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold transition-all cursor-pointer"
@@ -316,8 +477,11 @@ export const EngGrade9TestRunner: React.FC<EngGrade9TestRunnerProps> = ({
           {(testMode === 'mcq-en-vi' || testMode === 'mcq-vi-en') && mcqQuestions[currentIndex] && (
             <div className="space-y-6">
               <div className="text-center space-y-3 p-6 rounded-2xl bg-slate-50 border border-slate-200/60">
-                <div className="text-xs font-bold text-slate-400 uppercase tracking-wider">
-                  Câu hỏi {currentIndex + 1} / {sampledWords.length}
+                <div className="text-xs font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between">
+                  <span>Câu hỏi {currentIndex + 1} / {sampledWords.length}</span>
+                  {userAnswers[currentIndex] !== undefined && (
+                    <span className="text-emerald-700 font-black text-xs">Đã chọn đáp án</span>
+                  )}
                 </div>
 
                 <div className="text-xl sm:text-2xl font-black text-slate-900 flex items-center justify-center gap-2">
@@ -378,18 +542,33 @@ export const EngGrade9TestRunner: React.FC<EngGrade9TestRunnerProps> = ({
                 })}
               </div>
 
-              {/* Next Button */}
-              {userAnswers[currentIndex] !== undefined && (
-                <div className="flex justify-end pt-4 border-t border-slate-100">
-                  <button
-                    onClick={handleNext}
-                    className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-sky-600 to-indigo-600 hover:from-sky-700 hover:to-indigo-700 text-white font-extrabold text-xs transition-all shadow-md cursor-pointer flex items-center gap-2"
-                  >
-                    <span>{currentIndex < sampledWords.length - 1 ? 'Câu kế tiếp' : 'Xem kết quả'}</span>
-                    <Sparkles size={14} />
-                  </button>
+              {/* Navigation Controls */}
+              <div className="flex items-center justify-between pt-4 border-t border-slate-100">
+                <button
+                  onClick={handlePrev}
+                  disabled={currentIndex === 0}
+                  className={`px-4 py-2.5 rounded-xl border text-xs font-bold transition-all flex items-center gap-1.5 ${
+                    currentIndex === 0
+                      ? 'border-slate-200 text-slate-300 cursor-not-allowed'
+                      : 'border-slate-200 text-slate-700 hover:bg-slate-100 cursor-pointer'
+                  }`}
+                >
+                  <ChevronLeft size={16} />
+                  <span>Câu trước</span>
+                </button>
+
+                <div className="text-xs text-slate-400 font-bold">
+                  {currentIndex + 1} / {sampledWords.length}
                 </div>
-              )}
+
+                <button
+                  onClick={handleNext}
+                  className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-sky-600 to-indigo-600 hover:from-sky-700 hover:to-indigo-700 text-white font-extrabold text-xs transition-all shadow-md cursor-pointer flex items-center gap-1.5"
+                >
+                  <span>{currentIndex < sampledWords.length - 1 ? 'Câu tiếp' : 'Xem kết quả'}</span>
+                  <ChevronRight size={16} />
+                </button>
+              </div>
             </div>
           )}
 
@@ -447,20 +626,44 @@ export const EngGrade9TestRunner: React.FC<EngGrade9TestRunnerProps> = ({
                     ) : (
                       <div className="p-3 rounded-xl bg-rose-100 text-rose-900 text-xs font-bold flex items-center justify-center gap-2">
                         <XCircle size={16} />
-                        <span>Chưa đúng! Đáp án đúng là: <strong className="text-sm font-extrabold underline">{currentWord.term}</strong></span>
+                        <span>
+                          Chưa đúng! Đáp án đúng là:{' '}
+                          <strong className="text-sm font-extrabold underline">{currentWord.term}</strong>
+                        </span>
                       </div>
                     )}
-
-                    <button
-                      type="button"
-                      onClick={handleNext}
-                      className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-teal-600 to-sky-600 text-white font-extrabold text-xs transition-all shadow-md cursor-pointer inline-flex items-center gap-2"
-                    >
-                      <span>{currentIndex < sampledWords.length - 1 ? 'Câu kế tiếp' : 'Xem kết quả'}</span>
-                      <Sparkles size={14} />
-                    </button>
                   </div>
                 )}
+
+                {/* Navigation Controls */}
+                <div className="flex items-center justify-between pt-4 border-t border-slate-100">
+                  <button
+                    type="button"
+                    onClick={handlePrev}
+                    disabled={currentIndex === 0}
+                    className={`px-4 py-2.5 rounded-xl border text-xs font-bold transition-all flex items-center gap-1.5 ${
+                      currentIndex === 0
+                        ? 'border-slate-200 text-slate-300 cursor-not-allowed'
+                        : 'border-slate-200 text-slate-700 hover:bg-slate-100 cursor-pointer'
+                    }`}
+                  >
+                    <ChevronLeft size={16} />
+                    <span>Câu trước</span>
+                  </button>
+
+                  <div className="text-xs text-slate-400 font-bold">
+                    {currentIndex + 1} / {sampledWords.length}
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={handleNext}
+                    className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-teal-600 to-sky-600 text-white font-extrabold text-xs transition-all shadow-md cursor-pointer inline-flex items-center gap-1.5"
+                  >
+                    <span>{currentIndex < sampledWords.length - 1 ? 'Câu tiếp' : 'Xem kết quả'}</span>
+                    <ChevronRight size={16} />
+                  </button>
+                </div>
               </form>
             </div>
           )}

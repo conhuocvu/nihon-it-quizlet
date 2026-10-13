@@ -155,8 +155,9 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
 
   // Modal State for Custom Test Setup
   const [showTestModal, setShowTestModal] = useState(false);
-  const [customQuestionCount, setCustomQuestionCount] = useState<number>(10);
+  const [customQuestionCount, setCustomQuestionCount] = useState<number>(50);
   const [customTestMode, setCustomTestMode] = useState<TestMode>('mcq-en-vi');
+  const [testPoolScope, setTestPoolScope] = useState<'all' | 'range'>('all');
 
   // Active Runner State (When custom test is active)
   const [activeTestConfig, setActiveTestConfig] = useState<{
@@ -270,28 +271,34 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
     }
   };
 
-  // Active pool of words for test
+  // Active pool of words for test ('all': toàn bộ kho 300 từ | 'range': chỉ dải từ đang chọn)
   const activeTestPool = useMemo(() => {
-    return selectedRangeWords.length > 0 ? selectedRangeWords : engGrade9Words;
-  }, [selectedRangeWords]);
+    if (testPoolScope === 'range' && selectedRangeWords.length > 0) {
+      return selectedRangeWords;
+    }
+    return engGrade9Words;
+  }, [testPoolScope, selectedRangeWords]);
 
   // Open Custom Test Modal
-  const handleOpenTestModal = () => {
-    if (customQuestionCount > activeTestPool.length) {
-      setCustomQuestionCount(activeTestPool.length);
-    }
+  const handleOpenTestModal = (defaultScope?: 'all' | 'range', defaultCount?: number) => {
+    const scope = defaultScope || (selectedRangeWords.length > 0 ? 'range' : 'all');
+    setTestPoolScope(scope);
+    const pool = scope === 'range' && selectedRangeWords.length > 0 ? selectedRangeWords : engGrade9Words;
+    const count = defaultCount !== undefined ? defaultCount : Math.min(50, pool.length);
+    setCustomQuestionCount(count);
     setShowTestModal(true);
   };
 
   const handleLaunchCustomTest = () => {
-    const finalCount = customQuestionCount > activeTestPool.length ? activeTestPool.length : customQuestionCount;
+    const finalCount = Math.min(Math.max(1, customQuestionCount), activeTestPool.length);
     setActiveTestConfig({
       wordsPool: activeTestPool,
-      questionCount: Math.max(1, finalCount),
+      questionCount: finalCount,
       testMode: customTestMode
     });
     setShowTestModal(false);
   };
+
 
   // Dynamic Preset Ranges for 30-word blocks + All
   const presetRanges = useMemo(() => {
@@ -484,7 +491,7 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
                   {/* Preset Range Buttons */}
                   <div className="space-y-2">
                     <span className="text-xs font-bold text-slate-700 block">Dải số nhanh:</span>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-7 gap-2">
+                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
                       {presetRanges.map((preset, idx) => {
                         const isActive = safeStart === preset.start && safeEnd === preset.end;
                         return (
@@ -572,7 +579,7 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
                     {/* Launch Actions */}
                     <div className="flex flex-wrap items-center gap-2.5 w-full md:w-auto justify-end">
                       <button
-                        onClick={handleOpenTestModal}
+                        onClick={() => handleOpenTestModal('range')}
                         className="px-4 py-2.5 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white text-xs font-extrabold flex items-center gap-1.5 shadow-md shadow-amber-200 transition-all cursor-pointer"
                       >
                         <Target size={15} />
@@ -976,6 +983,7 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+
               {/* FEATURED HOMEWORK CARD: BÀI TẬP VỀ THÌ (42 CÂU - 3 DẠNG ĐỀ) */}
               <div
                 onClick={() => setShowTenseExercisesRunner(true)}
@@ -1075,42 +1083,107 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
               </p>
             </div>
 
-            {/* Step 1: Select Question Count */}
+            {/* Step 1: Chọn Nguồn Từ Vựng */}
             <div className="space-y-2">
-              <label className="text-xs font-bold text-slate-700 flex items-center justify-between">
-                <span>1. Số lượng câu hỏi test:</span>
-                <span className="text-amber-700 font-extrabold text-[11px]">
+              <label className="text-xs font-bold text-slate-700">
+                1. Nguồn từ vựng làm bài test:
+              </label>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setTestPoolScope('all');
+                    setCustomQuestionCount((prev) => Math.min(prev || 50, engGrade9Words.length));
+                  }}
+                  className={`p-3 rounded-2xl border text-left transition-all cursor-pointer ${
+                    testPoolScope === 'all'
+                      ? 'border-amber-500 bg-amber-50/70 ring-2 ring-amber-500/20'
+                      : 'border-slate-200 bg-slate-50/60 hover:bg-slate-100 text-slate-600'
+                  }`}
+                >
+                  <div className="text-xs font-black text-slate-900">Toàn bộ {totalWordsCount} từ SGK</div>
+                  <div className="text-[11px] text-amber-700 font-bold mt-0.5">⭐ Khuyên dùng cho đề thi 50 câu</div>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => {
+                    setTestPoolScope('range');
+                    const rangeLen = selectedRangeWords.length;
+                    setCustomQuestionCount((prev) => Math.min(prev, rangeLen || 1));
+                  }}
+                  className={`p-3 rounded-2xl border text-left transition-all cursor-pointer ${
+                    testPoolScope === 'range'
+                      ? 'border-amber-500 bg-amber-50/70 ring-2 ring-amber-500/20'
+                      : 'border-slate-200 bg-slate-50/60 hover:bg-slate-100 text-slate-600'
+                  }`}
+                >
+                  <div className="text-xs font-black text-slate-900">Dải từ đang chọn ({safeStart} ➔ {safeEnd})</div>
+                  <div className="text-[11px] text-slate-500 font-medium mt-0.5">{selectedRangeWords.length} từ trong dải này</div>
+                </button>
+              </div>
+            </div>
+
+            {/* Step 2: Select Question Count */}
+            <div className="space-y-2">
+              <div className="flex items-center justify-between text-xs font-bold text-slate-700">
+                <span>2. Số lượng câu hỏi test:</span>
+                <span className="text-amber-700 font-black text-xs">
                   (Đang chọn: {customQuestionCount} câu)
                 </span>
-              </label>
+              </div>
+
+              {/* Preset buttons */}
               <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
-                {Array.from(new Set([5, 10, 15, 20, 30, activeTestPool.length]))
-                  .filter((c) => c > 0 && c <= activeTestPool.length)
-                  .map((count, idx, arr) => {
+                {[10, 20, 30, 40, 50, activeTestPool.length]
+                  .filter((c, idx, arr) => c > 0 && c <= activeTestPool.length && arr.indexOf(c) === idx)
+                  .map((count, idx) => {
                     const isSelected = customQuestionCount === count;
-                    const isAllOption = count === activeTestPool.length && idx === arr.length - 1;
-                    const label = isAllOption ? `Tất cả (${count})` : `${count} câu`;
+                    const is50 = count === 50;
+                    const isAll = count === activeTestPool.length && count !== 50;
+                    const label = is50 ? '50 câu ⭐' : isAll ? `Tất cả (${count})` : `${count} câu`;
 
                     return (
                       <button
                         key={idx}
                         onClick={() => setCustomQuestionCount(count)}
-                        className={`py-2 px-1 rounded-xl text-xs font-bold transition-all cursor-pointer border ${isSelected
+                        className={`py-2 px-1 rounded-xl text-xs font-bold transition-all cursor-pointer border text-center ${
+                          isSelected
                             ? 'bg-amber-500 text-white border-amber-500 shadow-md ring-2 ring-amber-500/20'
+                            : is50
+                            ? 'bg-amber-50/90 border-amber-300 text-amber-900 hover:bg-amber-100 font-black'
                             : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100 hover:border-amber-300'
-                          }`}
+                        }`}
                       >
                         {label}
                       </button>
                     );
                   })}
               </div>
+
+              {/* Custom Input */}
+              <div className="flex items-center justify-between gap-2 pt-1 text-xs text-slate-600">
+                <span>Tùy chỉnh số câu (1 - {activeTestPool.length}):</span>
+                <input
+                  type="number"
+                  min={1}
+                  max={activeTestPool.length}
+                  value={customQuestionCount}
+                  onChange={(e) => {
+                    const val = parseInt(e.target.value, 10);
+                    if (!isNaN(val)) {
+                      setCustomQuestionCount(Math.min(Math.max(1, val), activeTestPool.length));
+                    }
+                  }}
+                  className="w-20 px-2.5 py-1 rounded-lg border border-slate-300 text-center font-bold text-amber-800 bg-white focus:outline-none focus:ring-2 focus:ring-amber-500/30"
+                />
+              </div>
             </div>
 
-            {/* Step 2: Select Test Mode */}
+            {/* Step 3: Select Test Mode */}
             <div className="space-y-2">
               <label className="text-xs font-bold text-slate-700">
-                2. Chọn hình thức kiểm tra (Cách test):
+                3. Chọn hình thức kiểm tra (Cách test):
               </label>
 
               <div className="space-y-2">

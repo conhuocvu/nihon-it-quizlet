@@ -58,6 +58,7 @@ export const KanjiMasterN3Selector: React.FC<KanjiMasterN3SelectorProps> = ({
     { num: 9, name: 'Chương 9: Đơn vị (単位)', badge: 'C9: Đơn vị (Bài 31-32)', color: 'from-indigo-500 to-cyan-500' },
     { num: 10, name: 'Chương 10: Trường học (学校)', badge: 'C10: Trường học (Bài 33-37)', color: 'from-blue-500 to-indigo-500' },
     { num: 11, name: 'Chương 11: Phỏng vấn (面接)', badge: 'C11: Phỏng vấn (Bài 38-42)', color: 'from-violet-500 to-purple-600' },
+    { num: 12, name: 'Chương 12: Giờ học (授業)', badge: 'C12: Giờ học (Bài 43-47)', color: 'from-blue-600 to-cyan-600' },
   ];
 
   const getChapterInfo = (lessonId: number) => {
@@ -71,7 +72,8 @@ export const KanjiMasterN3Selector: React.FC<KanjiMasterN3SelectorProps> = ({
     if (lessonId <= 30) return { num: 8, name: 'Quan hệ (関係)', color: 'from-sky-500 to-blue-500' };
     if (lessonId <= 32) return { num: 9, name: 'Đơn vị (単位)', color: 'from-indigo-500 to-cyan-500' };
     if (lessonId <= 37) return { num: 10, name: 'Trường học (学校)', color: 'from-blue-500 to-indigo-500' };
-    return { num: 11, name: 'Phỏng vấn (面接)', color: 'from-violet-500 to-purple-600' };
+    if (lessonId <= 42) return { num: 11, name: 'Phỏng vấn (面接)', color: 'from-violet-500 to-purple-600' };
+    return { num: 12, name: 'Giờ học (授業)', color: 'from-blue-600 to-cyan-600' };
   };
 
   const getLessonNumInChapter = (lessonId: number) => {
@@ -85,7 +87,8 @@ export const KanjiMasterN3Selector: React.FC<KanjiMasterN3SelectorProps> = ({
     if (lessonId <= 30) return lessonId - 25;
     if (lessonId <= 32) return lessonId - 30;
     if (lessonId <= 37) return lessonId - 32;
-    return lessonId - 37;
+    if (lessonId <= 42) return lessonId - 37;
+    return lessonId - 42;
   };
 
   const handleToggleChapter = (chapterNum: number) => {

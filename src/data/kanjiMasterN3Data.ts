@@ -1617,6 +1617,164 @@ export const kanjiMasterN3Lessons: Lesson[] = [
         ]
       }
     ]
+  },
+  {
+    id: 43,
+    title: "Chương 12 - Bài 1: 授業 (授, 業, 級, 卒)",
+    sections: [
+      {
+        id: "km-n3-c12-l1-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          { "id": "km-n3-c12-l1-1", "term": "授かる", "reading": "さずかる", "answer": "Được trời ban cho, có được (con cái)", "meaning": "Được trời ban cho, có được (con cái)", "example": "子どもを授かる。\n(Được trời ban cho mụn con / Có con.)" },
+          { "id": "km-n3-c12-l1-2", "term": "授ける", "reading": "さずける", "answer": "Trao tặng, ban cho", "meaning": "Trao tặng, ban cho", "example": "市長はチームに優勝カップを授けた。\n(Thị trưởng đã trao cúp vô địch cho đội.)" },
+          { "id": "km-n3-c12-l1-3", "term": "神業", "reading": "かみわざ", "answer": "Kỹ thuật tuyệt đỉnh, kỳ tích như thần", "meaning": "Kỹ thuật tuyệt đỉnh, kỳ tích như thần", "example": "あのシュートが入るなんてまさに神業だ。\n(Cú sút đó vào lưới quả thực là một kỳ tích siêu phàm.)" },
+          { "id": "km-n3-c12-l1-4", "term": "授業", "reading": "じゅぎょう", "answer": "Giờ học, tiết học", "meaning": "Giờ học, tiết học", "example": "日本語の授業を受けている。\n(Đang tham gia giờ học tiếng Nhật.)" },
+          { "id": "km-n3-c12-l1-5", "term": "残業", "reading": "ざんぎょう", "answer": "Làm thêm giờ, tăng ca", "meaning": "Làm thêm giờ, tăng ca", "example": "仕事がいそがしくて２時間も残業した。\n(Công việc bận rộn nên đã làm thêm giờ tới 2 tiếng.)" },
+          { "id": "km-n3-c12-l1-6", "term": "初級", "reading": "しょきゅう", "answer": "Sơ cấp", "meaning": "Sơ cấp", "example": "初級のクラスで勉強する。\n(Học ở lớp sơ cấp.)" },
+          { "id": "km-n3-c12-l1-7", "term": "高級", "reading": "こうきゅう", "answer": "Cao cấp, sang trọng", "meaning": "Cao cấp, sang trọng", "example": "高級なレストランで食事をした。\n(Đã dùng bữa ở một nhà hàng cao cấp.)" },
+          { "id": "km-n3-c12-l1-8", "term": "同級生", "reading": "どうきゅうせい", "answer": "Bạn cùng lớp, bạn cùng khoá", "meaning": "Bạn cùng lớp, bạn cùng khoá", "example": "高校時代の同級生に会った。\n(Gặp lại bạn cùng lớp thời cấp ba.)" },
+          { "id": "km-n3-c12-l1-9", "term": "脳卒中", "reading": "のうそっちゅう", "answer": "Đột quỵ, tai biến mạch máu não", "meaning": "Đột quỵ, tai biến mạch máu não", "example": "父が脳卒中で倒れてしまった。\n(Bố tôi bị đột quỵ ngã quỵ xuống.)" },
+          { "id": "km-n3-c12-l1-10", "term": "卒業", "reading": "そつぎょう", "answer": "Tốt nghiệp", "meaning": "Tốt nghiệp", "example": "大学を卒業したら、日本で働きたい。\n(Sau khi tốt nghiệp đại học, tôi muốn làm việc tại Nhật.)" },
+          { "id": "km-n3-c12-l1-11", "term": "教授", "reading": "きょうじゅ", "answer": "Giáo sư", "meaning": "Giáo sư", "example": "昨日大学の教授に会った。\n(Hôm qua tôi đã gặp giáo sư đại học.)" },
+          { "id": "km-n3-c12-l1-12", "term": "休業", "reading": "きゅうぎょう", "answer": "Nghỉ kinh doanh, tạm đóng cửa", "meaning": "Nghỉ kinh doanh, tạm đóng cửa", "example": "しばらく店を休業する。\n(Tạm thời đóng cửa cửa hàng một thời gian.)" },
+          { "id": "km-n3-c12-l1-13", "term": "中級", "reading": "ちゅうきゅう", "answer": "Trung cấp", "meaning": "Trung cấp", "example": "彼女は中級クラスの学生だ。\n(Cô ấy là học viên lớp trung cấp.)" },
+          { "id": "km-n3-c12-l1-14", "term": "進級", "reading": "しんきゅう", "answer": "Lên lớp, lên năm trên", "meaning": "Lên lớp, lên năm trên", "example": "テストに合格して２年生に進級した。\n(Đã đỗ bài kiểm tra và lên năm thứ hai.)" },
+          { "id": "km-n3-c12-l1-15", "term": "卒論", "reading": "そつろん", "answer": "Luận văn tốt nghiệp", "meaning": "Luận văn tốt nghiệp", "example": "卒論のしめきりは明日だ。\n(Hạn nộp khóa luận tốt nghiệp là ngày mai.)" },
+          { "id": "km-n3-c12-l1-16", "term": "業を煮やす", "reading": "ごうをにやす", "answer": "Mất kiên nhẫn, nổi cáu, phát bực", "meaning": "Mất kiên nhẫn, nổi cáu, phát bực", "example": "とくべつな言葉: 業を煮やす\n(Mất kiên nhẫn, nổi giận vì mọi chuyện không theo ý mình.)" },
+          { "id": "km-n3-c12-l1-17", "term": "業", "reading": "わざ", "answer": "Kỹ năng, ngón nghề, tuyệt kỹ", "meaning": "Kỹ năng, ngón nghề, tuyệt kỹ", "example": "職人の業（わざ）が光る。\n(Kỹ năng ngón nghề của người thợ thủ công tỏa sáng.)" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 44,
+    title: "Chương 12 - Bài 2: 欠席 (欠, 席, 由, 訳)",
+    sections: [
+      {
+        id: "km-n3-c12-l2-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          { "id": "km-n3-c12-l2-1", "term": "欠ける", "reading": "かける", "answer": "Bị mẻ, sứt mẻ, thiếu sót", "meaning": "Bị mẻ, sứt mẻ, thiếu sót", "example": "茶わんのふちが欠けてしまった。\n(Vành bát trà đã bị mẻ mất rồi.)" },
+          { "id": "km-n3-c12-l2-2", "term": "欠く", "reading": "かく", "answer": "Thiếu, lơ là", "meaning": "Thiếu, lơ là", "example": "注意を欠いて、大きなミスをした。\n(Thiếu chú ý nên đã mắc sai lầm lớn.)" },
+          { "id": "km-n3-c12-l2-3", "term": "欠席", "reading": "けっせき", "answer": "Vắng mặt, nghỉ học", "meaning": "Vắng mặt, nghỉ học", "example": "病気で授業を欠席する。\n(Vì bị ốm nên nghỉ học.)" },
+          { "id": "km-n3-c12-l2-4", "term": "席", "reading": "せき", "answer": "Chỗ ngồi, ghế ngồi", "meaning": "Chỗ ngồi, ghế ngồi", "example": "自分の席に着く。\n(Về chỗ ngồi của mình.)" },
+          { "id": "km-n3-c12-l2-5", "term": "客席", "reading": "きゃくせき", "answer": "Ghế khán giả, hàng ghế khách", "meaning": "Ghế khán giả, hàng ghế khách", "example": "客席からかんせいが上がった。\n(Tiếng hò reo vang lên từ hàng ghế khán giả.)" },
+          { "id": "km-n3-c12-l2-6", "term": "由", "reading": "よし", "answer": "Cách thức, duyên cớ, lý do", "meaning": "Cách thức, duyên cớ, lý do", "example": "彼の安否は知る由もない。\n(Không có cách nào để biết được sự an nguy của anh ấy.)" },
+          { "id": "km-n3-c12-l2-7", "term": "経由", "reading": "けいゆ", "answer": "Quá cảnh, đi qua, chuyển tiếp", "meaning": "Quá cảnh, đi qua, chuyển tiếp", "example": "モスクワを経由してパリへ行った。\n(Tôi đã đến Paris quá cảnh qua Moskva.)" },
+          { "id": "km-n3-c12-l2-8", "term": "理由", "reading": "りゆう", "answer": "Lý do", "meaning": "Lý do", "example": "遅れた理由は何ですか。\n(Lý do bạn đến muộn là gì?)" },
+          { "id": "km-n3-c12-l2-9", "term": "訳", "reading": "わけ", "answer": "Lý do, nguyên cớ, ý nghĩa", "meaning": "Lý do, nguyên cớ, ý nghĩa", "example": "きっと何か訳があるのだろう。\n(Chắc chắn là có lý do gì đó rồi.)" },
+          { "id": "km-n3-c12-l2-10", "term": "訳す", "reading": "やくす", "answer": "Dịch (ngôn ngữ)", "meaning": "Dịch (ngôn ngữ)", "example": "この文を英語に訳してください。\n(Xin hãy dịch câu này sang tiếng Anh.)" },
+          { "id": "km-n3-c12-l2-11", "term": "常識に欠ける", "reading": "じょうしきにかける", "answer": "Thiếu thường thức, thiếu hiểu biết", "meaning": "Thiếu thường thức, thiếu hiểu biết", "example": "常識に欠ける行動はしないでください。\n(Xin đừng có những hành động thiếu hiểu biết thông thường.)" },
+          { "id": "km-n3-c12-l2-12", "term": "欠点", "reading": "けってん", "answer": "Khuyết điểm, điểm yếu", "meaning": "Khuyết điểm, điểm yếu", "example": "彼の欠点は短気なところだ。\n(Khuyết điểm của anh ấy là tính nóng nảy.)" },
+          { "id": "km-n3-c12-l2-13", "term": "指定席", "reading": "していせき", "answer": "Ghế chỉ định, vé đặt trước", "meaning": "Ghế chỉ định, vé đặt trước", "example": "新幹線の指定席を予約した。\n(Đã đặt ghế chỉ định trên tàu Shinkansen.)" },
+          { "id": "km-n3-c12-l2-14", "term": "座席", "reading": "ざせき", "answer": "Chỗ ngồi, ghế ngồi", "meaning": "Chỗ ngồi, ghế ngồi", "example": "会場で自分の座席を探す。\n(Tìm chỗ ngồi của mình tại hội trường.)" },
+          { "id": "km-n3-c12-l2-15", "term": "由緒", "reading": "ゆいしょ", "answer": "Bề dày lịch sử, truyền thống lâu đời", "meaning": "Bề dày lịch sử, truyền thống lâu đời", "example": "ここは由緒ある寺だ。\n(Đây là ngôi chùa có bề dày lịch sử lâu đời.)" },
+          { "id": "km-n3-c12-l2-16", "term": "自由", "reading": "じゆう", "answer": "Tự do, thoải mái", "meaning": "Tự do, thoải mái", "example": "自由に話し合ってください。\n(Xin hãy thảo luận một cách tự do / thoải mái.)" },
+          { "id": "km-n3-c12-l2-17", "term": "由来", "reading": "ゆらい", "answer": "Nguồn gốc, lai lịch", "meaning": "Nguồn gốc, lai lịch", "example": "名前の由来を調べた。\n(Đã tìm hiểu nguồn gốc xuất xứ của cái tên.)" },
+          { "id": "km-n3-c12-l2-18", "term": "言い訳", "reading": "いいわけ", "answer": "Biện hộ, viện cớ, bào chữa", "meaning": "Biện hộ, viện cớ, bào chữa", "example": "彼女は言い訳ばかりする。\n(Cô ấy toàn viện cớ biện hộ.)" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 45,
+    title: "Chương 12 - Bài 3: 説明 (例, 易, 解, 説)",
+    sections: [
+      {
+        id: "km-n3-c12-l3-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          { "id": "km-n3-c12-l3-1", "term": "例えば", "reading": "たとえば", "answer": "Ví dụ như", "meaning": "Ví dụ như", "example": "都会に住みたい。例えば東京。\n(Tôi muốn sống ở thành thị. Ví dụ như Tokyo.)" },
+          { "id": "km-n3-c12-l3-2", "term": "例年通り", "reading": "れいねんどおり", "answer": "Như mọi năm, theo thường lệ hàng năm", "meaning": "Như mọi năm, theo thường lệ hàng năm", "example": "運動会は例年通り行われる。\n(Đại hội thể thao được tổ chức như mọi năm.)" },
+          { "id": "km-n3-c12-l3-3", "term": "易しい", "reading": "やさしい", "answer": "Dễ, đơn giản", "meaning": "Dễ, đơn giản", "example": "易しい言葉で話す。\n(Nói bằng từ ngữ dễ hiểu.)" },
+          { "id": "km-n3-c12-l3-4", "term": "安易な", "reading": "あんいな", "answer": "Dễ dãi, hời hợt, tùy tiện", "meaning": "Dễ dãi, hời hợt, tùy tiện", "example": "安易な考え方をしてはいけない。\n(Không được suy nghĩ một cách tùy tiện, hời hợt.)" },
+          { "id": "km-n3-c12-l3-5", "term": "貿易", "reading": "ぼうえき", "answer": "Mậu dịch, thương mại quốc tế", "meaning": "Mậu dịch, thương mại quốc tế", "example": "貿易に関係がある仕事がしたい。\n(Tôi muốn làm công việc liên quan đến mậu dịch ngoại thương.)" },
+          { "id": "km-n3-c12-l3-6", "term": "解ける", "reading": "とける", "answer": "Được giải quyết, tháo gỡ (Tự động từ)", "meaning": "Được giải quyết, tháo gỡ (Tự động từ)", "example": "難しい問題が解けて、うれしい。\n(Câu hỏi khó đã được giải ra, vui quá.)" },
+          { "id": "km-n3-c12-l3-7", "term": "理解", "reading": "りかい", "answer": "Hiểu, thấu hiểu, lĩnh hội", "meaning": "Hiểu, thấu hiểu, lĩnh hội", "example": "筆者の考えがやっと理解できた。\n(Cuối cùng tôi cũng đã hiểu được suy nghĩ của tác giả.)" },
+          { "id": "km-n3-c12-l3-8", "term": "解く", "reading": "とく", "answer": "Giải (toán), tháo cởi (Tha động từ)", "meaning": "Giải (toán), tháo cởi (Tha động từ)", "example": "数学の問題を解いてみる。\n(Thử giải bài toán xem sao.)" },
+          { "id": "km-n3-c12-l3-9", "term": "説く", "reading": "とく", "answer": "Giảng giải, thuyết giảng, trình bày", "meaning": "Giảng giải, thuyết giảng, trình bày", "example": "社長は社員に会社の理念を説いた。\n(Giám đốc đã thuyết giảng triết lý công ty cho nhân viên.)" },
+          { "id": "km-n3-c12-l3-10", "term": "説明", "reading": "せつめい", "answer": "Giải thích, thuyết minh", "meaning": "Giải thích, thuyết minh", "example": "パソコンの使い方を説明した。\n(Đã hướng dẫn / giải thích cách dùng máy vi tính.)" },
+          { "id": "km-n3-c12-l3-11", "term": "例", "reading": "れい", "answer": "Ví dụ, mẫu", "meaning": "Ví dụ, mẫu", "example": "例を見て答えてください。\n(Hãy nhìn ví dụ mẫu rồi trả lời.)" },
+          { "id": "km-n3-c12-l3-12", "term": "例外", "reading": "れいがい", "answer": "Ngoại lệ", "meaning": "Ngoại lệ", "example": "例外を認めない。\n(Không chấp nhận ngoại lệ.)" },
+          { "id": "km-n3-c12-l3-13", "term": "実例", "reading": "じつれい", "answer": "Ví dụ thực tế", "meaning": "Ví dụ thực tế", "example": "実例をあげて話す。\n(Đưa ra ví dụ thực tế để nói chuyện.)" },
+          { "id": "km-n3-c12-l3-14", "term": "安易に", "reading": "あんいに", "answer": "Tùy tiện, dễ dãi", "meaning": "Tùy tiện, dễ dãi", "example": "安易に返事をする。\n(Trả lời một cách dễ dãi / tùy tiện.)" },
+          { "id": "km-n3-c12-l3-15", "term": "解説", "reading": "かいせつ", "answer": "Giải thích chi tiết, chú giải", "meaning": "Giải thích chi tiết, chú giải", "example": "問題集の解説を読む。\n(Đọc phần giải thích trong sách bài tập.)" },
+          { "id": "km-n3-c12-l3-16", "term": "解熱剤", "reading": "げねつざい", "answer": "Thuốc hạ sốt", "meaning": "Thuốc hạ sốt", "example": "解熱剤を飲んだら、熱が下がった。\n(Uống thuốc hạ sốt xong thì cơn sốt đã hạ.)" },
+          { "id": "km-n3-c12-l3-17", "term": "髪を解かす", "reading": "かみをとかす", "answer": "Chải tóc, gỡ rối tóc", "meaning": "Chải tóc, gỡ rối tóc", "example": "とくべつな言葉: 髪を解かす\n(Chải đầu, chải tóc cho mượt.)" },
+          { "id": "km-n3-c12-l3-18", "term": "遊説", "reading": "ゆうぜい", "answer": "Đi diễn thuyết chính trị, vận động tranh cử", "meaning": "Đi diễn thuyết chính trị, vận động tranh cử", "example": "とくべつな言葉: 遊説\n(Đi diễn thuyết vận động chính trị / bầu cử.)" },
+          { "id": "km-n3-c12-l3-19", "term": "例える", "reading": "たとえる", "answer": "So sánh, ví von", "meaning": "So sánh, ví von", "example": "人生を旅に例える。\n(Ví cuộc đời như một chuyến đi.)" },
+          { "id": "km-n3-c12-l3-20", "term": "解かす", "reading": "とかす", "answer": "Chải (tóc), làm tan, gỡ rối", "meaning": "Chải (tóc), làm tan, gỡ rối", "example": "くしで髪を解かす。\n(Dùng lược để chải tóc.)" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 46,
+    title: "Chương 12 - Bài 4: 努力 (覚, 忘, 努, 続)",
+    sections: [
+      {
+        id: "km-n3-c12-l4-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          { "id": "km-n3-c12-l4-1", "term": "覚える", "reading": "おぼえる", "answer": "Ghi nhớ, học thuộc", "meaning": "Ghi nhớ, học thuộc", "example": "漢字を350字覚えた。\n(Đã học thuộc được 350 chữ Hán.)" },
+          { "id": "km-n3-c12-l4-2", "term": "目を覚ます", "reading": "めをさます", "answer": "Đánh thức, mở mắt tỉnh dậy (Tha động từ)", "meaning": "Đánh thức, mở mắt tỉnh dậy (Tha động từ)", "example": "鳥の声で目を覚ます。\n(Tỉnh giấc bởi tiếng chim hót.)" },
+          { "id": "km-n3-c12-l4-3", "term": "視覚", "reading": "しかく", "answer": "Thị giác", "meaning": "Thị giác", "example": "動物の視覚について調べる。\n(Tìm hiểu về thị giác của động vật.)" },
+          { "id": "km-n3-c12-l4-4", "term": "覚悟", "reading": "かくご", "answer": "Chuẩn bị tinh thần, quyết tâm, giác ngộ", "meaning": "Chuẩn bị tinh thần, quyết tâm, giác ngộ", "example": "仕事を辞める覚悟を決めた。\n(Đã hạ quyết tâm sẵn sàng nghỉ việc.)" },
+          { "id": "km-n3-c12-l4-5", "term": "忘れ物", "reading": "わすれもの", "answer": "Đồ bỏ quên", "meaning": "Đồ bỏ quên", "example": "家に忘れ物を取りに帰る。\n(Quay về nhà lấy đồ để quên.)" },
+          { "id": "km-n3-c12-l4-6", "term": "忘年会", "reading": "ぼうねんかい", "answer": "Tiệc tất niên cuối năm", "meaning": "Tiệc tất niên cuối năm", "example": "忘年会の予約をする。\n(Đặt chỗ cho bữa tiệc tất niên.)" },
+          { "id": "km-n3-c12-l4-7", "term": "努める", "reading": "つとめる", "answer": "Cố gắng, nỗ lực hết mình", "meaning": "Cố gắng, nỗ lực hết mình", "example": "早寝早起きに努める。\n(Cố gắng ngủ sớm dậy sớm.)" },
+          { "id": "km-n3-c12-l4-8", "term": "努力家", "reading": "どりょくか", "answer": "Người chăm chỉ nỗ lực", "meaning": "Người chăm chỉ nỗ lực", "example": "林さんは努力家だ。\n(Anh Hayashi là một người rất chăm chỉ nỗ lực.)" },
+          { "id": "km-n3-c12-l4-9", "term": "続ける", "reading": "つづける", "answer": "Tiếp tục (Tha động từ)", "meaning": "Tiếp tục (Tha động từ)", "example": "漢字の勉強を毎日続ける。\n(Hàng ngày tiếp tục việc học chữ Hán.)" },
+          { "id": "km-n3-c12-l4-10", "term": "連続", "reading": "れんぞく", "answer": "Liên tục, liên tiếp", "meaning": "Liên tục, liên tiếp", "example": "連続ドラマを毎週見ている。\n(Hàng tuần tôi đều xem phim truyền hình dài tập.)" },
+          { "id": "km-n3-c12-l4-11", "term": "目が覚める", "reading": "めがさめる", "answer": "Tỉnh giấc, thức giấc (Tự động từ)", "meaning": "Tỉnh giấc, thức giấc (Tự động từ)", "example": "朝５時に目がさめた。\n(Tôi đã tỉnh giấc lúc 5 giờ sáng.)" },
+          { "id": "km-n3-c12-l4-12", "term": "感覚", "reading": "かんかく", "answer": "Cảm giác", "meaning": "Cảm giác", "example": "寒さで手の感覚がなくなる。\n(Vì lạnh nên bàn tay mất cả cảm giác.)" },
+          { "id": "km-n3-c12-l4-13", "term": "味覚", "reading": "みかく", "answer": "Vị giác", "meaning": "Vị giác", "example": "大人になると味覚が変わる。\n(Khi lớn lên vị giác cũng thay đổi.)" },
+          { "id": "km-n3-c12-l4-14", "term": "忘れる", "reading": "わすれる", "answer": "Quên", "meaning": "Quên", "example": "宿題を忘れて先生に怒られた。\n(Quên làm bài tập nên bị giáo viên mắng.)" },
+          { "id": "km-n3-c12-l4-15", "term": "努力", "reading": "どりょく", "answer": "Nỗ lực, cố gắng", "meaning": "Nỗ lực, cố gắng", "example": "努力を重ねることは大切だ。\n(Không ngừng nỗ lực là điều rất quan trọng.)" },
+          { "id": "km-n3-c12-l4-16", "term": "降り続く", "reading": "ふりつづく", "answer": "Mưa rơi liên tục, rơi kéo dài", "meaning": "Mưa rơi liên tục, rơi kéo dài", "example": "雨が３日間降り続いている。\n(Trời đã mưa liên tục suốt 3 ngày.)" },
+          { "id": "km-n3-c12-l4-17", "term": "継続", "reading": "けいぞく", "answer": "Kế tục, duy trì liên tục", "meaning": "Kế tục, duy trì liên tục", "example": "継続は力なり。\n(Thành ngữ: Kiên trì tiếp tục chính là sức mạnh.)" },
+          { "id": "km-n3-c12-l4-18", "term": "続く", "reading": "つづく", "answer": "Tiếp tục, kéo dài (Tự động từ)", "meaning": "Tiếp tục, kéo dài (Tự động từ)", "example": "雨が３日間続いている。\n(Cơn mưa kéo dài suốt 3 ngày.)" }
+        ]
+      }
+    ]
+  },
+  {
+    id: 47,
+    title: "Chương 12 - Bài 5: 勉強 (要, 復, 補, 効)",
+    sections: [
+      {
+        id: "km-n3-c12-l5-vocabulary",
+        title: "Từ vựng (Flashcard)",
+        type: "vocabulary",
+        items: [
+          { "id": "km-n3-c12-l5-1", "term": "要る", "reading": "いる", "answer": "Cần có, cần thiết", "meaning": "Cần có, cần thiết", "example": "これはかなり根気が要る仕事だ。\n(Đây là công việc đòi hỏi rất nhiều sự kiên nhẫn.)" },
+          { "id": "km-n3-c12-l5-2", "term": "要", "reading": "かなめ", "answer": "Trụ cột, điểm then chốt, cốt lõi", "meaning": "Trụ cột, điểm then chốt, cốt lõi", "example": "山下選手はチームの要だ。\n(Tuyển thủ Yamashita là trụ cột / then chốt của cả đội.)" },
+          { "id": "km-n3-c12-l5-3", "term": "必要", "reading": "ひつよう", "answer": "Cần thiết", "meaning": "Cần thiết", "example": "旅行に必要な費用を計算する。\n(Tính toán các chi phí cần thiết cho chuyến đi.)" },
+          { "id": "km-n3-c12-l5-4", "term": "要約", "reading": "ようやく", "answer": "Tóm tắt, tóm lược", "meaning": "Tóm tắt, tóm lược", "example": "文章を要約して、自分の意見を書く。\n(Tóm tắt đoạn văn rồi viết ý kiến của bản thân.)" },
+          { "id": "km-n3-c12-l5-5", "term": "往復", "reading": "おうふく", "answer": "Khứ hồi, đi đi về về", "meaning": "Khứ hồi, đi đi về về", "example": "学校と家を往復する。\n(Đi đi về về giữa trường học và nhà.)" },
+          { "id": "km-n3-c12-l5-6", "term": "復帰", "reading": "ふっき", "answer": "Quay trở lại (làm việc, chức vụ)", "meaning": "Quay trở lại (làm việc, chức vụ)", "example": "来月から仕事に復帰する。\n(Từ tháng sau tôi sẽ quay trở lại làm việc.)" },
+          { "id": "km-n3-c12-l5-7", "term": "補っている", "reading": "おぎなっている", "answer": "Đang bổ sung, bù đắp", "meaning": "Đang bổ sung, bù đắp", "example": "サプリメントでビタミンを補っている。\n(Bổ sung vitamin bằng thực phẩm chức năng.)" },
+          { "id": "km-n3-c12-l5-8", "term": "補習", "reading": "ほしゅう", "answer": "Học phụ đạo, học bổ túc", "meaning": "Học phụ đạo, học bổ túc", "example": "テストの点がお悪くて、補習を受けた。\n(Điểm kiểm tra kém nên phải đi học phụ đạo.)" },
+          { "id": "km-n3-c12-l5-9", "term": "効き目", "reading": "ききめ", "answer": "Tác dụng, công hiệu", "meaning": "Tác dụng, công hiệu", "example": "この薬は効き目が早い。\n(Thuốc này có tác dụng rất nhanh chóng.)" },
+          { "id": "km-n3-c12-l5-10", "term": "効果", "reading": "こうか", "answer": "Hiệu quả, kết quả", "meaning": "Hiệu quả, kết quả", "example": "がんばって練習した効果が表れる。\n(Hiệu quả của việc cố gắng luyện tập đã được thể hiện.)" },
+          { "id": "km-n3-c12-l5-11", "term": "主要な", "reading": "しゅような", "answer": "Chủ yếu, quan trọng, chủ chốt", "meaning": "Chủ yếu, quan trọng, chủ chốt", "example": "主要なメンバーで会議をする。\n(Họp với các thành viên chủ chốt.)" },
+          { "id": "km-n3-c12-l5-12", "term": "要注意", "reading": "ようちゅうい", "answer": "Cần chú ý, đáng cảnh giác", "meaning": "Cần chú ý, đáng cảnh giác", "example": "彼は要注意人物だ。\n(Anh ta là đối tượng cần phải cảnh giác / chú ý.)" },
+          { "id": "km-n3-c12-l5-13", "term": "回復", "reading": "かいふく", "answer": "Hồi phục, phục hồi", "meaning": "Hồi phục, phục hồi", "example": "母の病気が回復した。\n(Bệnh của mẹ tôi đã hồi phục.)" },
+          { "id": "km-n3-c12-l5-14", "term": "復習", "reading": "ふくしゅう", "answer": "Ôn tập bài", "meaning": "Ôn tập bài", "example": "授業の復習はとても大切だ。\n(Việc ôn tập lại bài học là rất quan trọng.)" },
+          { "id": "km-n3-c12-l5-15", "term": "補給", "reading": "ほきゅう", "answer": "Bổ sung (nước, năng lượng), tiếp tế", "meaning": "Bổ sung (nước, năng lượng), tiếp tế", "example": "水分を補給する。\n(Bổ sung nước cho cơ thể.)" },
+          { "id": "km-n3-c12-l5-16", "term": "立候補", "reading": "りっこうほ", "answer": "Ứng cử", "meaning": "Ứng cử", "example": "市長に立候補する。\n(Ứng cử chức thị trưởng.)" },
+          { "id": "km-n3-c12-l5-17", "term": "無効", "reading": "むこう", "answer": "Vô hiệu, mất hiệu lực", "meaning": "Vô hiệu, mất hiệu lực", "example": "チケットが無効になる。\n(Vé đã bị mất hiệu lực / vô hiệu hóa.)" },
+          { "id": "km-n3-c12-l5-18", "term": "有効", "reading": "ゆうこう", "answer": "Hữu hiệu, có hiệu lực, có ích", "meaning": "Hữu hiệu, có hiệu lực, có ích", "example": "お金を有効に使う。\n(Sử dụng tiền bạc một cách hữu ích / hiệu quả.)" },
+          { "id": "km-n3-c12-l5-19", "term": "効く", "reading": "きく", "answer": "Có hiệu quả, có tác dụng", "meaning": "Có hiệu quả, có tác dụng", "example": "この薬はよく効く。\n(Thuốc này rất hiệu nghiệm / có tác dụng tốt.)" },
+          { "id": "km-n3-c12-l5-20", "term": "補う", "reading": "おぎなう", "answer": "Bổ sung, bù đắp (Động từ)", "meaning": "Bổ sung, bù đắp (Động từ)", "example": "不足している栄養を補う。\n(Bổ sung lượng dinh dưỡng còn thiếu.)" }
+        ]
+      }
+    ]
   }
 ];
 
@@ -1932,6 +2090,36 @@ export const kanjiMasterN3Chars: { [lessonId: number]: KanjiChar[] } = {
     { char: "績", hanViet: "TÍCH", strokes: 17, onyomi: ["セキ"], kunyomi: [], meaning: "Thành tích, công tích", examples: [{ word: "成績", reading: "せいせき", meaning: "Thành tích" }, { word: "業績", reading: "ぎょうせき", meaning: "Thành tích kinh doanh" }, { word: "実績", reading: "じっせき", meaning: "Thành tích thực tế" }] },
     { char: "良", hanViet: "LƯƠNG", strokes: 7, onyomi: ["リョウ"], kunyomi: ["よ-い"], meaning: "Tốt, lương tâm", examples: [{ word: "良い", reading: "よい", meaning: "Tốt" }, { word: "良好", reading: "りょうこう", meaning: "Tốt đẹp" }, { word: "良心的", reading: "りょうしんてき", meaning: "Có lương tâm" }] },
     { char: "悪", hanViet: "ÁC", strokes: 11, onyomi: ["アク", "オ"], kunyomi: ["わる-い"], meaning: "Xấu, ác", examples: [{ word: "悪い", reading: "わるい", meaning: "Xấu" }, { word: "悪寒", reading: "おかん", meaning: "Ớn lạnh" }, { word: "悪意", reading: "あくい", meaning: "Ác ý" }] }
+  ],
+  43: [
+    { char: "授", hanViet: "THỤ", strokes: 11, onyomi: ["ジュ"], kunyomi: ["さず-かる", "さず-ける"], meaning: "Trao tặng, truyền thụ, ban cho", examples: [{ word: "授かる", reading: "さずかる", meaning: "Được ban cho" }, { word: "授ける", reading: "さずける", meaning: "Trao tặng, ban cho" }, { word: "授業", reading: "じゅぎょう", meaning: "Giờ học" }, { word: "教授", reading: "きょうじゅ", meaning: "Giáo sư" }] },
+    { char: "業", hanViet: "NGHIỆP", strokes: 13, onyomi: ["ギョウ", "ゴウ"], kunyomi: ["わざ"], meaning: "Nghề nghiệp, công việc, kỹ xảo", examples: [{ word: "授業", reading: "じゅぎょう", meaning: "Giờ học" }, { word: "神業", reading: "かみわざ", meaning: "Tuyệt kỹ, kỳ tích" }, { word: "残業", reading: "ざんぎょう", meaning: "Làm thêm giờ" }, { word: "休業", reading: "きゅうぎょう", meaning: "Nghỉ kinh doanh" }, { word: "卒業", reading: "そつぎょう", meaning: "Tốt nghiệp" }, { word: "業を煮やす", reading: "ごうをにやす", meaning: "Mất kiên nhẫn, nổi giận" }] },
+    { char: "級", hanViet: "CẤP", strokes: 9, onyomi: ["キュウ"], kunyomi: [], meaning: "Cấp bậc, thứ bậc, lớp", examples: [{ word: "初級", reading: "しょきゅう", meaning: "Sơ cấp" }, { word: "中級", reading: "ちゅうきゅう", meaning: "Trung cấp" }, { word: "高級", reading: "こうきゅう", meaning: "Cao cấp" }, { word: "同級生", reading: "どうきゅうせい", meaning: "Bạn cùng lớp" }, { word: "進級", reading: "しんきゅう", meaning: "Lên lớp" }] },
+    { char: "卒", hanViet: "TỐT", strokes: 8, onyomi: ["ソツ"], kunyomi: [], meaning: "Tốt nghiệp, đột ngột, binh lính", examples: [{ word: "卒業", reading: "そつぎょう", meaning: "Tốt nghiệp" }, { word: "卒論", reading: "そつろん", meaning: "Luận văn tốt nghiệp" }, { word: "脳卒中", reading: "のうそっちゅう", meaning: "Đột quỵ" }] }
+  ],
+  44: [
+    { char: "欠", hanViet: "KHIẾM", strokes: 4, onyomi: ["ケツ"], kunyomi: ["か-ける", "か-く"], meaning: "Thiếu sót, mẻ, khiếm khuyết, vắng mặt", examples: [{ word: "欠ける", reading: "かける", meaning: "Bị mẻ, thiếu" }, { word: "欠く", reading: "かく", meaning: "Thiếu (chú ý)" }, { word: "欠席", reading: "けっせき", meaning: "Nghỉ học, vắng mặt" }, { word: "欠点", reading: "けってん", meaning: "Khuyết điểm" }] },
+    { char: "席", hanViet: "TỊCH", strokes: 10, onyomi: ["セキ"], kunyomi: [], meaning: "Ghế ngồi, chỗ ngồi", examples: [{ word: "席", reading: "せき", meaning: "Chỗ ngồi" }, { word: "客席", reading: "きゃくせき", meaning: "Hàng ghế khán giả" }, { word: "指定席", reading: "していせき", meaning: "Ghế chỉ định" }, { word: "座席", reading: "ざせき", meaning: "Chỗ ngồi" }] },
+    { char: "由", hanViet: "DO", strokes: 5, onyomi: ["ユ", "ユウ", "ユイ"], kunyomi: ["よし"], meaning: "Nguyên do, lý do, nguồn gốc, tự do", examples: [{ word: "理由", reading: "りゆう", meaning: "Lý do" }, { word: "自由", reading: "じゆう", meaning: "Tự do" }, { word: "経由", reading: "けいゆ", meaning: "Quá cảnh, qua" }, { word: "由緒", reading: "ゆいしょ", meaning: "Bề dày lịch sử" }, { word: "由来", reading: "ゆらい", meaning: "Nguồn gốc, lai lịch" }] },
+    { char: "訳", hanViet: "DỊCH", strokes: 11, onyomi: ["ヤク"], kunyomi: ["わけ"], meaning: "Lý do, ý nghĩa, phiên dịch", examples: [{ word: "訳", reading: "わけ", meaning: "Lý do, ý nghĩa" }, { word: "訳す", reading: "やくす", meaning: "Dịch thuật" }, { word: "言い訳", reading: "いいわけ", meaning: "Biện hộ, viện cớ" }, { word: "通訳", reading: "つうやく", meaning: "Thông dịch viên" }] }
+  ],
+  45: [
+    { char: "例", hanViet: "LỆ", strokes: 8, onyomi: ["レイ"], kunyomi: ["たと-える"], meaning: "Ví dụ, tiền lệ, thông lệ", examples: [{ word: "例えば", reading: "たとえば", meaning: "Ví dụ như" }, { word: "例年", reading: "れいねん", meaning: "Hàng năm" }, { word: "例外", reading: "れいがい", meaning: "Ngoại lệ" }, { word: "実例", reading: "じつれい", meaning: "Ví dụ thực tế" }] },
+    { char: "易", hanViet: "DỊCH, DỊ", strokes: 8, onyomi: ["エキ", "イ"], kunyomi: ["やさ-しい"], meaning: "Dễ dàng, mậu dịch, biến dịch", examples: [{ word: "易しい", reading: "やさしい", meaning: "Dễ dàng, dễ hiểu" }, { word: "安易な", reading: "あんいな", meaning: "Dễ dãi, hời hợt" }, { word: "貿易", reading: "ぼうえき", meaning: "Mậu dịch, thương mại" }] },
+    { char: "解", hanViet: "GIẢI", strokes: 13, onyomi: ["カイ", "ゲ"], kunyomi: ["と-ける", "と-く", "と-かす"], meaning: "Giải quyết, giải thích, cởi bỏ, tan biến", examples: [{ word: "解ける", reading: "とける", meaning: "Được giải quyết" }, { word: "解く", reading: "とく", meaning: "Giải (toán), tháo cởi" }, { word: "理解", reading: "りかい", meaning: "Thấu hiểu, hiểu" }, { word: "解熱剤", reading: "げねつざい", meaning: "Thuốc hạ sốt" }, { word: "髪を解かす", reading: "かみをとかす", meaning: "Chải tóc" }] },
+    { char: "説", hanViet: "THUYẾT", strokes: 14, onyomi: ["セツ", "ゼイ"], kunyomi: ["と-く"], meaning: "Giải thích, thuyết phục, diễn thuyết", examples: [{ word: "説く", reading: "とく", meaning: "Giảng giải, thuyết trình" }, { word: "説明", reading: "せつめい", meaning: "Giải thích" }, { word: "解説", reading: "かいせつ", meaning: "Giải thích chi tiết, chú giải" }, { word: "遊説", reading: "ゆうぜい", meaning: "Đi diễn thuyết chính trị" }] }
+  ],
+  46: [
+    { char: "覚", hanViet: "GIÁC", strokes: 12, onyomi: ["カク"], kunyomi: ["おぼ-える", "さ-ます", "さ-める"], meaning: "Ghi nhớ, tỉnh giấc, cảm giác, giác ngộ", examples: [{ word: "覚える", reading: "おぼえる", meaning: "Ghi nhớ, học thuộc" }, { word: "目を覚ます", reading: "めをさます", meaning: "Tỉnh giấc (mở mắt)" }, { word: "覚悟", reading: "かくご", meaning: "Quyết tâm, sẵn sàng tinh thần" }, { word: "感覚", reading: "かんかく", meaning: "Cảm giác" }, { word: "視覚", reading: "しかく", meaning: "Thị giác" }, { word: "味覚", reading: "みかく", meaning: "Vị giác" }] },
+    { char: "忘", hanViet: "VONG", strokes: 7, onyomi: ["ボウ"], kunyomi: ["わす-れる"], meaning: "Quên, lãng quên", examples: [{ word: "忘れる", reading: "わすれる", meaning: "Quên" }, { word: "忘れ物", reading: "わすれもの", meaning: "Đồ bỏ quên" }, { word: "忘年会", reading: "ぼうねんかい", meaning: "Tiệc tất niên" }] },
+    { char: "努", hanViet: "NỖ", strokes: 7, onyomi: ["ド"], kunyomi: ["つと-める"], meaning: "Cố gắng, nỗ lực", examples: [{ word: "努める", reading: "つとめる", meaning: "Cố gắng, nỗ lực" }, { word: "努力", reading: "どりょく", meaning: "Nỗ lực, cố gắng" }, { word: "努力家", reading: "どりょくか", meaning: "Người chăm chỉ" }] },
+    { char: "続", hanViet: "TỤC", strokes: 13, onyomi: ["ゾク"], kunyomi: ["つづ-く", "つづ-ける"], meaning: "Tiếp tục, liên tục, kéo dài", examples: [{ word: "続く", reading: "つづく", meaning: "Tiếp diễn, kéo dài" }, { word: "続ける", reading: "つづける", meaning: "Tiếp tục" }, { word: "連続", reading: "れんぞく", meaning: "Liên tục" }, { word: "継続", reading: "けいぞく", meaning: "Kế tục, duy trì" }] }
+  ],
+  47: [
+    { char: "要", hanViet: "YẾU", strokes: 9, onyomi: ["ヨウ"], kunyomi: ["い-る", "かなめ"], meaning: "Cần thiết, then chốt, trọng yếu", examples: [{ word: "要る", reading: "いる", meaning: "Cần" }, { word: "要", reading: "かなめ", meaning: "Điểm then chốt, trụ cột" }, { word: "必要", reading: "ひつよう", meaning: "Cần thiết" }, { word: "要約", reading: "ようやく", meaning: "Tóm tắt" }, { word: "主要", reading: "しゅよう", meaning: "Chủ yếu, trọng yếu" }] },
+    { char: "復", hanViet: "PHỤC", strokes: 12, onyomi: ["フク"], kunyomi: [], meaning: "Hồi phục, lặp lại, quay về", examples: [{ word: "復習", reading: "ふくしゅう", meaning: "Ôn tập" }, { word: "回復", reading: "かいふく", meaning: "Hồi phục" }, { word: "往復", reading: "おうふく", meaning: "Khứ hồi" }, { word: "復帰", reading: "ふっき", meaning: "Quay trở lại" }] },
+    { char: "補", hanViet: "BỔ", strokes: 12, onyomi: ["ホ"], kunyomi: ["おぎな-う"], meaning: "Bổ sung, bù đắp, bồi bổ", examples: [{ word: "補う", reading: "おぎなう", meaning: "Bổ sung, bù đắp" }, { word: "補習", reading: "ほしゅう", meaning: "Học bổ túc, phụ đạo" }, { word: "補給", reading: "ほきゅう", meaning: "Bổ sung, tiếp tế" }, { word: "立候補", reading: "りっこうほ", meaning: "Ứng cử" }] },
+    { char: "効", hanViet: "HIỆU", strokes: 8, onyomi: ["コウ"], kunyomi: ["き-く"], meaning: "Hiệu quả, công hiệu, hiệu lực", examples: [{ word: "効く", reading: "きく", meaning: "Có tác dụng, hiệu nghiệm" }, { word: "効き目", reading: "ききめ", meaning: "Công hiệu, tác dụng" }, { word: "効果", reading: "こうか", meaning: "Hiệu quả" }, { word: "有効", reading: "ゆうこう", meaning: "Có hiệu lực, hữu hiệu" }, { word: "無効", reading: "むこう", meaning: "Vô hiệu" }] }
   ]
 };
 

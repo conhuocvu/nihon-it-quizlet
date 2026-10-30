@@ -1758,7 +1758,7 @@ export const kanjiMasterN3Lessons: Lesson[] = [
           { "id": "km-n3-c12-l5-4", "term": "要約", "reading": "ようやく", "answer": "Tóm tắt, tóm lược", "meaning": "Tóm tắt, tóm lược", "example": "文章を要約して、自分の意見を書く。\n(Tóm tắt đoạn văn rồi viết ý kiến của bản thân.)" },
           { "id": "km-n3-c12-l5-5", "term": "往復", "reading": "おうふく", "answer": "Khứ hồi, đi đi về về", "meaning": "Khứ hồi, đi đi về về", "example": "学校と家を往復する。\n(Đi đi về về giữa trường học và nhà.)" },
           { "id": "km-n3-c12-l5-6", "term": "復帰", "reading": "ふっき", "answer": "Quay trở lại (làm việc, chức vụ)", "meaning": "Quay trở lại (làm việc, chức vụ)", "example": "来月から仕事に復帰する。\n(Từ tháng sau tôi sẽ quay trở lại làm việc.)" },
-          { "id": "km-n3-c12-l5-7", "term": "補っている", "reading": "おぎなっている", "answer": "Đang bổ sung, bù đắp", "meaning": "Đang bổ sung, bù đắp", "example": "サプリメントでビタミンを補っている。\n(Bổ sung vitamin bằng thực phẩm chức năng.)" },
+          { "id": "km-n3-c12-l5-7", "term": "補う", "reading": "おぎなう", "answer": "Bổ sung, bù đắp", "meaning": "Bổ sung, bù đắp", "example": "サプリメントでビタミンを補っている。\n(Bổ sung vitamin bằng thực phẩm chức năng.)" },
           { "id": "km-n3-c12-l5-8", "term": "補習", "reading": "ほしゅう", "answer": "Học phụ đạo, học bổ túc", "meaning": "Học phụ đạo, học bổ túc", "example": "テストの点がお悪くて、補習を受けた。\n(Điểm kiểm tra kém nên phải đi học phụ đạo.)" },
           { "id": "km-n3-c12-l5-9", "term": "効き目", "reading": "ききめ", "answer": "Tác dụng, công hiệu", "meaning": "Tác dụng, công hiệu", "example": "この薬は効き目が早い。\n(Thuốc này có tác dụng rất nhanh chóng.)" },
           { "id": "km-n3-c12-l5-10", "term": "効果", "reading": "こうか", "answer": "Hiệu quả, kết quả", "meaning": "Hiệu quả, kết quả", "example": "がんばって練習した効果が表れる。\n(Hiệu quả của việc cố gắng luyện tập đã được thể hiện.)" },
@@ -1770,8 +1770,7 @@ export const kanjiMasterN3Lessons: Lesson[] = [
           { "id": "km-n3-c12-l5-16", "term": "立候補", "reading": "りっこうほ", "answer": "Ứng cử", "meaning": "Ứng cử", "example": "市長に立候補する。\n(Ứng cử chức thị trưởng.)" },
           { "id": "km-n3-c12-l5-17", "term": "無効", "reading": "むこう", "answer": "Vô hiệu, mất hiệu lực", "meaning": "Vô hiệu, mất hiệu lực", "example": "チケットが無効になる。\n(Vé đã bị mất hiệu lực / vô hiệu hóa.)" },
           { "id": "km-n3-c12-l5-18", "term": "有効", "reading": "ゆうこう", "answer": "Hữu hiệu, có hiệu lực, có ích", "meaning": "Hữu hiệu, có hiệu lực, có ích", "example": "お金を有効に使う。\n(Sử dụng tiền bạc một cách hữu ích / hiệu quả.)" },
-          { "id": "km-n3-c12-l5-19", "term": "効く", "reading": "きく", "answer": "Có hiệu quả, có tác dụng", "meaning": "Có hiệu quả, có tác dụng", "example": "この薬はよく効く。\n(Thuốc này rất hiệu nghiệm / có tác dụng tốt.)" },
-          { "id": "km-n3-c12-l5-20", "term": "補う", "reading": "おぎなう", "answer": "Bổ sung, bù đắp (Động từ)", "meaning": "Bổ sung, bù đắp (Động từ)", "example": "不足している栄養を補う。\n(Bổ sung lượng dinh dưỡng còn thiếu.)" }
+          { "id": "km-n3-c12-l5-19", "term": "効く", "reading": "きく", "answer": "Có hiệu quả, có tác dụng", "meaning": "Có hiệu quả, có tác dụng", "example": "この薬はよく効く。\n(Thuốc này rất hiệu nghiệm / có tác dụng tốt.)" }
         ]
       }
     ]

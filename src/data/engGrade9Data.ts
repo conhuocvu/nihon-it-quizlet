@@ -3328,6 +3328,160 @@ export const engGrade9Words: EngWordItem[] = [
     topic: 'Grammar & Connectors',
     example: 'You will not pass the entrance exam unless you practice regularly.',
     exampleMeaning: 'Bạn sẽ không đỗ kỳ thi tuyển sinh trừ khi bạn luyện tập thường xuyên.'
+  },
+  {
+    id: 'eng-301',
+    term: 'interviewer',
+    ipa: '/ˈɪntərvjuːər/',
+    answer: 'người phỏng vấn',
+    meaning: 'người phỏng vấn',
+    partOfSpeech: 'Noun',
+    topic: 'People, Family & Careers',
+    example: 'The interviewer asked me several questions.',
+    exampleMeaning: 'Người phỏng vấn đã hỏi tôi vài câu hỏi.'
+  },
+  {
+    id: 'eng-302',
+    term: 'experience',
+    ipa: '/ɪkˈspɪəriəns/',
+    answer: 'kinh nghiệm, trải nghiệm',
+    meaning: 'kinh nghiệm, trải nghiệm',
+    partOfSpeech: 'Noun',
+    topic: 'People, Family & Careers',
+    example: 'She has a lot of teaching experience.',
+    exampleMeaning: 'Cô ấy có nhiều kinh nghiệm giảng dạy.'
+  },
+  {
+    id: 'eng-303',
+    term: 'they',
+    ipa: '/ðeɪ/',
+    answer: 'họ, chúng nó',
+    meaning: 'họ, chúng nó',
+    partOfSpeech: 'Grammar/Connector',
+    topic: 'Grammar & Connectors',
+    example: 'They are playing soccer in the park.',
+    exampleMeaning: 'Họ đang chơi bóng đá trong công viên.'
+  },
+  {
+    id: 'eng-304',
+    term: 'we',
+    ipa: '/wiː/',
+    answer: 'chúng tôi, chúng ta',
+    meaning: 'chúng tôi, chúng ta',
+    partOfSpeech: 'Grammar/Connector',
+    topic: 'Grammar & Connectors',
+    example: 'We study English together every evening.',
+    exampleMeaning: 'Chúng tôi cùng nhau học tiếng Anh mỗi tối.'
+  },
+  {
+    id: 'eng-305',
+    term: 'hide',
+    ipa: '/haɪd/',
+    answer: 'trốn, giấu',
+    meaning: 'trốn, giấu',
+    partOfSpeech: 'Verb',
+    topic: 'Actions & Movement',
+    example: 'The children like to hide behind the door.',
+    exampleMeaning: 'Lũ trẻ thích trốn sau cánh cửa.'
+  },
+  {
+    id: 'eng-306',
+    term: 'leave',
+    ipa: '/liːv/',
+    answer: 'rời đi, để lại',
+    meaning: 'rời đi, để lại',
+    partOfSpeech: 'Verb',
+    topic: 'Actions & Movement',
+    example: 'We should leave before it rains.',
+    exampleMeaning: 'Chúng ta nên rời đi trước khi trời mưa.'
+  },
+  {
+    id: 'eng-307',
+    term: 'word',
+    ipa: '/wɜːd/',
+    answer: 'từ, từ ngữ',
+    meaning: 'từ, từ ngữ',
+    partOfSpeech: 'Noun',
+    topic: 'Daily Life & Routines',
+    example: 'I learn ten new words every day.',
+    exampleMeaning: 'Tôi học mười từ mới mỗi ngày.'
+  },
+  {
+    id: 'eng-308',
+    term: 'mean',
+    ipa: '/miːn/',
+    answer: 'có nghĩa là',
+    meaning: 'có nghĩa là',
+    partOfSpeech: 'Verb',
+    topic: 'Daily Life & Routines',
+    example: 'What does this word mean?',
+    exampleMeaning: 'Từ này có nghĩa là gì?'
+  },
+  {
+    id: 'eng-309',
+    term: 'angel',
+    ipa: '/ˈeɪndʒl/',
+    answer: 'thiên thần',
+    meaning: 'thiên thần',
+    partOfSpeech: 'Noun',
+    topic: 'People, Family & Careers',
+    example: 'She looks like an angel.',
+    exampleMeaning: 'Cô ấy trông như một thiên thần.'
+  },
+  {
+    id: 'eng-310',
+    term: 'interested in',
+    ipa: '/ˈɪntrəstɪd ɪn/',
+    answer: 'thích, quan tâm đến',
+    meaning: 'thích, quan tâm đến',
+    partOfSpeech: 'Adjective/Adverb',
+    topic: 'Adjectives & Descriptions',
+    example: 'He is interested in music and art.',
+    exampleMeaning: 'Cậu ấy thích âm nhạc và nghệ thuật.'
+  },
+  {
+    id: 'eng-311',
+    term: 'any',
+    ipa: '/ˈeni/',
+    answer: 'bất kỳ, nào',
+    meaning: 'bất kỳ, nào',
+    partOfSpeech: 'Grammar/Connector',
+    topic: 'Grammar & Connectors',
+    example: 'Do you have any questions?',
+    exampleMeaning: 'Bạn có câu hỏi nào không?'
+  },
+  {
+    id: 'eng-312',
+    term: 'kind',
+    ipa: '/kaɪnd/',
+    answer: 'tốt bụng, loại',
+    meaning: 'tốt bụng, loại',
+    partOfSpeech: 'Adjective/Adverb',
+    topic: 'Adjectives & Descriptions',
+    example: 'Thank you for your kind help.',
+    exampleMeaning: 'Cảm ơn sự giúp đỡ tốt bụng của bạn.'
+  },
+  {
+    id: 'eng-313',
+    term: 'sport',
+    ipa: '/spɔːt/',
+    answer: 'thể thao',
+    meaning: 'thể thao',
+    partOfSpeech: 'Noun',
+    topic: 'Daily Life & Routines',
+    example: 'Football is a popular sport.',
+    exampleMeaning: 'Bóng đá là một môn thể thao phổ biến.'
+  },
+  {
+    id: 'eng-314',
+    term: 'occupy',
+    ipa: '/ˈɒkjupaɪ/',
+    answer: 'chiếm, chiếm giữ',
+    meaning: 'chiếm, chiếm giữ',
+    partOfSpeech: 'Verb',
+    topic: 'Actions & Movement',
+    example: 'Work will occupy most of his time.',
+    exampleMeaning: 'Công việc sẽ chiếm phần lớn thời gian của anh ấy.'
   }
 ];
 

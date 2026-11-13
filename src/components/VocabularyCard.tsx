@@ -100,7 +100,7 @@ export const VocabularyCard: React.FC<VocabularyCardProps> = ({
       </div>
 
       {/* 3D Flashcard Container */}
-      <div className="perspective-1000 w-full h-[340px] md:h-[360px] relative select-none">
+      <div className="perspective-1000 w-full h-[380px] md:h-[400px] relative select-none">
         <div
           onClick={handleFlip}
           className={`w-full h-full absolute transition-transform duration-500 preserve-3d ${
@@ -202,7 +202,7 @@ export const VocabularyCard: React.FC<VocabularyCardProps> = ({
             </div>
 
             {/* Meaning / Kanji details */}
-            <div className="text-center my-auto flex flex-col items-center overflow-y-auto max-h-[215px] py-2 px-1 w-full">
+            <div className="text-center my-auto flex flex-col items-center overflow-y-auto max-h-[255px] py-2 px-2 w-full">
               <div className="my-auto flex flex-col items-center w-full">
               {practiceMode === 'write-kanji' ? (
                 <>

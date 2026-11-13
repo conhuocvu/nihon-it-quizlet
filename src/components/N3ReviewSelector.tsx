@@ -35,13 +35,29 @@ export const N3ReviewSelector: React.FC<N3ReviewSelectorProps> = ({
   onStartBySections,
   onBackToHome,
 }) => {
-  const [activeTab, setActiveTab] = useState<MainReviewTab>('vocab');
+  const [activeTab, setActiveTab] = useState<MainReviewTab>(() => {
+    try {
+      const saved = localStorage.getItem('n3_review_active_tab');
+      if (saved === 'kanji' || saved === 'vocab' || saved === 'grammar') {
+        return saved;
+      }
+    } catch {}
+    return 'kanji';
+  });
   const [viewMode, setViewMode] = useState<ViewMode>('cards');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [flippedIds, setFlippedIds] = useState<Record<string, boolean>>({});
   const [hideReadingInTable, setHideReadingInTable] = useState<boolean>(false);
   const [hideMeaningInTable, setHideMeaningInTable] = useState<boolean>(false);
   const [revealedRows, setRevealedRows] = useState<Record<string, boolean>>({});
+
+  const handleSelectTab = (tab: MainReviewTab) => {
+    setActiveTab(tab);
+    setSearchQuery('');
+    try {
+      localStorage.setItem('n3_review_active_tab', tab);
+    } catch {}
+  };
 
   const currentItems: N3ReviewItem[] = useMemo(() => {
     if (activeTab === 'kanji') return n3ReviewKanjiItems;
@@ -137,10 +153,7 @@ export const N3ReviewSelector: React.FC<N3ReviewSelectorProps> = ({
           {/* Summary Stat Pills */}
           <div className="grid grid-cols-3 gap-2.5 shrink-0">
             <div
-              onClick={() => {
-                setActiveTab('kanji');
-                setSearchQuery('');
-              }}
+              onClick={() => handleSelectTab('kanji')}
               className={`p-3.5 rounded-2xl border text-center cursor-pointer transition-all ${
                 activeTab === 'kanji'
                   ? 'bg-white text-indigo-950 border-white shadow-lg scale-105'
@@ -151,10 +164,7 @@ export const N3ReviewSelector: React.FC<N3ReviewSelectorProps> = ({
               <span className="text-[11px] font-bold opacity-80">Kanji</span>
             </div>
             <div
-              onClick={() => {
-                setActiveTab('vocab');
-                setSearchQuery('');
-              }}
+              onClick={() => handleSelectTab('vocab')}
               className={`p-3.5 rounded-2xl border text-center cursor-pointer transition-all ${
                 activeTab === 'vocab'
                   ? 'bg-white text-indigo-950 border-white shadow-lg scale-105'
@@ -165,10 +175,7 @@ export const N3ReviewSelector: React.FC<N3ReviewSelectorProps> = ({
               <span className="text-[11px] font-bold opacity-80">Từ vựng</span>
             </div>
             <div
-              onClick={() => {
-                setActiveTab('grammar');
-                setSearchQuery('');
-              }}
+              onClick={() => handleSelectTab('grammar')}
               className={`p-3.5 rounded-2xl border text-center cursor-pointer transition-all ${
                 activeTab === 'grammar'
                   ? 'bg-white text-indigo-950 border-white shadow-lg scale-105'
@@ -186,10 +193,7 @@ export const N3ReviewSelector: React.FC<N3ReviewSelectorProps> = ({
       <div className="grid grid-cols-3 gap-3 bg-slate-200/70 p-1.5 rounded-2xl border border-slate-200">
         <button
           type="button"
-          onClick={() => {
-            setActiveTab('kanji');
-            setSearchQuery('');
-          }}
+          onClick={() => handleSelectTab('kanji')}
           className={`py-3.5 px-4 rounded-xl font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all cursor-pointer ${
             activeTab === 'kanji'
               ? 'bg-gradient-to-r from-rose-600 to-pink-600 text-white shadow-md shadow-rose-200'
@@ -209,10 +213,7 @@ export const N3ReviewSelector: React.FC<N3ReviewSelectorProps> = ({
 
         <button
           type="button"
-          onClick={() => {
-            setActiveTab('vocab');
-            setSearchQuery('');
-          }}
+          onClick={() => handleSelectTab('vocab')}
           className={`py-3.5 px-4 rounded-xl font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all cursor-pointer ${
             activeTab === 'vocab'
               ? 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white shadow-md shadow-emerald-200'
@@ -232,10 +233,7 @@ export const N3ReviewSelector: React.FC<N3ReviewSelectorProps> = ({
 
         <button
           type="button"
-          onClick={() => {
-            setActiveTab('grammar');
-            setSearchQuery('');
-          }}
+          onClick={() => handleSelectTab('grammar')}
           className={`py-3.5 px-4 rounded-xl font-extrabold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all cursor-pointer ${
             activeTab === 'grammar'
               ? 'bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-md shadow-indigo-200'

@@ -13,6 +13,7 @@ import { KanjiMasterN3Selector } from './components/KanjiMasterN3Selector';
 import { EngGrade9Selector } from './components/EngGrade9Selector';
 import { engMasterVocabLesson } from './data/engGrade9Data';
 import { TryN3Selector } from './components/TryN3Selector';
+import { N3ReviewSelector } from './components/N3ReviewSelector';
 import { GraduationCap, Github, ChevronRight, Crown, ArrowLeft, Home } from 'lucide-react';
 
 function App() {
@@ -266,12 +267,23 @@ function App() {
           />
         )}
 
+        {route.page === 'subject' && currentSubject.id === 'n3-review' && (
+          <N3ReviewSelector
+            lessons={currentSubject.lessons}
+            onStartBySections={(sections) =>
+              navigate(`/subject/${currentSubject.id}/study?sections=${sections.join(',')}`)
+            }
+            onBackToHome={() => navigate('/')}
+          />
+        )}
+
         {route.page === 'subject' &&
           currentSubject.id !== 'mimi-n3-goi' &&
           currentSubject.id !== 'jfe301' &&
           currentSubject.id !== 'kanji-master-n3' &&
           currentSubject.id !== 'eng-grade9-hw' &&
-          currentSubject.id !== 'try-n3' && (
+          currentSubject.id !== 'try-n3' &&
+          currentSubject.id !== 'n3-review' && (
             <LessonSelector
               lessons={currentSubject.lessons}
               selectedSectionIds={selectedSectionIds}

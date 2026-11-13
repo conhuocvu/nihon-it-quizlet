@@ -4,6 +4,7 @@ import { tryN3Lessons } from './tryN3Data';
 import { jfe301Lessons } from './jfe301Data';
 import { kanjiMasterN3Lessons } from './kanjiMasterN3Data';
 import { allEngGrade9Lessons } from './engGrade9Data';
+import { n3ReviewLessons } from './n3ReviewData';
 import type { Lesson } from './lessons';
 
 export interface Subject {
@@ -23,6 +24,20 @@ export interface Subject {
 }
 
 export const subjects: Subject[] = [
+  {
+    id: 'n3-review',
+    title: 'Ôn Tập N3 (Kanji • Từ Vựng • Ngữ Pháp)',
+    japaneseTitle: 'JLPT N3 総合復習 (漢字・語彙・文法)',
+    description: 'Chuyên mục ôn tập riêng cho kỳ thi JLPT N3 chia thành 3 phần rõ ràng: Chữ Hán (Kanji), Từ vựng (Goi) và Ngữ pháp (Bunpou). Tích hợp bộ Flashcard lật trực tiếp và phòng luyện tập 3D.',
+    category: 'Tiếng Nhật N3',
+    icon: 'award',
+    gradient: 'from-violet-600 via-fuchsia-600 to-rose-600',
+    badge: 'Mới - Ôn N3',
+    lessons: n3ReviewLessons,
+    totalLessons: n3ReviewLessons.length,
+    totalItems: n3ReviewLessons.reduce((acc, l) => acc + l.sections.reduce((sAcc, s) => sAcc + s.items.length, 0), 0),
+    isAvailable: true,
+  },
   {
     id: 'try-n3',
     title: 'TRY! N3 - Ngữ Pháp Tiếng Nhật',

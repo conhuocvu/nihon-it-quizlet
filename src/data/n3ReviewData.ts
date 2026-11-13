@@ -2,6 +2,7 @@ import type { Lesson, StudyItem } from './lessons';
 
 export interface N3ReviewItem extends StudyItem {
   hanViet: string;
+  note?: string;
 }
 
 export const n3ReviewKanjiItems: N3ReviewItem[] = [
@@ -10,9 +11,9 @@ export const n3ReviewKanjiItems: N3ReviewItem[] = [
     term: '並ぶ',
     reading: 'ならぶ',
     hanViet: 'TỊNH',
-    answer: 'Xếp hàng, đứng thành hàng (Tự động từ)',
-    meaning: 'Xếp hàng, đứng thành hàng (Tự động từ)',
-    explanation: 'Âm Hán Việt: TỊNH (並). Tha động từ tương ứng: 並べる (ならべる - xếp, bày biện).',
+    answer: 'Xếp hàng, đứng thành hàng',
+    meaning: 'Xếp hàng, đứng thành hàng',
+    note: 'Tự động từ. Tha động từ: 並べる (ならべる - xếp, bày biện).',
     example: '店の前にたくさんの人が並んでいる。\n(Có rất nhiều người đang xếp hàng trước cửa hàng.)',
   },
   {
@@ -22,7 +23,7 @@ export const n3ReviewKanjiItems: N3ReviewItem[] = [
     hanViet: 'VÔ SỰ',
     answer: 'Bình an, vô sự, an toàn',
     meaning: 'Bình an, vô sự, an toàn',
-    explanation: 'Âm Hán Việt: VÔ SỰ (無: Vô - không có / 事: Sự - sự việc, rắc rối).',
+    note: '無 (Vô - không có) + 事 (Sự - sự việc, rắc rối).',
     example: '無事に日本に着きました。\n(Tôi đã đến Nhật Bản bình an vô sự.)',
   },
   {
@@ -32,7 +33,7 @@ export const n3ReviewKanjiItems: N3ReviewItem[] = [
     hanViet: 'ĐỒNG THỜI',
     answer: 'Đồng thời, cùng lúc',
     meaning: 'Đồng thời, cùng lúc',
-    explanation: 'Âm Hán Việt: ĐỒNG THỜI (同: Đồng - cùng / 時: Thời - thời gian, lúc).',
+    note: '同 (Đồng - cùng) + 時 (Thời - thời gian, lúc).',
     example: '二人は同時にゴールした。\n(Hai người đã về đích cùng một lúc.)',
   },
   {
@@ -42,7 +43,7 @@ export const n3ReviewKanjiItems: N3ReviewItem[] = [
     hanViet: 'TỰ',
     answer: 'Giống, giống nhau',
     meaning: 'Giống, giống nhau',
-    explanation: 'Âm Hán Việt: TỰ (似 - tương tự). Thường dùng ở dạng ～に似ている (giống với ~).',
+    note: 'Thường dùng ở dạng ～に似ている (giống với ~).',
     example: '彼女は母親によく似ている。\n(Cô ấy rất giống mẹ mình.)',
   },
   {
@@ -52,7 +53,7 @@ export const n3ReviewKanjiItems: N3ReviewItem[] = [
     hanViet: 'KHOÁN',
     answer: 'Vé, phiếu, thẻ',
     meaning: 'Vé, phiếu, thẻ',
-    explanation: 'Âm Hán Việt: KHOÁN (券). Ghép sau danh từ chỉ các loại vé/phiếu: 入場券 (vé vào cửa), 乗車券 (vé lên tàu), 割引券 (phiếu giảm giá).',
+    note: 'Ví dụ: 入場券 (vé vào cửa), 乗車券 (vé tàu), 割引券 (phiếu giảm giá).',
     example: '入場券を買って会場に入る。\n(Mua vé vào cửa rồi bước vào hội trường.)',
   },
   {
@@ -60,9 +61,9 @@ export const n3ReviewKanjiItems: N3ReviewItem[] = [
     term: '素直',
     reading: 'すなお',
     hanViet: 'TỐ TRỰC',
-    answer: 'Ngoan ngoãn, thật thà, thành thật (Tính từ -na)',
-    meaning: 'Ngoan ngoãn, thật thà, thành thật (Tính từ -na)',
-    explanation: 'Âm Hán Việt: TỐ TRỰC (素: Tố - mộc mạc / 直: Trực - thẳng thắn).',
+    answer: 'Ngoan ngoãn, thật thà, thành thật',
+    meaning: 'Ngoan ngoãn, thật thà, thành thật',
+    note: 'Tính từ đuôi -na (素直な).',
     example: '自分のミスを素直に認める。\n(Thành thật thừa nhận lỗi lầm của bản thân.)',
   },
   {
@@ -72,7 +73,7 @@ export const n3ReviewKanjiItems: N3ReviewItem[] = [
     hanViet: 'CƠ HỘI',
     answer: 'Cơ hội, dịp',
     meaning: 'Cơ hội, dịp',
-    explanation: 'Âm Hán Việt: CƠ HỘI (機: Cơ / 会: Hội). Chú ý phân biệt đồng âm khác chữ với 機械 (きかい - máy móc).',
+    note: 'Phân biệt đồng âm khác chữ với 機械 (きかい - máy móc).',
     example: '機会があれば、ぜひ北海道へ行きたいです。\n(Nếu có cơ hội, nhất định tôi muốn đến Hokkaido.)',
   },
   {
@@ -82,7 +83,7 @@ export const n3ReviewKanjiItems: N3ReviewItem[] = [
     hanViet: 'CƠ',
     answer: 'Cái bàn (bàn học, bàn làm việc)',
     meaning: 'Cái bàn (bàn học, bàn làm việc)',
-    explanation: 'Âm Hán Việt: CƠ (机). Dùng cho bàn học, bàn làm việc văn phòng (khác với テーブル là bàn ăn/bàn tiếp khách).',
+    note: 'Dùng cho bàn học, bàn làm việc văn phòng.',
     example: '机の上にノートとペンが置いてある。\n(Trên bàn có đặt quyển vở và cây bút.)',
   },
   {
@@ -92,7 +93,7 @@ export const n3ReviewKanjiItems: N3ReviewItem[] = [
     hanViet: 'NHẤT NIÊN TRUNG',
     answer: 'Quanh năm, suốt cả năm',
     meaning: 'Quanh năm, suốt cả năm',
-    explanation: 'Âm Hán Việt: NHẤT NIÊN TRUNG (一年中). Khi 中 đọc là 「～じゅう」 mang nghĩa "suốt cả ~" (一日中: suốt cả ngày, 一年中: suốt cả năm).',
+    note: 'Khi 中 đọc là 「～じゅう」 mang nghĩa "suốt cả ~".',
     example: 'この地域は一年中暖かい。\n(Khu vực này ấm áp quanh năm.)',
   },
   {
@@ -102,7 +103,7 @@ export const n3ReviewKanjiItems: N3ReviewItem[] = [
     hanViet: 'DOANH NGHIỆP',
     answer: 'Kinh doanh, mở cửa hoạt động',
     meaning: 'Kinh doanh, mở cửa hoạt động',
-    explanation: 'Âm Hán Việt: DOANH NGHIỆP (営: Doanh - vận hành / 業: Nghiệp - công việc).',
+    note: '営 (Doanh - vận hành) + 業 (Nghiệp - công việc).',
     example: 'このスーパーは夜11時まで営業している。\n(Siêu thị này mở cửa hoạt động đến 11 giờ đêm.)',
   },
   {
@@ -110,9 +111,9 @@ export const n3ReviewKanjiItems: N3ReviewItem[] = [
     term: '幸福',
     reading: 'こうふく',
     hanViet: 'HẠNH PHÚC',
-    answer: 'Hạnh phúc, niềm hạnh phúc (Danh từ / Tính từ -na)',
-    meaning: 'Hạnh phúc, niềm hạnh phúc (Danh từ / Tính từ -na)',
-    explanation: 'Âm Hán Việt: HẠNH PHÚC (幸: Hạnh - may mắn, hạnh phúc / 福: Phúc - phúc lành). Từ trang trọng hơn của 幸せ (しあわせ).',
+    answer: 'Hạnh phúc, niềm hạnh phúc',
+    meaning: 'Hạnh phúc, niềm hạnh phúc',
+    note: 'Từ trang trọng hơn của 幸せ (しあわせ).',
     example: '人々の幸福を願う。\n(Cầu chúc hạnh phúc cho mọi người.)',
   },
   {
@@ -120,9 +121,9 @@ export const n3ReviewKanjiItems: N3ReviewItem[] = [
     term: '沿う',
     reading: 'そう',
     hanViet: 'DUYÊN',
-    answer: 'Dọc theo, men theo; tuân theo (kế hoạch, mong muốn)',
-    meaning: 'Dọc theo, men theo; tuân theo (kế hoạch, mong muốn)',
-    explanation: 'Âm Hán Việt: DUYÊN (沿). Thường đi với trợ từ に: 川に沿って歩く (đi dọc bờ sông), ご希望に添う/沿う (đáp ứng theo nguyện vọng).',
+    answer: 'Dọc theo, men theo; tuân theo',
+    meaning: 'Dọc theo, men theo; tuân theo',
+    note: 'Đi với trợ từ に: 川に沿って歩く (đi dọc bờ sông).',
     example: '川に沿って桜の木が並んでいる。\n(Hàng cây hoa anh đào xếp dọc theo bờ sông.)',
   },
   {
@@ -132,7 +133,7 @@ export const n3ReviewKanjiItems: N3ReviewItem[] = [
     hanViet: 'CẢI THIỆN',
     answer: 'Cải thiện, làm cho tốt hơn',
     meaning: 'Cải thiện, làm cho tốt hơn',
-    explanation: 'Âm Hán Việt: CẢI THIỆN (改: Cải - sửa đổi / 善: Thiện - tốt đẹp).',
+    note: '改 (Cải - sửa đổi) + 善 (Thiện - tốt đẹp).',
     example: '生活習慣を改善する必要がある。\n(Cần phải cải thiện thói quen sinh hoạt.)',
   },
   {
@@ -142,7 +143,7 @@ export const n3ReviewKanjiItems: N3ReviewItem[] = [
     hanViet: 'THẢI',
     answer: 'Cho mượn, cho vay, cho thuê',
     meaning: 'Cho mượn, cho vay, cho thuê',
-    explanation: 'Âm Hán Việt: THẢI (貸). Ngược nghĩa với 借りる (かりる - mượn, vay, thuê).',
+    note: 'Ngược nghĩa với 借りる (かりる - mượn, vay, thuê).',
     example: '雨が降ってきたので、友達に傘を貸した。\n(Vì trời đổ mưa nên tôi đã cho bạn mượn ô.)',
   },
   {
@@ -152,7 +153,7 @@ export const n3ReviewKanjiItems: N3ReviewItem[] = [
     hanViet: 'VẬT SỰ',
     answer: 'Mọi việc, sự vật sự việc',
     meaning: 'Mọi việc, sự vật sự việc',
-    explanation: 'Âm Hán Việt: VẬT SỰ (物: Vật - đồ vật / 事: Sự - sự việc). Chỉ chung mọi chuyện, vạn vật trong cuộc sống.',
+    note: '物 (Vật - đồ vật) + 事 (Sự - sự việc).',
     example: '物事を前向きに考えるようにしている。\n(Tôi luôn cố gắng suy nghĩ mọi việc theo hướng tích cực.)',
   },
 ];
@@ -163,9 +164,9 @@ export const n3ReviewVocabItems: N3ReviewItem[] = [
     term: '出し合う',
     reading: 'だしあう',
     hanViet: 'XUẤT HỢP',
-    answer: 'Cùng nhau đóng góp, góp chung (tiền, ý kiến, sức lực)',
-    meaning: 'Cùng nhau đóng góp, góp chung (tiền, ý kiến, sức lực)',
-    explanation: 'Động từ ghép: 出す (đưa ra) + 合う (cùng nhau làm). Thường đi với お金を出し合う (góp tiền chung), アイデア/知恵を出し合う (cùng đóng góp ý tưởng).',
+    answer: 'Cùng đóng góp, góp chung',
+    meaning: 'Cùng đóng góp, góp chung',
+    note: 'お金を出し合う (góp tiền chung), アイデアを出し合う (cùng góp ý tưởng).',
     example: 'みんなでお金を出し合って、プレゼントを買った。\n(Mọi người cùng nhau góp tiền mua quà.)',
   },
   {
@@ -175,7 +176,7 @@ export const n3ReviewVocabItems: N3ReviewItem[] = [
     hanViet: 'GAIRAIGO',
     answer: 'Tiếp cận, phương pháp tiếp cận',
     meaning: 'Tiếp cận, phương pháp tiếp cận',
-    explanation: 'Từ ngoại lai (tiếng Anh: approach). Dùng cả nghĩa đen (tiếp cận ai/nơi nào) và nghĩa bóng (cách tiếp cận giải quyết vấn đề).',
+    note: 'Từ ngoại lai (tiếng Anh: approach).',
     example: '新しい方法で問題にアプローチする。\n(Tiếp cận vấn đề bằng một phương pháp mới.)',
   },
   {
@@ -183,9 +184,9 @@ export const n3ReviewVocabItems: N3ReviewItem[] = [
     term: 'シフト',
     reading: 'shift',
     hanViet: 'GAIRAIGO',
-    answer: 'Ca làm việc; sự dịch chuyển, chuyển đổi',
-    meaning: 'Ca làm việc; sự dịch chuyển, chuyển đổi',
-    explanation: 'Từ ngoại lai (tiếng Anh: shift). Hay gặp trong シフトを組む/入れる (xếp/đăng ký ca làm thêm) hoặc シフトする (chuyển dịch trọng tâm).',
+    answer: 'Ca làm việc; sự dịch chuyển',
+    meaning: 'Ca làm việc; sự dịch chuyển',
+    note: 'シフトを組む/入れる (xếp/đăng ký ca làm thêm).',
     example: '来週のアルバイトのシフトを提出する。\n(Nộp lịch ca làm thêm của tuần sau.)',
   },
   {
@@ -195,7 +196,7 @@ export const n3ReviewVocabItems: N3ReviewItem[] = [
     hanViet: 'GAIRAIGO',
     answer: 'Văn hóa (Culture)',
     meaning: 'Văn hóa (Culture)',
-    explanation: 'Từ ngoại lai (tiếng Anh: culture). Thường gặp trong カルチャーショック (sốc văn hóa), カルチャーセンター (trung tâm văn hóa).',
+    note: 'カルチャーショック (sốc văn hóa), カルチャーセンター (trung tâm văn hóa).',
     example: '海外でカルチャーショックを受けた。\n(Tôi đã bị sốc văn hóa khi ở nước ngoài.)',
   },
   {
@@ -205,7 +206,7 @@ export const n3ReviewVocabItems: N3ReviewItem[] = [
     hanViet: 'ĐÌNH CHỈ',
     answer: 'Dừng lại, đình chỉ, ngừng hoạt động',
     meaning: 'Dừng lại, đình chỉ, ngừng hoạt động',
-    explanation: 'Âm Hán Việt: ĐÌNH CHỈ (停: Đình / 止: Chỉ). Dùng khi phương tiện dừng lại, máy móc ngừng chạy hoặc tạm ngưng dịch vụ/tài khoản (一時停止, 運転停止).',
+    note: 'Dùng khi phương tiện dừng lại, máy móc ngừng chạy hoặc tạm ngưng dịch vụ.',
     example: '大雪のため、電車が運転を停止した。\n(Do tuyết rơi dày nên tàu điện đã ngừng hoạt động.)',
   },
   {
@@ -213,9 +214,9 @@ export const n3ReviewVocabItems: N3ReviewItem[] = [
     term: '静止',
     reading: 'せいし',
     hanViet: 'TĨNH CHỈ',
-    answer: 'Đứng yên, bất động (trạng thái tĩnh)',
-    meaning: 'Đứng yên, bất động (trạng thái tĩnh)',
-    explanation: 'Âm Hán Việt: TĨNH CHỈ (静: Tĩnh / 止: Chỉ). Nhấn mạnh trạng thái hoàn toàn không chuyển động (静止画: ảnh tĩnh). Khác với 停止 (đang chạy rồi dừng lại).',
+    answer: 'Đứng yên, bất động',
+    meaning: 'Đứng yên, bất động',
+    note: 'Trạng thái hoàn toàn không chuyển động (静止画: ảnh tĩnh).',
     example: 'カメラの前で3秒間静止してください。\n(Hãy đứng yên trước máy ảnh trong 3 giây.)',
   },
   {
@@ -223,9 +224,9 @@ export const n3ReviewVocabItems: N3ReviewItem[] = [
     term: '故障',
     reading: 'こしょう',
     hanViet: 'CỐ CHƯỚNG',
-    answer: 'Hỏng hóc, trục trặc (máy móc, thiết bị)',
-    meaning: 'Hỏng hóc, trục trặc (máy móc, thiết bị)',
-    explanation: 'Âm Hán Việt: CỐ CHƯỚNG (故: Cố / 障: Chướng). Dùng cho máy móc, xe cộ, thiết bị điện tử bị hư (エアコンが故障する).',
+    answer: 'Hỏng hóc, trục trặc (máy móc)',
+    meaning: 'Hỏng hóc, trục trặc (máy móc)',
+    note: 'Dùng cho máy móc, xe cộ, thiết bị điện tử bị hư.',
     example: 'エレベーターが故障して動かない。\n(Thang máy bị hỏng nên không hoạt động.)',
   },
   {
@@ -235,7 +236,7 @@ export const n3ReviewVocabItems: N3ReviewItem[] = [
     hanViet: 'CHỈ ĐỒ',
     answer: 'Chỉ thị, sai bảo, ra lệnh',
     meaning: 'Chỉ thị, sai bảo, ra lệnh',
-    explanation: 'Âm Hán Việt: CHỈ ĐỒ (指: Chỉ / 図: Đồ). Thường mang sắc thái sai khiến từ trên xuống: 人に指図する (sai bảo người khác).',
+    note: '人に指図する (sai bảo người khác).',
     example: '彼にいちいち指図されるのは嫌だ。\n(Tôi ghét việc cứ bị anh ta sai bảo từng tí một.)',
   },
   {
@@ -245,7 +246,7 @@ export const n3ReviewVocabItems: N3ReviewItem[] = [
     hanViet: 'CẤU THÀNH',
     answer: 'Cấu thành, cấu trúc, bố cục',
     meaning: 'Cấu thành, cấu trúc, bố cục',
-    explanation: 'Âm Hán Việt: CẤU THÀNH (構: Cấu / 成: Thành). Dùng cho bố cục bài viết (文章の構成), cơ cấu thành viên (家族構成).',
+    note: '文章の構成 (bố cục bài viết), 家族構成 (cơ cấu gia đình).',
     example: 'レポートの構成を考えてから書き始める。\n(Suy nghĩ bố cục bài báo cáo rồi mới bắt đầu viết.)',
   },
   {
@@ -253,9 +254,9 @@ export const n3ReviewVocabItems: N3ReviewItem[] = [
     term: '沸かす',
     reading: 'わかす',
     hanViet: 'PHẤT',
-    answer: 'Đun sôi (nước), làm nóng (bồn tắm) (Tha động từ)',
-    meaning: 'Đun sôi (nước), làm nóng (bồn tắm) (Tha động từ)',
-    explanation: 'Âm Hán Việt: PHẤT (沸). Tự động từ tương ứng là 沸く (わく - nước sôi). Cụm cố định: お湯を沸かす (đun nước), お風呂を沸かす (đun nước tắm).',
+    answer: 'Đun sôi (nước), làm nóng (bồn tắm)',
+    meaning: 'Đun sôi (nước), làm nóng (bồn tắm)',
+    note: 'Tha động từ. Tự động từ: 沸く (わく - nước sôi).',
     example: 'お湯を沸かしてコーヒーを淹れる。\n(Đun sôi nước rồi pha cà phê.)',
   },
   {
@@ -263,9 +264,9 @@ export const n3ReviewVocabItems: N3ReviewItem[] = [
     term: '破る',
     reading: 'やぶる',
     hanViet: 'PHÁ',
-    answer: 'Xé rách (giấy/vải); phá vỡ (lời hứa, quy tắc, kỷ lục)',
-    meaning: 'Xé rách (giấy/vải); phá vỡ (lời hứa, quy tắc, kỷ lục)',
-    explanation: 'Âm Hán Việt: PHÁ (破). Nghĩa 1: Xé rách (紙を破る). Nghĩa 2: Phá vỡ (約束/ルール/記録を破る). Tự động từ: 破れる (やぶれる - bị rách).',
+    answer: 'Xé rách; phá vỡ (lời hứa, kỷ lục)',
+    meaning: 'Xé rách; phá vỡ (lời hứa, kỷ lục)',
+    note: '紙を破る (xé giấy), 約束/ルールを破る (phá vỡ lời hứa/quy tắc).',
     example: '約束を破ってはいけない。\n(Không được phá vỡ lời hứa.)',
   },
   {
@@ -273,9 +274,9 @@ export const n3ReviewVocabItems: N3ReviewItem[] = [
     term: '焼く',
     reading: 'やく',
     hanViet: 'THIÊU',
-    answer: 'Nướng, rán, chiên; đốt; làm cháy nắng (Tha động từ)',
-    meaning: 'Nướng, rán, chiên; đốt; làm cháy nắng (Tha động từ)',
-    explanation: 'Âm Hán Việt: THIÊU (焼). Tự động từ: 焼ける (やける). Dùng rất rộng: 肉/パンを焼く (nướng thịt/bánh mì), 日に焼ける (cháy nắng).',
+    answer: 'Nướng, rán, đốt',
+    meaning: 'Nướng, rán, đốt',
+    note: 'Tha động từ. Tự động từ: 焼ける (やける).',
     example: '毎朝、トースターでパンを焼いて食べる。\n(Mỗi sáng tôi đều nướng bánh mì bằng lò nướng để ăn.)',
   },
   {
@@ -285,7 +286,7 @@ export const n3ReviewVocabItems: N3ReviewItem[] = [
     hanViet: 'LIÊN LẠC',
     answer: 'Liên lạc, thông báo',
     meaning: 'Liên lạc, thông báo',
-    explanation: 'Âm Hán Việt: LIÊN LẠC (連: Liên / 絡: Lạc). Cụm hay dùng: 連絡を取る (giữ/bắt liên lạc), 連絡が入る (có liên lạc tới).',
+    note: '連絡を取る (giữ/bắt liên lạc), 連絡が入る (có liên lạc tới).',
     example: '駅に着いたら、すぐ連絡してください。\n(Khi nào tới nhà ga thì hãy liên lạc ngay nhé.)',
   },
   {
@@ -293,9 +294,9 @@ export const n3ReviewVocabItems: N3ReviewItem[] = [
     term: '以来',
     reading: 'いらい',
     hanViet: 'DĨ LAI',
-    answer: 'Kể từ sau khi ~ (suốt từ mốc quá khứ đến hiện tại)',
-    meaning: 'Kể từ sau khi ~ (suốt từ mốc quá khứ đến hiện tại)',
-    explanation: 'Âm Hán Việt: DĨ LAI (以: Dĩ / 来: Lai). Đi sau Danh từ hoặc V-て以来, diễn tả một trạng thái kéo dài liên tục từ mốc quá khứ đến nay.',
+    answer: 'Kể từ sau khi ~ (từ quá khứ đến nay)',
+    meaning: 'Kể từ sau khi ~ (từ quá khứ đến nay)',
+    note: 'Diễn tả trạng thái kéo dài liên tục từ một mốc quá khứ đến hiện tại.',
     example: '卒業して以来、彼には一度も会っていない。\n(Kể từ khi tốt nghiệp đến nay, tôi chưa gặp lại anh ấy lần nào.)',
   },
   {
@@ -303,9 +304,9 @@ export const n3ReviewVocabItems: N3ReviewItem[] = [
     term: '以下',
     reading: 'いか',
     hanViet: 'DĨ HẠ',
-    answer: 'Trở xuống, dưới mức ~ (có bao gồm mốc đó); dưới đây',
-    meaning: 'Trở xuống, dưới mức ~ (có bao gồm mốc đó); dưới đây',
-    explanation: 'Âm Hán Việt: DĨ HẠ (以: Dĩ / 下: Hạ). Lưu ý: 10歳以下 bao gồm cả 10 tuổi trở xuống (khác với 未満 là nhỏ hơn hẳn, không tính mốc đó).',
+    answer: 'Trở xuống, dưới mức ~; dưới đây',
+    meaning: 'Trở xuống, dưới mức ~; dưới đây',
+    note: 'Có bao gồm mốc đó (ví dụ: 10歳以下 tính cả 10 tuổi trở xuống).',
     example: '小学生以下は入場無料です。\n(Từ học sinh tiểu học trở xuống được miễn phí vé vào cửa.)',
   },
   {
@@ -313,9 +314,9 @@ export const n3ReviewVocabItems: N3ReviewItem[] = [
     term: '以上',
     reading: 'いじょう',
     hanViet: 'DĨ THƯỢNG',
-    answer: 'Trở lên, trên mức ~ (có bao gồm mốc đó); hết (cuối bài phát biểu)',
-    meaning: 'Trở lên, trên mức ~ (có bao gồm mốc đó); hết (cuối bài phát biểu)',
-    explanation: 'Âm Hán Việt: DĨ THƯỢNG (以: Dĩ / 上: Thượng). Ví dụ: 80点以上 (từ 80 điểm trở lên, tính cả 80 điểm).',
+    answer: 'Trở lên, trên mức ~; hết',
+    meaning: 'Trở lên, trên mức ~; hết',
+    note: 'Có bao gồm mốc đó (ví dụ: 70点以上 tính cả 70 điểm trở lên).',
     example: 'この試験は70点以上で合格となる。\n(Kỳ thi này đạt từ 70 điểm trở lên là đỗ.)',
   },
   {
@@ -323,9 +324,9 @@ export const n3ReviewVocabItems: N3ReviewItem[] = [
     term: '以降',
     reading: 'いこう',
     hanViet: 'DĨ GIÁNG',
-    answer: 'Trở đi, từ sau mốc ~ trở đi (dùng cho thời gian, cả quá khứ & tương lai)',
-    meaning: 'Trở đi, từ sau mốc ~ trở đi (dùng cho thời gian, cả quá khứ & tương lai)',
-    explanation: 'Âm Hán Việt: DĨ GIÁNG (以: Dĩ / 降: Giáng). Khác với 以来 (chỉ dùng cho mốc quá khứ kéo tới nay), 以降 dùng được cho cả tương lai (明日以降, 5時以降: từ 5 giờ trở đi).',
+    answer: 'Trở đi, từ sau mốc ~ trở đi',
+    meaning: 'Trở đi, từ sau mốc ~ trở đi',
+    note: 'Dùng cho thời gian ở cả quá khứ lẫn tương lai (ví dụ: 月曜日以降).',
     example: '来週の月曜日以降はいつでも空いています。\n(Từ thứ Hai tuần sau trở đi lúc nào tôi cũng rảnh.)',
   },
 ];

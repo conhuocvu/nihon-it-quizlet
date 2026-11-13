@@ -91,7 +91,7 @@ export const N3ReviewSelector: React.FC<N3ReviewSelectorProps> = ({
         (item.reading && item.reading.toLowerCase().includes(q)) ||
         item.hanViet.toLowerCase().includes(q) ||
         (item.meaning && item.meaning.toLowerCase().includes(q)) ||
-        (item.explanation && item.explanation.toLowerCase().includes(q)) ||
+        (item.note && item.note.toLowerCase().includes(q)) ||
         (item.example && item.example.toLowerCase().includes(q))
     );
   }, [currentItems, searchQuery]);
@@ -517,9 +517,9 @@ export const N3ReviewSelector: React.FC<N3ReviewSelectorProps> = ({
                           <p className="text-sm font-extrabold text-slate-800 leading-snug">
                             {item.meaning}
                           </p>
-                          {item.explanation && (
+                          {item.note && (
                             <p className="text-[11px] font-medium text-slate-500 mt-1 leading-relaxed">
-                              {item.explanation}
+                              {item.note}
                             </p>
                           )}
                         </div>
@@ -679,9 +679,9 @@ export const N3ReviewSelector: React.FC<N3ReviewSelectorProps> = ({
                                 <div className="font-bold text-slate-800 text-xs">
                                   {item.meaning}
                                 </div>
-                                {item.explanation && (
+                                {item.note && (
                                   <div className="text-[11px] text-slate-500 mt-0.5">
-                                    {item.explanation}
+                                    {item.note}
                                   </div>
                                 )}
                               </div>

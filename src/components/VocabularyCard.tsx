@@ -202,7 +202,8 @@ export const VocabularyCard: React.FC<VocabularyCardProps> = ({
             </div>
 
             {/* Meaning / Kanji details */}
-            <div className="text-center my-auto flex flex-col items-center justify-center overflow-y-auto max-h-[190px] py-2 px-1 w-full">
+            <div className="text-center my-auto flex flex-col items-center overflow-y-auto max-h-[215px] py-2 px-1 w-full">
+              <div className="my-auto flex flex-col items-center w-full">
               {practiceMode === 'write-kanji' ? (
                 <>
                   <h3 className="text-4xl md:text-5xl font-black text-slate-800 leading-tight select-text mb-2">
@@ -262,6 +263,7 @@ export const VocabularyCard: React.FC<VocabularyCardProps> = ({
                   )}
                 </div>
               )}
+              </div>
             </div>
 
             {/* Action text */}

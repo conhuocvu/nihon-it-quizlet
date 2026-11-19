@@ -73,6 +73,10 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
   // TAB 1: RANGE SELECTOR STATE (1 List master + Range Selector)
   const [rangeStart, setRangeStart] = useState<number>(() => {
     try {
+      const savedTotal = localStorage.getItem('eng_grade9_total_count');
+      if (savedTotal !== String(totalWordsCount)) {
+        return 1;
+      }
       const saved = localStorage.getItem('eng_grade9_range_start');
       if (saved) {
         const val = Number(saved);
@@ -84,6 +88,11 @@ export const EngGrade9Selector: React.FC<EngGrade9SelectorProps> = ({
 
   const [rangeEnd, setRangeEnd] = useState<number>(() => {
     try {
+      const savedTotal = localStorage.getItem('eng_grade9_total_count');
+      if (savedTotal !== String(totalWordsCount)) {
+        localStorage.setItem('eng_grade9_total_count', String(totalWordsCount));
+        return totalWordsCount;
+      }
       const saved = localStorage.getItem('eng_grade9_range_end');
       if (saved) {
         const val = Number(saved);
